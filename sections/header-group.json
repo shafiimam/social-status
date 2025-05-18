@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.refactor_words.labels.header_group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {}
+    },
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {}
+    },
+    "announcement": {
+      "type": "announcement-bar",
+      "blocks": {
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "content"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "breadcrumb"
+  ]
+}

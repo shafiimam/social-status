@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.refactor_words.labels.footer_group",
+  "sections": {
+    "text-columns-with-icons": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "icon-1": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Shipping"
+          }
+        },
+        "icon-2": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Returns"
+          }
+        },
+        "icon-3": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Pickup"
+          }
+        }
+      },
+      "block_order": [
+        "icon-1",
+        "icon-2",
+        "icon-3"
+      ],
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {}
+        },
+        "menu-1": {
+          "type": "menu",
+          "settings": {
+            "title": "Quick links"
+          }
+        },
+        "menu-2": {
+          "type": "menu",
+          "settings": {
+            "title": "Quick links"
+          }
+        },
+        "social": {
+          "type": "social",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "text",
+        "menu-1",
+        "menu-2",
+        "social"
+      ],
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {}
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "email_form",
+        "paragraph"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "text-columns-with-icons",
+    "newsletter",
+    "footer"
+  ]
+}
