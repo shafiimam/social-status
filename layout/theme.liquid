@@ -48,6 +48,9 @@
   {%- render 'head-preloader' -%}
   {%- render 'head-variables' -%}
   {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
+  {{ 'flickity.min.css' | asset_url | stylesheet_tag }}
+
 
   {{ content_for_header }}
 
@@ -109,7 +112,7 @@
   </noscript>
 
   <script src="{{ 'component-video-background.js' | asset_url }}" defer></script>
-
+  <script src="{{ 'flickity.min.js' | asset_url }}" defer></script>
 </head>
 
 <body id="{{ page_title | handle }}" class="no-touchevents

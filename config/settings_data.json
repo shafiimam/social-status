@@ -83,5 +83,26 @@
       "cart_image_border": "#d3dbe1"
     }
   },
-  "current": "Cuber"
+  "current": {
+    "header_background": "#ffffff",
+    "header_text": "#000000",
+    "main_background": "#ffffff",
+    "headings_font": "montserrat_n6",
+    "headings_hr": false,
+    "body_font": "montserrat_n5",
+    "product_card_aspect_ratio": "0.83333",
+    "product_thumbnail_fit": false,
+    "proudct_card_aspect_ratio_padding": 0,
+    "product_show_secondary": true,
+    "product_animation": "one alt color--light",
+    "product_overlay_bg": "#000000",
+    "product_overlay_txt": "#ffffff",
+    "product_card_badge_sale_type": "text",
+    "favicon": "",
+    "cart_action": "overlay",
+    "cart_notes_enable": true,
+    "cart_image_ratio": "1",
+    "cart_image_fit": true,
+    "cart_image_border": "#f1f1f1"
+  }
 }

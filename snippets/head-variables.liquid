@@ -10,6 +10,13 @@
   <link rel="preload" href="{{ body_font | font_url }}" as="font" type="font/woff2" crossorigin>
 {%- endunless -%}
 {% # theme-check-enable AssetPreload %}
+{% comment %} Yantramanav font {% endcomment %}
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Bold.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Regular.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Light.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Medium.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Thin.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Black.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
 
 <style>
 
@@ -145,11 +152,11 @@
 
     /* Font variables */
 
-    --font-stack-headings: {{ headings_font.family }}, {{ headings_font.fallback_families }};
+    --font-stack-headings: 'Yantramanav', {{ headings_font.family }}, {{ headings_font.fallback_families }};
     --font-weight-headings: {{ headings_font.weight }};
     --font-style-headings: {{ headings_font.style }};
 
-    --font-stack-body: {{ body_font.family }}, {{ body_font.fallback_families }};
+    --font-stack-body: 'Yantramanav', {{ body_font.family }}, {{ body_font.fallback_families }};
     --font-weight-body: {{ body_font.weight }};
     {%- if body_font_bold -%}
       --font-weight-body-bold: {{ body_font_bold.weight }}; 

@@ -11,25 +11,53 @@
   "type": "header",
   "name": "t:sections.refactor_words.labels.header_group",
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
-    "breadcrumb": {
-      "type": "breadcrumb",
-      "settings": {}
-    },
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
         "content": {
           "type": "content",
-          "settings": {}
+          "settings": {
+            "text": "Write an important announcement here",
+            "link": "",
+            "target": false
+          }
         }
       },
       "block_order": [
         "content"
       ],
+      "disabled": true,
+      "settings": {
+        "visibility": "all",
+        "bar_txtcolor": "#ffffff",
+        "bar_bgcolor": "#111111",
+        "bar_bordercolor": "rgba(0,0,0,0)"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_src": "shopify://shop_images/LOOP_LOGO_2.png",
+        "logo_height": 50,
+        "main_linklist": "new-menu",
+        "menu_style": "minimal",
+        "menu_sticky": "sticky--scroll",
+        "menu_hide_border": true,
+        "collection_linklist": "",
+        "show_collection_image": true,
+        "show_promotion_block": false,
+        "promotion_header": "",
+        "promotion_content": "",
+        "promotion_button_label": "",
+        "promotion_button_link": "",
+        "promotion_color_txt": "#000000",
+        "promotion_color_bg": "#f3f3f3",
+        "show_locale_selector": true,
+        "show_country_selector": true
+      }
+    },
+    "breadcrumb": {
+      "type": "breadcrumb",
       "settings": {}
     }
   },
