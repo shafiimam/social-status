@@ -1,0 +1,132 @@
+{% schema %}
+{
+  "name": "Virtual Try-On",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Column Image"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Step In The Culture"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Step In The Culture"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slider Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Virtual Try-On"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="virtual-try-on-section">
+  <div class="vto-container">
+    <div class="vto-header">
+      <h1 class="h1 text-center heading">{{ section.settings.heading }}</h1>
+      <p class="text-subdued text-center">{{ section.settings.subheading }}</p>
+    </div>
+    <!-- Left Column: Vertical Slider -->
+    <div class="vto-content-container">
+      <div class="vto-slider">
+        <div class="vto-slider-inner">
+          {% for block in section.blocks %}
+            {% if block.settings.image %}
+              <div class="vto-slide" {{ block.shopify_attributes }}>
+                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="Slide Image" loading="lazy">
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Right Column: Static Image -->
+      <div class="vto-static">
+        {% if section.settings.right_image %}
+          <img src="{{ section.settings.right_image | image_url: width: 600 }}" alt="Right Image" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .virtual-try-on-section {
+    padding-top: 120px;
+  }
+  .vto-content-container {
+    background: #e8e8e8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1440px;
+    margin: auto;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .vto-header p {
+    color: #727272;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.22px;
+  }
+  .vto-slider {
+    padding: 50px 20px;
+  }
+  .vto-slider-inner {
+    height: 700px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e77e21 transparent;
+    border-radius: 8px;
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .vto-slider::-webkit-scrollbar {
+    width: 8px;
+  }
+  .vto-slider::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  .vto-slide img {
+    max-width: 100%;
+  }
+  .vto-static img {
+    width: 100%;
+    height: 100%;
+  }
+</style>

@@ -1,101 +1,104 @@
 {% comment %}   {%- render 'product-item', product: product, index: forloop.index0 -%} {% endcomment %}
 {{ 'section-product-masonry.css' | asset_url | stylesheet_tag }}
 <div class="product-masonry">
-   <div class="product-masonry__header">
-      <div class="product-masonry__header-title">
-         <h1 class="h1 yantramanav-black">{{ section.settings.title }}</h1>
-      </div>
-      <div class="product-masonry__header-description">
-         {{ section.settings.description }}
-      </div>
-   </div>
-   <div class="product-masonry__content">
-      <div class="product-masonry__content-inner">
-         <div class="product-masonry__content-media">
-            {% if section.settings.image %}
-               <div class="product-masonry__content-media-image">
-                  <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
-                  {% if section.settings.image_caption %}
-                     <div class="product-masonry__content-media-image-caption">
-                        {{ section.settings.image_caption }}
-                     </div>
-                  {% endif %}
-                  {% if section.settings.button_label %}
-                     <div class="product-masonry__content-media-image-button">
-                        <a href="{{ section.settings.button_link }}" class="button button--solid button--with-icon">{{ section.settings.button_label }} 
-                           <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
-                        </a>
-                     </div>
-                  {% endif %}
-               </div>
-            {% endif %}
-         </div>
-
-         <div class="product-masonry__content-products">
-            <div class="product-masonry__content-products-inner">
-               {% for product in section.settings.product_list %}
-                  <div class="product-masonry__content-products-item">
-                     {%- render 'product-item', product: product, index: forloop.index0 -%}
-                  </div>
-               {% endfor %}
+  <div class="product-masonry__header">
+    <div class="product-masonry__header-title">
+      <h1 class="h1 yantramanav-black">{{ section.settings.title }}</h1>
+    </div>
+    <div class="product-masonry__header-description">
+      {{ section.settings.description }}
+    </div>
+  </div>
+  <div class="product-masonry__content">
+    <div class="product-masonry__content-inner">
+      <div class="product-masonry__content-media">
+        {% if section.settings.image %}
+          <div class="product-masonry__content-media-image">
+            <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
+            <div class="product-masonry__content-media-image-caption_container">
+              {% if section.settings.image_caption %}
+                <h1 class="product-masonry__content-media-image-caption h1 yantramanav-bold">
+                  {{ section.settings.image_caption }}
+                </h1>
+              {% endif %}
+              {% if section.settings.button_label %}
+                <div class="product-masonry__content-media-image-button">
+                  <a href="{{ section.settings.button_link }}" class="button button--solid">
+                    {{- section.settings.button_label }}
+                  </a>
+                </div>
+              {% endif %}
             </div>
-         </div>
+          </div>
+        {% endif %}
       </div>
-   </div>
+
+      <div class="product-masonry__content-products">
+        <div class="product-masonry__content-products-inner">
+          {% for product in section.settings.product_list %}
+            <div class="product-masonry__content-products-item">
+              {%- render 'product-item', product: product, index: forloop.index0 -%}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% schema %}
-   {
-      "name": "Product Masonry",
-      "settings": [
-         {
-            "type": "header",
-            "content": "Content"
-         },
-         {
-            "type": "text",
-            "id": "title",
-            "label": "Title"
-         },
-         {
-            "type": "richtext",
-            "id": "description",
-            "label": "Description"
-         },  
-         {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-         },
-         {
-            "type": "text",
-            "id": "image_caption",
-            "label": "Image Caption"
-         },
-         {
-            "type": "text",
-            "id": "button_label",
-            "label": "Button Label"
-         },
-         {
-            "type": "url",
-            "id": "button_link", 
-            "label": "Button Link"
-         },
-         {
-            "type": "header",
-            "content": "Products"
-         },
-         {
-           "type": "product_list",
-           "id": "product_list",
-           "label": "Products",
-           "limit": 4
-         }
-      ],
-      "presets": [
-         {
-            "name": "Product Masonry Gallery"
-         }
-      ]
-   }
+{
+  "name": "Product Masonry",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image Caption"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products",
+      "limit": 4,
+      "info": "Select up to 4 products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Masonry Gallery"
+    }
+  ]
+}
 {% endschema %}

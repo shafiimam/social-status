@@ -88,8 +88,11 @@
     "header_text": "#000000",
     "main_background": "#ffffff",
     "headings_font": "montserrat_n6",
+    "headings_size": 64,
     "headings_hr": false,
-    "body_font": "montserrat_n5",
+    "body_font": "work_sans_n4",
+    "secondary_font": "montserrat_n4",
+    "buttons_radius": 27,
     "product_card_aspect_ratio": "0.83333",
     "product_thumbnail_fit": false,
     "proudct_card_aspect_ratio_padding": 0,
@@ -103,6 +106,7 @@
     "cart_notes_enable": true,
     "cart_image_ratio": "1",
     "cart_image_fit": true,
-    "cart_image_border": "#f1f1f1"
+    "cart_image_border": "#f1f1f1",
+    "content_for_index": []
   }
 }

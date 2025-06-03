@@ -18,13 +18,13 @@
             "image": "shopify://shop_images/Untitled-1_dccf1ea4-b2d1-470d-ad44-c8b3070e7a4b.jpg",
             "image_mobile": "shopify://shop_images/38blog.jpg",
             "title": "social status x honor the gift",
-            "subtitle": "",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#000000",
-            "button_color": "",
-            "content_position_x": 71,
-            "overlay_opacity": 12
+            "subtitle": "now avaialable",
+            "button_text": "Shop now",
+            "button_link": "shopify://collections/air-max",
+            "text_color": "#ffffff",
+            "button_color": "#000000",
+            "content_position_x": 75,
+            "overlay_opacity": 20
           }
         },
         "slide_xaX3GE": {
@@ -33,12 +33,12 @@
             "image": "shopify://shop_images/38adesk4.jpg",
             "image_mobile": "shopify://shop_images/drop.jpg",
             "title": "social status x honor the gift",
-            "subtitle": "",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "",
-            "button_color": "",
-            "content_position_x": 50,
+            "subtitle": "now avaialable",
+            "button_text": "Shop now",
+            "button_link": "shopify://collections/air-max",
+            "text_color": "#ffffff",
+            "button_color": "#000000",
+            "content_position_x": 75,
             "overlay_opacity": 20
           }
         }
@@ -50,6 +50,186 @@
       "name": "Hero Slideshow",
       "settings": {
         "title": ""
+      }
+    },
+    "product_masonry_Fnqqrw": {
+      "type": "product-masonry",
+      "name": "Product Masonry Gallery",
+      "settings": {
+        "title": "new arrivals",
+        "description": "<p>A space connected to several of our Social Status locations where we activate a variety of community focused events. beSOCIAL also acts as a free space for the local community to make their own.</p>",
+        "image": "shopify://shop_images/masonry-gallery-image.png",
+        "image_caption": "honor the gift",
+        "button_label": "see all arrivals",
+        "button_link": "shopify://collections/honor-the-gift",
+        "product_list": [
+          "home-studyos-03-planter-pierre",
+          "home-studyos-03-planter-pierre-1",
+          "human-made-6-panel-cap-3",
+          "nb-582"
+        ]
+      }
+    },
+    "rotating_slider_7yhr3n": {
+      "type": "rotating-slider",
+      "blocks": {
+        "slide_hG3FXr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/38amob1.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_NRbtNQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/53105_2.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_GwGfRX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_6255e0d8-2370-474b-8e07-c82762914149.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_X4xAp9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/RHSS25TT13012_2.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_XiGjjP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/htgmob.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_BrWgUR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/htgmob.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_VkUbBh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/htgmob.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        },
+        "slide_Wcp3ij": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/htgmob.jpg",
+            "slide_text": "Slide image",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_hG3FXr",
+        "slide_NRbtNQ",
+        "slide_GwGfRX",
+        "slide_X4xAp9",
+        "slide_XiGjjP",
+        "slide_BrWgUR",
+        "slide_VkUbBh",
+        "slide_Wcp3ij"
+      ],
+      "name": "Rotating Slider",
+      "settings": {
+        "heading": "Collections",
+        "subheading": "Browse our Collections and find the best fit",
+        "backdrop_text": "Culture"
+      }
+    },
+    "video_background_eCcVXP": {
+      "type": "video-background",
+      "blocks": {
+        "heading_Ha3kN8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2",
+            "seo_h_tag": "span"
+          }
+        },
+        "text_YBbiB4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ha3kN8",
+        "text_YBbiB4"
+      ],
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "#ffffff",
+        "custom_overlay": "#757575"
+      }
+    },
+    "virtual_try_on_nBhXAa": {
+      "type": "virtual-try-on",
+      "blocks": {
+        "image_KRKCbt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AJ14FERRARI-1.jpg"
+          }
+        },
+        "image_rmctTM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AJ14FERRARI-5.jpg"
+          }
+        },
+        "image_Eb7y3E": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AJ14FERRARI-5.jpg"
+          }
+        },
+        "image_8jdKK3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AJ14FERRARI-2.jpg"
+          }
+        },
+        "image_4mjdcF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AJ14FERRARI-1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_KRKCbt",
+        "image_rmctTM",
+        "image_Eb7y3E",
+        "image_8jdKK3",
+        "image_4mjdcF"
+      ],
+      "name": "Virtual Try-On",
+      "settings": {
+        "right_image": "shopify://shop_images/scan-qr.png"
       }
     },
     "16372498804121dda9": {
@@ -94,6 +274,7 @@
         "1637249880c19b891c-0",
         "1637249880c19b891c-1"
       ],
+      "disabled": true,
       "settings": {
         "desktop_layout": "split",
         "desktop_image_positioning": "image-on-left",
@@ -576,6 +757,10 @@
   },
   "order": [
     "hero_slideshow_8nKhq8",
+    "product_masonry_Fnqqrw",
+    "rotating_slider_7yhr3n",
+    "video_background_eCcVXP",
+    "virtual_try_on_nBhXAa",
     "16372498804121dda9",
     "16372293330d0f5bf6",
     "1637571021f6bdff72",

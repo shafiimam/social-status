@@ -11,15 +11,10 @@
 {%- endunless -%}
 {% # theme-check-enable AssetPreload %}
 {% comment %} Yantramanav font {% endcomment %}
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Bold.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Regular.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Light.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Medium.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Thin.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0262/2475/files/Yantramanav-Black.ttf?v=1747689439" as="font" type="font/ttf" crossorigin>
-
+<link rel="stylesheet" href="https://use.typekit.net/els0ojo.css">
+<link rel="stylesheet" href="https://use.typekit.net/els0ojo.css">
+<link rel="stylesheet" href="https://use.typekit.net/els0ojo.css">
 <style>
-
   {%- comment -%} Borders & alt backgrounds values {%- endcomment -%}
   {%- liquid
     assign borders_opacity = 0.08
@@ -28,7 +23,7 @@
     assign backgrounds_opacity = 0.18
     assign hover_opacity = 0.82
   -%}
-  
+
   {%- comment -%} Main color scheme {% endcomment %}
   {%- liquid
 
@@ -36,11 +31,11 @@
     assign main_background = settings.main_background
 
     assign main_text_brightness = main_text | color_brightness
-    if main_text_brightness > 150 
-      assign main_text_foreground = '#000' 
-    else 
-      assign main_text_foreground = '#fff' 
-    endif 
+    if main_text_brightness > 150
+      assign main_text_foreground = '#000'
+    else
+      assign main_text_foreground = '#fff'
+    endif
 
     assign main_hover = main_text | color_modify: 'alpha', hover_opacity
     assign main_borders = main_text | color_modify: 'alpha', borders_opacity
@@ -55,11 +50,11 @@
     assign header_background = settings.header_background
 
     assign header_text_brightness = header_text | color_brightness
-    if header_text_brightness > 150 
-      assign header_text_foreground = '#000' 
-    else 
-      assign header_text_foreground = '#fff' 
-    endif 
+    if header_text_brightness > 150
+      assign header_text_foreground = '#000'
+    else
+      assign header_text_foreground = '#fff'
+    endif
 
     assign header_borders = header_text | color_modify: 'alpha', borders_opacity
     assign header_grid_borders = header_text | color_modify: 'alpha', header_border_opacity
@@ -73,39 +68,49 @@
     assign footer_background = settings.footer_background
 
     assign footer_text_brightness = footer_text | color_brightness
-    if footer_text_brightness > 150 
-      assign footer_text_foreground = '#000' 
-    else 
-      assign footer_text_foreground = '#fff' 
-    endif 
+    if footer_text_brightness > 150
+      assign footer_text_foreground = '#000'
+    else
+      assign footer_text_foreground = '#fff'
+    endif
 
     assign footer_borders = footer_text | color_modify: 'alpha', borders_opacity
 
   -%}
 
   {%- comment -%} Fonts {% endcomment %}
-  {%- liquid 
+  {%- liquid
 
     echo headings_font | font_face: font_display: 'swap'
 
     echo body_font | font_face: font_display: 'swap'
-    assign body_font_bold = body_font | font_modify: 'weight', '+100' 
+    assign body_font_bold = body_font | font_modify: 'weight', '+100'
 
-    if body_font_bold == blank 
-      assign body_font_bold = body_font | font_modify: 'weight', '700' 
-    endif 
-    echo body_font_bold | font_face: font_display: 'swap' 
+    if body_font_bold == blank
+      assign body_font_bold = body_font | font_modify: 'weight', '700'
+    endif
+    echo body_font_bold | font_face: font_display: 'swap'
 
     assign body_font_italic = body_font | font_modify: 'style', 'italic'
     if body_font_italic
       echo body_font_italic | font_face: font_display: 'swap'
     endif
 
-  -%}
+    echo secondary_font | font_face: font_display: 'swap'
+    assign secondary_font_bold = secondary_font | font_modify: 'weight', '+100'
+    if secondary_font_bold == blank
+      assign secondary_font_bold = secondary_font | font_modify: 'weight', '700'
+    endif
+    echo secondary_font_bold | font_face: font_display: 'swap'
 
+    assign secondary_font_italic = secondary_font | font_modify: 'style', 'italic'
+    if secondary_font_italic
+      echo secondary_font_italic | font_face: font_display: 'swap'
+    endif
+
+  -%}
 </style>
 <style>
-
   :root {
 
     /* Main color scheme */
@@ -113,7 +118,7 @@
     --main-text: {{ main_text }};
     --main-text-hover: {{ main_hover }};
     --main-text-foreground: {{ main_text_foreground }};
-    
+
     --main-background: {{ main_background }};
     --main-background-secondary: {{ main_text | color_modify: 'alpha', backgrounds_opacity }};
     --main-background-third: {{ main_text | color_modify: 'alpha', 0.03 }};
@@ -121,10 +126,10 @@
     --grid-borders: {{ grid_borders }};
 
     /* Header & sidebars color scheme */
-    
+
     --header-text: {{ header_text }};
     --header-text-foreground: {{ header_text_foreground }};
-    
+
     --header-background: {{ header_background }};
     --header-background-secondary: {{ header_text | color_modify: 'alpha', backgrounds_opacity }};
     --header-borders: {{ header_borders }};
@@ -138,7 +143,7 @@
 
     --footer-text: {{ footer_text }};
     --footer-text-foreground: {{ footer_text_foreground }};
-    
+
     --footer-background: {{ footer_background }};
     --footer-background-secondary: {{ footer_text | color_modify: 'alpha', backgrounds_opacity }};
     --footer-borders: {{ footer_borders }};
@@ -156,10 +161,10 @@
     --font-weight-headings: {{ headings_font.weight }};
     --font-style-headings: {{ headings_font.style }};
 
-    --font-stack-body: 'Yantramanav', {{ body_font.family }}, {{ body_font.fallback_families }};
+    --font-stack-body: {{ body_font.family }}, {{ body_font.fallback_families }};
     --font-weight-body: {{ body_font.weight }};
     {%- if body_font_bold -%}
-      --font-weight-body-bold: {{ body_font_bold.weight }}; 
+      --font-weight-body-bold: {{ body_font_bold.weight }};
     {%- else -%}
       --font-weight-body-bold: 700;
     {%- endif -%}
@@ -169,6 +174,11 @@
     --base-headings-line: {{ settings.headings_line }};
     --base-body-size: {{ settings.body_size }};
     --base-body-line: {{ settings.body_line }};
+
+    --font-stack-secondary: {{ secondary_font.family }}, {{ secondary_font.fallback_families }};
+    --font-weight-secondary: {{ secondary_font.weight }};
+    --font-style-secondary: {{ secondary_font.style }};
+
 
   }
 
@@ -180,11 +190,11 @@
   {%- if settings.sidebar_text != settings.main_text -%}
     {%- liquid
       assign sidebar_text_brightness = sidebar_text | color_brightness
-      if sidebar_text_brightness > 150 
-        assign sidebar_text_foreground = '#000' 
-      else 
-        assign sidebar_text_foreground = '#fff' 
-      endif 
+      if sidebar_text_brightness > 150
+        assign sidebar_text_foreground = '#000'
+      else
+        assign sidebar_text_foreground = '#fff'
+      endif
     -%}
     sidebar-drawer {
     --main-text: {{ sidebar_text }};
@@ -203,5 +213,4 @@
       --main-background: {{ sidebar_background }};
     }
   {%- endif -%}
-
 </style>

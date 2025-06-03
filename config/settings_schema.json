@@ -151,6 +151,16 @@
       },
       {
         "type": "header",
+        "content": "secondary font"
+      },
+      {
+        "type": "font_picker",
+        "id": "secondary_font",
+        "label": "Font Family",
+        "default": "montserrat_n5"
+      },
+      {
+        "type": "header",
         "content": "t:sections.split-extra-words.settings_schema.typography.headings.buttons"
       },
       {
