@@ -12,7 +12,7 @@
 }
 
 .rotating-slider {
-  margin: 5em auto;
+  margin-top: 80px;
   height: 360px;
   position: relative;
   width: 400px;
@@ -27,8 +27,8 @@
 }
 .rotating-slider ul.direction-controls li.left-arrow {
   position: absolute;
-  top: 90%;
-  right: 85%;
+  top: 80%;
+  right: 75%;
   z-index: 2;
   transform: translateY(-50%);
   @media (max-width: 768px) {
@@ -37,8 +37,8 @@
 }
 .rotating-slider ul.direction-controls li.right-arrow {
   position: absolute;
-  top: 90%;
-  left: 85%;
+  top: 80%;
+  left: 75%;
   z-index: 2;
   transform: translateY(-50%);
   @media (max-width: 768px) {
@@ -57,6 +57,11 @@
   border: 0.761px solid #fff;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(1.522365927696228px);
+  @media screen and (max-width: 768px) {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+  }
 }
 .rotating-slider ul.direction-controls li button:hover {
   background: rgba(0, 0, 0, 0.6);
@@ -140,4 +145,14 @@
   height: max-content;
   width: max-content;
   margin: auto;
+}
+
+p.slide-text {
+  position: absolute;
+  top: 75%;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
