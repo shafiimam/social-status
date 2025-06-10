@@ -1,0 +1,315 @@
+.latest-features-section {
+  margin-block: 120px;
+  padding-inline: 85px;
+  @media (max-width: 980px) {
+    margin-block: 60px;
+    padding-inline: 20px;
+  }
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  @media (max-width: 980px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.header-row .title-column {
+  max-width: 732px;
+  width: 100%;
+}
+
+.title-column .main-title,
+.title-column .sub-title {
+  color: #292929;
+  text-align: center;
+  font-family: Yantramanav;
+  font-size: clamp(40px, 5vw, 64px);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.arrow-text-vertical {
+  color: var(--Brand_secondary);
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 6.72px;
+  text-transform: uppercase;
+}
+.arrow-text-horizontal-1,
+.arrow-text-horizontal-2 {
+  color: var(--Brand_secondary);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.arrow-text-horizontal-1.font-zen {
+  position: absolute;
+  top: 7px;
+  right: 52px;
+  transform: rotate(225deg);
+}
+.arrow-text-horizontal-2.font-zen {
+  position: absolute;
+  top: 7px;
+  left: 52px;
+  transform: rotate(315deg);
+}
+.title-column {
+  flex: 1;
+}
+.arrow-label {
+  writing-mode: sideways-lr;
+  transform: rotate(180deg);
+  font-weight: bold;
+  position: relative;
+  margin-right: 52px;
+  @media (max-width: 980px) {
+    margin-right: 0;
+  }
+}
+.tab-groups-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 80px;
+  @media (max-width: 980px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 60px;
+  }
+}
+.tabs-panel {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 55px;
+}
+.tab-image-item {
+  display: none;
+}
+.tab-image-item.active {
+  display: block;
+}
+
+.tabs-panel .tab-list-nav-item {
+  display: flex;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 62px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.tabs-panel .tab-list-nav-item:hover {
+  border: 1px solid var(--Brand_secondary);
+  transition: all 0.3s ease-in-out;
+}
+.tabs-panel .tab-list-nav-item.active {
+  background: var(--Brand_secondary);
+}
+.tab-list-nav-item-title {
+  color: var(--card-foreground, #09090b);
+  font-family: Yantramanav;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+}
+.tabs-panel .tab-list-nav-item.active .tab-list-nav-item-title {
+  color: #fff;
+}
+.tab-list-item-title {
+  color: #040404;
+  font-size: clamp(22px, 5vw, 32px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+}
+.tab-list-item-index {
+  color: #727272;
+  text-align: center;
+  font-family: Yantramanav;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+.tab-list-item-container {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  display: none;
+  cursor: pointer;
+}
+.tab-list-item-container.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.tab-list-item-container.active.expanded .tab-list-item-title {
+  color: #040404;
+  font-family: Yantramanav;
+  font-size: clamp(24px, 5vw, 39px);
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.78px;
+  text-transform: uppercase;
+}
+
+.tab-list-item-container .tab-list-item-subtitle,
+.tab-list-item-container .tab-list-item-button {
+  display: none;
+  overflow: hidden;
+}
+
+.tab-list-item-container.expanded .tab-list-item-subtitle,
+.tab-list-item-container.expanded .tab-list-item-button {
+  animation: slideUp 0.3s ease-in;
+  display: flex;
+}
+.tab-list-item-header {
+  display: grid;
+  grid-template-columns: 50px 1fr 100px;
+  align-items: flex-start;
+  gap: 24px;
+  padding-block: 30px;
+  @media (max-width: 980px) {
+    grid-template-columns: 50px 1fr;
+    padding-block: 20px;
+  }
+}
+p.tab-list-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 0;
+}
+span.tab-list-item-subtitle {
+  color: var(--muted-foreground, #71717a);
+  font-family: Yantramanav;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 400px;
+  text-align: left;
+}
+.tab-list-item-date {
+  color: var(--Secondary-Text, #727272);
+  font-family: Yantramanav;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+.tab-list-item-date-mobile-only {
+  display: none;
+  color: var(--Secondary-Text, #727272);
+  font-family: Yantramanav;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  @media (max-width: 980px) {
+    display: block;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+button.tab-list-item-button {
+  border-radius: 62px;
+  border: 1px solid #000;
+  background: #000;
+  display: flex;
+  padding: 4px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+}
+button.tab-list-item-button span {
+  color: #fff;
+  font-family: Yantramanav;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+button.tab-list-item-button:hover {
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  transition: all 0.2s ease-in;
+}
+button.tab-list-item-button:hover span {
+  color: #000;
+  transition: all 0.2s ease-in;
+}
+button.tab-list-item-button:hover svg {
+  transform: translateX(5px);
+  transition: all 0.3s ease-in;
+}
+button.tab-list-item-button:hover svg path {
+  stroke: #000;
+  transition: all 0.2s ease-in;
+}
+
+@keyframes slideUp {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.tab-list-item-mobile-image img {
+  display: none;
+}
+@media (max-width: 980px) {
+  .tab-images-column {
+    display: none;
+  }
+  .tab-list-item-container.active.expanded .tab-list-item-mobile-image img {
+    display: block;
+  }
+  .tab-list-item-container.expanded {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

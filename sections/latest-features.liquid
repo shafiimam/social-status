@@ -1,0 +1,259 @@
+{% schema %}
+{
+  "name": "Latest Features & Events",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title"
+    },
+    {
+      "type": "select",
+      "id": "main_title_align",
+      "label": "Main Title Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_align",
+      "label": "Sub Title Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "arrow_text_1",
+      "label": "Arrow Text Vertical"
+    },
+    {
+      "type": "text",
+      "id": "arrow_text_2",
+      "label": "Arrow Text Horizontal"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_block",
+      "name": "Item Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_group_title",
+          "label": "Tab Group Title",
+          "info": "This will group the items in a tab by this title"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_image",
+          "label": "Item Image"
+        },
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Item Title"
+        },
+        {
+          "type": "text",
+          "id": "item_date",
+          "label": "Item Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_subtitle",
+          "label": "Item Subtitle"
+        },
+        {
+          "type": "text",
+          "id": "item_index",
+          "label": "Item Index",
+          "default": "01"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest Features & Events",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'section-latest-features.css' | asset_url | stylesheet_tag }}
+
+{% assign tabs_list = section.blocks | map: 'settings' | map: 'tab_group_title' | uniq %}
+<div class="latest-features-section">
+  <div class="header-row">
+    <div class="title-column">
+      <h2 class="main-title" style="text-align: {{ section.settings.main_title_align }}">
+        {{ section.settings.main_title }}
+      </h2>
+      <h2 class="sub-title" style="text-align: {{ section.settings.sub_title_align }}">
+        {{ section.settings.sub_title }}
+      </h2>
+    </div>
+    <div class="arrow-label">
+      <span class="arrow-text-vertical font-zen" aria-hidden="true">{{ section.settings.arrow_text_1 }}</span>
+      <span class="arrow-text-horizontal-1 font-zen" aria-hidden="true">{{ section.settings.arrow_text_2 }}</span>
+      <span class="arrow-text-horizontal-2 font-zen" aria-hidden="true">{{ section.settings.arrow_text_2 }}</span>
+    </div>
+  </div>
+
+  <div class="tab-groups-container">
+    <div class="tab-images-column">
+      {% for block in section.blocks %}
+        <div
+          class="tab-image-item {% if forloop.first %}active{% endif %}"
+          data-tab-id="{{ block.id }}"
+          data-tab-image-index="{{ forloop.index0 }}"
+          data-tab-group-title="{{ block.settings.tab_group_title }}"
+        >
+          <img
+            src="{{ block.settings.item_image | img_url: 'master' }}"
+            alt="{{ block.settings.item_title }}"
+            width="100%"
+            height="100%"
+          >
+        </div>
+      {% endfor %}
+    </div>
+    <div class="tab-list-navs">
+      <div class="tabs-panel">
+        {% for tab in tabs_list %}
+          <button class="tab-list-nav-item {% if forloop.first %}active{% endif %}" data-tab-group-title="{{ tab }}">
+            <span class="tab-list-nav-item-title">{{ tab }}</span>
+          </button>
+        {% endfor %}
+      </div>
+
+      <ul class="tab-list-item-contents">
+        {% for tab_item in tabs_list %}
+          {% assign tab_item_index = 1 %}
+          {% assign current_tab_items_length = 0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.tab_group_title == tab_item %}
+              {% assign current_tab_items_length = current_tab_items_length | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% for block in section.blocks %}
+            {% assign first_tab_group_title = tabs_list.first %}
+            {% if block.settings.tab_group_title == tab_item %}
+              <div
+                class="tab-list-item-container {% if block.settings.tab_group_title == first_tab_group_title %}active{% endif %} {% if forloop.first %}expanded{% endif %}"
+                data-tab-group-title="{{ tab_item }}"
+                data-tab-id="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                <div class="tab-list-item-header">
+                  <p class="tab-list-item-index">/{{ block.settings.item_index }}</p>
+                  <div class="tab-list-item-content-container">
+                    <p class="tab-list-item-content">
+                      <span class="tab-list-item-title font-zen">{{ block.settings.item_title }}</span>
+                      <span class="tab-list-item-subtitle">{{ block.settings.item_subtitle }}</span>
+                      <span class="tab-list-item-date-mobile-only">{{ block.settings.item_date }}</span>
+                      <button
+                        class="tab-list-item-button"
+                        onclick="addToCalendar('{{ block.settings.item_title }}', '{{ block.settings.item_date }}')"
+                      >
+                        <span> Add to Calendar </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                    </p>
+                  </div>
+                  <span class="tab-list-item-date">{{ block.settings.item_date }}</span>
+                </div>
+                <div class="tab-list-item-mobile-image">
+                  <img
+                    src="{{ block.settings.item_image | img_url: 'master' }}"
+                    alt="{{ block.settings.item_title }}"
+                    width="100%"
+                    height="100%"
+                  >
+                </div>
+              </div>
+            {% endif %}
+            {% if forloop.index == current_tab_items_length %}
+              {% assign tab_item_index = tab_item_index | minus: forloop.index %}
+            {% else %}
+              {% assign tab_item_index = tab_item_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-list-nav-item').forEach((btn) => {
+    btn.addEventListener('click', function () {
+      const tabListNavItems = document.querySelectorAll('.tab-list-nav-item');
+      tabListNavItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+      btn.classList.add('active');
+
+      const tabGroupTitle = btn.dataset.tabGroupTitle;
+      const tabImages = document.querySelectorAll('.tab-image-item');
+      const tabImagesOfThatTab = document.querySelectorAll(`.tab-image-item[data-tab-group-title="${tabGroupTitle}"]`);
+      tabImages.forEach((item) => {
+        item.classList.remove('active');
+      });
+      tabImagesOfThatTab[0].classList.add('active');
+      const allTabsListItems = document.querySelectorAll('.tab-list-item-container');
+      const tabListItems = document.querySelectorAll(
+        `.tab-list-item-container[data-tab-group-title="${tabGroupTitle}"]`
+      );
+      allTabsListItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+      tabListItems.forEach((item) => {
+        item.classList.add('active');
+      });
+      tabListItems[0].classList.add('expanded');
+    });
+  });
+
+  document.querySelectorAll('.tab-list-item-container').forEach((item) => {
+    item.addEventListener('click', function () {
+      const tabListItems = document.querySelectorAll('.tab-list-item-container');
+      tabListItems.forEach((item) => {
+        item.classList.remove('expanded');
+      });
+      item.classList.add('expanded');
+      const tabId = item.dataset.tabId;
+      const tabsListItemImages = document.querySelectorAll('.tab-image-item');
+      const tabsListItemImagesOfThatTab = document.querySelectorAll(`.tab-image-item[data-tab-id="${tabId}"]`);
+      tabsListItemImages.forEach((item) => {
+        item.classList.remove('active');
+      });
+      tabsListItemImagesOfThatTab[0].classList.add('active');
+    });
+  });
+
+  function addToCalendar(title, dateStr) {
+    const startDate = new Date(dateStr).toISOString().replace(/[-:]|\.\d{3}/g, '');
+    const endDate = new Date(new Date(dateStr).getTime() + 60 * 60 * 1000).toISOString().replace(/[-:]|\.\d{3}/g, '');
+    const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      title
+    )}&dates=${startDate}/${endDate}`;
+    window.open(calendarUrl, '_blank');
+  }
+</script>
