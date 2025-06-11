@@ -229,168 +229,169 @@
       ],
       "name": "Virtual Try-On",
       "settings": {
-        "right_image": "shopify://shop_images/scan-qr.png"
+        "right_image": "shopify://shop_images/scan-qr.png",
+        "heading": "Step In The Culture",
+        "subheading": "Step In The Culture"
       }
     },
-    "16372498804121dda9": {
-      "type": "split-screen-slider",
+    "latest_features_f6y9et": {
+      "type": "latest-features",
       "blocks": {
-        "1637249880c19b891c-2": {
-          "type": "slide",
+        "item_block_aLnVeA": {
+          "type": "item_block",
           "settings": {
-            "tagline": "Introducing",
-            "title": "Our brand new store",
-            "subtitle": "Showcase your best products",
-            "button_label": "Explore all",
-            "button_link": "",
-            "seo_h_tag": "h2"
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-4.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
           }
         },
-        "1637249880c19b891c-0": {
-          "type": "slide",
+        "item_block_cbtrBD": {
+          "type": "item_block",
           "settings": {
-            "tagline": "Why not",
-            "title": "Write about yourself",
-            "subtitle": "Include some awesome images",
-            "button_label": "Learn more",
-            "button_link": "shopify://collections/new-os2-0",
-            "seo_h_tag": "h2"
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/new_arrivals_pic.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
           }
         },
-        "1637249880c19b891c-1": {
-          "type": "slide",
+        "item_block_rQnm4N": {
+          "type": "item_block",
           "settings": {
-            "tagline": "Take the opportunity to",
-            "title": "Promot your products",
-            "subtitle": "Include various promotions and flash sales",
-            "button_label": "Shop now",
-            "button_link": "",
-            "seo_h_tag": "h2"
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-2.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_HMQgrV": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "04"
+          }
+        },
+        "item_block_bF3PUJ": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_kB8RDV": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/AJ14FERARRIGS-2.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_BpfaH6": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_UE6MBQ": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_wMPQnT": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/new_features_pic.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_TXgtTy": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/htgmob1_97df35d3-cb08-405b-98b4-cb1be80d490a.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_iBqQJC": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Workshops",
+            "item_image": "shopify://shop_images/htgmob2.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_At99Mq": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Workshops",
+            "item_image": "shopify://shop_images/JAIDEXNB998-8.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
           }
         }
       },
       "block_order": [
-        "1637249880c19b891c-2",
-        "1637249880c19b891c-0",
-        "1637249880c19b891c-1"
+        "item_block_aLnVeA",
+        "item_block_cbtrBD",
+        "item_block_rQnm4N",
+        "item_block_HMQgrV",
+        "item_block_bF3PUJ",
+        "item_block_kB8RDV",
+        "item_block_BpfaH6",
+        "item_block_UE6MBQ",
+        "item_block_wMPQnT",
+        "item_block_TXgtTy",
+        "item_block_iBqQJC",
+        "item_block_At99Mq"
       ],
-      "disabled": true,
+      "name": "Latest Features & Events",
       "settings": {
-        "desktop_layout": "split",
-        "desktop_image_positioning": "image-on-left",
-        "desktop_text": "rgba(0,0,0,0)",
-        "desktop_background": "#ebebed",
-        "desktop_overlay": "rgba(0,0,0,0)",
-        "mobile_height": "var(--window-height)",
-        "mobile_text": "#ffffff",
-        "mobile_background": "#000000",
-        "heading_size": "h1"
-      }
-    },
-    "16372293330d0f5bf6": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Bestsellers",
-        "subtitle": "Shop Now",
-        "collection": "",
-        "collection_rows": 3,
-        "show_view_all": true,
-        "seo_h_tag": "h2"
-      }
-    },
-    "1637571021f6bdff72": {
-      "type": "heading",
-      "blocks": {
-        "1637571020263843ae-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2",
-            "seo_h_tag": "h2"
-          }
-        },
-        "1637571020263843ae-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "1637571020263843ae-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "LEARN more",
-            "button_link": "shopify://pages/about-us"
-          }
-        }
-      },
-      "block_order": [
-        "1637571020263843ae-0",
-        "1637571020263843ae-1",
-        "1637571020263843ae-2"
-      ],
-      "settings": {
-        "text_alignment": "center",
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)"
-      }
-    },
-    "16361066840a222f4b": {
-      "type": "image-with-text",
-      "blocks": {
-        "16361066840a222f4b-0": {
-          "type": "image",
-          "settings": {
-            "subtitle": "Share your latest news",
-            "title": "Write your story",
-            "button_label": "Explore",
-            "url": "",
-            "custom_text": "rgba(0,0,0,0)",
-            "custom_overlay": "rgba(0,0,0,0)",
-            "seo_h_tag": "h2"
-          }
-        },
-        "16361066840a222f4b-1": {
-          "type": "image",
-          "settings": {
-            "subtitle": "Share your latest news",
-            "title": "Write your story",
-            "button_label": "Explore",
-            "url": "",
-            "custom_text": "rgba(0,0,0,0)",
-            "custom_overlay": "rgba(0,0,0,0)",
-            "seo_h_tag": "h2"
-          }
-        }
-      },
-      "block_order": [
-        "16361066840a222f4b-0",
-        "16361066840a222f4b-1"
-      ],
-      "settings": {
-        "image_height": "full",
-        "text_alignment": "horizontal-center vertical-middle"
-      }
-    },
-    "1636443645b6d4e74b": {
-      "type": "video-background",
-      "blocks": {
-        "311fd199-9ef1-48bd-9e6e-c8b3897153ed": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2",
-            "seo_h_tag": "span"
-          }
-        }
-      },
-      "block_order": [
-        "311fd199-9ef1-48bd-9e6e-c8b3897153ed"
-      ],
-      "settings": {
-        "video_height": "56.25%",
-        "text_alignment": "horizontal-center vertical-middle",
-        "custom_text": "#ffffff",
-        "custom_overlay": "#000000"
+        "main_title": "Latest Features",
+        "main_title_align": "left",
+        "sub_title": "and Events",
+        "sub_title_align": "right",
+        "arrow_text_1": "Cultutre",
+        "arrow_text_2": "Events"
       }
     },
     "1636106679435e5a7a": {
@@ -450,129 +451,6 @@
       ],
       "settings": {
         "desktop_image_positioning": "image-on-left"
-      }
-    },
-    "1636106675d59d7642": {
-      "type": "rich-text",
-      "blocks": {
-        "1636106675d59d7642-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "seo_h_tag": "h3"
-          }
-        },
-        "1636106675d59d7642-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "1636106675d59d7642-0",
-        "1636106675d59d7642-1"
-      ],
-      "settings": {
-        "title": "Call to action",
-        "btn_label": "More info",
-        "btn_url": "",
-        "desktop_image_positioning": "image-on-left",
-        "bg_overlay": false,
-        "custom_background": "#1c1c1c",
-        "custom_text": "#f3f3f3",
-        "seo_h_tag": "h2"
-      }
-    },
-    "1636106673daa45393": {
-      "type": "testimonials",
-      "blocks": {
-        "1636106673daa45393-0": {
-          "type": "text",
-          "settings": {
-            "quote_content": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "quote_author": "Author",
-            "quote_caption": "Customer"
-          }
-        },
-        "1636106673daa45393-1": {
-          "type": "text",
-          "settings": {
-            "quote_content": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "quote_author": "Author",
-            "quote_caption": "Customer"
-          }
-        },
-        "95c555f2-e81f-4479-895d-d65b0f4b142e": {
-          "type": "text",
-          "settings": {
-            "quote_content": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "quote_author": "Author",
-            "quote_caption": "Customer"
-          }
-        },
-        "45940e4e-8ada-4520-b198-d02589033b4a": {
-          "type": "text",
-          "settings": {
-            "quote_content": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "quote_author": "Author",
-            "quote_caption": "Customer"
-          }
-        }
-      },
-      "block_order": [
-        "1636106673daa45393-0",
-        "1636106673daa45393-1",
-        "95c555f2-e81f-4479-895d-d65b0f4b142e",
-        "45940e4e-8ada-4520-b198-d02589033b4a"
-      ],
-      "settings": {
-        "title": "Testimonials",
-        "subtitle": "Share your client's stories",
-        "show_avatars": true,
-        "custom_background": "#212121",
-        "custom_text": "#efefef",
-        "mobile_layout": true,
-        "seo_h_tag": "h2"
-      }
-    },
-    "1637572030c4b90431": {
-      "type": "collection-slider",
-      "settings": {
-        "title": "Featured collection",
-        "collection": "",
-        "products_per_page": 4,
-        "show_view_all": true,
-        "seo_h_tag": "h2"
-      }
-    },
-    "163757206347de448b": {
-      "type": "blog-posts",
-      "blocks": {
-        "1637572063adf12f86-0": {
-          "type": "info",
-          "settings": {
-            "show_date": true,
-            "show_author": false
-          }
-        },
-        "1637572063adf12f86-1": {
-          "type": "title",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "1637572063adf12f86-0",
-        "1637572063adf12f86-1"
-      ],
-      "settings": {
-        "title": "Latest Articles",
-        "blog": "news",
-        "post_limit": 4,
-        "show_view_all": true,
-        "custom_text": "#ffffff",
-        "custom_overlay": "#000000",
-        "seo_h_tag": "h2"
       }
     },
     "16377493211fd93093": {
@@ -761,17 +639,9 @@
     "rotating_slider_7yhr3n",
     "video_background_eCcVXP",
     "virtual_try_on_nBhXAa",
-    "16372498804121dda9",
-    "16372293330d0f5bf6",
-    "1637571021f6bdff72",
-    "16361066840a222f4b",
-    "1636443645b6d4e74b",
+    "latest_features_f6y9et",
     "1636106679435e5a7a",
     "1637226889f182ad79",
-    "1636106675d59d7642",
-    "1636106673daa45393",
-    "1637572030c4b90431",
-    "163757206347de448b",
     "16377493211fd93093",
     "1637674728c7c82700",
     "16371348113d6d6d6d",
