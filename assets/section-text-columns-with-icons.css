@@ -47,8 +47,8 @@
   margin-bottom: 1.8em;
 }
 .text-w-icon__icon svg {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
 }
 .text-w-icon__icon svg * {
   fill: none !important;

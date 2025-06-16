@@ -16,11 +16,11 @@
 						<span>
 							{%- if block.settings.custom_icon != blank -%}
 				        <img 
-									src="{{ block.settings.custom_icon | image_url: width: 64, height: 64, crop: 'center' }}" 
+									src="{{ block.settings.custom_icon | image_url: width: 32, height: 32, crop: 'center' }}" 
 									alt="{{ block.settings.custom_icon.alt | escape }}" 
-									width="64" height="64" style="width:64px;height:64px;" loading="lazy"
+									width="32" height="32" style="width:32px;height:32px;" loading="lazy"
 									srcset="
-										{{ block.settings.custom_icon | image_url: width: 64, height: 64, crop: 'center' }} 64w
+										{{ block.settings.custom_icon | image_url: width: 32 , height: 32 , crop: 'center' }} 32 w
 										{% if block.settings.custom_icon.width >= 128 %} ,{{ block.settings.custom_icon | image_url: width: 128, height: 128, crop: 'center' }} 128w, {% endif %} 
 										{% if block.settings.custom_icon.width >= 192 %} ,{{ block.settings.custom_icon | image_url: width: 192, height: 192, crop: 'center' }} 192w, {% endif %} 
 										{% if block.settings.custom_icon.width >= 256 %} ,{{ block.settings.custom_icon | image_url: width: 256, height: 256, crop: 'center' }} 256w, {% endif %} 

@@ -1,0 +1,111 @@
+{{ 'section-floating-testimonials.css' | asset_url | stylesheet_tag }}
+{% capture testimonial_content %}
+  {% for block in section.blocks %}
+    <div class="floating-testimonials-section__testimonial" {{ block.shopify_attributes }}>
+      <div class="floating-testimonials-section__testimonial-header">
+        {% if block.settings.avatar != blank %}
+          <img
+            src="{{ block.settings.avatar | img_url: '100x100' }}"
+            alt="{{ block.settings.name }}"
+            class="w-10 h-10 rounded-full object-cover"
+            width="50"
+            height="50"
+          >
+        {% endif %}
+        <span class="">{{ block.settings.name }}</span>  
+      </div>
+      <p class="">{{ block.settings.quote }}</p>
+    </div>
+  {% endfor %}
+{% endcapture %}
+<section class="floating-testimonials-section">
+  <div class="floating-testimonials-section__inner">
+    <div class="floating-testimonials-section__header">
+      <h1 class="h1 heading text-center">{{ section.settings.section_title }}</h1>
+    </div>
+
+    <div class="floating-testimonials-section__testimonial-container">
+      <div class="floating-testimonials-section__right-overlay"></div>
+      <div class="floating-testimonials-section__left-overlay"></div>
+      <div
+        class="floating-testimonials-section__testimonial-track"
+        data-flickity='
+          {
+            "wrapAround": true,
+            "pauseAutoPlayOnHover": false,
+            "prevNextButtons": false,
+            "pageDots": false,
+            "freeScroll": true,
+            "freeScrollFriction": 0.01,
+            "cellAlign": "left",
+            "autoPlay": 3000
+          }
+        '
+      >
+        {{ testimonial_content }}
+      </div>
+      <div
+        class="floating-testimonials-section__testimonial-track "
+        data-flickity='
+          {
+            "wrapAround": true,
+            "pauseAutoPlayOnHover": false,
+            "prevNextButtons": false,
+            "pageDots": false,
+            "freeScroll": true,
+            "freeScrollFriction": 0.01,
+            "cellAlign": "right",
+            "autoPlay": 4000,
+            "rightToLeft": true
+          }
+        '
+      >
+        {%- comment -%} Duplicate blocks for infinite illusion {%- endcomment -%}
+        {{ testimonial_content }}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Floating Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Testimonials"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Floating Testimonials",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
