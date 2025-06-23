@@ -36,7 +36,7 @@
         </div>
       {% endfor %}
     </div>
-    <div class="tab-list-navs">
+    <div class="tab-list-navs" data-tabs-hidden="{{ section.settings.show_tab_list }}">
       {% if section.settings.show_tab_list %}
         <div class="tabs-panel">
           {% for tab in tabs_list %}
@@ -121,7 +121,7 @@
       "type": "text",
       "id": "main_title_width",
       "label": "Main Title Width",
-      "default": "732"
+      "default": "732" 
     },
     {
       "type": "select",

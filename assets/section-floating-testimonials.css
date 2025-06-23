@@ -42,8 +42,6 @@
   border: 1px solid #eee;
   background: rgba(237, 237, 237, 0.2);
   margin-inline-end: 24px;
-  /* animation: scroll-left 10s linear infinite;
-  will-change: transform; */
 }
 .floating-testimonials-section__testimonial-header{
   display: flex;
@@ -87,5 +85,8 @@
   }
   .floating-testimonials-section__header {
     margin-bottom: 40px;
+  }
+  .floating-testimonials-section__testimonial {
+    width: 350px;
   }
 }

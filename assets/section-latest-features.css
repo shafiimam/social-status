@@ -19,7 +19,6 @@
 .header-row .title-column {
   max-width: 732px;
   width: 100%;
-  margin-right: 60px;
 }
 
 .title-column .main-title,
@@ -34,7 +33,7 @@
 }
 
 .arrow-text-vertical {
-  color: var(--Brand_secondary);
+  color: var(--brand-secondary);
   text-align: center;
   font-size: 28px;
   font-style: normal;
@@ -45,7 +44,7 @@
 }
 .arrow-text-horizontal-1,
 .arrow-text-horizontal-2 {
-  color: var(--Brand_secondary);
+  color: var(--brand-secondary);
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -119,11 +118,11 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 .tabs-panel .tab-list-nav-item:hover {
-  border: 1px solid var(--Brand_secondary);
+  border: 1px solid var(--brand-secondary);
   transition: all 0.3s ease-in-out;
 }
 .tabs-panel .tab-list-nav-item.active {
-  background: var(--Brand_secondary);
+  background: var(--brand-secondary);
 }
 .tab-list-nav-item-title {
   color: var(--card-foreground, #09090b);

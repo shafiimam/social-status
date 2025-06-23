@@ -11,63 +11,14 @@
   "type": "footer",
   "name": "t:sections.refactor_words.labels.footer_group",
   "sections": {
-    "text-columns-with-icons": {
-      "type": "text-columns-with-icons",
-      "blocks": {
-        "icon-1": {
-          "type": "text-icon",
-          "settings": {
-            "title": "Delivery",
-            "body": "<p>Reliable shipping that keeps you in the loop from checkout to doorstep.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/carbon_delivery.png"
-          }
-        },
-        "icon-2": {
-          "type": "text-icon",
-          "settings": {
-            "title": "RETURNS & EXCHANGES",
-            "body": "<p>A smooth, flexible process designed to match the ease of your shopping experience.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/streamline_return-2.png"
-          }
-        },
-        "icon-3": {
-          "type": "text-icon",
-          "settings": {
-            "title": "Customer Service",
-            "body": "<p>Real support from real people—ready to help with anything you need.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/ph_chat.png"
-          }
-        }
-      },
-      "block_order": [
-        "icon-1",
-        "icon-2",
-        "icon-3"
-      ],
-      "settings": {
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h3"
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
-        "text": {
-          "type": "text",
+        "image_iAAAyC": {
+          "type": "image",
           "settings": {
-            "title": "Contact information",
-            "content": "<p>Write a short statement about your brand.</p>",
-            "size": "text-size--large"
+            "title": "Where community, culture, and fashion come together.",
+            "image": "shopify://shop_images/logo.svg"
           }
         },
         "menu-1": {
@@ -92,7 +43,7 @@
         }
       },
       "block_order": [
-        "text",
+        "image_iAAAyC",
         "menu-1",
         "menu-2",
         "social"
@@ -103,14 +54,13 @@
         "show_locale_selector": true,
         "show_country_selector": true,
         "enable_follow_on_shop": true,
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
+        "custom_background": "#000000",
+        "custom_text": "#ffffff",
         "seo_h_tag": "h4"
       }
     }
   },
   "order": [
-    "text-columns-with-icons",
     "footer"
   ]
 }

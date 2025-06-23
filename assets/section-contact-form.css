@@ -1,0 +1,21 @@
+.about-us-section-content {
+  background-size: cover;
+}
+.site-box-content.light {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+  text-align: left;
+}
+.section-subheading {
+  color: #fff;
+  font-family: var(--font-stack-headings);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+}
+
+.section-subheading a {
+  color: var(--brand-secondary);
+}

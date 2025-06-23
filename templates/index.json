@@ -110,7 +110,7 @@
           "settings": {
             "image": "shopify://shop_images/htgmob.jpg",
             "slide_text": "Slide image",
-            "link": ""
+            "link": "shopify://pages/copy-of-about-us"
           }
         },
         "slide_BrWgUR": {
@@ -387,11 +387,13 @@
       "name": "Latest Features & Events",
       "settings": {
         "main_title": "Latest Features",
+        "main_title_width": "732",
         "main_title_align": "left",
         "sub_title": "and Events",
         "sub_title_align": "right",
         "arrow_text_1": "Cultutre",
-        "arrow_text_2": "Events"
+        "arrow_text_2": "Events",
+        "show_tab_list": true
       }
     },
     "image_text_column_rhg67G": {
@@ -498,95 +500,128 @@
         "section_title": "Testimonials"
       }
     },
-    "gallery_rDXHQD": {
-      "type": "gallery",
+    "media_grid_NHDBAw": {
+      "type": "media-grid",
       "blocks": {
-        "image_C9pXkW": {
+        "image_KBYwTp": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ssmob1_8ba82a7d-fead-46de-a0fb-e6e407ca3446.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
+            "image": "shopify://shop_images/SSDESK2_1f488ffc-8cb4-44c5-af9d-2252ed030e0b.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "image_AwGizb": {
+        "image_HjCRJC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image_91.png",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
+            "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "image_DJke9q": {
+        "image_xTYyNH": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/apbnbmob.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
+            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "image_6Jz87i": {
+        "image_YtGyxT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
+            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "image_Mf9T9V": {
+        "image_TXnqGn": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
+            "image": "shopify://shop_images/Artboard_6_0a4ef8cb-19ab-4528-b598-397f5be2ffdb.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "image_WckVpY": {
+        "image_kdRm8p": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/GS-SPUTNIK-BLK_2.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
-          }
-        },
-        "image_AeVT8W": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/apbNBdesk.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
-          }
-        },
-        "image_zTwdMm": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/GS-SPUTNIK-BLK_2.jpg",
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
+            "image": "shopify://shop_images/SSXHonorthegift.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "image_C9pXkW",
-        "image_AwGizb",
-        "image_DJke9q",
-        "image_6Jz87i",
-        "image_Mf9T9V",
-        "image_WckVpY",
-        "image_AeVT8W",
-        "image_zTwdMm"
+        "image_KBYwTp",
+        "image_HjCRJC",
+        "image_xTYyNH",
+        "image_YtGyxT",
+        "image_TXnqGn",
+        "image_kdRm8p"
       ],
-      "name": "t:sections.gallery.name",
+      "name": "Media Grid",
       "settings": {
-        "image_height": "half"
+        "desktop_row_height": 250,
+        "mobile_row_height": 220,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "<strong>@</strong>THESOCALSTATUS",
+        "content": ""
       }
     },
     "perspective_slider_VCQ6DF": {
@@ -596,49 +631,60 @@
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/apbNBdesk.jpg",
-            "title": ""
+            "title": "",
+            "description": "<p>Hoop Club CLT</p>",
+            "button_text": "",
+            "button_url": ""
           }
         },
         "slide_item_7npizU": {
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/desk1_2684acce-cb1a-4db1-8619-0c84d6b4ebdf.jpg",
-            "title": ""
+            "title": "",
+            "description": "<p>First Mil Ruin Club</p>",
+            "button_text": "",
+            "button_url": ""
           }
         },
         "slide_item_iXW9YU": {
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
-            "title": ""
+            "title": "",
+            "description": "<p><strong>press players club: </strong></p><p>album21. doggystyle x</p><p>snoop doggy dogg</p>",
+            "button_text": "",
+            "button_url": ""
           }
         },
         "slide_item_gxQ8Wz": {
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": ""
+            "title": "",
+            "description": "<p>First Mil Ruin Club</p>",
+            "button_text": "",
+            "button_url": ""
           }
         },
         "slide_item_WYnJ7t": {
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": ""
+            "title": "",
+            "description": "<p>First Mil Ruin Club</p>",
+            "button_text": "",
+            "button_url": ""
           }
         },
-        "slide_item_MQ7jqR": {
+        "slide_item_WrBKdX": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": ""
-          }
-        },
-        "slide_item_aF8QRe": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": ""
+            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "title": "",
+            "description": "<p>press players club: </p><p>album21. doggystyle x</p><p>snoop doggy dogg</p>",
+            "button_text": "",
+            "button_url": ""
           }
         }
       },
@@ -648,15 +694,229 @@
         "slide_item_iXW9YU",
         "slide_item_gxQ8Wz",
         "slide_item_WYnJ7t",
-        "slide_item_MQ7jqR",
-        "slide_item_aF8QRe"
+        "slide_item_WrBKdX"
       ],
+      "disabled": true,
       "name": "Perspective Slider",
       "settings": {
         "title": "AMM Beach gallery",
         "auto_play": false,
-        "background_color": "#121212",
-        "text_color": "#ffffff"
+        "background_color": "#000000",
+        "slide_overlay_color": "linear-gradient(0deg, rgba(231, 126, 33, 0.68), rgba(231, 126, 33, 0.68) 100%)",
+        "text_color": "#ffffff",
+        "text_color_card": "#ffffff",
+        "path_color": "#757575",
+        "text_alignment": "center"
+      }
+    },
+    "latest_features_GW8H78": {
+      "type": "latest-features",
+      "blocks": {
+        "item_block_hBGnqt": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/image_92.png",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_yURzFa": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/new_arrivals_pic.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_X4ey48": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-2.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_8KYcgc": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "04"
+          }
+        },
+        "item_block_WPACwQ": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_bjJDhp": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/AJ14FERARRIGS-2.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_jpC8rW": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_LLw3Dc": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_MtaYqL": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/new_features_pic.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_XG7F8Q": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/htgmob1_97df35d3-cb08-405b-98b4-cb1be80d490a.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_RNmXqg": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Workshops",
+            "item_image": "shopify://shop_images/htgmob2.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_BTTX9W": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Workshops",
+            "item_image": "shopify://shop_images/JAIDEXNB998-8.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        }
+      },
+      "block_order": [
+        "item_block_hBGnqt",
+        "item_block_yURzFa",
+        "item_block_X4ey48",
+        "item_block_8KYcgc",
+        "item_block_WPACwQ",
+        "item_block_bjJDhp",
+        "item_block_jpC8rW",
+        "item_block_LLw3Dc",
+        "item_block_MtaYqL",
+        "item_block_XG7F8Q",
+        "item_block_RNmXqg",
+        "item_block_BTTX9W"
+      ],
+      "name": "Latest Features & Events",
+      "settings": {
+        "main_title": "Events",
+        "main_title_width": "890",
+        "main_title_align": "left",
+        "sub_title": "and Flagship Programs",
+        "sub_title_align": "right",
+        "arrow_text_1": "Cultutre",
+        "arrow_text_2": "Events",
+        "show_tab_list": false
+      }
+    },
+    "text_columns_with_icons_8nxf6n": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "text_icon_WHdeK9": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Delivery",
+            "body": "<p>Reliable shipping that keeps you in the loop from checkout to doorstep.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/carbon_delivery.png"
+          }
+        },
+        "text_icon_RfqaMG": {
+          "type": "text-icon",
+          "settings": {
+            "title": "RETURNS & EXCHANGES",
+            "body": "<p>A smooth, flexible process designed to match the ease of your shopping experience.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/streamline_return-2.png"
+          }
+        },
+        "text_icon_ejTjMU": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Customer Service",
+            "body": "<p>Real support from real people—ready to help with anything you need.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/ph_chat.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_icon_WHdeK9",
+        "text_icon_RfqaMG",
+        "text_icon_ejTjMU"
+      ],
+      "settings": {
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h3"
       }
     }
   },
@@ -669,7 +929,9 @@
     "latest_features_f6y9et",
     "image_text_column_rhg67G",
     "floating_testimonials_KCBbUg",
-    "gallery_rDXHQD",
-    "perspective_slider_VCQ6DF"
+    "perspective_slider_VCQ6DF",
+    "latest_features_GW8H78",
+    "media_grid_NHDBAw",
+    "text_columns_with_icons_8nxf6n"
   ]
 }

@@ -62,8 +62,8 @@
   margin-bottom: 10px;
 }
 .block-slide-description p{
-  font-size: 22px;
-  font-family: var(--font-stack-body);
+  font-size: clamp(16px, 2vw, 33px);
+  font-family: var(--font-stack-headings);
   margin-bottom: 0;
   font-weight: 500;
   text-transform: uppercase;
@@ -111,4 +111,10 @@
   background: var(--slide-overlay-color);
   z-index: 1;
   pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .block-slide-item{
+    height: 200px;
+  }
 }

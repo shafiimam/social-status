@@ -110,6 +110,9 @@
     "cart_image_fit": true,
     "cart_image_border": "#f1f1f1",
     "show_gotop": true,
+    "social_facebook": "facebook.com",
+    "social_instagram": "instagram.com",
+    "social_twitter": "",
     "content_for_index": []
   }
 }

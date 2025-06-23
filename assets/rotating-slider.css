@@ -3,7 +3,7 @@
   color: #727272;
   text-align: center;
   /* Secondary Text */
-  font-family: var(--font-stack-body );
+  font-family: var(--font-stack-body);
   font-size: 22px;
   font-style: normal;
   font-weight: 300;
@@ -18,6 +18,7 @@
   width: 400px;
   user-select: none;
   overflow: hidden;
+  z-index: 1;
 }
 .rotating-slider ul.direction-controls {
   list-style: none;
@@ -134,11 +135,10 @@
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
 }
 .rotating-slider-backdrop-text {
   color: rgba(0, 0, 0, 0.02);
-  font-size: clamp(127px, 20vw + 50px ,  284px);
+  font-size: clamp(127px, 20vw + 50px, 284px);
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
@@ -155,4 +155,11 @@ p.slide-text {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  font-family: var(--font-stack-headings);
+  font-size: clamp(16px, 2vw, 32px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px; /* 109.375% */
+  text-transform: uppercase;
 }
