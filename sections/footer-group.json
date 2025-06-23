@@ -11,25 +11,77 @@
   "type": "footer",
   "name": "t:sections.refactor_words.labels.footer_group",
   "sections": {
+    "heading_4UBhzX": {
+      "type": "heading",
+      "blocks": {
+        "heading_akL3aA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_XpKXez": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_hPejUN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_akL3aA",
+        "text_XpKXez",
+        "button_hPejUN"
+      ],
+      "name": "t:sections.heading.name",
+      "settings": {
+        "text_alignment": "center",
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)"
+      }
+    },
     "text-columns-with-icons": {
       "type": "text-columns-with-icons",
       "blocks": {
         "icon-1": {
           "type": "text-icon",
           "settings": {
-            "title": "Shipping"
+            "title": "Delivery",
+            "body": "<p>Reliable shipping that keeps you in the loop from checkout to doorstep.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/carbon_delivery.png"
           }
         },
         "icon-2": {
           "type": "text-icon",
           "settings": {
-            "title": "Returns"
+            "title": "RETURNS & EXCHANGES",
+            "body": "<p>A smooth, flexible process designed to match the ease of your shopping experience.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/streamline_return-2.png"
           }
         },
         "icon-3": {
           "type": "text-icon",
           "settings": {
-            "title": "Pickup"
+            "title": "Customer Service",
+            "body": "<p>Real support from real people—ready to help with anything you need.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/ph_chat.png"
           }
         }
       },
@@ -38,30 +90,42 @@
         "icon-2",
         "icon-3"
       ],
-      "settings": {}
+      "settings": {
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h3"
+      }
     },
     "footer": {
       "type": "footer",
       "blocks": {
         "text": {
           "type": "text",
-          "settings": {}
+          "settings": {
+            "title": "Contact information",
+            "content": "<p>Write a short statement about your brand.</p>",
+            "size": "text-size--large"
+          }
         },
         "menu-1": {
           "type": "menu",
           "settings": {
-            "title": "Quick links"
+            "title": "Quick links",
+            "menu": "footer"
           }
         },
         "menu-2": {
           "type": "menu",
           "settings": {
-            "title": "Quick links"
+            "title": "Quick links",
+            "menu": "footer"
           }
         },
         "social": {
           "type": "social",
-          "settings": {}
+          "settings": {
+            "title": "Follow us"
+          }
         }
       },
       "block_order": [
@@ -70,35 +134,21 @@
         "menu-2",
         "social"
       ],
-      "settings": {}
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {}
-        },
-        "email_form": {
-          "type": "email_form",
-          "settings": {}
-        },
-        "paragraph": {
-          "type": "paragraph",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading",
-        "email_form",
-        "paragraph"
-      ],
-      "settings": {}
+      "settings": {
+        "show_payment_icons": true,
+        "only_show_custom_icons": false,
+        "show_locale_selector": true,
+        "show_country_selector": true,
+        "enable_follow_on_shop": true,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h4"
+      }
     }
   },
   "order": [
+    "heading_4UBhzX",
     "text-columns-with-icons",
-    "newsletter",
     "footer"
   ]
 }

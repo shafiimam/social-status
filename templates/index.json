@@ -394,242 +394,69 @@
         "arrow_text_2": "Events"
       }
     },
-    "1636106679435e5a7a": {
-      "type": "heading",
+    "floating_testimonials_KCBbUg": {
+      "type": "floating-testimonials",
       "blocks": {
-        "1636106679435e5a7a-0": {
-          "type": "heading",
+        "testimonial_bMcE8X": {
+          "type": "testimonial",
           "settings": {
-            "heading": "Shop The Look",
-            "heading_size": "h2",
-            "seo_h_tag": "h2"
+            "avatar": "shopify://shop_images/Avatar.png",
+            "name": "Fabrizio Fernandez",
+            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
           }
         },
-        "1636106679435e5a7a-1": {
-          "type": "text",
+        "testimonial_HT3x7E": {
+          "type": "testimonial",
           "settings": {
-            "text": "<p>Things that goes well together</p>"
+            "avatar": "shopify://shop_images/Avatar.png",
+            "name": "Fabrizio Fernandez",
+            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+          }
+        },
+        "testimonial_BUDmLh": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/Avatar.png",
+            "name": "Fabrizio Fernandez",
+            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+          }
+        },
+        "testimonial_JeRbJh": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/Avatar.png",
+            "name": "Fabrizio Fernandez",
+            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+          }
+        },
+        "testimonial_Gc34Nw": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/Avatar.png",
+            "name": "Fabrizio Fernandez",
+            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+          }
+        },
+        "testimonial_axGpDT": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify://shop_images/Avatar.png",
+            "name": "Fabrizio Fernandez",
+            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
           }
         }
       },
       "block_order": [
-        "1636106679435e5a7a-0",
-        "1636106679435e5a7a-1"
+        "testimonial_bMcE8X",
+        "testimonial_HT3x7E",
+        "testimonial_BUDmLh",
+        "testimonial_JeRbJh",
+        "testimonial_Gc34Nw",
+        "testimonial_axGpDT"
       ],
+      "name": "Floating Testimonials",
       "settings": {
-        "text_alignment": "center",
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)"
-      }
-    },
-    "1637226889f182ad79": {
-      "type": "shop-the-look",
-      "blocks": {
-        "163722688971e0662a-2": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        },
-        "163722688971e0662a-0": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        },
-        "81c90af3-854f-48fc-944e-353cb3bf4fbb": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "163722688971e0662a-2",
-        "163722688971e0662a-0",
-        "81c90af3-854f-48fc-944e-353cb3bf4fbb"
-      ],
-      "settings": {
-        "desktop_image_positioning": "image-on-left"
-      }
-    },
-    "16377493211fd93093": {
-      "type": "featured-product",
-      "blocks": {
-        "1637749321a1e63c4d-0": {
-          "type": "header",
-          "settings": {
-            "show_vendor": true,
-            "show_badge": true,
-            "show_reviews": true,
-            "show_tax_info": false,
-            "show_sku": false,
-            "show_barcode": false,
-            "stick_product_header_on_mobile": true
-          }
-        },
-        "1637749321a1e63c4d-1": {
-          "type": "variant_picker",
-          "settings": {
-            "variants_style": "radio",
-            "show_color_swatches": true,
-            "unavailable_variants": "show"
-          }
-        },
-        "1637749321a1e63c4d-2": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_preorder": false,
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
-          }
-        },
-        "1637749321a1e63c4d-3": {
-          "type": "description",
-          "settings": {}
-        },
-        "a3f4f0ac-9b9b-4965-9f53-d10d3dfcf77c": {
-          "type": "product_link",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "1637749321a1e63c4d-0",
-        "1637749321a1e63c4d-1",
-        "1637749321a1e63c4d-2",
-        "1637749321a1e63c4d-3",
-        "a3f4f0ac-9b9b-4965-9f53-d10d3dfcf77c"
-      ],
-      "settings": {
-        "product": "",
-        "gallery_style": "scroll",
-        "gallery_aspect": false,
-        "gallery_pagination": "dots",
-        "enable_zoom": true,
-        "enable_video_looping": false
-      }
-    },
-    "1637674728c7c82700": {
-      "type": "countdown-banner",
-      "blocks": {
-        "1637674728a99cfc06-0": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Promote your greatest products through a flash sale!</p>",
-            "text_size": "text-size--larger"
-          }
-        },
-        "1637674728a99cfc06-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Sales Promotions",
-            "heading_size": "h1",
-            "seo_h_tag": "h2"
-          }
-        },
-        "1637674728a99cfc06-2": {
-          "type": "countdown",
-          "settings": {
-            "countdown_year": 2022,
-            "countdown_month": 1,
-            "countdown_day": 1,
-            "countdown_hour": 0,
-            "countdown_zone": "0"
-          }
-        },
-        "1637674728a99cfc06-3": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop now",
-            "button_link": "shopify://pages/sale"
-          }
-        }
-      },
-      "block_order": [
-        "1637674728a99cfc06-0",
-        "1637674728a99cfc06-1",
-        "1637674728a99cfc06-2",
-        "1637674728a99cfc06-3"
-      ],
-      "settings": {
-        "banner_height": "full",
-        "text_alignment": "horizontal-center vertical-middle",
-        "custom_text": "#ffffff",
-        "custom_overlay": "#000000"
-      }
-    },
-    "16371348113d6d6d6d": {
-      "type": "collection-list",
-      "blocks": {
-        "1637134811779b275e-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "1637134811779b275e-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "1637134811779b275e-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "kids"
-          }
-        }
-      },
-      "block_order": [
-        "1637134811779b275e-0",
-        "1637134811779b275e-1",
-        "1637134811779b275e-2"
-      ],
-      "settings": {
-        "title": "Collections",
-        "text_alignment": "horizontal-left vertical-bottom",
-        "custom_background": "#eeeeef",
-        "custom_text": "rgba(0,0,0,0)",
-        "bg_overlay": false,
-        "seo_h_tag": "h2"
-      }
-    },
-    "163825849356f88edc": {
-      "type": "gallery",
-      "blocks": {
-        "1638258493b25d0aa0-0": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
-          }
-        },
-        "1638258493b25d0aa0-1": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
-          }
-        },
-        "1638258493b25d0aa0-2": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "1638258493b25d0aa0-0",
-        "1638258493b25d0aa0-1",
-        "1638258493b25d0aa0-2"
-      ],
-      "settings": {
-        "image_height": "half"
+        "section_title": "Testimonials"
       }
     }
   },
@@ -640,11 +467,6 @@
     "video_background_eCcVXP",
     "virtual_try_on_nBhXAa",
     "latest_features_f6y9et",
-    "1636106679435e5a7a",
-    "1637226889f182ad79",
-    "16377493211fd93093",
-    "1637674728c7c82700",
-    "16371348113d6d6d6d",
-    "163825849356f88edc"
+    "floating_testimonials_KCBbUg"
   ]
 }

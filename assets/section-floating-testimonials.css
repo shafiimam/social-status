@@ -77,3 +77,15 @@
   right: 0;
   /* background: linear-gradient(to left, #fff 70%, transparent); */
 }
+@media (max-width: 768px) {
+  .floating-testimonials-section__left-overlay,
+  .floating-testimonials-section__right-overlay {
+    display: none;
+  }
+  .floating-testimonials-section {
+    padding: 80px 0;
+  }
+  .floating-testimonials-section__header {
+    margin-bottom: 40px;
+  }
+}

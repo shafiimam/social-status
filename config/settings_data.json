@@ -86,7 +86,9 @@
   "current": {
     "header_background": "#ffffff",
     "header_text": "#000000",
+    "header_borders_opacity": 10,
     "main_background": "#ffffff",
+    "borders_opacity": 0,
     "headings_font": "montserrat_n6",
     "headings_size": 64,
     "headings_hr": false,
@@ -101,12 +103,13 @@
     "product_overlay_bg": "#000000",
     "product_overlay_txt": "#ffffff",
     "product_card_badge_sale_type": "text",
-    "favicon": "",
+    "favicon": "shopify://shop_images/LOOP_LOGO_2_dc8b95cc-4458-489b-80a3-2a41330d1c08.png",
     "cart_action": "overlay",
     "cart_notes_enable": true,
     "cart_image_ratio": "1",
     "cart_image_fit": true,
     "cart_image_border": "#f1f1f1",
+    "show_gotop": true,
     "content_for_index": []
   }
 }

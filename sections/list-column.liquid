@@ -1,114 +1,51 @@
-{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
-  | default: section.settings.color_scheme.settings.background
-  | md5
--%}
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
->
-<div class="list-column section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-  <div class="container container--full list-column-content">
+<div class="list-column-section">
+  <div class="list-column-content">
     {% for block in section.blocks %}
       <div class="list-item" {{ block.shopify_attributes }}>
-        <div class="hover-image-container">
-          <p class="h3 hover-trigger">{{ block.settings.item_text }}</p>
+        <div class="hover-image-container" data-url="{{ block.settings.button_link }}">
+          <h3 class="h3 hover-trigger">
+            <span>{{ block.settings.item_text }}</span>
+            {% if block.settings.item_text_2 != blank %}
+              <span class="hover-image-text-2">{{ block.settings.item_text_2 }}</span>
+            {% endif %}
+          </h3>
           {% if block.settings.hover_image != blank %}
-            <picture>
-              {{- block.settings.hover_image | image_url: width: '300x' | image_tag: class: 'hover-image' -}}
-            </picture>
+            <div class="hover-image">
+              <picture>
+                {{- block.settings.hover_image | image_url: width: '300x' | image_tag: class: 'hover-image-img' -}}
+              </picture>
+              <div class="hover-image-icon">
+                {% render 'icons-pack', icon: 'arrow-right-top' %}
+                <p class="hover-image-text">{{ block.settings.button_text }}</p>
+              </div>
+            </div>
           {% endif %}
         </div>
-        <a
-          href="{{ block.settings.button_link }}"
-          class="btn"
-        >
-          {{- block.settings.button_text -}}
-        </a>
       </div>
     {% endfor %}
   </div>
 </div>
-<style>
-  .hover-image-container {
-    display: inline-flex;
-    cursor: pointer;
-    align-items: center;
-  }
-  .hover-image-container p {
-    cursor: pointer;
-  }
-
-  .hover-image {
-    display: none;
-    position: absolute;
-    width: 300px;
-    height: auto;
-    pointer-events: none;
-    transform: translate(15px, 15px);
-    z-index: 1;
-  }
-</style>
+{{ 'section-list-column.css' | asset_url | stylesheet_tag }}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    Fancybox.bind('[data-fancybox]', {});
     document.querySelectorAll('.hover-image-container').forEach((container) => {
-      const hoverTrigger = container.querySelector('.hover-trigger');
+      const hoverTrigger = container;
       const hoverImage = container.querySelector('.hover-image');
 
-      hoverTrigger.addEventListener('mouseenter', () => {
-        hoverImage.style.display = 'block'; // Show image on hover
-      });
-
-      hoverTrigger.addEventListener('mouseleave', () => {
-        hoverImage.style.display = 'none'; // Hide image when not hovering
-      });
-
-      hoverTrigger.addEventListener('mousemove', (e) => {
-        console.log(`Mouse X: ${e.pageX}, Mouse Y: ${e.pageY}`);
-        if (window.innerWidth < 768) {
-          hoverImage.style.left = 0;
-        } else {
-          hoverImage.style.left = `${e.pageX + 15}px`; // Position image near cursor
+      container.addEventListener('click', () => {
+        if (container.dataset.url.length > 0) {
+          window.location.href = container.dataset.url;
         }
-        hoverImage.style.top = `${e.pageY + 15}px`;
+      });
+      hoverTrigger.addEventListener('mouseenter', () => {
+        hoverImage.style.display = 'flex';
+      });
+      hoverTrigger.addEventListener('mouseleave', () => {
+        hoverImage.style.display = 'none';
       });
     });
   });
 </script>
-<style>
-  .list-column-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .list-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 30px 0;
-    border-bottom: 1px solid #e7e7e7;
-    width: 100%;
-    margin: 0 50px;
-    @media (max-width: 768px) {
-      margin: 0 20px;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-  }
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-  }
-</style>
 
 {% schema %}
 {
@@ -129,6 +66,11 @@
           "type": "text",
           "id": "item_text",
           "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "item_text_2",
+          "label": "Text 2"
         },
         {
           "type": "url",
