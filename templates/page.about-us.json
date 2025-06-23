@@ -11,10 +11,114 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "layout": "split"
+      }
+    },
+    "list_column_4RwtQJ": {
+      "type": "list-column",
+      "blocks": {
+        "list_item_BXCeWr": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Charlotte,",
+            "item_text_2": "NC",
+            "button_link": "shopify://pages/copy-of-about-us",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/image_91.png"
+          }
+        },
+        "list_item_7kzYGg": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Atlanta,",
+            "item_text_2": "GA",
+            "button_link": "shopify://pages/copy-of-about-us",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg"
+          }
+        },
+        "list_item_PAUAge": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Houston,",
+            "item_text_2": "TX",
+            "button_link": "shopify://pages/copy-of-about-us",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/GS-SEASICK-BLK_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "list_item_BXCeWr",
+        "list_item_7kzYGg",
+        "list_item_PAUAge"
+      ],
+      "name": "List Column",
+      "settings": {
+        "separate_section_with_border": false
+      }
+    },
+    "perspective_slider_a3BPUD": {
+      "type": "perspective-slider",
+      "blocks": {
+        "slide_item_YRN7ic": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/apbNBdesk.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_pttqVq": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Af1_and_Air_max_95_Desktop.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_qjPzz3": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/desk1_2684acce-cb1a-4db1-8619-0c84d6b4ebdf.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_JyiKQq": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/desk1_2684acce-cb1a-4db1-8619-0c84d6b4ebdf.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_TVWRng": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/detroit_new_cover_1.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_YRN7ic",
+        "slide_item_pttqVq",
+        "slide_item_qjPzz3",
+        "slide_item_JyiKQq",
+        "slide_item_TVWRng"
+      ],
+      "name": "Perspective Slider",
+      "settings": {
+        "title": "IMPACT AREAS",
+        "auto_play": false,
+        "background_color": "#121212",
+        "text_color": "#fff",
+        "path_color": "#fff"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "list_column_4RwtQJ",
+    "perspective_slider_a3BPUD"
   ]
 }

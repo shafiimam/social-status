@@ -1,11 +1,9 @@
-
-
 {{ 'section-latest-features.css' | asset_url | stylesheet_tag }}
 
 {% assign tabs_list = section.blocks | map: 'settings' | map: 'tab_group_title' | uniq %}
 <div class="latest-features-section">
   <div class="header-row">
-    <div class="title-column">
+    <div class="title-column" style="max-width: {{ section.settings.main_title_width }}px;">
       <h1 class="main-title h1 heading" style="text-align: {{ section.settings.main_title_align }}">
         {{ section.settings.main_title }}
       </h1>
@@ -39,14 +37,15 @@
       {% endfor %}
     </div>
     <div class="tab-list-navs">
-      <div class="tabs-panel">
-        {% for tab in tabs_list %}
-          <button class="tab-list-nav-item {% if forloop.first %}active{% endif %}" data-tab-group-title="{{ tab }}">
-            <span class="tab-list-nav-item-title">{{ tab }}</span>
-          </button>
-        {% endfor %}
-      </div>
-
+      {% if section.settings.show_tab_list %}
+        <div class="tabs-panel">
+          {% for tab in tabs_list %}
+            <button class="tab-list-nav-item {% if forloop.first %}active{% endif %}" data-tab-group-title="{{ tab }}">
+              <span class="tab-list-nav-item-title">{{ tab }}</span>
+            </button>
+          {% endfor %}
+        </div>
+      {% endif %}
       <ul class="tab-list-item-contents">
         {% for tab_item in tabs_list %}
           {% assign tab_item_index = 1 %}
@@ -108,99 +107,111 @@
 </div>
 
 <script src="{{ 'component-latest-features.js' | asset_url }}" defer></script>
-  
+
 {% schema %}
-   {
-     "name": "Latest Features & Events",
-     "settings": [
-       {
-         "type": "text",
-         "id": "main_title",
-         "label": "Main Title"
-       },
-       {
-         "type": "select",
-         "id": "main_title_align",
-         "label": "Main Title Alignment",
-         "options": [
-           { "value": "left", "label": "Left" },
-           { "value": "center", "label": "Center" },
-           { "value": "right", "label": "Right" }
-         ],
-         "default": "left"
-       },
-       {
-         "type": "text",
-         "id": "sub_title",
-         "label": "Sub Title"
-       },
-       {
-         "type": "select",
-         "id": "sub_title_align",
-         "label": "Sub Title Alignment",
-         "options": [
-           { "value": "left", "label": "Left" },
-           { "value": "center", "label": "Center" },
-           { "value": "right", "label": "Right" }
-         ],
-         "default": "left"
-       },
-       {
-         "type": "text",
-         "id": "arrow_text_1",
-         "label": "Arrow Text Vertical"
-       },
-       {
-         "type": "text",
-         "id": "arrow_text_2",
-         "label": "Arrow Text Horizontal"
-       }
-     ],
-     "blocks": [
-       {
-         "type": "item_block",
-         "name": "Item Block",
-         "settings": [
-           {
-             "type": "text",
-             "id": "tab_group_title",
-             "label": "Tab Group Title",
-             "info": "This will group the items in a tab by this title"
-           },
-           {
-             "type": "image_picker",
-             "id": "item_image",
-             "label": "Item Image"
-           },
-           {
-             "type": "text",
-             "id": "item_title",
-             "label": "Item Title"
-           },
-           {
-             "type": "text",
-             "id": "item_date",
-             "label": "Item Date"
-           },
-           {
-             "type": "textarea",
-             "id": "item_subtitle",
-             "label": "Item Subtitle"
-           },
-           {
-             "type": "text",
-             "id": "item_index",
-             "label": "Item Index",
-             "default": "01"
-           }
-         ]
-       }
-     ],
-     "presets": [
-       {
-         "name": "Latest Features & Events",
-         "category": "Custom"
-       }
-     ]
-   }
-   {% endschema %}
+{
+  "name": "Latest Features & Events",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title"
+    },
+    {
+      "type": "text",
+      "id": "main_title_width",
+      "label": "Main Title Width",
+      "default": "732"
+    },
+    {
+      "type": "select",
+      "id": "main_title_align",
+      "label": "Main Title Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_align",
+      "label": "Sub Title Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "arrow_text_1",
+      "label": "Arrow Text Vertical"
+    },
+    {
+      "type": "text",
+      "id": "arrow_text_2",
+      "label": "Arrow Text Horizontal"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tab_list",
+      "label": "Show Tab List",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_block",
+      "name": "Item Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_group_title",
+          "label": "Tab Group Title",
+          "info": "This will group the items in a tab by this title"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_image",
+          "label": "Item Image"
+        },
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Item Title"
+        },
+        {
+          "type": "text",
+          "id": "item_date",
+          "label": "Item Date"
+        },
+        {
+          "type": "textarea",
+          "id": "item_subtitle",
+          "label": "Item Subtitle"
+        },
+        {
+          "type": "text",
+          "id": "item_index",
+          "label": "Item Index",
+          "default": "01"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest Features & Events",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

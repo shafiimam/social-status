@@ -1,0 +1,205 @@
+{% if section.settings.auto_play %}
+  <script>
+    var perspectiveAutoPlay = 3000;
+  </script>
+{% else %}
+  <script>
+    var perspectiveAutoPlay = 0;
+  </script>
+{% endif %}
+<div class="perspective-slider-section" id="shopify-section-{{ section.id }}">
+  <div class="perspective-slider-header">
+    <h1 class="h1 heading text-center">{{ section.settings.title }}</h1>
+  </div>
+  <div
+    class="perspective-slider-container"
+  >
+    {% for block in section.blocks %}
+      <div class="block-slide-item" {{ block.shopify_attributes }} >
+        <div class="block-slide-image-container" style="--slide-overlay-color: {{ section.settings.slide_overlay_color }}">
+          <picture>
+            <source srcset="{{ block.settings.image | image_url: width: 300 }}" media="(max-width: 600px)">
+            <img
+              src="{{ block.settings.image | image_url: width: 600 }}"
+              alt="Image"
+              width="600"
+              height="250"
+            >
+          </picture>
+          <div class="block-slide-content">
+            <div class="block-slide-content-inner" style="text-align: {{ section.settings.text_alignment }}">
+              {% if block.settings.title != blank %}
+                <p class="block-slide-title heading" style="color: {{ section.settings.text_color_card }}">{{ block.settings.title }}</p>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <div class="block-slide-description" style="color: {{ section.settings.text_color_card }}">{{ block.settings.description }}</div>
+              {% endif %}
+              {% if block.settings.button_text != blank %}
+                <a href="{{ block.settings.button_url }}" class="block-slide-button">{{ block.settings.button_text }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="gallery-controls">
+    {% render '360-knob', total_frames: section.blocks.size, path_color: section.settings.path_color %}
+  </div>
+</div>
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+  #shopify-section-{{ section.id }} .heading {
+    color: {{ section.settings.text_color }};
+  }
+{% endstyle %}
+{{ 'section-perspective-slider.css' | asset_url | stylesheet_tag }}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var perspectiveSlider = new Flickity('.perspective-slider-container', {
+      wrapAround: false,
+      autoPlay: false,
+      friction: 0.25,
+      selectedAttraction: 0.01,
+      initialIndex: 3,
+      prevNextButtons: false,
+      cellAlign: 'center',
+      contain: false,
+      pageDots: false,
+      freeScroll: false,
+      on: {
+        ready: function () {
+          const selectedSlide = document.querySelector('.block-slide-item.is-selected');
+          const previousSlide = selectedSlide.previousSibling;
+          const nextSlide = selectedSlide.nextSibling;
+          previousSlide.classList.add('is-previous');
+          nextSlide.classList.add('is-next');
+          console.log(previousSlide, nextSlide);
+        },
+        change: function (index) {
+          const slides = this.slides;
+          let previousSlide = slides[index - 1]?.cells[0]?.element;
+          let nextSlide = slides[index + 1]?.cells[0]?.element;
+          if (!previousSlide) {
+            previousSlide = slides[slides.length - 1]?.cells[0]?.element;
+          }
+          if (!nextSlide) {
+            nextSlide = slides[0]?.cells[0]?.element;
+          }
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].cells[0].element.classList.remove('is-previous');
+            slides[i].cells[0].element.classList.remove('is-next');
+          }
+          previousSlide?.classList.add('is-previous');
+          nextSlide?.classList.add('is-next');
+          console.log(previousSlide, nextSlide);
+        },
+      },
+    });
+    window.perspectiveSlider = perspectiveSlider;
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Perspective Slider",
+  "tag": "section",
+  "class": "shopify-section--perspective-slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "AMM Beach gallery"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_play",
+      "label": "Auto Play",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#121212"
+    },
+    {
+      "type": "color_background",
+      "id": "slide_overlay_color",
+      "label": "Slide Overlay Color",
+      "default": "linear-gradient(0deg, rgba(231, 126, 33, 0.68) 0%, rgba(231, 126, 33, 0.68) 100%)"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Section Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color_card",
+      "label": "Slide Card Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "path_color",
+      "label": "Path Color",
+      "default": "#fff"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide_item",
+      "name": "Image Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slide Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Slide Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Perspective Slider",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "slide_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

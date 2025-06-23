@@ -19,6 +19,7 @@
 .header-row .title-column {
   max-width: 732px;
   width: 100%;
+  margin-right: 60px;
 }
 
 .title-column .main-title,

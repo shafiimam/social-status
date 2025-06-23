@@ -1,0 +1,76 @@
+<style>
+  .slider-container {
+    position: relative;
+    width: 800px;
+    height: 140px;
+    margin: 0 auto;
+  }
+  .slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+  }
+  .slider-track svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .knob {
+    width: 80px;
+    height: 80px;
+    border-radius: 3683.461px;
+    background: #e77e21;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    bottom: 5px;
+  }
+  @media (max-width: 500px) {
+    .slider-container {
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      width: 90vw;
+    }
+    .knob {
+      width: 60px;
+      height: 60px;
+    }
+  }
+</style>
+<div class="slider-container" id="sliderArea">
+  <div class="slider-track" data-total-frames="{{ total_frames }}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="126" viewBox="0 0 1440 126" fill="none">
+      <path d="M1441 8.08585e-06C1441 16.2839 1422.38 32.4084 1386.19 47.4527C1350.01 62.4971 1296.98 76.1668 1230.12 87.6812C1163.26 99.1957 1083.89 108.329 996.532 114.561C909.178 120.793 815.552 124 721 124C626.448 124 532.822 120.793 445.468 114.561C358.113 108.329 278.741 99.1957 211.883 87.6812C145.025 76.1668 91.9901 62.4971 55.8067 47.4527C19.6233 32.4084 0.999992 16.2839 1 0" stroke="{{ path_color }}" stroke-opacity="0.8" stroke-width="2.25745"/>
+      <defs>
+        <linearGradient id="paint0_linear_207_1522" x1="1" y1="62" x2="1441" y2="62" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#969696" stop-opacity="0"/>
+          <stop offset="0.528815" stop-color="#969696"/>
+          <stop offset="1" stop-color="#969696" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="knob" id="knob">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <path d="M8.50786 13.9738V17.0104M8.50786 13.9738V6.68581C8.50786 6.20259 8.69982 5.73916 9.04151 5.39747C9.3832 5.05579 9.84663 4.86383 10.3298 4.86383C10.8131 4.86383 11.2765 5.05579 11.6182 5.39747C11.9599 5.73916 12.1518 6.20259 12.1518 6.68581M8.50786 13.9738C8.50786 13.4905 8.3159 13.0271 7.97422 12.6854C7.63253 12.3437 7.1691 12.1518 6.68588 12.1518C6.20266 12.1518 5.73923 12.3437 5.39754 12.6854C5.05585 13.0271 4.86389 13.4905 4.86389 13.9738V16.4031C4.86389 18.8192 5.82368 21.1363 7.53213 22.8448C9.24057 24.5532 11.5577 25.513 13.9738 25.513C16.3899 25.513 18.7071 24.5532 20.4155 22.8448C22.124 21.1363 23.0837 18.8192 23.0837 16.4031V10.3298C23.0837 9.84656 22.8918 9.38313 22.5501 9.04144C22.2084 8.69976 21.745 8.5078 21.2618 8.5078C20.7785 8.5078 20.3151 8.69976 19.9734 9.04144C19.6317 9.38313 19.4398 9.84656 19.4398 10.3298M12.1518 6.68581V13.3664M12.1518 6.68581V5.47116C12.1518 4.98793 12.3438 4.52451 12.6855 4.18282C13.0272 3.84113 13.4906 3.64917 13.9738 3.64917C14.457 3.64917 14.9205 3.84113 15.2622 4.18282C15.6038 4.52451 15.7958 4.98793 15.7958 5.47116V6.68581M19.4398 10.3298V6.68581C19.4398 6.20259 19.2478 5.73916 18.9061 5.39747C18.5644 5.05579 18.101 4.86383 17.6178 4.86383C17.1346 4.86383 16.6711 5.05579 16.3295 5.39747C15.9878 5.73916 15.7958 6.20259 15.7958 6.68581M19.4398 10.3298V13.3664M15.7958 6.68581V13.3664" stroke="white" stroke-width="1.34962" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+
+<script src="{{ '360-knob.js' | asset_url }}" defer></script>

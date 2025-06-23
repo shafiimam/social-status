@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOMContentLoaded");
   //rotating-slider.js
   (function ($) {
     $.fn.rotatingSlider = function (options) {
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
               this.startAutoRotate();
             }
           }
-          console.log("Rotating Slider initialized", this);
         },
         bindEvents: function () {
           if (this.settings.draggable) {
@@ -150,9 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
           this.rotateCounterClockwise();
         },
         renderSlider: function () {
-          console.log("rendering Slider", this);
           var halfAngleRadian = ((this.slideAngle / 2) * Math.PI) / 180;
-          console.log("halfAngleRadian", halfAngleRadian);
           var activeSlideWidth = this.settings.slideWidth;
           var innerRadius =
             ((1 / Math.tan(halfAngleRadian)) * activeSlideWidth) / 2;
@@ -287,7 +283,6 @@ document.addEventListener("DOMContentLoaded", function () {
             previousCurrentSlideIndex === totalSlides - 2 &&
             this.directionAction === "counter-clockwise"
           ) {
-            console.log("last slide reached");
             this.$directionControls
               .find(".right-arrow")
               .css("pointer-events", "none");
@@ -301,7 +296,6 @@ document.addEventListener("DOMContentLoaded", function () {
             previousCurrentSlideIndex === 1 &&
             this.directionAction === "clockwise"
           ) {
-            console.log("first slide reached");
             this.$directionControls
               .find(".left-arrow")
               .css("pointer-events", "none");
@@ -372,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.markupIsValid = !0;
           } else {
             this.$slider.css("display", "none");
-            console.log("Markup for Rotating Slider is invalid.");
+            console.error("Markup for Rotating Slider is invalid.");
           }
         },
         beforeRotationStart: function () {
@@ -401,13 +395,8 @@ document.addEventListener("DOMContentLoaded", function () {
       autoRotate: false,
       draggable: false,
       afterRotationStart: function () {
-        console.log(
-          "Rotating to slide " +
-            ($(".rotating-slider .active-slide").index() + 1)
-        );
       },
       afterRotationEnd: function () {
-        console.log("slider rotated", this);
       },
     });
   });

@@ -11,43 +11,6 @@
   "type": "footer",
   "name": "t:sections.refactor_words.labels.footer_group",
   "sections": {
-    "heading_4UBhzX": {
-      "type": "heading",
-      "blocks": {
-        "heading_akL3aA": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2",
-            "seo_h_tag": "h2"
-          }
-        },
-        "text_XpKXez": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_hPejUN": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_akL3aA",
-        "text_XpKXez",
-        "button_hPejUN"
-      ],
-      "name": "t:sections.heading.name",
-      "settings": {
-        "text_alignment": "center",
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)"
-      }
-    },
     "text-columns-with-icons": {
       "type": "text-columns-with-icons",
       "blocks": {
@@ -147,7 +110,6 @@
     }
   },
   "order": [
-    "heading_4UBhzX",
     "text-columns-with-icons",
     "footer"
   ]

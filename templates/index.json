@@ -394,6 +394,45 @@
         "arrow_text_2": "Events"
       }
     },
+    "image_text_column_rhg67G": {
+      "type": "image-text-column",
+      "blocks": {
+        "image_item_xytTyh": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/besocial-logo_1.png",
+            "image_width": 50,
+            "image_height": 100,
+            "image_full_width": true
+          }
+        },
+        "text_item_9xrGED": {
+          "type": "text_item",
+          "settings": {
+            "title": "<p>Powered by Connection Your Community Activation Engine</p>"
+          }
+        },
+        "button_kK4jpN": {
+          "type": "button",
+          "settings": {
+            "button_label": "View More Events",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_item_xytTyh",
+        "text_item_9xrGED",
+        "button_kK4jpN"
+      ],
+      "name": "Image Text Column",
+      "settings": {
+        "image": "shopify://shop_images/image_84.png",
+        "image_position": "right",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "floating_testimonials_KCBbUg": {
       "type": "floating-testimonials",
       "blocks": {
@@ -458,6 +497,167 @@
       "settings": {
         "section_title": "Testimonials"
       }
+    },
+    "gallery_rDXHQD": {
+      "type": "gallery",
+      "blocks": {
+        "image_C9pXkW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ssmob1_8ba82a7d-fead-46de-a0fb-e6e407ca3446.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_AwGizb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_91.png",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_DJke9q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/apbnbmob.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_6Jz87i": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_Mf9T9V": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_WckVpY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GS-SPUTNIK-BLK_2.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_AeVT8W": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/apbNBdesk.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_zTwdMm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GS-SPUTNIK-BLK_2.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_C9pXkW",
+        "image_AwGizb",
+        "image_DJke9q",
+        "image_6Jz87i",
+        "image_Mf9T9V",
+        "image_WckVpY",
+        "image_AeVT8W",
+        "image_zTwdMm"
+      ],
+      "name": "t:sections.gallery.name",
+      "settings": {
+        "image_height": "half"
+      }
+    },
+    "perspective_slider_VCQ6DF": {
+      "type": "perspective-slider",
+      "blocks": {
+        "slide_item_7jKmFq": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/apbNBdesk.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_7npizU": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/desk1_2684acce-cb1a-4db1-8619-0c84d6b4ebdf.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_iXW9YU": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_gxQ8Wz": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_WYnJ7t": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_MQ7jqR": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
+            "title": ""
+          }
+        },
+        "slide_item_aF8QRe": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_7jKmFq",
+        "slide_item_7npizU",
+        "slide_item_iXW9YU",
+        "slide_item_gxQ8Wz",
+        "slide_item_WYnJ7t",
+        "slide_item_MQ7jqR",
+        "slide_item_aF8QRe"
+      ],
+      "name": "Perspective Slider",
+      "settings": {
+        "title": "AMM Beach gallery",
+        "auto_play": false,
+        "background_color": "#121212",
+        "text_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -467,6 +667,9 @@
     "video_background_eCcVXP",
     "virtual_try_on_nBhXAa",
     "latest_features_f6y9et",
-    "floating_testimonials_KCBbUg"
+    "image_text_column_rhg67G",
+    "floating_testimonials_KCBbUg",
+    "gallery_rDXHQD",
+    "perspective_slider_VCQ6DF"
   ]
 }

@@ -131,7 +131,7 @@ summary::-webkit-details-marker {
   --box-big-padding: 9vw;
   --box-smaller-padding: 80px;
   --box-small-padding: 40px;
-  --box-auto-top: 100px;
+  --box-auto-top: 60px;
   --box-min-height: clamp(250px, 30vh, 500px);
   --site-horizontal-padding: 40px;
   --sidebar-padding: 40px;
@@ -145,7 +145,7 @@ summary::-webkit-details-marker {
 
 @media screen and (min-width: 1367px) {
   :root {
-    --box-auto-top: 150px;
+    --box-auto-top: 60px; 
   }
 }
 @media screen and (max-width: 1024px) {
@@ -155,7 +155,7 @@ summary::-webkit-details-marker {
     --box-small-padding: 40px;
     --site-horizontal-padding: 30px;
     --sidebar-padding: 30px;
-    --box-auto-top: 75px;
+    --box-auto-top: 60px;
     --box-min-height: clamp(250px, 35vh, 500px);
   }
 }
