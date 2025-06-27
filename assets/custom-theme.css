@@ -85,3 +85,22 @@ section#shopify-pc__banner {
     display: grid !important;
   }
 }
+.cae-input{
+  border-radius: 0 !important;
+}
+.cae-button {
+  background-color: #000!important;
+  color: #fff!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none!important;
+  font-family: 'work-sans', sans-serif;
+}
+.customer-avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 280px;
+  aspect-ratio: 1;
+  margin-bottom: 40px;
+}
