@@ -70,7 +70,7 @@
     margin-bottom: -1px;
   }
   .product-grid-border-fix.fix-bottom-border:not(.fix-borders-not)[data-count="0"] .site-box:nth-last-child(-n+4) {
-    margin-bottom: -1px;
+    /* margin-bottom: -1px; */
   }
 }
 @media screen and (max-width: 768px), screen and (max-width: 1024px) and (orientation: portrait) {
@@ -94,12 +94,12 @@
 }
 @media screen and (min-width: 1025px), screen and (min-width: 769px) and (orientation: landscape) {
   .product-grid-border-fix:not(.fix-borders-split):not(.fix-borders-top-not) .site-box:nth-child(-n+4) {
-    border-top: 1px solid var(--grid-borders);
+    border-top: 1px solid var(--product-grid-borders);
   }
 }
 @media screen and (max-width: 768px), screen and (max-width: 1024px) and (orientation: portrait) {
   .product-grid-border-fix:not(.fix-borders-top-not) .site-box:nth-child(-n+2) {
-    border-top: 1px solid var(--grid-borders);
+    border-top: 1px solid var(--product-grid-borders);
   }
 }
 .product-grid-border-fix.fix-borders-top-two .site-box:nth-child(-n+2) {
@@ -112,7 +112,7 @@
   width: calc(100% + 1px);
   position: absolute;
   top: -1px;
-  background: var(--grid-borders);
+  background: var(--product-grid-borders);
 }
 html[dir=rtl] .product-grid-border-fix.fix-borders-top-two .site-box:nth-child(-n+2):before {
   right: 0;
@@ -121,13 +121,13 @@ html[dir=ltr] .product-grid-border-fix.fix-borders-top-two .site-box:nth-child(-
   left: 0;
 }
 .product-grid-border-fix .site-box {
-  border-bottom: 1px solid var(--grid-borders);
+  border-bottom: 1px solid var(--product-grid-borders);
 }
 html[dir=rtl] .product-grid-border-fix .site-box {
-  border-left: 1px solid var(--grid-borders);
+  border-left: 1px solid var(--product-grid-borders);
 }
 html[dir=ltr] .product-grid-border-fix .site-box {
-  border-right: 1px solid var(--grid-borders);
+  border-right: 1px solid var(--product-grid-borders);
 }
 
 .product-grid-split-border .box__heading {

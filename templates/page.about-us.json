@@ -134,11 +134,11 @@
       ],
       "name": "Perspective Slider",
       "settings": {
-        "title": "AMM Beach gallery",
+        "title": "IMPACT AREAS",
         "auto_play": false,
         "background_color": "#000000",
         "slide_overlay_color": "linear-gradient(0deg, rgba(231, 126, 33, 0.68), rgba(231, 126, 33, 0.68) 100%)",
-        "text_color": "#000000",
+        "text_color": "#ffffff",
         "text_color_card": "#ffffff",
         "path_color": "#757575",
         "text_alignment": "center"

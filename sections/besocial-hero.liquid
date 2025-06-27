@@ -1,0 +1,107 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+     background-image: url({{ section.settings.background_image | image_url: width: 1920 }});
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: var(--window-height);
+     
+  }
+{% endstyle %}
+
+<div class="besocial-hero-section site-box-container container--fullscreen box--can-stick" id="shopify-section-{{ section.id }}">
+  <div class="besocial-hero-container">
+    <div class="besocial-hero-logo">
+      <img
+        src="{{ section.settings.logo | image_url: width: 500 }}"
+        alt="{{ section.settings.logo.alt }}"
+        width="470"
+        height="100"
+      > 
+    </div>
+    <div class="besocial-hero-content">
+      {{ section.settings.content }}
+    </div>
+    <div class="besocial-hero-buttons">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.button_link }}" class="button button--solid button--with-icon">
+          <span>{{ block.settings.button_text }}</span>
+          <span class="icon" aria-hidden="true" role="img">
+            {%- render 'theme-symbols', icon: 'arrow_icon_smallest' -%}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{{ 'section-besocial-hero.css' | asset_url | stylesheet_tag }}
+{% schema %}
+{
+  "name": "Be Social Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Be Social Hero",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "button",
+          "settings": {
+            "button_text": "About",
+            "button_link": "#"
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "button_text": "Free Game",
+            "button_link": "#"
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "button_text": "Book an Event",
+            "button_link": "#"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

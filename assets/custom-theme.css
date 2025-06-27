@@ -70,3 +70,18 @@
 section#shopify-pc__banner {
   display: none !important;
 }
+.box__collection_first_products{
+  height: 100%;
+  width: 50%;
+}
+.desktop-hide-important-grid{
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .box__collection_first_products{
+    width: 100%;
+  }
+  .desktop-hide-important-grid{
+    display: grid !important;
+  }
+}

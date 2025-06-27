@@ -54,7 +54,7 @@
   z-index: 1;
 }
 .block-slide-title{
-  font-size: 20px;
+  font-size: 16px;
   font-family: var(--font-stack-headings);
   margin-bottom: 10px;
 }
@@ -62,7 +62,7 @@
   margin-bottom: 10px;
 }
 .block-slide-description p{
-  font-size: clamp(16px, 2vw, 33px);
+  font-size: clamp(16px, 2vw, 24px);
   font-family: var(--font-stack-headings);
   margin-bottom: 0;
   font-weight: 500;
@@ -80,7 +80,7 @@
   letter-spacing: 0.05em;
   background-color: #fff;
   color: #000;
-  padding: 15px 30px;
+  padding: 10px 30px;
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;

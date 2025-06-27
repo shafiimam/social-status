@@ -12,9 +12,17 @@
     "main": {
       "type": "contact-form",
       "blocks": {
-        "1628539090bcf511f6-": {
-          "type": "title",
-          "settings": {}
+        "text_6Rk6ir": {
+          "type": "text",
+          "settings": {
+            "content": "<p><strong>Our address</strong></p><p><strong>93 Bayport Ave.South Richmond Hill, NY 11419</strong></p><p></p><p><strong>For general inquires</strong></p><p><strong>socialstatus@example.com</strong></p><p></p><p><strong>Phone</strong></p><p><strong>+1 200 884 9600</strong></p><p></p><p><strong>Working hours</strong></p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>"
+          }
+        },
+        "text_D9rrfH": {
+          "type": "text",
+          "settings": {
+            "content": "<h3>Write us a message</h3>"
+          }
         },
         "1628539090bcf511f6-0": {
           "type": "email",
@@ -34,12 +42,23 @@
         }
       },
       "block_order": [
-        "1628539090bcf511f6-",
+        "text_6Rk6ir",
+        "text_D9rrfH",
         "1628539090bcf511f6-0",
         "1628539090bcf511f6-1",
         "1628539090bcf511f6-2"
       ],
       "settings": {
+        "title": "Contact us",
+        "content": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at <a href=\"mailto:info@socialstatuspgh.com\" title=\"mailto:info@socialstatuspgh.com\">info@socialstatuspgh.com</a> or on our website via live chat during our business hours. </p>",
+        "title_bottom": "SEO COPY HEADING HERE",
+        "content_bottom": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>",
+        "text_color": "#ffffff",
+        "image": "shopify://shop_images/image_93.png",
+        "map_enable": false,
+        "map_address": "",
+        "map_api": "",
+        "map_style": "light",
         "seo_h_tag": "h1"
       }
     }
