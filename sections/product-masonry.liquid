@@ -36,7 +36,7 @@
       <div class="product-masonry__content-products">
         <div class="product-masonry__content-products-inner">
           {% for product in section.settings.product_list %}
-            <div class="product-masonry__content-products-item">
+            <div class="product-masonry__content-products-item site-box-content product-holder">
               {%- render 'product-item', product: product, index: forloop.index0 -%}
             </div>
           {% endfor %}

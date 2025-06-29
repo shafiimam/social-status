@@ -23,7 +23,7 @@
 
 .title-column .main-title,
 .title-column .sub-title {
-  color: #292929;
+  color: var(--heading-color);
   text-align: center;
   font-family: Yantramanav;
   font-style: normal;

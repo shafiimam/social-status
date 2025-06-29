@@ -2,7 +2,7 @@
   if settings.within_filter_enabled and product_collection
     assign product_url = product.url | within: product_collection
   else
-    assign product_url = product.url
+    assign product_url = product.url | within: collection
   endif
 -%}
 
@@ -113,8 +113,8 @@
 
   <div class="caption">
 
-    <div>
-      <span class="title"><span class="underline-animation">
+    <div class="product-item__info-container">
+      <span class="title h5"><span class="underline-animation">
         {%- liquid 
           unless blank_product 
             echo product.title 

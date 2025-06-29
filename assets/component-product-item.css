@@ -273,12 +273,13 @@ html[dir=ltr] .product-grid-split-border .box__heading {
   display: block;
   font-weight: var(--font-weight-body-bold);
   line-height: 1.3;
+  margin-bottom: 0;
 }
 .product-item .caption .price {
   display: block;
   line-height: 1.2;
   overflow: hidden;
-  margin-top: 5px;
+  color: #727272;
 }
 .product-item .caption .price del {
   opacity: var(--alternate-opacity);
@@ -436,6 +437,8 @@ html[dir=rtl] .quick-add-to-cart {
 }
 html[dir=ltr] .quick-add-to-cart {
   right: 8px;
+  top: -80px;
+  position: absolute;
 }
 
 .quick-add-to-cart-button {

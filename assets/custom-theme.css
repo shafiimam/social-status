@@ -1,3 +1,4 @@
+
 :root{
   --brand-secondary: #E77E21;
 }
@@ -56,6 +57,7 @@
 
 .heading {
   text-transform: uppercase;
+  color: var(--heading-color);
 }
 .font-zen {
   font-family: "zen-tokyo-zoo", sans-serif;
@@ -78,6 +80,9 @@ section#shopify-pc__banner {
   display: none !important;
 }
 @media (max-width: 1024px) {
+  .mobile-hide-important{
+    display: none !important;
+  }
   .box__collection_first_products{
     width: 100%;
   }
@@ -103,4 +108,13 @@ section#shopify-pc__banner {
   height: 280px;
   aspect-ratio: 1;
   margin-bottom: 40px;
+}
+
+/* product item custom styles */
+.product-item__info-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }

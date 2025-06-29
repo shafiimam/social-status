@@ -1,0 +1,188 @@
+<div class="collection-header-banner">
+  <div class="left-content">
+    <div class="top-content">
+      <h1 class="title h1">{{ section.settings.title }}</h1>
+      <p class="subtitle yantramanav-regular">{{ section.settings.subtitle }}</p>
+      <a href="{{ section.settings.button_link }}" class="button button--solid">{{ section.settings.button_text }}</a>
+    </div>
+    <div class="bottom-content">
+      <h3 class="title h3">{{ section.settings.seo_title }}</h3>
+      <p class="subtitle">{{ section.settings.seo_description }}</p>
+    </div>
+  </div>
+  <div class="right-slider">
+    {% for block in section.blocks %}
+      <div
+        class="slider-cell"
+        {{ block.shopify_attributes }}
+        style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), url({{ block.settings.image | image_url }});"
+      >
+        <div class="slider-title-container">
+          <a href="{{ block.settings.slide_link }}" class="slider-title heading h1">
+            {{ block.settings.slide_title }}
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<style>
+  .collection-header-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: var(--window-height);
+    padding-bottom: 60px;
+  }
+  .collection-header-banner .left-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .collection-header-banner .top-content .subtitle {
+    margin: 20px 0;
+    color: #727272;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.2px;
+  }
+  .collection-header-banner .right-slider {
+    height: 100%;
+    overflow-y: auto;
+  }
+  .collection-header-banner .slider-cell {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .collection-header-banner .slider-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .slider-title-container .slider-title {
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  .slider-title-container .slider-title:hover {
+    transform: scale(1.05);
+  }
+  .slider-title-container .slider-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  .slider-title-container .slider-title:hover::after {
+    width: 100%;
+  }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderCells = document.querySelectorAll('.collection-header-banner .slider-cell');
+  
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -500px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, observerOptions);
+  
+  sliderCells.forEach(cell => {
+    cell.style.transform = 'translateY(30px)';
+    cell.style.opacity = '0';
+    cell.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    observer.observe(cell);
+  });
+  
+});
+</script>
+
+{% schema %}
+{
+  "name": "Collection Header Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "COLLECTIONS"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We collected the best outfits which will definitely meet your fit. Browse our categories and find the best."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "BROWSE ALL PRODUCTS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "seo_title",
+      "label": "SEO Title",
+      "default": "SEO COPY HEADING HERE"
+    },
+    {
+      "type": "textarea",
+      "id": "seo_description",
+      "label": "SEO Description",
+      "default": "We want to ensure that your experience with us is smooth and enjoyable..."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Background Image"
+        },
+        {
+          "type": "text",
+          "id": "slide_title",
+          "label": "Slide Title"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Header Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

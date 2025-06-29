@@ -445,7 +445,6 @@ html[dir=ltr] .skip-to-content:focus {
   padding: 0 var(--site-horizontal-padding);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--grid-borders);
   background-color: var(--main-background);
   z-index: 10;
   position: relative;
@@ -454,6 +453,7 @@ html[dir=ltr] .skip-to-content:focus {
   scrollbar-width: none;
   flex-wrap: nowrap;
   overflow-x: scroll;
+  border-block: 1px solid var(--stroke);
 }
 .breadcrumb::-webkit-scrollbar {
   width: 0 !important;

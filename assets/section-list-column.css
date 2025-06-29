@@ -28,7 +28,7 @@
   transition: color 0.3s ease;
 }
 .list-item:hover span {
-  color: #292929;
+  color: var(--heading-color);
 }
 .list-item:hover .hover-image-text-2 {
   color: #e77e21;

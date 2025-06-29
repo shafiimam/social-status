@@ -84,7 +84,7 @@
 }
 
 .box__product-content {
-  padding: 0 var(--box-smaller-padding);
+  padding: 0 50px;
 }
 .box__product-content .site-box-content {
   padding: var(--box-smaller-padding) 0;
