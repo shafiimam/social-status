@@ -103,6 +103,7 @@
     "product_overlay_bg": "#000000",
     "product_overlay_txt": "#ffffff",
     "product_card_badge_sale_type": "text",
+    "product_card_badge_sale_color": "#d14544",
     "favicon": "shopify://shop_images/LOOP_LOGO_2_dc8b95cc-4458-489b-80a3-2a41330d1c08.png",
     "cart_action": "overlay",
     "cart_notes_enable": true,

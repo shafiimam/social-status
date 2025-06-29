@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "split"
+      }
+    },
+    "collection_header_banner_qqMjzp": {
+      "type": "collection-header-banner",
+      "blocks": {
+        "slide_FpfNR3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/tops-collection-banner.png",
+            "slide_title": "Tops",
+            "slide_link": "shopify://collections/tops-1"
+          }
+        },
+        "slide_bHEqLt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/apbnbmob.jpg",
+            "slide_title": "Bottoms",
+            "slide_link": "shopify://collections/bottoms"
+          }
+        },
+        "slide_kb9KeV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1_383135be-1bc5-465a-9033-81fd09458260.jpg",
+            "slide_title": "Sneakers",
+            "slide_link": "shopify://collections/sneakers-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_FpfNR3",
+        "slide_bHEqLt",
+        "slide_kb9KeV"
+      ],
+      "name": "Collection Header Banner",
+      "settings": {
+        "title": "COLLECTIONS",
+        "subtitle": "We collected the best outfits which will definitely meet your fit. Browse our categories and find the best.",
+        "button_text": "BROWSE ALL PRODUCTS",
+        "button_link": "shopify://collections/all",
+        "seo_title": "SEO COPY HEADING HERE",
+        "seo_description": "We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collection_header_banner_qqMjzp"
+  ]
+}

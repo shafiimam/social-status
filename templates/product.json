@@ -15,20 +15,30 @@
         "header": {
           "type": "header",
           "settings": {
-            "show_reviews": true
+            "show_vendor": true,
+            "show_badge": true,
+            "show_reviews": true,
+            "show_tax_info": false,
+            "show_sku": false,
+            "show_barcode": false,
+            "stick_product_header_on_mobile": true
           }
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "variants_style": "radio"
+            "variants_style": "radio",
+            "show_color_swatches": true,
+            "unavailable_variants": "show"
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": true,
-            "show_dynamic_checkout": true
+            "show_preorder": false,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
           }
         },
         "description": {
@@ -49,6 +59,7 @@
       ],
       "settings": {
         "gallery_style": "scroll",
+        "gallery_aspect": false,
         "gallery_pagination": "dots",
         "enable_zoom": true,
         "enable_video_looping": false
@@ -59,10 +70,44 @@
       "settings": {
         "heading": "You may also like"
       }
+    },
+    "rich_text_pGBT7b": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FDUfWR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_EPqAbw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FDUfWR",
+        "text_EPqAbw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "rich_text_pGBT7b"
   ]
 }

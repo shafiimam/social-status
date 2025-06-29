@@ -11,11 +11,44 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {}
+      "blocks": {
+        "highlight_product_KgjWqd": {
+          "type": "highlight_product",
+          "disabled": true,
+          "settings": {
+            "product": "nb-990-td",
+            "badge_text": "Sale-20%",
+            "badge_color": "#e77e21",
+            "badge_text_color": "",
+            "position": 7,
+            "column_span": 2,
+            "row_span": 2
+          }
+        }
+      },
+      "block_order": [
+        "highlight_product_KgjWqd"
+      ],
+      "settings": {
+        "show_collection_banner": true,
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "mobile_overlay_background": "rgba(0,0,0,0)",
+        "mobile_overlay_text": "rgba(0,0,0,0)",
+        "collection_rows": 3,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "image_filter_layout": "onecolumn"
+      }
     },
     "navigation": {
       "type": "main-collection-navigation",
-      "settings": {}
+      "settings": {
+        "navigation_style": "2",
+        "navigation_images": false,
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
