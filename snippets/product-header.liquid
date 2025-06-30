@@ -20,40 +20,54 @@
   <h1 {{ element_attributes }}>
 {%- endif -%}
 
-  {%- liquid
-    if product != blank
-      echo product.title
-    else 
-      echo 'general.onboarding.product_title' | t
-    endif
-  -%}
+{%- liquid
+  if product != blank
+    echo product.title
+  else
+    echo 'general.onboarding.product_title' | t
+  endif
+-%}
 
-{%- if type == 'section' -%} </h3> {%- else -%} </h1> {%- endif -%}
+{%- if type == 'section' -%}</h3> {%- else -%}</h1>{%- endif -%}
 
 {%- liquid
   if block.settings.show_badge
     render 'product-badges', product: product, style: 'header'
   endif
 -%}
+{% for tag in product.tags %}
+  {% assign _tag = tag | downcase %}
+  {% if _tag contains 'maincolor-' %}                       {% assign maincolor = _tag | remove: 'maincolor-' | upcase %}
+  {% endif %}
+{% endfor %}    
+{% if maincolor != blank %}
+  <div class="product-color">
+    <h3>{{ maincolor }}</h3>
+  </div>
+{% endif %}
 
 <div class="price-reviews" id="product-price-{{ section.id }}" {{ block.shopify_attributes }}>
   <div class="price">
     {%- if product != blank -%}
       <div>
-        <span class="product-price product__price--original {% unless title_class %} text-size--large {% endunless %}" data-js-product-price-original>{{ current_variant.price | money }}</span>
-        <span class="compare-price product__price--compare {% unless title_class %} text-size--larger {% endunless %}" data-js-product-price-compare>
+        <span class="product-price product__price--original" data-js-product-price-original>
+          {{- current_variant.price | money -}}
+        </span>
+        <span class="compare-price product__price--compare" data-js-product-price-compare>
           {%- if current_variant.compare_at_price > current_variant.price -%}
             {{ current_variant.compare_at_price | money }}
           {%- endif -%}
         </span>
       </div>
-      {%- liquid 
-        if block.settings.show_reviews 
-          render 'product-rating', product: product, type: 'main-product' 
+      {%- liquid
+        if block.settings.show_reviews
+          render 'product-rating', product: product, type: 'main-product'
         endif
       -%}
     {%- else -%}
-      <div><span class="product-price product__price--original {% unless title_class %} text-size--large {% endunless %}">{{ 2999 | money }}</span></div>
+      <div>
+        <span class="product-price product__price--original">{{ 2999 | money }}</span>
+      </div>
     {%- endif -%}
   </div>
   <span class="unit-price product__price--unit text-size--smaller" data-js-product-price-unit>
@@ -68,12 +82,10 @@
       -%}
     {%- endif -%}
   </span>
-</div>  
+</div>
 
 {%- if block.settings.show_tax_info or block.settings.show_sku or block.settings.show_barcode -%}
-
   <div class="product-meta">
-
     {%- if block.settings.show_tax_info -%}
       {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
         <div class="product-policies text-size--smallest" data-product-policies {{ block.shopify_attributes }}>
@@ -92,20 +104,20 @@
         {%- if block.settings.show_sku -%}
           <span class="product__sku" data-js-product-sku>
             {%- if current_variant.sku != empty -%}
-              {{ 'products.page.sku' | t }}{{ current_variant.sku | escape }}
+              {{ 'products.page.sku' | t -}}
+              {{- current_variant.sku | escape }}
             {%- endif -%}
           </span>
         {%- endif -%}
         {%- if block.settings.show_barcode -%}
-           <span class="product__barcode" data-js-product-barcode>
+          <span class="product__barcode" data-js-product-barcode>
             {%- if current_variant.barcode != empty -%}
-              {{ 'products.page.barcode' | t }}{{ current_variant.barcode | escape }}
+              {{ 'products.page.barcode' | t -}}
+              {{- current_variant.barcode | escape }}
             {%- endif -%}
           </span>
         {%- endif -%}
       </div>
     {%- endif -%}
-
   </div>
-
 {%- endif -%}

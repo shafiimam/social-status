@@ -11,24 +11,6 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "blocks": {
-        "highlight_product_KgjWqd": {
-          "type": "highlight_product",
-          "disabled": true,
-          "settings": {
-            "product": "nb-990-td",
-            "badge_text": "Sale-20%",
-            "badge_color": "#e77e21",
-            "badge_text_color": "",
-            "position": 7,
-            "column_span": 2,
-            "row_span": 2
-          }
-        }
-      },
-      "block_order": [
-        "highlight_product_KgjWqd"
-      ],
       "settings": {
         "show_collection_banner": true,
         "show_collection_description": false,

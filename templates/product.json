@@ -21,8 +21,18 @@
             "show_tax_info": false,
             "show_sku": false,
             "show_barcode": false,
-            "stick_product_header_on_mobile": true
+            "stick_product_header_on_mobile": false
           }
+        },
+        "custom_liquid_UVmX7X": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -41,9 +51,25 @@
             "show_gift_card_recipient": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
+        "collapsible_tab_4zwfq4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Details",
+            "content": "",
+            "markup": "{{ product.description | split: \"<!-- Details -->\" | last }}",
+            "page": "",
+            "hide_block_if": false
+          }
+        },
+        "collapsible_tab_FFCzxN": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "content": "",
+            "markup": "{% for tag in product.tags %}                                  {% assign _tag = tag | downcase %}                              {% if _tag contains \"shipping-1\" %} \nOur special release and draw products are considered a final sale.  All unauthorized returns will be subject to Restock Fee. We reserve the right to cancel orders at our own discretion.                                                                             <br>                                   {% elsif _tag contains \"shipping-2\" %}                                   All shipping is done through FedEx both domestically and internationally. All international orders are final sale. The customer is responsible for all duties and taxes.                                   <br>                                  {% endif %}\n                                {% endfor %}",
+            "page": "",
+            "hide_block_if": false
+          }
         },
         "share": {
           "type": "share",
@@ -52,9 +78,12 @@
       },
       "block_order": [
         "header",
+        "custom_liquid_UVmX7X",
+        "description",
         "variant_picker",
         "buy_buttons",
-        "description",
+        "collapsible_tab_4zwfq4",
+        "collapsible_tab_FFCzxN",
         "share"
       ],
       "settings": {
