@@ -11,13 +11,30 @@
   "sections": {
     "main": {
       "type": "main-collection",
+      "blocks": {
+        "featured_product_RAeqqz": {
+          "type": "featured_product",
+          "settings": {
+            "product": "1906-utility-navy",
+            "badge_text": "sale -50%",
+            "badge_color": "#000000",
+            "badge_text_color": "#ffffff",
+            "position": 3,
+            "block_span": 2
+          }
+        }
+      },
+      "block_order": [
+        "featured_product_RAeqqz"
+      ],
       "settings": {
+        "collection_desktop_layout": "full",
         "show_collection_banner": true,
         "show_collection_description": false,
         "show_collection_image": true,
-        "mobile_overlay_background": "rgba(0,0,0,0)",
+        "mobile_overlay_background": "#131313",
         "mobile_overlay_text": "rgba(0,0,0,0)",
-        "collection_rows": 3,
+        "collection_rows": 16,
         "enable_filtering": true,
         "enable_sorting": true,
         "image_filter_layout": "onecolumn"

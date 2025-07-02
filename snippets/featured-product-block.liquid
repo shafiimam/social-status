@@ -1,0 +1,137 @@
+{% style %}
+  #featured-product-block-{{ block.id }} {
+    grid-column: span {{ block_span }};
+    grid-row: span {{ block_span }};
+  }
+  @media screen and (max-width: 768px) {
+    #featured-product-block-{{ block.id }} {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+{% endstyle %}
+<div
+  id="featured-product-block-{{ block.id }}"
+  class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow featured-product-block"
+  data-order="{{ forloop.index }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="site-box-content product-holder">
+    <div class="featured-product">
+      <div class="feature-product-details">
+        <a href="{{ product.url }}" class="featured-product-image-container">
+          {%- render 'lazy-image', image: product.featured_media, sizes: sizes -%}
+          <div class="featured-product-hover-image">
+            {%- render 'lazy-image', image: product.media[1], sizes: sizes -%}
+            {%- if settings.enable_quick_buy and product.available -%}
+                {%- if product.has_only_default_variant -%}
+                  <quick-add-to-cart class="quick-add-to-cart">
+                    <product-form
+                      {% if settings.cart_action == 'overlay' %}
+                        data-ajax-cart
+                      {% endif %}
+                    >
+                      <div class="quick-add-to-cart-button">
+                        {%- form 'product', product -%}
+                          <input type="hidden" name="id" value="{{ variant.id }}">
+                          <button
+                            class="product__add-to-cart"
+                            type="submit"
+                            name="add"
+                            aria-label="{{ 'products.page.add_to_cart_button' | t }}"
+                            tabindex="-1"
+                          >
+                            <span class="visually-hidden">{{ 'products.page.add_to_cart_button' | t }}</span>
+                            <span class="add-to-cart__text" style="height:26px" role="img">
+                              {%- render 'theme-symbols', icon: 'cart_icon_plus' -%}
+                            </span>
+                            {%- render 'preloader', class: 'add-to-cart__preloader' -%}
+                          </button>
+                        {%- endform -%}
+                      </div>
+                    </product-form>
+                  </quick-add-to-cart>
+                {%- else -%}
+                  <quick-view-product class="quick-add-to-cart">
+                    <div class="quick-add-to-cart-button">
+                      <button class="product__add-to-cart" data-href="{{ product.url }}" tabindex="-1">
+                        <span class="visually-hidden">{{ 'products.page.add_to_cart_button' | t }}</span>
+                        <span class="add-to-cart__text" style="height:26px" role="img">
+                          {%- render 'theme-symbols', icon: 'cart_icon_plus' -%}
+                        </span>
+                        {%- render 'preloader', class: 'add-to-cart__preloader' -%}
+                      </button>
+                    </div>
+                  </quick-view-product>
+                {%- endif -%}
+              {%- endif -%}
+          </div>
+        </a>
+        <div class="featured-product-info">
+          <h3 class="heading h3">{{ product.title }}</h3>
+          <div class="featured-product-price-and-badges">
+            <div class="featured-product-price">
+              <span class="price text-size--smaller">
+                <span style="display:flex;flex-direction:row">
+                  {%- liquid
+                    unless blank_product
+                      assign price = product.price | money
+
+                      if product.price_varies
+                        assign price = product.price_min | money
+                        if product.compare_at_price > product.price
+                          echo 'products.grid.on_sale_from_html' | t: price: price
+                        else
+                          echo 'products.grid.from_text_html' | t: price: price
+                        endif
+                      else
+                        if product.compare_at_price > product.price
+                          echo price
+                          echo '<del>'
+                          echo product.compare_at_price | money
+                          echo '</del>'
+                        else
+                          echo price
+                        endif
+                      endif
+
+                      if variant.unit_price_measurement
+                        echo '<span class="unit-price text-size--smallest">'
+                        echo variant.unit_price | money
+                        echo ' / '
+                        if variant.unit_price_measurement.reference_value != 1
+                          echo variant.unit_price_measurement.reference_value
+                        endif
+                        echo variant.unit_price_measurement.reference_unit
+                        echo '</span>'
+                      endif
+
+                    else
+                      echo 9999 | money
+                    endunless
+                  -%}
+                </span>
+              </span>
+            </div>
+            <div class="featured-product-badges">
+              {%- render 'product-badges', product: product -%}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sale-tape-container">
+        <div class="sale-tape" id="sale-tape-{{ block.id }}">
+          {% for i in (1..100) %}
+            <span>{{ block.settings.badge_text }}</span>
+          {% endfor %}
+        </div>
+        <div class="sale-tape" id="sale-tape-{{ block.id }}">
+          {% for i in (1..100) %}
+            <span>{{ block.settings.badge_text }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

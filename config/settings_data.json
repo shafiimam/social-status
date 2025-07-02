@@ -98,6 +98,7 @@
     "product_card_aspect_ratio": "0.83333",
     "product_thumbnail_fit": false,
     "proudct_card_aspect_ratio_padding": 0,
+    "product_card_background": "#e7e7e7",
     "product_show_secondary": true,
     "product_animation": "one alt color--light",
     "product_overlay_bg": "#000000",

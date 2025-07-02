@@ -1,4 +1,3 @@
-
 :root{
   --brand-color: #E77E21;
 }
@@ -117,4 +116,13 @@ section#shopify-pc__banner {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
+}
+.d-flex{
+  display: flex !important;
+}
+#CollectionProductGrid{
+  border-top: 1px solid var(--stroke)
+}
+.no-overflow{
+  overflow: hidden !important;
 }

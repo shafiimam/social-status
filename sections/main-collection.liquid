@@ -69,7 +69,6 @@
             <div class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow box__collection {% if forloop_minus > 1 %} lap--hide {% endif %}" data-order="{{ forloop_plus }}"></div>
           {%- endfor -%}
         {%- endif -%}
-
       {%- endcapture -%}
 
       {%- if collection.products.size > 4 -%}
@@ -77,6 +76,16 @@
         {%- capture rest_products -%}
           {%- for product in collection.products offset: 4 -%}
             {%- assign rest_products_size = rest_products_size | plus: 1 -%}
+            {% for block in section.blocks %}
+              {% if block.type == 'featured_product' %}
+                {% assign featured_product = block.settings.product %}
+                {% assign block_position = block.settings.position %}
+                {% assign block_span = block.settings.block_span %}
+                {% if forloop.parentloop.index == block_position %}
+                  {% render 'featured-product-block', product: block.settings.product, block: block, block_span: block_span, block_position: block_position, section: section %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
             <div class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow box__collection" data-order="{{ forloop.index }}">
               <div class="site-box-content product-holder">
                 {%- render 'product-item', product_collection: collection, product: product, index: forloop.index0 -%}
@@ -135,7 +144,7 @@
         {%- if section.settings.show_collection_banner -%}
           {%- if section.settings.show_collection_image and collection.image -%}
             <div
-              class="site-box box--big lap--box--small-fl-auto box--typo-big box--top-align box--with-scroll box--column-flow box__heading"
+              class="site-box no-overflow {% if section.settings.collection_desktop_layout == 'full' %} box--bigger {% else %} box--big {% endif %} lap--box--small-fl-auto box--typo-big box--top-align box--with-scroll box--column-flow box__heading"
               data-order="0"
               data-size="{{ collection.products.size }}"
               data-custom-text="{{ section.id }}"
@@ -143,9 +152,14 @@
               style="height:var(--window-height);min-height:0;border-bottom:0"
               id="left-panel"
             >
-              <div class="reduce-top-margin" style="justify-content: center;">
+              <div class="reduce-top-margin d-flex" style="justify-content: center;">
                 <div class="site-box-content">
-                  <h1 class="title h1" style="color: {% if section.settings.show_collection_banner == false or collection.image == blank %}#000{% else %}#fff{% endif %};">{{ collection.title }}</h1>
+                  <h1
+                    class="title h1 heading"
+                    style="color: {% if section.settings.show_collection_banner == false or collection.image == blank %}#000{% else %}#fff{% endif %};"
+                  >
+                    {{ collection.title }}
+                  </h1>
                   {%- if collection.description != blank and section.settings.show_collection_description -%}
                     <div class="rte subtitle">
                       <div>{{ collection.description }}</div>
@@ -165,27 +179,29 @@
               </span>
             </div>
 
-            <div
-              class="site-box lap--box--small-fl-auto box--typo-big box--top-align box--column-flow box__collection_first_products mobile-hide-important"
-              data-order="0"
-            >
+            {% if section.settings.collection_desktop_layout == 'split' %}
               <div
-                class="product-grid-border-fix fix-bottom-border fix-borders-split"
-                data-grid-columns="2"
-                id="right-panel"
+                class="site-box lap--box--small-fl-auto box--typo-big box--top-align box--column-flow box__collection_first_products mobile-hide-important"
+                data-order="0"
               >
-                {{ first_products }}
+                <div
+                  class="product-grid-border-fix fix-bottom-border fix-borders-split"
+                  data-grid-columns="2"
+                  id="right-panel"
+                >
+                  {{ first_products }}
+                </div>
               </div>
-            </div>
+            {% endif %}
 
             {{ collection_mobile_filter_button }}
             <div
-            class="product-grid-border-fix fix-bottom-border desktop-hide-important-grid"
-            style="width:100%; display: none;"
-            data-count="{{ collection.products.size | modulo: 4 }}"
-          >
-            {{ first_products }}
-          </div>
+              class="product-grid-border-fix fix-bottom-border {% if section.settings.collection_desktop_layout == 'split' %} desktop-hide-important-grid {% endif %}"
+              style="width:100%;"
+              data-count="{{ collection.products.size | modulo: 4 }}"
+            >
+              {{ first_products }}
+            </div>
             <div
               class="product-grid-border-fix fix-bottom-border"
               style="width:100%;"
@@ -229,29 +245,30 @@
               </div>
 
               <style id="css-fix-height-{{ section.id }}"></style>
-              <script>
-                const fixCollectionHeight = () => {
-                  document.getElementById(
-                    'css-fix-height-{{ section.id }}'
-                  ).innerHTML = `@media screen and (min-width: 1025px), screen and (min-width: 769px) and (orientation: landscape) { 
+              {% if section.settings.collection_desktop_layout == 'split' %}
+                <script>
+                  const fixCollectionHeight = () => {
+                    document.getElementById(
+                      'css-fix-height-{{ section.id }}'
+                    ).innerHTML = `@media screen and (min-width: 1025px), screen and (min-width: 769px) and (orientation: landscape) { 
                       #fix-height-{{ section.id }} {
                         height: ${
                           document.getElementById('fix-height-with-{{ section.id }}').offsetHeight - 1
                         }px !important;
-                      }
-                    }`;
-                  
-                };
-                fixCollectionHeight();
-                window.addEventListener('resize', fixCollectionHeight);
-                new MutationObserver(() => {
+                          }
+                          }`;
+                  };
                   fixCollectionHeight();
-                }).observe(document.getElementById('CollectionProductGrid'), {
-                  attributes: false,
-                  childList: true,
-                  subtree: false,
-                });
-              </script>
+                  window.addEventListener('resize', fixCollectionHeight);
+                  new MutationObserver(() => {
+                    fixCollectionHeight();
+                  }).observe(document.getElementById('CollectionProductGrid'), {
+                    attributes: false,
+                    childList: true,
+                    subtree: false,
+                  });
+                </script>
+              {% endif %}
             </div>
 
             {%- if rest_products -%}
@@ -286,20 +303,64 @@
     </div>
   {%- endpaginate -%}
 </div>
-<script>
-  const leftPanel = document.getElementById('left-panel');
-  const rightPanel = document.getElementById('right-panel');
-  const fixCollectionHeight = () => {
-    leftPanel.style.height = rightPanel.offsetHeight + 'px';
-  }
-  fixCollectionHeight();
-  window.addEventListener('resize', fixCollectionHeight);
-  new MutationObserver(() => {
+{% if section.settings.collection_desktop_layout == 'full' %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButton = document.querySelector('#site-filter-handle');
+      const collectionBanner = document.querySelector('.site-box .site-box-background');
+
+      if (filterButton && collectionBanner) {
+        // Initially hide the filter button
+        filterButton.style.display = 'none';
+
+        const handleScroll = () => {
+          const bannerBottom = collectionBanner.offsetTop + collectionBanner.offsetHeight;
+          const scrollPosition = window.pageYOffset;
+
+          if (scrollPosition > bannerBottom) {
+            filterButton.style.display = 'flex';
+          } else {
+            filterButton.style.display = 'none';
+          }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check initial position
+      }
+    });
+  </script>
+{% else %}
+  <script>
+    const leftPanel = document.getElementById('left-panel');
+    const rightPanel = document.getElementById('right-panel');
+    const fixCollectionHeight = () => {
+      leftPanel.style.height = rightPanel.offsetHeight + 'px';
+    };
     fixCollectionHeight();
-  }).observe(document.getElementById('CollectionProductGrid'), {
-    attributes: false,
-    childList: true,
-    subtree: false,
+    window.addEventListener('resize', fixCollectionHeight);
+    new MutationObserver(() => {
+      fixCollectionHeight();
+    }).observe(document.getElementById('CollectionProductGrid'), {
+      attributes: false,
+      childList: true,
+      subtree: false,
+    });
+  </script>
+{% endif %}
+
+<script>
+  const featuredProductBlocks = document.querySelectorAll('.featured-product-block');
+  featuredProductBlocks.forEach(block => {
+    console.log('featured product block', block);
+    // find the adject product block
+    const nextBlock = block.nextElementSibling;
+    console.log('next block', nextBlock);
+    console.log('next block height', nextBlock.offsetHeight);
+    if (nextBlock) {
+      const featuredProduct = block.querySelector('.featured-product');
+      const featuredProductHeight = featuredProduct.offsetHeight;
+      nextBlock.style.height = featuredProductHeight / 2 + 'px';
+    }
   });
 </script>
 {%- if section.settings.mobile_overlay_text != 'rgba(0,0,0,0)'
@@ -339,6 +400,23 @@
     {
       "type": "header",
       "content": "t:sections.split-extra-words.sections.main-collection-page.settings.banner.name"
+    },
+    {
+      "type": "select",
+      "id": "collection_desktop_layout",
+      "label": "t:sections.split-extra-words.sections.main-collection-page.settings.desktop_layout.label",
+      "options": [
+        {
+          "value": "split",
+          "label": "t:sections.split-extra-words.sections.main-collection-page.settings.desktop_layout.options__1"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.split-extra-words.sections.main-collection-page.settings.desktop_layout.options__2"
+        }
+      ],
+      "info": "t:sections.split-extra-words.sections.main-collection-page.settings.desktop_layout.info",
+      "default": "split"
     },
     {
       "id": "show_collection_banner",
@@ -423,6 +501,59 @@
         }
       ],
       "default": "onecolumn"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_product",
+      "name": "Featured Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "New"
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "label": "Badge Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge Text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "header",
+          "content": "Position"
+        },
+        {
+          "type": "range",
+          "id": "position",
+          "label": "Position",
+          "min": 1,
+          "max": 100,
+          "default": 1,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "block_span",
+          "label": "Block Span",
+          "min": 1,
+          "max": 4,
+          "default": 2,
+          "step": 1
+        }
+      ]
     }
   ]
 }

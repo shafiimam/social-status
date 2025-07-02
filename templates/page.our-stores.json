@@ -18,6 +18,7 @@
     },
     "store_header_bnner_6h4Aab": {
       "type": "store-header-bnner",
+      "disabled": true,
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/image_116.png",

@@ -190,11 +190,96 @@
         "arrow_text_2": "Events",
         "show_tab_list": true
       }
+    },
+    "video_background_xHpBKL": {
+      "type": "video-background",
+      "blocks": {
+        "heading_4gfyiA": {
+          "type": "heading",
+          "settings": {
+            "heading": "STORE VIDEO",
+            "heading_size": "h2",
+            "seo_h_tag": "h4"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4gfyiA"
+      ],
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/SS Detroit Store .mov",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "#ffffff",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "meet_staff_Qx9fd4": {
+      "type": "meet-staff",
+      "blocks": {
+        "staff_3Mwm8t": {
+          "type": "staff",
+          "settings": {
+            "name": "James Danton",
+            "image": "shopify://shop_images/tops-collection-banner.png",
+            "position": "Store Manager",
+            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+          }
+        },
+        "staff_YyyNPN": {
+          "type": "staff",
+          "settings": {
+            "name": "James Danton",
+            "image": "shopify://shop_images/tops-collection-banner.png",
+            "position": "",
+            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+          }
+        },
+        "product_hhtTHa": {
+          "type": "product",
+          "settings": {
+            "product": "home-studyos-03-planter-pierre-2"
+          }
+        },
+        "product_gxBCmD": {
+          "type": "product",
+          "settings": {
+            "product": "1906-utility-navy"
+          }
+        },
+        "product_wxfXAw": {
+          "type": "product",
+          "settings": {
+            "product": "1906-team-away-grey"
+          }
+        },
+        "product_QX89dg": {
+          "type": "product",
+          "settings": {
+            "product": "honor-the-gift-1988-full-zip-hood"
+          }
+        }
+      },
+      "block_order": [
+        "staff_3Mwm8t",
+        "staff_YyyNPN",
+        "product_hhtTHa",
+        "product_gxBCmD",
+        "product_wxfXAw",
+        "product_QX89dg"
+      ],
+      "name": "Meet Our Staff",
+      "settings": {
+        "title": "Meet Our Staff"
+      }
     }
   },
   "order": [
     "main",
     "store_header_bnner_38J47n",
-    "latest_features_wUAHEJ"
+    "latest_features_wUAHEJ",
+    "video_background_xHpBKL",
+    "meet_staff_Qx9fd4"
   ]
 }
