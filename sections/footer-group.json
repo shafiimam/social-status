@@ -54,7 +54,7 @@
         "show_locale_selector": true,
         "show_country_selector": true,
         "enable_follow_on_shop": true,
-        "custom_background": "#000000",
+        "custom_background": "#1d1f20",
         "custom_text": "#ffffff",
         "seo_h_tag": "h4"
       }

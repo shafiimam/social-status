@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "split"
+      }
+    },
+    "store_header_bnner_38J47n": {
+      "type": "store-header-bnner",
+      "name": "Individual Store Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/image_116.png",
+        "title": "<p>Amazing <strong>Store</strong></p>",
+        "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
+        "button_label": "Book a Visit",
+        "button_url": "",
+        "store_address": "<p>Our address</p><p><strong>93 Bayport Ave.</strong></p><p><strong>South Richmond Hill, NY 11419</strong></p><p></p><p>For general inquires</p><p><strong>socialstatus@example.com</strong></p><p></p><p>Phone</p><p><strong>+1 200 884 9600</strong></p><p></p><p>Working hours</p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>",
+        "store_image": "shopify://shop_images/image_115.png"
+      }
+    },
+    "latest_features_wUAHEJ": {
+      "type": "latest-features",
+      "blocks": {
+        "item_block_hdHYWb": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-4.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_emPcbz": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/new_arrivals_pic.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_BgNDAC": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-2.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_LRw6CT": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Features",
+            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1.jpg",
+            "item_title": "Supervsn Fall/Winter 24",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "04"
+          }
+        },
+        "item_block_xLBngN": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_ARah8q": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/AJ14FERARRIGS-2.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_xKabPm": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Events",
+            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_HcERcD": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_FQDwA6": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/new_features_pic.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        },
+        "item_block_zLPLrh": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Latest Trends",
+            "item_image": "shopify://shop_images/htgmob1_97df35d3-cb08-405b-98b4-cb1be80d490a.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "03"
+          }
+        },
+        "item_block_dMjMN4": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Workshops",
+            "item_image": "shopify://shop_images/htgmob2.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "01"
+          }
+        },
+        "item_block_cmDqQD": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Workshops",
+            "item_image": "shopify://shop_images/JAIDEXNB998-8.jpg",
+            "item_title": "Supervsn Fall/Winter 25",
+            "item_date": "10.04.25",
+            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
+            "item_index": "02"
+          }
+        }
+      },
+      "block_order": [
+        "item_block_hdHYWb",
+        "item_block_emPcbz",
+        "item_block_BgNDAC",
+        "item_block_LRw6CT",
+        "item_block_xLBngN",
+        "item_block_ARah8q",
+        "item_block_xKabPm",
+        "item_block_HcERcD",
+        "item_block_FQDwA6",
+        "item_block_zLPLrh",
+        "item_block_dMjMN4",
+        "item_block_cmDqQD"
+      ],
+      "name": "Latest Features & Events",
+      "settings": {
+        "main_title": "Latest Features",
+        "main_title_width": "732",
+        "main_title_align": "left",
+        "sub_title": "and Events",
+        "sub_title_align": "right",
+        "arrow_text_1": "Cultutre",
+        "arrow_text_2": "Events",
+        "show_tab_list": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "store_header_bnner_38J47n",
+    "latest_features_wUAHEJ"
+  ]
+}

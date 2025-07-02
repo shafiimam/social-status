@@ -6,11 +6,11 @@
     {% else %} 
       box--big box--top-align
     {% endif %} 
-  lap--box--small-fl-auto box--typo-big box--column-flow box__heading" data-order="0">
+  lap--box--small-fl-auto box--typo-big box-small-padding box--column-flow box__heading" data-order="0">
 
-    <div class="{% if section.settings.layout == 'split' %} reduce-top-margin {% endif %}">
+    <div class="">
       <div class="site-box-content" {% if section.settings.layout == 'full' %} style="text-align:center" {% endif %}>
-        <h1 class="title h1">{{ page.title }}</h1>
+        <h1 class="title h1 heading">{{ page.title }}</h1>
         {%- if settings.headings_hr -%} <hr {% if section.settings.layout == 'full' %} style="margin-left:auto;margin-right:auto" {% endif %} /> {%- endif -%}
       </div>
     </div>

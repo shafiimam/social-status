@@ -129,7 +129,7 @@ summary::-webkit-details-marker {
   --screen-height: 100vh;
   --screen-half-height: 50vh;
   --box-big-padding: 9vw;
-  --box-smaller-padding: 80px;
+  --box-smaller-padding: 60px;
   --box-small-padding: 40px;
   --box-auto-top: 60px;
   --box-min-height: clamp(250px, 30vh, 500px);
@@ -687,12 +687,16 @@ input[type=submit], .button, .btn {
   height: auto;
   border-width: 1px !important;
   line-height: 1;
-  padding: 7px 14px;
+  padding: 12px 24px;
   display: inline-block;
 }
 .button.button--solid {
   background: var(--main-text);
   color: var(--main-text-foreground);
+}
+.button.button--white {
+  background: #fff;
+  color: var(--main-text);
 }
 .button.button--solid svg path {
   fill: var(--main-text-foreground);
@@ -1341,8 +1345,12 @@ html[dir=ltr] .site-box.box--text-align-left {
   position: relative;
 }
 .box__heading.box--typo-big {
-  padding-inline-start: var(--box-big-padding);
-  padding-inline-end: var(--box-big-padding);
+  padding-inline: var(--box-big-padding);
+  padding-block: var(--box-big-padding);
+}
+.box__heading.box--typo-big.box-small-padding {
+  padding-inline: var(--box-smaller-padding);
+  padding-block: var(--box-smaller-padding);
 }
 .box__heading.box--typo-big .title:not(:last-child) {
   margin-bottom: var(--text-spacing);

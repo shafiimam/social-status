@@ -1,0 +1,72 @@
+.stores-header-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: var(--window-height);
+    padding-bottom: 60px;
+  }
+  .stores-header-banner .left-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .stores-header-banner .top-content .subtitle {
+    margin: 20px 0;
+    color: #727272;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.2px;
+  }
+  .stores-header-banner .right-slider {
+    height: 100%;
+    overflow-y: auto;
+  }
+  .stores-header-banner .slider-cell {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .stores-header-banner .stores-slide-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    color: #fff;
+    padding: 60px 80px;
+    gap: 48px;
+   }
+  .stores-slide-info .slider-title {
+    transition: transform 0.3s ease;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .stores-slide-info .slider-title strong{
+    color: #E77E21;
+  }
+  .stores-slide-info .store-slide-button{
+    background-color: #fff;
+    font-size: 18px;
+  }
+  .stores-slide-info .slider-title:hover::after {
+    width: 100%;
+  }
+  @media screen and (max-width: 1024px) {
+    .stores-header-banner{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr calc(var(--window-height) - 60px);;
+        height: 100%;
+        padding-bottom: 0;
+    }
+    .stores-header-banner .left-content{
+        padding: 24px 16px;
+        gap: 48px;
+    }
+    .stores-header-banner .stores-slide-info{
+        padding: 60px 40px;
+    }
+    
+  }

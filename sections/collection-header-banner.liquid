@@ -26,66 +26,7 @@
     {% endfor %}
   </div>
 </div>
-<style>
-  .collection-header-banner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: var(--window-height);
-    padding-bottom: 60px;
-  }
-  .collection-header-banner .left-content {
-    padding: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .collection-header-banner .top-content .subtitle {
-    margin: 20px 0;
-    color: #727272;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 21px;
-    letter-spacing: -0.2px;
-  }
-  .collection-header-banner .right-slider {
-    height: 100%;
-    overflow-y: auto;
-  }
-  .collection-header-banner .slider-cell {
-    width: 100%;
-    position: relative;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-  .collection-header-banner .slider-title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .slider-title-container .slider-title {
-    color: #fff;
-    transition: transform 0.3s ease;
-  }
-  .slider-title-container .slider-title:hover {
-    transform: scale(1.05);
-  }
-  .slider-title-container .slider-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 0;
-    height: 3px;
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-  .slider-title-container .slider-title:hover::after {
-    width: 100%;
-  }
-</style>
+{{ 'section-collection-header-banner.css' | asset_url | stylesheet_tag }}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const sliderCells = document.querySelectorAll('.collection-header-banner .slider-cell');

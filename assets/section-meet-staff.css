@@ -1,0 +1,58 @@
+.meet-staff {
+  padding-inline: 85px;
+  padding-block: 120px;
+  max-width: 1440px;
+  margin-inline: auto;
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+    padding-block: 80px;
+  }
+}
+.meet-staff-content {
+  padding-block-start: 80px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 27px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+.staff-slider__item-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-inline: 24px;
+    padding-block: 40px;
+    height: 100%;
+}
+.staff-info{
+    padding-inline-start: 10px;
+    border-left: 9px solid var(--brand-color);
+}
+.staff-info h2{
+    font-family: var(--font-family-heading);
+    color: #292929;
+}
+.staff-description p{
+    color: #727272;
+    letter-spacing: -0.18px;
+}
+.product-masonry-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 27px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  } 
+}
+.staff-slider-container{
+    background: #FAFAFA;
+}
+.staff-slider .flickity-prev-next-button{
+    top: 98%;
+    z-index: 1;
+    color: #727272;
+}
+.staff-slider .flickity-prev-next-button.next{
+    left: 80px;
+}

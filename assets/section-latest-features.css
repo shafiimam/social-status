@@ -33,7 +33,7 @@
 }
 
 .arrow-text-vertical {
-  color: var(--brand-secondary);
+  color: var(--brand-color);
   text-align: center;
   font-size: 28px;
   font-style: normal;
@@ -44,7 +44,7 @@
 }
 .arrow-text-horizontal-1,
 .arrow-text-horizontal-2 {
-  color: var(--brand-secondary);
+  color: var(--brand-color);
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -118,11 +118,11 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 .tabs-panel .tab-list-nav-item:hover {
-  border: 1px solid var(--brand-secondary);
+  border: 1px solid var(--brand-color);
   transition: all 0.3s ease-in-out;
 }
 .tabs-panel .tab-list-nav-item.active {
-  background: var(--brand-secondary);
+  background: var(--brand-color);
 }
 .tab-list-nav-item-title {
   color: var(--card-foreground, #09090b);
@@ -138,7 +138,7 @@
 }
 .tab-list-item-title {
   color: #040404;
-  font-size: clamp(22px, 5vw, 32px);
+  font-size: 26px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -172,7 +172,7 @@
 .tab-list-item-container.active.expanded .tab-list-item-title {
   color: #040404;
   font-family: Yantramanav;
-  font-size: clamp(24px, 5vw, 39px);
+  font-size: clamp(24px, 2.5vw, 32px);
   font-weight: 900;
   line-height: 100%;
   letter-spacing: -0.78px;

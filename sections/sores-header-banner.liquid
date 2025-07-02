@@ -1,0 +1,134 @@
+<div class="stores-header-banner">
+  <div class="left-content">
+    <div class="top-content">
+      <h1 class="title h2 heading">{{ section.settings.title }}</h1>
+      <p class="subtitle yantramanav-regular">{{ section.settings.subtitle }}</p>
+    </div>
+    <div class="bottom-content">
+      <h3 class="title h3">{{ section.settings.seo_title }}</h3>
+      <p class="subtitle">{{ section.settings.seo_description }}</p>
+    </div>
+  </div>
+  <div class="right-slider">
+    {% for block in section.blocks %}
+      <div
+        class="slider-cell"
+        {{ block.shopify_attributes }}
+        style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.24) 100%), url({{ block.settings.image | image_url }});"
+      >
+        <div class="stores-slide-info">
+          <h2 class="slider-title heading h1">{{ block.settings.slide_title }}</h2>
+          <div class="slider-description">{{ block.settings.slide_description }}</div>
+          <a href="{{ block.settings.slide_link }}" class="button store-slide-button">
+            {{- block.settings.slide_button_text -}}
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{{ 'section-stores-header-banner.css' | asset_url | stylesheet_tag }}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sliderCells = document.querySelectorAll('.stores-header-banner .slider-cell');
+
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '0px 0px -500px 0px',
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    sliderCells.forEach((cell) => {
+      cell.style.transform = 'translateY(30px)';
+      cell.style.opacity = '0';
+      cell.style.transition =
+        'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      observer.observe(cell);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Stores Header Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "COLLECTIONS"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We collected the best outfits which will definitely meet your fit. Browse our categories and find the best."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "BROWSE ALL PRODUCTS"
+    },
+    {
+      "type": "text",
+      "id": "seo_title",
+      "label": "SEO Title",
+      "default": "SEO COPY HEADING HERE"
+    },
+    {
+      "type": "textarea",
+      "id": "seo_description",
+      "label": "SEO Description",
+      "default": "We want to ensure that your experience with us is smooth and enjoyable..."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store_slide",
+      "name": "Store Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Background Image"
+        },
+        {
+          "type": "richtext",
+          "id": "slide_title",
+          "label": "Slide Title"
+        },
+        {
+          "type": "richtext",
+          "id": "slide_description",
+          "label": "Slide Description"
+        },
+        {
+          "type": "text",
+          "id": "slide_button_text",
+          "label": "Slide Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stores Header Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

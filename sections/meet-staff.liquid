@@ -1,0 +1,114 @@
+{{ 'section-meet-staff.css' | asset_url | stylesheet_tag }}
+<div class="meet-staff">
+  <div class="meet-staff-header">
+    <h1 class="h1 heading text-center yantramanav-black">{{ section.settings.title }}</h1>
+  </div>
+  <div class="meet-staff-content">
+    <div class="staff-slider-container">
+      <div
+        class="staff-slider"
+        data-flickity='{ "pauseAutoPlayOnHover": true, "pauseAutoPlayOnFocus": true, "prevNextButtons": true, "pageDots": false }'
+      >
+        {% for block in section.blocks %}
+          {% if block.type == 'staff' %}
+            <div class="staff-slider__item">
+              <div class="staff-slider__item-inner">
+                <div class="staff-slider__item-image">
+                  <img src="{{ block.settings.image | image_url: width: 550 }}" alt="{{ block.settings.image.alt }}">
+                </div>
+                <div class="staff-slider__item-content">
+                  <div class="staff-info">
+                    <h2 class="h3 heading">{{ block.settings.name }}</h2>
+                    <p class="yantramanav heading">{{ block.settings.position }}</p>
+                  </div>
+                  <div class="staff-description yantramanav-regular">
+                    {{ block.settings.description }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product-masonry">
+      <div class="product-masonry-inner">
+        {% for block in section.blocks %}
+          {% if block.type == 'product' %}
+            {% render 'product-item', product: block.settings.product %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    const productMasonry = document.querySelector('.product-masonry-inner');
+    const staffSlider = document.querySelector('.staff-slider');
+
+    function handleProductMasonryResize() {
+        const productMasonryHeight = productMasonry.offsetHeight;
+        staffSlider.style.height = `${productMasonryHeight}px`;
+    }
+    window.addEventListener('resize', handleProductMasonryResize);  
+    window.addEventListener('DOMContentLoaded', handleProductMasonryResize);
+</script>
+{% schema %}
+{
+  "name": "Meet Our Staff",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Meet Our Staff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    },
+    {
+      "type": "staff",
+      "name": "Staff",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "label": "Position"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Meet Our Staff",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

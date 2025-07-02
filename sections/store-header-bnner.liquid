@@ -1,0 +1,79 @@
+<div class="store-header-banner">
+  <div class="store-header-banner-content">
+    <h1 class="title h1 heading">{{ section.settings.title }}</h1>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
+    <a href="{{ section.settings.button_url }}" class="button button--white button--smallest">{{ section.settings.button_label }}</a>
+  </div>
+  <aside class="store-address-container">
+    <div class="store-address">
+      {{ section.settings.store_address | replace : '<p></p>', '<br>' }}
+    </div>
+    <div class="store-image">
+      {% if section.settings.store_image != blank %}
+        <img
+          src="{{ section.settings.store_image | image_url: width: 350 }}"
+          alt="{{ section.settings.store_image.alt }}"
+          width="350"
+          height="230"
+        >
+      {% endif %}
+    </div>
+  </aside>
+</div>
+{% style %}
+  .store-header-banner-content {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.37) 0%, rgba(0, 0, 0, 0.37) 100%), url({{ section.settings.background_image | image_url: width: 2000 }}) lightgray 50% / cover no-repeat;
+  }
+{% endstyle %}
+{{ 'section-store-header-banner.css' | asset_url | stylesheet_tag }}
+{% schema %}
+{
+  "name": "Individual Store Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Store Name</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Enter subtitle here"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "richtext",
+      "id": "store_address",
+      "label": "Store Address"
+    },
+    {
+      "type": "image_picker",
+      "id": "store_image",
+      "label": "Store Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Individual Store Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

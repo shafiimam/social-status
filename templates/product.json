@@ -94,26 +94,20 @@
         "enable_video_looping": false
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "heading": "You may also like"
-      }
-    },
     "rich_text_pGBT7b": {
       "type": "rich-text",
       "blocks": {
         "heading_FDUfWR": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Simplicity",
             "seo_h_tag": "h3"
           }
         },
         "text_EPqAbw": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "text": "<p>RAINS is a Danish rainwear company founded in 2012. Based on an early initiative to interpret the traditional rubber raincoat in a novel way, the company has, since its foundation, grown into an accomplished international rainwear brand. Along with the reinvented classics, RAINS today offers a full line of waterproof outerwear. RAINS is a Danish rainwear company founded in 2012. Based on an early initiative to interpret the traditional rubber raincoat in a novel way.</p>"
           }
         }
       },
@@ -132,11 +126,81 @@
         "custom_text": "rgba(0,0,0,0)",
         "seo_h_tag": "h2"
       }
+    },
+    "gallery_wpYWHf": {
+      "type": "gallery",
+      "blocks": {
+        "image_7838HB": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.featured_image }}",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_zNffB3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Carharttwip11.jpg",
+            "link": "",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_7838HB",
+        "image_zNffB3"
+      ],
+      "name": "t:sections.gallery.name",
+      "settings": {
+        "image_height": "full"
+      }
+    },
+    "video_background_R8tVWr": {
+      "type": "video-background",
+      "blocks": {
+        "heading_R9KcDT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2",
+            "seo_h_tag": "span"
+          }
+        },
+        "text_Eaeaxr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_R9KcDT",
+        "text_Eaeaxr"
+      ],
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "#ffffff",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like"
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations",
-    "rich_text_pGBT7b"
+    "rich_text_pGBT7b",
+    "gallery_wpYWHf",
+    "video_background_R8tVWr",
+    "product-recommendations"
   ]
 }

@@ -13,7 +13,7 @@
    text-align: center;
 }
 .media-grid-header .section-heading strong {
-   color: var(--brand-secondary);
+   color: var(--brand-color);
 }
 .media-grid__item {
   grid-area: span min(2, var(--media-grid-item-row-span)) / span 1;
