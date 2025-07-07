@@ -22,10 +22,22 @@
             "position": 3,
             "block_span": 2
           }
+        },
+        "featured_product_BqDbw8": {
+          "type": "featured_product",
+          "settings": {
+            "product": "levis-551z-authen-straight",
+            "badge_text": "New",
+            "badge_color": "#000000",
+            "badge_text_color": "#ffffff",
+            "position": 5,
+            "block_span": 2
+          }
         }
       },
       "block_order": [
-        "featured_product_RAeqqz"
+        "featured_product_RAeqqz",
+        "featured_product_BqDbw8"
       ],
       "settings": {
         "collection_desktop_layout": "full",
@@ -42,6 +54,7 @@
     },
     "navigation": {
       "type": "main-collection-navigation",
+      "disabled": true,
       "settings": {
         "navigation_style": "2",
         "navigation_images": false,

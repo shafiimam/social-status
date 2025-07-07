@@ -71,12 +71,6 @@
     font-size: 1em;
   }
 }
-.hero-slide .button.button--solid svg{
-   margin-top: -8px;
-}
-.hero-slide .button.button--solid svg path {
-  fill: none;
-}
 
 .hero-slide__content-overlay {
   position: absolute;

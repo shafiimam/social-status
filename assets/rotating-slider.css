@@ -2,7 +2,6 @@
 .rotating-slider-heading p {
   color: #727272;
   text-align: center;
-  /* Secondary Text */
   font-family: var(--font-stack-body);
   font-size: 22px;
   font-style: normal;
@@ -79,6 +78,7 @@
   transform: translateX(-50%) rotate(0);
   transform-origin: center center;
   width: 100%;
+  z-index: 0;
 }
 .rotating-slider ul.slides li {
   display: block;
@@ -96,10 +96,16 @@
   z-index: 1;
   transition-delay: 0.3s;
   transition-duration: 0.3s;
+  overflow: hidden;
+}
+ul.slides li.active-slide:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in;
+  transition-delay: 0.3s;
+  transition-duration: 0.3s;
 }
 .rotating-slider ul.slides li.active-slide {
   width: 400px;
-  height: 700px !important;
   opacity: 1;
   z-index: 2;
   transition: all 0.3s ease-in;
@@ -117,12 +123,10 @@
   border-top-right-radius: 999px;
   pointer-events: none;
 }
-/* select the slides that does not have next-slide and previous-slide class */
 .rotating-slider
   ul.slides
   li:not(.next-slide):not(.previous-slide):not(.active-slide)
   img {
-  height: 470px !important;
   margin-top: auto;
 }
 .inner {
@@ -166,4 +170,5 @@ p.slide-text {
   font-weight: 500;
   line-height: 35px; /* 109.375% */
   text-transform: uppercase;
+  gap: 10px;
 }

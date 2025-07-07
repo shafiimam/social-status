@@ -1,0 +1,65 @@
+{% assign article = section.settings.article %}
+{{ 'section-blog-header-article.css' | asset_url | stylesheet_tag }}
+<div class="blog-header-article">
+  <div class="blog-header-article-container">
+    <div class="blog-header-overlay"></div>
+    <div class="blog-header-article-image">
+    {% if article.image %}
+      <img src="{{ article.image | image_url: width: 1000 }}" alt="{{ article.title }}" width="{{ article.image.width }}" height="{{ article.image.height }}">
+    {% endif %}
+    </div>
+    <div class="blog-header-article-info">
+      <h1 style="color: {{ section.settings.text_color }}" class="heading h1">{{ section.settings.title | default: article.title }}</h1>
+      <div style="color: {{ section.settings.text_color }}" class="blog-header-article-excerpt">
+        {{ article.excerpt | default: section.settings.subtitle }}
+      </div>
+      <a
+        class="button button--solid button--with-icon"
+        href="{{ article.url }}"
+      >
+        <span>Read Article</span>
+        <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
+      </a>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Blog Header Article",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Leave blank to use the article title"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Leave blank to use the article excerpt"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Header Article",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

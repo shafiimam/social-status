@@ -1,0 +1,97 @@
+{{ 'section-article-spotlight.css' | asset_url | stylesheet_tag }}
+
+<div class="article-spotlight">
+  <div class="article-spotlight-grid">
+    <div class="article-spotlight-grid-item-image desktop-only">
+      {% assign first_article_block = section.blocks | first %}
+      {% if first_article_block.settings.article.image %}
+        <img
+          src="{{ first_article_block.settings.article.image | image_url: width: 600 }}"
+          alt="{{ first_article_block.settings.heading }}"
+          width="{{ first_article_block.settings.article.image.width }}"
+          height="{{ first_article_block.settings.article.image.height }}"
+        >
+      {% endif %}
+    </div>
+    <div class="article-spotlight-grid-item-content">
+      {% for block in section.blocks %}
+        <div class="article-spotlight-grid-item-container">
+          <div class="article-spotlight-info">
+            <h4 class="h4 heading">{{ block.settings.heading | default: block.settings.article.title }}</h4>
+            <a
+              class="button button--outline button--smallest"
+              href="{{ block.settings.article.url }}"
+            >
+              <span>Read Article</span>
+            </a>
+          </div>
+          <div class="mobile-only">
+            <img
+              src="{{ block.settings.article.image | image_url: width: 600 }}"
+              alt="{{ block.settings.heading }}"
+              width="{{ block.settings.article.image.width }}"
+              height="270"
+            > 
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="article-spotlight-grid-item-image desktop-only">
+      {% assign second_article_block = section.blocks | last %}
+      {% if second_article_block.settings.article.image %}
+        <picture>
+          <source
+            srcset="{{ second_article_block.settings.article.image | image_url: width: 600 }}"
+            media="(max-width: 768px)"
+          >
+          <img
+            src="{{ second_article_block.settings.article.image | image_url: width: 600 }}"
+            alt="{{ second_article_block.settings.heading }}"
+            width="{{ second_article_block.settings.article.image.width }}"
+            height="{{ second_article_block.settings.article.image.height }}"
+          >
+        </picture>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article Spotlight",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Example Heading Here"
+        },
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        },
+        {
+          "type": "checkbox",
+          "id": "image_on_left",
+          "label": "Image on Left?",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Article Spotlight",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

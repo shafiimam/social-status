@@ -9,6 +9,44 @@
  */
 {
   "sections": {
+    "blog_header_article_e3mzd6": {
+      "type": "blog-header-article",
+      "name": "Blog Header Article",
+      "settings": {
+        "title": "",
+        "subtitle": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at <a href=\"mailto:info@socialstatuspgh.com\" title=\"mailto:info@socialstatuspgh.com\">info@socialstatuspgh.com </a>or on our website via live chat during our business hours. </p>",
+        "text_color": "#ffffff",
+        "button_text": "",
+        "article": "social-status/introducing-guizio"
+      }
+    },
+    "article_spotlight_fgaxk4": {
+      "type": "article-spotlight",
+      "blocks": {
+        "article_fDcdqD": {
+          "type": "article",
+          "settings": {
+            "heading": "Example Heading Here",
+            "article": "social-status/beyond-the-music-with-soulection",
+            "image_on_left": true
+          }
+        },
+        "article_9n8b7e": {
+          "type": "article",
+          "settings": {
+            "heading": "Example Heading Here",
+            "article": "social-status/social-status-presents-the-1st-15th-community-film-screening",
+            "image_on_left": true
+          }
+        }
+      },
+      "block_order": [
+        "article_fDcdqD",
+        "article_9n8b7e"
+      ],
+      "name": "Article Spotlight",
+      "settings": {}
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -16,12 +54,15 @@
           "type": "title",
           "settings": {}
         },
-        "summary": {
-          "type": "summary",
-          "settings": {}
-        },
         "info": {
           "type": "info",
+          "settings": {
+            "show_date": true,
+            "show_author": false
+          }
+        },
+        "summary": {
+          "type": "summary",
           "settings": {}
         }
       },
@@ -30,10 +71,17 @@
         "info",
         "summary"
       ],
-      "settings": {}
+      "settings": {
+        "enable_tags": true,
+        "post_limit": 22,
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
     }
   },
   "order": [
+    "blog_header_article_e3mzd6",
+    "article_spotlight_fgaxk4",
     "main"
   ]
 }

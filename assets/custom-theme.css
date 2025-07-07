@@ -126,3 +126,32 @@ section#shopify-pc__banner {
 .no-overflow{
   overflow: hidden !important;
 }
+
+@media only screen and (min-width: 1000px) {
+  .mobile-only{
+    display: none;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .desktop-only{
+    display: none;
+  }
+}
+
+a.button .icon {
+  right: 15px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+a.button .icon svg{
+  position: relative;
+  top: 0;
+  margin:0;
+
+}
+.button.button--outline .icon svg path{
+  stroke: #000;
+  fill: inherit;
+}

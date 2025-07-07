@@ -1,61 +1,57 @@
 {{ 'component-blog-item.css' | asset_url | stylesheet_tag }}
-
-{%- paginate blog.articles by section.settings.post_limit -%}
-
-  <div id="section-{{ section.id }}" class="site-box-container container--fullscreen box--can-stick">
-
-    <div class="site-box box--big lap--box--small-fl-auto box--typo-big box--top-align box--column-flow box__heading" data-order="0">
-
-      <div class="reduce-top-margin">
-
-        <div class="site-box-content">
-              
-          <h1 class="title h1">
-            {{ blog.title }}
-          </h1>
-
-          {% if section.settings.enable_tags %}
-            <div class="subtitle">
-              <a href="{{ blog.url }}" class="button button--smallest button--no-transform {% if current_tags == blank %} button--solid button--no-events {% else %} button--outline {% endif %}">{{ 'blog.grid.tags_dropdown.all' | t }}</a>
+{% assign limit = section.settings.post_limit | plus: 1 %}
+{%- paginate blog.articles by limit -%}
+  <div id="section-{{ section.id }}" class="site-box-container box--can-stick section-blog-page">
+    <div class="blog-header-container" data-order="0">
+      <div class="blog-header">
+        <h1 class="title h1 heading">
+          {{ blog.title }}
+        </h1>
+        {% if section.settings.enable_tags %}
+          <hr class="hr-line">
+          <div class="blog-tags-select">
+            {% assign current_tag = request.path | split: '/tagged/' | last %}
+            <label for="blog-tags-select">Filter</label>
+            <select
+              id="blog-tags-select"
+              onchange="this.options[this.selectedIndex].value && (location.href = this.options[this.selectedIndex].value);"
+            >
+              <option value="{{blog.url}}">All</option>
               {% for tag in blog.all_tags %}
-                <a href="{{ blog.url }}/tagged/{{ tag.handle }}" class="button button--smallest button--no-transform {% if current_tags contains tag %} button--solid button--no-events {% else %} button--outline {% endif %}">{{ tag | capitalize }}</a>
-              {%- endfor -%}
-            </div>
-          {% elsif settings.headings_hr -%} <hr /> {%- endif -%}
+                <option
+                  value="{{ blog.url }}/tagged/{{ tag.handle }}"
+                  {% if current_tag == tag.handle %}
+                    selected
+                  {% endif %}
+                >
+                  {{ tag }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        {% elsif settings.headings_hr -%}
+          <hr>
+        {%- endif -%}
+      </div>
+    </div>
 
+    <div class="blog-article-grid">
+      {%- if blog.articles.size == 0 -%}
+        <div class="onboard" style="padding:0 30px">
+          <p style="margin:0">{{ 'blog.grid.no_articles_text' | t }}</p>
         </div>
 
-      </div>
-
+      {%- else -%}
+        {%- liquid
+          for article in blog.articles
+            render 'blog-item', article: article, size: blog.articles.size, index: forloop.index
+          endfor
+        -%}
+      {%- endif -%}
     </div>
-
-    <div class="site-box box--big lap--box--bigger box--typo-big box--center-align box--column-flow box--no-padding box__blog" data-order="1">
-      <div class="site-box-content">
-
-        {%- if blog.articles.size == 0 -%}
-
-          <div class="onboard" style="padding:0 30px">
-            <p style="margin:0">{{ 'blog.grid.no_articles_text' | t }}</p>
-          </div>
-
-        {%- else -%}
-
-          {%- liquid
-            for article in blog.articles
-              render 'blog-item', article: article, size: blog.articles.size, index: forloop.index
-            endfor
-          -%}
-
-        {%- endif -%}
-
-      </div>
-
-    </div>
-
   </div>
 
   {%- render 'pagination', paginate: paginate -%}
-
 {%- endpaginate -%}
 
 {%- if section.settings.custom_overlay != 'rgba(0,0,0,0)' -%}
@@ -78,77 +74,87 @@
     }
   </style>
 {%- endif -%}
-
-{% schema %}
-  {
-    "name": "t:sections.split-extra-words.sections.main-blog-page.name",
-    "blocks": [
-     {
-        "type": "title",
-        "name": "t:sections.blog-posts.blocks.title.name",
-        "limit": 1
-      },
-      {
-        "type": "info",
-        "name": "t:sections.blog-posts.blocks.info.name",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "checkbox",
-            "id": "show_date",
-            "label": "t:sections.blog-posts.blocks.info.settings.show_date.label",
-            "default": true
-          },
-          {
-            "type": "checkbox",
-            "id": "show_author",
-            "label": "t:sections.blog-posts.blocks.info.settings.show_author.label",
-            "default": false
-          }
-        ]
-      },
-      {
-        "type": "summary",
-        "name": "t:sections.blog-posts.blocks.summary.name",
-        "limit": 1
-      }
-    ],
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_tags",
-        "label": "t:sections.main-blog.settings.enable_tags.label",
-        "default": false
-      },
-      {
-        "type": "range",
-        "id": "post_limit",
-        "label": "t:sections.main-blog.settings.post_limit.label",
-        "min": 2,
-        "max": 24,
-        "step": 2,
-        "default": 8
-      },
-      {
-        "type": "header",
-        "content": "t:sections.split-extra-words.sections.testimonials.mobile_layout.header"
-      },
-      {
-        "type": "paragraph",
-        "content": "t:sections.split-extra-words.sections.blog-posts.settings.slider_colors"
-      },
-      {
-        "type": "color",
-        "id": "custom_text",
-        "label": "t:sections.split-extra-words.settings_schema.colors.settings.text",
-        "default": "rgba(0,0,0,0)"
-      },
-      {
-        "type": "color",
-        "id": "custom_overlay",
-        "label": "t:sections.split-extra-words.sections.image-with-text.settings.overlay.label",
-        "default": "rgba(0,0,0,0)"
-      }
-    ]
+<script>
+  const currentPath = window.location.pathname;
+  const isTagged = currentPath.includes('/tagged/');
+  if (isTagged) {
+    const blogSection = document.querySelector('#section-{{ section.id }}');
+    window.scrollTo({
+      top: blogSection.offsetTop,
+      behavior: 'smooth',
+    });
   }
+</script>
+{% schema %}
+{
+  "name": "t:sections.split-extra-words.sections.main-blog-page.name",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "t:sections.blog-posts.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "info",
+      "name": "t:sections.blog-posts.blocks.info.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_date",
+          "label": "t:sections.blog-posts.blocks.info.settings.show_date.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_author",
+          "label": "t:sections.blog-posts.blocks.info.settings.show_author.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "name": "t:sections.blog-posts.blocks.summary.name",
+      "limit": 1
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_tags",
+      "label": "t:sections.main-blog.settings.enable_tags.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": "t:sections.main-blog.settings.post_limit.label",
+      "min": 2,
+      "max": 24,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:sections.split-extra-words.sections.testimonials.mobile_layout.header"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.split-extra-words.sections.blog-posts.settings.slider_colors"
+    },
+    {
+      "type": "color",
+      "id": "custom_text",
+      "label": "t:sections.split-extra-words.settings_schema.colors.settings.text",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "custom_overlay",
+      "label": "t:sections.split-extra-words.sections.image-with-text.settings.overlay.label",
+      "default": "rgba(0,0,0,0)"
+    }
+  ]
+}
 {% endschema %}

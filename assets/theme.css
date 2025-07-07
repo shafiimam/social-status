@@ -699,7 +699,7 @@ input[type=submit], .button, .btn {
   color: var(--main-text);
 }
 .button.button--solid svg path {
-  fill: var(--main-text-foreground);
+  fill: var(--main-text);
 }
 .button.button--solid svg circle {
   stroke: var(--main-text-foreground);
@@ -711,7 +711,7 @@ input[type=submit], .button, .btn {
   border: 2px solid var(--main-text);
 }
 .button.button--outline svg path {
-  fill: var(--main-text);
+  fill: var(--main-text-foreground);
 }
 .button.button--outline svg circle {
   stroke: var(--main-text);
@@ -744,10 +744,11 @@ html[dir=rtl] .button .icon {
 html[dir=ltr] .button .icon {
   right: 40px;
 }
-.button .icon svg {
-  position: absolute;
-  top: 50%;
-  margin-top: -5px;
+.button .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
 }
 html[dir=rtl] .button .icon svg {
   right: 0;
