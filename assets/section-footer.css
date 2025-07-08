@@ -25,7 +25,8 @@
 .site-footer .footer-top[data-size="3"] {
   grid-template-columns: 1fr 1fr 1fr;
 }
-@media screen and (max-width: 768px), screen and (max-width: 1024px) and (orientation: portrait) {
+@media screen and (max-width: 768px),
+  screen and (max-width: 1024px) and (orientation: portrait) {
   .site-footer .footer-top[data-size="3"] {
     grid-template-columns: 1fr;
   }
@@ -59,10 +60,10 @@
   border-radius: 2px;
   width: 36px;
 }
-html[dir=rtl] .site-footer .site-payment:first-child {
+html[dir="rtl"] .site-footer .site-payment:first-child {
   text-align: right;
 }
-html[dir=ltr] .site-footer .site-payment:first-child {
+html[dir="ltr"] .site-footer .site-payment:first-child {
   text-align: left;
 }
 .site-footer .footer-bottom {
@@ -86,10 +87,12 @@ html[dir=ltr] .site-footer .site-payment:first-child {
   .site-footer .footer-bottom > div:first-child {
     margin-inline-end: 0;
   }
-  html[dir=rtl] .site-footer .footer-bottom .footer-copyright, html[dir=rtl] .site-footer .footer-bottom .site-payment {
+  html[dir="rtl"] .site-footer .footer-bottom .footer-copyright,
+  html[dir="rtl"] .site-footer .footer-bottom .site-payment {
     text-align: right !important;
   }
-  html[dir=ltr] .site-footer .footer-bottom .footer-copyright, html[dir=ltr] .site-footer .footer-bottom .site-payment {
+  html[dir="ltr"] .site-footer .footer-bottom .footer-copyright,
+  html[dir="ltr"] .site-footer .footer-bottom .site-payment {
     text-align: left !important;
   }
   .site-footer .footer-bottom .localization-form-holder ~ .footer-copyright {
@@ -99,22 +102,30 @@ html[dir=ltr] .site-footer .site-payment:first-child {
     max-width: 100%;
   }
 }
-html[dir=rtl] .site-footer .footer-copyright {
+html[dir="rtl"] .site-footer .footer-copyright {
   text-align: left;
 }
-html[dir=ltr] .site-footer .footer-copyright {
+html[dir="ltr"] .site-footer .footer-copyright {
   text-align: right;
 }
-html[dir=rtl] .site-footer .footer-copyright:first-child {
+html[dir="rtl"] .site-footer .footer-copyright:first-child {
   text-align: right;
 }
-html[dir=ltr] .site-footer .footer-copyright:first-child {
+html[dir="ltr"] .site-footer .footer-copyright:first-child {
   text-align: left;
 }
-html[dir=rtl] .site-footer .localization-form-holder ~ .footer-copyright .site-payment {
+html[dir="rtl"]
+  .site-footer
+  .localization-form-holder
+  ~ .footer-copyright
+  .site-payment {
   text-align: left;
 }
-html[dir=ltr] .site-footer .localization-form-holder ~ .footer-copyright .site-payment {
+html[dir="ltr"]
+  .site-footer
+  .localization-form-holder
+  ~ .footer-copyright
+  .site-payment {
   text-align: right;
 }
 .site-footer .footer-image svg {
@@ -130,6 +141,10 @@ html[dir=ltr] .site-footer .localization-form-holder ~ .footer-copyright .site-p
   line-height: 1;
   display: block;
   min-height: 16px;
+  font-family: var(--font-stack-headings);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  font-weight: 400;
 }
 .site-footer .footer-menu > span:not(:last-child) {
   margin-bottom: 1.25em;
@@ -177,6 +192,10 @@ shop-login-button {
   display: block;
   margin-bottom: 18px;
 }
-.footer-copyright{
+.footer-copyright {
   margin-left: auto;
+}
+.footer-image .footer-title {
+  margin-top: 20px;
+  color: #727272;
 }

@@ -1,0 +1,17 @@
+.account-nav-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .account-nav-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .customer-avatar.mobile-only{
+    height: 150px;
+    margin-top: 20px;
+  }
+}

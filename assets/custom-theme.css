@@ -155,3 +155,6 @@ a.button .icon svg{
   stroke: #000;
   fill: inherit;
 }
+.text-uppercase{
+  text-transform: uppercase;
+}

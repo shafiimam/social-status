@@ -1,13 +1,16 @@
 {%- capture date_format -%} {{ 'general.date_format.month_day_year' | t }} {%- endcapture -%}
-
+  {% assign customer_avatar = customer.metafields.custommer_accounts_system.photo %}
+  {% assign customer_fname = customer.first_name | downcase | split: ' ' | first %}
+  {% assign customer_lname = customer.last_name | downcase | split: ' ' | first %}
+  {% assign customer_initials = customer_fname | slice: 0 | append: customer_lname | slice: 0 %}
 <div id="section-account" class="site-box-container container--fullscreen box--can-stick">
   <div
     class="site-box box--big lap--box--small-fl-auto box--typo-big box--lots-of-text box--top-align box--column-flow box__heading box--add-hr"
     data-order="0"
   >
-    <div class="reduce-top-margin">
-      <div class="site-box-content">
-        <h1 class="title h1">{{ 'customers.account_page.title' | t }}</h1>
+    <div class="site-box-content account-nav-container">
+      <h1 class="title h1">{{ 'customers.account_page.title' | t }}</h1>
+      <div class="account-nav">
         <a href="/a/profile" class="button button--solid">
           <span class="button-scroll-in">Edit Profile</span>
         </a>
@@ -15,17 +18,23 @@
           <span class="button-scroll-in">{{ 'general.navigation.logout' | t }}</span>
         </a>
       </div>
+      <div class="customer-avatar mobile-only">
+          {% if customer_avatar != blank %}
+            <img src="{{ customer_avatar | file_url }}" alt="{{ customer.name }}" width="280" height="280">
+          {% else %}
+            <div class="customer-avatar-initials">
+              {{ customer_initials }}
+            </div>
+          {% endif %}
+        </div>
     </div>
   </div>
 
   <div class="site-box box--big lap--box--bigger box--top-align box--column-flow box__text" data-order="1">
     <div class="site-box-content reduce-top-margin">
       <div>
-        {% assign customer_avatar = customer.metafields.custommer_accounts_system.photo %}
-        {% assign customer_fname = customer.first_name | downcase | split: ' ' | first %}
-        {% assign customer_lname = customer.last_name | downcase | split: ' ' | first %}
-        {% assign customer_initials = customer_fname | slice: 0 | append: customer_lname | slice: 0 %}
-        <div class="customer-avatar">
+        
+        <div class="customer-avatar desktop-only">
           {% if customer_avatar != blank %}
             <img src="{{ customer_avatar | file_url }}" alt="{{ customer.name }}" width="280" height="280">
           {% else %}
@@ -93,7 +102,7 @@
     </div>
   </div>
 </div>
-
+{{ 'section-customers-account.css' | asset_url | stylesheet_tag }}
 {% schema %}
 {
   "name": "t:sections.local-extra-words.sections.customers.account.name",

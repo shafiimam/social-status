@@ -38,7 +38,7 @@
       "type": "header",
       "settings": {
         "logo_src": "shopify://shop_images/LOOP_LOGO_2.png",
-        "logo_height": 50,
+        "logo_height": 62,
         "main_linklist": "new-menu",
         "menu_style": "minimal",
         "menu_sticky": "sticky--scroll",

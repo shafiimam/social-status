@@ -14,7 +14,7 @@
   margin-bottom: 5rem;
 }
 .block-slide-item {
-  width: clamp(300px, 25%, 420px);
+  width: 400px;
   height: 250px;
 }
 
@@ -116,5 +116,12 @@
 @media only screen and (max-width: 768px) {
   .block-slide-item{
     height: 200px;
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .block-slide-item{
+    height: 200px;
+    width: 300px;
   }
 }

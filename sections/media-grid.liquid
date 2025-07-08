@@ -3,7 +3,8 @@
     #shopify-section-{{ section.id }} {
       --media-grid-row-height: {{ section.settings.mobile_row_height }}px;
       --media-grid-gap: {% if section.settings.spacing == 'xs' %}0.5rem{% elsif section.settings.spacing == 'sm' %}1rem{% elsif section.settings.spacing == 'md' %}1.5rem{% elsif section.settings.spacing == 'lg' %}2rem{% else %}0rem{% endif %};
-
+      --media-grid-padding-top: {{ section.settings.padding_top }}px;
+      --media-grid-padding-bottom: {{ section.settings.padding_bottom }}px;
       {%- if section.settings.section_width == 'full' -%}
         --container-gutter: var(--media-grid-gap);
       {%- endif -%}
@@ -134,6 +135,26 @@
       "unit": "px",
       "label": "Mobile Row Height",
       "default": 180
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
     },
     {
       "type": "select",

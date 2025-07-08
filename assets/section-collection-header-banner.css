@@ -22,6 +22,18 @@
     height: 100%;
     overflow-y: auto;
   }
+  .collection-header-banner .right-slider::-webkit-scrollbar {
+    width: 7px;
+    background: transparent;
+  }
+  .collection-header-banner .right-slider::-webkit-scrollbar-thumb {
+    background: rgba(217, 217, 217, 0.32);
+    border-radius: 4px;
+  }
+  .collection-header-banner .right-slider {
+    scrollbar-color: #fff transparent;
+    scrollbar-width: 7px;
+  }
   .collection-header-banner .slider-cell {
     width: 100%;
     position: relative;

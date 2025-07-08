@@ -1,3 +1,7 @@
+.newsletter-section{
+  border-bottom: 1px solid #282B2C;
+}
+
 .box__newsletter .site-box-content {
   width: 50%;
   margin-inline-start: auto;

@@ -35,7 +35,7 @@
             "item_text": "Atlanta,",
             "item_text_2": "GA",
             "button_link": "shopify://pages/copy-of-about-us",
-            "button_text": "Featured Events",
+            "button_text": "visit shop",
             "hover_image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg"
           }
         },
@@ -44,7 +44,7 @@
           "settings": {
             "item_text": "Houston,",
             "item_text_2": "TX",
-            "button_link": "shopify://pages/copy-of-about-us",
+            "button_link": "shopify://pages/our-stores",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/GS-SEASICK-BLK_2.jpg"
           }
@@ -209,6 +209,9 @@
         "item_block_rA7Pni",
         "item_block_winDKR",
         "item_block_dNJiGM"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.sub-title {text-align: left !important; }}"
       ],
       "name": "Latest Features & Events",
       "settings": {

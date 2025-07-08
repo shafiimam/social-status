@@ -2,6 +2,7 @@
 
 {%- render 'custom-colors', id: section.id, background: section.settings.custom_background, text: section.settings.custom_text -%}
 
+
 <div id="section-{{ section.id }}" class="site-footer site-box-container">
 
   <div class="footer-container">
@@ -13,19 +14,23 @@
         {%- for block in section.blocks -%}
 
           <div class="footer-item" data-type="{{ block.type }}" {{ block.shopify_attributes }}>
-
-            {%- if block.settings.title -%}
-              <{{ section.settings.seo_h_tag }} class="title h6">{{ block.settings.title | escape }}</{{ section.settings.seo_h_tag }}>
-            {%- endif -%}
+            {% capture footer_title %}
+              {%- if block.settings.title -%}
+                <{{ section.settings.seo_h_tag }} class="title h6 footer-title">{{ block.settings.title | escape }}</{{ section.settings.seo_h_tag }}>
+              {%- endif -%}
+            {% endcapture %}
+            
 
             {%- case block.type -%}
 
               {%- when 'text' -%}
+                {{ footer_title }}
                 <div class="footer-content rte {{ block.settings.size }}">
                   {{ block.settings.content }}
                 </div>
 
               {%- when 'menu' -%}
+                {{ footer_title }}
                 <nav class="footer-menu text-size--smaller">
                   {%- for link in linklists[block.settings.menu].links -%}
                     <span>
@@ -46,8 +51,8 @@
                   {%- else -%}
                     <span>{{ 'image' | placeholder_svg_tag }}</span>
                   {%- endif -%}
+                  {{ footer_title }}
                 </div>
-
             {%- endcase -%}
 
           </div>

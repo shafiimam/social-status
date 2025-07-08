@@ -67,20 +67,28 @@
                 <div class="tab-list-item-header">
                   <p class="tab-list-item-index">/{{ block.settings.item_index }}</p>
                   <div class="tab-list-item-content-container">
-                    <p class="tab-list-item-content">
+                    <div class="tab-list-item-content">
                       <span class="tab-list-item-title font-zen">{{ block.settings.item_title }}</span>
-                      <span class="tab-list-item-subtitle">{{ block.settings.item_subtitle }}</span>
-                      <span class="tab-list-item-date-mobile-only">{{ block.settings.item_date }}</span>
-                      <button
-                        class="tab-list-item-button"
-                        onclick="addToCalendar('{{ block.settings.item_title }}', '{{ block.settings.item_date }}')"
-                      >
-                        <span> Add to Calendar </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </button>
-                    </p>
+                      <div class="tab-list-item-content-inner">
+                        <span class="tab-list-item-subtitle">{{ block.settings.item_subtitle }}</span>
+                        <span class="tab-list-item-date-mobile-only">{{ block.settings.item_date }}</span>
+                        <button
+                          class="tab-list-item-button"
+                          onclick="addToCalendar('{{ block.settings.item_title }}', '{{ block.settings.item_date }}')"
+                        >
+                          <span> Add to Calendar </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                          >
+                            <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <span class="tab-list-item-date">{{ block.settings.item_date }}</span>
                 </div>
@@ -121,7 +129,7 @@
       "type": "text",
       "id": "main_title_width",
       "label": "Main Title Width",
-      "default": "732" 
+      "default": "732"
     },
     {
       "type": "select",

@@ -72,7 +72,7 @@
         "summary"
       ],
       "settings": {
-        "enable_tags": true,
+        "enable_tags": false,
         "post_limit": 22,
         "custom_text": "rgba(0,0,0,0)",
         "custom_overlay": "rgba(0,0,0,0)"

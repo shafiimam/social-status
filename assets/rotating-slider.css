@@ -157,7 +157,7 @@ ul.slides li.active-slide:hover {
 
 p.slide-text {
   position: absolute;
-  top: 75%;
+  top: 85%;
   text-align: center;
   width: 100%;
   display: flex;

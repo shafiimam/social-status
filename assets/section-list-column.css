@@ -1,5 +1,5 @@
 .list-column-section {
-  padding: 120px 85px;
+  padding: var(--box-auto-top) var(--box-smaller-padding);
 }
 .list-column-content {
   position: relative;

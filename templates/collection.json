@@ -16,10 +16,10 @@
           "type": "featured_product",
           "settings": {
             "product": "1906-utility-navy",
-            "badge_text": "sale -50%",
+            "badge_text": "seellling out soon",
             "badge_color": "#000000",
             "badge_text_color": "#ffffff",
-            "position": 3,
+            "position": 1,
             "block_span": 2
           }
         },
@@ -40,7 +40,7 @@
         "featured_product_BqDbw8"
       ],
       "settings": {
-        "collection_desktop_layout": "full",
+        "collection_desktop_layout": "split",
         "show_collection_banner": true,
         "show_collection_description": false,
         "show_collection_image": true,

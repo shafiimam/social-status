@@ -189,47 +189,35 @@
     "virtual_try_on_nBhXAa": {
       "type": "virtual-try-on",
       "blocks": {
-        "image_KRKCbt": {
-          "type": "image",
+        "product_Bkmn8g": {
+          "type": "product",
           "settings": {
-            "image": "shopify://shop_images/AJ14FERRARI-1.jpg"
+            "product_image": "shopify://shop_images/DSC07530.png",
+            "product_qr_image": "shopify://shop_images/scan-qr.png"
           }
         },
-        "image_rmctTM": {
-          "type": "image",
+        "product_TmKYFJ": {
+          "type": "product",
           "settings": {
-            "image": "shopify://shop_images/AJ14FERRARI-5.jpg"
+            "product_image": "shopify://shop_images/AM95WHITHYPERJADE-4.jpg",
+            "product_qr_image": "shopify://shop_images/image_92.png"
           }
         },
-        "image_Eb7y3E": {
-          "type": "image",
+        "product_pcCr9i": {
+          "type": "product",
           "settings": {
-            "image": "shopify://shop_images/AJ14FERRARI-5.jpg"
-          }
-        },
-        "image_8jdKK3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AJ14FERRARI-2.jpg"
-          }
-        },
-        "image_4mjdcF": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AJ14FERRARI-1.jpg"
+            "product_image": "shopify://shop_images/MADEINUK991V2_BEECHNUT_-1.jpg",
+            "product_qr_image": "shopify://shop_images/CarharttWIP_Mobile.jpg"
           }
         }
       },
       "block_order": [
-        "image_KRKCbt",
-        "image_rmctTM",
-        "image_Eb7y3E",
-        "image_8jdKK3",
-        "image_4mjdcF"
+        "product_Bkmn8g",
+        "product_TmKYFJ",
+        "product_pcCr9i"
       ],
       "name": "Virtual Try-On",
       "settings": {
-        "right_image": "shopify://shop_images/scan-qr.png",
         "heading": "Step In The Culture",
         "subheading": "Step In The Culture"
       }
@@ -368,6 +356,17 @@
             "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
             "item_index": "02"
           }
+        },
+        "item_block_q6WEMR": {
+          "type": "item_block",
+          "settings": {
+            "tab_group_title": "Example",
+            "item_image": "shopify://shop_images/V-S1METALLIC_BLACK_GOLD_-4.jpg",
+            "item_title": "item title",
+            "item_date": "10.04.25",
+            "item_subtitle": "something for the subtitle",
+            "item_index": "01"
+          }
         }
       },
       "block_order": [
@@ -382,7 +381,8 @@
         "item_block_wMPQnT",
         "item_block_TXgtTy",
         "item_block_iBqQJC",
-        "item_block_At99Mq"
+        "item_block_At99Mq",
+        "item_block_q6WEMR"
       ],
       "name": "Latest Features & Events",
       "settings": {
@@ -593,7 +593,7 @@
           "settings": {
             "image": "shopify://shop_images/SSDESK2_1f488ffc-8cb4-44c5-af9d-2252ed030e0b.jpg",
             "column_count": "3",
-            "row_count": 2,
+            "row_count": 1,
             "title": "",
             "heading_tag": "h4",
             "content": "",
@@ -610,7 +610,7 @@
           "settings": {
             "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
             "column_count": "3",
-            "row_count": 1,
+            "row_count": 2,
             "title": "",
             "heading_tag": "h4",
             "content": "",
@@ -627,7 +627,7 @@
           "settings": {
             "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
             "column_count": "3",
-            "row_count": 2,
+            "row_count": 1,
             "title": "",
             "heading_tag": "h4",
             "content": "",
@@ -656,12 +656,29 @@
             "overlay_opacity": 0
           }
         },
+        "image_UD4xae": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
         "image_TXnqGn": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Artboard_6_0a4ef8cb-19ab-4528-b598-397f5be2ffdb.jpg",
             "column_count": "3",
-            "row_count": 1,
+            "row_count": 2,
             "title": "",
             "heading_tag": "h4",
             "content": "",
@@ -689,6 +706,23 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
+        },
+        "image_FBwwRh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSXHonorthegift.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
@@ -696,13 +730,17 @@
         "image_HjCRJC",
         "image_xTYyNH",
         "image_YtGyxT",
+        "image_UD4xae",
         "image_TXnqGn",
-        "image_kdRm8p"
+        "image_kdRm8p",
+        "image_FBwwRh"
       ],
       "name": "Media Grid",
       "settings": {
         "desktop_row_height": 250,
-        "mobile_row_height": 220,
+        "mobile_row_height": 170,
+        "padding_top": 60,
+        "padding_bottom": 0,
         "spacing": "xs",
         "subheading": "",
         "title": "<strong>@</strong>THESOCALSTATUS",
@@ -756,6 +794,38 @@
         "custom_text": "rgba(0,0,0,0)",
         "seo_h_tag": "h3"
       }
+    },
+    "newsletter_jVdCeL": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_xJMn7D": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our newsletter",
+            "seo_h_tag": "h2"
+          }
+        },
+        "email_form_FXpcYk": {
+          "type": "email_form",
+          "settings": {}
+        },
+        "paragraph_kEk7Q7": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xJMn7D",
+        "email_form_FXpcYk",
+        "paragraph_kEk7Q7"
+      ],
+      "name": "t:sections.newsletter.name",
+      "settings": {
+        "custom_background": "#1d1f20",
+        "custom_text": "#ffffff"
+      }
     }
   },
   "order": [
@@ -769,6 +839,7 @@
     "floating_testimonials_KCBbUg",
     "perspective_slider_VCQ6DF",
     "media_grid_NHDBAw",
-    "text_columns_with_icons_8nxf6n"
+    "text_columns_with_icons_8nxf6n",
+    "newsletter_jVdCeL"
   ]
 }

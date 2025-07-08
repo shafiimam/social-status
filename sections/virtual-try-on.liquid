@@ -1,12 +1,136 @@
+<div class="virtual-try-on-section">
+  <div class="vto-container">
+    <div class="vto-header">
+      <h1 class="h1 text-center heading">{{ section.settings.heading }}</h1>
+      <p class="text-subdued text-center">{{ section.settings.subheading }}</p>
+    </div>
+    <!-- Left Column: Vertical Slider -->
+    <div class="vto-content-container">
+      <div class="vto-slider">
+        <div class="vto-slider-inner">
+          {% for block in section.blocks %}
+            {% if block.settings.product_image %}
+              <div class="vto-slide" {{ block.shopify_attributes }}>
+                <img
+                  id="product-image-{{ block.id }}"
+                  src="{{ block.settings.product_image | image_url: width: 600 }}"
+                  alt="Slide Image"
+                  loading="lazy"
+                  width="600"
+                  height="600" 
+                >
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Right Column: Static Image -->
+      <div class="vto-qr-container">
+        {% for block in section.blocks %}
+          {% if block.settings.product_qr_image %}
+            <img
+              class="{% if forloop.first %}active-slide{% endif %}"
+              id="product-qr-image-{{ block.id }}"
+              src="{{ block.settings.product_qr_image | image_url: width: 600 }}"
+              alt="Product QR Image"
+              loading="lazy"
+              width="600"
+              height="600"
+            >
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  class VirtualTryOnSlider {
+    constructor() {
+      this.sliderInner = document.querySelector('.vto-slider-inner');
+      this.qrContainer = document.querySelector('.vto-qr-container');
+      this.slides = document.querySelectorAll('.vto-slide');
+      this.qrImages = document.querySelectorAll('.vto-qr-container img');
+      this.scrollTimeout = null;
+
+      this.init();
+    }
+
+    init() {
+      this.showFirstQRImage();
+      this.bindEvents();
+      this.updateQRImage();
+    }
+
+    showFirstQRImage() {
+      if (this.qrImages.length > 0) {
+        this.qrImages[0].classList.add('active-slide');
+      }
+    }
+
+    bindEvents() {
+      this.sliderInner.addEventListener('scroll', () => this.handleScroll());
+    }
+
+    handleScroll() {
+      // Clear existing timeout
+      if (this.scrollTimeout) {
+        clearTimeout(this.scrollTimeout);
+      }
+      
+      // Set new timeout to wait for scroll to end
+      this.scrollTimeout = setTimeout(() => {
+        this.updateQRImage();
+      }, 200); // Wait 150ms after scroll stops
+    }
+
+    updateQRImage() {
+      const activeSlideIndex = this.findActiveSlideIndex();
+      this.updateQRImageDisplay(activeSlideIndex);
+    }
+
+    findActiveSlideIndex() {
+      const sliderRect = this.sliderInner.getBoundingClientRect();
+      const sliderCenter = sliderRect.top + sliderRect.height * 0.5;
+
+      let activeSlideIndex = 0;
+      let minDistance = Infinity;
+
+      this.slides.forEach((slide, index) => {
+        const slideRect = slide.getBoundingClientRect();
+        const slideCenter = slideRect.top + slideRect.height * 0.5;
+        const distance = Math.abs(sliderCenter - slideCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          activeSlideIndex = index;
+        }
+      });
+
+      return activeSlideIndex;
+    }
+
+    updateQRImageDisplay(activeSlideIndex) {
+      this.qrImages.forEach((img) => {
+        img.classList.remove('active-slide');
+      });
+
+      if (this.qrImages[activeSlideIndex]) {
+        this.qrImages[activeSlideIndex].classList.add('active-slide');
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    new VirtualTryOnSlider();
+  });
+</script>
+
+{{ 'section-virtual-try-on.css' | asset_url | stylesheet_tag }}
 {% schema %}
 {
   "name": "Virtual Try-On",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "right_image",
-      "label": "Right Column Image"
-    },
     {
       "type": "header",
       "content": "Header"
@@ -26,13 +150,18 @@
   ],
   "blocks": [
     {
-      "type": "image",
-      "name": "Slider Image",
+      "type": "product",
+      "name": "Virtual Try-On Product",
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
-          "label": "Slide Image"
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_qr_image",
+          "label": "Product QR Image"
         }
       ]
     }
@@ -45,96 +174,3 @@
   ]
 }
 {% endschema %}
-
-<div class="virtual-try-on-section">
-  <div class="vto-container">
-    <div class="vto-header">
-      <h1 class="h1 text-center heading">{{ section.settings.heading }}</h1>
-      <p class="text-subdued text-center">{{ section.settings.subheading }}</p>
-    </div>
-    <!-- Left Column: Vertical Slider -->
-    <div class="vto-content-container">
-      <div class="vto-slider">
-        <div class="vto-slider-inner">
-          {% for block in section.blocks %}
-            {% if block.settings.image %}
-              <div class="vto-slide" {{ block.shopify_attributes }}>
-                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="Slide Image" loading="lazy">
-              </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- Right Column: Static Image -->
-      <div class="vto-static">
-        {% if section.settings.right_image %}
-          <img src="{{ section.settings.right_image | image_url: width: 600 }}" alt="Right Image" loading="lazy">
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
-
-<style>
-  .virtual-try-on-section {
-    padding-block-start: 80px;
-  }
-  .vto-content-container {
-    background: #e8e8e8;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    @media screen and (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-  }
-  .vto-header p {
-    color: #727272;
-    text-align: center;
-    font-family: 'Work Sans';
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: -0.22px;
-  }
-  .vto-slider {
-    padding: 50px 20px;
-  }
-  .vto-slider-inner {
-    max-height: 80vh;
-    aspect-ratio: 1/1;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #e77e21 transparent;
-    border-radius: 8px;
-    padding: 12px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @media screen and (max-width: 768px) {
-      height: 400px;
-    }
-  }
-  .vto-slide {
-    height: 100%;
-    aspect-ratio: 1/1;
-  }
-  .vto-slider::-webkit-scrollbar {
-    width: 8px;
-  }
-  .vto-slider::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 4px;
-  }
-  .vto-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .vto-static img {
-    width: 100%;
-    height: 100%;
-  }
-</style>

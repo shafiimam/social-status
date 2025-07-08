@@ -299,30 +299,13 @@
         "text_alignment": "left"
       }
     },
-    "media_grid_nWD3Dh": {
+    "media_grid_tgC8EG": {
       "type": "media-grid",
       "blocks": {
-        "image_WWmjrx": {
+        "image_d6UDMr": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/SSDESK2_1f488ffc-8cb4-44c5-af9d-2252ed030e0b.jpg",
-            "column_count": "3",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_76G6Jf": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -336,10 +319,10 @@
             "overlay_opacity": 0
           }
         },
-        "image_rCttHd": {
+        "image_hqCW89": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -353,7 +336,24 @@
             "overlay_opacity": 0
           }
         },
-        "image_Bad6yT": {
+        "image_qaGc3G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_q6f3wB": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/SSMOBNEW.jpg",
@@ -370,10 +370,44 @@
             "overlay_opacity": 0
           }
         },
-        "image_td8xV7": {
+        "image_m8VDEP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_3p8x9w": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Artboard_6_0a4ef8cb-19ab-4528-b598-397f5be2ffdb.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_KXNwxz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSXHonorthegift.jpg",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -387,7 +421,7 @@
             "overlay_opacity": 0
           }
         },
-        "image_mzGGEE": {
+        "image_RxXR8A": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/SSXHonorthegift.jpg",
@@ -406,20 +440,24 @@
         }
       },
       "block_order": [
-        "image_WWmjrx",
-        "image_76G6Jf",
-        "image_rCttHd",
-        "image_Bad6yT",
-        "image_td8xV7",
-        "image_mzGGEE"
+        "image_d6UDMr",
+        "image_hqCW89",
+        "image_qaGc3G",
+        "image_q6f3wB",
+        "image_m8VDEP",
+        "image_3p8x9w",
+        "image_KXNwxz",
+        "image_RxXR8A"
       ],
       "name": "Media Grid",
       "settings": {
         "desktop_row_height": 250,
-        "mobile_row_height": 220,
+        "mobile_row_height": 170,
+        "padding_top": 60,
+        "padding_bottom": 0,
         "spacing": "xs",
         "subheading": "",
-        "title": "<strong>@</strong>THESOCALSTATUS",
+        "title": "Previous Events",
         "content": ""
       }
     },
@@ -462,7 +500,7 @@
     "besocial_hero_zDHDNh",
     "latest_features_RF7KCt",
     "perspective_slider_U9X7jt",
-    "media_grid_nWD3Dh",
+    "media_grid_tgC8EG",
     "rich_text_XqMPwe"
   ]
 }
