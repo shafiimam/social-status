@@ -7,11 +7,9 @@
     <div class="staff-slider-container">
       <div
         class="staff-slider"
-        data-flickity='{ "pauseAutoPlayOnHover": true, "pauseAutoPlayOnFocus": true, "prevNextButtons": true, "pageDots": false }'
       >
         {% for block in section.blocks %}
-          {% if block.type == 'staff' %}
-            <div class="staff-slider__item">
+            <div class="staff-slider__item" data-block-id="{{ block.id }}">
               <div class="staff-slider__item-inner">
                 <div class="staff-slider__item-image">
                   <img src="{{ block.settings.image | image_url: width: 550 }}" alt="{{ block.settings.image.alt }}">
@@ -27,31 +25,56 @@
                 </div>
               </div>
             </div>
-          {% endif %}
         {% endfor %}
       </div>
     </div>
     <div class="product-masonry">
       <div class="product-masonry-inner">
         {% for block in section.blocks %}
-          {% if block.type == 'product' %}
-            {% render 'product-item', product: block.settings.product %}
-          {% endif %}
+         <div class="product-masonry-item" data-product-masonry-block-id="{{ block.id }}" data-active="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}">
+          <div class="product-masonry-item-inner">
+            {% for product in block.settings.product_list %}
+              {% render 'product-item', product: product, index: forloop.index0 %}
+            {% endfor %}
+          </div>
+         </div>
         {% endfor %}
       </div>
     </div>
   </div>
 </div>
 <script>
-    const productMasonry = document.querySelector('.product-masonry-inner');
+    const productMasonry = document.querySelector('.product-masonry-item-inner');
     const staffSlider = document.querySelector('.staff-slider');
 
     function handleProductMasonryResize() {
         const productMasonryHeight = productMasonry.offsetHeight;
         staffSlider.style.height = `${productMasonryHeight}px`;
     }
+    function initStaffSlider() {
+      const staffSlider = document.querySelector('.staff-slider');
+      const flickity = new Flickity(staffSlider, {
+        wrapAround: true,
+        autoPlay: false,
+        pauseAutoPlayOnHover: true,
+        pauseAutoPlayOnFocus: true,
+        prevNextButtons: true,
+        pageDots: false,
+      });
+      flickity.on('change', (index) => {
+        const blockId = staffSlider.querySelectorAll('.staff-slider__item')[index].dataset.blockId;
+        console.log("block id is", blockId);
+        const productMasonryBlocks = document.querySelectorAll('.product-masonry-item');
+        const productMasonryBlock = document.querySelector(`[data-product-masonry-block-id="${blockId}"]`);
+        productMasonryBlocks.forEach(block =>  block.dataset.active = 'false');
+        productMasonryBlock.dataset.active = 'true';
+      });
+    }
     window.addEventListener('resize', handleProductMasonryResize);  
-    window.addEventListener('DOMContentLoaded', handleProductMasonryResize);
+    window.addEventListener('DOMContentLoaded', function() {
+      handleProductMasonryResize();
+      initStaffSlider();
+    });
 </script>
 {% schema %}
 {
@@ -65,18 +88,6 @@
     }
   ],
   "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "limit": 4,
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        }
-      ]
-    },
     {
       "type": "staff",
       "name": "Staff",
@@ -100,6 +111,11 @@
           "type": "richtext",
           "id": "description",
           "label": "Description"
+        },
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "Product List"
         }
       ]
     }

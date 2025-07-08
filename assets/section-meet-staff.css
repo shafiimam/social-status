@@ -37,13 +37,32 @@
     color: #727272;
     letter-spacing: -0.18px;
 }
-.product-masonry-inner {
+.product-masonry-item{
+  animation: fadeIn 0.3s ease-in forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.product-masonry-item-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 27px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   } 
+}
+
+.product-masonry-item[data-active="true"] {
+  display: block;
+}
+.product-masonry-item[data-active="false"] {
+  display: none;
 }
 .staff-slider-container{
     background: #FAFAFA;
