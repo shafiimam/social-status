@@ -34,7 +34,7 @@
          <div class="product-masonry-item" data-product-masonry-block-id="{{ block.id }}" data-active="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}">
           <div class="product-masonry-item-inner">
             {% for product in block.settings.product_list %}
-              {% render 'product-item', product: product, index: forloop.index0 %}
+              {% render 'product-item', product: product, index: forloop.index0, masonry_context= true %}
             {% endfor %}
           </div>
          </div>
