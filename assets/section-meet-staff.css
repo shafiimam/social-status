@@ -34,7 +34,7 @@
     color: #292929;
 }
 .staff-description p{
-    color: #727272;
+    color: var(--secondary-text);
     letter-spacing: -0.18px;
 }
 .product-masonry-item{
@@ -70,7 +70,7 @@
 .staff-slider .flickity-prev-next-button{
     top: 98%;
     z-index: 1;
-    color: #727272;
+    color: var(--secondary-text);
 }
 .staff-slider .flickity-prev-next-button.next{
     left: 80px;

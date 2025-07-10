@@ -11,14 +11,14 @@
     <div class="reduce-top-margin" style="pointer-events:none">
       <div class="site-box-content {{ section.settings.map_style }}">
         <div class="top-text">
-          <{{ section.settings.seo_h_tag }} class="title h1 heading">
+          <{{ section.settings.seo_h_tag }} class="title h1 text-uppercase">
             {{ section.settings.title | escape }}
           </{{ section.settings.seo_h_tag }}>
           <div class="section-subheading">{{ section.settings.content }}</div>
           {%- if settings.headings_hr -%}<hr>{%- endif -%}
         </div>
         <div class="bottom-text">
-          <h2 class="title h2 heading">
+          <h2 class="title h2 text-uppercase">
             {{ section.settings.title_bottom | escape }}
           </h2>
           <div class="section-subheading">{{ section.settings.content_bottom }}</div>

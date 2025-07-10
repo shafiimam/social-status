@@ -111,7 +111,7 @@
   margin-top: 12px;
 }
 .blog-item__summary {
-  color: #727272;
+  color: var(--secondary-text);
   font-size: 20px;
   font-weight: 500;
   line-height: normal;

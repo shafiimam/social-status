@@ -1,6 +1,6 @@
 /*rotating-slider*/
 .rotating-slider-heading p {
-  color: #727272;
+  color: var(--secondary-text);
   text-align: center;
   font-family: var(--font-stack-body);
   font-size: 22px;

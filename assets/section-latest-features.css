@@ -152,7 +152,7 @@
   text-transform: uppercase;
 }
 .tab-list-item-index {
-  color: #727272;
+  color: var(--secondary-text);
   text-align: center;
   font-family: Yantramanav;
   font-size: 24px;
@@ -231,7 +231,7 @@ span.tab-list-item-subtitle {
   text-align: left;
 }
 .tab-list-item-date {
-  color: var(--Secondary-Text, #727272);
+  color: var(--secondary-text);
   font-family: Yantramanav;
   font-size: 24px;
   font-style: normal;
@@ -246,7 +246,7 @@ span.tab-list-item-subtitle {
 }
 .tab-list-item-date-mobile-only {
   display: none;
-  color: var(--Secondary-Text, #727272);
+  color: var(--secondary-text);
   font-family: Yantramanav;
   font-size: 24px;
   font-style: normal;

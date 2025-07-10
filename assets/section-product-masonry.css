@@ -12,6 +12,9 @@
     padding-block: 5rem;
   }
 }
+.product-masonry .quick-add-to-cart{
+  top : -80px;
+}
 
 .product-masonry__header {
   display: flex;
@@ -46,7 +49,7 @@
   }
 }
 .product-masonry__header-description p{
-   color: #727272;
+   color: var(--secondary-text);
    font-family: var(--font-stack-work-sans);
    font-size: 18px;
    font-style: normal;

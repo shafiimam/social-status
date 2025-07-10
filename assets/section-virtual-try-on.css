@@ -13,7 +13,7 @@
   }
 }
 .vto-header p {
-  color: #727272;
+  color: var(--secondary-text);
   text-align: center;
   font-family: "Work Sans";
   font-size: 22px;

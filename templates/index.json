@@ -587,154 +587,6 @@
     },
     "media_grid_NHDBAw": {
       "type": "media-grid",
-      "blocks": {
-        "image_KBYwTp": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/SSDESK2_1f488ffc-8cb4-44c5-af9d-2252ed030e0b.jpg",
-            "column_count": "3",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_HjCRJC": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
-            "column_count": "3",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_xTYyNH": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
-            "column_count": "3",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_YtGyxT": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/SSMOBNEW.jpg",
-            "column_count": "3",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_UD4xae": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/SSMOBNEW.jpg",
-            "column_count": "3",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_TXnqGn": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Artboard_6_0a4ef8cb-19ab-4528-b598-397f5be2ffdb.jpg",
-            "column_count": "3",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_kdRm8p": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/SSXHonorthegift.jpg",
-            "column_count": "3",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_FBwwRh": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/SSXHonorthegift.jpg",
-            "column_count": "3",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_KBYwTp",
-        "image_HjCRJC",
-        "image_xTYyNH",
-        "image_YtGyxT",
-        "image_UD4xae",
-        "image_TXnqGn",
-        "image_kdRm8p",
-        "image_FBwwRh"
-      ],
       "name": "Media Grid",
       "settings": {
         "desktop_row_height": 250,
@@ -746,6 +598,31 @@
         "title": "<strong>@</strong>THESOCALSTATUS",
         "content": ""
       }
+    },
+    "custom_liquid_WyGgiH": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "span {color: var(--heading-color);}",
+        "strong {color: var(--brand-primary);}"
+      ],
+      "name": "t:sections.refactor_words.custom_code.name",
+      "settings": {
+        "custom_liquid": "<h1 class=\"h1 text-center heading\"><strong>@<strong><span>thesocialstatus</span><h1>",
+        "no_padding": false
+      }
+    },
+    "1752150809a21dd429": {
+      "type": "apps",
+      "blocks": {
+        "socialwidget_instafeed_base_widget_P7JbjP": {
+          "type": "shopify://apps/socialwidget-instafeed/blocks/base-widget/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "socialwidget_instafeed_base_widget_P7JbjP"
+      ],
+      "settings": {}
     },
     "text_columns_with_icons_8nxf6n": {
       "type": "text-columns-with-icons",
@@ -839,6 +716,8 @@
     "floating_testimonials_KCBbUg",
     "perspective_slider_VCQ6DF",
     "media_grid_NHDBAw",
+    "custom_liquid_WyGgiH",
+    "1752150809a21dd429",
     "text_columns_with_icons_8nxf6n",
     "newsletter_jVdCeL"
   ]

@@ -32,7 +32,7 @@
   font-weight: 300;
   line-height: 41px; /* 186.364% */
   letter-spacing: -0.22px;
-  color: #727272;
+  color: var(--secondary-text);
 }
 
 @media (max-width: 768px) {

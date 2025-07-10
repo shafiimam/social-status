@@ -45,13 +45,14 @@
         "menu_hide_border": true,
         "collection_linklist": "",
         "show_collection_image": true,
-        "show_promotion_block": false,
+        "show_promotion_block": true,
         "promotion_header": "",
         "promotion_content": "",
         "promotion_button_label": "",
         "promotion_button_link": "",
         "promotion_color_txt": "#000000",
         "promotion_color_bg": "#f3f3f3",
+        "promotion_image": "shopify://shop_images/CARHARTTWIPFINALMOBILE_0418d4ba-10a6-49ea-9042-181d0edef421.jpg",
         "show_locale_selector": true,
         "show_country_selector": true
       }

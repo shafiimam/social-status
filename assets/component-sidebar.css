@@ -117,6 +117,7 @@ body:not(.sidebar-has-scrollbars) .site-nav.style--sidebar .site-nav-container::
   height: var(--header-size);
   max-height: 85px;
   font-weight: var(--font-weight-body-bold);
+  font-size: 32px;
   position: fixed;
   top: 0;
   left: 0;
@@ -294,6 +295,7 @@ body:not(.sidebar-has-scrollbars) .site-nav.style--sidebar .site-nav-container::
 }
 .cart-item .content .item-title span, .search-results.predictive-search .search-item .content .item-title span {
   font-weight: var(--font-weight-body);
+  font-size: 20px;
 }
 .cart-item .content .item-price, .search-results.predictive-search .search-item .content .item-price {
   display: table !important;
@@ -309,6 +311,7 @@ body:not(.sidebar-has-scrollbars) .site-nav.style--sidebar .site-nav-container::
 .cart-item .content .item-price strong, .search-results.predictive-search .search-item .content .item-price strong {
   font-weight: var(--font-weight-body-bold);
   padding-inline-end: 10px;
+  font-size: 20px;
 }
 .cart-item .content .item-price del, .search-results.predictive-search .search-item .content .item-price del {
   opacity: var(--alternate-opacity);
@@ -470,6 +473,10 @@ cart-product-recommendations .css-slider-navigation-container:before {
 }
 #cart-recommendations .css-slider-navigation-container:before {
   display: none;
+}
+
+#cart-recommendations:not(:empty) .sidebar-divider{
+  font-size: 32px;
 }
 
 search-form input[type=search] {

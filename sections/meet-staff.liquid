@@ -63,7 +63,6 @@
       });
       flickity.on('change', (index) => {
         const blockId = staffSlider.querySelectorAll('.staff-slider__item')[index].dataset.blockId;
-        console.log("block id is", blockId);
         const productMasonryBlocks = document.querySelectorAll('.product-masonry-item');
         const productMasonryBlock = document.querySelector(`[data-product-masonry-block-id="${blockId}"]`);
         productMasonryBlocks.forEach(block =>  block.dataset.active = 'false');

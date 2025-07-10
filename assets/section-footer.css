@@ -197,5 +197,5 @@ shop-login-button {
 }
 .footer-image .footer-title {
   margin-top: 20px;
-  color: #727272;
+  color: var(--secondary-text);
 }
