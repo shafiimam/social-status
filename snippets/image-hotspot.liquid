@@ -1,0 +1,127 @@
+{% style %}
+  #image-hotspot-block-{{ block.id }} {
+    grid-column: span {{ block_span }};
+    grid-row: span {{ block_span }};
+  }
+  @media screen and (max-width: 768px) {
+    #image-hotspot-block-{{ block.id }} {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+  #image-hotspot-block-{{ block.id }} .hotspot-tooltip,
+  #image-hotspot-block-{{ block.id }} .image-hotspots__spot--bullet::after {
+    background-color: {{ section.settings.color_background }};
+  }
+  #image-hotspot-block-{{ block.id }} .hotspot-tooltip::after {
+    border-color: {{ section.settings.color_background }};
+  }
+  #image-hotspot-block-{{ block.id }} .hotspot-tooltip {
+    color: {{ section.settings.color_text }};
+    --main-text: {{ section.settings.color_text }};
+  }
+{% endstyle %}
+<div
+  id="image-hotspot-block-{{ block.id }}"
+  class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow image-hotspot-block"
+  data-order="{{ forloop.index }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="site-box image-with-hotspots" style="height:100%;">
+    <div class="site-box-background">
+      {%- if block.settings.image == blank -%}
+        <span class="onboarding-svg">{{ 'collection-1' | placeholder_svg_tag }}</span>
+      {%- else -%}
+        {%- liquid
+          render 'lazy-image', image: block.settings.image, sizes: '100vw', preload: preload
+        -%}
+      {%- endif -%}
+    </div>
+  </div>
+  <image-hotspots class="image-hotspots">
+    {%- for index in (1..5) -%}
+      {% assign vertical_offset_identifier = 'hotspot_vertical_offset_' | append: index %}
+      {% assign horizonta_offset_identifier = 'hotspot_horizontal_offset_' | append: index %}
+      {% assign hotspot_product_identifier = 'hotspot_product_' | append: index %}
+      {% assign hotspot_product = block.settings[hotspot_product_identifier] %}
+      {% assign tooltip_position_identifier = 'tooltip_position_' | append: index %}
+      {% assign hotspot_tooltip_position = block.settings[tooltip_position_identifier] %}
+      {%- style -%}
+        #spot-{{ index }} {
+          top: {{ block.settings[vertical_offset_identifier] }}%;
+          left: {{ block.settings[horizonta_offset_identifier] }}%;
+        }
+      {%- endstyle -%}
+      {% if hotspot_product != blank %}
+        <div id="spot-{{ index }}" class="image-hotspots__spot">
+
+          <span class="image-hotspots__spot--bullet"> bullet </span>
+          <div class="image-hotspots__spot--content image-hotspots__spot--content-{{ hotspot_tooltip_position }} image-hotspots__spot--content-{{ hotspot_tooltip_position }}-mobile">
+            {%- assign product = block.settings[hotspot_product_identifier] -%}
+            {% if request.design_mode %}
+              <span style="color: #fff;">hotspot {{ index }}</span>
+            {% endif %}
+            <a href="{{ product.url }}" class="hotspot-tooltip">
+              <div class="hotspot-tooltip--product">
+                <div class="box--product-image primary">
+                  {%- liquid
+                    unless product == blank
+                      render 'lazy-image-small', image: product.featured_media, sizes: '80px'
+                    else
+                      echo 'product-1' | placeholder_svg_tag
+                    endunless
+                  -%}
+                </div>
+
+                <div class="caption">
+                  <div>
+                    <span class="title"
+                      ><span class="underline-animation">
+                        {%- liquid
+                          unless product == blank
+                            echo product.title
+                          else
+                            echo 'general.onboarding.product_title' | t
+                          endunless
+                        -%}
+                      </span></span
+                    >
+                    <span class="price text-size--smaller">
+                      <span style="display:flex;flex-direction:row">
+                        {%- liquid
+                          unless product == blank
+                            assign price = product.price | money
+
+                            if product.price_varies
+                              if product.compare_at_price > product.price
+                                echo 'products.grid.on_sale_from_html' | t: price: price
+                              else
+                                echo 'products.grid.from_text_html' | t: price: price
+                              endif
+                            else
+                              if product.compare_at_price > product.price
+                                echo price
+                                echo '<del>'
+                                echo product.compare_at_price | money
+                                echo '</del>'
+                              else
+                                echo price
+                              endif
+                            endif
+
+                          else
+                            echo 9999 | money
+                          endunless
+                        -%}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    {%- endfor -%}
+  </image-hotspots>
+</div>

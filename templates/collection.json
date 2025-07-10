@@ -12,17 +12,6 @@
     "main": {
       "type": "main-collection",
       "blocks": {
-        "featured_product_RAeqqz": {
-          "type": "featured_product",
-          "settings": {
-            "product": "1906-utility-navy",
-            "badge_text": "seellling out soon",
-            "badge_color": "#000000",
-            "badge_text_color": "#ffffff",
-            "position": 1,
-            "block_span": 2
-          }
-        },
         "featured_product_BqDbw8": {
           "type": "featured_product",
           "settings": {
@@ -33,15 +22,41 @@
             "position": 5,
             "block_span": 2
           }
+        },
+        "image_hotspot_wWDTMJ": {
+          "type": "image_hotspot",
+          "settings": {
+            "position": 11,
+            "block_span": 2,
+            "color_background": "#000000",
+            "color_text": "",
+            "image": "shopify://shop_images/CarharttWIP_Mobile.jpg",
+            "hotspot_product_1": "carhartt-active-jacket-1",
+            "hotspot_vertical_offset_1": 31,
+            "hotspot_horizontal_offset_1": 50,
+            "tooltip_position_1": "right",
+            "hotspot_product_2": "m1000v1",
+            "hotspot_vertical_offset_2": 65,
+            "hotspot_horizontal_offset_2": 50,
+            "tooltip_position_2": "bottom",
+            "hotspot_product_3": "m1000v1",
+            "hotspot_vertical_offset_3": 51,
+            "hotspot_horizontal_offset_3": 21,
+            "tooltip_position_3": "right",
+            "hotspot_product_4": "",
+            "hotspot_vertical_offset_4": 23,
+            "hotspot_horizontal_offset_4": 50,
+            "tooltip_position_4": "top"
+          }
         }
       },
       "block_order": [
-        "featured_product_RAeqqz",
-        "featured_product_BqDbw8"
+        "featured_product_BqDbw8",
+        "image_hotspot_wWDTMJ"
       ],
       "settings": {
-        "collection_desktop_layout": "split",
         "show_collection_banner": true,
+        "collection_desktop_layout": "full",
         "show_collection_description": false,
         "show_collection_image": true,
         "mobile_overlay_background": "#131313",
@@ -61,10 +76,37 @@
         "custom_text": "rgba(0,0,0,0)",
         "custom_overlay": "rgba(0,0,0,0)"
       }
+    },
+    "image_with_hotspots_NRwDpW": {
+      "type": "image-with-hotspots",
+      "blocks": {
+        "product_XTEM8t": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "vertical_offset_desktop": 50,
+            "horizontal_offset_desktop": 50,
+            "vertical_offset_mobile": 50,
+            "horizontal_offset_mobile": 50,
+            "tooltip_position_desktop": "top",
+            "tooltip_position_mobile": "top"
+          }
+        }
+      },
+      "block_order": [
+        "product_XTEM8t"
+      ],
+      "name": "t:sections.refactor_words.settings.image_with_hotspots.label",
+      "settings": {
+        "image": "shopify://shop_images/Carhartt_HP.jpg",
+        "color_text": "#000000",
+        "color_background": "#ffffff"
+      }
     }
   },
   "order": [
     "main",
-    "navigation"
+    "navigation",
+    "image_with_hotspots_NRwDpW"
   ]
 }

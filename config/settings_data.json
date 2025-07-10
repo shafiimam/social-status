@@ -115,6 +115,18 @@
     "social_facebook": "facebook.com",
     "social_instagram": "instagram.com",
     "social_twitter": "",
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "7709396684840320309": {
+        "type": "shopify://apps/socialwidget-instafeed/blocks/social-widget/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
+        "disabled": false,
+        "settings": {}
+      },
+      "5061257265103808445": {
+        "type": "shopify://apps/r-terms-conditions/blocks/embed-block/471882a9-9b1b-4918-8943-6c66b60c94ea",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   }
 }

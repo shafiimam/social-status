@@ -16,6 +16,27 @@
         "layout": "split"
       }
     },
+    "besocial_hero_zTgNQP": {
+      "type": "besocial-hero",
+      "blocks": {
+        "button_3qFNWd": {
+          "type": "button",
+          "settings": {
+            "button_text": "Book an event",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_3qFNWd"
+      ],
+      "name": "Be Social Hero",
+      "settings": {
+        "background_image": "shopify://shop_images/besocial-hero.png",
+        "logo": "shopify://shop_images/besocial-logo-light.png",
+        "content": "<p>A space connected to several of our Social Status locations where we activate a variety of community-focused events. beSocial also acts as a free space for the local community to make their own.</p>"
+      }
+    },
     "list_column_4RwtQJ": {
       "type": "list-column",
       "blocks": {
@@ -309,6 +330,7 @@
   },
   "order": [
     "main",
+    "besocial_hero_zTgNQP",
     "list_column_4RwtQJ",
     "perspective_slider_YTetjX",
     "latest_features_z6mKK6",

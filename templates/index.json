@@ -614,13 +614,13 @@
     "1752150809a21dd429": {
       "type": "apps",
       "blocks": {
-        "socialwidget_instafeed_base_widget_P7JbjP": {
+        "socialwidget_instafeed_base_widget_HUwfgA": {
           "type": "shopify://apps/socialwidget-instafeed/blocks/base-widget/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
           "settings": {}
         }
       },
       "block_order": [
-        "socialwidget_instafeed_base_widget_P7JbjP"
+        "socialwidget_instafeed_base_widget_HUwfgA"
       ],
       "settings": {}
     },
