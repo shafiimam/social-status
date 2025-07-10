@@ -224,7 +224,13 @@
             "name": "James Danton",
             "image": "shopify://shop_images/tops-collection-banner.png",
             "position": "Store Manager",
-            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>",
+            "product_list": [
+              "1906-team-away-grey",
+              "1906-utility-navy",
+              "1906-utility-raincloud",
+              "1906a-silver-metallic"
+            ]
           }
         },
         "staff_YyyNPN": {
@@ -233,41 +239,19 @@
             "name": "James Danton",
             "image": "shopify://shop_images/tops-collection-banner.png",
             "position": "",
-            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
-          }
-        },
-        "product_hhtTHa": {
-          "type": "product",
-          "settings": {
-            "product": "home-studyos-03-planter-pierre-2"
-          }
-        },
-        "product_gxBCmD": {
-          "type": "product",
-          "settings": {
-            "product": "1906-utility-navy"
-          }
-        },
-        "product_wxfXAw": {
-          "type": "product",
-          "settings": {
-            "product": "1906-team-away-grey"
-          }
-        },
-        "product_QX89dg": {
-          "type": "product",
-          "settings": {
-            "product": "honor-the-gift-1988-full-zip-hood"
+            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>",
+            "product_list": [
+              "1906r-moonrock",
+              "1906l-raincloud",
+              "honor-the-gift-1988-full-zip-hood",
+              "a-bathing-ape-1st-camo-ma-1"
+            ]
           }
         }
       },
       "block_order": [
         "staff_3Mwm8t",
-        "staff_YyyNPN",
-        "product_hhtTHa",
-        "product_gxBCmD",
-        "product_wxfXAw",
-        "product_QX89dg"
+        "staff_YyyNPN"
       ],
       "name": "Meet Our Staff",
       "settings": {
