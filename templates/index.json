@@ -17,10 +17,10 @@
           "settings": {
             "image": "shopify://shop_images/Untitled-1_dccf1ea4-b2d1-470d-ad44-c8b3070e7a4b.jpg",
             "image_mobile": "shopify://shop_images/38blog.jpg",
-            "title": "social status x honor the gift",
-            "subtitle": "now avaialable",
+            "title": "38a denim shorts",
+            "subtitle": "now available",
             "button_text": "Shop now",
-            "button_link": "shopify://collections/air-max",
+            "button_link": "shopify://collections/38a",
             "text_color": "#ffffff",
             "button_color": "#000000",
             "content_position_x": 75,
@@ -33,9 +33,23 @@
             "image": "shopify://shop_images/38adesk4.jpg",
             "image_mobile": "shopify://shop_images/drop.jpg",
             "title": "social status x honor the gift",
-            "subtitle": "now avaialable",
+            "subtitle": "now available",
             "button_text": "Shop now",
-            "button_link": "shopify://collections/air-max",
+            "button_link": "shopify://collections/honor-the-gift",
+            "text_color": "#ffffff",
+            "button_color": "#000000",
+            "content_position_x": 75,
+            "overlay_opacity": 20
+          }
+        },
+        "slide_FeAtgp": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "button_text": "",
+            "button_link": "shopify://collections/honor-the-gift",
             "text_color": "#ffffff",
             "button_color": "#000000",
             "content_position_x": 75,
@@ -45,7 +59,8 @@
       },
       "block_order": [
         "slide_CfM3T7",
-        "slide_xaX3GE"
+        "slide_xaX3GE",
+        "slide_FeAtgp"
       ],
       "name": "Hero Slideshow",
       "settings": {
@@ -77,7 +92,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/38amob1.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "SHORTS",
             "link": ""
           }
         },
@@ -85,7 +100,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/53105_2.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "TOPS",
             "link": ""
           }
         },
@@ -93,7 +108,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Untitled-1_6255e0d8-2370-474b-8e07-c82762914149.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "WOMEN",
             "link": ""
           }
         },
@@ -101,7 +116,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/RHSS25TT13012_2.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "HOODIES",
             "link": ""
           }
         },
@@ -109,7 +124,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "ACCESSORIES",
             "link": "shopify://pages/copy-of-about-us"
           }
         },
@@ -117,7 +132,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "SNEAKERS",
             "link": ""
           }
         },
@@ -125,7 +140,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "JACKETS",
             "link": ""
           }
         },
@@ -133,7 +148,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "Slide image",
+            "slide_text": "SOCKS",
             "link": ""
           }
         }
@@ -200,14 +215,14 @@
           "type": "product",
           "settings": {
             "product_image": "shopify://shop_images/AM95WHITHYPERJADE-4.jpg",
-            "product_qr_image": "shopify://shop_images/image_92.png"
+            "product_qr_image": "shopify://shop_images/scan-qr_7a9253b5-c103-429c-8b1d-c12eeeda9581.png"
           }
         },
         "product_pcCr9i": {
           "type": "product",
           "settings": {
             "product_image": "shopify://shop_images/MADEINUK991V2_BEECHNUT_-1.jpg",
-            "product_qr_image": "shopify://shop_images/CarharttWIP_Mobile.jpg"
+            "product_qr_image": "shopify://shop_images/scan-qr_7a9253b5-c103-429c-8b1d-c12eeeda9581.png"
           }
         }
       },
@@ -229,7 +244,7 @@
           "type": "item_block",
           "settings": {
             "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-4.jpg",
+            "item_image": "shopify://shop_images/6N5A1365.jpg",
             "item_title": "Supervsn Fall/Winter 24",
             "item_date": "10.04.25",
             "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
@@ -273,7 +288,7 @@
           "type": "item_block",
           "settings": {
             "tab_group_title": "Events",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
+            "item_image": "shopify://shop_images/image_1f1580f2-ccf4-426a-9785-0e4084e7d362.png",
             "item_title": "Supervsn Fall/Winter 25",
             "item_date": "10.04.25",
             "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
@@ -418,7 +433,7 @@
           "type": "button",
           "settings": {
             "button_label": "View More Events",
-            "button_link": ""
+            "button_link": "shopify://pages/accessibility"
           }
         }
       },

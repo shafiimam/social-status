@@ -9,15 +9,49 @@
  */
 {
   "sections": {
-    "blog_header_article_e3mzd6": {
+    "rich_text_Hw8xwi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iANpbF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_KqrwnL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iANpbF",
+        "text_KqrwnL"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "Call to action",
+        "btn_label": "More info",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "blog_header_article_CqdjbN": {
       "type": "blog-header-article",
       "name": "Blog Header Article",
       "settings": {
-        "title": "",
+        "title": "BESOCIAL",
         "subtitle": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at <a href=\"mailto:info@socialstatuspgh.com\" title=\"mailto:info@socialstatuspgh.com\">info@socialstatuspgh.com </a>or on our website via live chat during our business hours. </p>",
         "text_color": "#ffffff",
         "button_text": "",
-        "article": "social-status/introducing-guizio"
+        "article": "social-status/a-journey-through-skate-8"
       }
     },
     "article_spotlight_fgaxk4": {
@@ -44,6 +78,7 @@
         "article_fDcdqD",
         "article_9n8b7e"
       ],
+      "disabled": true,
       "name": "Article Spotlight",
       "settings": {}
     },
@@ -80,7 +115,8 @@
     }
   },
   "order": [
-    "blog_header_article_e3mzd6",
+    "rich_text_Hw8xwi",
+    "blog_header_article_CqdjbN",
     "article_spotlight_fgaxk4",
     "main"
   ]
