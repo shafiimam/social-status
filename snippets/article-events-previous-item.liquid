@@ -1,0 +1,77 @@
+{%- liquid
+  for tag in article.tags
+    if tag contains "event-date::"
+      assign raw_date = tag | remove: "event-date::"
+      assign event_date = raw_date | date: "%B %d, %Y"
+      break
+    endif
+  endfor
+  
+  assign item_class = "article-events-item previous-item"
+  if size == "alt"
+    assign item_class = item_class | append: " alt-size"
+  elsif size == "large"
+    assign item_class = item_class | append: " large-size"
+  endif
+-%}
+
+<article class="{{ item_class }}">
+  <div class="article-events-item__container">
+    <div class="article-events-item__image">
+      {%- if article.image -%}
+        <img 
+          src="{{ article.image | image_url: width: 600 }}" 
+          alt="{{ article.image.alt | default: article.title }}"
+          loading="lazy"
+          width="{{ article.image.width }}"
+          height="{{ article.image.height }}"
+        />
+      {%- else -%}
+        <div class="article-events-item__placeholder">
+          {%- render 'theme-symbols', icon: 'placeholder' -%}
+        </div>
+      {%- endif -%}
+    </div>
+    
+    <div class="article-events-item__overlay">
+      <div class="article-events-item__content">
+        <a href="{{ article.url }}" class="article-events-item__title-link">
+          <h3 class="article-events-item__title">{{ article.title }}</h3>
+        </a>
+        
+        {%- if event_date and event_date != blank -%}
+          <div class="article-events-item__date">{{ event_date }}</div>
+        {%- else -%}
+          {%- comment -%} Fallback: Show raw date if formatting fails {%- endcomment -%}
+          {%- for tag in article.tags -%}
+            {%- if tag contains "event-date::" -%}
+              {%- assign fallback_date = tag | remove: "event-date::" -%}
+              <div class="article-events-item__date">{{ fallback_date }}</div>
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        
+        {%- if article.excerpt != blank -%}
+          <div class="article-events-item__excerpt">{{ article.excerpt | strip_html | truncate: 80 }}</div>
+        {%- endif -%}
+        
+        {%- if article.tags.size > 0 -%}
+          <div class="article-events-item__tags">
+            {%- for tag in article.tags -%}
+              {%- unless tag contains "event-date::" -%}
+                <span class="tag">{{ tag }}</span>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+        
+        <div class="article-events-item__actions">
+          <a href="{{ article.url }}" class="button button--solid button--smallest article-events-item__more-info">
+            <span>More Info</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

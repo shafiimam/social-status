@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "info": {
+          "type": "info",
+          "settings": {
+            "show_date": true,
+            "show_author": false
+          }
+        },
+        "summary": {
+          "type": "summary",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "info",
+        "summary"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_tags": false,
+        "post_limit": 22,
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "blog_events_8C78wT": {
+      "type": "blog-events",
+      "blocks": {
+        "hero_button_NGdMbx": {
+          "type": "hero_button",
+          "settings": {
+            "btn_text": "About",
+            "btn_url": "",
+            "btn_watch": false,
+            "book_form": false
+          }
+        },
+        "hero_button_Mmx4N4": {
+          "type": "hero_button",
+          "settings": {
+            "btn_text": "Text",
+            "btn_url": "",
+            "btn_watch": false,
+            "book_form": false
+          }
+        },
+        "hero_button_LWwRTB": {
+          "type": "hero_button",
+          "settings": {
+            "btn_text": "Book an Event",
+            "btn_url": "",
+            "btn_watch": false,
+            "book_form": true
+          }
+        },
+        "slide_XjPGyD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/beSocial_AUG_25_-_CLT.jpg",
+            "title": "Charlotte",
+            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#:~:text=Next-,%23Charlotte,-COMING%20UP%3A",
+            "book_event_1": "",
+            "book_event_url_1": "/"
+          }
+        },
+        "slide_pkRiFV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/beSocial_AUG_25_-_HTX.jpg",
+            "title": "Houston",
+            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#:~:text=Next-,%23houston,-COMING%20UP%3A",
+            "book_event_1": "",
+            "book_event_url_1": "/"
+          }
+        },
+        "slide_aeWewJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/beSocial_AUG_25_-_DET.jpg",
+            "title": "Detroit",
+            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/detroit#coming_events",
+            "book_event_1": "",
+            "book_event_url_1": "/"
+          }
+        },
+        "sort_articles_HFh7hH": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "CHARLOTTE",
+            "btn_tag": "CHARLOTTE"
+          }
+        },
+        "sort_articles_Gn7tEN": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "GREENSBORO",
+            "btn_tag": "GREENSBORO"
+          }
+        },
+        "sort_articles_dQExgW": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "BALTIMORE",
+            "btn_tag": "BALTIMORE"
+          }
+        },
+        "sort_articles_zDyCCw": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "HOUSTON",
+            "btn_tag": "HOUSTON"
+          }
+        },
+        "sort_articles_BXY6VH": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "PITTSBURGH",
+            "btn_tag": "PITTSBURGH"
+          }
+        },
+        "sort_articles_xabRH6": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "DETROIT",
+            "btn_tag": "DETROIT"
+          }
+        },
+        "sort_articles_3deqTA": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "FREE GAME",
+            "btn_tag": "FREEGAME"
+          }
+        }
+      },
+      "block_order": [
+        "hero_button_NGdMbx",
+        "hero_button_Mmx4N4",
+        "hero_button_LWwRTB",
+        "slide_XjPGyD",
+        "slide_pkRiFV",
+        "slide_aeWewJ",
+        "sort_articles_HFh7hH",
+        "sort_articles_Gn7tEN",
+        "sort_articles_dQExgW",
+        "sort_articles_zDyCCw",
+        "sort_articles_BXY6VH",
+        "sort_articles_xabRH6",
+        "sort_articles_3deqTA"
+      ],
+      "name": "Blog Events",
+      "settings": {
+        "display_slider": true,
+        "display_calendar": true,
+        "hero_image": "shopify://shop_images/BESOCIAL_f24a1680-d5ad-4c05-a12e-5a6c294a1e90.jpg",
+        "hero_logo": "shopify://shop_images/title-beSocial.png",
+        "hero_title": "beSOCIAL",
+        "hero_text": "beSOCIAL is a community space and creative hub housed within or near a number of our Social Status locations. Our goal is to engage, mobilize, develop and activate local and organic relationships to serve our cities and communities through programming and events, while creating new connections amongst groups and people. So whether you're looking for a place to work, host your own event, or meet new people we're here to support.",
+        "stream": "",
+        "events_coming": "COMING UP:",
+        "btn_coming": "Browse Upcoming Events",
+        "events_previous": "",
+        "btn_previous": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blog_events_8C78wT"
+  ]
+}

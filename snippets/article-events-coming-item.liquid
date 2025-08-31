@@ -1,0 +1,60 @@
+{%- liquid
+  for tag in article.tags
+    if tag contains "event-date::"
+      assign raw_date = tag | remove: "event-date::"
+      assign event_date = raw_date | date: "%B %d, %Y"
+      break
+    endif
+  endfor
+-%}
+
+<article class="article-events-item coming-item">
+  <div class="article-events-item__container">
+    <div class="article-events-item__image">
+      {%- if article.image -%}
+        <img 
+          src="{{ article.image | image_url: width: 400 }}" 
+          alt="{{ article.image.alt | default: article.title }}"
+          loading="lazy"
+          width="{{ article.image.width }}"
+          height="{{ article.image.height }}"
+        />
+      {%- else -%}
+        <div class="article-events-item__placeholder">
+          {%- render 'theme-symbols', icon: 'placeholder' -%}
+        </div>
+      {%- endif -%}
+    </div>
+    
+    <div class="article-events-item__overlay">
+      <div class="article-events-item__content">
+        <a href="{{ article.url }}" class="article-events-item__title-link">
+          <h2 class="article-events-item__title h2">{{ article.title }}</h2>
+        </a>
+        
+        {%- if event_date and event_date != blank -%}
+          <p class="article-events-item__date">{{ event_date }}</p>
+        {%- else -%}
+          {%- comment -%} Fallback: Show raw date if formatting fails {%- endcomment -%}
+          {%- for tag in article.tags -%}
+            {%- if tag contains "event-date::" -%}
+              {%- assign fallback_date = tag | remove: "event-date::" -%}
+              <p class="article-events-item__date">{{ fallback_date }}</p>
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        
+        {%- if article.excerpt != blank -%}
+          <div class="article-events-item__excerpt">{{ article.excerpt | strip_html | truncate: 80 }}</div>
+        {%- endif -%}
+        
+        <div class="article-events-item__actions">
+          <a href="{{ article.url }}" class="button button--outline button--small article-events-item__more-info">
+            <span>More Info</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

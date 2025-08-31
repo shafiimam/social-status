@@ -1,11 +1,80 @@
 <div
   class="hero-slideshow"
-  data-flickity='{ "cellAlign": "left", "contain": true, "prevNextButtons": true, "pageDots": false, "wrapAround": true, "autoPlay": 5000 }'
+  data-flickity='{ "cellAlign": "left", "contain": true, "prevNextButtons": true, "pageDots": false, "wrapAround": true, "autoPlay": false }'
+  data-video-autoplay="{{ section.settings.video_autoplay | default: true }}"
+  data-video-loop="{{ section.settings.video_loop | default: true }}"
 >
   {%- for block in section.blocks -%}
     <div class="hero-slide" {{ block.shopify_attributes }}>
+      {% assign has_desktop_video = false %}
+      {% assign has_mobile_video = false %}
+      {% assign has_any_video = false %}
+      {% if block.settings.video_desktop != blank %}
+        {% assign has_desktop_video = true %}
+      {% endif %}
+      {% if block.settings.video_mobile != blank %}
+        {% assign has_mobile_video = true %}
+      {% endif %}
+      {% if has_desktop_video or has_mobile_video %}
+        {% assign has_any_video = true %}
+      {% endif %}
+      
+      {%- if has_any_video -%}
+        <div class="hero-slide__video-wrapper">
+          {%- if has_desktop_video -%}
+            <video
+              class="hero-slide__video hero-slide__video--desktop"
+              {% if block.settings.video_autoplay %}autoplay{% endif %}
+              {% if block.settings.video_loop %}loop{% endif %}
+              
+              playsinline
+              preload="metadata"
+              data-slide-index="{{ forloop.index0 }}"
+            >
+              {%- for source in block.settings.video_desktop.sources -%}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {%- endfor -%}
+            </video>
+          {%- endif -%}
+          
+          {%- if has_mobile_video -%}
+            <video
+              class="hero-slide__video hero-slide__video--mobile"
+              {% if block.settings.video_autoplay %}autoplay{% endif %}
+              {% if block.settings.video_loop %}loop{% endif %}
+              
+              playsinline
+              preload="metadata"
+              data-slide-index="{{ forloop.index0 }}"
+            >
+              {%- for source in block.settings.video_mobile.sources -%}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {%- endfor -%}
+            </video>
+          {%- endif -%}
+        </div>
+        
+        <!-- Custom Audio Control Button -->
+        <button class="hero-slide__audio-control" type="button" aria-label="Toggle audio">
+          <span class="hero-slide__audio-icon hero-slide__audio-icon--muted">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="hero-slide__audio-icon hero-slide__audio-icon--unmuted" style="display: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19.07 4.93A10 10 0 0 1 19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.54 8.46A5 5 0 0 1 15.54 15.54" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      {%- endif -%}
+
       {%- if block.settings.image != blank -%}
-        <div class="hero-slide__image-wrapper">
+        <div class="hero-slide__image-wrapper{% if has_any_video %} hero-slide__image-wrapper--fallback{% endif %}">
           <picture>
             {%- if block.settings.image_mobile != blank -%}
               <source srcset="{{ block.settings.image_mobile | image_url: width: 800 }}" media="(max-width: 768px)">
@@ -54,6 +123,392 @@
   {%- endfor -%}
 </div>
 {{ 'section-hero-slideshow.css' | asset_url | stylesheet_tag }}
+
+<script>
+(function() {
+  'use strict';
+  
+  // Store initialized slideshows to prevent duplicate initialization
+  const initializedSlideshows = new WeakSet();
+  
+  function initializeHeroSlideshow(slideshow) {
+    // Prevent duplicate initialization
+    if (initializedSlideshows.has(slideshow)) {
+      return;
+    }
+    
+    const flickityElement = slideshow;
+    const videoAutoplay = slideshow.dataset.videoAutoplay === 'true';
+    const videoLoop = slideshow.dataset.videoLoop === 'true';
+    let flkty;
+    let currentSlideIndex = 0;
+    let videoEndedTimeout;
+    
+    // Clean up existing Flickity instance if it exists
+    if (slideshow.flickityInstance) {
+      slideshow.flickityInstance.destroy();
+      slideshow.flickityInstance = null;
+    }
+    
+    // Initialize Flickity
+    flkty = new Flickity(flickityElement, {
+      cellAlign: 'left',
+      contain: true,
+      prevNextButtons: true,
+      pageDots: false,
+      wrapAround: true,
+      autoPlay: false // We'll handle autoplay manually for videos
+    });
+    
+    // Store the instance for cleanup
+    slideshow.flickityInstance = flkty;
+    
+    // Get all videos and audio controls in the slideshow
+    const videos = slideshow.querySelectorAll('.hero-slide__video');
+    const audioControls = slideshow.querySelectorAll('.hero-slide__audio-control');
+    
+    // Function to get the active video for current slide
+    function getActiveVideo(slideIndex) {
+      const slide = flkty.cells[slideIndex]?.element;
+      if (!slide) return null;
+      
+      const isMobile = window.innerWidth <= 768;
+      const mobileVideo = slide.querySelector('.hero-slide__video--mobile');
+      const desktopVideo = slide.querySelector('.hero-slide__video--desktop');
+      
+      // Return mobile video if on mobile and exists, otherwise desktop video
+      return (isMobile && mobileVideo) ? mobileVideo : desktopVideo;
+    }
+    
+    // Function to pause all videos
+    function pauseAllVideos() {
+      videos.forEach(function(video) {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+    
+    // Function to play current slide video
+    function playCurrentVideo() {
+      // Only play if we have a valid Flickity instance and current slide
+      if (!flkty || !flkty.cells || flkty.cells.length === 0) {
+        return;
+      }
+      
+      // Get the actual selected slide index from Flickity
+      const actualSlideIndex = flkty.selectedIndex;
+      const activeVideo = getActiveVideo(actualSlideIndex);
+      
+      if (activeVideo && videoAutoplay) {
+        // Double-check that this video belongs to the currently selected slide
+        const videoSlide = activeVideo.closest('.hero-slide');
+        const selectedSlide = flkty.selectedElement;
+        
+        if (videoSlide === selectedSlide) {
+          activeVideo.play().catch(function(error) {
+            console.log('Video autoplay failed:', error);
+          });
+        }
+      }
+    }
+    
+    // Function to update audio button state for current slide
+    function updateAudioButtonState() {
+      if (!flkty || !flkty.cells || flkty.cells.length === 0) {
+        return;
+      }
+      
+      const actualSlideIndex = flkty.selectedIndex;
+      const currentSlide = flkty.cells[actualSlideIndex]?.element;
+      if (!currentSlide) return;
+      
+      const audioButton = currentSlide.querySelector('.hero-slide__audio-control');
+      const activeVideo = getActiveVideo(actualSlideIndex);
+      
+      if (audioButton && activeVideo) {
+        const mutedIcon = audioButton.querySelector('.hero-slide__audio-icon--muted');
+        const unmutedIcon = audioButton.querySelector('.hero-slide__audio-icon--unmuted');
+        
+        if (activeVideo.muted) {
+          mutedIcon.style.display = 'flex';
+          unmutedIcon.style.display = 'none';
+          audioButton.setAttribute('aria-label', 'Unmute audio');
+        } else {
+          mutedIcon.style.display = 'none';
+          unmutedIcon.style.display = 'flex';
+          audioButton.setAttribute('aria-label', 'Mute audio');
+        }
+      }
+    }
+    
+    // Function to handle video ended event
+    function onVideoEnded() {
+      clearTimeout(videoEndedTimeout);
+      videoEndedTimeout = setTimeout(function() {
+        if (!videoLoop) {
+          flkty.next();
+        }
+      }, 100);
+    }
+    
+    // Add event listeners to videos
+    videos.forEach(function(video, index) {
+      video.addEventListener('ended', onVideoEnded);
+      
+      // Handle video load errors - show image fallback
+      video.addEventListener('error', function() {
+        const slide = video.closest('.hero-slide');
+        const imageWrapper = slide.querySelector('.hero-slide__image-wrapper');
+        const videoWrapper = slide.querySelector('.hero-slide__video-wrapper');
+        
+        if (imageWrapper && videoWrapper) {
+          videoWrapper.style.display = 'none';
+          imageWrapper.classList.remove('hero-slide__image-wrapper--fallback');
+        }
+      });
+      
+      // Handle video load success - hide image fallback
+      video.addEventListener('loadeddata', function() {
+        const slide = video.closest('.hero-slide');
+        const imageWrapper = slide.querySelector('.hero-slide__image-wrapper--fallback');
+        
+        if (imageWrapper) {
+          imageWrapper.style.display = 'none';
+        }
+      });
+    });
+    
+    // Audio control functionality
+    audioControls.forEach(function(button) {
+      button.addEventListener('click', function() {
+        const slide = button.closest('.hero-slide');
+        const slideVideos = slide.querySelectorAll('.hero-slide__video');
+        const mutedIcon = button.querySelector('.hero-slide__audio-icon--muted');
+        const unmutedIcon = button.querySelector('.hero-slide__audio-icon--unmuted');
+        
+        slideVideos.forEach(function(video) {
+          if (video.muted) {
+            video.muted = false;
+            mutedIcon.style.display = 'none';
+            unmutedIcon.style.display = 'flex';
+            button.setAttribute('aria-label', 'Mute audio');
+          } else {
+            video.muted = true;
+            mutedIcon.style.display = 'flex';
+            unmutedIcon.style.display = 'none';
+            button.setAttribute('aria-label', 'Unmute audio');
+          }
+        });
+      });
+    });
+    
+    // Flickity event listeners
+    flkty.on('select', function(index) {
+      pauseAllVideos();
+      currentSlideIndex = index;
+      clearTimeout(videoEndedTimeout);
+      
+      // Small delay to ensure slide transition is complete
+      setTimeout(function() {
+        // Verify we're still on the same slide before playing
+        if (flkty.selectedIndex === index) {
+          playCurrentVideo();
+          updateAudioButtonState();
+        }
+      }, 1000);
+    });
+    
+    // Handle window resize to switch between mobile/desktop videos
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        pauseAllVideos();
+        setTimeout(function() {
+          // Update current slide index and only play if valid
+          if (flkty && flkty.selectedIndex !== undefined) {
+            currentSlideIndex = flkty.selectedIndex;
+            playCurrentVideo();
+            updateAudioButtonState();
+          }
+        }, 1000);
+      }, 250);
+    });
+    
+    // Initial play - wait for Flickity to be fully ready
+    flkty.on('ready', function() {
+      setTimeout(function() {
+        // Set current slide index to match Flickity
+        currentSlideIndex = flkty.selectedIndex;
+        playCurrentVideo();
+        updateAudioButtonState();
+      }, 100);
+    });
+    
+    // Fallback initial play in case ready event doesn't fire
+    setTimeout(function() {
+      if (flkty && flkty.selectedIndex !== undefined) {
+        currentSlideIndex = flkty.selectedIndex;
+        playCurrentVideo();
+        updateAudioButtonState();
+      }
+    }, 500);
+    
+    // Pause videos when page becomes hidden
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        pauseAllVideos();
+      } else {
+        setTimeout(function() {
+          // Update current slide index and only play if valid
+          if (flkty && flkty.selectedIndex !== undefined) {
+            currentSlideIndex = flkty.selectedIndex;
+            playCurrentVideo();
+            updateAudioButtonState();
+          }
+        }, 100);
+      }
+    });
+    
+    // Mark as initialized
+    initializedSlideshows.add(slideshow);
+  }
+  
+  // Function to cleanup slideshow
+  function cleanupHeroSlideshow(slideshow) {
+    if (slideshow.flickityInstance) {
+      slideshow.flickityInstance.destroy();
+      slideshow.flickityInstance = null;
+    }
+    initializedSlideshows.delete(slideshow);
+  }
+  
+  // Function to initialize all slideshows
+  function initializeAllSlideshows(force = false) {
+    const heroSlideshows = document.querySelectorAll('.hero-slideshow');
+    heroSlideshows.forEach(function(slideshow) {
+      // If forcing reinitialization, clean up first
+      if (force) {
+        cleanupHeroSlideshow(slideshow);
+      }
+      initializeHeroSlideshow(slideshow);
+    });
+  }
+  
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAllSlideshows);
+  } else {
+    initializeAllSlideshows();
+  }
+  
+  // Theme editor support
+  if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+    // Handle section reloading in theme editor
+    document.addEventListener('shopify:section:load', function(event) {
+      const section = event.target;
+      const slideshow = section.querySelector('.hero-slideshow');
+      if (slideshow) {
+        // Small delay to ensure DOM is ready
+        setTimeout(function() {
+          console.log('initializeHeroSlideshow');
+          initializeHeroSlideshow(slideshow);
+        }, 100);
+      }
+    });
+    
+    // Handle section unloading in theme editor
+    document.addEventListener('shopify:section:unload', function(event) {
+      const section = event.target;
+      const slideshow = section.querySelector('.hero-slideshow');
+      if (slideshow) {
+        console.log('cleanupHeroSlideshow');
+        cleanupHeroSlideshow(slideshow);
+      }
+    });
+    
+    // Handle block selection in theme editor
+    document.addEventListener('shopify:block:select', function(event) {
+      const block = event.target;
+      const slideshow = block.closest('.hero-slideshow');
+      if (slideshow && slideshow.flickityInstance) {
+        console.log('block select');
+        const slideIndex = Array.from(slideshow.children).indexOf(block);
+        if (slideIndex >= 0) {
+          slideshow.flickityInstance.select(slideIndex, false, true);
+        }
+      }
+    });
+  }
+  
+  // Hot reload support for local development server
+  let isLocalDev = window.location.hostname === 'localhost' || 
+                   window.location.hostname === '127.0.0.1' || 
+                   window.location.hostname.includes('ngrok') ||
+                   window.location.port !== '';
+  
+  if (isLocalDev) {
+    console.log('Local development detected, adding hot reload support');
+    
+    // Listen for page visibility changes (common during hot reload)
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+        setTimeout(function() {
+          console.log('Page became visible, reinitializing slideshows');
+          initializeAllSlideshows(true);
+        }, 200);
+      }
+    });
+    
+    // Listen for window focus (when returning to tab after hot reload)
+    window.addEventListener('focus', function() {
+      setTimeout(function() {
+        console.log('Window focused, checking slideshows');
+        initializeAllSlideshows(true);
+      }, 100);
+    });
+    
+    // MutationObserver to detect DOM changes during hot reload
+    const observer = new MutationObserver(function(mutations) {
+      let shouldReinit = false;
+      
+      mutations.forEach(function(mutation) {
+        // Check if hero-slideshow elements were added
+        if (mutation.type === 'childList') {
+          mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1) { // Element node
+              if (node.classList && node.classList.contains('hero-slideshow')) {
+                shouldReinit = true;
+              } else if (node.querySelector && node.querySelector('.hero-slideshow')) {
+                shouldReinit = true;
+              }
+            }
+          });
+        }
+      });
+      
+      if (shouldReinit) {
+        setTimeout(function() {
+          console.log('DOM mutation detected, reinitializing slideshows');
+          initializeAllSlideshows(true);
+        }, 100);
+      }
+    });
+    
+    // Start observing
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    // Custom event for manual reinitialization
+    window.addEventListener('hero-slideshow:reinit', function() {
+      console.log('Manual reinit triggered');
+      initializeAllSlideshows(true);
+    });
+  }
+})();
+</script>
 {% schema %}
 {
   "name": "Hero Slideshow",
@@ -62,6 +517,22 @@
       "type": "text",
       "id": "title",
       "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Enable video autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop videos",
+      "default": true
     }
   ],
   "blocks": [
@@ -82,6 +553,36 @@
           "type": "image_picker",
           "id": "image_mobile",
           "label": "Image (Mobile)"
+        },
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video_desktop",
+          "label": "Desktop Video",
+          "info": "Upload video for desktop view. If no video is provided, the image will be used."
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Mobile Video",
+          "info": "Upload video for mobile view. If no video is provided, the desktop video or image will be used."
+        },
+        {
+          "type": "checkbox",
+          "id": "video_autoplay",
+          "label": "Autoplay video",
+          "default": true,
+          "info": "Video will autoplay when slide becomes active"
+        },
+        {
+          "type": "checkbox",
+          "id": "video_loop",
+          "label": "Loop video",
+          "default": true,
+          "info": "Video will loop continuously"
         },
         {
           "type": "text",

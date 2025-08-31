@@ -1,0 +1,579 @@
+{{ 'section-blog-events.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-blog-events.js' | asset_url }}" defer></script>
+
+<script src="https://form.jotform.com/static/feedback2.js" type="text/javascript" defer></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var JFL_222295146958062 = new JotformFeedback({
+        formId: '222295146958062',
+        base: 'https://form.jotform.com/',
+        windowTitle: 'Book Your Event at beSocial',
+        background: '#FFA500',
+        fontColor: '#FFFFFF',
+        type: 'false',
+        height: 500,
+        width: 700,
+        openOnLoad: false
+    });
+  });
+</script>
+
+{% assign now_date = "now" | date: "%s" %}
+
+<div class="events_page">
+
+    {% assign url = section.settings.hero_image | image_url: width: 1920 %}
+    <div class="hero" style="background-image: url('{{ url }}')">
+        <div class="container">
+            {% assign url_logo = section.settings.hero_logo | image_url: width: 200 %}
+            <h1><img class="img-responsive aligncenter" src="{{ url_logo }}" alt="{{ page_title }}" width="200" height="auto"></h1>
+            <p>{{ section.settings.hero_text }}</p>
+            <div class="btns">
+                {% for block in section.blocks %}
+                    {% if block.type == "hero_button" %}
+                        <a {{ block.shopify_attributes }} class="button button--solid {% if block.settings.btn_watch != blank %}watch{% endif %} {% if block.settings.book_form != blank %}lightbox-222295146958062{% endif %}" {% if block.settings.btn_url != blank %} href="{{ block.settings.btn_url }}" {% endif %}>
+                            <span>{{ block.settings.btn_text }}</span>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% if section.settings.display_slider == true %}
+      <div class="events_slider_section">
+          <div class="slider-container">
+              <div class="slider" data-flickity='{
+                "cellAlign": "left",
+                "contain": false,
+                "prevNextButtons": true,
+                "pageDots": false,
+                "wrapAround": true,
+                "autoPlay": false,
+                "freeScroll": true
+            }'>
+                  {% for block in section.blocks %}
+                      {% if block.type == 'slide' %}
+                          <div {{ block.shopify_attributes }} class="event-slide">
+                              <article>
+                                    <a href="{{block.settings.url}}">
+                                      <figure style="background-image: url({{ block.settings.image | image_url: width: 400 }})">
+                                          <img class="" src="{{ block.settings.image | image_url: width: 400 }}" alt="{{block.settings.title}}" width="400" height="300">
+                                      </figure>
+                                      <h1>{{block.settings.title}}</h1>
+                                    </a>
+                                    {% if block.settings.book_event_1 != blank %}
+                                        <div class="events_slider_book">
+                                            <a class="button button--outline" href="{{ block.settings.book_event_url_1 }}">
+                                                <span>{{ block.settings.book_event_1 }}</span>
+                                            </a> 
+                                        </div>                                       
+                                    {% endif %}
+                              </article>
+                          </div>                        
+                      {% endif %}
+                  {% endfor %}
+              </div>
+          </div>
+      </div>        
+    {% endif %}
+
+    {% if section.settings.stream != blank %}
+        <div class="stream">
+            <div class="container">
+                <iframe src="https://www.youtube.com/embed/{{section.settings.stream.id}}?controls=0&theme=dark" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/live_chat?v={{section.settings.stream.id}}&embed_domain={{request.host}}&theme=dark"></iframe>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if section.settings.display_calendar == true %}
+        <section class="events-calendar">
+            <div class="elfsight-sapp-dc392c01-e03b-41d2-9931-6ae8c23060b8"></div>
+        </section>   
+    {% endif %}
+
+    <section id="coming_events">
+        <div class="container">
+            
+            <ul id="filters">
+                <li class="rank">
+                <button class="button button--outline">
+                    {% if current_tags %}
+                        {{ current_tags }}
+                    {% else %}
+                        ALL
+                    {% endif %}
+                </button>
+                    <div class="dropdown">
+                        <ul>
+                            <li class="{% if current_tags == blank %}selected{% endif %}">
+                                <a href="{{blog.url}}">
+                                    All
+                                </a>                                    
+                            </li> 
+                            {% for block in section.blocks %}
+                                {% if block.type == "sort-articles" %}
+                                    {% assign current_tags_lower = current_tags | downcase %}
+                                    {% assign btn_tag_lower = block.settings.btn_tag | downcase %}
+                                    <li class="{% if current_tags_lower contains btn_tag_lower %}selected{% endif %}">
+                                        <a href="{{blog.url}}/tagged/{{ btn_tag_lower | replace: " ", "-" }}#coming_events">
+                                            {{ block.settings.btn_text }}
+                                        </a>                                    
+                                    </li> 
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+          
+            <!-- Check for coming articles and display them -->
+            {% assign has_coming_articles = false %}
+            {% assign filtered_events_count = 0 %}
+            
+            {% paginate blog.articles by 250 %}
+              {% for article in blog.articles %}
+                  {% assign article_date = '' %}
+                  {% for tag in article.tags %}
+                      {% if tag contains "event-date::" %}
+                          {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                          {% break %}
+                      {% endif %}
+                  {% endfor %}
+                  
+                  {% if article_date != '' and article_date > now_date %}
+                      {% assign has_coming_articles = true %}
+                      {% assign filtered_events_count = filtered_events_count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+            
+              {% if has_coming_articles %}
+                  <div class="section_title">
+                      <h1>{{ section.settings.events_coming }}</h1>
+                      <a class="button button--solid events-toggle-btn" href="#" data-toggle="events-view">
+                          <span class="btn-text-show">{{ section.settings.btn_coming }}</span>
+                          <span class="btn-text-hide" style="display: none;">{{ section.settings.btn_hide_coming | default: "Hide Upcoming Events" }}</span>
+                      </a>
+                  </div>
+
+                  <!-- Slider View (First 6 events) - Default -->
+                  <div class="events-slider-view">
+                      <div 
+                          class="events-flickity-slider"
+                          data-flickity='{
+                              "cellAlign": "left",
+                              "contain": true,
+                              "prevNextButtons": true,
+                              "pageDots": false,
+                              "wrapAround": false,
+                              "autoPlay": false,
+                              "groupCells": true,
+                              "freeScroll": false
+                          }'
+                      >
+                          {% assign slider_counter = 0 %}
+                          {% for article in blog.articles %}
+                              {% assign article_date = '' %}
+                              {% for tag in article.tags %}
+                                  {% if tag contains "event-date::" %}
+                                      {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                                      {% break %}
+                                  {% endif %}
+                              {% endfor %}
+                              {% if article_date != '' and article_date > now_date %}
+                                  <div class="events-slider-cell">
+                                      {% render "article-events-coming-item", article: article %}
+                                  </div>
+                                  {% assign slider_counter = slider_counter | plus: 1 %}
+                                  {% if slider_counter >= 6 %}
+                                      {% break %}
+                                  {% endif %}
+                              {% endif %}
+                          {% endfor %}
+                      </div>
+                  </div>
+
+                  <!-- Grid View (All events in 4 per row) - Hidden by default -->
+                  <div class="events-grid-view" style="display: none;">
+                      <div class="events-grid">
+                          {% for article in blog.articles %}
+                              {% assign article_date = '' %}
+                              {% for tag in article.tags %}
+                                  {% if tag contains "event-date::" %}
+                                      {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                                      {% break %}
+                                  {% endif %}
+                              {% endfor %}
+                              {% if article_date != '' and article_date > now_date %}
+                                  <div class="event-grid-item">
+                                      {% render "article-events-coming-item", article: article %}
+                                  </div>
+                              {% endif %}
+                          {% endfor %}
+                      </div>
+                  </div>
+
+              {% else %}
+                  <!-- No events found message -->
+                  {% if current_tags %}
+                      <div class="no-events-found">
+                          <div class="no-events-content">
+                              <h2 class="no-events-title">No Events Found</h2>
+                              <p class="no-events-message">
+                                  No upcoming events found for "{{ current_tags }}". 
+                                  <a href="{{ blog.url }}#coming_events" class="no-events-link">View all events</a> or try a different filter.
+                              </p>
+                          </div>
+                      </div>
+                  {% else %}
+                      <div class="no-events-found">
+                          <div class="no-events-content">
+                              <h2 class="no-events-title">No Upcoming Events</h2>
+                              <p class="no-events-message">
+                                  There are currently no upcoming events scheduled. Check back soon for new events!
+                              </p>
+                          </div>
+                      </div>
+                  {% endif %}
+              {% endif %}
+            {% endpaginate %}
+
+        </div>
+    </section>
+
+    
+
+    <!-- hasPrevArticles -->
+    <!-- section removed -->
+
+{% comment %} 
+    {% paginate blog.articles by 2000 %}
+      {% for article in blog.articles %}
+          {% for tag in article.tags %}
+              {% if tag contains "event-date::" %}
+                  {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                  {% break %}
+              {% endif %}
+          {% endfor %}
+          {% if article_date <= now_date %}
+              {% assign hasPrevArticles = true %}
+              {% break %}
+          {% endif %}
+      {% endfor %}
+  	{% endpaginate %}
+
+    {% if hasPrevArticles %}
+        <section id="prev_events">
+            <div class="container">
+            
+                <div class="section_title">
+                    <h1>{{ section.settings.events_previous }}</h1>
+                    <a class="button button--solid shown" href="" data-show=".previous_all" data-hide=".cols">
+                        <span>{{ section.settings.btn_previous }}</span>
+                    </a>
+                </div>
+                
+                <div class="cols">
+                    {% assign counter = 0 %}
+
+                    {% for article in blog.articles %}
+
+                        {% if counter == 0 or counter == 2 or counter == 6 %}
+                            {% assign size = "alt" %}
+                        {% elsif counter == 4 %}
+                            {% assign size = "large" %}
+                        {% else %}
+                            {% assign size = "" %}                      
+                        {% endif %}
+
+                        {% for tag in article.tags %}
+                            {% if tag contains "event-date::" %}
+                                {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                                {% break %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if article_date <= now_date %}
+                            {% render "article-events-previous-item", article: article, size: size %}
+                            {% assign counter = counter | plus: 1 %}
+                        {% endif %}
+                        {% if counter == 8 %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="previous_all">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                      	{% paginate blog.articles by 2000 %}
+                          {% for article in blog.articles %}
+                              {% for tag in article.tags %}
+                                  {% if tag contains "event-date::" %}
+                                      {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                                      {% break %}
+                                  {% endif %}
+                              {% endfor %}
+                              {% if article_date <= now_date %}
+                                  <div class="cell medium-6 large-3">
+                                      {% render "article-events-previous-item", article: article %}
+                                  </div>
+                              {% endif %}
+                          {% endfor %}
+                      	{% endpaginate %}
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    {% endif %} {% endcomment %}
+
+
+</div>
+
+<!-- BOOK YOU EVENT POPUP data-besocial-popup=".besocial-popup" -->
+<section class="besocial-popup" style="display: none;">
+    {% form 'contact', class: "form-besocial", id: "form-besocial" %}
+        {{ form.errors | default_errors }}
+
+        {% if form.posted_successfully? %}
+            <p class="form-thankyou">Thank you for your message!</p>
+        {% endif %}
+
+        <div class="form-top">
+            <h4 class="form-title">book your event</h4>
+            <button class="btn-close button button--outline" type="button" data-besocial-popup=".besocial-popup">X</button>
+        </div>
+        <div class="group">
+            <label for="form-name">Your Name:</label>
+            <input type="text" id="form-name" name="contact[name]" placeholder="John Doe" required>
+        </div>
+        <div class="group">
+            <label for="form-email">Your Email:</label>
+            <input type="email" id="form-email" name="contact[email]" placeholder="email@example.example" required>
+        </div>
+        <div class="group">
+            <label for="form-phone">Your Phone Number:</label>
+            <input type="tel" id="form-phone" name="contact[phone]" placeholder="+12345678987" required>
+        </div>
+        <div class="group">
+            <label for="form-date">Date of the Event:</label>
+            <input type="text" id="form-date" name="contact[date]" placeholder="11/02/2022" required>
+        </div>
+        <div class="group">
+            <label for="form-locations">Locations:</label>
+            <select name="form-locations" id="form-locations" name="contact[location]">
+                {% for block in section.blocks %}
+                    {% if block.type == "event_location" %}
+                        <option value="{{ block.settings.short_name }}">{{ block.settings.short_name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="group">
+            <label for="form-desc">Event Description:</label>
+            <textarea name="form-desc" id="form-desc" name="contact[body]" placeholder="Event description" rows="5" required></textarea>
+        </div>
+        <div class="form-bottom">
+            <button class="btn-submit button button--solid" value="send" type="submit">Send</button>
+        </div>
+    {% endform %}
+</section>
+<!-- BOOK YOU EVENT POPUP // -->
+
+{% schema %}
+{
+    "name": "Blog Events",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Events Slider"
+        },
+        {
+            "type": "checkbox",
+            "id": "display_slider",
+            "label": "Display Slider?",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Events Calendar"
+        },
+        {
+            "type": "checkbox",
+            "id": "display_calendar",
+            "label": "Display section?",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Other"
+        },
+        {
+            "type": "image_picker",
+            "id": "hero_image",
+            "label": "Pick background image"
+        },
+        {
+            "type": "image_picker",
+            "id": "hero_logo",
+            "label": "Pick logo image"
+        },
+        {
+            "type": "text",
+            "id": "hero_title",
+            "label": "Title",
+            "default": "beSOCIAL"
+        },
+        {
+            "type": "text",
+            "id": "hero_text",
+            "label": "Text",
+            "default": "beSOCIAL is a creative hub, a community space — housed within or near a number of our retail boutiques. We aim to organically create ongoing relationships between our customers and local communities without the need for a retail transaction. So whether you’re looking for a place to work, host your own event, or meet new people we’re here to be a platform and assist that endeavor."
+        },
+        {
+            "type": "video_url",
+            "id": "stream",
+            "accept": [
+                "youtube"
+            ],
+            "label": "Stream link",
+            "default": "https://www.youtube.com/watch?v=6B_6K-splRU"
+        },
+        {
+            "type": "text",
+            "id": "events_coming",
+            "label": "Coming up events text",
+            "default": "COMING UP:"
+        },
+        {
+            "type": "text",
+            "id": "btn_coming",
+            "label": "Coming up events button text",
+            "default": "Browse Upcoming Events"
+        },
+        {
+            "type": "text",
+            "id": "btn_hide_coming",
+            "label": "Hide upcoming events button text",
+            "default": "Hide Upcoming Events"
+        },
+        {
+            "type": "text",
+            "id": "events_previous",
+            "label": "Previous events text",
+            "default": "previous events:"
+        },
+        {
+            "type": "text",
+            "id": "btn_previous",
+            "label": "Previous events button text",
+            "default": "Browse Past Events"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Hero button",
+            "type": "hero_button",
+            "limit": 4,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Text on button",
+                    "default": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "btn_url",
+                    "label": "Link for button"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "btn_watch",
+                    "label": "Live icon",
+                    "default": false
+                },
+                {
+                    "type": "checkbox",
+                    "id": "book_form",
+                    "label": "Book an Event Form",
+                    "default": false
+                }
+            ]
+        },
+        {
+            "name": "Sort articles",
+            "type": "sort-articles",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Button text",
+                    "default": "Text Event"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_tag",
+                    "label": "Button tag",
+                    "default": "TAMPA",
+                    "info": "Same tag as in the blog event article. The tag must be CAPITAL. If the tag contains multiple words, the tag must be WORD1-WORD2-WORD3. The '-' symbol is required."
+                }
+            ]
+        },
+        {
+            "name": "Event location",
+            "type": "event_location",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "short_name",
+                    "label": "Location",
+                    "default": "Location"
+                }
+            ]
+        },
+        {
+            "name": "Slide",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "URL",
+                    "default": "/"
+                },
+                {
+                    "type": "text",
+                    "id": "book_event_1",
+                    "label": "Book Event Title"
+                },
+                {
+                    "type": "url",
+                    "id": "book_event_url_1",
+                    "label": "Book Event URL",
+                    "default": "/"
+                }                
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Blog Events",
+            "category": "Events"
+        }
+    ]
+}
+{% endschema %}
+
+
