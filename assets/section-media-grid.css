@@ -9,7 +9,8 @@
   display: grid;
   padding-top: var(--media-grid-padding-top);
   padding-bottom: var(--media-grid-padding-bottom);
-}  
+}
+
 .media-grid-header{
    text-align: center;
 }

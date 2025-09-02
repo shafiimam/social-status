@@ -42,7 +42,7 @@
 
     {% if section.settings.display_slider == true %}
       <div class="events_slider_section">
-          <div class="slider-container">
+          <div class="calender-slider-container">
               <div class="slider" data-flickity='{
                 "cellAlign": "left",
                 "contain": false,
@@ -98,12 +98,17 @@
             
             <ul id="filters">
                 <li class="rank">
-                <button class="button button--outline">
-                    {% if current_tags %}
-                        {{ current_tags }}
-                    {% else %}
-                        ALL
-                    {% endif %}
+                <button class="button button--outline filter-dropdown-btn">
+                    <span class="filter-text">
+                        {% if current_tags %}
+                            {{ current_tags }}
+                        {% else %}
+                            ALL
+                        {% endif %}
+                    </span>
+                    <span class="filter-arrow" aria-hidden="true">
+                        {%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}
+                    </span>
                 </button>
                     <div class="dropdown">
                         <ul>
@@ -150,48 +155,32 @@
             
               {% if has_coming_articles %}
                   <div class="section_title">
-                      <h1>{{ section.settings.events_coming }}</h1>
+                      <h1 class="h1">{{ section.settings.events_coming }}</h1>
                       <a class="button button--solid events-toggle-btn" href="#" data-toggle="events-view">
                           <span class="btn-text-show">{{ section.settings.btn_coming }}</span>
                           <span class="btn-text-hide" style="display: none;">{{ section.settings.btn_hide_coming | default: "Hide Upcoming Events" }}</span>
                       </a>
                   </div>
 
-                  <!-- Slider View (First 6 events) - Default -->
+                  <!-- Perspective Slider View (First 8 events) - Default -->
                   <div class="events-slider-view">
-                      <div 
-                          class="events-flickity-slider"
-                          data-flickity='{
-                              "cellAlign": "left",
-                              "contain": true,
-                              "prevNextButtons": true,
-                              "pageDots": false,
-                              "wrapAround": false,
-                              "autoPlay": false,
-                              "groupCells": true,
-                              "freeScroll": false
-                          }'
-                      >
-                          {% assign slider_counter = 0 %}
-                          {% for article in blog.articles %}
-                              {% assign article_date = '' %}
-                              {% for tag in article.tags %}
-                                  {% if tag contains "event-date::" %}
-                                      {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
-                                      {% break %}
-                                  {% endif %}
-                              {% endfor %}
-                              {% if article_date != '' and article_date > now_date %}
-                                  <div class="events-slider-cell">
-                                      {% render "article-events-coming-item", article: article %}
-                                  </div>
-                                  {% assign slider_counter = slider_counter | plus: 1 %}
-                                  {% if slider_counter >= 6 %}
-                                      {% break %}
-                                  {% endif %}
-                              {% endif %}
-                          {% endfor %}
-                      </div>
+                      {% render 'blog-events-perspective-slider',
+                        blog: blog,
+                        now_date: now_date,
+                        section_id: 'blog-events-upcoming',
+                        auto_play: section.settings.events_auto_play,
+                        background_color: section.settings.events_bg_color,
+                        slide_overlay_color: section.settings.events_overlay_color,
+                        text_color: section.settings.events_text_color,
+                        text_color_card: section.settings.events_card_text_color,
+                        path_color: section.settings.events_path_color,
+                        text_alignment: section.settings.events_text_alignment,
+                        slider_height: section.settings.events_slider_height,
+                        slide_width: section.settings.events_slide_width,
+                        slide_height: section.settings.events_slide_height,
+                        initial_index: section.settings.events_initial_index,
+                        show_controls: section.settings.show_events_controls
+                      %}
                   </div>
 
                   <!-- Grid View (All events in 4 per row) - Hidden by default -->
@@ -469,6 +458,108 @@
             "id": "btn_previous",
             "label": "Previous events button text",
             "default": "Browse Past Events"
+        },
+        {
+            "type": "header",
+            "content": "Upcoming Events Perspective Slider"
+        },
+        {
+            "type": "checkbox",
+            "id": "events_auto_play",
+            "label": "Auto Play Slider",
+            "default": false
+        },
+        {
+            "type": "color",
+            "id": "events_bg_color",
+            "label": "Slider Background Color",
+            "default": "#121212"
+        },
+        {
+            "type": "color_background",
+            "id": "events_overlay_color",
+            "label": "Slide Overlay Color",
+            "default": "linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%)"
+        },
+        {
+            "type": "color",
+            "id": "events_text_color",
+            "label": "Section Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "events_card_text_color",
+            "label": "Card Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "events_path_color",
+            "label": "Control Path Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "select",
+            "id": "events_text_alignment",
+            "label": "Text Alignment",
+            "default": "center",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "events_slider_height",
+            "label": "Slider Height (px)",
+            "min": 200,
+            "max": 600,
+            "step": 10,
+            "default": 350
+        },
+        {
+            "type": "range",
+            "id": "events_slide_width",
+            "label": "Slide Width (px)",
+            "min": 250,
+            "max": 600,
+            "step": 10,
+            "default": 400
+        },
+        {
+            "type": "range",
+            "id": "events_slide_height",
+            "label": "Slide Height (px)",
+            "min": 150,
+            "max": 400,
+            "step": 10,
+            "default": 250
+        },
+        {
+            "type": "range",
+            "id": "events_initial_index",
+            "label": "Initial Slide Position",
+            "min": 0,
+            "max": 7,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "checkbox",
+            "id": "show_events_controls",
+            "label": "Show Slider Controls",
+            "default": true
         }
     ],
     "blocks": [

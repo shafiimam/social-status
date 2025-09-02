@@ -1,0 +1,206 @@
+{% comment %}
+  Renders a perspective slider with 3D effects
+
+  Accepts:
+  - blocks: array - Array of blocks to render as slides
+  - section_id: string - Unique section ID for styling
+  - title: string - Slider title (optional)
+  - auto_play: boolean - Enable auto play (default: false)
+  - background_color: string - Section background color
+  - slide_overlay_color: string - Overlay color for slides
+  - text_color: string - Section text color
+  - text_color_card: string - Card text color
+  - path_color: string - Control path color
+  - text_alignment: string - Text alignment for cards
+  - show_header: boolean - Show header section (default: true)
+  - show_controls: boolean - Show gallery controls (default: true)
+  - slider_height: number - Custom slider height in px (default: 350)
+  - slide_width: number - Custom slide width in px (default: 400)
+  - slide_height: number - Custom slide height in px (default: 250)
+  - initial_index: number - Initial slide index (default: 3)
+  - container_class: string - Additional container classes (optional)
+
+  Usage:
+  {% render 'perspective-slider',
+    blocks: section.blocks,
+    section_id: section.id,
+    title: section.settings.title,
+    auto_play: section.settings.auto_play,
+    background_color: section.settings.background_color,
+    slide_overlay_color: section.settings.slide_overlay_color,
+    text_color: section.settings.text_color,
+    text_color_card: section.settings.text_color_card,
+    path_color: section.settings.path_color,
+    text_alignment: section.settings.text_alignment
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign show_header = show_header | default: true
+  assign show_controls = show_controls | default: true
+  assign slider_height = slider_height | default: 350
+  assign slide_width = slide_width | default: 400
+  assign slide_height = slide_height | default: 250
+  assign initial_index = initial_index | default: 3
+  assign auto_play_enabled = auto_play | default: false
+  assign container_classes = 'perspective-slider-container'
+  if container_class != blank
+    assign container_classes = container_classes | append: ' ' | append: container_class
+  endif
+-%}
+
+{% if auto_play_enabled %}
+  <script>
+    var perspectiveAutoPlay = 3000;
+  </script>
+{% else %}
+  <script>
+    var perspectiveAutoPlay = 0;
+  </script>
+{% endif %}
+
+<div class="perspective-slider-section" id="perspective-slider-{{ section_id }}">
+  {% if show_header and title != blank %}
+    <div class="perspective-slider-header">
+      <h1 class="h1 heading text-center">{{ title }}</h1>
+    </div>
+  {% endif %}
+  
+  <div class="{{ container_classes }}" data-slider-id="{{ section_id }}">
+    {% for block in blocks %}
+      <div class="block-slide-item" {% if block.shopify_attributes %}{{ block.shopify_attributes }}{% endif %}>
+        <div class="block-slide-image-container" style="--slide-overlay-color: {{ slide_overlay_color }}">
+          {% if block.settings.image %}
+            <picture>
+              <source srcset="{{ block.settings.image | image_url: width: 300 }}" media="(max-width: 600px)">
+              <img
+                src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.image.alt | default: 'Slide image' }}"
+                width="600"
+                height="250"
+                loading="lazy"
+              >
+            </picture>
+          {% else %}
+            <div class="placeholder-image" style="width: 600px; height: 250px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+              <span>No image</span>
+            </div>
+          {% endif %}
+          
+          <div class="block-slide-content">
+            <div class="block-slide-content-inner" style="text-align: {{ text_alignment | default: 'center' }}">
+              {% if block.settings.title != blank %}
+                <p class="block-slide-title heading" style="color: {{ text_color_card }}">{{ block.settings.title }}</p>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <div class="block-slide-description" style="color: {{ text_color_card }}">{{ block.settings.description }}</div>
+              {% endif %}
+              {% if block.settings.button_text != blank %}
+                <a href="{{ block.settings.button_url | default: '#' }}" class="block-slide-button">{{ block.settings.button_text }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+  {% if show_controls and blocks.size > 0 %}
+    <div class="gallery-controls">
+      {% render '360-knob', total_frames: blocks.size, path_color: path_color %}
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  #perspective-slider-{{ section_id }} {
+    {% if background_color %}background-color: {{ background_color }};{% endif %}
+  }
+  #perspective-slider-{{ section_id }} .heading {
+    {% if text_color %}color: {{ text_color }};{% endif %}
+  }
+  #perspective-slider-{{ section_id }} .flickity-viewport {
+    overflow: visible !important;
+    height: {{ slider_height }}px !important;
+  }
+  #perspective-slider-{{ section_id }} .block-slide-item {
+    width: {{ slide_width }}px;
+    height: {{ slide_height }}px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #perspective-slider-{{ section_id }} .block-slide-item {
+      height: {{ slide_height | minus: 50 }}px;
+      width: {{ slide_width | minus: 50 }}px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    #perspective-slider-{{ section_id }} .block-slide-item {
+      height: {{ slide_height | minus: 50 }}px;
+      width: {{ slide_width | minus: 100 }}px;
+    }
+  }
+</style>
+
+{{ 'section-perspective-slider.css' | asset_url | stylesheet_tag }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sliderContainer = document.querySelector('[data-slider-id="{{ section_id }}"]');
+    if (sliderContainer) {
+      var perspectiveSlider = new Flickity(sliderContainer, {
+        wrapAround: false,
+        autoPlay: perspectiveAutoPlay,
+        friction: 0.25,
+        selectedAttraction: 0.01,
+        initialIndex: {{ initial_index }},
+        prevNextButtons: false,
+        cellAlign: 'center',
+        contain: false,
+        pageDots: false,
+        freeScroll: false,
+        on: {
+          ready: function () {
+            const selectedSlide = sliderContainer.querySelector('.block-slide-item.is-selected');
+            if (selectedSlide) {
+              const previousSlide = selectedSlide.previousSibling;
+              const nextSlide = selectedSlide.nextSibling;
+              if (previousSlide) previousSlide.classList.add('is-previous');
+              if (nextSlide) nextSlide.classList.add('is-next');
+            }
+          },
+          change: function (index) {
+            const slides = this.slides;
+            let previousSlide = slides[index - 1]?.cells[0]?.element;
+            let nextSlide = slides[index + 1]?.cells[0]?.element;
+            if (!previousSlide) {
+              previousSlide = slides[slides.length - 1]?.cells[0]?.element;
+            }
+            if (!nextSlide) {
+              nextSlide = slides[0]?.cells[0]?.element;
+            }
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].cells[0].element.classList.remove('is-previous');
+              slides[i].cells[0].element.classList.remove('is-next');
+            }
+            if (previousSlide) previousSlide.classList.add('is-previous');
+            if (nextSlide) nextSlide.classList.add('is-next');
+          },
+        },
+      });
+      
+      // Store reference globally with unique identifier
+      window['perspectiveSlider_' + '{{ section_id }}'] = perspectiveSlider;
+      // Also store as main reference for knob compatibility
+      window.perspectiveSlider = perspectiveSlider;
+      
+      // Trigger knob initialization if available
+      if (typeof window.initSliderKnob === 'function') {
+        setTimeout(() => {
+          window.initSliderKnob();
+        }, 100);
+      }
+    }
+  });
+</script>

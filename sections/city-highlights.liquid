@@ -1,0 +1,136 @@
+<section class="city-highlights-section section {{ section.settings.width }}">
+  <div class="city-highlights-container" style="text-align: {{ section.settings.text_alignment }};">
+    <h1 class="h1">{{ section.settings.title }}</h1>
+  </div>
+  <div
+    class="city-highlights-cards"
+    data-flickity='
+      {
+          "cellAlign": "left",
+          "contain": true,
+          "prevNextButtons": true,
+          "pageDots": false,
+          "wrapAround": false,
+          "autoPlay": false,
+          "groupCells": false,
+          "freeScroll": true
+      }
+    '
+  >
+    {% for block in section.blocks %}
+      <div
+        class="city-highlights-card"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.link != blank %}
+          <a href="{{ block.settings.link |  default: block.id }}">
+        {% endif %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1000 }}"
+          alt="{{ block.settings.heading }}"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+        <div class="city-highlight-card-content">
+          <h1 class="h2">{{ block.settings.subheading }}</h1>
+          <h2 class="h1">{{ block.settings.heading }}</h2>
+          <h3 class="h3">{{ block.settings.content }}</h3>
+        </div>
+        <div class="card-overlay"></div>
+        {% if block.settings.link != blank%}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{{ 'section-city-highlights.css' | asset_url | stylesheet_tag }}
+{% schema %}
+{
+  "name": "City Highlights",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Section Width",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "with-padding",
+          "label": "With Padding"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "City Highlights"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "default": "left",
+      "label": "Text Alignment"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Card Heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Card Subheading"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+          "default": "Card content goes here."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "City Highlights",
+      "blocks": [
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -12,17 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
 function initEventFilters() {
   const filterDropdown = document.querySelector('#filters .dropdown');
   const filterButton = document.querySelector('#filters button');
+  const filterRank = document.querySelector('#filters .rank');
   
-  if (filterButton && filterDropdown) {
+  if (filterButton && filterDropdown && filterRank) {
     filterButton.addEventListener('click', function(e) {
       e.preventDefault();
-      filterDropdown.style.display = filterDropdown.style.display === 'block' ? 'none' : 'block';
+      const isOpen = filterDropdown.style.display === 'block';
+      
+      if (isOpen) {
+        filterDropdown.style.display = 'none';
+        filterRank.classList.remove('open');
+      } else {
+        filterDropdown.style.display = 'block';
+        filterRank.classList.add('open');
+      }
     });
     
     // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
       if (!e.target.closest('#filters')) {
         filterDropdown.style.display = 'none';
+        filterRank.classList.remove('open');
       }
     });
   }

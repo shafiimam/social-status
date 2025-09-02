@@ -158,3 +158,32 @@ a.button .icon svg{
 .text-uppercase{
   text-transform: uppercase;
 }
+.section.with-padding{
+  padding: var(--box-auto-top) var(--box-smaller-padding);
+}
+.event-blog-date {
+  display: inline-block;
+  padding: 30px;
+  margin-bottom: 12px;
+  background: url(//www.socialstatuspgh.com/cdn/shop/files/date_bubble.png?v=13329498737783203737) no-repeat center center/100% auto;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.event-meta{
+  color: #ffff;
+}
+.event-meta-date,
+.event-meta-tags{
+  text-transform: uppercase;
+}
+.event-meta-date{
+  font-size: 30px;
+  font-weight: 600;
+}
+.event-meta-tags{
+  font-size: 24px;
+  font-weight: 600;
+}

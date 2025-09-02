@@ -1,7 +1,8 @@
 <style>
   .slider-container {
     position: relative;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     height: 140px;
     margin: 0 auto;
   }
@@ -10,19 +11,21 @@
     top: 50%;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 126px;
     transform: translateY(-50%);
     border-radius: 2px;
+    pointer-events: none;
   }
   .slider-track svg {
     width: 100%;
     height: 100%;
+    display: block;
   }
 
   .knob {
     width: 80px;
     height: 80px;
-    border-radius: 3683.461px;
+    border-radius: 50%;
     background: #e77e21;
     color: white;
     display: flex;
@@ -33,23 +36,50 @@
     position: absolute;
     cursor: pointer;
     user-select: none;
-    bottom: 5px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: left, bottom, transform;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-  @media (max-width: 500px) {
-    .slider-container {
-      height: 100px;
-    }
+  
+  .knob:hover {
+    transform: translateX(-50%) scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .knob:active {
+    transform: translateX(-50%) scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  .knob.dragging {
+    transition: none;
+    transform: translateX(-50%) scale(1.02);
   }
 
   @media (max-width: 768px) {
     .slider-container {
-      display: flex;
-      justify-content: center;
       width: 90vw;
+      max-width: 600px;
+      height: 120px;
     }
     .knob {
       width: 60px;
       height: 60px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .slider-container {
+      height: 100px;
+    }
+    .knob {
+      width: 50px;
+      height: 50px;
+      font-size: 10px;
     }
   }
 </style>
@@ -73,4 +103,196 @@
   </div>
 </div>
 
-<script src="{{ '360-knob.js' | asset_url }}" defer></script>
+<script>
+  // Expose initialization function globally
+  window.initSliderKnob = function() {
+    // Prevent multiple initializations
+    if (window.knobInitialized) {
+      return;
+    }
+    
+    const knob = document.getElementById("knob");
+    const sliderArea = document.getElementById("sliderArea");
+    
+    if (!knob || !sliderArea) {
+      console.warn('360-knob: Required elements not found');
+      return;
+    }
+    
+    // Check if slider is available, if not, retry
+    if (!window.perspectiveSlider) {
+      setTimeout(() => {
+        window.knobInitialized = false; // Reset flag to allow retry
+        window.initSliderKnob();
+      }, 200);
+      return;
+    }
+    
+    window.knobInitialized = true;
+
+    let totalFrames = {{ total_frames | default: 1 }};
+    let currentPercent = 50;
+    let lastStep = null;
+    let isAnimating = false;
+    let animationFrame = null;
+
+    function smoothUpdateKnobPosition(percent, animate = true) {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+
+              const updatePosition = () => {
+        const sliderRect = sliderArea.getBoundingClientRect();
+        const knobWidth = knob.offsetWidth;
+        const maxLeft = sliderRect.width - knobWidth;
+        const left = (percent / 100) * maxLeft + (knobWidth / 2);
+        
+        // Use CSS transitions for smooth movement when not dragging
+        if (animate && !knob.classList.contains('dragging')) {
+          knob.style.transition = 'all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        } else {
+          knob.style.transition = 'none';
+        }
+        
+        knob.style.left = `${left}px`;
+        
+        // Calculate curved path bottom position
+        let bottom = 10;
+        const windowWidth = window.innerWidth;
+        const curveIntensity = windowWidth > 500 ? 0.3 : 0.25;
+        const baseOffset = windowWidth > 500 ? 10 : 12;
+        
+        if (percent > 50) {
+          bottom = baseOffset + Math.max(0, (percent - 65) * curveIntensity);
+        } else {
+          const updatedPercent = 100 - percent;
+          bottom = baseOffset + Math.max(0, (updatedPercent - 65) * curveIntensity);
+        }
+        
+        knob.style.bottom = `${bottom}px`;
+        
+        const step = Math.floor((percent / 100) * (totalFrames - 1));
+        
+        // Only update slider if step changed to prevent unnecessary updates
+        if (lastStep !== step) {
+          if (window.perspectiveSlider && typeof window.perspectiveSlider.select === 'function') {
+            lastStep = step;
+            // Reduced debounce for more responsive slider updates
+            clearTimeout(window.sliderDebounce);
+            window.sliderDebounce = setTimeout(() => {
+              try {
+                window.perspectiveSlider.select(step);
+              } catch (error) {
+                console.warn('Error selecting slide:', error);
+              }
+            }, 20);
+          }
+        }
+      };
+
+      if (animate && !knob.classList.contains('dragging')) {
+        animationFrame = requestAnimationFrame(updatePosition);
+      } else {
+        updatePosition();
+      }
+    }
+
+    // Alias for backward compatibility
+    function updateKnobPosition(percent, animate = true) {
+      smoothUpdateKnobPosition(percent, animate);
+    }
+
+    function getPercentFromX(x) {
+      const rect = sliderArea.getBoundingClientRect();
+      const clampedX = Math.max(0, Math.min(x - rect.left, rect.width));
+      const percent = (clampedX / rect.width) * 100;
+      return Math.max(0, Math.min(100, percent));
+    }
+
+    function startDrag(e) {
+      e.preventDefault();
+      isAnimating = true;
+      knob.classList.add('dragging');
+
+      const moveHandler = (eMove) => {
+        eMove.preventDefault();
+        const clientX = eMove.touches ? eMove.touches[0].clientX : eMove.clientX;
+        const newPercent = getPercentFromX(clientX);
+        
+        // Use requestAnimationFrame for smooth dragging
+        requestAnimationFrame(() => {
+          currentPercent = newPercent;
+          updateKnobPosition(currentPercent, false);
+        });
+      };
+
+      const endHandler = () => {
+        isAnimating = false;
+        knob.classList.remove('dragging');
+        
+        // Re-enable smooth transitions after dragging
+        setTimeout(() => {
+          knob.style.transition = 'all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        }, 10);
+        
+        window.removeEventListener("mousemove", moveHandler);
+        window.removeEventListener("touchmove", moveHandler);
+        window.removeEventListener("mouseup", endHandler);
+        window.removeEventListener("touchend", endHandler);
+      };
+
+      window.addEventListener("mousemove", moveHandler, { passive: false });
+      window.addEventListener("touchmove", moveHandler, { passive: false });
+      window.addEventListener("mouseup", endHandler);
+      window.addEventListener("touchend", endHandler);
+    }
+
+    // Initialize knob position with smooth animation
+    updateKnobPosition(currentPercent, true);
+
+    // Add event listeners
+    knob.addEventListener("mousedown", startDrag);
+    knob.addEventListener("touchstart", startDrag, { passive: false });
+
+    sliderArea.addEventListener("click", (e) => {
+      // Don't trigger click if we're dragging
+      if (knob.classList.contains('dragging')) return;
+      
+      const percent = getPercentFromX(e.clientX);
+      currentPercent = percent;
+      
+      // Smooth animation when clicking to position
+      updateKnobPosition(currentPercent, true);
+    });
+
+    // Sync knob with slider changes (with smooth animation)
+    if (window.perspectiveSlider && typeof window.perspectiveSlider.on === 'function') {
+      window.perspectiveSlider.on('change', function(index) {
+        // Only sync if the change wasn't triggered by the knob itself
+        if (!knob.classList.contains('dragging') && !isAnimating) {
+          const percent = totalFrames > 1 ? (index / (totalFrames - 1)) * 100 : 50;
+          currentPercent = percent;
+          updateKnobPosition(currentPercent, true);
+        }
+      });
+    }
+
+    // Add smooth resize handling
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateKnobPosition(currentPercent, true);
+      }, 100);
+    });
+  };
+
+  // Fallback initialization in case slider loads after knob
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      if (typeof window.initSliderKnob === 'function') {
+        window.initSliderKnob();
+      }
+    }, 200);
+  });
+</script>

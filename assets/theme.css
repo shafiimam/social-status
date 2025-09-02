@@ -649,7 +649,7 @@ textarea::placeholder {
   color: var(--main-text);
 }
 
-input[type=submit], .button, .btn {
+input[type=submit], .button, .btn, .btn-article {
   font-family: var(--font-stack-body);
   font-weight: var(--font-weight-body);
   font-style: var(--font-style-body);
@@ -671,7 +671,7 @@ input[type=submit], .button, .btn {
   -webkit-appearance: none;
 }
 
-.btn {
+.btn,.btn-article {
   background: var(--main-text);
   color: var(--main-text-foreground) !important;
   border-radius: var(--buttons-radius) !important;
