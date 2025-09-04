@@ -46,7 +46,21 @@
         endcase
         for collection in list_collections
           unless collection.handle == 'frontpage'
-            assign collection_count = collection_count | plus: 1
+            assign should_hide = false
+            if section.settings.hidden_collections != blank
+              assign hidden_collections = section.settings.hidden_collections
+              for collection in hidden_collections
+                assign trimmed_handle = hidden_collections.handle
+                if collection.handle == trimmed_handle
+                  assign should_hide = true
+                  break
+                endif
+              endfor
+            endif
+            
+            unless should_hide
+              assign collection_count = collection_count | plus: 1
+            endunless
           endunless
         endfor
       else
@@ -70,10 +84,24 @@
             for collection in list_collections
               if collection.handle == 'frontpage'
                 continue
-              else 
-                assign custom_index = custom_index | plus: 1
               endif
-              render 'collection-item', collection: collection, id: section.id, size: forloop.length, text_alignment: section.settings.text_alignment, custom_overlay: custom_overlay, index: forloop.index
+              
+              assign should_hide = false
+              if section.settings.hidden_collections != blank
+                assign hidden_collections = section.settings.hidden_collections
+                for collection in hidden_collections
+                  assign trimmed_handle = hidden_collections.handle
+                  if collection.handle == trimmed_handle
+                    assign should_hide = true
+                    break
+                  endif
+                endfor
+              endif
+              
+              unless should_hide
+                assign custom_index = custom_index | plus: 1
+                render 'collection-item', collection: collection, id: section.id, size: forloop.length, text_alignment: section.settings.text_alignment, custom_overlay: custom_overlay, index: forloop.index
+              endunless
             endfor
           endif
 
@@ -88,10 +116,24 @@
             for collection in list_collections reversed
               if collection.handle == 'frontpage'
                 continue
-              else 
-                assign custom_index = custom_index | plus: 1
               endif
-              render 'collection-item', collection: collection, id: section.id, size: forloop.length, text_alignment: section.settings.text_alignment, custom_overlay: custom_overlay, index: forloop.index
+              
+              assign should_hide = false
+              if section.settings.hidden_collections != blank
+                assign hidden_collection_handles = section.settings.hidden_collections | split: ','
+                for hidden_handle in hidden_collection_handles
+                  assign trimmed_handle = hidden_handle | strip
+                  if collection.handle == trimmed_handle
+                    assign should_hide = true
+                    break
+                  endif
+                endfor
+              endif
+              
+              unless should_hide
+                assign custom_index = custom_index | plus: 1
+                render 'collection-item', collection: collection, id: section.id, size: forloop.length, text_alignment: section.settings.text_alignment, custom_overlay: custom_overlay, index: forloop.index
+              endunless
             endfor
           endif
 
@@ -233,6 +275,11 @@
             "label": "t:sections.main-list-collections.settings.sort.options__6.label"
           }
         ]
+      },
+      {
+        "type": "collection_list",
+        "id": "hidden_collections",
+        "label": "Hidden Collections"
       }
     ],
     "blocks": [

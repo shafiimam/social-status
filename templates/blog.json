@@ -43,15 +43,20 @@
         "seo_h_tag": "h2"
       }
     },
-    "blog_header_article_CqdjbN": {
-      "type": "blog-header-article",
-      "name": "Blog Header Article",
+    "hero_xFNVG8": {
+      "type": "hero",
+      "name": "Hero Section",
       "settings": {
-        "title": "BESOCIAL",
-        "subtitle": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at <a href=\"mailto:info@socialstatuspgh.com\" title=\"mailto:info@socialstatuspgh.com\">info@socialstatuspgh.com </a>or on our website via live chat during our business hours. </p>",
-        "text_color": "#ffffff",
-        "button_text": "",
-        "article": "social-status/a-journey-through-skate-8"
+        "desktop_image": "shopify://shop_images/sseditorial.jpg",
+        "mobile_image": "shopify://shop_images/sseditorial.png",
+        "heading": "Features",
+        "subheading": "",
+        "button_1_text": "Read",
+        "button_1_link": "",
+        "button_2_text": "Button 2",
+        "button_2_link": "",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle"
       }
     },
     "article_spotlight_fgaxk4": {
@@ -78,7 +83,6 @@
         "article_fDcdqD",
         "article_9n8b7e"
       ],
-      "disabled": true,
       "name": "Article Spotlight",
       "settings": {}
     },
@@ -116,7 +120,7 @@
   },
   "order": [
     "rich_text_Hw8xwi",
-    "blog_header_article_CqdjbN",
+    "hero_xFNVG8",
     "article_spotlight_fgaxk4",
     "main"
   ]

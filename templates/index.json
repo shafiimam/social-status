@@ -17,6 +17,8 @@
           "settings": {
             "image": "shopify://shop_images/Untitled-1_dccf1ea4-b2d1-470d-ad44-c8b3070e7a4b.jpg",
             "image_mobile": "shopify://shop_images/38blog.jpg",
+            "video_autoplay": true,
+            "video_loop": true,
             "title": "38a denim shorts",
             "subtitle": "now available",
             "button_text": "Shop now",
@@ -32,6 +34,8 @@
           "settings": {
             "image": "shopify://shop_images/38adesk4.jpg",
             "image_mobile": "shopify://shop_images/drop.jpg",
+            "video_autoplay": true,
+            "video_loop": true,
             "title": "social status x honor the gift",
             "subtitle": "now available",
             "button_text": "Shop now",
@@ -46,6 +50,8 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "video_autoplay": true,
+            "video_loop": true,
             "title": "",
             "subtitle": "",
             "button_text": "",
@@ -64,7 +70,9 @@
       ],
       "name": "Hero Slideshow",
       "settings": {
-        "title": ""
+        "title": "",
+        "video_autoplay": true,
+        "video_loop": true
       }
     },
     "product_masonry_Fnqqrw": {
@@ -604,6 +612,7 @@
       "type": "media-grid",
       "name": "Media Grid",
       "settings": {
+        "section_width": "full",
         "desktop_row_height": 250,
         "mobile_row_height": 170,
         "padding_top": 60,
@@ -611,7 +620,8 @@
         "spacing": "xs",
         "subheading": "",
         "title": "<strong>@</strong>THESOCALSTATUS",
-        "content": ""
+        "content": "",
+        "text_alignment": "center"
       }
     },
     "custom_liquid_WyGgiH": {
@@ -623,8 +633,35 @@
       "name": "t:sections.refactor_words.custom_code.name",
       "settings": {
         "custom_liquid": "<h1 class=\"h1 text-center heading\"><strong>@<strong><span>thesocialstatus</span><h1>",
-        "no_padding": false
+        "no_padding": true
       }
+    },
+    "1756838107933102fa": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_Lm4dJE": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 50,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "center",
+            "link_color": "#ed8933",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_Lm4dJE"
+      ],
+      "settings": {}
     },
     "1752150809a21dd429": {
       "type": "apps",
@@ -723,6 +760,7 @@
     "perspective_slider_VCQ6DF",
     "media_grid_NHDBAw",
     "custom_liquid_WyGgiH",
+    "1756838107933102fa",
     "1752150809a21dd429",
     "text_columns_with_icons_8nxf6n",
     "newsletter_jVdCeL"

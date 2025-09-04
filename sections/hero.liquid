@@ -1,0 +1,253 @@
+{% comment %}
+  Hero Section
+  - Accepts: desktop image, mobile image, desktop video, mobile video
+  - Content: heading, subheading, two buttons
+  - Content alignment: horizontal and vertical
+  - Shows desktop video on desktop, mobile video on mobile (if set), otherwise desktop video on both.
+  - Same logic for images.
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "video",
+      "id": "desktop_video",
+      "label": "Desktop Video"
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Mobile Video"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Heading Here"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Your subheading here"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 Text",
+      "default": "Button 1"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 Text",
+      "default": "Button 2"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical Alignment",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "middle", "label": "Middle" },
+        { "value": "bottom", "label": "Bottom" }
+      ],
+      "default": "middle"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign horizontal = section.settings.horizontal_alignment %}
+{% assign vertical = section.settings.vertical_alignment %}
+{% assign has_desktop_video = false %}
+{% assign has_mobile_video = false %}
+{% assign has_any_video = false %}
+{% if section.settings.desktop_video != blank %}
+  {% assign has_desktop_video = true %}
+{% endif %}
+{% if section.settings.mobile_video != blank %}
+  {% assign has_mobile_video = true %}
+{% endif %}
+{% if has_desktop_video or has_mobile_video %}
+  {% assign has_any_video = true %}
+{% endif %}
+
+<div
+  class="hero-section"
+  style="display: flex; align-items: {% if vertical == 'top' %}flex-start{% elsif vertical == 'middle' %}center{% else %}flex-end{% endif %}; justify-content: {% if horizontal == 'left' %}flex-start{% elsif horizontal == 'center' %}center{% else %}flex-end{% endif %}; min-height: 60vh; position: relative; overflow: hidden;"
+>
+  {%- comment -%} Background Media {%- endcomment -%}
+  <div class="hero-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;">
+    {% if has_any_video %}
+      {% if has_desktop_video %}
+        <video autoplay loop="true" muted="false" class="hero-video-desktop hero-video">
+          {% for source in section.settings.desktop_video.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+        </video>
+      {% endif %}
+      {% if has_mobile_video %}
+        <video autoplay loop="true" muted="false" class="hero-video-mobile hero-video">
+          {% for source in section.settings.mobile_video.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+        </video>
+      {% else %}
+        <video autoplay muted="false" class="hero-video-mobile hero-video">
+          {% for source in section.settings.desktop_video.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+        </video>
+      {% endif %}
+    {% else %}
+      {% if section.settings.desktop_image != blank %}
+        <picture>
+          <source srcset="{{ section.settings.mobile_image | image_url: width: 800 }}" media="(max-width: 768px)">
+          <img
+            src="{{ section.settings.desktop_image | image_url: width: 2000 }}"
+            alt="{{ section.settings.heading | escape }}"
+            width="100%"
+            height="100%"
+          >
+        </picture>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="hero-content" style="position: relative; z-index: 2; text-align: {{ horizontal }};">
+    {% if section.settings.heading != blank %}
+      <h1 class="hero-heading h1">{{ section.settings.heading }}</h1>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <h2 class="hero-subheading h3">{{ section.settings.subheading }}</h2>
+    {% endif %}
+    <div class="hero-buttons" style="margin-top: 1.5em;">
+      {% if section.settings.button_1_text != blank and section.settings.button_1_link != blank %}
+        <a href="{{ section.settings.button_1_link }}" class="hero-btn hero-btn-1">
+          {{- section.settings.button_1_text -}}
+        </a>
+      {% endif %}
+      {% if section.settings.button_2_text != blank and section.settings.button_2_link != blank %}
+        <a href="{{ section.settings.button_2_link }}" class="hero-btn hero-btn-2">
+          {{- section.settings.button_2_text -}}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-section {
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg video,
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Responsive styles for desktop and mobile video */
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000;
+  }
+  .hero-video-desktop {
+    display: block;
+  }
+  .hero-video-mobile {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .hero-video-desktop {
+      display: none;
+    }
+    .hero-video-mobile {
+      display: block;
+    }
+  }
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    color: #fff;
+  }
+  .hero-heading {
+    text-transform: uppercase;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: inherit;
+  }
+  .hero-btn {
+    display: inline-block;
+    padding: 0.75em 2em;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 2em;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .hero-btn:hover {
+    background: #333;
+  }
+  @media (max-width: 749px) {
+    .hero-content {
+      padding: 2rem 1rem;
+    }
+    .hero-heading {
+      font-size: 1.75rem;
+    }
+  }
+</style>
