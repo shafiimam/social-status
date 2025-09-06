@@ -1,0 +1,15 @@
+<a href="{{ block.settings.release_url }}" class="release-card">
+  <div class="release-card-container" {{ block.shopify_attributes }}>
+    <div class="release-card__image">
+      {{ block.settings.image | image_url: width: 400 | image_tag }}
+      <div class="release-card__date">
+        <p class="release-card__date-text">{{ block.settings.release_date }}</p>
+      </div>
+    </div>
+    <div class="release-card__content">
+      <h2 class="release-card__title">{{ block.settings.title }}</h2>
+      <p class="release-card__description">{{ block.settings.description }}</p>
+      <p class="release-card__price">{{ block.settings.price | times: 100 | money }}</p>
+    </div>
+  </div>
+</a>

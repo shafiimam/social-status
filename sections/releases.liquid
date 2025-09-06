@@ -1,0 +1,85 @@
+<section class="releases-section">
+  <div class="container">
+    <div class="releases__header">
+      <h1 class="releases__title h1 text-uppercase">{{ section.settings.title }}</h1>
+    </div>
+    <div class="releases-container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'release-card' %}
+            {% render 'release-card', block: block %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<style>
+    :root{
+        --column-size: repeat({{ section.settings.column_size }}, 1fr);
+    }
+</style>
+{{ 'section-releases.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Releases",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+        "type": "range",
+        "id": "column_size",
+        "label": "Number of columns",
+        "min": 2,
+        "max": 5,
+        "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "release-card",
+      "name": "Release Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "release_date",
+          "label": "Release Date"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+        {
+          "type": "url",
+          "id": "release_url",
+          "label": "Release URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Releases"
+    }
+  ]
+}
+{% endschema %}
