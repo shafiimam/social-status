@@ -13,7 +13,8 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
-        "layout": "split"
+        "layout": "split",
+        "text": ""
       }
     },
     "besocial_hero_zDHDNh": {
@@ -51,6 +52,50 @@
         "background_image": "shopify://shop_images/besocial-hero.png",
         "logo": "shopify://shop_images/besocial-logo-light.png",
         "content": "<p>A space connected to several of our Social Status locations where we activate a variety of community-focused events. beSocial also acts as a free space for the local community to make their own.</p>"
+      }
+    },
+    "list_column_mP47Dk": {
+      "type": "list-column",
+      "blocks": {
+        "list_item_VkyMyP": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Charlotte,",
+            "item_text_2": "NC",
+            "button_link": "shopify://pages/copy-of-about-us",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/image_91.png"
+          }
+        },
+        "list_item_kHhH7m": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Atlanta,",
+            "item_text_2": "GA",
+            "button_link": "shopify://pages/copy-of-about-us",
+            "button_text": "visit shop",
+            "hover_image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg"
+          }
+        },
+        "list_item_K6i4nA": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Houston,",
+            "item_text_2": "TX",
+            "button_link": "shopify://pages/our-stores",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/GS-SEASICK-BLK_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "list_item_VkyMyP",
+        "list_item_kHhH7m",
+        "list_item_K6i4nA"
+      ],
+      "name": "List Column",
+      "settings": {
+        "separate_section_with_border": false
       }
     },
     "latest_features_RF7KCt": {
@@ -451,6 +496,7 @@
       ],
       "name": "Media Grid",
       "settings": {
+        "section_width": "full",
         "desktop_row_height": 250,
         "mobile_row_height": 170,
         "padding_top": 60,
@@ -458,7 +504,8 @@
         "spacing": "xs",
         "subheading": "",
         "title": "Previous Events",
-        "content": ""
+        "content": "",
+        "text_alignment": "center"
       }
     },
     "rich_text_XqMPwe": {
@@ -498,6 +545,7 @@
   "order": [
     "main",
     "besocial_hero_zDHDNh",
+    "list_column_mP47Dk",
     "latest_features_RF7KCt",
     "perspective_slider_U9X7jt",
     "media_grid_tgC8EG",

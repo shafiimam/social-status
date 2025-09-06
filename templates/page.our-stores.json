@@ -13,7 +13,8 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
-        "layout": "split"
+        "layout": "split",
+        "text": ""
       }
     },
     "store_header_bnner_6h4Aab": {
@@ -31,40 +32,125 @@
       }
     },
     "sores_header_banner_RCLYjD": {
-      "type": "sores-header-banner",
+      "type": "stores-header-banner",
       "blocks": {
+        "store_slide_kLpVEH": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status Charlotte",
+            "image": "shopify://shop_images/Charlotte_f20c7a0f-cdd5-468f-8807-a1437f01ddb1.jpg",
+            "location_info": "<p><a href=\"https://g.page/social-status-charlotte-nc?share\" target=\"_blank\" title=\"https://g.page/social-status-charlotte-nc?share\">1519 Central Ave, Charlotte, NC 28205</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:(704) 632-9902\" title=\"tel:(704) 632-9902\">(704) 632-9902</a></p>",
+            "location_content": "<p>Birthplace of the Social Status brand, our Charlotte location has been the foundation of our presence in the retail market since 2005. Located in the Plaza Midwood area, the boutique was designed to put an emphasis not only on apparel and footwear but also bring our community together through beSocial and our social programming.</p>",
+            "store_link": ""
+          }
+        },
         "store_slide_JbL8hW": {
           "type": "store_slide",
           "settings": {
-            "image": "shopify://shop_images/image_33.png",
-            "slide_title": "<p>Amazing <strong>Store</strong></p>",
-            "slide_description": "<p>Our address</p><p><strong>93 Bayport Ave.</strong></p><p><strong>South Richmond Hill, NY 11419</strong></p><p>For general inquires</p><p><strong>socialstatus@example.com</strong></p><p>Phone</p><p><strong>+1 200 884 9600</strong></p><p>Working hours</p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>",
-            "slide_button_text": "visit our store",
-            "slide_link": "shopify://pages/copy-of-about-us"
+            "location_title": "SOCIAL status Greensboro",
+            "image": "shopify://shop_images/Gboro_261fe189-456b-4b36-a9c8-5a0751d55d64.jpg",
+            "location_info": "<p><a href=\"https://goo.gl/maps/V3radTbr8ns83UxZ6\" target=\"_blank\">602 Elm Street, Greensboro, NC 27406</a></p><h4></h4><h4>Hours of Operation</h4><p>Monday - Saturday: 12:00PM - 7:00PM</p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4></h4><h4>Store Phone</h4><p><a href=\"tel:(336) 285-6540\">(336) 285-6540</a></p>",
+            "location_content": "<p>Social Status Greensboro is located in the city that was once home to Cone Mills, one of the world's most reputable and historic denim mills, and many major colleges and universities. This location allows us to be at the heart of America's denim heritage as it continues to evolve through trends and youth culture.</p>",
+            "store_link": ""
           }
         },
-        "store_slide_UQ3ykx": {
+        "store_slide_JrVH3M": {
           "type": "store_slide",
           "settings": {
-            "image": "shopify://shop_images/image_33.png",
-            "slide_title": "<p>Amazing <strong>Store 2</strong></p>",
-            "slide_description": "<p>Our address</p><p><strong>93 Bayport Ave.</strong></p><p><strong>South Richmond Hill, NY 11419</strong></p><p>For general inquires</p><p><strong>socialstatus@example.com</strong></p><p>Phone</p><p><strong>+1 200 884 9600</strong></p><p>Working hours</p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>",
-            "slide_button_text": "visit our store",
-            "slide_link": "shopify://pages/copy-of-about-us"
+            "location_title": "Social Status Detroit",
+            "image": "shopify://shop_images/cover_copy.jpg",
+            "location_info": "<p><a href=\"https://www.socialstatuspgh.com/\" target=\"_blank\">9101 E Jefferson Ave, Unit A, Detroit MI, 48214</a></p><h4></h4><h4>Hours of Operation:</h4><p>Monday to Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:(313)499-8299\">(313)499-8299</a></p>",
+            "location_content": "<p>Social Status Detroit is located on the city’s East Side, this flagship store represents more than retail; it’s a symbol of reinvestment and renewal. As part of our ongoing commitment to historically Black neighborhoods, Social Status Detroit blends elevated streetwear, exclusive footwear, and immersive storytelling in a space built for community, culture, and connection. This isn’t just a store—it’s a movement rooted in purpose and powered by the people.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_Y3girf": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status Raleigh",
+            "image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg",
+            "location_info": "<p><a href=\"https://goo.gl/maps/YcTMNUrimYZqj3at9\" target=\"_blank\">308 Parham Street, Raleigh, NC 27601</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:(919) 803-5371\">(919) 803-5371</a></p>",
+            "location_content": "<p>Located in the heart of North Carolina’s capital city, Social Status Raleigh was designed to honour and reflect the energy of City Market, a historically art-dominant area of the downtown core. The cobblestone streets, art exhibits and music festivals that are frequently held blend perfectly with an emerging fashion, art and design scene to which we are connected, with UNC, Duke, NC State and many other major collegiate institutions contributing greatly to an eclectic energy in and around our store.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_BEBYaM": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status Downtown Pittsburgh",
+            "image": "shopify://shop_images/Pitt2_085331fa-da2d-4887-b44f-983dfa122311.jpg",
+            "location_info": "<p><a href=\"https://goo.gl/maps/Tagtv9sw15saoSeQA\" target=\"_blank\">717 Liberty Ave, Pittsburgh, PA 15222</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:(412) 456-2355\">(412) 456-2355</a></p>",
+            "location_content": "<p>Located in Cultural District of Downtown Pittsburgh, Social Status Downtown holds a special place in our store network due to the familiarity of the marketplace and the hometown ties to our curator. The store aesthetic was inspired by minimalist European boutiques, embracing its cultural surroundings by celebrating local artists, displaying their artwork throughout the boutique and hosting monthly art-focused events alongside our community programming.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_qrMkyF": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status East Liberty Pittsburgh",
+            "image": "shopify://shop_images/Pitt1_496d2f53-9acb-4e3b-b580-547398058e3e.jpg",
+            "location_info": "<p><a href=\"https://www.socialstatuspgh.com/https://goo.gl/maps/r8LoG99Dt4yLCuyk7\" target=\"_blank\">5929 Penn Ave, Pittsburgh, PA 15206</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:(412) 404-2147\">(412) 404-2147</a></p>",
+            "location_content": "<p>With the resurgence of Pittsburgh's eastern corridor, Social Status East Liberty opened in 2012 to elevate and serve as a foundational piece to the city’s fashion scene. Featuring dedicated spaces for its sneaker and apparel offerings, our store is equipped with iPads to encourage brand and product knowledge, and hand stained woodwork accentuates a premium boutique experience.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_fmaHah": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status Atlanta",
+            "image": "shopify://shop_images/ATL_c1cc9f14-1b42-44f5-ad5a-9820d63c6b69.jpg",
+            "location_info": "<p><a href=\"https://goo.gl/maps/8mYaGoAaSnAGJYpa8\" target=\"_blank\">280 Elizabeth St. Suite E. Atlanta, GA. 30307</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:470-305-7545\">470-305-7545</a></p>",
+            "location_content": "<p>Social Status Atlanta opened in 2017 to fill a gap in a local fashion scene in constant flux. Located in the Inman Park area, a neighborhood that features a blend of modern living and retail, the store's layout and curation was set to prioritize styling, brand and product knowledge as top of mind for our consumers.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_8PiwkV": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status Houston",
+            "image": "shopify://shop_images/HOU_51b16b30-8c54-4366-8e4f-c6288008453d.jpg",
+            "location_info": "<p><a href=\"https://goo.gl/maps/tQreQifRbPg3hG7c6\" target=\"_blank\">818 Town & Country Blvd. Suite 104. Houston, TX 77024</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:713-637-4304\">713-637-4304</a></p>",
+            "location_content": "<p>Located in the CityCentre, Social Status opened in Houston to celebrate and shed a spotlight on the emerging youth culture and diversity in the city. Often overlooked, the CityCentre is a live, work, and play area with many neighboring shops and restaurants, the perfect setting for our store and beSocial offering to reside and make an impact on this important community.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_Uj7VEJ": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "Social Status Tampa Bay",
+            "image": "shopify://shop_images/TB_acb88b1b-036e-4fc2-9ef5-1449771fa29e.jpg",
+            "location_info": "<p><a href=\"https://goo.gl/maps/23UQJuuJituhYwZs5\" target=\"_blank\">1505 W Swann Ave. Suite 2. Tampa Bay, FL 33606</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>10:00AM - 8:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:813-644-6571\">813-644-6571</a></p>",
+            "location_content": "<p>Located in Tampa's historic and much-loved Hyde Park Village, Social Status opened in Tampa to contribute to a growing youth and fashion culture community and serve as a staple provider of exclusive brands and sneakers to a consumer base looking for opportunities to make its mark.</p>",
+            "store_link": ""
+          }
+        },
+        "store_slide_ndW7FP": {
+          "type": "store_slide",
+          "settings": {
+            "location_title": "SOCIAL STATUS BALTIMORE",
+            "image": "shopify://shop_images/stockvault-baltimore-inner-harbor106254_3c43cbf2-28d9-41c3-a276-b112b63fe5d6.jpg",
+            "location_info": "<p><a href=\"https://www.socialstatuspgh.com/\" target=\"_blank\">904 S Broadway, Baltimore MD 21231</a></p><h4>Operation Hours:</h4><p>Monday - Saturday: <strong>12:00PM- 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Contact:</h4><p><a href=\"tel:(410) 617-0916\">(410) 617-0916</a></p>",
+            "location_content": "<p>Located in the Fells Point historic waterfront neighborhood, Social Status Baltimore is the most unique of our experiences across the network. Carved within a historic townhouse alongside the pier with a breathtaking view of the harbor, our 3-storey space features the modern contemporary aesthetic true to the Social Status brand while paying homage to the heritage of the city known for its imp[act on culture and history. Containing a modular beSocial space, community programming is ongoing within the footprint of the space and beyond to serve the city of Baltimore with impact and purpose.</p>",
+            "store_link": ""
           }
         }
       },
       "block_order": [
+        "store_slide_kLpVEH",
         "store_slide_JbL8hW",
-        "store_slide_UQ3ykx"
+        "store_slide_JrVH3M",
+        "store_slide_Y3girf",
+        "store_slide_BEBYaM",
+        "store_slide_qrMkyF",
+        "store_slide_fmaHah",
+        "store_slide_8PiwkV",
+        "store_slide_Uj7VEJ",
+        "store_slide_ndW7FP"
       ],
       "name": "Stores Header Banner",
       "settings": {
-        "title": "Our Stores",
-        "subtitle": "Browse our stores all over the US and find the best place to upgrade your outfit to the next level.",
-        "button_text": "BROWSE ALL PRODUCTS",
-        "seo_title": "SEO COPY HEADING HERE",
-        "seo_description": "We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours."
+        "heading": "Our Stores",
+        "subheading": "Browse our stores all over the US and find the best place to upgrade your outfit to the next level."
       }
     }
   },

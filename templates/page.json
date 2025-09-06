@@ -12,8 +12,8 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "layout": "split",
-        "text": "<p>seo text container</p>"
+        "layout": "full",
+        "text": ""
       }
     }
   },
