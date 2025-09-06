@@ -40,8 +40,9 @@
                 </nav>
 
               {%- when 'social' -%}
+                {{ footer_title }}
                 <nav class="text-size--smaller">
-                  {%- render 'social-icons', type: 'footer' -%}
+                  {%- render 'social-icons', type: 'footer', show_icons: block.settings.show_icons -%}
                 </nav>
 
               {%- when 'image' -%}
@@ -387,6 +388,12 @@
             "id": "title",
             "label": "t:sections.footer.blocks.text.settings.title.label",
             "default": "Follow us"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_icons",
+            "label": "Show icons",
+            "default" : false
           }
         ]
       },

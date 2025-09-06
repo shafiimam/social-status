@@ -127,3 +127,11 @@
   {%- endif -%}
 
 </div>
+
+{% if show_icons == false %}
+	<style>
+		.site-social .icon {
+			display: none !important;
+		}
+	</style>
+{% endif %}
