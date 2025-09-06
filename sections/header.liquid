@@ -7,15 +7,18 @@ data-sticky="{{ section.settings.menu_sticky }}">
   
   <span class="logo">
     {%- if section.settings.logo_src -%}
-      <a class="logo-img" href="{{ routes.root_url }}" style="height:var(--header-logo);display:flex;align-items:center">
+      <a class="logo-img logo-light" href="{{ routes.root_url }}" style="display:flex;align-items:center">
         <img src="{{ section.settings.logo_src | image_url }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
+      </a>
+      <a class="logo-img logo-inverted" href="{{ routes.root_url }}" style="display:flex;align-items:center">
+        <img src="{{ section.settings.logo_inverted_src | image_url }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
       </a>
     {%- else -%}
       <a class="logo-txt" href="{{ routes.root_url }}">{{ shop.name | escape }}</a>
     {%- endif -%}
   </span>
 
-  {%- render 'logo-size', logo: section.settings.logo_src, logo_height: section.settings.logo_height -%}
+  {%- render 'logo-size', logo: logosection.settings.logo_src, logo_height: section.settings.logo_height -%}
 
   <!-- menu -->
 
@@ -194,6 +197,11 @@ data-sticky="{{ section.settings.menu_sticky }}">
         "type": "image_picker",
         "id": "logo_src",
         "label": "t:sections.sidebar.settings.image.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_inverted_src",
+        "label": "Logo Inverted"
       },
       {
         "type": "range",

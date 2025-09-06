@@ -18,15 +18,19 @@
       {% if has_desktop_video or has_mobile_video %}
         {% assign has_any_video = true %}
       {% endif %}
-      
+
       {%- if has_any_video -%}
         <div class="hero-slide__video-wrapper">
           {%- if has_desktop_video -%}
             <video
               class="hero-slide__video hero-slide__video--desktop"
-              {% if block.settings.video_autoplay %}autoplay{% endif %}
-              {% if block.settings.video_loop %}loop{% endif %}
-              
+              {% if block.settings.video_autoplay %}
+                autoplay
+              {% endif %}
+              {% if block.settings.video_loop %}
+                loop
+              {% endif %}
+
               playsinline
               preload="metadata"
               data-slide-index="{{ forloop.index0 }}"
@@ -36,13 +40,17 @@
               {%- endfor -%}
             </video>
           {%- endif -%}
-          
+
           {%- if has_mobile_video -%}
             <video
               class="hero-slide__video hero-slide__video--mobile"
-              {% if block.settings.video_autoplay %}autoplay{% endif %}
-              {% if block.settings.video_loop %}loop{% endif %}
-              
+              {% if block.settings.video_autoplay %}
+                autoplay
+              {% endif %}
+              {% if block.settings.video_loop %}
+                loop
+              {% endif %}
+
               playsinline
               preload="metadata"
               data-slide-index="{{ forloop.index0 }}"
@@ -53,7 +61,7 @@
             </video>
           {%- endif -%}
         </div>
-        
+
         <!-- Custom Audio Control Button -->
         <button class="hero-slide__audio-control" type="button" aria-label="Toggle audio">
           <span class="hero-slide__audio-icon hero-slide__audio-icon--muted">
@@ -90,8 +98,11 @@
         </div>
       {%- endif -%}
 
-      <div class="hero-slide__content-overlay" style="background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity }}%);"></div>
-      <div class="hero-slide__content" style="top: {{ block.settings.content_position_x }}%;">
+      <div
+        class="hero-slide__content-overlay"
+        style="background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity }}%);"
+      ></div>
+      <div class="hero-slide__content">
         <div class="hero-slide__content-inner">
           {%- if block.settings.title != blank -%}
             <h1 class="hero-slide__title h1" style="color: {{ block.settings.text_color }};">
@@ -108,7 +119,7 @@
 
         {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
           <a
-            class="button button--solid button--with-icon"
+            class="button button--solid button--with-icon hero-button"
             style="background-color: {{ block.settings.button_color }};"
             {% unless block.settings.button_link == blank %}
               href="{{ block.settings.button_link }}"
@@ -125,389 +136,391 @@
 {{ 'section-hero-slideshow.css' | asset_url | stylesheet_tag }}
 
 <script>
-(function() {
-  'use strict';
-  
-  // Store initialized slideshows to prevent duplicate initialization
-  const initializedSlideshows = new WeakSet();
-  
-  function initializeHeroSlideshow(slideshow) {
-    // Prevent duplicate initialization
-    if (initializedSlideshows.has(slideshow)) {
-      return;
-    }
-    
-    const flickityElement = slideshow;
-    const videoAutoplay = slideshow.dataset.videoAutoplay === 'true';
-    const videoLoop = slideshow.dataset.videoLoop === 'true';
-    let flkty;
-    let currentSlideIndex = 0;
-    let videoEndedTimeout;
-    
-    // Clean up existing Flickity instance if it exists
-    if (slideshow.flickityInstance) {
-      slideshow.flickityInstance.destroy();
-      slideshow.flickityInstance = null;
-    }
-    
-    // Initialize Flickity
-    flkty = new Flickity(flickityElement, {
-      cellAlign: 'left',
-      contain: true,
-      prevNextButtons: true,
-      pageDots: false,
-      wrapAround: true,
-      autoPlay: false // We'll handle autoplay manually for videos
-    });
-    
-    // Store the instance for cleanup
-    slideshow.flickityInstance = flkty;
-    
-    // Get all videos and audio controls in the slideshow
-    const videos = slideshow.querySelectorAll('.hero-slide__video');
-    const audioControls = slideshow.querySelectorAll('.hero-slide__audio-control');
-    
-    // Function to get the active video for current slide
-    function getActiveVideo(slideIndex) {
-      const slide = flkty.cells[slideIndex]?.element;
-      if (!slide) return null;
-      
-      const isMobile = window.innerWidth <= 768;
-      const mobileVideo = slide.querySelector('.hero-slide__video--mobile');
-      const desktopVideo = slide.querySelector('.hero-slide__video--desktop');
-      
-      // Return mobile video if on mobile and exists, otherwise desktop video
-      return (isMobile && mobileVideo) ? mobileVideo : desktopVideo;
-    }
-    
-    // Function to pause all videos
-    function pauseAllVideos() {
-      videos.forEach(function(video) {
-        video.pause();
-        video.currentTime = 0;
-      });
-    }
-    
-    // Function to play current slide video
-    function playCurrentVideo() {
-      // Only play if we have a valid Flickity instance and current slide
-      if (!flkty || !flkty.cells || flkty.cells.length === 0) {
+  (function () {
+    'use strict';
+
+    // Store initialized slideshows to prevent duplicate initialization
+    const initializedSlideshows = new WeakSet();
+
+    function initializeHeroSlideshow(slideshow) {
+      // Prevent duplicate initialization
+      if (initializedSlideshows.has(slideshow)) {
         return;
       }
-      
-      // Get the actual selected slide index from Flickity
-      const actualSlideIndex = flkty.selectedIndex;
-      const activeVideo = getActiveVideo(actualSlideIndex);
-      
-      if (activeVideo && videoAutoplay) {
-        // Double-check that this video belongs to the currently selected slide
-        const videoSlide = activeVideo.closest('.hero-slide');
-        const selectedSlide = flkty.selectedElement;
-        
-        if (videoSlide === selectedSlide) {
-          activeVideo.play().catch(function(error) {
-            console.log('Video autoplay failed:', error);
-          });
-        }
+
+      const flickityElement = slideshow;
+      const videoAutoplay = slideshow.dataset.videoAutoplay === 'true';
+      const videoLoop = slideshow.dataset.videoLoop === 'true';
+      let flkty;
+      let currentSlideIndex = 0;
+      let videoEndedTimeout;
+
+      // Clean up existing Flickity instance if it exists
+      if (slideshow.flickityInstance) {
+        slideshow.flickityInstance.destroy();
+        slideshow.flickityInstance = null;
       }
-    }
-    
-    // Function to update audio button state for current slide
-    function updateAudioButtonState() {
-      if (!flkty || !flkty.cells || flkty.cells.length === 0) {
-        return;
-      }
-      
-      const actualSlideIndex = flkty.selectedIndex;
-      const currentSlide = flkty.cells[actualSlideIndex]?.element;
-      if (!currentSlide) return;
-      
-      const audioButton = currentSlide.querySelector('.hero-slide__audio-control');
-      const activeVideo = getActiveVideo(actualSlideIndex);
-      
-      if (audioButton && activeVideo) {
-        const mutedIcon = audioButton.querySelector('.hero-slide__audio-icon--muted');
-        const unmutedIcon = audioButton.querySelector('.hero-slide__audio-icon--unmuted');
-        
-        if (activeVideo.muted) {
-          mutedIcon.style.display = 'flex';
-          unmutedIcon.style.display = 'none';
-          audioButton.setAttribute('aria-label', 'Unmute audio');
-        } else {
-          mutedIcon.style.display = 'none';
-          unmutedIcon.style.display = 'flex';
-          audioButton.setAttribute('aria-label', 'Mute audio');
-        }
-      }
-    }
-    
-    // Function to handle video ended event
-    function onVideoEnded() {
-      clearTimeout(videoEndedTimeout);
-      videoEndedTimeout = setTimeout(function() {
-        if (!videoLoop) {
-          flkty.next();
-        }
-      }, 100);
-    }
-    
-    // Add event listeners to videos
-    videos.forEach(function(video, index) {
-      video.addEventListener('ended', onVideoEnded);
-      
-      // Handle video load errors - show image fallback
-      video.addEventListener('error', function() {
-        const slide = video.closest('.hero-slide');
-        const imageWrapper = slide.querySelector('.hero-slide__image-wrapper');
-        const videoWrapper = slide.querySelector('.hero-slide__video-wrapper');
-        
-        if (imageWrapper && videoWrapper) {
-          videoWrapper.style.display = 'none';
-          imageWrapper.classList.remove('hero-slide__image-wrapper--fallback');
-        }
+
+      // Initialize Flickity
+      flkty = new Flickity(flickityElement, {
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: true,
+        pageDots: false,
+        wrapAround: true,
+        autoPlay: false, // We'll handle autoplay manually for videos
       });
-      
-      // Handle video load success - hide image fallback
-      video.addEventListener('loadeddata', function() {
-        const slide = video.closest('.hero-slide');
-        const imageWrapper = slide.querySelector('.hero-slide__image-wrapper--fallback');
-        
-        if (imageWrapper) {
-          imageWrapper.style.display = 'none';
+
+      // Store the instance for cleanup
+      slideshow.flickityInstance = flkty;
+
+      // Get all videos and audio controls in the slideshow
+      const videos = slideshow.querySelectorAll('.hero-slide__video');
+      const audioControls = slideshow.querySelectorAll('.hero-slide__audio-control');
+
+      // Function to get the active video for current slide
+      function getActiveVideo(slideIndex) {
+        const slide = flkty.cells[slideIndex]?.element;
+        if (!slide) return null;
+
+        const isMobile = window.innerWidth <= 768;
+        const mobileVideo = slide.querySelector('.hero-slide__video--mobile');
+        const desktopVideo = slide.querySelector('.hero-slide__video--desktop');
+
+        // Return mobile video if on mobile and exists, otherwise desktop video
+        return isMobile && mobileVideo ? mobileVideo : desktopVideo;
+      }
+
+      // Function to pause all videos
+      function pauseAllVideos() {
+        videos.forEach(function (video) {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+
+      // Function to play current slide video
+      function playCurrentVideo() {
+        // Only play if we have a valid Flickity instance and current slide
+        if (!flkty || !flkty.cells || flkty.cells.length === 0) {
+          return;
         }
-      });
-    });
-    
-    // Audio control functionality
-    audioControls.forEach(function(button) {
-      button.addEventListener('click', function() {
-        const slide = button.closest('.hero-slide');
-        const slideVideos = slide.querySelectorAll('.hero-slide__video');
-        const mutedIcon = button.querySelector('.hero-slide__audio-icon--muted');
-        const unmutedIcon = button.querySelector('.hero-slide__audio-icon--unmuted');
-        
-        slideVideos.forEach(function(video) {
-          if (video.muted) {
-            video.muted = false;
-            mutedIcon.style.display = 'none';
-            unmutedIcon.style.display = 'flex';
-            button.setAttribute('aria-label', 'Mute audio');
-          } else {
-            video.muted = true;
+
+        // Get the actual selected slide index from Flickity
+        const actualSlideIndex = flkty.selectedIndex;
+        const activeVideo = getActiveVideo(actualSlideIndex);
+
+        if (activeVideo && videoAutoplay) {
+          // Double-check that this video belongs to the currently selected slide
+          const videoSlide = activeVideo.closest('.hero-slide');
+          const selectedSlide = flkty.selectedElement;
+
+          if (videoSlide === selectedSlide) {
+            activeVideo.play().catch(function (error) {
+              console.log('Video autoplay failed:', error);
+            });
+          }
+        }
+      }
+
+      // Function to update audio button state for current slide
+      function updateAudioButtonState() {
+        if (!flkty || !flkty.cells || flkty.cells.length === 0) {
+          return;
+        }
+
+        const actualSlideIndex = flkty.selectedIndex;
+        const currentSlide = flkty.cells[actualSlideIndex]?.element;
+        if (!currentSlide) return;
+
+        const audioButton = currentSlide.querySelector('.hero-slide__audio-control');
+        const activeVideo = getActiveVideo(actualSlideIndex);
+
+        if (audioButton && activeVideo) {
+          const mutedIcon = audioButton.querySelector('.hero-slide__audio-icon--muted');
+          const unmutedIcon = audioButton.querySelector('.hero-slide__audio-icon--unmuted');
+
+          if (activeVideo.muted) {
             mutedIcon.style.display = 'flex';
             unmutedIcon.style.display = 'none';
-            button.setAttribute('aria-label', 'Unmute audio');
+            audioButton.setAttribute('aria-label', 'Unmute audio');
+          } else {
+            mutedIcon.style.display = 'none';
+            unmutedIcon.style.display = 'flex';
+            audioButton.setAttribute('aria-label', 'Mute audio');
+          }
+        }
+      }
+
+      // Function to handle video ended event
+      function onVideoEnded() {
+        clearTimeout(videoEndedTimeout);
+        videoEndedTimeout = setTimeout(function () {
+          if (!videoLoop) {
+            flkty.next();
+          }
+        }, 100);
+      }
+
+      // Add event listeners to videos
+      videos.forEach(function (video, index) {
+        video.addEventListener('ended', onVideoEnded);
+
+        // Handle video load errors - show image fallback
+        video.addEventListener('error', function () {
+          const slide = video.closest('.hero-slide');
+          const imageWrapper = slide.querySelector('.hero-slide__image-wrapper');
+          const videoWrapper = slide.querySelector('.hero-slide__video-wrapper');
+
+          if (imageWrapper && videoWrapper) {
+            videoWrapper.style.display = 'none';
+            imageWrapper.classList.remove('hero-slide__image-wrapper--fallback');
+          }
+        });
+
+        // Handle video load success - hide image fallback
+        video.addEventListener('loadeddata', function () {
+          const slide = video.closest('.hero-slide');
+          const imageWrapper = slide.querySelector('.hero-slide__image-wrapper--fallback');
+
+          if (imageWrapper) {
+            imageWrapper.style.display = 'none';
           }
         });
       });
-    });
-    
-    // Flickity event listeners
-    flkty.on('select', function(index) {
-      pauseAllVideos();
-      currentSlideIndex = index;
-      clearTimeout(videoEndedTimeout);
-      
-      // Small delay to ensure slide transition is complete
-      setTimeout(function() {
-        // Verify we're still on the same slide before playing
-        if (flkty.selectedIndex === index) {
-          playCurrentVideo();
-          updateAudioButtonState();
-        }
-      }, 1000);
-    });
-    
-    // Handle window resize to switch between mobile/desktop videos
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(function() {
+
+      // Audio control functionality
+      audioControls.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const slide = button.closest('.hero-slide');
+          const slideVideos = slide.querySelectorAll('.hero-slide__video');
+          const mutedIcon = button.querySelector('.hero-slide__audio-icon--muted');
+          const unmutedIcon = button.querySelector('.hero-slide__audio-icon--unmuted');
+
+          slideVideos.forEach(function (video) {
+            if (video.muted) {
+              video.muted = false;
+              mutedIcon.style.display = 'none';
+              unmutedIcon.style.display = 'flex';
+              button.setAttribute('aria-label', 'Mute audio');
+            } else {
+              video.muted = true;
+              mutedIcon.style.display = 'flex';
+              unmutedIcon.style.display = 'none';
+              button.setAttribute('aria-label', 'Unmute audio');
+            }
+          });
+        });
+      });
+
+      // Flickity event listeners
+      flkty.on('select', function (index) {
         pauseAllVideos();
-        setTimeout(function() {
-          // Update current slide index and only play if valid
-          if (flkty && flkty.selectedIndex !== undefined) {
-            currentSlideIndex = flkty.selectedIndex;
+        currentSlideIndex = index;
+        clearTimeout(videoEndedTimeout);
+
+        // Small delay to ensure slide transition is complete
+        setTimeout(function () {
+          // Verify we're still on the same slide before playing
+          if (flkty.selectedIndex === index) {
             playCurrentVideo();
             updateAudioButtonState();
           }
         }, 1000);
-      }, 250);
-    });
-    
-    // Initial play - wait for Flickity to be fully ready
-    flkty.on('ready', function() {
-      setTimeout(function() {
-        // Set current slide index to match Flickity
-        currentSlideIndex = flkty.selectedIndex;
-        playCurrentVideo();
-        updateAudioButtonState();
-      }, 100);
-    });
-    
-    // Fallback initial play in case ready event doesn't fire
-    setTimeout(function() {
-      if (flkty && flkty.selectedIndex !== undefined) {
-        currentSlideIndex = flkty.selectedIndex;
-        playCurrentVideo();
-        updateAudioButtonState();
-      }
-    }, 500);
-    
-    // Pause videos when page becomes hidden
-    document.addEventListener('visibilitychange', function() {
-      if (document.hidden) {
-        pauseAllVideos();
-      } else {
-        setTimeout(function() {
-          // Update current slide index and only play if valid
-          if (flkty && flkty.selectedIndex !== undefined) {
-            currentSlideIndex = flkty.selectedIndex;
-            playCurrentVideo();
-            updateAudioButtonState();
-          }
-        }, 100);
-      }
-    });
-    
-    // Mark as initialized
-    initializedSlideshows.add(slideshow);
-  }
-  
-  // Function to cleanup slideshow
-  function cleanupHeroSlideshow(slideshow) {
-    if (slideshow.flickityInstance) {
-      slideshow.flickityInstance.destroy();
-      slideshow.flickityInstance = null;
-    }
-    initializedSlideshows.delete(slideshow);
-  }
-  
-  // Function to initialize all slideshows
-  function initializeAllSlideshows(force = false) {
-    const heroSlideshows = document.querySelectorAll('.hero-slideshow');
-    heroSlideshows.forEach(function(slideshow) {
-      // If forcing reinitialization, clean up first
-      if (force) {
-        cleanupHeroSlideshow(slideshow);
-      }
-      initializeHeroSlideshow(slideshow);
-    });
-  }
-  
-  // Initialize on DOM ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeAllSlideshows);
-  } else {
-    initializeAllSlideshows();
-  }
-  
-  // Theme editor support
-  if (typeof Shopify !== 'undefined' && Shopify.designMode) {
-    // Handle section reloading in theme editor
-    document.addEventListener('shopify:section:load', function(event) {
-      const section = event.target;
-      const slideshow = section.querySelector('.hero-slideshow');
-      if (slideshow) {
-        // Small delay to ensure DOM is ready
-        setTimeout(function() {
-          console.log('initializeHeroSlideshow');
-          initializeHeroSlideshow(slideshow);
-        }, 100);
-      }
-    });
-    
-    // Handle section unloading in theme editor
-    document.addEventListener('shopify:section:unload', function(event) {
-      const section = event.target;
-      const slideshow = section.querySelector('.hero-slideshow');
-      if (slideshow) {
-        console.log('cleanupHeroSlideshow');
-        cleanupHeroSlideshow(slideshow);
-      }
-    });
-    
-    // Handle block selection in theme editor
-    document.addEventListener('shopify:block:select', function(event) {
-      const block = event.target;
-      const slideshow = block.closest('.hero-slideshow');
-      if (slideshow && slideshow.flickityInstance) {
-        console.log('block select');
-        const slideIndex = Array.from(slideshow.children).indexOf(block);
-        if (slideIndex >= 0) {
-          slideshow.flickityInstance.select(slideIndex, false, true);
-        }
-      }
-    });
-  }
-  
-  // Hot reload support for local development server
-  let isLocalDev = window.location.hostname === 'localhost' || 
-                   window.location.hostname === '127.0.0.1' || 
-                   window.location.hostname.includes('ngrok') ||
-                   window.location.port !== '';
-  
-  if (isLocalDev) {
-    console.log('Local development detected, adding hot reload support');
-    
-    // Listen for page visibility changes (common during hot reload)
-    document.addEventListener('visibilitychange', function() {
-      if (!document.hidden) {
-        setTimeout(function() {
-          console.log('Page became visible, reinitializing slideshows');
-          initializeAllSlideshows(true);
-        }, 200);
-      }
-    });
-    
-    // Listen for window focus (when returning to tab after hot reload)
-    window.addEventListener('focus', function() {
-      setTimeout(function() {
-        console.log('Window focused, checking slideshows');
-        initializeAllSlideshows(true);
-      }, 100);
-    });
-    
-    // MutationObserver to detect DOM changes during hot reload
-    const observer = new MutationObserver(function(mutations) {
-      let shouldReinit = false;
-      
-      mutations.forEach(function(mutation) {
-        // Check if hero-slideshow elements were added
-        if (mutation.type === 'childList') {
-          mutation.addedNodes.forEach(function(node) {
-            if (node.nodeType === 1) { // Element node
-              if (node.classList && node.classList.contains('hero-slideshow')) {
-                shouldReinit = true;
-              } else if (node.querySelector && node.querySelector('.hero-slideshow')) {
-                shouldReinit = true;
-              }
+      });
+
+      // Handle window resize to switch between mobile/desktop videos
+      let resizeTimeout;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+          pauseAllVideos();
+          setTimeout(function () {
+            // Update current slide index and only play if valid
+            if (flkty && flkty.selectedIndex !== undefined) {
+              currentSlideIndex = flkty.selectedIndex;
+              playCurrentVideo();
+              updateAudioButtonState();
             }
-          });
+          }, 1000);
+        }, 250);
+      });
+
+      // Initial play - wait for Flickity to be fully ready
+      flkty.on('ready', function () {
+        setTimeout(function () {
+          // Set current slide index to match Flickity
+          currentSlideIndex = flkty.selectedIndex;
+          playCurrentVideo();
+          updateAudioButtonState();
+        }, 100);
+      });
+
+      // Fallback initial play in case ready event doesn't fire
+      setTimeout(function () {
+        if (flkty && flkty.selectedIndex !== undefined) {
+          currentSlideIndex = flkty.selectedIndex;
+          playCurrentVideo();
+          updateAudioButtonState();
+        }
+      }, 500);
+
+      // Pause videos when page becomes hidden
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          pauseAllVideos();
+        } else {
+          setTimeout(function () {
+            // Update current slide index and only play if valid
+            if (flkty && flkty.selectedIndex !== undefined) {
+              currentSlideIndex = flkty.selectedIndex;
+              playCurrentVideo();
+              updateAudioButtonState();
+            }
+          }, 100);
         }
       });
-      
-      if (shouldReinit) {
-        setTimeout(function() {
-          console.log('DOM mutation detected, reinitializing slideshows');
-          initializeAllSlideshows(true);
-        }, 100);
+
+      // Mark as initialized
+      initializedSlideshows.add(slideshow);
+    }
+
+    // Function to cleanup slideshow
+    function cleanupHeroSlideshow(slideshow) {
+      if (slideshow.flickityInstance) {
+        slideshow.flickityInstance.destroy();
+        slideshow.flickityInstance = null;
       }
-    });
-    
-    // Start observing
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-    
-    // Custom event for manual reinitialization
-    window.addEventListener('hero-slideshow:reinit', function() {
-      console.log('Manual reinit triggered');
-      initializeAllSlideshows(true);
-    });
-  }
-})();
+      initializedSlideshows.delete(slideshow);
+    }
+
+    // Function to initialize all slideshows
+    function initializeAllSlideshows(force = false) {
+      const heroSlideshows = document.querySelectorAll('.hero-slideshow');
+      heroSlideshows.forEach(function (slideshow) {
+        // If forcing reinitialization, clean up first
+        if (force) {
+          cleanupHeroSlideshow(slideshow);
+        }
+        initializeHeroSlideshow(slideshow);
+      });
+    }
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeAllSlideshows);
+    } else {
+      initializeAllSlideshows();
+    }
+
+    // Theme editor support
+    if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+      // Handle section reloading in theme editor
+      document.addEventListener('shopify:section:load', function (event) {
+        const section = event.target;
+        const slideshow = section.querySelector('.hero-slideshow');
+        if (slideshow) {
+          // Small delay to ensure DOM is ready
+          setTimeout(function () {
+            console.log('initializeHeroSlideshow');
+            initializeHeroSlideshow(slideshow);
+          }, 100);
+        }
+      });
+
+      // Handle section unloading in theme editor
+      document.addEventListener('shopify:section:unload', function (event) {
+        const section = event.target;
+        const slideshow = section.querySelector('.hero-slideshow');
+        if (slideshow) {
+          console.log('cleanupHeroSlideshow');
+          cleanupHeroSlideshow(slideshow);
+        }
+      });
+
+      // Handle block selection in theme editor
+      document.addEventListener('shopify:block:select', function (event) {
+        const block = event.target;
+        const slideshow = block.closest('.hero-slideshow');
+        if (slideshow && slideshow.flickityInstance) {
+          console.log('block select');
+          const slideIndex = Array.from(slideshow.children).indexOf(block);
+          if (slideIndex >= 0) {
+            slideshow.flickityInstance.select(slideIndex, false, true);
+          }
+        }
+      });
+    }
+
+    // Hot reload support for local development server
+    let isLocalDev =
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname.includes('ngrok') ||
+      window.location.port !== '';
+
+    if (isLocalDev) {
+      console.log('Local development detected, adding hot reload support');
+
+      // Listen for page visibility changes (common during hot reload)
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) {
+          setTimeout(function () {
+            console.log('Page became visible, reinitializing slideshows');
+            initializeAllSlideshows(true);
+          }, 200);
+        }
+      });
+
+      // Listen for window focus (when returning to tab after hot reload)
+      // window.addEventListener('focus', function () {
+      //   setTimeout(function () {
+      //     console.log('Window focused, checking slideshows');
+      //     initializeAllSlideshows(true);
+      //   }, 100);
+      // });
+
+      // MutationObserver to detect DOM changes during hot reload
+      const observer = new MutationObserver(function (mutations) {
+        let shouldReinit = false;
+
+        mutations.forEach(function (mutation) {
+          // Check if hero-slideshow elements were added
+          if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach(function (node) {
+              if (node.nodeType === 1) {
+                // Element node
+                if (node.classList && node.classList.contains('hero-slideshow')) {
+                  shouldReinit = true;
+                } else if (node.querySelector && node.querySelector('.hero-slideshow')) {
+                  shouldReinit = true;
+                }
+              }
+            });
+          }
+        });
+
+        if (shouldReinit) {
+          setTimeout(function () {
+            console.log('DOM mutation detected, reinitializing slideshows');
+            initializeAllSlideshows(true);
+          }, 100);
+        }
+      });
+
+      // Start observing
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+
+      // Custom event for manual reinitialization
+      window.addEventListener('hero-slideshow:reinit', function () {
+        console.log('Manual reinit triggered');
+        initializeAllSlideshows(true);
+      });
+    }
+  })();
 </script>
 {% schema %}
 {
@@ -623,24 +636,26 @@
           "content": "Content Position"
         },
         {
-          "type": "range",
-          "id": "content_position_x",
-          "label": "Content Position X",
-          "unit": "%",
-          "min": 0,
-          "max": 75,
-          "step": 1,
-          "default": 50
+          "type": "select",
+          "id": "horizontal_alignment",
+          "label": "Horizontal Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
         },
         {
-         "type": "range",
-         "id": "overlay_opacity",
-         "label": "Overlay Intensity",
-         "unit": "%",
-         "min": 0,
-         "max": 100,
-         "step": 1,
-         "default": 20
+          "type": "select",
+          "id": "vertical_alignment",
+          "label": "Vertical Alignment",
+          "options": [
+            { "value": "top", "label": "Top" },
+            { "value": "middle", "label": "Middle" },
+            { "value": "bottom", "label": "Bottom" }
+          ],
+          "default": "middle"
         }
       ]
     }
@@ -652,3 +667,36 @@
   ]
 }
 {% endschema %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const heroSlideshow = document.querySelector('.hero-slideshow');
+    const siteHeader = document.getElementById('site-header');
+
+    if (!heroSlideshow || !siteHeader) return;
+
+    // Create intersection observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Slideshow is in view - add transparent-header class
+            siteHeader.classList.add('transparent-header');
+          } else {
+            // Slideshow is out of view - remove transparent-header class
+            siteHeader.classList.remove('transparent-header');
+          }
+        });
+      },
+      {
+        // Trigger when any part of the slideshow is visible
+        threshold: 0,
+        // Add some margin to trigger slightly before/after the element
+        rootMargin: '0px 0px -10px 0px',
+      }
+    );
+
+    // Start observing the slideshow
+    observer.observe(heroSlideshow);
+  });
+</script>

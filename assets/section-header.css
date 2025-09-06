@@ -7,10 +7,33 @@
   color: var(--header-text);
   z-index: 9999;
   top: 0;
-  position: relative;
+  position: absolute;
   align-items: center;
   width: 100%;
   /* =========== MINIMAL Menu ==================*/
+}
+.site-header .logo-img{
+  width: 107px;
+  height: 50px !important;
+}
+.transparent-header.site-header {
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.transparent-header.site-header svg *{
+  stroke: #fff;
+}
+.transparent-header .count{
+  color: #fff;
+}
+.transparent-header.site-header .logo-light{
+  display: none !important;
+}
+.site-header:not(.transparent-header) .logo-inverted{
+  display: none !important;
+}
+.transparent-header.site-header .logo-inverted{
+  display: flex;
 }
 .site-header.desktop-view--classic {
   z-index: 9999;

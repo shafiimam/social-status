@@ -138,7 +138,7 @@ summary::-webkit-details-marker {
   --sidebar-movement: 480px;
   --text-spacing: 30px;
   --alternate-opacity: .58;
-  --button-size: 54px;
+  --button-size: 58px;
   --button-padding: 32px;
   --button-extra-margin: 5px;
 }
@@ -175,7 +175,7 @@ summary::-webkit-details-marker {
     --text-spacing: 20px;
     --header-padding: 15px;
     --header-size: 73px;
-    --button-size: 44px;
+    --button-size: 58px;
     --button-padding: 22px;
     --button-extra-margin: 2px;
   }
@@ -653,7 +653,7 @@ input[type=submit], .button, .btn, .btn-article {
   font-family: var(--font-stack-body);
   font-weight: var(--font-weight-body);
   font-style: var(--font-style-body);
-  font-size: calc(13px / 16 * var(--base-body-size) + 0px);
+  font-size: calc(18px / 16 * var(--base-body-size) + 0px);
   border: 2px solid transparent;
   font-weight: var(--font-weight-body-bold);
   color: var(--main-text);
