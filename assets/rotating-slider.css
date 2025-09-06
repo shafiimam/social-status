@@ -1,4 +1,7 @@
 /*rotating-slider*/
+.rotating-slider-container{
+  position: relative;
+}
 .rotating-slider-heading p {
   color: var(--secondary-text);
   text-align: center;

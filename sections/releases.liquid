@@ -14,8 +14,13 @@
   </div>
 </section>
 <style>
-    :root{
-        --column-size: repeat({{ section.settings.column_size }}, 1fr);
+  :root{
+      --column-size: repeat({{ section.settings.column_size }}, 1fr);
+  }
+
+    .releases-section{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
     }
 </style>
 {{ 'section-releases.css' | asset_url | stylesheet_tag }}
@@ -30,12 +35,32 @@
       "label": "Title"
     },
     {
-        "type": "range",
-        "id": "column_size",
-        "label": "Number of columns",
-        "min": 2,
-        "max": 5,
-        "default": 4
+      "type": "range",
+      "id": "column_size",
+      "label": "Number of columns",
+      "min": 2,
+      "max": 5,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 30,
+      "max": 130,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 30,
+      "max": 130,
+      "step": 1,
+      "unit": "px",
+      "default": 40
     }
   ],
   "blocks": [

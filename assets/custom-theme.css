@@ -1,5 +1,5 @@
-:root{
-  --brand-color: #E77E21;
+:root {
+  --brand-color: #e77e21;
 }
 .yantramanav-thin {
   font-family: "Yantramanav", sans-serif;
@@ -71,35 +71,35 @@
 section#shopify-pc__banner {
   display: none !important;
 }
-.box__collection_first_products{
+.box__collection_first_products {
   height: 100%;
   width: 50%;
 }
-.desktop-hide-important-grid{
+.desktop-hide-important-grid {
   display: none !important;
 }
 @media (max-width: 1024px) {
-  .mobile-hide-important{
+  .mobile-hide-important {
     display: none !important;
   }
-  .box__collection_first_products{
+  .box__collection_first_products {
     width: 100%;
   }
-  .desktop-hide-important-grid{
+  .desktop-hide-important-grid {
     display: grid !important;
   }
 }
-.cae-input{
+.cae-input {
   border-radius: 0 !important;
 }
 .cae-button {
-  background-color: #000!important;
-  color: #fff!important;
+  background-color: #000 !important;
+  color: #fff !important;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none!important;
-  font-family: 'work-sans', sans-serif;
+  border: none !important;
+  font-family: "work-sans", sans-serif;
 }
 .customer-avatar {
   border-radius: 50%;
@@ -110,30 +110,30 @@ section#shopify-pc__banner {
 }
 
 /* product item custom styles */
-.product-item__info-container{
+.product-item__info-container {
   display: flex;
   width: 100%;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
 }
-.d-flex{
+.d-flex {
   display: flex !important;
 }
-#CollectionProductGrid{
-  border-top: 1px solid var(--stroke)
+#CollectionProductGrid {
+  border-top: 1px solid var(--stroke);
 }
-.no-overflow{
+.no-overflow {
   overflow: hidden !important;
 }
 
 @media only screen and (min-width: 1000px) {
-  .mobile-only{
+  .mobile-only {
     display: none;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .desktop-only{
+  .desktop-only {
     display: none;
   }
 }
@@ -145,46 +145,56 @@ a.button .icon {
   align-items: center;
 }
 
-a.button .icon svg{
+a.button .icon svg {
   position: relative;
   top: 0;
-  margin:0;
-
+  margin: 0;
 }
-.button.button--outline .icon svg path{
+.button.button--outline .icon svg path {
   stroke: #000;
   fill: inherit;
 }
-.text-uppercase{
+.text-uppercase {
   text-transform: uppercase;
 }
-.section.with-padding{
+.section.with-padding {
   padding: var(--box-auto-top) var(--box-smaller-padding);
 }
 .event-blog-date {
   display: inline-block;
   padding: 30px;
   margin-bottom: 12px;
-  background: url(//www.socialstatuspgh.com/cdn/shop/files/date_bubble.png?v=13329498737783203737) no-repeat center center/100% auto;
+  background: url(//www.socialstatuspgh.com/cdn/shop/files/date_bubble.png?v=13329498737783203737)
+    no-repeat center center/100% auto;
   font-size: 1em;
   font-weight: 700;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #fff;
 }
-.event-meta{
+.event-meta {
   color: #ffff;
 }
 .event-meta-date,
-.event-meta-tags{
+.event-meta-tags {
   text-transform: uppercase;
 }
-.event-meta-date{
+.event-meta-date {
   font-size: 30px;
   font-weight: 600;
 }
-.event-meta-tags{
+.event-meta-tags {
   font-size: 24px;
   font-weight: 600;
 }
 
+.card-product-title {
+  color: #292929;
+  font-family: var(--font-stack-headings);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+}

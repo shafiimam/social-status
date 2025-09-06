@@ -1,13 +1,26 @@
 .releases-section {
-  padding: var(--box-auto-top) var(--box-smaller-padding);
+  padding-inline: var(--box-smaller-padding);
   max-width: 1600px;
   margin: 0 auto;
 }
 .releases__header .releases__title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  font-weight: var(--font-weight-body-bold);
+  line-height: 1.3;
+  margin-bottom: 40px;
 }
-
+.release-card .price {
+  line-height: 1.2;
+  overflow: hidden;
+  color: var(--secondary-text);
+  font-size: 18px;
+  font-family: var(--font-stack-headings);
+  margin-top: 8px;
+}
+.release-card__content{
+  margin-top: 16px;
+}
 .releases-container {
   display: grid;
   grid-template-columns: var(--column-size);
@@ -16,6 +29,14 @@
   position: relative;
   justify-content: space-between;
   overflow-x: auto;
+}
+@media screen and (max-width: 768px) {
+  .releases__header .releases__title {
+    font-size: 40px;
+  }
+  .releases-container {
+    grid-template-columns: 1fr;
+  }
 }
 .release-card {
   background-color: #fff;
@@ -31,7 +52,7 @@
 .release-card__date {
   position: absolute;
   top: 10px;
-  left: 28px;
+  left: 10px;
   display: flex;
   justify-content: center;
   color: #000;
