@@ -113,8 +113,12 @@
     "cart_image_border": "#f1f1f1",
     "show_gotop": true,
     "social_facebook": "facebook.com",
-    "social_instagram": "instagram.com",
-    "social_twitter": "",
+    "social_instagram": "https://www.instagram.com/thesocialstatus/?hl=en",
+    "social_twitter": "https://x.com/TheSocialStatus",
+    "social_email": "https://www.socialstatuspgh.com/pages/contact-us",
+    "social_custom_icon": "shopify://shop_images/icon-discord.svg",
+    "social_custom": "https://discord.com/invite/VhQtSRZDRf",
+    "social_custom_label": "Discord",
     "content_for_index": [],
     "blocks": {
       "5061257265103808445": {

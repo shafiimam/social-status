@@ -23,23 +23,22 @@
         },
         "menu-1": {
           "type": "menu",
-          "disabled": true,
           "settings": {
-            "title": "Quick links",
-            "menu": "footer"
+            "title": "Collections",
+            "menu": "footer-collections"
           }
         },
         "menu-2": {
           "type": "menu",
           "settings": {
-            "title": "Quick links",
+            "title": "information",
             "menu": "new-footer-2025"
           }
         },
         "social": {
           "type": "social",
           "settings": {
-            "title": "Follow us"
+            "title": "Social"
           }
         }
       },
