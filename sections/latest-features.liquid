@@ -1,6 +1,7 @@
 {{ 'section-latest-features.css' | asset_url | stylesheet_tag }}
 
-{% assign tabs_list = section.blocks | map: 'settings' | map: 'tab_group_title' | uniq %}
+{% assign selected_blog = blogs[section.settings.blog] %}
+{% assign tabs_list = section.blocks | map: 'settings' | map: 'city_name' | uniq %}
 <div class="latest-features-section">
   <div class="header-row">
     <div class="title-column" style="max-width: {{ section.settings.main_title_width }}px;">
@@ -20,21 +21,42 @@
 
   <div class="tab-groups-container">
     <div class="tab-images-column">
-      {% for block in section.blocks %}
-        <div
-          class="tab-image-item {% if forloop.first %}active{% endif %}"
-          data-tab-id="{{ block.id }}"
-          data-tab-image-index="{{ forloop.index0 }}"
-          data-tab-group-title="{{ block.settings.tab_group_title }}"
-        >
-          <img
-            src="{{ block.settings.item_image | img_url: 'master' }}"
-            alt="{{ block.settings.item_title }}"
-            width="100%"
-            height="100%"
-          >
-        </div>
-      {% endfor %}
+      {% if selected_blog %}
+        {% assign image_index = 0 %}
+        {% for city in tabs_list %}
+          {% for article in selected_blog.articles %}
+            {% assign article_matches_city = false %}
+            {% for block in section.blocks %}
+              {% if block.settings.city_name == city %}
+                {% for tag in article.tags %}
+                  {% assign normalized_tag = tag | downcase | remove: '#' %}
+                  {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
+                  {% if normalized_tag == normalized_city_tag %}
+                    {% assign article_matches_city = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            {% if article_matches_city %}
+              <div
+                class="tab-image-item {% if image_index == 0 %}active{% endif %}"
+                data-tab-id="article-{{ article.id }}"
+                data-tab-image-index="{{ image_index }}"
+                data-tab-group-title="{{ city }}"
+              >
+                <img
+                  src="{{ article.image | img_url: 'master' }}"
+                  alt="{{ article.title }}"
+                  width="100%"
+                  height="100%"
+                >
+              </div>
+              {% assign image_index = image_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endif %}
     </div>
     <div class="tab-list-navs" data-tabs-hidden="{{ section.settings.show_tab_list }}">
       {% if section.settings.show_tab_list %}
@@ -47,68 +69,107 @@
         </div>
       {% endif %}
       <ul class="tab-list-item-contents">
-        {% for tab_item in tabs_list %}
-          {% assign tab_item_index = 1 %}
-          {% assign current_tab_items_length = 0 %}
-          {% for block in section.blocks %}
-            {% if block.settings.tab_group_title == tab_item %}
-              {% assign current_tab_items_length = current_tab_items_length | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-          {% for block in section.blocks %}
-            {% assign first_tab_group_title = tabs_list.first %}
-            {% if block.settings.tab_group_title == tab_item %}
+        {% if selected_blog %}
+          {% for city in tabs_list %}
+            {% assign city_article_count = 0 %}
+            {% assign first_city = tabs_list.first %}
+            
+            {% for article in selected_blog.articles %}
+              {% assign article_matches_city = false %}
+              {% assign event_date = '' %}
+              
+              {% for tag in article.tags %}
+                {% if tag contains "event-date::" %}
+                  {% assign event_date_raw = tag | remove: "event-date::" %}
+                  {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
+                  {% assign event_date = event_date_parsed | date: "%d.%m" %}
+                  {% assign event_date_calendar = event_date_raw %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              
+              {% for block in section.blocks %}
+                {% if block.settings.city_name == city %}
+                  {% for tag in article.tags %}
+                    {% assign normalized_tag = tag | downcase | remove: '#' %}
+                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
+                    {% if normalized_tag == normalized_city_tag %}
+                      {% assign article_matches_city = true %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              
+              {% if article_matches_city %}
+                {% assign city_article_count = city_article_count | plus: 1 %}
+                <div
+                  class="tab-list-item-container {% if city == first_city %}active{% endif %} {% if city_article_count == 1 %}expanded{% endif %}"
+                  data-tab-group-title="{{ city }}"
+                  data-tab-id="article-{{ article.id }}"
+                >
+                  <div class="tab-list-item-header">
+                    <p class="tab-list-item-index">/{{ city_article_count | prepend: '0' | slice: -2, 2 }}</p>
+                    <div class="tab-list-item-content-container">
+                      <div class="tab-list-item-content">
+                        <span class="tab-list-item-title font-zen">{{ article.title }}</span>
+                        <div class="tab-list-item-content-inner">
+                          <span class="tab-list-item-subtitle">{{ article.excerpt | strip_html | truncatewords: 15 }}</span>
+                          <span class="tab-list-item-date-mobile-only">{{ event_date }}</span>
+                          <button
+                            class="tab-list-item-button"
+                            onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
+                          >
+                            <span> Add to Calendar </span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                            >
+                              <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="tab-list-item-date">{{ event_date }}</span>
+                  </div>
+                  <div class="tab-list-item-mobile-image">
+                    <img
+                      src="{{ article.image | img_url: 'master' }}"
+                      alt="{{ article.title }}"
+                      width="100%"
+                      height="100%"
+                    >
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+            
+            {% comment %} Show "No events found" if no articles matched this city {% endcomment %}
+            {% if city_article_count == 0 %}
+              {% assign first_city = tabs_list.first %}
               <div
-                class="tab-list-item-container {% if block.settings.tab_group_title == first_tab_group_title %}active{% endif %} {% if forloop.first %}expanded{% endif %}"
-                data-tab-group-title="{{ tab_item }}"
-                data-tab-id="{{ block.id }}"
-                {{ block.shopify_attributes }}
+                class="tab-list-item-container no-events {% if city == first_city %}active{% endif %}"
+                data-tab-group-title="{{ city }}"
               >
                 <div class="tab-list-item-header">
-                  <p class="tab-list-item-index">/{{ block.settings.item_index }}</p>
+                  <p class="tab-list-item-index">/00</p>
                   <div class="tab-list-item-content-container">
                     <div class="tab-list-item-content">
-                      <span class="tab-list-item-title font-zen">{{ block.settings.item_title }}</span>
+                      <span class="tab-list-item-title font-zen">No events found</span>
                       <div class="tab-list-item-content-inner">
-                        <span class="tab-list-item-subtitle">{{ block.settings.item_subtitle }}</span>
-                        <span class="tab-list-item-date-mobile-only">{{ block.settings.item_date }}</span>
-                        <button
-                          class="tab-list-item-button"
-                          onclick="addToCalendar('{{ block.settings.item_title }}', '{{ block.settings.item_date }}')"
-                        >
-                          <span> Add to Calendar </span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                          >
-                            <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </button>
+                        <span class="tab-list-item-subtitle">There are currently no events scheduled for {{ city }}.</span>
                       </div>
                     </div>
                   </div>
-                  <span class="tab-list-item-date">{{ block.settings.item_date }}</span>
-                </div>
-                <div class="tab-list-item-mobile-image">
-                  <img
-                    src="{{ block.settings.item_image | img_url: 'master' }}"
-                    alt="{{ block.settings.item_title }}"
-                    width="100%"
-                    height="100%"
-                  >
                 </div>
               </div>
             {% endif %}
-            {% if forloop.index == current_tab_items_length %}
-              {% assign tab_item_index = tab_item_index | minus: forloop.index %}
-            {% else %}
-              {% assign tab_item_index = tab_item_index | plus: 1 %}
-            {% endif %}
           {% endfor %}
-        {% endfor %}
+        {% endif %}
       </ul>
     </div>
   </div>
@@ -120,6 +181,12 @@
 {
   "name": "Latest Features & Events",
   "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select Blog",
+      "info": "Choose the blog containing event articles"
+    },
     {
       "type": "text",
       "id": "main_title",
@@ -177,40 +244,20 @@
   ],
   "blocks": [
     {
-      "type": "item_block",
-      "name": "Item Block",
+      "type": "city_block",
+      "name": "City Tab",
       "settings": [
         {
           "type": "text",
-          "id": "tab_group_title",
-          "label": "Tab Group Title",
-          "info": "This will group the items in a tab by this title"
-        },
-        {
-          "type": "image_picker",
-          "id": "item_image",
-          "label": "Item Image"
+          "id": "city_name",
+          "label": "City Name",
+          "info": "This will create a tab for this city"
         },
         {
           "type": "text",
-          "id": "item_title",
-          "label": "Item Title"
-        },
-        {
-          "type": "text",
-          "id": "item_date",
-          "label": "Item Date"
-        },
-        {
-          "type": "textarea",
-          "id": "item_subtitle",
-          "label": "Item Subtitle"
-        },
-        {
-          "type": "text",
-          "id": "item_index",
-          "label": "Item Index",
-          "default": "01"
+          "id": "city_tag",
+          "label": "City Tag",
+          "info": "The tag used in blog articles to identify events for this city (e.g., 'MIAMI', 'NEW-YORK')"
         }
       ]
     }

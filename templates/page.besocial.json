@@ -98,250 +98,119 @@
         "separate_section_with_border": false
       }
     },
-    "latest_features_RF7KCt": {
-      "type": "latest-features",
+    "perspective_slider_U9X7jt": {
+      "type": "perspective-slider",
       "blocks": {
-        "item_block_7TCNxm": {
-          "type": "item_block",
+        "slide_item_jpHHQc": {
+          "type": "slide_item",
           "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-4.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Political Education</p>",
+            "button_text": "",
+            "button_url": ""
           }
         },
-        "item_block_aDfnEn": {
-          "type": "item_block",
+        "slide_item_9hhJtL": {
+          "type": "slide_item",
           "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/new_arrivals_pic.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "02"
-          }
-        },
-        "item_block_RXDkfA": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-2.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "03"
-          }
-        },
-        "item_block_4VTr4t": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "04"
-          }
-        },
-        "item_block_BwjABU": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Events",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        },
-        "item_block_FKTxNr": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Events",
-            "item_image": "shopify://shop_images/AJ14FERARRIGS-2.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "02"
-          }
-        },
-        "item_block_8bM69M": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Events",
-            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "03"
-          }
-        },
-        "item_block_8LEgzz": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Latest Trends",
-            "item_image": "shopify://shop_images/JAIDEXNB990v4-4.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        },
-        "item_block_9hHq3B": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Latest Trends",
-            "item_image": "shopify://shop_images/new_features_pic.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "02"
-          }
-        },
-        "item_block_CEYXfm": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Latest Trends",
-            "item_image": "shopify://shop_images/htgmob1_97df35d3-cb08-405b-98b4-cb1be80d490a.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "03"
-          }
-        },
-        "item_block_MrYPpt": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Workshops",
-            "item_image": "shopify://shop_images/htgmob2.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        },
-        "item_block_n8eJfJ": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Workshops",
-            "item_image": "shopify://shop_images/JAIDEXNB998-8.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "02"
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "Financial Literacy",
+            "description": "<p>Help deminish barriers for political activism such as registering to vote.</p>",
+            "button_text": "",
+            "button_url": ""
           }
         }
       },
       "block_order": [
-        "item_block_7TCNxm",
-        "item_block_aDfnEn",
-        "item_block_RXDkfA",
-        "item_block_4VTr4t",
-        "item_block_BwjABU",
-        "item_block_FKTxNr",
-        "item_block_8bM69M",
-        "item_block_8LEgzz",
-        "item_block_9hHq3B",
-        "item_block_CEYXfm",
-        "item_block_MrYPpt",
-        "item_block_n8eJfJ"
+        "slide_item_jpHHQc",
+        "slide_item_9hhJtL"
+      ],
+      "name": "Perspective Slider",
+      "settings": {
+        "title": "IMPACT AREAS",
+        "auto_play": false,
+        "background_color": "#000000",
+        "slide_overlay_color": "linear-gradient(0deg, rgba(231, 126, 33, 0.68), rgba(231, 126, 33, 0.68) 100%)",
+        "text_color": "#ffffff",
+        "text_color_card": "#ffffff",
+        "path_color": "#ffffff",
+        "text_alignment": "left"
+      }
+    },
+    "latest_features_cdA9xw": {
+      "type": "latest-features",
+      "blocks": {
+        "city_block_WHLn4B": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "CHARLOTTE",
+            "city_tag": ""
+          }
+        },
+        "city_block_86C9Ei": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "GREENSBORO",
+            "city_tag": "GREENSBORO"
+          }
+        },
+        "city_block_j9Fn3j": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "BALTIMORE",
+            "city_tag": "BALTIMORE"
+          }
+        },
+        "city_block_WWdcDj": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON"
+          }
+        },
+        "city_block_3DjgXE": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "PITTSBURGH",
+            "city_tag": "PITTSBURGH"
+          }
+        },
+        "city_block_3rFKat": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT"
+          }
+        },
+        "city_block_LELjKU": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "FREE GAME",
+            "city_tag": "FREEGAME"
+          }
+        }
+      },
+      "block_order": [
+        "city_block_WHLn4B",
+        "city_block_86C9Ei",
+        "city_block_j9Fn3j",
+        "city_block_WWdcDj",
+        "city_block_3DjgXE",
+        "city_block_3rFKat",
+        "city_block_LELjKU"
       ],
       "name": "Latest Features & Events",
       "settings": {
-        "main_title": "Latest Features",
+        "blog": "blog-events",
+        "main_title": "Latest Events",
         "main_title_width": "732",
         "main_title_align": "left",
-        "sub_title": "and Events",
+        "sub_title": "",
         "sub_title_align": "right",
         "arrow_text_1": "Cultutre",
         "arrow_text_2": "Events",
         "show_tab_list": true
-      }
-    },
-    "perspective_slider_U9X7jt": {
-      "type": "perspective-slider",
-      "blocks": {
-        "slide_item_eh4Lp4": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/apbNBdesk.jpg",
-            "title": "04/08/2025",
-            "description": "<p>Hoop Club CLT</p>",
-            "button_text": "more info",
-            "button_url": ""
-          }
-        },
-        "slide_item_7FQcbH": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/desk1_2684acce-cb1a-4db1-8619-0c84d6b4ebdf.jpg",
-            "title": "04/08/2025",
-            "description": "<p>First Mil Ruin Club</p>",
-            "button_text": "more info",
-            "button_url": ""
-          }
-        },
-        "slide_item_pkVdww": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
-            "title": "04/08/2025",
-            "description": "<p>press players club</p>",
-            "button_text": "more info",
-            "button_url": ""
-          }
-        },
-        "slide_item_jx9CBp": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": "04/08/2025",
-            "description": "<p>First Mil Ruin Club</p>",
-            "button_text": "more info",
-            "button_url": ""
-          }
-        },
-        "slide_item_xDBK9V": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": "04/08/2025",
-            "description": "<p>First Mil Ruin Club</p>",
-            "button_text": "more info",
-            "button_url": ""
-          }
-        },
-        "slide_item_jpHHQc": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
-            "title": "04/08/2025",
-            "description": "<p>press players club</p>",
-            "button_text": "more info",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_item_eh4Lp4",
-        "slide_item_7FQcbH",
-        "slide_item_pkVdww",
-        "slide_item_jx9CBp",
-        "slide_item_xDBK9V",
-        "slide_item_jpHHQc"
-      ],
-      "name": "Perspective Slider",
-      "settings": {
-        "title": "coming up",
-        "auto_play": false,
-        "background_color": "#ffffff",
-        "slide_overlay_color": "",
-        "text_color": "#000000",
-        "text_color_card": "#ffffff",
-        "path_color": "#757575",
-        "text_alignment": "left"
       }
     },
     "media_grid_tgC8EG": {
@@ -546,8 +415,8 @@
     "main",
     "besocial_hero_zDHDNh",
     "list_column_mP47Dk",
-    "latest_features_RF7KCt",
     "perspective_slider_U9X7jt",
+    "latest_features_cdA9xw",
     "media_grid_tgC8EG",
     "rich_text_XqMPwe"
   ]

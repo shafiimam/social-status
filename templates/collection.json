@@ -15,7 +15,7 @@
         "featured_product_BqDbw8": {
           "type": "featured_product",
           "settings": {
-            "product": "levis-551z-authen-straight",
+            "product": "honor-the-gift-1988-t-shirt-blue",
             "badge_text": "New",
             "badge_color": "#000000",
             "badge_text_color": "#ffffff",
@@ -77,36 +77,43 @@
         "custom_overlay": "rgba(0,0,0,0)"
       }
     },
-    "image_with_hotspots_NRwDpW": {
-      "type": "image-with-hotspots",
+    "rich_text_RiUdjd": {
+      "type": "rich-text",
       "blocks": {
-        "product_XTEM8t": {
-          "type": "product",
+        "heading_rbXkb7": {
+          "type": "heading",
           "settings": {
-            "product": "",
-            "vertical_offset_desktop": 50,
-            "horizontal_offset_desktop": 50,
-            "vertical_offset_mobile": 50,
-            "horizontal_offset_mobile": 50,
-            "tooltip_position_desktop": "top",
-            "tooltip_position_mobile": "top"
+            "heading": "SEO COPY HEADING HERE",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_BY4mPe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
           }
         }
       },
       "block_order": [
-        "product_XTEM8t"
+        "heading_rbXkb7",
+        "text_BY4mPe"
       ],
-      "name": "t:sections.refactor_words.settings.image_with_hotspots.label",
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Carhartt_HP.jpg",
-        "color_text": "#000000",
-        "color_background": "#ffffff"
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
       }
     }
   },
   "order": [
     "main",
     "navigation",
-    "image_with_hotspots_NRwDpW"
+    "rich_text_RiUdjd"
   ]
 }

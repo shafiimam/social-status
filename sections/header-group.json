@@ -60,6 +60,7 @@
     },
     "breadcrumb": {
       "type": "breadcrumb",
+      "disabled": true,
       "settings": {}
     }
   },
