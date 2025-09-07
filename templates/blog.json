@@ -116,12 +116,46 @@
         "custom_text": "rgba(0,0,0,0)",
         "custom_overlay": "rgba(0,0,0,0)"
       }
+    },
+    "rich_text_pU4aW7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yU3zDR": {
+          "type": "heading",
+          "settings": {
+            "heading": "SEO COPY HEADING HERE",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_dJCbCd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yU3zDR",
+        "text_dJCbCd"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
     }
   },
   "order": [
     "rich_text_Hw8xwi",
     "hero_xFNVG8",
     "article_spotlight_fgaxk4",
-    "main"
+    "main",
+    "rich_text_pU4aW7"
   ]
 }

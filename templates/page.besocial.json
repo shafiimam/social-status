@@ -24,21 +24,24 @@
           "type": "button",
           "settings": {
             "button_text": "About",
-            "button_link": ""
+            "button_link": "",
+            "book_form": false
           }
         },
         "button_fTDRRw": {
           "type": "button",
           "settings": {
             "button_text": "Free Game",
-            "button_link": ""
+            "button_link": "",
+            "book_form": false
           }
         },
         "button_zEiAYk": {
           "type": "button",
           "settings": {
             "button_text": "Book an event",
-            "button_link": ""
+            "button_link": "",
+            "book_form": true
           }
         }
       },
@@ -54,6 +57,58 @@
         "content": "<p>A space connected to several of our Social Status locations where we activate a variety of community-focused events. beSocial also acts as a free space for the local community to make their own.</p>"
       }
     },
+    "flagship_programs_nEJVzL": {
+      "type": "flagship-programs",
+      "blocks": {
+        "flagship_Wx8dpm": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>BRAND</strong>(ED)</p>",
+            "text": "<p>Creative collaborations with our brand partners to both help the community and raise brand awareness.</p>"
+          }
+        },
+        "flagship_N3gYWT": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>FREE</strong> GAME</p>",
+            "text": "<p>A platform where we educate our community on topics that aren’t regularly spoken or brought to the forefront.</p>"
+          }
+        },
+        "flagship_VrLR4U": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>WOMEN </strong>WITHIN</p>",
+            "text": "<p>A series promoting and creating community through hands-on workshops and monthly meet-ups.</p>"
+          }
+        },
+        "flagship_WJKrMP": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>BAG </strong>TALK</p>",
+            "text": "<p>Programs that focuses on financial literacy through mentorship and education.</p>"
+          }
+        },
+        "flagship_T74fDr": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>PRODUCT</strong> SWAP</p>",
+            "text": "<p>A program creating pathways to legal entreprenurship for those who desire to leave street activites as means of income.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "flagship_Wx8dpm",
+        "flagship_N3gYWT",
+        "flagship_VrLR4U",
+        "flagship_WJKrMP",
+        "flagship_T74fDr"
+      ],
+      "name": "Flagship Programs",
+      "settings": {
+        "flagship_image": "shopify://shop_images/rad_champion_2_5-18-22_1.jpg",
+        "flagship_title": "FLAGSHIP PROGRAMS"
+      }
+    },
     "list_column_mP47Dk": {
       "type": "list-column",
       "blocks": {
@@ -62,7 +117,7 @@
           "settings": {
             "item_text": "Charlotte,",
             "item_text_2": "NC",
-            "button_link": "shopify://pages/copy-of-about-us",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#coming_events",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/image_91.png"
           }
@@ -82,16 +137,82 @@
           "settings": {
             "item_text": "Houston,",
             "item_text_2": "TX",
-            "button_link": "shopify://pages/our-stores",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#coming_events",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/GS-SEASICK-BLK_2.jpg"
+          }
+        },
+        "list_item_xbHzbC": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Greensboro",
+            "item_text_2": ", NC",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/greensboro#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Greensboro-img.jpg"
+          }
+        },
+        "list_item_U8UrwK": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Pittsburgh",
+            "item_text_2": ", PA",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/pittsburgh#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Pittsburgh-img.jpg"
+          }
+        },
+        "list_item_UwmHaT": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "RALEIGH",
+            "item_text_2": ", NC",
+            "button_link": "shopify://pages/our-stores",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg"
+          }
+        },
+        "list_item_XT8qPW": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "TAMPA BAY",
+            "item_text_2": ", FL",
+            "button_link": "shopify://pages/our-stores",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg"
+          }
+        },
+        "list_item_UKPF9r": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "BALTIMORE",
+            "item_text_2": ", MD",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/baltimore#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/baltimoree.jpg"
+          }
+        },
+        "list_item_nBGzYX": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "DETROIT",
+            "item_text_2": ", MI",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/detroit#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/detroitbesocial.jpg"
           }
         }
       },
       "block_order": [
         "list_item_VkyMyP",
         "list_item_kHhH7m",
-        "list_item_K6i4nA"
+        "list_item_K6i4nA",
+        "list_item_xbHzbC",
+        "list_item_U8UrwK",
+        "list_item_UwmHaT",
+        "list_item_XT8qPW",
+        "list_item_UKPF9r",
+        "list_item_nBGzYX"
       ],
       "name": "List Column",
       "settings": {
@@ -106,7 +227,7 @@
           "settings": {
             "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
             "title": "",
-            "description": "<p>Political Education</p>",
+            "description": "<p><strong>Political</strong> Education</p>",
             "button_text": "",
             "button_url": ""
           }
@@ -115,8 +236,58 @@
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "Financial Literacy",
-            "description": "<p>Help deminish barriers for political activism such as registering to vote.</p>",
+            "title": "",
+            "description": "<p>Financial Literacy</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_9AQHY6": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Housing Education</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_Mx4dHN": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Health + Wellness</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_LeQypN": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Prison Reform</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_89VyMy": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Business Development</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_TzePpG": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Food Education</p>",
             "button_text": "",
             "button_url": ""
           }
@@ -124,7 +295,15 @@
       },
       "block_order": [
         "slide_item_jpHHQc",
-        "slide_item_9hhJtL"
+        "slide_item_9hhJtL",
+        "slide_item_9AQHY6",
+        "slide_item_Mx4dHN",
+        "slide_item_LeQypN",
+        "slide_item_89VyMy",
+        "slide_item_TzePpG"
+      ],
+      "custom_css": [
+        ".block-slide-description {text-align: center;}"
       ],
       "name": "Perspective Slider",
       "settings": {
@@ -143,6 +322,7 @@
       "blocks": {
         "city_block_WHLn4B": {
           "type": "city_block",
+          "disabled": true,
           "settings": {
             "city_name": "CHARLOTTE",
             "city_tag": ""
@@ -150,6 +330,7 @@
         },
         "city_block_86C9Ei": {
           "type": "city_block",
+          "disabled": true,
           "settings": {
             "city_name": "GREENSBORO",
             "city_tag": "GREENSBORO"
@@ -203,10 +384,10 @@
       "name": "Latest Features & Events",
       "settings": {
         "blog": "blog-events",
-        "main_title": "Latest Events",
-        "main_title_width": "732",
+        "main_title": "Events",
+        "main_title_width": "802",
         "main_title_align": "left",
-        "sub_title": "",
+        "sub_title": "and Flagship Programs",
         "sub_title_align": "right",
         "arrow_text_1": "Cultutre",
         "arrow_text_2": "Events",
@@ -409,15 +590,24 @@
         "custom_text": "rgba(0,0,0,0)",
         "seo_h_tag": "h2"
       }
+    },
+    "besocial_locations_CEAh6p": {
+      "type": "besocial-locations",
+      "name": "BeSocial Locations",
+      "settings": {
+        "section_title": "City Highlight:"
+      }
     }
   },
   "order": [
     "main",
     "besocial_hero_zDHDNh",
+    "flagship_programs_nEJVzL",
     "list_column_mP47Dk",
     "perspective_slider_U9X7jt",
     "latest_features_cdA9xw",
     "media_grid_tgC8EG",
-    "rich_text_XqMPwe"
+    "rich_text_XqMPwe",
+    "besocial_locations_CEAh6p"
   ]
 }

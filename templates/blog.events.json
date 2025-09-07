@@ -175,7 +175,7 @@
         "hero_title": "beSOCIAL",
         "hero_text": "beSOCIAL is a community space and creative hub housed within or near a number of our Social Status locations. Our goal is to engage, mobilize, develop and activate local and organic relationships to serve our cities and communities through programming and events, while creating new connections amongst groups and people. So whether you're looking for a place to work, host your own event, or meet new people we're here to support.",
         "stream": "",
-        "events_coming": "COMING UP:",
+        "events_coming": "COMING UP",
         "btn_coming": "Browse Upcoming Events",
         "btn_hide_coming": "Hide Upcoming Events",
         "events_previous": "",
@@ -346,7 +346,7 @@
       ],
       "name": "Media Grid",
       "settings": {
-        "section_width": "with-padding",
+        "section_width": "full",
         "desktop_row_height": 200,
         "mobile_row_height": 180,
         "padding_top": 60,
@@ -355,7 +355,7 @@
         "subheading": "",
         "title": "Previous Events",
         "content": "",
-        "text_alignment": "left"
+        "text_alignment": "center"
       }
     },
     "city_highlights_VhwDxr": {
