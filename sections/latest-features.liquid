@@ -114,7 +114,7 @@
                       <div class="tab-list-item-content">
                         <span class="tab-list-item-title font-zen">{{ article.title }}</span>
                         <div class="tab-list-item-content-inner">
-                          <span class="tab-list-item-subtitle">{{ article.excerpt | strip_html | truncatewords: 15 }}</span>
+                          <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
                           <span class="tab-list-item-date-mobile-only">{{ event_date }}</span>
                           <button
                             class="tab-list-item-button"

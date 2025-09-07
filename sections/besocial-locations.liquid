@@ -1,0 +1,205 @@
+<!-- City Highlight -->
+<div class="container blog-locations-container">
+  <div class="blog-locations-title">
+    <img class="" src="https://cdn.shopify.com/s/files/1/0262/2475/files/title-beSocial_9cbde4df-af0b-4b6e-a20b-e2ef1afb4599.png?v=1614415301" alt="{{ page_title }}" style="max-height: 300px;">
+    <h1 class="h1">LOCATIONS</h1>  
+  </div>
+  {% for block in section.blocks %}
+    {% if block.type == "city" %}
+      <div {% if block.settings.anchor != blank %}id="{{ block.settings.anchor }}"{% endif %} class="locations-gallery {% if block.settings.anchor != blank %}{{ block.settings.anchor }}{% endif %}">
+        
+        <div class="locations-city">
+          {% if block.settings.image != blank %}
+            <!-- Desktop -->
+            <div {{ block.shopify_attributes }} class="city-item">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                <div class="city-info">
+                  <span class="city-name">{{ block.settings.city_name }}</span>
+                  <span class="city-name-short">{{ block.settings.city_name_short }}</span>
+                </div>
+            </div>
+            <!-- Mobile -->
+            <div {{ block.shopify_attributes }} class="city-item-mobile">
+                <div class="city-info-mobile">
+                  <span class="city-name">{{ block.settings.city_name }}</span>
+                  <span class="city-name-short">{{ block.settings.city_name_short }}</span>
+                </div>
+            </div>
+          {% endif %}            
+        </div>
+        
+        <div class="locations-gallery-slider">
+          <div class="slider">            
+            {% if block.settings.gallery_image1 != blank %}
+              <div {{ block.shopify_attributes }} class="gallery-item slide">
+                <a href="{{ block.settings.gallery_image1 | img_url: 'master' }}" data-fancybox="gallery" >
+                  <img src="{{ block.settings.gallery_image1 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                  <div class="gallery-info">
+                    <p class="gallery-description">{{ block.settings.description1 }}</p>
+                  </div>
+                  <div class="image-overlay"></div>
+                </a>
+              </div>
+            {% endif %}
+            {% if block.settings.gallery_image2 != blank %}
+              <div {{ block.shopify_attributes }} class="gallery-item slide">
+                <a href="{{ block.settings.gallery_image2 | img_url: 'master' }}" data-fancybox="gallery" >
+                  <img src="{{ block.settings.gallery_image2 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                  <div class="gallery-info">
+                    <p class="gallery-description">{{ block.settings.description2 }}</p>
+                  </div>
+                  <div class="image-overlay"></div>
+                </a>
+              </div>
+            {% endif %}
+            {% if block.settings.gallery_image3 != blank %}
+              <div {{ block.shopify_attributes }} class="gallery-item slide">
+                <a href="{{ block.settings.gallery_image3 | img_url: 'master' }}" data-fancybox="gallery" >
+                  <img src="{{ block.settings.gallery_image3 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                  <div class="gallery-info">
+                    <p class="gallery-description">{{ block.settings.description3 }}</p>
+                  </div>
+                  <div class="image-overlay"></div>
+                </a>
+              </div>
+            {% endif %}              
+            {% if block.settings.gallery_image4 != blank %}
+              <div {{ block.shopify_attributes }} class="gallery-item slide">
+                <a href="{{ block.settings.gallery_image4 | img_url: 'master' }}" data-fancybox="gallery" >
+                  <img src="{{ block.settings.gallery_image4 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                  <div class="gallery-info">
+                    <p class="gallery-description">{{ block.settings.description4 }}</p>
+                  </div>
+                  <div class="image-overlay"></div>
+                </a>
+              </div>
+            {% endif %}              
+            {% if block.settings.gallery_image5 != blank %}
+              <div {{ block.shopify_attributes }} class="gallery-item slide">
+                <a href="{{ block.settings.gallery_image5 | img_url: 'master' }}" data-fancybox="gallery" >
+                  <img src="{{ block.settings.gallery_image5 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                  <div class="gallery-info">
+                    <p class="gallery-description">{{ block.settings.description5 }}</p>
+                  </div>
+                  <div class="image-overlay"></div>
+                </a>
+              </div>
+            {% endif %}              
+          </div>
+        </div> 
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<!-- end City Highlight -->
+{% if section.settings.padding %}
+  <style>
+    section.images-row {
+      padding: 50px 0;
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "BeSocial Locations",
+    "tag": "section",
+    "class": "events_page blog-locations",
+    "settings": [      
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "City Highlight:"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "City",
+        "type": "city",
+        "settings": [
+          {
+            "type": "text",
+            "id": "anchor",
+            "label": "Anchor",
+            "info": "Anchor point to scroll down to (ex: atlanta)",
+            "default": "#atlanta"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "city_name",
+            "label": "City name",
+            "default": "Charlotte, NC"
+          },
+          {
+            "type": "text",
+            "id": "city_name_short",
+            "label": "Short name",
+            "default": "CLT"
+          },
+          {
+            "type": "image_picker",
+            "id": "gallery_image1",
+            "label": "Gallery Image"
+          },
+          {
+            "type": "richtext",
+            "id": "description1",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "gallery_image2",
+            "label": "Gallery Image"
+          },
+          {
+            "type": "richtext",
+            "id": "description2",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "gallery_image3",
+            "label": "Gallery Image"
+          },
+          {
+            "type": "richtext",
+            "id": "description3",
+            "label": "Description"
+          },             
+          {
+            "type": "image_picker",
+            "id": "gallery_image4",
+            "label": "Gallery Image"
+          },
+          {
+            "type": "richtext",
+            "id": "description4",
+            "label": "Description"
+          },             
+          {
+            "type": "image_picker",
+            "id": "gallery_image5",
+            "label": "Gallery Image"
+          },
+          {
+            "type": "richtext",
+            "id": "description5",
+            "label": "Description"
+          }          
+        ]
+      }      
+    ],
+    "presets": [
+        {
+            "name": "BeSocial Locations",
+            "category": "custom"
+        }
+    ]   
+  }
+{% endschema %}

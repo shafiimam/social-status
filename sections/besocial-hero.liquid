@@ -1,3 +1,21 @@
+{% comment %} JotForm Assets for Book Event Form {% endcomment %}
+<script src="https://form.jotform.com/static/feedback2.js" type="text/javascript" defer></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var JFL_222295146958062 = new JotformFeedback({
+        formId: '222295146958062',
+        base: 'https://form.jotform.com/',
+        windowTitle: 'Book Your Event at beSocial',
+        background: '#FFA500',
+        fontColor: '#FFFFFF',
+        type: 'false',
+        height: 500,
+        width: 700,
+        openOnLoad: false
+    });
+  });
+</script>
+
 {% style %}
   #shopify-section-{{ section.id }} {
      background-image: url({{ section.settings.background_image | image_url: width: 1920 }});
@@ -24,10 +42,18 @@
     </div>
     <div class="besocial-hero-buttons">
       {% for block in section.blocks %}
-        <a href="{{ block.settings.button_link }}" class="button button--solid button--with-icon">
+        <a 
+          {% if block.settings.book_form %}
+            class="button button--solid button--with-icon lightbox-222295146958062"
+          {% else %}
+            href="{{ block.settings.button_link }}" 
+            class="button button--solid button--with-icon"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
           <span>{{ block.settings.button_text }}</span>
           <span class="icon" aria-hidden="true" role="img">
-            {%- render 'theme-symbols', icon: 'arrow_icon_smallest' -%}
+            {%- render 'theme-symbols', icon: 'arrow-right' -%}
           </span>
         </a>
       {% endfor %}
@@ -69,6 +95,13 @@
           "type": "url",
           "id": "button_link",
           "label": "Button Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "book_form",
+          "label": "Book an Event Form",
+          "default": false,
+          "info": "When enabled, this button will open the Book Event form instead of navigating to the link"
         }
       ]
     }

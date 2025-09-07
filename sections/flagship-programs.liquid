@@ -1,0 +1,71 @@
+{{ 'section-flagship-programs.css' | asset_url | stylesheet_tag }}
+
+{% assign flagshipImage = section.settings.flagship_image | img_url: 'master' %}
+<div id="flagship_programs" class="bgImg" style="background-image: url('{{ flagshipImage }}')">
+  <div class="container">
+    <h2 class="title">{{ section.settings.flagship_title }}</h2>
+
+    <div class="cols">
+      {% for block in section.blocks %}
+        {% if block.type == 'flagship' %}
+          <div {{ block.shopify_attributes }} class="col">
+            <article>
+              <h1>{{ block.settings.title }}</h1>
+              <div class="overlay">
+                <div class="wrap">
+                  <h2>{{ block.settings.title }}</h2>
+                  {{ block.settings.text }}
+                </div>
+              </div>
+            </article>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Flagship Programs",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "flagship_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "flagship_title",
+      "label": "Section Title",
+      "default": "FLAGSHIP PROGRAMS"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Flagship Program",
+      "type": "flagship",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Program Title",
+          "default": "<p>Free Game</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Program Description",
+          "default": "<p>A platform where we educate our community on topics that aren't regularly spoken or brought to the forefront.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flagship Programs",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
