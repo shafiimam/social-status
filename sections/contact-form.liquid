@@ -1,24 +1,23 @@
 <div class="site-box-container container--fullscreen box--can-stick">
   <div
-    class="site-box box--big lap--box--small-fl-auto box--typo-big box--top-align box--column-flow box__heading about-us-section-content"
+    class="site-box contact-form-container box--big lap--box--small-fl-auto box--typo-big box-small-padding box--top-align box--column-flow box__heading about-us-section-content"
     data-order="0"
     style="
       background-image: url({{ section.settings.image | image_url: width: 1920 }});
       color: {{ section.settings.text_color }};
-      height: var(--window-height);
     "
   >
-    <div class="reduce-top-margin" style="pointer-events:none">
+    <div class="reduce-top-margin" style="height: 100%;">
       <div class="site-box-content {{ section.settings.map_style }}">
         <div class="top-text">
-          <{{ section.settings.seo_h_tag }} class="title h1 text-uppercase">
+          <{{ section.settings.seo_h_tag }} class="title h1 section-top-heading text-uppercase">
             {{ section.settings.title | escape }}
           </{{ section.settings.seo_h_tag }}>
-          <div class="section-subheading">{{ section.settings.content }}</div>
+          <div class="section-top-subheading">{{ section.settings.content }}</div>
           {%- if settings.headings_hr -%}<hr>{%- endif -%}
         </div>
         <div class="bottom-text">
-          <h2 class="title h2 text-uppercase">
+          <h2 class="title h3 text-uppercase">
             {{ section.settings.title_bottom | escape }}
           </h2>
           <div class="section-subheading">{{ section.settings.content_bottom }}</div>
@@ -62,7 +61,7 @@
   >
     <div class="site-box-content reduce-top-margin">
       <div>
-        <div class="form-vertical">
+        <div class="form-vertical contact-form-container">
           {%- assign form_id = 'form-id-' | append: section.id -%}
           {%- form 'contact', id: form_id -%}
             {%- if form.posted_successfully? -%}
@@ -143,7 +142,7 @@
                       <button type="submit" class="button button--solid button--with-icon">
                         <span>{{ 'general.contact_form.submit_label' | t }}</span>
                         <span class="icon" aria-hidden="true" role="img">
-                          {%- render 'theme-symbols', icon: 'arrow_icon_smallest' -%}
+                          {%- render 'theme-symbols', icon: 'arrow-right' -%}
                         </span>
                       </button>
                     </div>

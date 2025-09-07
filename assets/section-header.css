@@ -476,6 +476,7 @@ html[dir=ltr] .skip-to-content:focus {
   flex-wrap: nowrap;
   overflow-x: scroll;
   border-block: 1px solid var(--stroke);
+  font-family: var(--font-stack-headings);
 }
 .breadcrumb::-webkit-scrollbar {
   width: 0 !important;

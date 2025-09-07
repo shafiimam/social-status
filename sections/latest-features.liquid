@@ -2,7 +2,7 @@
 
 {% assign selected_blog = blogs[section.settings.blog] %}
 {% assign tabs_list = section.blocks | map: 'settings' | map: 'city_name' | uniq %}
-<div class="latest-features-section">
+<div class="latest-features-section" id="events-section">
   <div class="header-row">
     <div class="title-column" style="max-width: {{ section.settings.main_title_width }}px;">
       <h1 class="main-title h1 heading" style="text-align: {{ section.settings.main_title_align }}">

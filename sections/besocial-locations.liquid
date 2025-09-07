@@ -1,4 +1,7 @@
+{{ 'section-besocial-locations.css' | asset_url | stylesheet_tag }}
+
 <!-- City Highlight -->
+<section class="blog-locations">
 <div class="container blog-locations-container">
   <div class="blog-locations-title">
     <img class="" src="https://cdn.shopify.com/s/files/1/0262/2475/files/title-beSocial_9cbde4df-af0b-4b6e-a20b-e2ef1afb4599.png?v=1614415301" alt="{{ page_title }}" style="max-height: 300px;">
@@ -29,68 +32,44 @@
         </div>
         
         <div class="locations-gallery-slider">
-          <div class="slider">            
-            {% if block.settings.gallery_image1 != blank %}
-              <div {{ block.shopify_attributes }} class="gallery-item slide">
-                <a href="{{ block.settings.gallery_image1 | img_url: 'master' }}" data-fancybox="gallery" >
-                  <img src="{{ block.settings.gallery_image1 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
-                  <div class="gallery-info">
-                    <p class="gallery-description">{{ block.settings.description1 }}</p>
-                  </div>
-                  <div class="image-overlay"></div>
-                </a>
-              </div>
-            {% endif %}
-            {% if block.settings.gallery_image2 != blank %}
-              <div {{ block.shopify_attributes }} class="gallery-item slide">
-                <a href="{{ block.settings.gallery_image2 | img_url: 'master' }}" data-fancybox="gallery" >
-                  <img src="{{ block.settings.gallery_image2 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
-                  <div class="gallery-info">
-                    <p class="gallery-description">{{ block.settings.description2 }}</p>
-                  </div>
-                  <div class="image-overlay"></div>
-                </a>
-              </div>
-            {% endif %}
-            {% if block.settings.gallery_image3 != blank %}
-              <div {{ block.shopify_attributes }} class="gallery-item slide">
-                <a href="{{ block.settings.gallery_image3 | img_url: 'master' }}" data-fancybox="gallery" >
-                  <img src="{{ block.settings.gallery_image3 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
-                  <div class="gallery-info">
-                    <p class="gallery-description">{{ block.settings.description3 }}</p>
-                  </div>
-                  <div class="image-overlay"></div>
-                </a>
-              </div>
-            {% endif %}              
-            {% if block.settings.gallery_image4 != blank %}
-              <div {{ block.shopify_attributes }} class="gallery-item slide">
-                <a href="{{ block.settings.gallery_image4 | img_url: 'master' }}" data-fancybox="gallery" >
-                  <img src="{{ block.settings.gallery_image4 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
-                  <div class="gallery-info">
-                    <p class="gallery-description">{{ block.settings.description4 }}</p>
-                  </div>
-                  <div class="image-overlay"></div>
-                </a>
-              </div>
-            {% endif %}              
-            {% if block.settings.gallery_image5 != blank %}
-              <div {{ block.shopify_attributes }} class="gallery-item slide">
-                <a href="{{ block.settings.gallery_image5 | img_url: 'master' }}" data-fancybox="gallery" >
-                  <img src="{{ block.settings.gallery_image5 | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
-                  <div class="gallery-info">
-                    <p class="gallery-description">{{ block.settings.description5 }}</p>
-                  </div>
-                  <div class="image-overlay"></div>
-                </a>
-              </div>
-            {% endif %}              
+          <div class="slider" data-flickity='{
+          "cellAlign": "left",
+          "contain": true,
+          "prevNextButtons": true,
+          "pageDots": false,
+          "wrapAround": false,
+          "autoPlay": false,
+          "groupCells": false,
+          "freeScroll": true
+        }'>            
+            {% comment %} Dynamic gallery images loop {% endcomment %}
+            {% for i in (1..5) %}
+              {% assign image_key = 'gallery_image' | append: i %}
+              {% assign description_key = 'description' | append: i %}
+              {% assign gallery_image = block.settings[image_key] %}
+              {% assign gallery_description = block.settings[description_key] %}
+              
+              {% if gallery_image != blank %}
+                <div class="gallery-item slide">
+                  <a href="{{ gallery_image | img_url: 'master' }}" data-fancybox="gallery-{{ block.id }}" >
+                    <img src="{{ gallery_image | img_url: 'master' }}" alt="{{ gallery_description | default: 'Gallery image' | escape }}" loading="lazy">
+                    {% if gallery_description != blank %}
+                      <div class="gallery-info">
+                        <p class="gallery-description">{{ gallery_description }}</p>
+                      </div>
+                    {% endif %}
+                    <div class="image-overlay"></div>
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}              
           </div>
         </div> 
       </div>
     {% endif %}
   {% endfor %}
 </div>
+</section>
 <!-- end City Highlight -->
 {% if section.settings.padding %}
   <style>

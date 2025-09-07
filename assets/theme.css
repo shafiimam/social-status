@@ -46,6 +46,11 @@ time, mark, audio, video, button {
   vertical-align: baseline;
 }
 
+/* Global Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -137,13 +142,13 @@ summary::-webkit-details-marker {
   --sidebar-padding: 40px;
   --sidebar-movement: 480px;
   --text-spacing: 30px;
-  --alternate-opacity: .58;
+  --a2ternate-opacity: .58;
   --button-size: 58px;
   --button-padding: 32px;
   --button-extra-margin: 5px;
 }
 
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1200px) {
   :root {
     --box-auto-top: 60px; 
   }
@@ -286,12 +291,12 @@ h1, h2, h3, h4, h5, h6,
   display: block;
 }
 
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1200px) {
   .h0 {
     font-size: calc(92px / 60 * var(--base-headings-size) + 0px);
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1367px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   .h0 {
     font-size: calc(78px / 60 * var(--base-headings-size) + 0px);
   }
@@ -307,12 +312,12 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1200px) {
   h1, .h1 {
     font-size: calc(60px / 60 * var(--base-headings-size) + 0px);
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1367px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   h1, .h1 {
     font-size: calc(48px / 60 * var(--base-headings-size) + 0px);
   }
@@ -328,12 +333,12 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1200px) {
   h2, .h2 {
     font-size: calc(40px / 60 * var(--base-headings-size) + 0px);
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1367px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   h2, .h2 {
     font-size: calc(36px / 60 * var(--base-headings-size) + 0px);
   }
@@ -349,12 +354,12 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1200px) {
   h3, .h3 {
     font-size: calc(30px / 60 * var(--base-headings-size) + 0px);
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1367px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   h3, .h3 {
     font-size: calc(30px / 60 * var(--base-headings-size) + 0px);
   }
@@ -651,7 +656,7 @@ textarea::placeholder {
 
 input[type=submit], .button, .btn, .btn-article {
   font-family: var(--font-stack-body);
-  font-weight: var(--font-weight-body);
+  font-weight: var(--font-weig8t-body);
   font-style: var(--font-style-body);
   font-size: calc(18px / 16 * var(--base-body-size) + 0px);
   border: 2px solid transparent;
