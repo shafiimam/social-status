@@ -176,80 +176,62 @@
     "rotating_slider_7yhr3n": {
       "type": "rotating-slider",
       "blocks": {
-        "slide_hG3FXr": {
+        "slide_azUp4a": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/38amob1.jpg",
-            "slide_text": "SHORTS",
-            "link": ""
+            "image": "shopify://shop_images/OUTERWEARSS.png",
+            "slide_text": "OUTERWEAR",
+            "link": "shopify://collections/outerwear-3"
           }
         },
-        "slide_NRbtNQ": {
+        "slide_38DjfE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/53105_2.jpg",
-            "slide_text": "TOPS",
-            "link": ""
-          }
-        },
-        "slide_GwGfRX": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Untitled-1_6255e0d8-2370-474b-8e07-c82762914149.jpg",
+            "image": "shopify://shop_images/WOMEN_SS.png",
             "slide_text": "WOMEN",
-            "link": ""
+            "link": "shopify://collections/womens-1"
           }
         },
-        "slide_X4xAp9": {
+        "slide_FnQCft": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/RHSS25TT13012_2.jpg",
-            "slide_text": "HOODIES",
-            "link": ""
+            "image": "shopify://shop_images/DENIM_SS.png",
+            "slide_text": "PANTS",
+            "link": "shopify://collections/pants"
           }
         },
-        "slide_XiGjjP": {
+        "slide_VtQDKD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/htgmob.jpg",
+            "image": "shopify://shop_images/ACC_SS_59c6c6f2-3b5f-4b07-88b2-f00fe2d8db5b.jpg",
             "slide_text": "ACCESSORIES",
-            "link": "shopify://pages/copy-of-about-us"
+            "link": "shopify://collections/accessories-1"
           }
         },
-        "slide_BrWgUR": {
+        "slide_3bbgCr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "SNEAKERS",
-            "link": ""
+            "image": "shopify://shop_images/TSHIRTSSS.png",
+            "slide_text": "T-SHIRTS",
+            "link": "shopify://collections/t-shirts-2"
           }
         },
-        "slide_VkUbBh": {
+        "slide_VfcA8p": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "JACKETS",
-            "link": ""
-          }
-        },
-        "slide_Wcp3ij": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/htgmob.jpg",
-            "slide_text": "SOCKS",
-            "link": ""
+            "image": "shopify://shop_images/HOODSSS.png",
+            "slide_text": "HOODIES",
+            "link": "shopify://collections/hoodies-and-sweatshirts"
           }
         }
       },
       "block_order": [
-        "slide_hG3FXr",
-        "slide_NRbtNQ",
-        "slide_GwGfRX",
-        "slide_X4xAp9",
-        "slide_XiGjjP",
-        "slide_BrWgUR",
-        "slide_VkUbBh",
-        "slide_Wcp3ij"
+        "slide_azUp4a",
+        "slide_38DjfE",
+        "slide_FnQCft",
+        "slide_VtQDKD",
+        "slide_3bbgCr",
+        "slide_VfcA8p"
       ],
       "name": "Rotating Slider",
       "settings": {
@@ -322,7 +304,7 @@
       "name": "Virtual Try-On",
       "settings": {
         "heading": "Step In The Culture",
-        "subheading": "VIRTUAL TRY ON AVAILABLE. TRY IT ON IN AR"
+        "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN AR</p>"
       }
     },
     "latest_features_f6y9et": {

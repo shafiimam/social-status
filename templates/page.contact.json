@@ -9,13 +9,18 @@
  */
 {
   "sections": {
+    "breadcrumb_Cx6dj7": {
+      "type": "breadcrumb",
+      "name": "Breadcrumbs",
+      "settings": {}
+    },
     "main": {
       "type": "contact-form",
       "blocks": {
         "text_6Rk6ir": {
           "type": "text",
           "settings": {
-            "content": "<p><strong>Our address</strong></p><p><strong>93 Bayport Ave.South Richmond Hill, NY 11419</strong></p><p></p><p><strong>For general inquires</strong></p><p><strong>socialstatus@example.com</strong></p><p></p><p><strong>Phone</strong></p><p><strong>+1 200 884 9600</strong></p><p></p><p><strong>Working hours</strong></p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>"
+            "content": "<p>Our address</p><p><strong>93 Bayport Ave.South Richmond Hill, NY 11419</strong></p><p></p><p>For general inquires</p><p><strong>socialstatus@example.com</strong></p><p></p><p>Phone</p><p><strong>+1 200 884 9600</strong></p><p></p><p>Working hours</p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>"
           }
         },
         "text_D9rrfH": {
@@ -64,6 +69,7 @@
     }
   },
   "order": [
+    "breadcrumb_Cx6dj7",
     "main"
   ]
 }

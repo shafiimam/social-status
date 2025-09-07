@@ -25,7 +25,14 @@
         "social_sharing",
         "blog_navigation"
       ],
-      "settings": {}
+      "settings": {
+        "layout": "title-on-left with-image",
+        "mobile_overlay_background": "rgba(0,0,0,0)",
+        "mobile_overlay_text": "rgba(0,0,0,0)",
+        "blog_show_date": true,
+        "blog_show_author": false,
+        "blog_show_comments": false
+      }
     }
   },
   "order": [

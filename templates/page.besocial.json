@@ -20,35 +20,17 @@
     "besocial_hero_zDHDNh": {
       "type": "besocial-hero",
       "blocks": {
-        "button_4nxDPf": {
-          "type": "button",
-          "settings": {
-            "button_text": "About",
-            "button_link": "",
-            "book_form": false
-          }
-        },
         "button_fTDRRw": {
           "type": "button",
           "settings": {
-            "button_text": "Free Game",
-            "button_link": "",
+            "button_text": "Upcoming Events",
+            "button_link": "#events-section",
             "book_form": false
-          }
-        },
-        "button_zEiAYk": {
-          "type": "button",
-          "settings": {
-            "button_text": "Book an event",
-            "button_link": "",
-            "book_form": true
           }
         }
       },
       "block_order": [
-        "button_4nxDPf",
-        "button_fTDRRw",
-        "button_zEiAYk"
+        "button_fTDRRw"
       ],
       "name": "Be Social Hero",
       "settings": {
@@ -593,108 +575,108 @@
     },
     "besocial_locations_CEAh6p": {
       "type": "besocial-locations",
-      "name": "BeSocial Locations",
       "blocks": {
-          "af69fdbf-38ca-43b0-a118-c61b2e6eeab8": {
-            "type": "city",
-            "settings": {
-              "anchor": "charlotte",
-              "image": "shopify://shop_images/Pittsburgh-img.jpg",
-              "city_name": "Charlotte, NC",
-              "city_name_short": "CLT",
-              "gallery_image1": "shopify://shop_images/BESOCIAL_CARES_COOKOUT.jpg",
-              "description1": "<p>BESOCIAL CARES COOKOUT</p>",
-              "gallery_image2": "shopify://shop_images/COFFEE_COMPANY.jpg",
-              "description2": "<p>COFFEE & COMPANY</p>",
-              "gallery_image3": "shopify://shop_images/SIP_WITH_CONFIDENCE.jpg",
-              "description3": "<p>SIP WITH CONFIDENCE</p>",
-              "gallery_image4": "shopify://shop_images/QUARTER_LIFE_CRYSIS.jpg",
-              "description4": "<p>QUARTER LIFE CRYSIS</p>",
-              "description5": ""
-            }
-          },
-          "da7d41d7-001b-4c0a-85fd-20b0eac80de0": {
-            "type": "city",
-            "disabled": true,
-            "settings": {
-              "anchor": "atlanta",
-              "image": "shopify://shop_images/Atlanta-img.jpg",
-              "city_name": "Atlanta, GA",
-              "city_name_short": "ATL",
-              "gallery_image1": "shopify://shop_images/FREE_LUNCH_SCREENING.jpg",
-              "description1": "<p>FREE LUNCH SCREENING</p>",
-              "gallery_image2": "shopify://shop_images/Culture_Myxr-_Women_Appreciation_edition.jpg",
-              "description2": "<p>CULTURE MYXR WOMEN APPRECIATION EDITION</p>",
-              "gallery_image3": "shopify://shop_images/PROJECT_SWISH.jpg",
-              "description3": "<p>PROJECT WISH</p>",
-              "gallery_image4": "shopify://shop_images/WELLNESS_MONDAYS.jpg",
-              "description4": "<p>WELLNESS MONDAYS</p>",
-              "description5": ""
-            }
-          },
-          "0fee217a-3b2d-4fd7-b70c-cd671d14312b": {
-            "type": "city",
-            "disabled": true,
-            "settings": {
-              "anchor": "greensboro",
-              "image": "shopify://shop_images/Greensboro-img.jpg",
-              "city_name": "Greensboro, NC",
-              "city_name_short": "GSO",
-              "description1": "",
-              "gallery_image2": "shopify://shop_images/PAINT_DA_WORLD.jpg",
-              "description2": "<p>PAINT DA WORLD</p>",
-              "gallery_image3": "shopify://shop_images/Gordon_Parks_Documentary_Screening.jpg",
-              "description3": "<p>GORDON PARKS DOCUMENTARY</p>",
-              "gallery_image4": "shopify://shop_images/WORLD_RAN_BY_POWER_LISTENING_SESSION.jpg",
-              "description4": "<p>WORLD RAN BY POWER LISTENING SESSION</p>",
-              "description5": ""
-            }
-          },
-          "2ff55f83-987f-497d-89c2-4382dac5be1b": {
-            "type": "city",
-            "settings": {
-              "anchor": "houston",
-              "image": "shopify://shop_images/Houston-img.jpg",
-              "city_name": "Houston, TX",
-              "city_name_short": "HTX",
-              "gallery_image1": "shopify://shop_images/CHAMPIONSHIP_WATCH_PARTY.jpg",
-              "description1": "<p>CHAMPIONSHIP WATCH PARTY</p>",
-              "gallery_image2": "shopify://shop_images/THE_BEAUTY_OF_PR.jpg",
-              "description2": "<p>THE BEAUTY OF PR</p>",
-              "gallery_image3": "shopify://shop_images/J._REID_POP_UP.jpg",
-              "description3": "<p>J. REID POP UP</p>",
-              "description4": "",
-              "description5": ""
-            }
-          },
-          "33dd5bd0-7cb7-4ebe-aba1-c1cc4d9fb0c0": {
-            "type": "city",
-            "settings": {
-              "anchor": "pittsburgh",
-              "image": "shopify://shop_images/Pittsburgh-img.jpg",
-              "city_name": "Pittsburgh",
-              "city_name_short": "PGH",
-              "gallery_image1": "shopify://shop_images/PAINT_N_SIP.jpg",
-              "description1": "<p>PAINT 'N' SIP</p>",
-              "gallery_image2": "shopify://shop_images/TRAP_BINGO.jpg",
-              "description2": "<p>TRAP BINGO</p>",
-              "gallery_image3": "shopify://shop_images/WORLD_OF_ART_DAY.jpg",
-              "description3": "<p>WORLD OF ART DAY</p>",
-              "description4": "",
-              "description5": ""
-            }
+        "af69fdbf-38ca-43b0-a118-c61b2e6eeab8": {
+          "type": "city",
+          "settings": {
+            "anchor": "charlotte",
+            "image": "shopify://shop_images/Pittsburgh-img.jpg",
+            "city_name": "Charlotte, NC",
+            "city_name_short": "CLT",
+            "gallery_image1": "shopify://shop_images/BESOCIAL_CARES_COOKOUT.jpg",
+            "description1": "<p>BESOCIAL CARES COOKOUT</p>",
+            "gallery_image2": "shopify://shop_images/COFFEE_COMPANY.jpg",
+            "description2": "<p>COFFEE & COMPANY</p>",
+            "gallery_image3": "shopify://shop_images/SIP_WITH_CONFIDENCE.jpg",
+            "description3": "<p>SIP WITH CONFIDENCE</p>",
+            "gallery_image4": "shopify://shop_images/QUARTER_LIFE_CRYSIS.jpg",
+            "description4": "<p>QUARTER LIFE CRYSIS</p>",
+            "description5": ""
           }
         },
-        "block_order": [
-          "af69fdbf-38ca-43b0-a118-c61b2e6eeab8",
-          "da7d41d7-001b-4c0a-85fd-20b0eac80de0",
-          "0fee217a-3b2d-4fd7-b70c-cd671d14312b",
-          "2ff55f83-987f-497d-89c2-4382dac5be1b",
-          "33dd5bd0-7cb7-4ebe-aba1-c1cc4d9fb0c0"
-        ],
-        "settings": {
-          "section_title": "City Highlight:"
+        "da7d41d7-001b-4c0a-85fd-20b0eac80de0": {
+          "type": "city",
+          "disabled": true,
+          "settings": {
+            "anchor": "atlanta",
+            "image": "shopify://shop_images/Atlanta-img.jpg",
+            "city_name": "Atlanta, GA",
+            "city_name_short": "ATL",
+            "gallery_image1": "shopify://shop_images/FREE_LUNCH_SCREENING.jpg",
+            "description1": "<p>FREE LUNCH SCREENING</p>",
+            "gallery_image2": "shopify://shop_images/Culture_Myxr-_Women_Appreciation_edition.jpg",
+            "description2": "<p>CULTURE MYXR WOMEN APPRECIATION EDITION</p>",
+            "gallery_image3": "shopify://shop_images/PROJECT_SWISH.jpg",
+            "description3": "<p>PROJECT WISH</p>",
+            "gallery_image4": "shopify://shop_images/WELLNESS_MONDAYS.jpg",
+            "description4": "<p>WELLNESS MONDAYS</p>",
+            "description5": ""
+          }
+        },
+        "0fee217a-3b2d-4fd7-b70c-cd671d14312b": {
+          "type": "city",
+          "disabled": true,
+          "settings": {
+            "anchor": "greensboro",
+            "image": "shopify://shop_images/Greensboro-img.jpg",
+            "city_name": "Greensboro, NC",
+            "city_name_short": "GSO",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/PAINT_DA_WORLD.jpg",
+            "description2": "<p>PAINT DA WORLD</p>",
+            "gallery_image3": "shopify://shop_images/Gordon_Parks_Documentary_Screening.jpg",
+            "description3": "<p>GORDON PARKS DOCUMENTARY</p>",
+            "gallery_image4": "shopify://shop_images/WORLD_RAN_BY_POWER_LISTENING_SESSION.jpg",
+            "description4": "<p>WORLD RAN BY POWER LISTENING SESSION</p>",
+            "description5": ""
+          }
+        },
+        "2ff55f83-987f-497d-89c2-4382dac5be1b": {
+          "type": "city",
+          "settings": {
+            "anchor": "houston",
+            "image": "shopify://shop_images/Houston-img.jpg",
+            "city_name": "Houston, TX",
+            "city_name_short": "HTX",
+            "gallery_image1": "shopify://shop_images/CHAMPIONSHIP_WATCH_PARTY.jpg",
+            "description1": "<p>CHAMPIONSHIP WATCH PARTY</p>",
+            "gallery_image2": "shopify://shop_images/THE_BEAUTY_OF_PR.jpg",
+            "description2": "<p>THE BEAUTY OF PR</p>",
+            "gallery_image3": "shopify://shop_images/J._REID_POP_UP.jpg",
+            "description3": "<p>J. REID POP UP</p>",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "33dd5bd0-7cb7-4ebe-aba1-c1cc4d9fb0c0": {
+          "type": "city",
+          "settings": {
+            "anchor": "pittsburgh",
+            "image": "shopify://shop_images/Pittsburgh-img.jpg",
+            "city_name": "Pittsburgh",
+            "city_name_short": "PGH",
+            "gallery_image1": "shopify://shop_images/PAINT_N_SIP.jpg",
+            "description1": "<p>PAINT 'N' SIP</p>",
+            "gallery_image2": "shopify://shop_images/TRAP_BINGO.jpg",
+            "description2": "<p>TRAP BINGO</p>",
+            "gallery_image3": "shopify://shop_images/WORLD_OF_ART_DAY.jpg",
+            "description3": "<p>WORLD OF ART DAY</p>",
+            "description4": "",
+            "description5": ""
+          }
         }
+      },
+      "block_order": [
+        "af69fdbf-38ca-43b0-a118-c61b2e6eeab8",
+        "da7d41d7-001b-4c0a-85fd-20b0eac80de0",
+        "0fee217a-3b2d-4fd7-b70c-cd671d14312b",
+        "2ff55f83-987f-497d-89c2-4382dac5be1b",
+        "33dd5bd0-7cb7-4ebe-aba1-c1cc4d9fb0c0"
+      ],
+      "name": "BeSocial Locations",
+      "settings": {
+        "section_title": "City Highlight:"
+      }
     }
   },
   "order": [

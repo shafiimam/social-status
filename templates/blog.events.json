@@ -48,7 +48,7 @@
           "type": "hero_button",
           "settings": {
             "btn_text": "About",
-            "btn_url": "",
+            "btn_url": "shopify://pages/besocial",
             "btn_watch": false,
             "book_form": false
           }
@@ -56,8 +56,8 @@
         "hero_button_Mmx4N4": {
           "type": "hero_button",
           "settings": {
-            "btn_text": "Text",
-            "btn_url": "",
+            "btn_text": "Free Game",
+            "btn_url": "shopify://pages/free-game",
             "btn_watch": false,
             "book_form": false
           }
