@@ -22,41 +22,70 @@
   line-height: normal;
   letter-spacing: -0.22px;
 }
-.vto-slider {
-  padding: 50px 20px;
-}
 .vto-slider-inner {
   max-height: 80vh;
-  aspect-ratio: 1/1;
   overflow-y: auto;
   scrollbar-width: thin;
   overflow-y: scroll;
-  scrollbar-color: var(--brand-color);
+  scrollbar-color: var(--brand-color) transparent;
   border-radius: 8px;
   padding: 12px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  gap: 20px;
   @media screen and (max-width: 768px) {
     height: 400px;
   }
 }
 .vto-slide {
-  height: 100%;
-  aspect-ratio: 1/1;
+  height: 77vh;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border-radius: 8px;
+  overflow: hidden;
 }
-.vto-slider::-webkit-scrollbar {
+
+.vto-slide:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.vto-slide:active {
+  transform: scale(0.98);
+}
+
+.vto-slide-placeholder,
+.vto-qr-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  color: #999;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.vto-slider-inner::-webkit-scrollbar {
   width: 8px;
 }
-.vto-slider::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+.vto-slider-inner::-webkit-scrollbar-thumb {
+  background-color: var(--brand-color);
   border-radius: 4px;
+}
+.vto-slider-inner::-webkit-scrollbar-track {
+  background: transparent;
 }
 .vto-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .vto-qr-container {
   display: flex;
@@ -67,17 +96,24 @@
   height: 100%;
 }
 
-.vto-qr-container img {
+.vto-qr-container .vto-qr-image,
+.vto-qr-container .vto-qr-placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
   width: 100%;
   height: 100%;
-  animation: fade-out 0.3s ease-in forwards;
+  animation: fade-out 0.2s ease-out forwards;
 }
-.vto-qr-container img.active-slide {
-  animation: fade-in 0.3s ease-in forwards;
+
+.vto-qr-container .vto-qr-image {
+  object-fit: cover;
+  object-position: top;
+}
+
+.vto-qr-container .vto-qr-image.active-slide,
+.vto-qr-container .vto-qr-placeholder.active-slide {
+  animation: fade-in 0.2s ease-out forwards;
 }
 
 @keyframes fade-in {

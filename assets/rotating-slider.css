@@ -50,8 +50,8 @@
 }
 .rotating-slider ul.direction-controls li button {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 102px;
+  height: 102px;
   padding: 22px;
   justify-content: center;
   align-items: center;
@@ -156,6 +156,8 @@ ul.slides li.active-slide:hover {
   height: max-content;
   width: max-content;
   margin: auto;
+  position: absolute;
+  top: -15px;
 }
 
 p.slide-text {
@@ -168,7 +170,7 @@ p.slide-text {
   align-items: center;
   color: #fff;
   font-family: var(--font-stack-headings);
-  font-size: clamp(16px, 2vw, 32px);
+  font-size: 32px;
   font-style: normal;
   font-weight: 500;
   line-height: 35px; /* 109.375% */

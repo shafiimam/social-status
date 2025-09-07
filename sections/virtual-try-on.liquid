@@ -9,8 +9,8 @@
       <div class="vto-slider">
         <div class="vto-slider-inner">
           {% for block in section.blocks %}
-            {% if block.settings.product_image %}
-              <div class="vto-slide" {{ block.shopify_attributes }}>
+            <div class="vto-slide" {{ block.shopify_attributes }}>
+              {% if block.settings.product_image %}
                 <img
                   id="product-image-{{ block.id }}"
                   src="{{ block.settings.product_image | image_url: width: 600 }}"
@@ -19,8 +19,10 @@
                   width="600"
                   height="600" 
                 >
-              </div>
-            {% endif %}
+              {% else %}
+                <div class="vto-slide-placeholder">No Image</div>
+              {% endif %}
+            </div>
           {% endfor %}
         </div>
       </div>
@@ -30,7 +32,7 @@
         {% for block in section.blocks %}
           {% if block.settings.product_qr_image %}
             <img
-              class="{% if forloop.first %}active-slide{% endif %}"
+              class="vto-qr-image {% if forloop.first %}active-slide{% endif %}"
               id="product-qr-image-{{ block.id }}"
               src="{{ block.settings.product_qr_image | image_url: width: 600 }}"
               alt="Product QR Image"
@@ -38,6 +40,10 @@
               width="600"
               height="600"
             >
+          {% else %}
+            <div class="vto-qr-placeholder {% if forloop.first %}active-slide{% endif %}">
+              No QR Image
+            </div>
           {% endif %}
         {% endfor %}
       </div>
@@ -50,8 +56,9 @@
       this.sliderInner = document.querySelector('.vto-slider-inner');
       this.qrContainer = document.querySelector('.vto-qr-container');
       this.slides = document.querySelectorAll('.vto-slide');
-      this.qrImages = document.querySelectorAll('.vto-qr-container img');
+      this.qrImages = document.querySelectorAll('.vto-qr-container .vto-qr-image, .vto-qr-container .vto-qr-placeholder');
       this.scrollTimeout = null;
+      this.isScrolling = false;
 
       this.init();
     }
@@ -70,6 +77,32 @@
 
     bindEvents() {
       this.sliderInner.addEventListener('scroll', () => this.handleScroll());
+      
+      // Add click functionality for snappy navigation
+      this.slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => this.scrollToSlide(index));
+      });
+    }
+
+    scrollToSlide(index) {
+      if (index >= 0 && index < this.slides.length) {
+        const slide = this.slides[index];
+        const slideRect = slide.getBoundingClientRect();
+        const containerRect = this.sliderInner.getBoundingClientRect();
+        const slideCenter = slideRect.top + slideRect.height / 2;
+        const containerCenter = containerRect.top + containerRect.height / 2;
+        const scrollOffset = slideCenter - containerCenter;
+        
+        this.sliderInner.scrollBy({
+          top: scrollOffset,
+          behavior: 'smooth'
+        });
+        
+        // Update QR image immediately for snappy feel
+        setTimeout(() => {
+          this.updateQRImageDisplay(index);
+        }, 50);
+      }
     }
 
     handleScroll() {
@@ -78,10 +111,10 @@
         clearTimeout(this.scrollTimeout);
       }
       
-      // Set new timeout to wait for scroll to end
+      // Set new timeout to wait for scroll to end (reduced for snappier feel)
       this.scrollTimeout = setTimeout(() => {
         this.updateQRImage();
-      }, 200); // Wait 150ms after scroll stops
+      }, 100); // Reduced from 200ms to 100ms for snappier response
     }
 
     updateQRImage() {
@@ -111,8 +144,8 @@
     }
 
     updateQRImageDisplay(activeSlideIndex) {
-      this.qrImages.forEach((img) => {
-        img.classList.remove('active-slide');
+      this.qrImages.forEach((element) => {
+        element.classList.remove('active-slide');
       });
 
       if (this.qrImages[activeSlideIndex]) {

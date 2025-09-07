@@ -25,8 +25,8 @@
             "button_link": "shopify://collections/38a",
             "text_color": "#ffffff",
             "button_color": "#000000",
-            "content_position_x": 75,
-            "overlay_opacity": 20
+            "horizontal_alignment": "left",
+            "vertical_alignment": "bottom"
           }
         },
         "slide_xaX3GE": {
@@ -42,8 +42,8 @@
             "button_link": "shopify://collections/honor-the-gift",
             "text_color": "#ffffff",
             "button_color": "#000000",
-            "content_position_x": 75,
-            "overlay_opacity": 20
+            "horizontal_alignment": "center",
+            "vertical_alignment": "middle"
           }
         },
         "slide_FeAtgp": {
@@ -58,21 +58,101 @@
             "button_link": "shopify://collections/honor-the-gift",
             "text_color": "#ffffff",
             "button_color": "#000000",
-            "content_position_x": 75,
-            "overlay_opacity": 20
+            "horizontal_alignment": "center",
+            "vertical_alignment": "middle"
+          }
+        },
+        "slide_YLddzK": {
+          "type": "slide",
+          "settings": {
+            "video_desktop": "shopify://files/videos/38A DENIM SHORTS.mov",
+            "video_mobile": "shopify://files/videos/38Amobile.mov",
+            "video_autoplay": true,
+            "video_loop": true,
+            "title": "",
+            "subtitle": "",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "",
+            "button_color": "",
+            "horizontal_alignment": "center",
+            "vertical_alignment": "middle"
           }
         }
       },
       "block_order": [
         "slide_CfM3T7",
         "slide_xaX3GE",
-        "slide_FeAtgp"
+        "slide_FeAtgp",
+        "slide_YLddzK"
       ],
       "name": "Hero Slideshow",
       "settings": {
         "title": "",
         "video_autoplay": true,
         "video_loop": true
+      }
+    },
+    "releases_pHU7Rr": {
+      "type": "releases",
+      "blocks": {
+        "release_card_EXcbkA": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/KOBE9MOONWALKER-1_5a14eb4b-acc0-4e93-9072-85064e0a93dc.jpg",
+            "title": "NIKE KOBE IX ELITE LOW PROTRO \"HYPER GRAPE/WHITE/ CAVE PURPLE\"",
+            "description": "",
+            "release_date": "9.10",
+            "price": "220",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-kobe-ix-elite-low-protro-hyper-grapewhite-cave-purple"
+          }
+        },
+        "release_card_ibVcYn": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/DUNKLOWPINKRISE-1_1e2e94ed-db64-44a7-a407-44848d271e29.jpg",
+            "title": "NIKE DUNK LOW RETRO PRM \"PINK RISE/ BLACK\"",
+            "description": "",
+            "release_date": "9.11",
+            "price": "135",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-dunk-low-retro-prm-pink-rise-black"
+          }
+        },
+        "release_card_zQXXgz": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/AM95CAMOORANGE-1_d9b95e26-437e-47bc-bb94-8190ac3e03fc.jpg",
+            "title": "NIKE AIR MAX 95 \"BLACK/ SAFETY ORANGE/ METALLIC SILVER\"",
+            "description": "",
+            "release_date": "9.12",
+            "price": "200",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-max-95-black-safety-orange-metallic-silver"
+          }
+        },
+        "release_card_4YtNad": {
+          "type": "release-card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/AJ4CAVESTONEGS-1.jpg",
+            "title": "AIR JORDAN 4 RETRO \"CAVESTONE\" GS",
+            "description": "",
+            "release_date": "9.06",
+            "price": "160",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-4-retro-cavestone-gs"
+          }
+        }
+      },
+      "block_order": [
+        "release_card_EXcbkA",
+        "release_card_ibVcYn",
+        "release_card_zQXXgz",
+        "release_card_4YtNad"
+      ],
+      "settings": {
+        "title": "Releases",
+        "column_size": 3,
+        "padding_top": 40,
+        "padding_bottom": 30
       }
     },
     "product_masonry_Fnqqrw": {
@@ -750,6 +830,7 @@
   },
   "order": [
     "hero_slideshow_8nKhq8",
+    "releases_pHU7Rr",
     "product_masonry_Fnqqrw",
     "rotating_slider_7yhr3n",
     "video_background_eCcVXP",
