@@ -273,7 +273,7 @@ span.tab-list-item-subtitle {
   }
 }
 
-button.tab-list-item-button {
+.tab-list-item-button {
   border-radius: 62px;
   border: 1px solid #000;
   background: #000;
@@ -284,30 +284,30 @@ button.tab-list-item-button {
   gap: 4px;
   color: #fff;
 }
-button.tab-list-item-button span {
+.tab-list-item-button span {
   color: #fff;
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
 }
 
-button.tab-list-item-button:hover {
+.tab-list-item-button:hover {
   border: 1px solid #000;
   background: #fff;
   color: #000;
   transition: all 0.2s ease-in;
 }
-button.tab-list-item-button:hover span {
+.tab-list-item-button:hover span {
   color: #000;
   transition: all 0.2s ease-in;
 }
-button.tab-list-item-button:hover svg {
+.tab-list-item-button:hover svg {
   transform: translateX(5px);
   transition: all 0.3s ease-in;
 }
-button.tab-list-item-button:hover svg path {
+.tab-list-item-button:hover svg path {
   stroke: #000;
   transition: all 0.2s ease-in;
 }

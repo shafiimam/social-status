@@ -22,15 +22,46 @@
     <div class="tab-images-column">
       {% assign image_index = 0 %}
       {% for tab_group in tabs_list %}
+        {% comment %} Loop through all blocks and filter by tab group {% endcomment %}
         {% for block in section.blocks %}
           {% if block.settings.tab_group_name == tab_group %}
-            {% if block.type == 'blog_block' %}
-              {% assign selected_blog = blogs[block.settings.blog] %}
-              {% if selected_blog %}
-                {% for article in selected_blog.articles %}
+          {% if block.type == 'blog_block' %}
+            {% assign selected_blog = blogs[block.settings.blog] %}
+            {% if selected_blog %}
+              {% for article in selected_blog.articles %}
+                <div
+                  class="tab-image-item {% if image_index == 0 %}active{% endif %}"
+                  data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                  data-tab-image-index="{{ image_index }}"
+                  data-tab-group-title="{{ tab_group }}"
+                >
+                  <img
+                    src="{{ article.image | img_url: 'master' }}"
+                    alt="{{ article.title }}"
+                    width="100%"
+                    height="100%"
+                  >
+                </div>
+                {% assign image_index = image_index | plus: 1 %}
+              {% endfor %}
+            {% endif %}
+          {% elsif block.type == 'events_block' %}
+            {% assign selected_blog = blogs[block.settings.blog] %}
+            {% if selected_blog %}
+              {% for article in selected_blog.articles %}
+                {% assign article_matches_city = false %}
+                {% for tag in article.tags %}
+                  {% assign normalized_tag = tag | downcase | remove: '#' %}
+                  {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
+                  {% if normalized_tag == normalized_city_tag %}
+                    {% assign article_matches_city = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                {% if article_matches_city %}
                   <div
                     class="tab-image-item {% if image_index == 0 %}active{% endif %}"
-                    data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                    data-tab-id="event-{{ block.id }}-{{ article.id }}"
                     data-tab-image-index="{{ image_index }}"
                     data-tab-group-title="{{ tab_group }}"
                   >
@@ -42,41 +73,10 @@
                     >
                   </div>
                   {% assign image_index = image_index | plus: 1 %}
-                {% endfor %}
-              {% endif %}
-            {% elsif block.type == 'events_block' %}
-              {% assign selected_blog = blogs[block.settings.blog] %}
-              {% if selected_blog %}
-                {% for article in selected_blog.articles %}
-                  {% assign article_matches_city = false %}
-                  {% for tag in article.tags %}
-                    {% assign normalized_tag = tag | downcase | remove: '#' %}
-                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                    {% if normalized_tag == normalized_city_tag %}
-                      {% assign article_matches_city = true %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if article_matches_city %}
-                    <div
-                      class="tab-image-item {% if image_index == 0 %}active{% endif %}"
-                      data-tab-id="event-{{ block.id }}-{{ article.id }}"
-                      data-tab-image-index="{{ image_index }}"
-                      data-tab-group-title="{{ tab_group }}"
-                    >
-                      <img
-                        src="{{ article.image | img_url: 'master' }}"
-                        alt="{{ article.title }}"
-                        width="100%"
-                        height="100%"
-                      >
-                    </div>
-                    {% assign image_index = image_index | plus: 1 %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
+                {% endif %}
+              {% endfor %}
             {% endif %}
-            {% break %}
+          {% endif %}
           {% endif %}
         {% endfor %}
       {% endfor %}
@@ -94,32 +94,143 @@
       <ul class="tab-list-item-contents">
         {% for tab_group in tabs_list %}
           {% assign first_tab_group = tabs_list.first %}
+          {% assign total_item_count = 0 %}
+          {% assign has_content = false %}
+          
+          {% comment %} First pass: count total items and check if there's content {% endcomment %}
           {% for block in section.blocks %}
             {% if block.settings.tab_group_name == tab_group %}
-              {% if block.type == 'blog_block' %}
-                {% assign selected_blog = blogs[block.settings.blog] %}
-                {% if selected_blog %}
-                  {% assign article_count = 0 %}
-                  {% for article in selected_blog.articles %}
-                    {% assign article_count = article_count | plus: 1 %}
+            {% if block.type == 'blog_block' %}
+              {% assign selected_blog = blogs[block.settings.blog] %}
+              {% if selected_blog %}
+                {% assign total_item_count = total_item_count | plus: selected_blog.articles.size %}
+                {% assign has_content = true %}
+              {% endif %}
+            {% elsif block.type == 'events_block' %}
+              {% assign selected_blog = blogs[block.settings.blog] %}
+              {% if selected_blog %}
+                {% for article in selected_blog.articles %}
+                  {% assign article_matches_city = false %}
+                  {% for tag in article.tags %}
+                    {% assign normalized_tag = tag | downcase | remove: '#' %}
+                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
+                    {% if normalized_tag == normalized_city_tag %}
+                      {% assign article_matches_city = true %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if article_matches_city %}
+                    {% assign total_item_count = total_item_count | plus: 1 %}
+                    {% assign has_content = true %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endif %}
+            {% endif %}
+          {% endfor %}
+          
+          {% comment %} Second pass: render content {% endcomment %}
+          {% assign current_item_count = 0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.tab_group_name == tab_group %}
+            {% if block.type == 'blog_block' %}
+              {% assign selected_blog = blogs[block.settings.blog] %}
+              {% if selected_blog %}
+                {% for article in selected_blog.articles %}
+                  {% assign current_item_count = current_item_count | plus: 1 %}
+                  <div
+                    class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
+                    data-tab-group-title="{{ tab_group }}"
+                    data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                  >
+                    <div class="tab-list-item-header">
+                      <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
+                      <div class="tab-list-item-content-container">
+                        <div class="tab-list-item-content">
+                          <span class="tab-list-item-title font-zen">{{ article.title }}</span>
+                          <div class="tab-list-item-content-inner">
+                            <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
+                            <span class="tab-list-item-date-mobile-only">{{ article.created_at | date: "%d.%m" }}</span>
+                            <a
+                              href="{{ article.url }}"
+                              class="tab-list-item-button"
+                            >
+                              <span> Read Article </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="tab-list-item-date">{{ article.created_at | date: "%d.%m" }}</span>
+                    </div>
+                    <div class="tab-list-item-mobile-image">
+                      <img
+                        src="{{ article.image | img_url: 'master' }}"
+                        alt="{{ article.title }}"
+                        width="100%"
+                        height="100%"
+                      >
+                    </div>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% elsif block.type == 'events_block' %}
+              {% assign selected_blog = blogs[block.settings.blog] %}
+              {% if selected_blog %}
+                {% for article in selected_blog.articles %}
+                  {% assign article_matches_city = false %}
+                  {% assign event_date = '' %}
+                  {% assign event_date_calendar = '' %}
+                  
+                  {% comment %} Extract event date {% endcomment %}
+                  {% for tag in article.tags %}
+                    {% if tag contains "event-date::" %}
+                      {% assign event_date_raw = tag | remove: "event-date::" %}
+                      {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
+                      {% assign event_date = event_date_parsed | date: "%d.%m" %}
+                      {% assign event_date_calendar = event_date_raw %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  
+                  {% comment %} Check if article matches city {% endcomment %}
+                  {% for tag in article.tags %}
+                    {% assign normalized_tag = tag | downcase | remove: '#' %}
+                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
+                    {% if normalized_tag == normalized_city_tag %}
+                      {% assign article_matches_city = true %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  
+                  {% if article_matches_city %}
+                    {% assign current_item_count = current_item_count | plus: 1 %}
                     <div
-                      class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if article_count == 1 %}expanded{% endif %}"
+                      class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
                       data-tab-group-title="{{ tab_group }}"
-                      data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                      data-tab-id="event-{{ block.id }}-{{ article.id }}"
                     >
                       <div class="tab-list-item-header">
-                        <p class="tab-list-item-index">/{{ article_count | prepend: '0' | slice: -2, 2 }}</p>
+                        <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
                         <div class="tab-list-item-content-container">
                           <div class="tab-list-item-content">
                             <span class="tab-list-item-title font-zen">{{ article.title }}</span>
                             <div class="tab-list-item-content-inner">
                               <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                              <span class="tab-list-item-date-mobile-only">{{ article.created_at | date: "%d.%m" }}</span>
+                              <span class="tab-list-item-date-mobile-only">{{ event_date }}</span>
                               <button
-                                href="{{ article.url }}"
                                 class="tab-list-item-button"
+                                onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
                               >
-                                <span> Read Article </span>
+                                <span> Add to Calendar </span>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="20"
@@ -133,7 +244,7 @@
                             </div>
                           </div>
                         </div>
-                        <span class="tab-list-item-date">{{ article.created_at | date: "%d.%m" }}</span>
+                        <span class="tab-list-item-date">{{ event_date }}</span>
                       </div>
                       <div class="tab-list-item-mobile-image">
                         <img
@@ -144,109 +255,32 @@
                         >
                       </div>
                     </div>
-                  {% endfor %}
-                {% endif %}
-              {% elsif block.type == 'events_block' %}
-                {% assign selected_blog = blogs[block.settings.blog] %}
-                {% if selected_blog %}
-                  {% assign event_count = 0 %}
-                  {% for article in selected_blog.articles %}
-                    {% assign article_matches_city = false %}
-                    {% assign event_date = '' %}
-                    {% assign event_date_calendar = '' %}
-                    
-                    {% comment %} Extract event date {% endcomment %}
-                    {% for tag in article.tags %}
-                      {% if tag contains "event-date::" %}
-                        {% assign event_date_raw = tag | remove: "event-date::" %}
-                        {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
-                        {% assign event_date = event_date_parsed | date: "%d.%m" %}
-                        {% assign event_date_calendar = event_date_raw %}
-                        {% break %}
-                      {% endif %}
-                    {% endfor %}
-                    
-                    {% comment %} Check if article matches city {% endcomment %}
-                    {% for tag in article.tags %}
-                      {% assign normalized_tag = tag | downcase | remove: '#' %}
-                      {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                      {% if normalized_tag == normalized_city_tag %}
-                        {% assign article_matches_city = true %}
-                        {% break %}
-                      {% endif %}
-                    {% endfor %}
-                    
-                    {% if article_matches_city %}
-                      {% assign event_count = event_count | plus: 1 %}
-                      <div
-                        class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if event_count == 1 %}expanded{% endif %}"
-                        data-tab-group-title="{{ tab_group }}"
-                        data-tab-id="event-{{ block.id }}-{{ article.id }}"
-                      >
-                        <div class="tab-list-item-header">
-                          <p class="tab-list-item-index">/{{ event_count | prepend: '0' | slice: -2, 2 }}</p>
-                          <div class="tab-list-item-content-container">
-                            <div class="tab-list-item-content">
-                              <span class="tab-list-item-title font-zen">{{ article.title }}</span>
-                              <div class="tab-list-item-content-inner">
-                                <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                                <span class="tab-list-item-date-mobile-only">{{ event_date }}</span>
-                                <button
-                                  class="tab-list-item-button"
-                                  onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
-                                >
-                                  <span> Add to Calendar </span>
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none"
-                                  >
-                                    <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <span class="tab-list-item-date">{{ event_date }}</span>
-                        </div>
-                        <div class="tab-list-item-mobile-image">
-                          <img
-                            src="{{ article.image | img_url: 'master' }}"
-                            alt="{{ article.title }}"
-                            width="100%"
-                            height="100%"
-                          >
-                        </div>
-                      </div>
-                    {% endif %}
-                  {% endfor %}
-                  
-                  {% comment %} Show "No events found" if no articles matched this city {% endcomment %}
-                  {% if event_count == 0 %}
-                    <div
-                      class="tab-list-item-container no-events {% if tab_group == first_tab_group %}active{% endif %}"
-                      data-tab-group-title="{{ tab_group }}"
-                    >
-                      <div class="tab-list-item-header">
-                        <p class="tab-list-item-index">/00</p>
-                        <div class="tab-list-item-content-container">
-                          <div class="tab-list-item-content">
-                            <span class="tab-list-item-title font-zen">No events found</span>
-                            <div class="tab-list-item-content-inner">
-                              <span class="tab-list-item-subtitle">There are currently no events scheduled for {{ block.settings.city_name }}.</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   {% endif %}
-                {% endif %}
+                {% endfor %}
               {% endif %}
-              {% break %}
+            {% endif %}
             {% endif %}
           {% endfor %}
+          
+          {% comment %} Show "No content found" if no content in any blocks for this tab group {% endcomment %}
+          {% unless has_content %}
+            <div
+              class="tab-list-item-container active expanded no-events {% if tab_group == first_tab_group %}active{% endif %}"
+              data-tab-group-title="{{ tab_group }}"
+            >
+              <div class="tab-list-item-header">
+                <p class="tab-list-item-index">/00</p>
+                <div class="tab-list-item-content-container">
+                  <div class="tab-list-item-content">
+                    <span class="tab-list-item-title font-zen">No content found</span>
+                    <div class="tab-list-item-content-inner">
+                      <span class="tab-list-item-subtitle">There is currently no content available for this section.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endunless %}
         {% endfor %}
       </ul>
     </div>

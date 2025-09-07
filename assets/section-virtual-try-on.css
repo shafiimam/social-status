@@ -1,6 +1,9 @@
 .virtual-try-on-section {
-  padding-block-start: 80px;
+  padding-block-start: 120px;
   height: calc(minmax(var(--window-height), 1000px));
+}
+.vto-slider{
+  padding: 20px;
 }
 .vto-content-container {
   background: #e8e8e8;
@@ -21,6 +24,9 @@
   font-weight: 300;
   line-height: normal;
   letter-spacing: -0.22px;
+}
+.vto-header p strong{
+  color: #000;
 }
 .vto-slider-inner {
   max-height: 80vh;
@@ -80,7 +86,8 @@
   border-radius: 4px;
 }
 .vto-slider-inner::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(197, 197, 197, 0.32);
+  border-radius: 4px;
 }
 .vto-slide img {
   width: 100%;
