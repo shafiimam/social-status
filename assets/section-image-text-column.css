@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.image-text-column__image {
+.image-text-column__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -34,7 +34,9 @@
   letter-spacing: -0.22px;
   color: var(--secondary-text);
 }
-
+.image-text-column.separator{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15) ;
+}
 @media (max-width: 768px) {
    .image-text-column__inner {
       grid-template-columns: 1fr;

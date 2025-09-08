@@ -8,10 +8,10 @@ data-sticky="{{ section.settings.menu_sticky }}">
   <span class="logo">
     {%- if section.settings.logo_src -%}
       <a class="logo-img logo-light" href="{{ routes.root_url }}" style="display:flex;align-items:center">
-        <img src="{{ section.settings.logo_src | image_url }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
+        <img src="{{ section.settings.logo_src | image_url: width: 200 }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
       </a>
       <a class="logo-img logo-inverted" href="{{ routes.root_url }}" style="display:flex;align-items:center">
-        <img src="{{ section.settings.logo_inverted_src | image_url }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
+        <img src="{{ section.settings.logo_inverted_src | image_url : width: 200 }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
       </a>
     {%- else -%}
       <a class="logo-txt" href="{{ routes.root_url }}">{{ shop.name | escape }}</a>

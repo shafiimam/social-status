@@ -285,14 +285,14 @@
           "type": "product",
           "settings": {
             "product_image": "shopify://shop_images/AM95WHITHYPERJADE-4.jpg",
-            "product_qr_image": "shopify://shop_images/SS-logo-white.png"
+            "product_qr_image": "shopify://shop_images/WOMEN_SS.png"
           }
         },
         "product_pcCr9i": {
           "type": "product",
           "settings": {
             "product_image": "shopify://shop_images/MADEINUK991V2_BEECHNUT_-1.jpg",
-            "product_qr_image": "shopify://shop_images/scan-qr_7a9253b5-c103-429c-8b1d-c12eeeda9581.png"
+            "product_qr_image": "shopify://shop_images/HOODSSS.png"
           }
         }
       },
@@ -304,7 +304,53 @@
       "name": "Virtual Try-On",
       "settings": {
         "heading": "Step In The Culture",
-        "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN AR</p>"
+        "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN <strong>AR  </strong></p>"
+      }
+    },
+    "in_store_features_events_PYU3XM": {
+      "type": "in-store-features-events",
+      "blocks": {
+        "blog_block_Qztdqd": {
+          "type": "blog_block",
+          "settings": {
+            "tab_group_name": "Featured",
+            "blog": "social-status"
+          }
+        },
+        "events_block_WQY3df": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON",
+            "blog": "blog-events"
+          }
+        },
+        "events_block_DB3ERc": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT",
+            "blog": "blog-events"
+          }
+        }
+      },
+      "block_order": [
+        "blog_block_Qztdqd",
+        "events_block_WQY3df",
+        "events_block_DB3ERc"
+      ],
+      "name": "Store Features & Events",
+      "settings": {
+        "main_title": "Latest features",
+        "main_title_width": "732",
+        "main_title_align": "left",
+        "sub_title": "and events",
+        "sub_title_align": "right",
+        "arrow_text_1": "culture",
+        "arrow_text_2": "events",
+        "show_tab_list": true
       }
     },
     "latest_features_f6y9et": {
@@ -369,6 +415,7 @@
         "city_block_z33ywE",
         "city_block_d4PK9k"
       ],
+      "disabled": true,
       "name": "Latest Features & Events",
       "settings": {
         "blog": "blog-events",
@@ -418,7 +465,8 @@
         "image": "shopify://shop_images/image_84.png",
         "image_position": "right",
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "show_border_below": true
       }
     },
     "floating_testimonials_KCBbUg": {
@@ -574,7 +622,7 @@
     "custom_liquid_WyGgiH": {
       "type": "custom-liquid",
       "custom_css": [
-        "span {color: var(--heading-color); font-weight: 500;}",
+        "span {color: var(--heading-color); font-weight: 900;}",
         "strong {color: var(--brand-primary);}"
       ],
       "name": "t:sections.refactor_words.custom_code.name",
@@ -698,6 +746,7 @@
     "rotating_slider_7yhr3n",
     "video_background_eCcVXP",
     "virtual_try_on_nBhXAa",
+    "in_store_features_events_PYU3XM",
     "latest_features_f6y9et",
     "image_text_column_rhg67G",
     "floating_testimonials_KCBbUg",

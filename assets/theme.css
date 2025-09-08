@@ -2156,7 +2156,7 @@ html[dir=ltr] .order-table td, html[dir=ltr] .order-table th {
   width: 45%;
   white-space: nowrap;
   display: block;
-  font-size: calc(11px / 16 * var(--base-body-size) + 0px);
+  font-size: calc(12px / 16 * var(--base-body-size) + 0px);
   line-height: 1;
   font-weight: var(--font-weight-body-bold);
   text-transform: uppercase;

@@ -440,7 +440,7 @@
       }
     },
     "addresses_page": {
-      "title": "My Account",
+      "title": "My Addresses",
       "subtitle": "Address Book",
       "add_address_link": "Add New Address",
       "edit_address_link": "Edit",

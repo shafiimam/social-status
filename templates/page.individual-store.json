@@ -48,11 +48,21 @@
             "city_tag": "HOUSTON",
             "blog": "blog-events"
           }
+        },
+        "events_block_BCW9NU": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT",
+            "blog": "blog-events"
+          }
         }
       },
       "block_order": [
         "blog_block_QzzgfY",
-        "events_block_7QLmLR"
+        "events_block_7QLmLR",
+        "events_block_BCW9NU"
       ],
       "name": "Store Features & Events",
       "settings": {
@@ -61,7 +71,7 @@
         "main_title_align": "left",
         "sub_title": "and EXPERIENCES",
         "sub_title_align": "right",
-        "arrow_text_1": "CUlture",
+        "arrow_text_1": "culture",
         "arrow_text_2": "events",
         "show_tab_list": true
       }

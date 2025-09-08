@@ -38,7 +38,8 @@
         "social": {
           "type": "social",
           "settings": {
-            "title": "Social"
+            "title": "Follow Us",
+            "show_icons": false
           }
         }
       },

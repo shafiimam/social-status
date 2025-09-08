@@ -202,7 +202,7 @@ body div#insta-feed{
   margin-bottom: 0 !important;
 }
 .instafeed-new-layout-wrapper {
-  margin-top: 40px;
+  margin-top: calc(80px - 1rem);
   align-items: start;
   gap: var(--media-grid-gap);
   grid: auto-flow dense 250px / repeat(
@@ -262,3 +262,11 @@ span.toggle__title {
   font-size: 16px;
 }
 
+.account-action-container{
+  padding-block-end: 0 !important;
+}
+
+/* customer order */
+td.line_image {
+  height: 145px;
+}
