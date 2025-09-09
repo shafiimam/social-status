@@ -68,6 +68,25 @@ document.querySelectorAll('.tab-list-item-container').forEach(item =>
   item.addEventListener('click', () => handleTabItemClick(item))
 );
 
+// Event listener for title clicks (redirect to article)
+document.querySelectorAll('.tab-list-item-title').forEach(title => {
+  title.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the container click from firing
+    const container = title.closest('.tab-list-item-container');
+    
+    // Only redirect if the tab is already active AND expanded (not just becoming active)
+    if (container && 
+        container.classList.contains('active') && 
+        container.classList.contains('expanded') && 
+        container.dataset.articleUrl) {
+      window.location.href = container.dataset.articleUrl;
+    } else {
+      // If not active/expanded, let the normal tab behavior happen
+      handleTabItemClick(container);
+    }
+  });
+});
+
 // Calendar function
 const formatDateForCalendar = (dateStr) => 
   new Date(dateStr).toISOString().replace(/[-:]|\.\d{3}/g, '');

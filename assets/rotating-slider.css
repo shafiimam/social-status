@@ -91,8 +91,8 @@
   left: 50%;
   text-align: center;
   transform-origin: bottom center;
-  width: 350px;
-  height: 600px;
+  width: 400px;
+  height: 500px;
   transition: all 0.3s ease-in;
   color: #fff;
   opacity: 0.8;

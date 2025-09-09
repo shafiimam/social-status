@@ -38,11 +38,11 @@
       "type": "header",
       "settings": {
         "logo_src": "shopify://shop_images/LOOP_LOGO_2.png",
-        "logo_inverted_src": "shopify://shop_images/SS-logo-white_eaa20853-5340-4bb9-8176-e30e8d0b372c.png",
+        "logo_inverted_src": "shopify://shop_images/SS-logo-white_8d1e4185-4ed3-4f10-9abb-3baac11067ec.png",
         "logo_height": 50,
         "main_linklist": "new-menu",
         "menu_style": "minimal",
-        "menu_sticky": "sticky--scroll",
+        "menu_sticky": "sticky",
         "menu_hide_border": true,
         "collection_linklist": "",
         "show_collection_image": true,
@@ -60,7 +60,6 @@
     },
     "breadcrumb": {
       "type": "breadcrumb",
-      "disabled": true,
       "settings": {}
     }
   },

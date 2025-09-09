@@ -6,7 +6,7 @@
 
 		<li class="has-submenu" id="menu-item-collections" aria-controls="SiteNavLabel-{{ collections_menu.title | handle }}-{{ type }}" aria-expanded="false">
 		
-			<a class="menu-link" href="{{ routes.collections_url }}">
+			<a class="menu-link parent-link" href="{{ routes.collections_url }}">
 				<span><span class="underline-animation">{{ collections_menu.title | escape }}</span></span>
 				<span class="icon">{%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}</span>
 			</a>
@@ -102,7 +102,7 @@
 
 		<li {% if link.links != blank %} class="has-submenu" aria-controls="SiteNavLabel-{{ link.handle }}-{{ type }}" aria-expanded="false" {% endif %} id="menu-item-{{ link.handle }}-secondary">
 
-			<a class="menu-link {% if link.active or link.child_active %} active {% endif %}" href="{{ link.url }}">
+			<a class="menu-link parent-link {% if link.active or link.child_active %} active {% endif %}" href="{{ link.url }}">
 
 				<span><span class="underline-animation">{{ link.title | escape }}</span></span>
 

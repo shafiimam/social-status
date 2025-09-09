@@ -93,6 +93,24 @@
         "video_loop": true
       }
     },
+    "product_masonry_Fnqqrw": {
+      "type": "product-masonry",
+      "name": "Product Masonry Gallery",
+      "settings": {
+        "title": "new arrivals",
+        "description": "<p>A space connected to several of our Social Status locations where we activate a variety of community focused events. beSOCIAL also acts as a free space for the local community to make their own.</p>",
+        "image": "shopify://shop_images/masonry-gallery-image.png",
+        "image_caption": "honor the gift",
+        "button_label": "see all arrivals",
+        "button_link": "shopify://collections/honor-the-gift",
+        "product_list": [
+          "home-studyos-03-planter-pierre",
+          "home-studyos-03-planter-pierre-1",
+          "human-made-6-panel-cap-3",
+          "nb-582"
+        ]
+      }
+    },
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
@@ -153,24 +171,6 @@
         "column_size": 3,
         "padding_top": 40,
         "padding_bottom": 30
-      }
-    },
-    "product_masonry_Fnqqrw": {
-      "type": "product-masonry",
-      "name": "Product Masonry Gallery",
-      "settings": {
-        "title": "new arrivals",
-        "description": "<p>A space connected to several of our Social Status locations where we activate a variety of community focused events. beSOCIAL also acts as a free space for the local community to make their own.</p>",
-        "image": "shopify://shop_images/masonry-gallery-image.png",
-        "image_caption": "honor the gift",
-        "button_label": "see all arrivals",
-        "button_link": "shopify://collections/honor-the-gift",
-        "product_list": [
-          "home-studyos-03-planter-pierre",
-          "home-studyos-03-planter-pierre-1",
-          "human-made-6-panel-cap-3",
-          "nb-582"
-        ]
       }
     },
     "rotating_slider_7yhr3n": {
@@ -444,7 +444,7 @@
         "text_item_9xrGED": {
           "type": "text_item",
           "settings": {
-            "title": "<p>Powered by Connection Your Community Activation Engine</p>"
+            "title": "<p>Powered by Connection </p><p>Your Community Activation Engine</p>"
           }
         },
         "button_kK4jpN": {
@@ -464,9 +464,10 @@
       "settings": {
         "image": "shopify://shop_images/image_84.png",
         "image_position": "right",
-        "padding_top": 40,
+        "padding_top": 60,
         "padding_bottom": 0,
-        "show_border_below": true
+        "show_border_below": true,
+        "show_border_top": true
       }
     },
     "floating_testimonials_KCBbUg": {
@@ -741,8 +742,8 @@
   },
   "order": [
     "hero_slideshow_8nKhq8",
-    "releases_pHU7Rr",
     "product_masonry_Fnqqrw",
+    "releases_pHU7Rr",
     "rotating_slider_7yhr3n",
     "video_background_eCcVXP",
     "virtual_try_on_nBhXAa",

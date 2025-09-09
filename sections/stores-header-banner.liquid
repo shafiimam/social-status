@@ -6,7 +6,11 @@
     </div>
     <div class="bottom-content">
       {% for block in section.blocks %}
-        <div class="bottom-dynamic-content" id="block-content-{{ forloop.index }}" style="{% if forloop.first %} display: block; {% else %} display: none; {% endif %}">
+        <div
+          class="bottom-dynamic-content"
+          id="block-content-{{ forloop.index }}"
+          style="{% if forloop.first %} display: block; {% else %} display: none; {% endif %}"
+        >
           <p class="block_location-content">{{ block.settings.location_content }}</p>
         </div>
       {% endfor %}
@@ -25,11 +29,16 @@
           <div class="rte block_location-info">
             {{- block.settings.location_info -}}
           </div>
+          {% if block.settings.button_label != blank %}
+            <a href="{{ block.settings.store_link }}" class="button button--white button--smallest">
+              {{- block.settings.button_label -}}
+            </a>
+          {% endif %}
         </div>
         <div class="stores-slide-overlay"></div>
       </div>
     {% endfor %}
-    
+
     <!-- Down Arrow Navigation -->
     <div class="slider-navigation-arrow" id="slider-arrow">
       <button class="arrow-button" type="button" aria-label="Go to next slide">
@@ -65,15 +74,15 @@
     // Throttle function for better performance
     function throttle(func, limit) {
       let inThrottle;
-      return function() {
+      return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
           func.apply(context, args);
           inThrottle = true;
-          setTimeout(() => inThrottle = false, limit);
+          setTimeout(() => (inThrottle = false), limit);
         }
-      }
+      };
     }
 
     // Debounce function for scroll end detection
@@ -94,7 +103,7 @@
         if (entry.isIntersecting) {
           entry.target.style.transform = 'translateY(0)';
           entry.target.style.opacity = '1';
-          
+
           // Update bottom content when a slide becomes active
           const slideIndex = Array.from(sliderCells).indexOf(entry.target);
           if (slideIndex !== -1 && slideIndex !== currentActiveIndex) {
@@ -112,7 +121,7 @@
       if (scrollStabilizationTimeout) {
         clearTimeout(scrollStabilizationTimeout);
       }
-      
+
       // On mobile, add a small delay to prevent rapid changes during scroll
       if (isMobile && !forceUpdate) {
         scrollStabilizationTimeout = setTimeout(() => {
@@ -122,7 +131,7 @@
         updateBottomContentImmediate(activeIndex);
       }
     }
-    
+
     function updateBottomContentImmediate(activeIndex) {
       bottomContentDivs.forEach((contentDiv, index) => {
         if (index === activeIndex) {
@@ -156,20 +165,25 @@
         const nextSlide = sliderCells[currentActiveIndex + 1];
         if (nextSlide) {
           // Use different scroll behavior for mobile vs desktop
-          const scrollOptions = isMobile ? {
-            behavior: 'smooth',
-            block: 'start'
-          } : {
-            behavior: 'smooth',
-            block: 'start'
-          };
-          
+          const scrollOptions = isMobile
+            ? {
+                behavior: 'smooth',
+                block: 'start',
+              }
+            : {
+                behavior: 'smooth',
+                block: 'start',
+              };
+
           nextSlide.scrollIntoView(scrollOptions);
-          
+
           // Reset scrolling flag after animation
-          setTimeout(() => {
-            isScrolling = false;
-          }, isMobile ? 800 : 600);
+          setTimeout(
+            () => {
+              isScrolling = false;
+            },
+            isMobile ? 800 : 600
+          );
         }
       }
     }
@@ -189,7 +203,7 @@
     function handleSwipe() {
       const swipeThreshold = 50;
       const diff = touchStartY - touchEndY;
-      
+
       if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
           // Swipe up - go to next slide
@@ -208,12 +222,15 @@
         if (prevSlide) {
           prevSlide.scrollIntoView({
             behavior: 'smooth',
-            block: 'start'
+            block: 'start',
           });
-          
-          setTimeout(() => {
-            isScrolling = false;
-          }, isMobile ? 800 : 600);
+
+          setTimeout(
+            () => {
+              isScrolling = false;
+            },
+            isMobile ? 800 : 600
+          );
         }
       }
     }
@@ -221,11 +238,11 @@
     // Enhanced scroll event handling with scroll snap
     const handleScroll = throttle(() => {
       if (isScrolling) return;
-      
+
       const scrollTop = rightSlider.scrollTop;
       const slideHeight = rightSlider.clientHeight;
       const newActiveIndex = Math.round(scrollTop / slideHeight);
-      
+
       if (newActiveIndex !== currentActiveIndex && newActiveIndex >= 0 && newActiveIndex < sliderCells.length) {
         currentActiveIndex = newActiveIndex;
         updateBottomContent(currentActiveIndex);
@@ -262,7 +279,7 @@
       isMobile = window.innerWidth <= 1024;
       // Reinitialize observer with new options if needed
       observer.disconnect();
-      sliderCells.forEach(cell => observer.observe(cell));
+      sliderCells.forEach((cell) => observer.observe(cell));
     }, 250);
 
     window.addEventListener('resize', handleResize);
@@ -277,7 +294,7 @@
     sliderCells.forEach((cell, index) => {
       cell.style.transform = 'translateY(30px)';
       cell.style.opacity = '0';
-      cell.style.transition = isMobile 
+      cell.style.transition = isMobile
         ? 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
       observer.observe(cell);
@@ -329,6 +346,12 @@
           "type": "richtext",
           "id": "location_content",
           "label": "About The Location"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Visit Store Page"
         },
         {
           "type": "url",

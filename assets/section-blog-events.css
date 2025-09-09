@@ -34,7 +34,7 @@
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 100px 20px;
 }
 
 .events_page .hero h1 {
@@ -173,7 +173,7 @@
 
 /* Events Calendar */
 .events-calendar {
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
 }
 .events-calendar .flickity-button-icon{
   fill: #000;
@@ -207,7 +207,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  min-width: 120px;
+  min-width: 130px;
 }
 
 .filter-text {
@@ -325,6 +325,9 @@
 .no-events-link:hover {
   color: var(--main-text);
   text-decoration: none;
+}
+#perspective-slider-blog-events-upcoming{
+  padding-block: 0;
 }
 #perspective-slider-blog-events-upcoming .block-slide-title{
   font-size: 24px;
@@ -736,7 +739,7 @@
   
   /* Mobile Filter Dropdown */
   .filter-dropdown-btn {
-    min-width: 100px;
+    min-width: 130px;
     gap: 0.25rem;
   }
   

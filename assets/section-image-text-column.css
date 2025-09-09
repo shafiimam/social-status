@@ -15,6 +15,11 @@
 .image-text-column__text {
   margin-top: 32px;
 }
+@media screen and (max-width: 768px) {
+  .image-text-column__text {
+    max-width: 260px;
+  }
+}
 .image-text-column__button {
   margin-top: 48px;
 }
@@ -34,9 +39,13 @@
   letter-spacing: -0.22px;
   color: var(--secondary-text);
 }
-.image-text-column.separator{
+.image-text-column.separator-below{
   border-bottom: 1px solid rgba(0, 0, 0, 0.15) ;
 }
+.image-text-column.separator-top{
+  border-top: 1px solid rgba(0, 0, 0, 0.15) ;
+}
+
 @media (max-width: 768px) {
    .image-text-column__inner {
       grid-template-columns: 1fr;

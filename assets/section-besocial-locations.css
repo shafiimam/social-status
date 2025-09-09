@@ -26,7 +26,6 @@ section.blog-locations {
 }
 
 .blog-locations-title h1 {
-  font-size: 64px;
   color: #fff;
   font-weight: 700;
   margin-left: 1rem;
@@ -237,15 +236,11 @@ section.blog-locations {
   .blog-locations-title img {
     height: 61px;
   }
-
-  .blog-locations-title h1 {
-    font-size: 32px;
-  }
 }
 
 @media (max-width: 768px) {
   section.blog-locations {
-    padding-bottom: 100px;
+    padding-bottom: 0px;
   }
 
   .blog-locations-title {
@@ -289,9 +284,6 @@ section.blog-locations {
 }
 
 @media (max-width: 480px) {
-  .blog-locations-title h1 {
-    font-size: 24px;
-  }
 
   .locations-city .city-item-mobile .city-name {
     font-size: 20px;

@@ -25,6 +25,7 @@
         },
         "image_hotspot_wWDTMJ": {
           "type": "image_hotspot",
+          "disabled": true,
           "settings": {
             "position": 11,
             "block_span": 2,

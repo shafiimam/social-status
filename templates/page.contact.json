@@ -9,11 +9,6 @@
  */
 {
   "sections": {
-    "breadcrumb_Cx6dj7": {
-      "type": "breadcrumb",
-      "name": "Breadcrumbs",
-      "settings": {}
-    },
     "main": {
       "type": "contact-form",
       "blocks": {
@@ -69,7 +64,6 @@
     }
   },
   "order": [
-    "breadcrumb_Cx6dj7",
     "main"
   ]
 }

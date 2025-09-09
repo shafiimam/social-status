@@ -1004,7 +1004,7 @@ a.selected .underline-animation-alternative, a.active .underline-animation-alter
 }
 
 .buttons-holder {
-  display: flex;
+  display: flex !important;
   flex-flow: row wrap;
   width: calc(100% + 20px);
   margin-inline-start: -10px;

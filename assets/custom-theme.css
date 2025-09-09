@@ -270,3 +270,12 @@ span.toggle__title {
 td.line_image {
   height: 145px;
 }
+.text-w-icon__title{
+  text-transform: uppercase;
+}
+.terms-relentless{
+  order: -1;
+}
+.cart-policy{
+  font-size: 14px;
+}

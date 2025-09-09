@@ -150,7 +150,7 @@
                           <span class="tab-list-item-title font-zen">{{ article.title }}</span>
                           <div class="tab-list-item-content-inner">
                             <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                            <span class="tab-list-item-date-mobile-only">{{ article.created_at | date: "%d.%m" }}</span>
+                            <span class="tab-list-item-date-mobile-only">{{ article.created_at | date: "%d.%m.%y" }}</span>
                             <a
                               href="{{ article.url }}"
                               class="tab-list-item-button"
@@ -169,7 +169,7 @@
                           </div>
                         </div>
                       </div>
-                      <span class="tab-list-item-date">{{ article.created_at | date: "%d.%m" }}</span>
+                      <span class="tab-list-item-date">{{ article.created_at | date: "%d.%m.%y" }}</span>
                     </div>
                     <div class="tab-list-item-mobile-image">
                       <img
@@ -195,7 +195,7 @@
                     {% if tag contains "event-date::" %}
                       {% assign event_date_raw = tag | remove: "event-date::" %}
                       {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
-                      {% assign event_date = event_date_parsed | date: "%d.%m" %}
+                      {% assign event_date = event_date_parsed %}
                       {% assign event_date_calendar = event_date_raw %}
                       {% break %}
                     {% endif %}
@@ -217,6 +217,7 @@
                       class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
                       data-tab-group-title="{{ tab_group }}"
                       data-tab-id="event-{{ block.id }}-{{ article.id }}"
+                      data-article-url="{{ article.url }}"
                     >
                       <div class="tab-list-item-header">
                         <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
@@ -225,7 +226,7 @@
                             <span class="tab-list-item-title font-zen">{{ article.title }}</span>
                             <div class="tab-list-item-content-inner">
                               <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                              <span class="tab-list-item-date-mobile-only">{{ event_date }}</span>
+                              <span class="tab-list-item-date-mobile-only">{{ event_date | date: "%d.%m.%y" }}</span>
                               <button
                                 class="tab-list-item-button"
                                 onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
@@ -244,7 +245,7 @@
                             </div>
                           </div>
                         </div>
-                        <span class="tab-list-item-date">{{ event_date }}</span>
+                        <span class="tab-list-item-date">{{ event_date | date: "%d.%m.%y" }}</span>
                       </div>
                       <div class="tab-list-item-mobile-image">
                         <img

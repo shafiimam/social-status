@@ -71,7 +71,7 @@
                       <span class="tab-list-item-title font-zen">{{ block.settings.item_title }}</span>
                       <div class="tab-list-item-content-inner">
                         <span class="tab-list-item-subtitle">{{ block.settings.item_subtitle }}</span>
-                        <span class="tab-list-item-date-mobile-only">{{ block.settings.item_date }}</span>
+                        <span class="tab-list-item-date-mobile-only">{{ block.settings.item_date | date: "%d.%m.%y" }}</span>
                         <button
                           class="tab-list-item-button"
                           onclick="addToCalendar('{{ block.settings.item_title }}', '{{ block.settings.item_date }}')"
@@ -90,7 +90,7 @@
                       </div>
                     </div>
                   </div>
-                  <span class="tab-list-item-date">{{ block.settings.item_date }}</span>
+                  <span class="tab-list-item-date">{{ block.settings.item_date | date: "%d.%m.%y" }}</span>
                 </div>
                 <div class="tab-list-item-mobile-image">
                   <img

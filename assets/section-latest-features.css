@@ -24,7 +24,7 @@
 .title-column .sub-title {
   color: var(--heading-color);
   text-align: center;
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-style: normal;
   font-weight: 900;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
 }
 .tab-list-nav-item-title {
   color: var(--card-foreground, #09090b);
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
@@ -154,7 +154,7 @@
 .tab-list-item-index {
   color: var(--secondary-text);
   text-align: center;
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -176,8 +176,9 @@
 }
 .tab-list-item-container.active.expanded .tab-list-item-title {
   color: #040404;
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-size: clamp(24px, 2.5vw, 32px);
+  cursor: pointer;
   font-weight: 900;
   line-height: 100%;
   letter-spacing: -0.78px;
@@ -221,7 +222,7 @@
 }
 span.tab-list-item-subtitle {
   color: var(--muted-foreground, #71717a);
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -231,7 +232,7 @@ span.tab-list-item-subtitle {
 }
 .tab-list-item-date {
   color: var(--secondary-text);
-  font-family: Yantramanav;
+  font-family: var(--font-stack-headings);
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -250,8 +251,8 @@ span.tab-list-item-subtitle {
 .tab-list-item-date-mobile-only {
   display: none;
   color: var(--secondary-text);
-  font-family: Yantramanav;
-  font-size: 24px;
+  font-family: var(--font-stack-headings);
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;

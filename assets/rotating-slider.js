@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
               directionLeftText: "&lsaquo;",
               directionRightText: "&rsaquo;",
               rotationSpeed: 750,
-              slideHeight: 600,
+              slideHeight: 500,
               slideHeightMobile: 400,
               slideWidth: 350,
               beforeRotationStart: function () {},
@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $(function () {
     $(".rotating-slider").rotatingSlider({
-      slideHeight: 600,
+      slideHeight: 500,
       slideWidth: Math.min(350, window.innerWidth - 100),
       autoRotate: false,
       draggable: false,

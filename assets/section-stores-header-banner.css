@@ -85,6 +85,16 @@
     text-decoration: none;
     border: none;
   }
+  .stores-slide-info .button{
+    font-family: var(--font-stack-headings);
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+  }
+  .stores-slide-info .button:hover{
+    opacity: 0.8;
+  }
   .stores-slide-overlay{
      position: absolute;
      z-index: 1;

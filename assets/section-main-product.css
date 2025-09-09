@@ -1262,7 +1262,7 @@ html[dir="ltr"] .box--product-media[data-type="video"] .video-popup__close svg {
 }
 
 /* custom style */
-.product-description {
+.product-description.rte p {
   font-family: Yantramanav;
   font-size: 18px;
   line-height: 24px;

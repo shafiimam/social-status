@@ -13,7 +13,8 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
-        "layout": "split"
+        "layout": "split",
+        "text": ""
       }
     },
     "collection_header_banner_qqMjzp": {
@@ -48,6 +49,9 @@
         "slide_FpfNR3",
         "slide_bHEqLt",
         "slide_kb9KeV"
+      ],
+      "custom_css": [
+        ".bottom-content .subtitle{font-size: 18px;}"
       ],
       "name": "Collection Header Banner",
       "settings": {

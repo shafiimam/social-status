@@ -142,6 +142,7 @@ html[dir=ltr] .site-header .logo img {
 }
 .site-menu-handle svg {
   transition: transform 150ms linear;
+  /* transform: rotate(270deg) ; */
 }
 body.sidebar-move .site-menu-handle {
   opacity: 0.08;

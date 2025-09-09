@@ -139,3 +139,9 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .vto-slide{
+    max-height: 400px;
+  }
+}

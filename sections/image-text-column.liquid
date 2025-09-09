@@ -32,7 +32,7 @@
    </div>
 {% endcapture %}
 
-<div class="image-text-column {% if section.settings.show_border_below %}separator{% endif %}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+<div class="image-text-column {% if section.settings.show_border_below %}separator-below{% endif %} {% if section.settings.show_border_top %}separator-top{% endif %}" style="margin-top: {{ section.settings.padding_top }}px; margin-bottom: {{ section.settings.padding_bottom }}px;">
   <div class="image-text-column__inner">
     {% if section.settings.image_position == 'left' %}
       {{ image_html }}
@@ -99,6 +99,13 @@
       "label": "Show Border Below",
       "default": false,
       "info": "Show a border below the image and text column"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show Border Top",
+      "default": false,
+      "info": "Show a border top the image and text column"
     }
   ],
   "blocks": [

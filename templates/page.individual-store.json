@@ -33,36 +33,18 @@
     "in_store_features_events_nrwdqW": {
       "type": "in-store-features-events",
       "blocks": {
-        "blog_block_QzzgfY": {
-          "type": "blog_block",
-          "settings": {
-            "tab_group_name": "Featured",
-            "blog": "social-status"
-          }
-        },
-        "events_block_7QLmLR": {
+        "events_block_bLHC4t": {
           "type": "events_block",
           "settings": {
             "tab_group_name": "Events",
-            "city_name": "HOUSTON",
-            "city_tag": "HOUSTON",
-            "blog": "blog-events"
-          }
-        },
-        "events_block_BCW9NU": {
-          "type": "events_block",
-          "settings": {
-            "tab_group_name": "Events",
-            "city_name": "DETROIT",
-            "city_tag": "DETROIT",
+            "city_name": "CHARLOTTE",
+            "city_tag": "CHARLOTTE",
             "blog": "blog-events"
           }
         }
       },
       "block_order": [
-        "blog_block_QzzgfY",
-        "events_block_7QLmLR",
-        "events_block_BCW9NU"
+        "events_block_bLHC4t"
       ],
       "name": "Store Features & Events",
       "settings": {
