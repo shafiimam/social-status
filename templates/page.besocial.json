@@ -101,7 +101,7 @@
             "item_text_2": "NC",
             "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#coming_events",
             "button_text": "Featured Events",
-            "hover_image": "shopify://shop_images/image_91.png"
+            "hover_image": "shopify://shop_images/Charlotte-img.jpg"
           }
         },
         "list_item_kHhH7m": {
@@ -109,9 +109,9 @@
           "settings": {
             "item_text": "Atlanta,",
             "item_text_2": "GA",
-            "button_link": "shopify://pages/copy-of-about-us",
-            "button_text": "visit shop",
-            "hover_image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg"
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/atlanta#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Atlanta-img.jpg"
           }
         },
         "list_item_K6i4nA": {
@@ -121,7 +121,7 @@
             "item_text_2": "TX",
             "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#coming_events",
             "button_text": "Featured Events",
-            "hover_image": "shopify://shop_images/GS-SEASICK-BLK_2.jpg"
+            "hover_image": "shopify://shop_images/Houston-img.jpg"
           }
         },
         "list_item_xbHzbC": {
@@ -149,9 +149,9 @@
           "settings": {
             "item_text": "RALEIGH",
             "item_text_2": ", NC",
-            "button_link": "shopify://pages/our-stores",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/raleigh#coming_events",
             "button_text": "Featured Events",
-            "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg"
+            "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.png"
           }
         },
         "list_item_XT8qPW": {
@@ -161,7 +161,7 @@
             "item_text_2": ", FL",
             "button_link": "shopify://pages/our-stores",
             "button_text": "Featured Events",
-            "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg"
+            "hover_image": "shopify://shop_images/TB_acb88b1b-036e-4fc2-9ef5-1449771fa29e.png"
           }
         },
         "list_item_UKPF9r": {
@@ -580,7 +580,7 @@
           "type": "city",
           "settings": {
             "anchor": "charlotte",
-            "image": "shopify://shop_images/Pittsburgh-img.jpg",
+            "image": "shopify://shop_images/Charlotte-img.jpg",
             "city_name": "Charlotte, NC",
             "city_name_short": "CLT",
             "gallery_image1": "shopify://shop_images/BESOCIAL_CARES_COOKOUT.jpg",

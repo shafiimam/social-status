@@ -208,88 +208,6 @@
         "text_alignment": "center"
       }
     },
-    "latest_features_z6mKK6": {
-      "type": "latest-features",
-      "blocks": {
-        "item_block_FXahxi": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/image_92.png",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        },
-        "item_block_hLFXxh": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/new_arrivals_pic.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "02"
-          }
-        },
-        "item_block_rA7Pni": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-2.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "03"
-          }
-        },
-        "item_block_winDKR": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "04"
-          }
-        },
-        "item_block_dNJiGM": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Events",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        }
-      },
-      "block_order": [
-        "item_block_FXahxi",
-        "item_block_hLFXxh",
-        "item_block_rA7Pni",
-        "item_block_winDKR",
-        "item_block_dNJiGM"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "@media only screen and (max-width: 768px) {.sub-title {text-align: left !important; }}"
-      ],
-      "name": "Latest Features & Events",
-      "settings": {
-        "main_title": "Events",
-        "main_title_width": "890",
-        "main_title_align": "left",
-        "sub_title": "and Flagship Programs",
-        "sub_title_align": "right",
-        "arrow_text_1": "Cultutre",
-        "arrow_text_2": "Events",
-        "show_tab_list": false
-      }
-    },
     "rich_text_N378Ed": {
       "type": "rich-text",
       "blocks": {
@@ -380,7 +298,6 @@
     "main",
     "list_column_4RwtQJ",
     "perspective_slider_YTetjX",
-    "latest_features_z6mKK6",
     "rich_text_N378Ed",
     "text_columns_with_icons_rQepi4"
   ]

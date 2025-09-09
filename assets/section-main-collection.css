@@ -39,6 +39,9 @@
     right: auto;
     left: 0;
   }
+  .first-products-1{
+    display: none;
+  }
 }
 
 
@@ -159,3 +162,4 @@
     bottom: 30px;
   }
 }
+

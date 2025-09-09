@@ -47,8 +47,8 @@
             
             if section.settings.hidden_collections != blank
               assign hidden_collections = section.settings.hidden_collections
-              for collection in hidden_collections
-                assign trimmed_handle = hidden_collections.handle
+              for hidden_collection in hidden_collections
+                assign trimmed_handle = hidden_collection.handle
                 if collection.handle == trimmed_handle
                   assign should_hide = true
                   break

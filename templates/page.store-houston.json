@@ -1,0 +1,170 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "split",
+        "text": ""
+      }
+    },
+    "store_header_bnner_38J47n": {
+      "type": "store-header-bnner",
+      "name": "Individual Store Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/HOU_51b16b30-8c54-4366-8e4f-c6288008453d.jpg",
+        "title": "<p>Social Status <strong>Houston</strong></p>",
+        "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
+        "button_label": "Book a Visit",
+        "button_url": "",
+        "store_address": "<p><a href=\"https://goo.gl/maps/tQreQifRbPg3hG7c6\" target=\"_blank\">818 Town & Country Blvd. Suite 104. Houston, TX 77024</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:713-637-4304\">713-637-4304</a></p>",
+        "store_image": "shopify://shop_images/image_115.png"
+      }
+    },
+    "in_store_features_events_nrwdqW": {
+      "type": "in-store-features-events",
+      "blocks": {
+        "events_block_bLHC4t": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "CHARLOTTE",
+            "city_tag": "CHARLOTTE",
+            "blog": "blog-events"
+          }
+        }
+      },
+      "block_order": [
+        "events_block_bLHC4t"
+      ],
+      "name": "Store Features & Events",
+      "settings": {
+        "main_title": "In-STORE Events",
+        "main_title_width": "732",
+        "main_title_align": "left",
+        "sub_title": "and EXPERIENCES",
+        "sub_title_align": "right",
+        "arrow_text_1": "culture",
+        "arrow_text_2": "events",
+        "show_tab_list": true
+      }
+    },
+    "video_background_xHpBKL": {
+      "type": "video-background",
+      "blocks": {
+        "heading_4gfyiA": {
+          "type": "heading",
+          "settings": {
+            "heading": "STORE VIDEO",
+            "heading_size": "h2",
+            "seo_h_tag": "h4"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4gfyiA"
+      ],
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/SS Detroit Store .mov",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "#ffffff",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "meet_staff_Qx9fd4": {
+      "type": "meet-staff",
+      "blocks": {
+        "staff_3Mwm8t": {
+          "type": "staff",
+          "settings": {
+            "name": "James Danton",
+            "image": "shopify://shop_images/tops-collection-banner.png",
+            "position": "Store Manager",
+            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>",
+            "product_list": [
+              "1906-team-away-grey",
+              "1906-utility-navy",
+              "1906-utility-raincloud",
+              "1906a-silver-metallic"
+            ]
+          }
+        },
+        "staff_YyyNPN": {
+          "type": "staff",
+          "settings": {
+            "name": "James Danton",
+            "image": "shopify://shop_images/tops-collection-banner.png",
+            "position": "",
+            "description": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>",
+            "product_list": [
+              "1906r-moonrock",
+              "1906l-raincloud",
+              "honor-the-gift-1988-full-zip-hood",
+              "a-bathing-ape-1st-camo-ma-1"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "staff_3Mwm8t",
+        "staff_YyyNPN"
+      ],
+      "name": "Meet Our Staff",
+      "settings": {
+        "title": "Meet Our Staff"
+      }
+    },
+    "rich_text_GmBxUz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ALJbfz": {
+          "type": "heading",
+          "settings": {
+            "heading": "SEO COPY HEADING HERE",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_JtR7Ya": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ALJbfz",
+        "text_JtR7Ya"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "store_header_bnner_38J47n",
+    "in_store_features_events_nrwdqW",
+    "video_background_xHpBKL",
+    "meet_staff_Qx9fd4",
+    "rich_text_GmBxUz"
+  ]
+}
