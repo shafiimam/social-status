@@ -97,12 +97,12 @@
       "type": "product-masonry",
       "name": "Product Masonry Gallery",
       "settings": {
-        "title": "new arrivals",
-        "description": "<p>A space connected to several of our Social Status locations where we activate a variety of community focused events. beSOCIAL also acts as a free space for the local community to make their own.</p>",
+        "title": "Shop knits",
+        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
         "image": "shopify://shop_images/masonry-gallery-image.png",
-        "image_caption": "honor the gift",
-        "button_label": "see all arrivals",
-        "button_link": "shopify://collections/honor-the-gift",
+        "image_caption": "knits",
+        "button_label": "shop",
+        "button_link": "shopify://collections/knits-1",
         "product_list": [
           "home-studyos-03-planter-pierre",
           "home-studyos-03-planter-pierre-1",
@@ -305,6 +305,39 @@
       "settings": {
         "heading": "Step In The Culture",
         "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN <strong>AR  </strong></p>"
+      }
+    },
+    "shop_the_look_yJ96E3": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_KJNpDX": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_7Fz9xj": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_qFEUPt": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_KJNpDX",
+        "product_7Fz9xj",
+        "product_qFEUPt"
+      ],
+      "disabled": true,
+      "name": "t:sections.shop-the-look.presets.name",
+      "settings": {
+        "desktop_image_positioning": "image-on-left"
       }
     },
     "in_store_features_events_PYU3XM": {
@@ -747,6 +780,7 @@
     "rotating_slider_7yhr3n",
     "video_background_eCcVXP",
     "virtual_try_on_nBhXAa",
+    "shop_the_look_yJ96E3",
     "in_store_features_events_PYU3XM",
     "latest_features_f6y9et",
     "image_text_column_rhg67G",
