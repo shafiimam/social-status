@@ -211,28 +211,27 @@
           {%- else -%}
             {%- if section.settings.show_collection_image and collection.image -%}
               <div
-                class="site-box box--big lap--box--small-fl-auto box--typo-big box--top-align box--with-scroll box--column-flow box__heading"
+                class="site-box box--big lap--box--small-fl-auto box--typo-big box--top-align box--column-flow box__heading"
                 data-order="0"
+                id="fix-height-{{ section.id }}"
                 data-size="{{ collection.products.size }}"
                 data-custom-text="{{ section.id }}"
                 data-heading-with-image
-                style="height:var(--window-height);min-height:0;border-bottom:0"
+                style="min-height:0;border-bottom:0; justify-content: center; align-items: center;"
               >
-                <div class="reduce-top-margin">
-                  <div class="site-box-content">
-                    <h1
-                      class="title h1 text-uppercase"
-                      style="{% if section.settings.show_collection_image and collection.image %}color: #fff;{% endif %}"
-                    >
-                      {{ collection.title }}
-                    </h1>
-                    {%- if collection.description != blank and section.settings.show_collection_description -%}
-                      <div class="rte subtitle">
-                        <div>{{ collection.description }}</div>
-                      </div>
-                    {%- endif -%}
-                    {%- if settings.headings_hr -%}<hr>{%- endif -%}
-                  </div>
+                <div class="site-box-content">
+                  <h1
+                    class="title h1 text-uppercase"
+                    style="{% if section.settings.show_collection_image and collection.image %}color: #fff;{% endif %}"
+                  >
+                    {{ collection.title }}
+                  </h1>
+                  {%- if collection.description != blank and section.settings.show_collection_description -%}
+                    <div class="rte subtitle">
+                      <div>{{ collection.description }}</div>
+                    </div>
+                  {%- endif -%}
+                  {%- if settings.headings_hr -%}<hr>{%- endif -%}
                 </div>
 
                 <span class="site-box-background {% if section.settings.mobile_overlay_background != "rgba(0,0,0,0)" %} with-image {% endif %}">
@@ -246,21 +245,16 @@
               </div>
 
               <div
-                class="site-box box--big lap--hide box--typo-big box--center-align box--column-flow box--no-padding fix-me-with-height box__collection_image"
-                data-order="0"
+                class="first-products-0 product-grid-border-fix fix-bottom-border fix-borders-split {% if rest_products %} fix-borders-rest {% endif %}"
+                data-grid-columns="2"
+                id="fix-height-with-{{ section.id }}"
               >
-                <div
-                  class="product-grid-border-fix fix-bottom-border fix-borders-split {% if rest_products %} fix-borders-rest {% endif %}"
-                  data-grid-columns="2"
-                  id="fix-height-with-{{ section.id }}"
-                >
-                  {{ first_products }}
-                </div>
+                {{ first_products }}
               </div>
 
               {{ collection_mobile_filter_button }}
               <div
-                class="product-grid-border-fix  hide lap-show fix-bottom-border"
+                class="first-products-1 product-grid-border-fix  hide lap-show fix-bottom-border"
                 style="width:100%"
                 data-count="{{ collection.products.size | modulo: 4 }}"
               >
@@ -273,7 +267,33 @@
               >
                 {{ rest_products }}
               </div>
-
+              <style id="css-fix-height-{{ section.id }}"></style>
+              <script>
+                const fixCollectionHeight = () => {
+                  document.getElementById(
+                    'css-fix-height-{{ section.id }}'
+                  ).innerHTML = `@media screen and (min-width: 1025px), screen and (min-width: 769px) and (orientation: landscape) { 
+                    #fix-height-{{ section.id }} {
+                      height: ${
+                        document.getElementById('fix-height-with-{{ section.id }}').offsetHeight - 1
+                      }px !important;
+                    }
+                  }`;
+                  console.log(
+                    'fixing collection height',
+                    document.getElementById('fix-height-with-{{ section.id }}').offsetHeight
+                  );
+                };
+                fixCollectionHeight();
+                window.addEventListener('resize', fixCollectionHeight);
+                new MutationObserver(() => {
+                  fixCollectionHeight();
+                }).observe(document.getElementById('CollectionProductGrid'), {
+                  attributes: false,
+                  childList: true,
+                  subtree: false,
+                });
+              </script>
             {%- else -%}
               <div class="fix-pagination-border">
                 <div class="fix-collection-grid-box-design clearfix box--can-stick">
@@ -299,37 +319,13 @@
 
                   {{ collection_mobile_filter_button }}
                   <div
-                    class="product-grid-border-fix fix-bottom-border fix-borders-split {% if rest_products %} fix-borders-rest {% endif %}"
+                    class="first-products-2 product-grid-border-fix fix-bottom-border fix-borders-split {% if rest_products %} fix-borders-rest {% endif %}"
                     data-grid-columns="2"
                     id="fix-height-with-{{ section.id }}"
                   >
                     {{ first_products }}
                   </div>
                 </div>
-
-                <style id="css-fix-height-{{ section.id }}"></style>
-                <script>
-                  const fixCollectionHeight = () => {
-                    document.getElementById(
-                      'css-fix-height-{{ section.id }}'
-                    ).innerHTML = `@media screen and (min-width: 1025px), screen and (min-width: 769px) and (orientation: landscape) { 
-                      #fix-height-{{ section.id }} {
-                        height: ${
-                          document.getElementById('fix-height-with-{{ section.id }}').offsetHeight - 1
-                        }px !important;
-                      }
-                    }`;
-                  };
-                  fixCollectionHeight();
-                  window.addEventListener('resize', fixCollectionHeight);
-                  new MutationObserver(() => {
-                    fixCollectionHeight();
-                  }).observe(document.getElementById('CollectionProductGrid'), {
-                    attributes: false,
-                    childList: true,
-                    subtree: false,
-                  });
-                </script>
               </div>
 
               {%- if rest_products -%}
@@ -349,7 +345,7 @@
         {%- else -%}
           {{ collection_mobile_filter_button }}
           <div
-            class="product-grid-border-fix fix-bottom-border"
+            class="all-products product-grid-border-fix fix-bottom-border"
             {% if section.settings.show_collection_banner %}
               data-grid-columns="2"
             {% endif %}
