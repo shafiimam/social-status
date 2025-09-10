@@ -329,20 +329,99 @@
         }, 1000);
       });
 
-      // Handle window resize to switch between mobile/desktop videos
+      // Handle window resize to switch between mobile/desktop videos and reinitialize slider
+      // This ensures proper slider behavior on orientation changes, breakpoint changes, and significant resizes
       let resizeTimeout;
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
+      let lastWindowWidth = window.innerWidth;
+      let lastWindowHeight = window.innerHeight;
+      
+      // Function to reinitialize the slider
+      function reinitializeSlider(preserveIndex = true) {
+        console.log('Reinitializing slideshow');
+        
+        // Store current slide index before reinitializing
+        const currentIndex = flkty ? flkty.selectedIndex : 0;
+        
+        // Clean up current instance
+        if (flkty) {
+          flkty.destroy();
+          flkty = null;
+        }
+        
+        // Reinitialize Flickity
+        flkty = new Flickity(flickityElement, {
+          cellAlign: 'left',
+          contain: true,
+          prevNextButtons: true,
+          pageDots: false,
+          wrapAround: true,
+          autoPlay: false,
+        });
+        
+        // Store the new instance
+        slideshow.flickityInstance = flkty;
+        
+        // Select the previous slide if preserving index
+        if (preserveIndex && currentIndex < flkty.cells.length) {
+          flkty.select(currentIndex, false, true);
+        }
+        
+        // Re-add event listeners
+        flkty.on('select', function (index) {
           pauseAllVideos();
+          currentSlideIndex = index;
+          clearTimeout(videoEndedTimeout);
+
           setTimeout(function () {
-            // Update current slide index and only play if valid
-            if (flkty && flkty.selectedIndex !== undefined) {
-              currentSlideIndex = flkty.selectedIndex;
+            if (flkty.selectedIndex === index) {
               playCurrentVideo();
               updateAudioButtonState();
             }
           }, 1000);
+        });
+        
+        // Play current video after reinitialization
+        setTimeout(function () {
+          currentSlideIndex = flkty.selectedIndex;
+          playCurrentVideo();
+          updateAudioButtonState();
+        }, 100);
+      }
+      
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+          const currentWindowWidth = window.innerWidth;
+          const currentWindowHeight = window.innerHeight;
+          const isBreakpointChange = (lastWindowWidth <= 768) !== (currentWindowWidth <= 768);
+          const significantSizeChange = Math.abs(currentWindowWidth - lastWindowWidth) > 100 || 
+                                       Math.abs(currentWindowHeight - lastWindowHeight) > 100;
+          
+          // If breakpoint changed (mobile/desktop switch), reinitialize the entire slider
+          if (isBreakpointChange) {
+            console.log('Breakpoint change detected, reinitializing slideshow');
+            reinitializeSlider(true);
+          } 
+          // If significant size change (orientation change, major resize), also reinitialize
+          else if (significantSizeChange) {
+            console.log('Significant size change detected, reinitializing slideshow');
+            reinitializeSlider(true);
+          } 
+          // Just handle video switching for minor changes
+          else {
+            pauseAllVideos();
+            setTimeout(function () {
+              if (flkty && flkty.selectedIndex !== undefined) {
+                currentSlideIndex = flkty.selectedIndex;
+                playCurrentVideo();
+                updateAudioButtonState();
+              }
+            }, 1000);
+          }
+          
+          // Update last window dimensions
+          lastWindowWidth = currentWindowWidth;
+          lastWindowHeight = currentWindowHeight;
         }, 250);
       });
 
@@ -405,6 +484,15 @@
         initializeHeroSlideshow(slideshow);
       });
     }
+
+    // Function to reinitialize all slideshows (useful for external calls)
+    function reinitializeAllSlideshows() {
+      console.log('Reinitializing all hero slideshows');
+      initializeAllSlideshows(true);
+    }
+
+    // Expose reinitialization function globally for external use
+    window.reinitializeHeroSlideshows = reinitializeAllSlideshows;
 
     // Initialize on DOM ready
     if (document.readyState === 'loading') {

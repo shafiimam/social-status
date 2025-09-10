@@ -12,11 +12,28 @@
     "hero_slideshow_8nKhq8": {
       "type": "hero-slideshow",
       "blocks": {
+        "slide_xaX3GE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/NB_740_Hit.png",
+            "image_mobile": "shopify://shop_images/Mobile_NB_740.png",
+            "video_autoplay": true,
+            "video_loop": true,
+            "title": "The Whitaker group and new balance 740 \"willful bias\" for discovery",
+            "subtitle": "release 9.19 @ 11 am est",
+            "button_text": "enter raffle",
+            "button_link": "shopify://collections/honor-the-gift",
+            "text_color": "#ffffff",
+            "button_color": "#000000",
+            "horizontal_alignment": "center",
+            "vertical_alignment": "middle"
+          }
+        },
         "slide_CfM3T7": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Untitled-1_dccf1ea4-b2d1-470d-ad44-c8b3070e7a4b.jpg",
-            "image_mobile": "shopify://shop_images/38blog.jpg",
+            "video_desktop": "shopify://files/videos/38a Shorts Drop 2.mov",
+            "video_mobile": "shopify://files/videos/38a Shorts Drop 2.mov",
             "video_autoplay": true,
             "video_loop": true,
             "title": "38a denim shorts",
@@ -29,33 +46,17 @@
             "vertical_alignment": "bottom"
           }
         },
-        "slide_xaX3GE": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/38adesk4.jpg",
-            "image_mobile": "shopify://shop_images/drop.jpg",
-            "video_autoplay": true,
-            "video_loop": true,
-            "title": "social status x honor the gift",
-            "subtitle": "now available",
-            "button_text": "Shop now",
-            "button_link": "shopify://collections/honor-the-gift",
-            "text_color": "#ffffff",
-            "button_color": "#000000",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "middle"
-          }
-        },
         "slide_FeAtgp": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "video_desktop": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
+            "video_mobile": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
             "video_autoplay": true,
             "video_loop": true,
-            "title": "",
-            "subtitle": "",
-            "button_text": "",
-            "button_link": "shopify://collections/honor-the-gift",
+            "title": "BACK TO SCHOOL CAPSULE",
+            "subtitle": "EXPLORE LATEST LOOKS",
+            "button_text": "shop",
+            "button_link": "shopify://collections/back-to-school",
             "text_color": "#ffffff",
             "button_color": "#000000",
             "horizontal_alignment": "center",
@@ -65,14 +66,14 @@
         "slide_YLddzK": {
           "type": "slide",
           "settings": {
-            "video_desktop": "shopify://files/videos/38A DENIM SHORTS.mov",
-            "video_mobile": "shopify://files/videos/38Amobile.mov",
+            "video_desktop": "shopify://files/videos/FRFR WEB.mov",
+            "video_mobile": "shopify://files/videos/FRFR WEB.mov",
             "video_autoplay": true,
             "video_loop": true,
-            "title": "",
-            "subtitle": "",
-            "button_text": "",
-            "button_link": "",
+            "title": "new balance abzorb 2010 \"brighton grey\"",
+            "subtitle": "available now",
+            "button_text": "buy now",
+            "button_link": "shopify://products/2010-brighton-grey",
             "text_color": "",
             "button_color": "",
             "horizontal_alignment": "center",
@@ -81,8 +82,8 @@
         }
       },
       "block_order": [
-        "slide_CfM3T7",
         "slide_xaX3GE",
+        "slide_CfM3T7",
         "slide_FeAtgp",
         "slide_YLddzK"
       ],

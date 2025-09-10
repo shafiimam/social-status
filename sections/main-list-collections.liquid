@@ -45,8 +45,19 @@
           unless collection.handle == 'frontpage'
             assign should_hide = false
             
-            if section.settings.hidden_collections != blank
-              assign hidden_collections = section.settings.hidden_collections
+            if section.settings.hidden_collections_1 != blank
+              assign hidden_collections = section.settings.hidden_collections_1
+              for hidden_collection in hidden_collections
+                assign trimmed_handle = hidden_collection.handle
+                if collection.handle == trimmed_handle
+                  assign should_hide = true
+                  break
+                endif
+              endfor
+            endif
+
+            if section.settings.hidden_collections_2 != blank
+              assign hidden_collections = section.settings.hidden_collections_2
               for hidden_collection in hidden_collections
                 assign trimmed_handle = hidden_collection.handle
                 if collection.handle == trimmed_handle
@@ -85,8 +96,8 @@
               endif
               
               assign should_hide = false
-              if section.settings.hidden_collections != blank
-                assign hidden_collections = section.settings.hidden_collections 
+              if section.settings.hidden_collections_1 != blank
+                assign hidden_collections = section.settings.hidden_collections_1 
                 for hidden_collection in hidden_collections
                   assign trimmed_handle = hidden_collection.handle
                   if collection.handle == trimmed_handle
@@ -95,6 +106,18 @@
                   endif
                 endfor
               endif
+
+              if section.settings.hidden_collections_2 != blank
+                assign hidden_collections = section.settings.hidden_collections_2
+                for hidden_collection in hidden_collections
+                  assign trimmed_handle = hidden_collection.handle
+                  if collection.handle == trimmed_handle
+                    assign should_hide = true
+                    break
+                  endif
+                endfor
+              endif
+
               unless should_hide
                 assign custom_index = custom_index | plus: 1
                 render 'collection-item', collection: collection, id: section.id, size: forloop.length, text_alignment: section.settings.text_alignment, custom_overlay: custom_overlay, index: forloop.index
@@ -116,8 +139,18 @@
               endif
               
               assign should_hide = false
-              if section.settings.hidden_collections != blank
-                assign hidden_collections = section.settings.hidden_collections 
+              if section.settings.hidden_collections_1 != blank
+                assign hidden_collections = section.settings.hidden_collections_1 
+                for hidden_collection in hidden_collections
+                  assign trimmed_handle = hidden_collection.handle
+                  if collection.handle == trimmed_handle
+                    assign should_hide = true
+                    break
+                  endif
+                endfor
+              endif
+              if section.settings.hidden_collections_2 != blank
+                assign hidden_collections = section.settings.hidden_collections_2
                 for hidden_collection in hidden_collections
                   assign trimmed_handle = hidden_collection.handle
                   if collection.handle == trimmed_handle
@@ -275,8 +308,13 @@
       },
       {
         "type": "collection_list",
-        "id": "hidden_collections",
+        "id": "hidden_collections_1",
         "label": "Hidden Collections"
+      },
+      {
+        "type": "collection_list",
+        "id": "hidden_collections_2",
+        "label": "Hidden Collections 2"
       }
     ],
     "blocks": [
