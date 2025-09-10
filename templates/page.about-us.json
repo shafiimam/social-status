@@ -9,263 +9,46 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "hero_CJA9KA": {
+      "type": "hero",
       "disabled": true,
+      "name": "Hero Section",
       "settings": {
-        "layout": "split"
+        "desktop_image": "shopify://shop_images/ssaboutus_1.jpg",
+        "heading": "",
+        "subheading": "",
+        "button_1_text": "Button 1",
+        "button_1_link": "",
+        "button_2_text": "Button 2",
+        "button_2_link": "",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle"
       }
     },
-    "besocial_hero_zTgNQP": {
-      "type": "besocial-hero",
-      "blocks": {
-        "button_3qFNWd": {
-          "type": "button",
-          "settings": {
-            "button_text": "Book an event",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "button_3qFNWd"
-      ],
-      "name": "Be Social Hero",
-      "settings": {
-        "background_image": "shopify://shop_images/besocial-hero.png",
-        "logo": "shopify://shop_images/besocial-logo-light.png",
-        "content": "<p>A space connected to several of our Social Status locations where we activate a variety of community-focused events. beSocial also acts as a free space for the local community to make their own.</p>"
-      }
-    },
-    "list_column_4RwtQJ": {
-      "type": "list-column",
-      "blocks": {
-        "list_item_BXCeWr": {
-          "type": "list_item",
-          "settings": {
-            "item_text": "Charlotte,",
-            "item_text_2": "NC",
-            "button_link": "shopify://pages/copy-of-about-us",
-            "button_text": "Featured Events",
-            "hover_image": "shopify://shop_images/image_91.png"
-          }
-        },
-        "list_item_7kzYGg": {
-          "type": "list_item",
-          "settings": {
-            "item_text": "Atlanta,",
-            "item_text_2": "GA",
-            "button_link": "shopify://pages/copy-of-about-us",
-            "button_text": "visit shop",
-            "hover_image": "shopify://shop_images/GS-OLLIE-BONE_2.jpg"
-          }
-        },
-        "list_item_PAUAge": {
-          "type": "list_item",
-          "settings": {
-            "item_text": "Houston,",
-            "item_text_2": "TX",
-            "button_link": "shopify://pages/our-stores",
-            "button_text": "Featured Events",
-            "hover_image": "shopify://shop_images/GS-SEASICK-BLK_2.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "list_item_BXCeWr",
-        "list_item_7kzYGg",
-        "list_item_PAUAge"
-      ],
-      "name": "List Column",
-      "settings": {
-        "separate_section_with_border": false
-      }
-    },
-    "perspective_slider_YTetjX": {
-      "type": "perspective-slider",
-      "blocks": {
-        "slide_item_BXTaCX": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/apbNBdesk.jpg",
-            "title": "",
-            "description": "<p>Hoop Club CLT</p>",
-            "button_text": "",
-            "button_url": ""
-          }
-        },
-        "slide_item_ztnFze": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/desk1_2684acce-cb1a-4db1-8619-0c84d6b4ebdf.jpg",
-            "title": "",
-            "description": "<p>First Mil Ruin Club</p>",
-            "button_text": "",
-            "button_url": ""
-          }
-        },
-        "slide_item_qq8rGP": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
-            "title": "",
-            "description": "<p><strong>press players club: </strong></p><p>album21. doggystyle x</p><p>snoop doggy dogg</p>",
-            "button_text": "",
-            "button_url": ""
-          }
-        },
-        "slide_item_BfRwkk": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": "",
-            "description": "<p>First Mil Ruin Club</p>",
-            "button_text": "",
-            "button_url": ""
-          }
-        },
-        "slide_item_EHpx97": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/color38adesk_2_f6a4a77e-2716-4643-9b41-81cf37139b1e.jpg",
-            "title": "",
-            "description": "<p>First Mil Ruin Club</p>",
-            "button_text": "",
-            "button_url": ""
-          }
-        },
-        "slide_item_yK4b9B": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
-            "title": "",
-            "description": "<p>press players club: </p><p>album21. doggystyle x</p><p>snoop doggy dogg</p>",
-            "button_text": "",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_item_BXTaCX",
-        "slide_item_ztnFze",
-        "slide_item_qq8rGP",
-        "slide_item_BfRwkk",
-        "slide_item_EHpx97",
-        "slide_item_yK4b9B"
-      ],
-      "name": "Perspective Slider",
-      "settings": {
-        "title": "IMPACT AREAS",
-        "auto_play": false,
-        "background_color": "#000000",
-        "slide_overlay_color": "linear-gradient(0deg, rgba(231, 126, 33, 0.68), rgba(231, 126, 33, 0.68) 100%)",
-        "text_color": "#ffffff",
-        "text_color_card": "#ffffff",
-        "path_color": "#757575",
-        "text_alignment": "center"
-      }
-    },
-    "latest_features_z6mKK6": {
-      "type": "latest-features",
-      "blocks": {
-        "item_block_FXahxi": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/image_92.png",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        },
-        "item_block_hLFXxh": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/new_arrivals_pic.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "02"
-          }
-        },
-        "item_block_rA7Pni": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/FOAMPOSITEWHITE-2.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "03"
-          }
-        },
-        "item_block_winDKR": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Features",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-1.jpg",
-            "item_title": "Supervsn Fall/Winter 24",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "04"
-          }
-        },
-        "item_block_dNJiGM": {
-          "type": "item_block",
-          "settings": {
-            "tab_group_title": "Events",
-            "item_image": "shopify://shop_images/AIRMAXWAFFLESP2GRNPINK-4.jpg",
-            "item_title": "Supervsn Fall/Winter 25",
-            "item_date": "10.04.25",
-            "item_subtitle": "Explore amazing and fashion design program 2025 in Detroit just in 1 week from now",
-            "item_index": "01"
-          }
-        }
-      },
-      "block_order": [
-        "item_block_FXahxi",
-        "item_block_hLFXxh",
-        "item_block_rA7Pni",
-        "item_block_winDKR",
-        "item_block_dNJiGM"
-      ],
-      "custom_css": [
-        "@media only screen and (max-width: 768px) {.sub-title {text-align: left !important; }}"
-      ],
-      "name": "Latest Features & Events",
-      "settings": {
-        "main_title": "Events",
-        "main_title_width": "890",
-        "main_title_align": "left",
-        "sub_title": "and Flagship Programs",
-        "sub_title_align": "right",
-        "arrow_text_1": "Cultutre",
-        "arrow_text_2": "Events",
-        "show_tab_list": false
-      }
-    },
-    "rich_text_N378Ed": {
+    "rich_text_4Nbw4V": {
       "type": "rich-text",
       "blocks": {
-        "heading_D63yGQ": {
+        "heading_GEhag6": {
           "type": "heading",
           "settings": {
-            "heading": "SEO COPY HEADING HERE",
+            "heading": "About us",
             "seo_h_tag": "h1"
           }
         },
-        "text_AN9a4T": {
+        "text_QCTLFp": {
           "type": "text",
           "settings": {
-            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+            "text": "{{ page.content }}"
           }
         }
       },
       "block_order": [
-        "heading_D63yGQ",
-        "text_AN9a4T"
+        "heading_GEhag6",
+        "text_QCTLFp"
+      ],
+      "custom_css": [
+        "b {font-weight: bold;}",
+        "h1{text-align: center;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -279,62 +62,18 @@
         "seo_h_tag": "h1"
       }
     },
-    "text_columns_with_icons_rQepi4": {
-      "type": "text-columns-with-icons",
-      "blocks": {
-        "text_icon_EBQHxw": {
-          "type": "text-icon",
-          "settings": {
-            "title": "Delivery",
-            "body": "<p>Reliable shipping that keeps you in the loop from checkout to doorstep.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/carbon_delivery.png"
-          }
-        },
-        "text_icon_JKmNie": {
-          "type": "text-icon",
-          "settings": {
-            "title": "RETURNS & EXCHANGES",
-            "body": "<p>A smooth, flexible process designed to match the ease of your shopping experience.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/streamline_return-2.png"
-          }
-        },
-        "text_icon_UhBc9n": {
-          "type": "text-icon",
-          "settings": {
-            "title": "Customer Service",
-            "body": "<p>Real support from real people—ready to help with anything you need.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/ph_chat.png"
-          }
-        }
-      },
-      "block_order": [
-        "text_icon_EBQHxw",
-        "text_icon_JKmNie",
-        "text_icon_UhBc9n"
-      ],
+    "main": {
+      "type": "main-page",
+      "disabled": true,
       "settings": {
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h3"
+        "layout": "full",
+        "text": ""
       }
     }
   },
   "order": [
-    "main",
-    "besocial_hero_zTgNQP",
-    "list_column_4RwtQJ",
-    "perspective_slider_YTetjX",
-    "latest_features_z6mKK6",
-    "rich_text_N378Ed",
-    "text_columns_with_icons_rQepi4"
+    "hero_CJA9KA",
+    "rich_text_4Nbw4V",
+    "main"
   ]
 }
