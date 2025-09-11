@@ -1,7 +1,6 @@
 {% comment %}
-  Enhanced perspective slider for events-slider section with filtering support
-  Shows ALL upcoming events (no 8-slide limit)
-  
+  Renders a perspective slider specifically for blog events articles
+
   Accepts:
   - blog: object - Blog object containing articles
   - now_date: string - Current timestamp for filtering upcoming events
@@ -18,6 +17,16 @@
   - slide_height: number - Custom slide height in px (default: 250)
   - initial_index: number - Initial slide index (default: 3)
   - show_controls: boolean - Show gallery controls (default: true)
+  - filter_city: string - City filter to apply to articles (optional)
+
+  Usage:
+  {% render 'blog-events-perspective-slider',
+    blog: blog,
+    now_date: now_date,
+    section_id: 'blog-events-upcoming',
+    auto_play: false,
+    background_color: '#000000'
+  %}
 {% endcomment %}
 
 {%- liquid
@@ -52,7 +61,25 @@
     {% endif %}
   {% endfor %}
   {% if article_date != '' and article_date > now_date %}
-    {% assign upcoming_count = upcoming_count | plus: 1 %}
+    {% assign article_matches_filter = false %}
+    
+    {% if filter_city.size == 0 %}
+      {% assign article_matches_filter = true %}
+    {% else %}
+      {% assign filter_tag_upper = filter_city | upcase %}
+      {% for tag in article.tags %}
+        {% assign tag_upper = tag | upcase %}
+        {% assign tag_without_hash = tag_upper | remove: '#' %}
+        {% if tag_upper == filter_tag_upper or tag_without_hash == filter_tag_upper %}
+          {% assign article_matches_filter = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% if article_matches_filter %}
+      {% assign upcoming_count = upcoming_count | plus: 1 %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 
@@ -69,23 +96,34 @@
         {% endif %}
       {% endfor %}
       {% if article_date != '' and article_date > now_date %}
-        {%- liquid
-          assign formatted_date = ''
-          assign article_tags_string = ''
-          for tag in article.tags
-            if tag contains "event-date::"
-              assign formatted_date = tag | remove: "event-date::" | date: "%m-%d-%Y"
-            else
-              if article_tags_string == ''
-                assign article_tags_string = tag
-              else
-                assign article_tags_string = article_tags_string | append: ',' | append: tag
+        {% assign article_matches_filter = false %}
+        
+        {% if filter_city.size == 0 %}
+          {% assign article_matches_filter = true %}
+        {% else %}
+          {% assign filter_tag_upper = filter_city | upcase %}
+          {% for tag in article.tags %}
+            {% assign tag_upper = tag | upcase %}
+              {% assign tag_without_hash = tag_upper | remove: '#' %}
+            {% if tag_upper == filter_tag_upper or tag_without_hash == filter_tag_upper %}
+              {% assign article_matches_filter = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        
+        {% if article_matches_filter %}
+          {%- liquid
+            assign formatted_date = ''
+            for tag in article.tags
+              if tag contains "event-date::"
+                assign formatted_date = tag | remove: "event-date::" | date: "%m,%d,%Y"
+                break
               endif
-            endif
-          endfor
-        -%}
+            endfor
+          -%}
       
-      <div class="block-slide-item blog-event-slide" data-tags="{{ article_tags_string }}">
+      <div class="block-slide-item blog-event-slide">
         <div class="block-slide-image-container" style="--slide-overlay-color: {{ slide_overlay_color }}">
           {% if article.image %}
             <picture>
@@ -125,8 +163,11 @@
         </div>
       </div>
       
-      {% assign slide_counter = slide_counter | plus: 1 %}
-      {% comment %} Removed 8-slide limit to show all events {% endcomment %}
+          {% assign slide_counter = slide_counter | plus: 1 %}
+          {% if slide_counter >= 8 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
       {% endif %}
     {% endfor %}
   </div>
@@ -137,26 +178,54 @@
     </div>
   {% endif %}
 </div>
+{% else %}
+  <div class="no-events-message">
+    <p>No upcoming events to display in slider.</p>
+  </div>
+{% endif %}
 
 <style>
   #perspective-slider-{{ section_id }} {
-    background-color: {{ background_color }};
-    color: {{ text_color }};
-    padding: 60px 0;
-    min-height: {{ slider_height }}px;
+    {% if background_color %}background-color: {{ background_color }};{% endif %}
   }
-  
-  #perspective-slider-{{ section_id }} .perspective-slider-container {
-    height: {{ slider_height }}px;
+  #perspective-slider-{{ section_id }} .heading {
+    {% if text_color %}color: {{ text_color }};{% endif %}
   }
-  
+  #perspective-slider-{{ section_id }} .flickity-viewport {
+    overflow: visible !important;
+    height: {{ slider_height }}px !important;
+  }
   #perspective-slider-{{ section_id }} .block-slide-item {
     width: {{ slide_width }}px;
     height: {{ slide_height }}px;
   }
   
-  #perspective-slider-{{ section_id }} .block-slide-item::before {
-    background: {{ slide_overlay_color }};
+  /* Blog event specific styles */
+  #perspective-slider-{{ section_id }} .event-date {
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  #perspective-slider-{{ section_id }} .event-excerpt {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #perspective-slider-{{ section_id }} .block-slide-item {
+      height: {{ slide_height | minus: 50 }}px;
+      width: {{ slide_width | minus: 50 }}px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    #perspective-slider-{{ section_id }} .block-slide-item {
+      height: {{ slide_height | minus: 50 }}px;
+      width: {{ slide_width | minus: 100 }}px;
+    }
   }
 </style>
 
@@ -211,12 +280,13 @@
       window['perspectiveSlider_' + '{{ section_id }}'] = perspectiveSlider;
       // Also store as main reference for knob compatibility
       window.perspectiveSlider = perspectiveSlider;
+      
+      // Trigger knob initialization if available
+      if (typeof window.initSliderKnob === 'function') {
+        setTimeout(() => {
+          window.initSliderKnob();
+        }, 100);
+      }
     }
   });
 </script>
-
-{% else %}
-<div class="no-upcoming-events" style="background-color: {{ background_color }}; color: {{ text_color }}; padding: 60px 0; text-align: center;">
-  <p>No upcoming events available.</p>
-</div>
-{% endif %}

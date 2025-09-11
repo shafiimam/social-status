@@ -185,7 +185,7 @@
 
 #coming_events .container {
   margin: 0 auto;
-  padding: var(--box-auto-top) var(--box-smaller-padding)
+  /* padding: var(--box-auto-top) var(--box-smaller-padding) */
 }
 
 
@@ -344,8 +344,11 @@
 
 .events-grid-view.show {
   display: block;
+  padding: var(--box-auto-top) var(--box-smaller-padding);
 }
-
+a.button.button--solid.events-toggle-btn{
+  margin-top: 30px;
+}
 .events-slider-view.hide {
   display: none;
 }
