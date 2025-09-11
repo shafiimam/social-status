@@ -182,7 +182,7 @@
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/38a Shorts Drop 2.mov",
-        "video_height": "56.25%",
+        "video_height": "var(--window-height)",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
         "custom_overlay": "#757575"
@@ -252,7 +252,9 @@
       "settings": {
         "heading": "Collections",
         "subheading": "Browse our Collections and find the best fit",
-        "backdrop_text": "Culture"
+        "backdrop_text": "Culture",
+        "padding_top": 124,
+        "padding_bottom": 0
       }
     },
     "shop_the_look_yJ96E3": {
@@ -337,26 +339,16 @@
         "events_block_WQY3df": {
           "type": "events_block",
           "settings": {
-            "tab_group_name": "Events",
+            "tab_group_name": "Events @Houston",
             "city_name": "HOUSTON",
             "city_tag": "HOUSTON",
-            "blog": "blog-events"
-          }
-        },
-        "events_block_DB3ERc": {
-          "type": "events_block",
-          "settings": {
-            "tab_group_name": "Events",
-            "city_name": "DETROIT",
-            "city_tag": "DETROIT",
             "blog": "blog-events"
           }
         }
       },
       "block_order": [
         "blog_block_Qztdqd",
-        "events_block_WQY3df",
-        "events_block_DB3ERc"
+        "events_block_WQY3df"
       ],
       "name": "Store Features & Events",
       "settings": {
@@ -367,7 +359,9 @@
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More"
       }
     },
     "latest_features_f6y9et": {
@@ -443,7 +437,9 @@
         "sub_title_align": "right",
         "arrow_text_1": "Cultutre",
         "arrow_text_2": "Events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More"
       }
     },
     "image_text_column_rhg67G": {
