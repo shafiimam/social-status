@@ -15,8 +15,8 @@
         "heading_iANpbF": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
-            "seo_h_tag": "h3"
+            "heading": "",
+            "seo_h_tag": "h2"
           }
         },
         "text_KqrwnL": {
@@ -33,8 +33,8 @@
       "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "title": "Call to action",
-        "btn_label": "More info",
+        "title": "",
+        "btn_label": "",
         "btn_url": "",
         "desktop_image_positioning": "image-on-left",
         "bg_overlay": false,
@@ -45,10 +45,9 @@
     },
     "hero_xFNVG8": {
       "type": "hero",
+      "disabled": true,
       "name": "Hero Section",
       "settings": {
-        "desktop_image": "shopify://shop_images/sseditorial.jpg",
-        "mobile_image": "shopify://shop_images/sseditorial.png",
         "heading": "Features",
         "subheading": "",
         "button_1_text": "Read",
@@ -58,33 +57,6 @@
         "horizontal_alignment": "center",
         "vertical_alignment": "middle"
       }
-    },
-    "article_spotlight_fgaxk4": {
-      "type": "article-spotlight",
-      "blocks": {
-        "article_fDcdqD": {
-          "type": "article",
-          "settings": {
-            "heading": "Example Heading Here",
-            "article": "social-status/beyond-the-music-with-soulection",
-            "image_on_left": true
-          }
-        },
-        "article_9n8b7e": {
-          "type": "article",
-          "settings": {
-            "heading": "Example Heading Here",
-            "article": "social-status/social-status-presents-the-1st-15th-community-film-screening",
-            "image_on_left": true
-          }
-        }
-      },
-      "block_order": [
-        "article_fDcdqD",
-        "article_9n8b7e"
-      ],
-      "name": "Article Spotlight",
-      "settings": {}
     },
     "main": {
       "type": "main-blog",
@@ -117,17 +89,17 @@
         "custom_overlay": "rgba(0,0,0,0)"
       }
     },
-    "rich_text_pU4aW7": {
+    "rich_text_Ch3qU3": {
       "type": "rich-text",
       "blocks": {
-        "heading_yU3zDR": {
+        "heading_werDAz": {
           "type": "heading",
           "settings": {
             "heading": "SEO COPY HEADING HERE",
             "seo_h_tag": "h3"
           }
         },
-        "text_dJCbCd": {
+        "text_zMrDdt": {
           "type": "text",
           "settings": {
             "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
@@ -135,8 +107,8 @@
         }
       },
       "block_order": [
-        "heading_yU3zDR",
-        "text_dJCbCd"
+        "heading_werDAz",
+        "text_zMrDdt"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -154,8 +126,7 @@
   "order": [
     "rich_text_Hw8xwi",
     "hero_xFNVG8",
-    "article_spotlight_fgaxk4",
     "main",
-    "rich_text_pU4aW7"
+    "rich_text_Ch3qU3"
   ]
 }

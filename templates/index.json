@@ -9,107 +9,71 @@
  */
 {
   "sections": {
-    "hero_slideshow_8nKhq8": {
-      "type": "hero-slideshow",
+    "split_screen_slider_R3zQCG": {
+      "type": "split-screen-slider",
       "blocks": {
-        "slide_xaX3GE": {
+        "slide_TRJ643": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/NB_740_Hit.png",
-            "image_mobile": "shopify://shop_images/Mobile_NB_740.png",
-            "video_autoplay": true,
-            "video_loop": true,
-            "title": "The Whitaker group and new balance 740 \"willful bias\" for discovery",
-            "subtitle": "release 9.19 @ 11 am est",
-            "button_text": "enter raffle",
-            "button_link": "shopify://collections/honor-the-gift",
-            "text_color": "#ffffff",
-            "button_color": "#000000",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "middle"
+            "tagline": "Introducing",
+            "title": "Our brand new store",
+            "subtitle": "Showcase your best products",
+            "button_label": "Explore all",
+            "button_link": "",
+            "seo_h_tag": "h2"
           }
         },
-        "slide_CfM3T7": {
+        "slide_JYnQnP": {
           "type": "slide",
           "settings": {
-            "video_desktop": "shopify://files/videos/38a Shorts Drop 2.mov",
-            "video_mobile": "shopify://files/videos/38a Shorts Drop 2.mov",
-            "video_autoplay": true,
-            "video_loop": true,
-            "title": "38a denim shorts",
-            "subtitle": "now available",
-            "button_text": "Shop now",
-            "button_link": "shopify://collections/38a",
-            "text_color": "#ffffff",
-            "button_color": "#000000",
-            "horizontal_alignment": "left",
-            "vertical_alignment": "bottom"
+            "tagline": "Why not",
+            "title": "Write about yourself",
+            "subtitle": "Include some awesome images",
+            "button_label": "Learn more",
+            "button_link": "",
+            "seo_h_tag": "h2"
           }
         },
-        "slide_FeAtgp": {
+        "slide_7HQxKf": {
           "type": "slide",
           "settings": {
-            "video_desktop": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
-            "video_mobile": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
-            "video_autoplay": true,
-            "video_loop": true,
-            "title": "BACK TO SCHOOL CAPSULE",
-            "subtitle": "EXPLORE LATEST LOOKS",
-            "button_text": "shop",
-            "button_link": "shopify://collections/back-to-school",
-            "text_color": "#ffffff",
-            "button_color": "#000000",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "middle"
-          }
-        },
-        "slide_YLddzK": {
-          "type": "slide",
-          "settings": {
-            "video_desktop": "shopify://files/videos/FRFR WEB.mov",
-            "video_mobile": "shopify://files/videos/FRFR WEB.mov",
-            "video_autoplay": true,
-            "video_loop": true,
-            "title": "new balance abzorb 2010 \"brighton grey\"",
-            "subtitle": "available now",
-            "button_text": "buy now",
-            "button_link": "shopify://products/2010-brighton-grey",
-            "text_color": "",
-            "button_color": "",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "middle"
+            "tagline": "Take the opportunity to",
+            "title": "Promote your products",
+            "subtitle": "Include various promotions and flash sales",
+            "button_label": "Shop now",
+            "button_link": "",
+            "seo_h_tag": "h2"
           }
         }
       },
       "block_order": [
-        "slide_xaX3GE",
-        "slide_CfM3T7",
-        "slide_FeAtgp",
-        "slide_YLddzK"
+        "slide_TRJ643",
+        "slide_JYnQnP",
+        "slide_7HQxKf"
       ],
-      "name": "Hero Slideshow",
+      "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
-        "title": "",
-        "video_autoplay": true,
-        "video_loop": true
+        "desktop_layout": "split",
+        "desktop_image_positioning": "image-on-left",
+        "desktop_text": "rgba(0,0,0,0)",
+        "desktop_background": "rgba(0,0,0,0)",
+        "desktop_overlay": "rgba(0,0,0,0)",
+        "mobile_height": "var(--window-height)",
+        "mobile_text": "rgba(0,0,0,0)",
+        "mobile_background": "rgba(0,0,0,0)",
+        "heading_size": "h1"
       }
     },
-    "product_masonry_Fnqqrw": {
-      "type": "product-masonry",
-      "name": "Product Masonry Gallery",
+    "featured_collection_YCzWJf": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "Shop knits",
-        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
-        "image": "shopify://shop_images/masonry-gallery-image.png",
-        "image_caption": "knits",
-        "button_label": "shop",
-        "button_link": "shopify://collections/knits-1",
-        "product_list": [
-          "home-studyos-03-planter-pierre",
-          "home-studyos-03-planter-pierre-1",
-          "human-made-6-panel-cap-3",
-          "nb-582"
-        ]
+        "title": "New Arrivals",
+        "subtitle": "Shop now",
+        "collection": "new-arrivals-1",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2"
       }
     },
     "releases_pHU7Rr": {
@@ -172,6 +136,56 @@
         "column_size": 3,
         "padding_top": 40,
         "padding_bottom": 30
+      }
+    },
+    "product_masonry_Fnqqrw": {
+      "type": "product-masonry",
+      "disabled": true,
+      "name": "Product Masonry Gallery",
+      "settings": {
+        "title": "Shop knits",
+        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
+        "image": "shopify://shop_images/masonry-gallery-image.png",
+        "image_caption": "knits",
+        "button_label": "shop",
+        "button_link": "shopify://collections/knits-1",
+        "product_list": [
+          "home-studyos-03-planter-pierre",
+          "home-studyos-03-planter-pierre-1",
+          "human-made-6-panel-cap-3",
+          "nb-582"
+        ]
+      }
+    },
+    "video_background_eCcVXP": {
+      "type": "video-background",
+      "blocks": {
+        "heading_Ha3kN8": {
+          "type": "heading",
+          "settings": {
+            "heading": "38a",
+            "heading_size": "h2",
+            "seo_h_tag": "span"
+          }
+        },
+        "text_YBbiB4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>shop the second drop of denim shorts this fall </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ha3kN8",
+        "text_YBbiB4"
+      ],
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/38a Shorts Drop 2.mov",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "#ffffff",
+        "custom_overlay": "#757575"
       }
     },
     "rotating_slider_7yhr3n": {
@@ -241,35 +255,36 @@
         "backdrop_text": "Culture"
       }
     },
-    "video_background_eCcVXP": {
-      "type": "video-background",
+    "shop_the_look_yJ96E3": {
+      "type": "shop-the-look",
       "blocks": {
-        "heading_Ha3kN8": {
-          "type": "heading",
+        "product_KJNpDX": {
+          "type": "product",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2",
-            "seo_h_tag": "span"
+            "product": ""
           }
         },
-        "text_YBbiB4": {
-          "type": "text",
+        "product_7Fz9xj": {
+          "type": "product",
           "settings": {
-            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+            "product": ""
+          }
+        },
+        "product_qFEUPt": {
+          "type": "product",
+          "settings": {
+            "product": ""
           }
         }
       },
       "block_order": [
-        "heading_Ha3kN8",
-        "text_YBbiB4"
+        "product_KJNpDX",
+        "product_7Fz9xj",
+        "product_qFEUPt"
       ],
-      "name": "t:sections.video-background.name",
+      "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",
-        "video_height": "56.25%",
-        "text_alignment": "horizontal-center vertical-middle",
-        "custom_text": "#ffffff",
-        "custom_overlay": "#757575"
+        "desktop_image_positioning": "image-on-left"
       }
     },
     "virtual_try_on_nBhXAa": {
@@ -302,43 +317,11 @@
         "product_TmKYFJ",
         "product_pcCr9i"
       ],
+      "disabled": true,
       "name": "Virtual Try-On",
       "settings": {
         "heading": "Step In The Culture",
         "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN <strong>AR  </strong></p>"
-      }
-    },
-    "shop_the_look_yJ96E3": {
-      "type": "shop-the-look",
-      "blocks": {
-        "product_KJNpDX": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        },
-        "product_7Fz9xj": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        },
-        "product_qFEUPt": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_KJNpDX",
-        "product_7Fz9xj",
-        "product_qFEUPt"
-      ],
-      "disabled": true,
-      "name": "t:sections.shop-the-look.presets.name",
-      "settings": {
-        "desktop_image_positioning": "image-on-left"
       }
     },
     "in_store_features_events_PYU3XM": {
@@ -347,7 +330,7 @@
         "blog_block_Qztdqd": {
           "type": "blog_block",
           "settings": {
-            "tab_group_name": "Featured",
+            "tab_group_name": "Features",
             "blog": "social-status"
           }
         },
@@ -478,7 +461,7 @@
         "text_item_9xrGED": {
           "type": "text_item",
           "settings": {
-            "title": "<p>Powered by Connection </p><p>Your Community Activation Engine</p>"
+            "title": "<p>A creative hub and<br/>community space designed to spark authentic connections between Social Status<br/>and its communities. <br/><br/><br/><br/></p>"
           }
         },
         "button_kK4jpN": {
@@ -775,13 +758,14 @@
     }
   },
   "order": [
-    "hero_slideshow_8nKhq8",
-    "product_masonry_Fnqqrw",
+    "split_screen_slider_R3zQCG",
+    "featured_collection_YCzWJf",
     "releases_pHU7Rr",
-    "rotating_slider_7yhr3n",
+    "product_masonry_Fnqqrw",
     "video_background_eCcVXP",
-    "virtual_try_on_nBhXAa",
+    "rotating_slider_7yhr3n",
     "shop_the_look_yJ96E3",
+    "virtual_try_on_nBhXAa",
     "in_store_features_events_PYU3XM",
     "latest_features_f6y9et",
     "image_text_column_rhg67G",

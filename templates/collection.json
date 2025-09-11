@@ -14,6 +14,7 @@
       "blocks": {
         "featured_product_BqDbw8": {
           "type": "featured_product",
+          "disabled": true,
           "settings": {
             "product": "honor-the-gift-1988-t-shirt-blue",
             "badge_text": "New",
