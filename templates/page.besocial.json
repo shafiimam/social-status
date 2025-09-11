@@ -24,7 +24,7 @@
           "type": "button",
           "settings": {
             "button_text": "Upcoming Events",
-            "button_link": "#events-section",
+            "button_link": "#coming_events",
             "book_form": false
           }
         }
@@ -36,7 +36,7 @@
       "settings": {
         "background_image": "shopify://shop_images/besocial-hero.png",
         "logo": "shopify://shop_images/besocial-logo-light.png",
-        "content": "<p>A space connected to several of our Social Status locations where we activate a variety of community-focused events. beSocial also acts as a free space for the local community to make their own.</p>"
+        "content": "<p>beSOCIAL is a creative hub and community space designed to spark authentic connections between Social Status and its communities. From workshops and cultural gatherings to a diverse slate of events, it’s a free space for people to make their own, meeting, sharing ideas, pursuing passions, and building lasting relationships. Remember, Talk Is Free, beSOCIAL.</p>"
       }
     },
     "flagship_programs_nEJVzL": {
@@ -85,6 +85,7 @@
         "flagship_WJKrMP",
         "flagship_T74fDr"
       ],
+      "disabled": true,
       "name": "Flagship Programs",
       "settings": {
         "flagship_image": "shopify://shop_images/rad_champion_2_5-18-22_1.jpg",
@@ -99,7 +100,7 @@
           "settings": {
             "item_text": "Charlotte,",
             "item_text_2": "NC",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#coming_events",
+            "button_link": "/pages/besocial?filter=charlotte",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/Charlotte-img.jpg"
           }
@@ -109,7 +110,7 @@
           "settings": {
             "item_text": "Atlanta,",
             "item_text_2": "GA",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/atlanta#coming_events",
+            "button_link": "/pages/besocial?filter=atlanta",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/Atlanta-img.jpg"
           }
@@ -119,7 +120,7 @@
           "settings": {
             "item_text": "Houston,",
             "item_text_2": "TX",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#coming_events",
+            "button_link": "/pages/besocial?filter=houston",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/Houston-img.jpg"
           }
@@ -129,7 +130,7 @@
           "settings": {
             "item_text": "Greensboro",
             "item_text_2": ", NC",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/greensboro#coming_events",
+            "button_link": "/pages/besocial?filter=greensboro",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/Greensboro-img.jpg"
           }
@@ -139,7 +140,7 @@
           "settings": {
             "item_text": "Pittsburgh",
             "item_text_2": ", PA",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/pittsburgh#coming_events",
+            "button_link": "/pages/besocial?filter=pittsburgh",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/Pittsburgh-img.jpg"
           }
@@ -149,7 +150,7 @@
           "settings": {
             "item_text": "RALEIGH",
             "item_text_2": ", NC",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/raleigh#coming_events",
+            "button_link": "/pages/besocial?filter=raleigh",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.png"
           }
@@ -169,7 +170,7 @@
           "settings": {
             "item_text": "BALTIMORE",
             "item_text_2": ", MD",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/baltimore#coming_events",
+            "button_link": "/pages/besocial?filter=baltimore",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/baltimoree.jpg"
           }
@@ -179,7 +180,7 @@
           "settings": {
             "item_text": "DETROIT",
             "item_text_2": ", MI",
-            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/detroit#coming_events",
+            "button_link": "/pages/besocial?filter=detroit",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/detroitbesocial.jpg"
           }
@@ -201,181 +202,95 @@
         "separate_section_with_border": false
       }
     },
-    "perspective_slider_U9X7jt": {
-      "type": "perspective-slider",
+    "events_slider_rF3xgT": {
+      "type": "events-slider",
       "blocks": {
-        "slide_item_jpHHQc": {
-          "type": "slide_item",
+        "city_filter_mBEeLf": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p><strong>Political</strong> Education</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "CHARLOTTE",
+            "btn_tag": "CHARLOTTE"
           }
         },
-        "slide_item_9hhJtL": {
-          "type": "slide_item",
+        "city_filter_PhprAf": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p>Financial Literacy</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "GREENSBORO",
+            "btn_tag": "GREENSBORO"
           }
         },
-        "slide_item_9AQHY6": {
-          "type": "slide_item",
+        "city_filter_q9VGah": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p>Housing Education</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "BALTIMORE",
+            "btn_tag": "BALTIMORE"
           }
         },
-        "slide_item_Mx4dHN": {
-          "type": "slide_item",
+        "city_filter_nMDmHg": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p>Health + Wellness</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "HOUSTON",
+            "btn_tag": "HOUSTON"
           }
         },
-        "slide_item_LeQypN": {
-          "type": "slide_item",
+        "city_filter_MGRTDA": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p>Prison Reform</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "PITTSBURGH",
+            "btn_tag": "PITTSBURGH"
           }
         },
-        "slide_item_89VyMy": {
-          "type": "slide_item",
+        "city_filter_3L9NJq": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p>Business Development</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "DETROIT",
+            "btn_tag": "DETROIT"
           }
         },
-        "slide_item_TzePpG": {
-          "type": "slide_item",
+        "city_filter_gTrJan": {
+          "type": "city_filter",
           "settings": {
-            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
-            "title": "",
-            "description": "<p>Food Education</p>",
-            "button_text": "",
-            "button_url": ""
+            "btn_text": "TAMPA",
+            "btn_tag": "TAMPA"
+          }
+        },
+        "city_filter_GzgNTw": {
+          "type": "city_filter",
+          "settings": {
+            "btn_text": "ATLANTA",
+            "btn_tag": "ATLANTA"
           }
         }
       },
       "block_order": [
-        "slide_item_jpHHQc",
-        "slide_item_9hhJtL",
-        "slide_item_9AQHY6",
-        "slide_item_Mx4dHN",
-        "slide_item_LeQypN",
-        "slide_item_89VyMy",
-        "slide_item_TzePpG"
+        "city_filter_mBEeLf",
+        "city_filter_PhprAf",
+        "city_filter_q9VGah",
+        "city_filter_nMDmHg",
+        "city_filter_MGRTDA",
+        "city_filter_3L9NJq",
+        "city_filter_gTrJan",
+        "city_filter_GzgNTw"
       ],
-      "custom_css": [
-        ".block-slide-description {text-align: center;}"
-      ],
-      "name": "Perspective Slider",
-      "settings": {
-        "title": "IMPACT AREAS",
-        "auto_play": false,
-        "background_color": "#000000",
-        "slide_overlay_color": "linear-gradient(0deg, rgba(207, 116, 36, 0.68), rgba(231, 126, 33, 0.68) 100%)",
-        "text_color": "#ffffff",
-        "text_color_card": "#ffffff",
-        "path_color": "#ffffff",
-        "text_alignment": "left"
-      }
-    },
-    "latest_features_cdA9xw": {
-      "type": "latest-features",
-      "blocks": {
-        "city_block_WHLn4B": {
-          "type": "city_block",
-          "disabled": true,
-          "settings": {
-            "city_name": "CHARLOTTE",
-            "city_tag": ""
-          }
-        },
-        "city_block_86C9Ei": {
-          "type": "city_block",
-          "disabled": true,
-          "settings": {
-            "city_name": "GREENSBORO",
-            "city_tag": "GREENSBORO"
-          }
-        },
-        "city_block_j9Fn3j": {
-          "type": "city_block",
-          "settings": {
-            "city_name": "BALTIMORE",
-            "city_tag": "BALTIMORE"
-          }
-        },
-        "city_block_WWdcDj": {
-          "type": "city_block",
-          "settings": {
-            "city_name": "HOUSTON",
-            "city_tag": "HOUSTON"
-          }
-        },
-        "city_block_3DjgXE": {
-          "type": "city_block",
-          "settings": {
-            "city_name": "PITTSBURGH",
-            "city_tag": "PITTSBURGH"
-          }
-        },
-        "city_block_3rFKat": {
-          "type": "city_block",
-          "settings": {
-            "city_name": "DETROIT",
-            "city_tag": "DETROIT"
-          }
-        },
-        "city_block_LELjKU": {
-          "type": "city_block",
-          "settings": {
-            "city_name": "FREE GAME",
-            "city_tag": "FREEGAME"
-          }
-        }
-      },
-      "block_order": [
-        "city_block_WHLn4B",
-        "city_block_86C9Ei",
-        "city_block_j9Fn3j",
-        "city_block_WWdcDj",
-        "city_block_3DjgXE",
-        "city_block_3rFKat",
-        "city_block_LELjKU"
-      ],
-      "name": "Latest Features & Events",
+      "name": "Events Slider",
       "settings": {
         "blog": "blog-events",
-        "main_title": "Events",
-        "main_title_width": "802",
-        "main_title_align": "left",
-        "sub_title": "and Flagship Programs",
-        "sub_title_align": "right",
-        "arrow_text_1": "Cultutre",
-        "arrow_text_2": "Events",
-        "show_tab_list": true,
-        "max_articles": 5,
-        "view_more_label": "View More"
+        "events_coming": "Upcoming Events",
+        "btn_coming": "Show All Events",
+        "btn_hide_coming": "Hide Upcoming Events",
+        "events_auto_play": false,
+        "events_bg_color": "rgba(0,0,0,0)",
+        "events_overlay_color": "linear-gradient(0deg, rgba(255, 142, 0, 0.2), rgba(0, 0, 0, 0.3) 100%)",
+        "events_text_color": "#ffffff",
+        "events_card_text_color": "#ffffff",
+        "events_path_color": "#bcbcbc",
+        "events_text_alignment": "center",
+        "events_slider_height": 350,
+        "events_slide_width": 400,
+        "events_slide_height": 250,
+        "events_initial_index": 3,
+        "show_events_controls": true,
+        "pagination_limit": 1000
       }
     },
     "media_grid_tgC8EG": {
@@ -686,8 +601,7 @@
     "besocial_hero_zDHDNh",
     "flagship_programs_nEJVzL",
     "list_column_mP47Dk",
-    "perspective_slider_U9X7jt",
-    "latest_features_cdA9xw",
+    "events_slider_rF3xgT",
     "media_grid_tgC8EG",
     "rich_text_XqMPwe",
     "besocial_locations_CEAh6p"

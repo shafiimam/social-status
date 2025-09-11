@@ -11,13 +11,142 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "layout": "full",
         "text": ""
       }
+    },
+    "hero_4RWN7q": {
+      "type": "hero",
+      "name": "Hero Section",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Downtown-Detroit-Renaissance-Center-Iconic-scaled.jpg",
+        "heading": "Your Heading Here",
+        "subheading": "Your subheading here",
+        "button_1_text": "Button 1",
+        "button_1_link": "",
+        "button_2_text": "Button 2",
+        "button_2_link": "",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle"
+      }
+    },
+    "faq_QwrqWg": {
+      "type": "faq",
+      "blocks": {
+        "text_4gkkgz": {
+          "type": "text",
+          "settings": {
+            "title": "What types of events can be hosted at beSOCIAL?",
+            "body": "<p>beSOCIAL is designed for community-driven gatherings. We host free, open-to-the-public events led by creatives, nonprofits, interest groups, and community organizations. Events can include workshops, cultural conversations, club meet-ups, and other activations that bring people together around shared interests. We do not host ticketed events, personal celebrations (like birthdays or baby showers), or events where items are sold.</p>"
+          }
+        },
+        "text_tMb3eE": {
+          "type": "text",
+          "settings": {
+            "title": "Who typically hosts events in your spaces?",
+            "body": "<p>Our spaces welcome creatives, nonprofits, community organizations, and interest groups who want to connect with the community. All Social Status locations can host community events even if they do not have a dedicated beSOCIAL space.</p>"
+          }
+        },
+        "text_RPC8ej": {
+          "type": "text",
+          "settings": {
+            "title": "How far in advance should I book?",
+            "body": "<p>We recommend submitting your inquiry <strong>6–8 weeks in advance</strong> to allow enough time for review, approval, and promotion. We may accept closer-dated events, but promotion on our channels cannot be guaranteed in those cases.</p>"
+          }
+        },
+        "text_KDMeAc": {
+          "type": "text",
+          "settings": {
+            "title": "What is the booking process from start to finish?",
+            "body": "<p>1. Submit an inquiry through the form on our website.</p><p>2. A member of our team will review your submission.</p><p>3. If your event passes initial screening, you’ll be invited to complete a formal event request form.</p><p>4. Once your request is submitted, our team will confirm approval or ask for adjustments if needed.</p><p>5 After approval, you’ll receive confirmation and your event will be added to our calendar.</p>"
+          }
+        },
+        "text_zEd3Nf": {
+          "type": "text",
+          "settings": {
+            "title": "Can I tour the space before booking?",
+            "body": "<p>Yes, you can request a walk-through of the space after submitting your initial inquiry form.</p>"
+          }
+        },
+        "text_cPzUXh": {
+          "type": "text",
+          "settings": {
+            "title": "Can I bring my own food and drinks?",
+            "body": "<p>Yes, outside food and beverages are allowed. Event hosts are responsible for all food and beverage vendors. If alcohol is served, it must come from a licensed vendor, and the host must provide a dedicated team member to check IDs.</p>"
+          }
+        },
+        "text_BbAiht": {
+          "type": "text",
+          "settings": {
+            "title": "How early can I access the space for setup?",
+            "body": "<p>Hosts typically receive <strong>1–2 hours of early access</strong> prior to the event start time, depending on the size and needs of the event. Exact setup times will be confirmed during the approval process.</p>"
+          }
+        },
+        "text_kit6Pt": {
+          "type": "text",
+          "settings": {
+            "title": "Can I decorate the space? Are there restrictions on décor?",
+            "body": "<p>Yes, décor is allowed as long as it does not cause damage or permanently alter the space. Nothing may be attached to walls or fixtures in a way that leaves marks or holes.</p>"
+          }
+        },
+        "text_cgLtBF": {
+          "type": "text",
+          "settings": {
+            "title": "What is your cancellation policy?",
+            "body": "<p>Since our events are free to the community, we ask hosts to honor their commitment. Frequent cancellations may result in loss of booking privileges in the future.</p>"
+          }
+        },
+        "text_hDeBYw": {
+          "type": "text",
+          "settings": {
+            "title": "Are there restrictions on photography or videography?",
+            "body": "<p>You are welcome to bring your own photographer or videographer. While we occasionally document events, coverage is not guaranteed.</p>"
+          }
+        },
+        "text_aFMWUC": {
+          "type": "text",
+          "settings": {
+            "title": "Are there any event types you don’t allow?",
+            "body": "<p>Yes. We do not allow ticketed events, sales-focused events, or private personal celebrations (such as birthdays, baby showers, etc.). All events must be <strong>free and open to the public.</strong></p>"
+          }
+        },
+        "text_xjtLX8": {
+          "type": "text",
+          "settings": {
+            "title": "Do you help promote community events on your channels?",
+            "body": "<p>Yes. For approved events booked at least 6–8 weeks in advance, we provide an Eventbrite registration link, a flyer, and social media promotion across our channels. Events booked closer to the date may still run in the space but are not guaranteed promotional support.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_4gkkgz",
+        "text_tMb3eE",
+        "text_RPC8ej",
+        "text_KDMeAc",
+        "text_zEd3Nf",
+        "text_cPzUXh",
+        "text_BbAiht",
+        "text_kit6Pt",
+        "text_cgLtBF",
+        "text_hDeBYw",
+        "text_aFMWUC",
+        "text_xjtLX8"
+      ],
+      "name": "t:sections.faq.presets.name",
+      "settings": {
+        "title": "Frequently asked questions",
+        "open_first": true,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_4RWN7q",
+    "faq_QwrqWg"
   ]
 }

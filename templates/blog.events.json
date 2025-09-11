@@ -71,39 +71,6 @@
             "book_form": true
           }
         },
-        "slide_XjPGyD": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/beSocial_AUG_25_-_CLT.jpg",
-            "title": "Charlotte",
-            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#:~:text=Next-,%23Charlotte,-COMING%20UP%3A",
-            "book_event_1": "",
-            "book_event_url_1": "/"
-          }
-        },
-        "slide_pkRiFV": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/beSocial_AUG_25_-_HTX.jpg",
-            "title": "Houston",
-            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#:~:text=Next-,%23houston,-COMING%20UP%3A",
-            "book_event_1": "",
-            "book_event_url_1": "/"
-          }
-        },
-        "slide_aeWewJ": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/beSocial_AUG_25_-_DET.jpg",
-            "title": "Detroit",
-            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/detroit#coming_events",
-            "book_event_1": "",
-            "book_event_url_1": "/"
-          }
-        },
         "sort_articles_HFh7hH": {
           "type": "sort-articles",
           "settings": {
@@ -158,9 +125,6 @@
         "hero_button_NGdMbx",
         "hero_button_Mmx4N4",
         "hero_button_LWwRTB",
-        "slide_XjPGyD",
-        "slide_pkRiFV",
-        "slide_aeWewJ",
         "sort_articles_HFh7hH",
         "sort_articles_Gn7tEN",
         "sort_articles_dQExgW",
@@ -174,8 +138,9 @@
       ],
       "name": "Blog Events",
       "settings": {
-        "display_slider": true,
-        "display_calendar": true,
+        "display_hero": true,
+        "display_slider": false,
+        "display_calendar": false,
         "hero_image": "shopify://shop_images/BESOCIAL_f24a1680-d5ad-4c05-a12e-5a6c294a1e90.jpg",
         "hero_logo": "shopify://shop_images/title-beSocial.png",
         "hero_title": "beSOCIAL",
