@@ -21,7 +21,9 @@
   <div class="tab-groups-container">
     <div class="tab-images-column">
       {% assign image_index = 0 %}
+      {% assign max_articles = section.settings.max_articles | default: 5 %}
       {% for tab_group in tabs_list %}
+        {% assign tab_image_count = 0 %}
         {% comment %} Loop through all blocks and filter by tab group {% endcomment %}
         {% for block in section.blocks %}
           {% if block.settings.tab_group_name == tab_group %}
@@ -29,20 +31,23 @@
             {% assign selected_blog = blogs[block.settings.blog] %}
             {% if selected_blog %}
               {% for article in selected_blog.articles %}
-                <div
-                  class="tab-image-item {% if image_index == 0 %}active{% endif %}"
-                  data-tab-id="blog-{{ block.id }}-{{ article.id }}"
-                  data-tab-image-index="{{ image_index }}"
-                  data-tab-group-title="{{ tab_group }}"
-                >
-                  <img
-                    src="{{ article.image | img_url: 'master' }}"
-                    alt="{{ article.title }}"
-                    width="100%"
-                    height="100%"
+                {% if tab_image_count < max_articles %}
+                  <div
+                    class="tab-image-item {% if image_index == 0 %}active{% endif %}"
+                    data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                    data-tab-image-index="{{ image_index }}"
+                    data-tab-group-title="{{ tab_group }}"
                   >
-                </div>
-                {% assign image_index = image_index | plus: 1 %}
+                    <img
+                      src="{{ article.image | image_url: width: 1920 }}"
+                      alt="{{ article.title }}"
+                      width="100%"
+                      height="100%"
+                    >
+                  </div>
+                  {% assign image_index = image_index | plus: 1 %}
+                  {% assign tab_image_count = tab_image_count | plus: 1 %}
+                {% endif %}
               {% endfor %}
             {% endif %}
           {% elsif block.type == 'events_block' %}
@@ -58,7 +63,7 @@
                     {% break %}
                   {% endif %}
                 {% endfor %}
-                {% if article_matches_city %}
+                {% if article_matches_city and tab_image_count < max_articles %}
                   <div
                     class="tab-image-item {% if image_index == 0 %}active{% endif %}"
                     data-tab-id="event-{{ block.id }}-{{ article.id }}"
@@ -66,13 +71,14 @@
                     data-tab-group-title="{{ tab_group }}"
                   >
                     <img
-                      src="{{ article.image | img_url: 'master' }}"
+                      src="{{ article.image | image_url: width: 1920 }}"
                       alt="{{ article.title }}"
                       width="100%"
                       height="100%"
                     >
                   </div>
                   {% assign image_index = image_index | plus: 1 %}
+                  {% assign tab_image_count = tab_image_count | plus: 1 %}
                 {% endif %}
               {% endfor %}
             {% endif %}
@@ -96,6 +102,7 @@
           {% assign first_tab_group = tabs_list.first %}
           {% assign total_item_count = 0 %}
           {% assign has_content = false %}
+          {% assign max_articles = section.settings.max_articles | default: 5 %}
           
           {% comment %} First pass: count total items and check if there's content {% endcomment %}
           {% for block in section.blocks %}
@@ -137,49 +144,51 @@
               {% assign selected_blog = blogs[block.settings.blog] %}
               {% if selected_blog %}
                 {% for article in selected_blog.articles %}
-                  {% assign current_item_count = current_item_count | plus: 1 %}
-                  <div
-                    class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
-                    data-tab-group-title="{{ tab_group }}"
-                    data-tab-id="blog-{{ block.id }}-{{ article.id }}"
-                  >
-                    <div class="tab-list-item-header">
-                      <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
-                      <div class="tab-list-item-content-container">
-                        <div class="tab-list-item-content">
-                          <span class="tab-list-item-title font-zen">{{ article.title }}</span>
-                          <div class="tab-list-item-content-inner">
-                            <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                            <span class="tab-list-item-date-mobile-only">{{ article.created_at | date: "%d.%m.%y" }}</span>
-                            <a
-                              href="{{ article.url }}"
-                              class="tab-list-item-button"
-                            >
-                              <span> Read Article </span>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
+                  {% if current_item_count < max_articles %}
+                    {% assign current_item_count = current_item_count | plus: 1 %}
+                    <div
+                      class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
+                      data-tab-group-title="{{ tab_group }}"
+                      data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                    >
+                      <div class="tab-list-item-header">
+                        <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
+                        <div class="tab-list-item-content-container">
+                          <div class="tab-list-item-content">
+                            <span class="tab-list-item-title font-zen">{{ article.title }}</span>
+                            <div class="tab-list-item-content-inner">
+                              <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
+                              <span class="tab-list-item-date-mobile-only">{{ article.created_at | date: "%B %d, %Y" }}</span>
+                              <a
+                                href="{{ article.url }}"
+                                class="tab-list-item-button"
                               >
-                                <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                            </a>
+                                <span> Read Article </span>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
+                                >
+                                  <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </a>
+                            </div>
                           </div>
                         </div>
+                        <span class="tab-list-item-date">{{ article.created_at | date: "%B %d, %Y" }}</span>
                       </div>
-                      <span class="tab-list-item-date">{{ article.created_at | date: "%d.%m.%y" }}</span>
+                      <div class="tab-list-item-mobile-image">
+                        <img
+                          src="{{ article.image | image_url: width: 1920 }}"
+                          alt="{{ article.title }}"
+                          width="100%"
+                          height="100%"
+                        >
+                      </div>
                     </div>
-                    <div class="tab-list-item-mobile-image">
-                      <img
-                        src="{{ article.image | img_url: 'master' }}"
-                        alt="{{ article.title }}"
-                        width="100%"
-                        height="100%"
-                      >
-                    </div>
-                  </div>
+                  {% endif %}
                 {% endfor %}
               {% endif %}
             {% elsif block.type == 'events_block' %}
@@ -211,7 +220,7 @@
                     {% endif %}
                   {% endfor %}
                   
-                  {% if article_matches_city %}
+                  {% if article_matches_city and current_item_count < max_articles %}
                     {% assign current_item_count = current_item_count | plus: 1 %}
                     <div
                       class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
@@ -226,7 +235,7 @@
                             <span class="tab-list-item-title font-zen">{{ article.title }}</span>
                             <div class="tab-list-item-content-inner">
                               <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                              <span class="tab-list-item-date-mobile-only">{{ event_date | date: "%d.%m.%y" }}</span>
+                              <span class="tab-list-item-date-mobile-only">{{ event_date | date: "%B %d, %Y" }}</span>
                               <button
                                 class="tab-list-item-button"
                                 onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
@@ -245,11 +254,11 @@
                             </div>
                           </div>
                         </div>
-                        <span class="tab-list-item-date">{{ event_date | date: "%d.%m.%y" }}</span>
+                        <span class="tab-list-item-date">{{ event_date | date: "%B %d, %Y" }}</span>
                       </div>
                       <div class="tab-list-item-mobile-image">
                         <img
-                          src="{{ article.image | img_url: 'master' }}"
+                          src="{{ article.image | image_url: width: 1920 }}"
                           alt="{{ article.title }}"
                           width="100%"
                           height="100%"
@@ -262,6 +271,23 @@
             {% endif %}
             {% endif %}
           {% endfor %}
+          
+          {% comment %} Add View More button if there are more items than the limit {% endcomment %}
+          {% if total_item_count > max_articles %}
+            <div
+              class="tab-list-item-container view-more-container {% if tab_group == first_tab_group %}active{% endif %}"
+              data-tab-group-title="{{ tab_group }}"
+            >
+              <div class="view-more-container">
+                <div class="tab-cta-container">
+                  <button class="button button--solid button--with-icon">
+                    <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
+                    <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          {% endif %}
           
           {% comment %} Show "No content found" if no content in any blocks for this tab group {% endcomment %}
           {% unless has_content %}
@@ -347,6 +373,20 @@
       "id": "show_tab_list",
       "label": "Show Tab List",
       "default": true
+    },
+    {
+      "type": "number",
+      "id": "max_articles",
+      "label": "Maximum Articles/Events",
+      "default": 5,
+      "info": "Maximum number of articles/events to show per tab group"
+    },
+    {
+      "type": "text",
+      "id": "view_more_label",
+      "label": "View More Button Label",
+      "default": "View More",
+      "info": "Label text for the view more button"
     }
   ],
   "blocks": [

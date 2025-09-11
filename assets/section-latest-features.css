@@ -174,6 +174,10 @@
 .tab-list-item-container.active {
   display: block;
 }
+.tab-list-item-container.view-more-container {
+  border: none;
+  padding: 20px;
+}
 .tab-list-item-container.active.expanded .tab-list-item-title {
   color: #040404;
   font-family: var(--font-stack-headings);
@@ -311,6 +315,12 @@ span.tab-list-item-subtitle {
 .tab-list-item-button:hover svg path {
   stroke: #000;
   transition: all 0.2s ease-in;
+}
+
+.tab-cta-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes slideUp {

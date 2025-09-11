@@ -1,4 +1,4 @@
-<div id="section-{{ section.id }}" class="site-box-container ">
+<div id="section-{{ section.id }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   <div class="rotating-slider-heading">
     <h1 class="h1 text-center heading">{{ section.settings.heading }}</h1>
     <p class=" text-center">{{ section.settings.subheading }}</p>
@@ -65,6 +65,26 @@
       "id": "backdrop_text",
       "label": "Backdrop Text",
       "default": "Culture"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 130,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 130,
+      "step": 2,
+      "unit": "px",
+      "default": 60
     }
   ],
   "blocks": [

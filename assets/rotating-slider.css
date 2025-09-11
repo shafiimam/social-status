@@ -92,7 +92,7 @@
   text-align: center;
   transform-origin: bottom center;
   width: 400px;
-  height: 500px;
+  height: 600px;
   transition: all 0.3s ease-in;
   color: #fff;
   opacity: 0.8;
@@ -149,7 +149,7 @@ ul.slides li.active-slide:hover {
 }
 .rotating-slider-backdrop-text {
   color: rgba(0, 0, 0, 0.02);
-  font-size: clamp(127px, 20vw + 50px, 284px);
+  font-size: 280px;
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
@@ -157,7 +157,7 @@ ul.slides li.active-slide:hover {
   width: max-content;
   margin: auto;
   position: absolute;
-  top: -15px;
+  top: -80px;
 }
 
 p.slide-text {
@@ -176,4 +176,11 @@ p.slide-text {
   line-height: 35px; /* 109.375% */
   text-transform: uppercase;
   gap: 10px;
+}
+
+@media screen and (max-width: 768px){
+  .rotating-slider-backdrop-text{
+    font-size: 127px;
+    top: -100px;
+  }
 }

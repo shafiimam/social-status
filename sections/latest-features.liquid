@@ -23,7 +23,9 @@
     <div class="tab-images-column">
       {% if selected_blog %}
         {% assign image_index = 0 %}
+        {% assign max_articles = section.settings.max_articles | default: 5 %}
         {% for city in tabs_list %}
+          {% assign city_image_count = 0 %}
           {% for article in selected_blog.articles %}
             {% assign article_matches_city = false %}
             {% for block in section.blocks %}
@@ -38,7 +40,7 @@
                 {% endfor %}
               {% endif %}
             {% endfor %}
-            {% if article_matches_city %}
+            {% if article_matches_city and city_image_count < max_articles %}
               <div
                 class="tab-image-item {% if image_index == 0 %}active{% endif %}"
                 data-tab-id="article-{{ article.id }}"
@@ -46,13 +48,14 @@
                 data-tab-group-title="{{ city }}"
               >
                 <img
-                  src="{{ article.image | img_url: 'master' }}"
+                  src="{{ article.image | image_url: width: 1920 }}"
                   alt="{{ article.title }}"
                   width="100%"
                   height="100%"
                 >
               </div>
               {% assign image_index = image_index | plus: 1 %}
+              {% assign city_image_count = city_image_count | plus: 1 %}
             {% endif %}
           {% endfor %}
         {% endfor %}
@@ -72,22 +75,13 @@
         {% if selected_blog %}
           {% for city in tabs_list %}
             {% assign city_article_count = 0 %}
+            {% assign city_total_articles = 0 %}
             {% assign first_city = tabs_list.first %}
-            
+            {% assign max_articles = section.settings.max_articles | default: 5 %}
+
+            {% comment %} First pass: count total articles for this city {% endcomment %}
             {% for article in selected_blog.articles %}
               {% assign article_matches_city = false %}
-              {% assign event_date = '' %}
-              
-              {% for tag in article.tags %}
-                {% if tag contains "event-date::" %}
-                  {% assign event_date_raw = tag | remove: "event-date::" %}
-                  {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
-                  {% assign event_date = event_date_parsed %}
-                  {% assign event_date_calendar = event_date_raw %}
-                  {% break %}
-                {% endif %}
-              {% endfor %}
-              
               {% for block in section.blocks %}
                 {% if block.settings.city_name == city %}
                   {% for tag in article.tags %}
@@ -100,8 +94,40 @@
                   {% endfor %}
                 {% endif %}
               {% endfor %}
-              
               {% if article_matches_city %}
+                {% assign city_total_articles = city_total_articles | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+
+            {% comment %} Second pass: display articles up to limit {% endcomment %}
+            {% for article in selected_blog.articles %}
+              {% assign article_matches_city = false %}
+              {% assign event_date = '' %}
+
+              {% for tag in article.tags %}
+                {% if tag contains 'event-date::' %}
+                  {% assign event_date_raw = tag | remove: 'event-date::' %}
+                  {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
+                  {% assign event_date = event_date_parsed %}
+                  {% assign event_date_calendar = event_date_raw %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+              {% for block in section.blocks %}
+                {% if block.settings.city_name == city %}
+                  {% for tag in article.tags %}
+                    {% assign normalized_tag = tag | downcase | remove: '#' %}
+                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
+                    {% if normalized_tag == normalized_city_tag %}
+                      {% assign article_matches_city = true %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+
+              {% if article_matches_city and city_article_count < max_articles %}
                 {% assign city_article_count = city_article_count | plus: 1 %}
                 <div
                   class="tab-list-item-container {% if city == first_city %}active{% endif %} {% if city_article_count == 1 %}expanded{% endif %}"
@@ -115,8 +141,10 @@
                       <div class="tab-list-item-content">
                         <span class="tab-list-item-title font-zen">{{ article.title }}</span>
                         <div class="tab-list-item-content-inner">
-                          <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
-                          <span class="tab-list-item-date-mobile-only">{{ event_date | date: "%d.%m.%y" }}</span>
+                          <span class="tab-list-item-subtitle">
+                            {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
+                          </span>
+                          <span class="tab-list-item-date-mobile-only">{{ event_date | date: '%B %d, %Y' }}</span>
                           <button
                             class="tab-list-item-button"
                             onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
@@ -135,11 +163,11 @@
                         </div>
                       </div>
                     </div>
-                    <span class="tab-list-item-date">{{ event_date | date: "%d.%m.%y" }}</span>
+                    <span class="tab-list-item-date">{{ event_date | date: '%B %d, %Y' }}</span>
                   </div>
                   <div class="tab-list-item-mobile-image">
                     <img
-                      src="{{ article.image | img_url: 'master' }}"
+                      src="{{ article.image | image_url: width: 1920 }}"
                       alt="{{ article.title }}"
                       width="100%"
                       height="100%"
@@ -148,7 +176,24 @@
                 </div>
               {% endif %}
             {% endfor %}
-            
+
+            {% comment %} Add View More button if there are more articles than the limit {% endcomment %}
+            {% if city_total_articles > max_articles %}
+              <div
+                class="tab-list-item-container view-more-container {% if city == first_city %}active{% endif %}"
+                data-tab-group-title="{{ city }}"
+              >
+                <div class="view-more-container">
+                  <div class="tab-cta-container">
+                    <button class="button button--solid button--with-icon">
+                    <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
+                    <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
             {% comment %} Show "No events found" if no articles matched this city {% endcomment %}
             {% if city_article_count == 0 %}
               {% assign first_city = tabs_list.first %}
@@ -162,7 +207,9 @@
                     <div class="tab-list-item-content">
                       <span class="tab-list-item-title font-zen">No events found</span>
                       <div class="tab-list-item-content-inner">
-                        <span class="tab-list-item-subtitle">There are currently no events scheduled for {{ city }}.</span>
+                        <span class="tab-list-item-subtitle"
+                          >There are currently no events scheduled for {{ city }}.</span
+                        >
                       </div>
                     </div>
                   </div>
@@ -241,6 +288,20 @@
       "id": "show_tab_list",
       "label": "Show Tab List",
       "default": true
+    },
+    {
+      "type": "number",
+      "id": "max_articles",
+      "label": "Maximum Articles/Events",
+      "default": 5,
+      "info": "Maximum number of articles/events to show per city tab"
+    },
+    {
+      "type": "text",
+      "id": "view_more_label",
+      "label": "View More Button Label",
+      "default": "View More",
+      "info": "Label text for the view more button"
     }
   ],
   "blocks": [
