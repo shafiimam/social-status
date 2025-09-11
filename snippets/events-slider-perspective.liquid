@@ -1,0 +1,222 @@
+{% comment %}
+  Enhanced perspective slider for events-slider section with filtering support
+  Shows ALL upcoming events (no 8-slide limit)
+  
+  Accepts:
+  - blog: object - Blog object containing articles
+  - now_date: string - Current timestamp for filtering upcoming events
+  - section_id: string - Unique section ID for styling
+  - auto_play: boolean - Enable auto play (default: false)
+  - background_color: string - Section background color
+  - slide_overlay_color: string - Overlay color for slides
+  - text_color: string - Section text color
+  - text_color_card: string - Card text color
+  - path_color: string - Control path color
+  - text_alignment: string - Text alignment for cards
+  - slider_height: number - Custom slider height in px (default: 350)
+  - slide_width: number - Custom slide width in px (default: 400)
+  - slide_height: number - Custom slide height in px (default: 250)
+  - initial_index: number - Initial slide index (default: 3)
+  - show_controls: boolean - Show gallery controls (default: true)
+{% endcomment %}
+
+{%- liquid
+  assign show_controls = show_controls | default: true
+  assign slider_height = slider_height | default: 350
+  assign slide_width = slide_width | default: 400
+  assign slide_height = slide_height | default: 250
+  assign initial_index = initial_index | default: 3
+  assign auto_play_enabled = auto_play | default: false
+  assign text_alignment = text_alignment | default: 'center'
+-%}
+
+{% if auto_play_enabled %}
+  <script>
+    var perspectiveAutoPlay = 3000;
+  </script>
+{% else %}
+  <script>
+    var perspectiveAutoPlay = 0;
+  </script>
+{% endif %}
+
+{%- comment -%} Count upcoming articles and create slider if any exist {%- endcomment -%}
+{% assign upcoming_count = 0 %}
+{% assign slide_counter = 0 %}
+{% for article in blog.articles %}
+  {% assign article_date = '' %}
+  {% for tag in article.tags %}
+    {% if tag contains "event-date::" %}
+      {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if article_date != '' and article_date > now_date %}
+    {% assign upcoming_count = upcoming_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% if upcoming_count > 0 %}
+<div class="perspective-slider-section blog-events-perspective-slider" id="perspective-slider-{{ section_id }}">
+  <div class="perspective-slider-container" data-slider-id="{{ section_id }}">
+    {% assign slide_counter = 0 %}
+    {% for article in blog.articles %}
+      {% assign article_date = '' %}
+      {% for tag in article.tags %}
+        {% if tag contains "event-date::" %}
+          {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% if article_date != '' and article_date > now_date %}
+        {%- liquid
+          assign formatted_date = ''
+          assign article_tags_string = ''
+          for tag in article.tags
+            if tag contains "event-date::"
+              assign formatted_date = tag | remove: "event-date::" | date: "%m-%d-%Y"
+            else
+              if article_tags_string == ''
+                assign article_tags_string = tag
+              else
+                assign article_tags_string = article_tags_string | append: ',' | append: tag
+              endif
+            endif
+          endfor
+        -%}
+      
+      <div class="block-slide-item blog-event-slide" data-tags="{{ article_tags_string }}">
+        <div class="block-slide-image-container" style="--slide-overlay-color: {{ slide_overlay_color }}">
+          {% if article.image %}
+            <picture>
+              <source srcset="{{ article.image | image_url: width: 300 }}" media="(max-width: 600px)">
+              <img
+                src="{{ article.image | image_url: width: 600 }}"
+                alt="{{ article.image.alt | default: article.title }}"
+                width="600"
+                height="250"
+                loading="lazy"
+              >
+            </picture>
+          {% else %}
+            <div class="placeholder-image" style="width: 600px; height: 250px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+              <span>No image</span>
+            </div>
+          {% endif %}
+          
+          <div class="block-slide-content">
+            <div class="block-slide-content-inner" style="text-align: {{ text_alignment }}">
+              {% if article.title != blank %}
+                <p class="block-slide-title heading" style="color: {{ text_color_card }}">{{ article.title }}</p>
+              {% endif %}
+              
+              <div class="block-slide-description" style="color: {{ text_color_card }}">
+                {% if formatted_date != blank %}
+                  <p class="event-date"><strong>{{ formatted_date }}</strong></p>
+                {% endif %}
+                {% if article.excerpt != blank %}
+                  <p class="event-excerpt">{{ article.excerpt | strip_html | truncate: 80 }}</p>
+                {% endif %}
+              </div>
+              
+              <a href="{{ article.url }}" class="block-slide-button">More Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {% assign slide_counter = slide_counter | plus: 1 %}
+      {% comment %} Removed 8-slide limit to show all events {% endcomment %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+  {% if show_controls and slide_counter > 0 %}
+    <div class="gallery-controls">
+      {% render '360-knob', total_frames: slide_counter, path_color: path_color %}
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  #perspective-slider-{{ section_id }} {
+    background-color: {{ background_color }};
+    color: {{ text_color }};
+    padding: 60px 0;
+    min-height: {{ slider_height }}px;
+  }
+  
+  #perspective-slider-{{ section_id }} .perspective-slider-container {
+    height: {{ slider_height }}px;
+  }
+  
+  #perspective-slider-{{ section_id }} .block-slide-item {
+    width: {{ slide_width }}px;
+    height: {{ slide_height }}px;
+  }
+  
+  #perspective-slider-{{ section_id }} .block-slide-item::before {
+    background: {{ slide_overlay_color }};
+  }
+</style>
+
+{{ 'section-perspective-slider.css' | asset_url | stylesheet_tag }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sliderContainer = document.querySelector('[data-slider-id="{{ section_id }}"]');
+    if (sliderContainer) {
+      var perspectiveSlider = new Flickity(sliderContainer, {
+        wrapAround: false,
+        autoPlay: perspectiveAutoPlay,
+        friction: 0.25,
+        selectedAttraction: 0.01,
+        initialIndex: {{ initial_index }},
+        prevNextButtons: false,
+        cellAlign: 'center',
+        contain: false,
+        pageDots: false,
+        freeScroll: false,
+        on: {
+          ready: function () {
+            const selectedSlide = sliderContainer.querySelector('.block-slide-item.is-selected');
+            if (selectedSlide) {
+              const previousSlide = selectedSlide.previousSibling;
+              const nextSlide = selectedSlide.nextSibling;
+              if (previousSlide) previousSlide.classList.add('is-previous');
+              if (nextSlide) nextSlide.classList.add('is-next');
+            }
+          },
+          change: function (index) {
+            const slides = this.slides;
+            let previousSlide = slides[index - 1]?.cells[0]?.element;
+            let nextSlide = slides[index + 1]?.cells[0]?.element;
+            if (!previousSlide) {
+              previousSlide = slides[slides.length - 1]?.cells[0]?.element;
+            }
+            if (!nextSlide) {
+              nextSlide = slides[0]?.cells[0]?.element;
+            }
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].cells[0].element.classList.remove('is-previous');
+              slides[i].cells[0].element.classList.remove('is-next');
+            }
+            if (previousSlide) previousSlide.classList.add('is-previous');
+            if (nextSlide) nextSlide.classList.add('is-next');
+          },
+        },
+      });
+      
+      // Store reference globally with unique identifier
+      window['perspectiveSlider_' + '{{ section_id }}'] = perspectiveSlider;
+      // Also store as main reference for knob compatibility
+      window.perspectiveSlider = perspectiveSlider;
+    }
+  });
+</script>
+
+{% else %}
+<div class="no-upcoming-events" style="background-color: {{ background_color }}; color: {{ text_color }}; padding: 60px 0; text-align: center;">
+  <p>No upcoming events available.</p>
+</div>
+{% endif %}

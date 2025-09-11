@@ -22,23 +22,25 @@
 
 <div class="events_page">
 
-    {% assign url = section.settings.hero_image | image_url: width: 1920 %}
-    <div class="hero" style="background-image: url('{{ url }}')">
-        <div class="container">
-            {% assign url_logo = section.settings.hero_logo | image_url: width: 200 %}
-            <h1><img class="img-responsive aligncenter" src="{{ url_logo }}" alt="{{ page_title }}" width="200" height="auto"></h1>
-            <p>{{ section.settings.hero_text }}</p>
-            <div class="btns">
-                {% for block in section.blocks %}
-                    {% if block.type == "hero_button" %}
-                        <a {{ block.shopify_attributes }} class="button button--solid {% if block.settings.btn_watch != blank %}watch{% endif %} {% if block.settings.book_form != blank %}lightbox-222295146958062{% endif %}" {% if block.settings.btn_url != blank %} href="{{ block.settings.btn_url }}" {% endif %}>
-                            <span>{{ block.settings.btn_text }}</span>
-                        </a>
-                    {% endif %}
-                {% endfor %}
+    {% if section.settings.display_hero %}
+        {% assign url = section.settings.hero_image | image_url: width: 1920 %}
+        <div class="hero" style="background-image: url('{{ url }}')">
+            <div class="container">
+                {% assign url_logo = section.settings.hero_logo | image_url: width: 200 %}
+                <h1><img class="img-responsive aligncenter" src="{{ url_logo }}" alt="{{ page_title }}" width="200" height="auto"></h1>
+                <p>{{ section.settings.hero_text }}</p>
+                <div class="btns">
+                    {% for block in section.blocks %}
+                        {% if block.type == "hero_button" %}
+                            <a {{ block.shopify_attributes }} class="button button--solid {% if block.settings.btn_watch != blank %}watch{% endif %} {% if block.settings.book_form != blank %}lightbox-222295146958062{% endif %}" {% if block.settings.btn_url != blank %} href="{{ block.settings.btn_url }}" {% endif %}>
+                                <span>{{ block.settings.btn_text }}</span>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 
     {% if section.settings.display_slider == true %}
       <div class="events_slider_section">
@@ -377,6 +379,12 @@
         {
             "type": "header",
             "content": "Events Slider"
+        },
+        {
+            "type": "checkbox",
+            "id": "display_hero",
+            "label": "Display Hero?",
+            "default": true
         },
         {
             "type": "checkbox",

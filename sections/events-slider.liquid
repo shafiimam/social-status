@@ -1,0 +1,513 @@
+{{ 'section-blog-events.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-blog-events.js' | asset_url }}" defer></script>
+
+{% assign now_date = "now" | date: "%s" %}
+{% assign selected_blog = blogs[section.settings.blog] %}
+
+<div class="events_page events-slider-section">
+    <section id="coming_events">
+        <div class="container">
+            
+            <ul id="filters">
+                <li class="rank">
+                <button class="button button--outline filter-dropdown-btn">
+                    <span class="filter-text">
+                        {% if current_tags %}
+                            {{ current_tags }}
+                        {% else %}
+                            ALL
+                        {% endif %}
+                    </span>
+                    <span class="filter-arrow" aria-hidden="true">
+                        {%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}
+                    </span>
+                </button>
+                    <div class="dropdown">
+                        <ul>
+                            <li class="{% if current_tags == blank %}selected{% endif %}">
+                                <a href="?filter=all" data-filter="all">
+                                    All
+                                </a>                                    
+                            </li> 
+                            {% for block in section.blocks %}
+                                {% if block.type == "city_filter" %}
+                                    {% assign current_tags_lower = current_tags | downcase %}
+                                    {% assign btn_tag_lower = block.settings.btn_tag | downcase %}
+                                    <li class="{% if current_tags_lower contains btn_tag_lower %}selected{% endif %}">
+                                        <a href="?filter={{ btn_tag_lower | replace: ' ', '-' }}" data-filter="{{ btn_tag_lower | replace: ' ', '-' }}">
+                                            {{ block.settings.btn_text }}
+                                        </a>                                    
+                                    </li> 
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+          
+            <!-- Check for coming articles and display them -->
+            {% assign has_coming_articles = false %}
+            {% assign filtered_events_count = 0 %}
+            
+            {% if selected_blog %}
+                {% comment %} Use configurable pagination limit to get more events {% endcomment %}
+                {% assign pagination_limit = section.settings.pagination_limit | default: 1000 %}
+                {% paginate selected_blog.articles by pagination_limit %}
+                  {% comment %} Debug: Show pagination info {% endcomment %}
+                  <!-- Debug: Loading {{ selected_blog.articles.size }} articles (page {{ paginate.current_page }} of {{ paginate.pages }}) -->
+                  
+                  {% for article in selected_blog.articles %}
+                      {% assign article_date = '' %}
+                      {% for tag in article.tags %}
+                          {% if tag contains "event-date::" %}
+                              {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                              {% break %}
+                          {% endif %}
+                      {% endfor %}
+                      
+                      {% if article_date != '' and article_date > now_date %}
+                          {% assign has_coming_articles = true %}
+                          {% assign filtered_events_count = filtered_events_count | plus: 1 %}
+                      {% endif %}
+                  {% endfor %}
+                  
+                  <!-- Debug: Found {{ filtered_events_count }} upcoming events out of {{ selected_blog.articles.size }} total articles -->
+                
+                  {% if has_coming_articles %}
+                      <div class="section_title">
+                          <h1 class="h1">{{ section.settings.events_coming | default: 'Upcoming Events' }}</h1>
+                          <a class="button button--solid events-toggle-btn" href="#" data-toggle="events-view">
+                              <span class="btn-text-show">{{ section.settings.btn_coming | default: 'Show All Events' }}</span>
+                              <span class="btn-text-hide" style="display: none;">{{ section.settings.btn_hide_coming | default: "Hide Upcoming Events" }}</span>
+                          </a>
+                      </div>
+
+                      <!-- Perspective Slider View (All events) - Default -->
+                      <div class="events-slider-view">
+                          {% render 'events-slider-perspective',
+                            blog: selected_blog,
+                            now_date: now_date,
+                            section_id: 'events-slider-upcoming',
+                            auto_play: section.settings.events_auto_play,
+                            background_color: section.settings.events_bg_color,
+                            slide_overlay_color: section.settings.events_overlay_color,
+                            text_color: section.settings.events_text_color,
+                            text_color_card: section.settings.events_card_text_color,
+                            path_color: section.settings.events_path_color,
+                            text_alignment: section.settings.events_text_alignment,
+                            slider_height: section.settings.events_slider_height,
+                            slide_width: section.settings.events_slide_width,
+                            slide_height: section.settings.events_slide_height,
+                            initial_index: section.settings.events_initial_index,
+                            show_controls: section.settings.show_events_controls
+                          %}
+                      </div>
+
+                      <!-- Grid View (All events in 4 per row) - Hidden by default -->
+                      <div class="events-grid-view" style="display: none;">
+                          <div class="events-grid">
+                              {% comment %} Use the same paginated articles for consistency {% endcomment %}
+                              {% for article in selected_blog.articles %}
+                                  {% assign article_date = '' %}
+                                  {% assign article_tags_string = '' %}
+                                  {% for tag in article.tags %}
+                                      {% if tag contains "event-date::" %}
+                                          {% assign article_date = tag | remove: "event-date::" | date: "%s" %}
+                                      {% else %}
+                                          {% if article_tags_string == '' %}
+                                              {% assign article_tags_string = tag %}
+                                          {% else %}
+                                              {% assign article_tags_string = article_tags_string | append: ',' | append: tag %}
+                                          {% endif %}
+                                      {% endif %}
+                                  {% endfor %}
+                                  {% if article_date != '' and article_date > now_date %}
+                                      <div class="event-grid-item">
+                                          <div data-tags="{{ article_tags_string }}">
+                                              {% render "article-events-coming-item", article: article %}
+                                          </div>
+                                      </div>
+                                  {% endif %}
+                              {% endfor %}
+                          </div>
+                      </div>
+
+                  {% else %}
+                      <!-- No events found message -->
+                      {% if current_tags %}
+                          <div class="no-events-found">
+                              <div class="no-events-content">
+                                  <h2 class="no-events-title">No Events Found</h2>
+                                  <p class="no-events-message">
+                                      No upcoming events found for "{{ current_tags }}". 
+                                      <a href="?filter=all" class="no-events-link">View all events</a> or try a different filter.
+                                  </p>
+                              </div>
+                          </div>
+                      {% else %}
+                          <div class="no-events-found">
+                              <div class="no-events-content">
+                                  <h2 class="no-events-title">No Upcoming Events</h2>
+                                  <p class="no-events-message">
+                                      There are currently no upcoming events scheduled. Check back soon for new events!
+                                  </p>
+                              </div>
+                          </div>
+                      {% endif %}
+                  {% endif %}
+                {% endpaginate %}
+            {% else %}
+                <div class="no-events-found">
+                    <div class="no-events-content">
+                        <h2 class="no-events-title">No Blog Selected</h2>
+                        <p class="no-events-message">
+                            Please select a blog in the section settings to display events.
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+    </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // URL filtering functionality
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    function filterEvents(filterValue) {
+        console.log('Filtering events with value:', filterValue);
+        const sliderContainer = document.querySelector('[data-slider-id="events-slider-upcoming"]');
+        const gridItems = document.querySelectorAll('.event-grid-item');
+        const filterText = document.querySelector('.filter-text');
+        
+        console.log('Found', gridItems.length, 'grid items');
+        console.log('Found slider container:', !!sliderContainer);
+        
+        // Filter grid items
+        gridItems.forEach(function(item) {
+            const articleElement = item.querySelector('[data-tags]');
+            const articleTags = articleElement ? articleElement.dataset.tags.toLowerCase() : '';
+            const tagArray = articleTags.split(',').map(tag => tag.trim());
+            const filterValueWithHash = '#' + filterValue.toLowerCase();
+            
+            if (filterValue === 'all' || filterValue === '' || 
+                tagArray.includes(filterValue.toLowerCase()) || 
+                tagArray.includes(filterValueWithHash)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Filter slider items
+        if (sliderContainer) {
+            const sliderItems = sliderContainer.querySelectorAll('.block-slide-item');
+            console.log('Found', sliderItems.length, 'slider items');
+            
+            sliderItems.forEach(function(item, index) {
+                const articleTags = item.dataset.tags ? item.dataset.tags.toLowerCase() : '';
+                const tagArray = articleTags.split(',').map(tag => tag.trim());
+                const filterValueWithHash = '#' + filterValue.toLowerCase();
+                
+                const shouldShow = filterValue === 'all' || filterValue === '' || 
+                    tagArray.includes(filterValue.toLowerCase()) || 
+                    tagArray.includes(filterValueWithHash);
+                
+                console.log(`Item ${index}: tags="${articleTags}", filterValue="${filterValue}", filterValueWithHash="${filterValueWithHash}", should show:`, shouldShow);
+                
+                if (shouldShow) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Reinitialize slider after filtering if Flickity is available
+            const sliderId = 'events-slider-upcoming';
+            if (window['perspectiveSlider_' + sliderId]) {
+                window['perspectiveSlider_' + sliderId].reloadCells();
+                window['perspectiveSlider_' + sliderId].resize();
+            }
+        }
+
+        // Check if any items are visible and show/hide no events message
+        const visibleGridItems = Array.from(gridItems).filter(item => item.style.display !== 'none');
+        const visibleSliderItems = sliderContainer ? 
+            Array.from(sliderContainer.querySelectorAll('.block-slide-item')).filter(item => item.style.display !== 'none') : [];
+        
+        const hasVisibleEvents = visibleGridItems.length > 0 || visibleSliderItems.length > 0;
+        
+        // Find or create no events message
+        let noEventsMessage = document.querySelector('.no-events-found.client-side');
+        if (!noEventsMessage) {
+            noEventsMessage = document.createElement('div');
+            noEventsMessage.className = 'no-events-found client-side';
+            noEventsMessage.innerHTML = `
+                <div class="no-events-content">
+                    <h2 class="no-events-title">No Events Found</h2>
+                    <p class="no-events-message">
+                        No upcoming events found for "<span class="filter-name"></span>". 
+                        <a href="?filter=all" class="no-events-link">View all events</a> or try a different filter.
+                    </p>
+                </div>
+            `;
+            
+            // Insert after the section title or at the beginning of the container
+            const sectionTitle = document.querySelector('.section_title');
+            const container = document.querySelector('#coming_events .container');
+            if (sectionTitle) {
+                sectionTitle.parentNode.insertBefore(noEventsMessage, sectionTitle.nextSibling);
+            } else if (container) {
+                container.appendChild(noEventsMessage);
+            }
+        }
+        
+        // Update filter name in message
+        const filterNameSpan = noEventsMessage.querySelector('.filter-name');
+        if (filterNameSpan) {
+            const selectedFilter = document.querySelector(`[data-filter="${filterValue}"]`);
+            filterNameSpan.textContent = selectedFilter ? selectedFilter.textContent.trim() : filterValue;
+        }
+        
+        // Show/hide based on visible events
+        if (!hasVisibleEvents && filterValue !== 'all' && filterValue !== '') {
+            noEventsMessage.style.display = 'block';
+            // Hide slider and grid views
+            const sliderView = document.querySelector('.events-slider-view');
+            const gridView = document.querySelector('.events-grid-view');
+            if (sliderView) sliderView.style.display = 'none';
+            if (gridView) gridView.style.display = 'none';
+        } else {
+            noEventsMessage.style.display = 'none';
+            // Show appropriate view
+            const sliderView = document.querySelector('.events-slider-view');
+            const gridView = document.querySelector('.events-grid-view');
+            if (sliderView) sliderView.style.display = '';
+            if (gridView && gridView.style.display !== 'none') gridView.style.display = '';
+        }
+
+        // Update filter dropdown text
+        const selectedFilter = document.querySelector(`[data-filter="${filterValue}"]`);
+        if (selectedFilter) {
+            filterText.textContent = selectedFilter.textContent.trim();
+        } else {
+            filterText.textContent = 'ALL';
+        }
+
+        // Update selected state in dropdown
+        document.querySelectorAll('#filters li').forEach(function(li) {
+            li.classList.remove('selected');
+        });
+        
+        const selectedLi = document.querySelector(`[data-filter="${filterValue}"]`);
+        if (selectedLi) {
+            selectedLi.closest('li').classList.add('selected');
+        } else {
+            document.querySelector('#filters li').classList.add('selected'); // First li (All)
+        }
+    }
+
+    // Check URL on page load
+    const urlFilter = getUrlParameter('filter');
+    if (urlFilter) {
+        filterEvents(urlFilter);
+    }
+
+    // Handle filter clicks
+    document.querySelectorAll('[data-filter]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const filterValue = this.dataset.filter;
+            
+            // Update URL without page reload
+            const newUrl = new URL(window.location);
+            if (filterValue === 'all') {
+                newUrl.searchParams.delete('filter');
+            } else {
+                newUrl.searchParams.set('filter', filterValue);
+            }
+            window.history.pushState({}, '', newUrl);
+            
+            // Apply filter
+            filterEvents(filterValue);
+        });
+    });
+
+    // Listen for popstate events (back/forward buttons)
+    window.addEventListener('popstate', function() {
+        const urlFilter = getUrlParameter('filter');
+        filterEvents(urlFilter || 'all');
+    });
+});
+</script>
+
+{% schema %}
+{
+    "name": "Events Slider",
+    "settings": [
+        {
+            "type": "blog",
+            "id": "blog",
+            "label": "Select Events Blog",
+            "info": "Choose the blog containing event articles"
+        },
+        {
+            "type": "text",
+            "id": "events_coming",
+            "label": "Coming Events Title",
+            "default": "Upcoming Events"
+        },
+        {
+            "type": "text",
+            "id": "btn_coming",
+            "label": "Show All Events Button",
+            "default": "Show All Events"
+        },
+        {
+            "type": "text",
+            "id": "btn_hide_coming",
+            "label": "Hide Events Button",
+            "default": "Hide Upcoming Events"
+        },
+        {
+            "type": "checkbox",
+            "id": "events_auto_play",
+            "label": "Auto Play Slider",
+            "default": false
+        },
+        {
+            "type": "color",
+            "id": "events_bg_color",
+            "label": "Background Color",
+            "default": "#000000"
+        },
+        {
+            "type": "color_background",
+            "id": "events_overlay_color",
+            "label": "Slide Overlay Color",
+            "default": "rgba(0,0,0,0.3)"
+        },
+        {
+            "type": "color",
+            "id": "events_text_color",
+            "label": "Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "events_card_text_color",
+            "label": "Card Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "events_path_color",
+            "label": "Control Path Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "select",
+            "id": "events_text_alignment",
+            "label": "Text Alignment",
+            "default": "center",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "events_slider_height",
+            "label": "Slider Height (px)",
+            "min": 200,
+            "max": 600,
+            "step": 10,
+            "default": 350
+        },
+        {
+            "type": "range",
+            "id": "events_slide_width",
+            "label": "Slide Width (px)",
+            "min": 250,
+            "max": 600,
+            "step": 10,
+            "default": 400
+        },
+        {
+            "type": "range",
+            "id": "events_slide_height",
+            "label": "Slide Height (px)",
+            "min": 150,
+            "max": 400,
+            "step": 10,
+            "default": 250
+        },
+        {
+            "type": "range",
+            "id": "events_initial_index",
+            "label": "Initial Slide Position",
+            "min": 0,
+            "max": 7,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "checkbox",
+            "id": "show_events_controls",
+            "label": "Show Slider Controls",
+            "default": true
+        },
+        {
+            "type": "number",
+            "id": "pagination_limit",
+            "label": "Articles Per Page",
+            "default": 1000,
+            "info": "Maximum number of articles to load from the blog (higher numbers may slow down page load)"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "City Filter",
+            "type": "city_filter",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Filter Button Text",
+                    "default": "City Name"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_tag",
+                    "label": "Filter Tag",
+                    "default": "CITY-NAME",
+                    "info": "Same tag as in the blog event article. The tag must be CAPITAL. If the tag contains multiple words, use hyphens: WORD1-WORD2-WORD3."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Events Slider",
+            "category": "Events"
+        }
+    ]
+}
+{% endschema %}

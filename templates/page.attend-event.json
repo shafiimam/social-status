@@ -1,0 +1,695 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "split",
+        "text": ""
+      }
+    },
+    "besocial_hero_zDHDNh": {
+      "type": "besocial-hero",
+      "blocks": {
+        "button_fTDRRw": {
+          "type": "button",
+          "settings": {
+            "button_text": "Upcoming Events",
+            "button_link": "#events-section",
+            "book_form": false
+          }
+        }
+      },
+      "block_order": [
+        "button_fTDRRw"
+      ],
+      "name": "Be Social Hero",
+      "settings": {
+        "background_image": "shopify://shop_images/besocial-hero.png",
+        "logo": "shopify://shop_images/besocial-logo-light.png",
+        "content": "<p>A space connected to several of our Social Status locations where we activate a variety of community-focused events. beSocial also acts as a free space for the local community to make their own.</p>"
+      }
+    },
+    "flagship_programs_nEJVzL": {
+      "type": "flagship-programs",
+      "blocks": {
+        "flagship_Wx8dpm": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>BRAND</strong>(ED)</p>",
+            "text": "<p>Creative collaborations with our brand partners to both help the community and raise brand awareness.</p>"
+          }
+        },
+        "flagship_N3gYWT": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>FREE</strong> GAME</p>",
+            "text": "<p>A platform where we educate our community on topics that aren’t regularly spoken or brought to the forefront.</p>"
+          }
+        },
+        "flagship_VrLR4U": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>WOMEN </strong>WITHIN</p>",
+            "text": "<p>A series promoting and creating community through hands-on workshops and monthly meet-ups.</p>"
+          }
+        },
+        "flagship_WJKrMP": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>BAG </strong>TALK</p>",
+            "text": "<p>Programs that focuses on financial literacy through mentorship and education.</p>"
+          }
+        },
+        "flagship_T74fDr": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>PRODUCT</strong> SWAP</p>",
+            "text": "<p>A program creating pathways to legal entreprenurship for those who desire to leave street activites as means of income.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "flagship_Wx8dpm",
+        "flagship_N3gYWT",
+        "flagship_VrLR4U",
+        "flagship_WJKrMP",
+        "flagship_T74fDr"
+      ],
+      "name": "Flagship Programs",
+      "settings": {
+        "flagship_image": "shopify://shop_images/rad_champion_2_5-18-22_1.jpg",
+        "flagship_title": "FLAGSHIP PROGRAMS"
+      }
+    },
+    "list_column_mP47Dk": {
+      "type": "list-column",
+      "blocks": {
+        "list_item_VkyMyP": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Charlotte,",
+            "item_text_2": "NC",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Charlotte-img.jpg"
+          }
+        },
+        "list_item_kHhH7m": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Atlanta,",
+            "item_text_2": "GA",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/atlanta#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Atlanta-img.jpg"
+          }
+        },
+        "list_item_K6i4nA": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Houston,",
+            "item_text_2": "TX",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Houston-img.jpg"
+          }
+        },
+        "list_item_xbHzbC": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Greensboro",
+            "item_text_2": ", NC",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/greensboro#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Greensboro-img.jpg"
+          }
+        },
+        "list_item_U8UrwK": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "Pittsburgh",
+            "item_text_2": ", PA",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/pittsburgh#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Pittsburgh-img.jpg"
+          }
+        },
+        "list_item_UwmHaT": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "RALEIGH",
+            "item_text_2": ", NC",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/raleigh#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.png"
+          }
+        },
+        "list_item_XT8qPW": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "TAMPA BAY",
+            "item_text_2": ", FL",
+            "button_link": "shopify://pages/our-stores",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/TB_acb88b1b-036e-4fc2-9ef5-1449771fa29e.png"
+          }
+        },
+        "list_item_UKPF9r": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "BALTIMORE",
+            "item_text_2": ", MD",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/baltimore#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/baltimoree.jpg"
+          }
+        },
+        "list_item_nBGzYX": {
+          "type": "list_item",
+          "settings": {
+            "item_text": "DETROIT",
+            "item_text_2": ", MI",
+            "button_link": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/detroit#coming_events",
+            "button_text": "Featured Events",
+            "hover_image": "shopify://shop_images/detroitbesocial.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "list_item_VkyMyP",
+        "list_item_kHhH7m",
+        "list_item_K6i4nA",
+        "list_item_xbHzbC",
+        "list_item_U8UrwK",
+        "list_item_UwmHaT",
+        "list_item_XT8qPW",
+        "list_item_UKPF9r",
+        "list_item_nBGzYX"
+      ],
+      "name": "List Column",
+      "settings": {
+        "separate_section_with_border": false
+      }
+    },
+    "perspective_slider_U9X7jt": {
+      "type": "perspective-slider",
+      "blocks": {
+        "slide_item_jpHHQc": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p><strong>Political</strong> Education</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_9hhJtL": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Financial Literacy</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_9AQHY6": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Housing Education</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_Mx4dHN": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Health + Wellness</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_LeQypN": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Prison Reform</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_89VyMy": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Business Development</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "slide_item_TzePpG": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/BESOCIALATLJUNE.jpg",
+            "title": "",
+            "description": "<p>Food Education</p>",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_jpHHQc",
+        "slide_item_9hhJtL",
+        "slide_item_9AQHY6",
+        "slide_item_Mx4dHN",
+        "slide_item_LeQypN",
+        "slide_item_89VyMy",
+        "slide_item_TzePpG"
+      ],
+      "custom_css": [
+        ".block-slide-description {text-align: center;}"
+      ],
+      "name": "Perspective Slider",
+      "settings": {
+        "title": "IMPACT AREAS",
+        "auto_play": false,
+        "background_color": "#000000",
+        "slide_overlay_color": "linear-gradient(0deg, rgba(207, 116, 36, 0.68), rgba(231, 126, 33, 0.68) 100%)",
+        "text_color": "#ffffff",
+        "text_color_card": "#ffffff",
+        "path_color": "#ffffff",
+        "text_alignment": "left"
+      }
+    },
+    "latest_features_cdA9xw": {
+      "type": "latest-features",
+      "blocks": {
+        "city_block_WHLn4B": {
+          "type": "city_block",
+          "disabled": true,
+          "settings": {
+            "city_name": "CHARLOTTE",
+            "city_tag": ""
+          }
+        },
+        "city_block_86C9Ei": {
+          "type": "city_block",
+          "disabled": true,
+          "settings": {
+            "city_name": "GREENSBORO",
+            "city_tag": "GREENSBORO"
+          }
+        },
+        "city_block_j9Fn3j": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "BALTIMORE",
+            "city_tag": "BALTIMORE"
+          }
+        },
+        "city_block_WWdcDj": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON"
+          }
+        },
+        "city_block_3DjgXE": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "PITTSBURGH",
+            "city_tag": "PITTSBURGH"
+          }
+        },
+        "city_block_3rFKat": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT"
+          }
+        },
+        "city_block_LELjKU": {
+          "type": "city_block",
+          "settings": {
+            "city_name": "FREE GAME",
+            "city_tag": "FREEGAME"
+          }
+        }
+      },
+      "block_order": [
+        "city_block_WHLn4B",
+        "city_block_86C9Ei",
+        "city_block_j9Fn3j",
+        "city_block_WWdcDj",
+        "city_block_3DjgXE",
+        "city_block_3rFKat",
+        "city_block_LELjKU"
+      ],
+      "name": "Latest Features & Events",
+      "settings": {
+        "blog": "blog-events",
+        "main_title": "Events",
+        "main_title_width": "802",
+        "main_title_align": "left",
+        "sub_title": "and Flagship Programs",
+        "sub_title_align": "right",
+        "arrow_text_1": "Cultutre",
+        "arrow_text_2": "Events",
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More"
+      }
+    },
+    "media_grid_tgC8EG": {
+      "type": "media-grid",
+      "blocks": {
+        "image_d6UDMr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSDESK2_1f488ffc-8cb4-44c5-af9d-2252ed030e0b.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_hqCW89": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_qaGc3G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_q6f3wB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_m8VDEP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_3p8x9w": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_6_0a4ef8cb-19ab-4528-b598-397f5be2ffdb.jpg",
+            "column_count": "3",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_KXNwxz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSXHonorthegift.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_RxXR8A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SSXHonorthegift.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_d6UDMr",
+        "image_hqCW89",
+        "image_qaGc3G",
+        "image_q6f3wB",
+        "image_m8VDEP",
+        "image_3p8x9w",
+        "image_KXNwxz",
+        "image_RxXR8A"
+      ],
+      "name": "Media Grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 250,
+        "mobile_row_height": 170,
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "Previous Events",
+        "content": "",
+        "text_alignment": "center"
+      }
+    },
+    "rich_text_XqMPwe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QyKDzA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_q3yWtp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QyKDzA",
+        "text_q3yWtp"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "besocial_locations_CEAh6p": {
+      "type": "besocial-locations",
+      "blocks": {
+        "af69fdbf-38ca-43b0-a118-c61b2e6eeab8": {
+          "type": "city",
+          "settings": {
+            "anchor": "charlotte",
+            "image": "shopify://shop_images/Charlotte-img.jpg",
+            "city_name": "Charlotte, NC",
+            "city_name_short": "CLT",
+            "gallery_image1": "shopify://shop_images/BESOCIAL_CARES_COOKOUT.jpg",
+            "description1": "<p>BESOCIAL CARES COOKOUT</p>",
+            "gallery_image2": "shopify://shop_images/COFFEE_COMPANY.jpg",
+            "description2": "<p>COFFEE & COMPANY</p>",
+            "gallery_image3": "shopify://shop_images/SIP_WITH_CONFIDENCE.jpg",
+            "description3": "<p>SIP WITH CONFIDENCE</p>",
+            "gallery_image4": "shopify://shop_images/QUARTER_LIFE_CRYSIS.jpg",
+            "description4": "<p>QUARTER LIFE CRYSIS</p>",
+            "description5": ""
+          }
+        },
+        "da7d41d7-001b-4c0a-85fd-20b0eac80de0": {
+          "type": "city",
+          "disabled": true,
+          "settings": {
+            "anchor": "atlanta",
+            "image": "shopify://shop_images/Atlanta-img.jpg",
+            "city_name": "Atlanta, GA",
+            "city_name_short": "ATL",
+            "gallery_image1": "shopify://shop_images/FREE_LUNCH_SCREENING.jpg",
+            "description1": "<p>FREE LUNCH SCREENING</p>",
+            "gallery_image2": "shopify://shop_images/Culture_Myxr-_Women_Appreciation_edition.jpg",
+            "description2": "<p>CULTURE MYXR WOMEN APPRECIATION EDITION</p>",
+            "gallery_image3": "shopify://shop_images/PROJECT_SWISH.jpg",
+            "description3": "<p>PROJECT WISH</p>",
+            "gallery_image4": "shopify://shop_images/WELLNESS_MONDAYS.jpg",
+            "description4": "<p>WELLNESS MONDAYS</p>",
+            "description5": ""
+          }
+        },
+        "0fee217a-3b2d-4fd7-b70c-cd671d14312b": {
+          "type": "city",
+          "disabled": true,
+          "settings": {
+            "anchor": "greensboro",
+            "image": "shopify://shop_images/Greensboro-img.jpg",
+            "city_name": "Greensboro, NC",
+            "city_name_short": "GSO",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/PAINT_DA_WORLD.jpg",
+            "description2": "<p>PAINT DA WORLD</p>",
+            "gallery_image3": "shopify://shop_images/Gordon_Parks_Documentary_Screening.jpg",
+            "description3": "<p>GORDON PARKS DOCUMENTARY</p>",
+            "gallery_image4": "shopify://shop_images/WORLD_RAN_BY_POWER_LISTENING_SESSION.jpg",
+            "description4": "<p>WORLD RAN BY POWER LISTENING SESSION</p>",
+            "description5": ""
+          }
+        },
+        "2ff55f83-987f-497d-89c2-4382dac5be1b": {
+          "type": "city",
+          "settings": {
+            "anchor": "houston",
+            "image": "shopify://shop_images/Houston-img.jpg",
+            "city_name": "Houston, TX",
+            "city_name_short": "HTX",
+            "gallery_image1": "shopify://shop_images/CHAMPIONSHIP_WATCH_PARTY.jpg",
+            "description1": "<p>CHAMPIONSHIP WATCH PARTY</p>",
+            "gallery_image2": "shopify://shop_images/THE_BEAUTY_OF_PR.jpg",
+            "description2": "<p>THE BEAUTY OF PR</p>",
+            "gallery_image3": "shopify://shop_images/J._REID_POP_UP.jpg",
+            "description3": "<p>J. REID POP UP</p>",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "33dd5bd0-7cb7-4ebe-aba1-c1cc4d9fb0c0": {
+          "type": "city",
+          "settings": {
+            "anchor": "pittsburgh",
+            "image": "shopify://shop_images/Pittsburgh-img.jpg",
+            "city_name": "Pittsburgh",
+            "city_name_short": "PGH",
+            "gallery_image1": "shopify://shop_images/PAINT_N_SIP.jpg",
+            "description1": "<p>PAINT 'N' SIP</p>",
+            "gallery_image2": "shopify://shop_images/TRAP_BINGO.jpg",
+            "description2": "<p>TRAP BINGO</p>",
+            "gallery_image3": "shopify://shop_images/WORLD_OF_ART_DAY.jpg",
+            "description3": "<p>WORLD OF ART DAY</p>",
+            "description4": "",
+            "description5": ""
+          }
+        }
+      },
+      "block_order": [
+        "af69fdbf-38ca-43b0-a118-c61b2e6eeab8",
+        "da7d41d7-001b-4c0a-85fd-20b0eac80de0",
+        "0fee217a-3b2d-4fd7-b70c-cd671d14312b",
+        "2ff55f83-987f-497d-89c2-4382dac5be1b",
+        "33dd5bd0-7cb7-4ebe-aba1-c1cc4d9fb0c0"
+      ],
+      "name": "BeSocial Locations",
+      "settings": {
+        "section_title": "City Highlight:"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "besocial_hero_zDHDNh",
+    "flagship_programs_nEJVzL",
+    "list_column_mP47Dk",
+    "perspective_slider_U9X7jt",
+    "latest_features_cdA9xw",
+    "media_grid_tgC8EG",
+    "rich_text_XqMPwe",
+    "besocial_locations_CEAh6p"
+  ]
+}
