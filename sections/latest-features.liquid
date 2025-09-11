@@ -149,7 +149,7 @@
                             class="tab-list-item-button"
                             onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
                           >
-                            <span> Add to Calendar </span>
+                            <span> {{ section.settings.event_cta_label | default: 'Add to Calendar' }} </span>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
@@ -302,6 +302,13 @@
       "label": "View More Button Label",
       "default": "View More",
       "info": "Label text for the view more button"
+    },
+    {
+      "type": "text",
+      "id": "event_cta_label",
+      "label": "Event CTA Label",
+      "default": "Add to Calendar",
+      "info": "Label text for event buttons"
     }
   ],
   "blocks": [
