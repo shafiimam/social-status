@@ -28,6 +28,11 @@
 {% endstyle %}
 
 <div class="besocial-hero-section site-box-container container--fullscreen box--can-stick" id="shopify-section-{{ section.id }}">
+  {% assign alpha_value = section.settings.overlay_opacity | divided_by: 100.00 %}
+  <div 
+    class="besocial-hero-overlay"
+    style="background-color: rgba({{ section.settings.color_background.rgb | split:  ' ' |  join: ','  }}, {{ alpha_value }})"
+  ></div>
   <div class="besocial-hero-container">
     <div class="besocial-hero-logo">
       <img
@@ -85,6 +90,23 @@
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background Overlay Color",
+      "info": "Color overlay between text and background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50,
+      "info": "Opacity of the background overlay"
     }
   ],
   "blocks": [
