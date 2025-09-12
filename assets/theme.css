@@ -696,8 +696,8 @@ input[type=submit], .button, .btn, .btn-article {
   display: inline-block;
 }
 .button.button--solid {
-  background: var(--main-text);
-  color: var(--main-text-foreground);
+  background: #000;
+  color: #fff;
 }
 .button.button--white {
   background: #fff;

@@ -105,7 +105,7 @@
         "text_3yGGyk": {
           "type": "text",
           "settings": {
-            "text": "<p>Culture lives here. Every month across our spaces we host community driven events that reflect the unique energy of each city. From sneaker drops and performances to book clubs, conversations, and culinary takeovers, Social Status events are built around the pillars that shape culture including innovation, design, conversation, food, sport, lifestyle, and sound. When you attend you are not just showing up. You are joining a collective moment that blends creativity with community. Every event is passion led, authentic, and designed to spark connection. See what is happening next and pull up to an experience where you belong.  When a user selects View More Events, it should go to the Coming Up/Browse All Events sections by City. </p>"
+            "text": "<p>Every month across our spaces we host community driven events that reflect the unique energy of each city. From sneaker drops and performances to book clubs, conversations, and culinary takeovers, Social Status events are built around the pillars that shape culture including innovation, design, conversation, food, sport, lifestyle, and sound. When you attend you are not just showing up. You are joining a collective moment that blends creativity with community. Every event is passion led, authentic, and designed to spark connection. See what is happening next and pull up to an experience where you belong.  When a user selects View More Events, it should go to the Coming Up/Browse All Events sections by city. </p>"
           }
         }
       },
@@ -114,7 +114,7 @@
         "text_3yGGyk"
       ],
       "custom_css": [
-        "h2{text-align: center;}"
+        "h2 {text-align: center;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
