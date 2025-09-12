@@ -284,7 +284,7 @@
           "settings": {
             "anchor": "pittsburgh",
             "image": "shopify://shop_images/Pittsburgh-img.jpg",
-            "city_name": "Pittsburgh",
+            "city_name": "East Liberty,Pittsburgh",
             "city_name_short": "PGH",
             "gallery_image1": "shopify://shop_images/SSPITT13.png",
             "description1": "",
@@ -299,6 +299,7 @@
         "city_DpQCPm": {
           "type": "city",
           "name": "Raleigh",
+          "disabled": true,
           "settings": {
             "anchor": "#Raleigh",
             "image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.png",
@@ -317,7 +318,7 @@
         "city_iU3HQA": {
           "type": "city",
           "settings": {
-            "anchor": "#atlanta",
+            "anchor": "atlanta",
             "city_name": "Charlotte, NC",
             "city_name_short": "CLT",
             "description1": "",

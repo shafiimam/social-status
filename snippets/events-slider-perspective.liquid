@@ -117,7 +117,7 @@
             assign formatted_date = ''
             for tag in article.tags
               if tag contains "event-date::"
-                assign formatted_date = tag | remove: "event-date::" | date: "%m,%d,%Y"
+                assign formatted_date = tag | remove: "event-date::" | date: "%m.%d.%Y"
                 break
               endif
             endfor

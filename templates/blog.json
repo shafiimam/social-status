@@ -47,7 +47,6 @@
       "type": "hero",
       "name": "Hero Section",
       "settings": {
-        "desktop_image": "shopify://shop_images/audience.jpg",
         "mobile_image": "shopify://shop_images/frofeature.jpg",
         "heading": "Features",
         "subheading": "",

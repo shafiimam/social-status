@@ -60,7 +60,7 @@
       "settings": {
         "desktop_layout": "split",
         "desktop_image_positioning": "image-on-left",
-        "desktop_text": "#ffffff",
+        "desktop_text": "#000000",
         "desktop_background": "rgba(0,0,0,0)",
         "desktop_overlay": "rgba(0,0,0,0)",
         "mobile_height": "var(--window-height)",
@@ -484,7 +484,7 @@
           "type": "button",
           "settings": {
             "button_label": "View More Events",
-            "button_link": "shopify://pages/accessibility"
+            "button_link": "shopify://pages/attend-an-event"
           }
         }
       },
