@@ -1,7 +1,12 @@
 {{ 'section-flagship-programs.css' | asset_url | stylesheet_tag }}
 
 {% assign flagshipImage = section.settings.flagship_image | img_url: 'master' %}
+{% assign alpha_value = section.settings.overlay_opacity | divided_by: 100.00 %}
 <div id="flagship_programs" class="bgImg" style="background-image: url('{{ flagshipImage }}')">
+  <div 
+    class="flagship-programs-overlay"
+    style="background-color: rgba({{ section.settings.color_background.rgb | split:  ' ' |  join: ','  }}, {{ alpha_value }})"
+  ></div>
   <div class="container">
     <h2 class="title">{{ section.settings.flagship_title }}</h2>
 
@@ -39,6 +44,23 @@
       "id": "flagship_title",
       "label": "Section Title",
       "default": "FLAGSHIP PROGRAMS"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background Overlay Color",
+      "info": "Color overlay between content and background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50,
+      "info": "Opacity of the background overlay"
     }
   ],
   "blocks": [

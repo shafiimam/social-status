@@ -4,9 +4,22 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  position: relative;
+}
+
+.flagship-programs-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 #flagship_programs .container {
+  position: relative;
+  z-index: 2;
   max-width: 1574px;
   padding-top: 144px;
   padding-bottom: 136px;
