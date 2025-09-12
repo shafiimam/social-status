@@ -37,19 +37,16 @@
         height="100"
       > 
     </div>
-    <div class="besocial-hero-content">
-      {{ section.settings.content }}
-    </div>
     <div class="besocial-hero-blocks">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'heading_text' %}
             <div class="besocial-hero-heading-text" {{ block.shopify_attributes }}>
               {% if block.settings.heading != blank %}
-                <h2 class="besocial-hero-heading">{{ block.settings.heading }}</h2>
+                <h1 class="besocial-hero-heading h1">{{ block.settings.heading }}</h1>
               {% endif %}
               {% if block.settings.text != blank %}
-                <div class="besocial-hero-text">{{ block.settings.text }}</div>
+                <div class="besocial-hero-content">{{ block.settings.text }}</div>
               {% endif %}
             </div>
           {% when 'button' %}
@@ -88,11 +85,6 @@
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
-    },
-    {
-      "type": "richtext",
-      "id": "content",
-      "label": "Content"
     }
   ],
   "blocks": [

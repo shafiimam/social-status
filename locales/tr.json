@@ -73,7 +73,7 @@
       "cart": "Sepet"
     },
     "date_format": {
-      "month_day_year": "%b %d, %Y",
+      "month_day_year": "%m.%d. %Y",
       "days": "Gün",
       "hours": "Saat",
       "minutes": "Dakika",

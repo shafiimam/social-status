@@ -73,7 +73,7 @@
       "cart": "Корзина"
     },
     "date_format": {
-      "month_day_year": "%b %d, %Y",
+      "month_day_year": "%m.%d. %Y",
       "days": "Дней",
       "hours": "Часов",
       "minutes": "Минут",

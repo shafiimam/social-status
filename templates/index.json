@@ -76,7 +76,7 @@
         "title": "New Arrivals",
         "subtitle": "Shop now",
         "collection": "new-arrivals-1",
-        "collection_rows": 2,
+        "collection_rows": 3,
         "show_view_all": true,
         "seo_h_tag": "h2"
       }
@@ -380,7 +380,7 @@
         "max_articles": 5,
         "view_more_label": "View More",
         "blog_cta_label": "Read Article",
-        "event_cta_label": "Add to Calendar"
+        "event_cta_label": "Register Now"
       }
     },
     "latest_features_f6y9et": {

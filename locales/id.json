@@ -73,7 +73,7 @@
       "cart": "Keranjang"
     },
     "date_format": {
-      "month_day_year": "%b %d, %Y",
+      "month_day_year": "%m.%d. %Y",
       "days": "Hari",
       "hours": "Jam",
       "minutes": "Menit",

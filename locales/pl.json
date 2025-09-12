@@ -73,7 +73,7 @@
       "cart": "Koszyk"
     },
     "date_format": {
-      "month_day_year": "%b %d, %Y",
+      "month_day_year": "%m.%d. %Y",
       "days": "dni",
       "hours": "godziny",
       "minutes": "minuty",

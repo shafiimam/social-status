@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "featured_product_BqDbw8": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "product": "honor-the-gift-1988-t-shirt-blue",
+            "badge_text": "New",
+            "badge_color": "#000000",
+            "badge_text_color": "#ffffff",
+            "position": 5,
+            "block_span": 2
+          }
+        },
+        "image_hotspot_wWDTMJ": {
+          "type": "image_hotspot",
+          "disabled": true,
+          "settings": {
+            "position": 11,
+            "block_span": 2,
+            "color_background": "#000000",
+            "color_text": "",
+            "image": "shopify://shop_images/CarharttWIP_Mobile.jpg",
+            "hotspot_product_1": "carhartt-active-jacket-1",
+            "hotspot_vertical_offset_1": 31,
+            "hotspot_horizontal_offset_1": 50,
+            "tooltip_position_1": "right",
+            "hotspot_product_2": "m1000v1",
+            "hotspot_vertical_offset_2": 65,
+            "hotspot_horizontal_offset_2": 50,
+            "tooltip_position_2": "bottom",
+            "hotspot_product_3": "m1000v1",
+            "hotspot_vertical_offset_3": 51,
+            "hotspot_horizontal_offset_3": 21,
+            "tooltip_position_3": "right",
+            "hotspot_product_4": "",
+            "hotspot_vertical_offset_4": 23,
+            "hotspot_horizontal_offset_4": 50,
+            "tooltip_position_4": "top"
+          }
+        }
+      },
+      "block_order": [
+        "featured_product_BqDbw8",
+        "image_hotspot_wWDTMJ"
+      ],
+      "settings": {
+        "show_collection_banner": true,
+        "collection_desktop_layout": "split",
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "mobile_overlay_background": "#131313",
+        "mobile_overlay_text": "rgba(0,0,0,0)",
+        "collection_rows": 16,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "image_filter_layout": "onecolumn"
+      }
+    },
+    "navigation": {
+      "type": "main-collection-navigation",
+      "disabled": true,
+      "settings": {
+        "navigation_style": "2",
+        "navigation_images": false,
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_RiUdjd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rbXkb7": {
+          "type": "heading",
+          "settings": {
+            "heading": "BOOTS",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_BY4mPe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Social Status brings edge and refinement together with a curated lineup of men’s and women’s boots. From sleek designer styles to everyday essentials, our collection is designed for versatility and durability. Each pair offers a balance of comfort, craftsmanship, and statement-making detail, ensuring your look remains grounded in both function and fashion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rbXkb7",
+        "text_BY4mPe"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "navigation",
+    "rich_text_RiUdjd"
+  ]
+}

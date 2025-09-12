@@ -17,19 +17,69 @@
         "text": ""
       }
     },
-    "hero_4RWN7q": {
-      "type": "hero",
-      "name": "Hero Section",
+    "besocial_hero_VkXRTF": {
+      "type": "besocial-hero",
+      "blocks": {
+        "heading_text_tkwXgF": {
+          "type": "heading_text",
+          "settings": {
+            "heading": "Book An Event",
+            "text": "<p>Social Status offers spaces designed for creativity, connection, and culture. Here, moments transform into experiences and gatherings find their flow. Whether it is a workshop, a celebration, or a cultural activation, we provide more than a venue. You step into an environment shaped with intention, care, and purpose. Host your event with us and create something lasting that brings people together, inspires conversation, and strengthens community from the inside out.</p>"
+          }
+        },
+        "button_aYrLAJ": {
+          "type": "button",
+          "settings": {
+            "button_text": "Event Inquiry",
+            "button_link": "#book-event-form",
+            "book_form": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_text_tkwXgF",
+        "button_aYrLAJ"
+      ],
+      "name": "Be Social Hero",
       "settings": {
-        "desktop_image": "shopify://shop_images/Downtown-Detroit-Renaissance-Center-Iconic-scaled.jpg",
-        "heading": "BOOK AN EVENT",
-        "subheading": "Your subheading here",
-        "button_1_text": "Button 1",
-        "button_1_link": "",
-        "button_2_text": "Button 2",
-        "button_2_link": "",
-        "horizontal_alignment": "center",
-        "vertical_alignment": "middle"
+        "background_image": "shopify://shop_images/besocial-hero.png",
+        "logo": "shopify://shop_images/besocial-logo-light.png"
+      }
+    },
+    "rich_text_wNzXz3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zzEEtB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Where Culture Meets Community",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_dGc46A": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every story deserves the right stage. At Social Status our spaces are built on hustle, creativity, and leadership. They are places where culture comes alive and community finds its rhythm. From intimate talks and workshops to private celebrations and cultural activations, we offer more than a venue. You are stepping into a space shaped by passion, care, and purpose. Our team brings Social Status values to life by helping you design an event that is seamless, intentional, and unforgettable.</p><p>Book your event with us and create something that connects people, sparks dialogue, and strengthens culture from the ground up.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zzEEtB",
+        "text_dGc46A"
+      ],
+      "custom_css": [
+        "h2,p {text-align: center;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
       }
     },
     "faq_QwrqWg": {
@@ -142,11 +192,163 @@
         "custom_text": "rgba(0,0,0,0)",
         "seo_h_tag": "h2"
       }
+    },
+    "custom_liquid_cewCYt": {
+      "type": "custom-liquid",
+      "name": "t:sections.refactor_words.custom_code.name",
+      "settings": {
+        "custom_liquid": "<iframe class=\"clickup-embed clickup-dynamic-height\" src=\"https://forms.clickup.com/90131992999/f/2ky4j4d7-8833/P22XXYCGSTXEEWSH39\" onwheel=\"\" width=\"100%\" height=\"100%\" style=\"background: transparent; border: 1px solid #ccc;\"></iframe><script async src=\"https://app-cdn.clickup.com/assets/js/forms-embed/v1.js\"></script>",
+        "no_padding": false
+      }
+    },
+    "besocial_locations_NBm4Nh": {
+      "type": "besocial-locations",
+      "blocks": {
+        "city_nhAE8U": {
+          "type": "city",
+          "name": "Charlotte ",
+          "settings": {
+            "anchor": "charlotte",
+            "image": "shopify://shop_images/Charlotte-img.jpg",
+            "city_name": "Charlotte, NC",
+            "city_name_short": "CLT",
+            "gallery_image1": "shopify://shop_images/BESSCLT3.jpg",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/CLT_SS_BE_SOCIAL.png",
+            "description2": "",
+            "gallery_image3": "shopify://shop_images/BE_SOCIAL_CLT4.jpg",
+            "description3": "",
+            "gallery_image4": "shopify://shop_images/BESOCIAL_CLT1.jpg",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "city_G8zAP6": {
+          "type": "city",
+          "name": "Detroit",
+          "settings": {
+            "anchor": "Detroit",
+            "image": "shopify://shop_images/Downtown-Detroit-Renaissance-Center-Iconic-scaled.jpg",
+            "city_name": "Detroit, MI",
+            "city_name_short": "DET",
+            "gallery_image1": "shopify://shop_images/SSDET11.png",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/SSDET10.png",
+            "description2": "",
+            "gallery_image3": "shopify://shop_images/SSDET13.png",
+            "description3": "",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "city_MKF6bn": {
+          "type": "city",
+          "name": "Greensboro",
+          "settings": {
+            "anchor": "Greensboro",
+            "image": "shopify://shop_images/Greensboro-img.jpg",
+            "city_name": "Greensboro, NC",
+            "city_name_short": "GSO",
+            "gallery_image1": "shopify://shop_images/BESSGSO9.png",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/BESSGSO10.png",
+            "description2": "",
+            "gallery_image3": "shopify://shop_images/BESSGSO.png",
+            "description3": "",
+            "gallery_image4": "shopify://shop_images/BESSGSO12.png",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "city_nct78g": {
+          "type": "city",
+          "name": "Houston",
+          "settings": {
+            "anchor": "houston",
+            "image": "shopify://shop_images/Houston-img.jpg",
+            "city_name": "Houston, TX",
+            "city_name_short": "HTX",
+            "gallery_image1": "shopify://shop_images/SS_HTX_11.png",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/SS_HTX_10.png",
+            "description2": "",
+            "gallery_image3": "shopify://shop_images/SS_HTX_5edf5dbb-b6bc-4352-9412-a6b66edac433.png",
+            "description3": "",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "city_fhxphp": {
+          "type": "city",
+          "name": "Pittsburgh",
+          "settings": {
+            "anchor": "pittsburgh",
+            "image": "shopify://shop_images/Pittsburgh-img.jpg",
+            "city_name": "Pittsburgh",
+            "city_name_short": "PGH",
+            "gallery_image1": "shopify://shop_images/SSPITT13.png",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/SSPITT11.png",
+            "description2": "",
+            "gallery_image3": "shopify://shop_images/SSPITT15.png",
+            "description3": "",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "city_DpQCPm": {
+          "type": "city",
+          "name": "Raleigh",
+          "settings": {
+            "anchor": "#Raleigh",
+            "image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.png",
+            "city_name": "Raleigh, NC",
+            "city_name_short": "RDU",
+            "gallery_image1": "shopify://shop_images/SSRDU.png",
+            "description1": "",
+            "gallery_image2": "shopify://shop_images/SSRALEIGH17.png",
+            "description2": "",
+            "gallery_image3": "shopify://shop_images/SSRALEIGH13.png",
+            "description3": "",
+            "description4": "",
+            "description5": ""
+          }
+        },
+        "city_iU3HQA": {
+          "type": "city",
+          "settings": {
+            "anchor": "#atlanta",
+            "city_name": "Charlotte, NC",
+            "city_name_short": "CLT",
+            "description1": "",
+            "description2": "",
+            "description3": "",
+            "description4": "",
+            "description5": ""
+          }
+        }
+      },
+      "block_order": [
+        "city_nhAE8U",
+        "city_G8zAP6",
+        "city_MKF6bn",
+        "city_nct78g",
+        "city_fhxphp",
+        "city_DpQCPm",
+        "city_iU3HQA"
+      ],
+      "name": "BeSocial Locations",
+      "settings": {
+        "section_title": "City Highlight:"
+      }
     }
   },
   "order": [
     "main",
-    "hero_4RWN7q",
-    "faq_QwrqWg"
+    "besocial_hero_VkXRTF",
+    "rich_text_wNzXz3",
+    "faq_QwrqWg",
+    "custom_liquid_cewCYt",
+    "besocial_locations_NBm4Nh"
   ]
 }

@@ -73,7 +73,7 @@
       "cart": "Nákupní košík"
     },
     "date_format": {
-      "month_day_year": "%b %d, %Y",
+      "month_day_year": "%m.%d. %Y",
       "days": "Dny",
       "hours": "Hodiny",
       "minutes": "Minuty",

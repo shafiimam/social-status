@@ -18,11 +18,11 @@
           <div class="grid__item one-whole">
             <h4 class="simple-title">{{ 'customers.orders_page.title' | t: name: order.name }}</h4>
 
-            <p>{{ 'customers.orders_page.placed_order' | t: date: order.created_at | date: '%B %d, %Y %I:%M%p' }}</p>
+            <p>{{ 'customers.orders_page.placed_order' | t: date: order.created_at | date: '%m.%d. %Y %I:%M%p' }}</p>
 
             {% if order.cancelled %}
               <div class="errors">
-                {% assign cancelled_at = order.cancelled_at | date: '%B %d, %Y %I:%M%p' %}
+                {% assign cancelled_at = order.cancelled_at | date: '%m.%d. %Y %I:%M%p' %}
                 <strong>{{ 'customers.orders_page.cancelled' | t: date: cancelled_at }}</strong>
                 <p>{{ 'customers.orders_page.cancelled_reason' | t: reason: order.cancel_reason }}</p>
               </div>
@@ -78,7 +78,7 @@
 
                         {%- if line_item.fulfillment -%}
                           <div class="note">
-                            {% assign fulfilled_at = line_item.fulfillment.created_at | date: '%B %d, %Y %I:%M%p' %}
+                            {% assign fulfilled_at = line_item.fulfillment.created_at | date: '%m.%d. %Y %I:%M%p' %}
                             {{ 'customers.orders_page.orders_table.fulfilled_at' | t: date: fulfilled_at }}
                             {%- if line_item.fulfillment.tracking_number -%}
                               <br>
