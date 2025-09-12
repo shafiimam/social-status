@@ -45,7 +45,7 @@
             "subtitle": "Shop Fall favorties and more!",
             "button_label": "shop",
             "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/SSVERT2.png",
+            "image": "shopify://shop_images/SS758.png",
             "mobile_image": "shopify://shop_images/SS_VERTICAL_1.png",
             "seo_h_tag": "h2"
           }
@@ -258,7 +258,9 @@
       "settings": {
         "heading": "Collections",
         "subheading": "Browse our Collections and find the best fit",
-        "backdrop_text": "Culture"
+        "backdrop_text": "Culture",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "shop_the_look_yJ96E3": {
@@ -374,7 +376,11 @@
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Add to Calendar"
       }
     },
     "latest_features_f6y9et": {
@@ -450,7 +456,10 @@
         "sub_title_align": "right",
         "arrow_text_1": "Cultutre",
         "arrow_text_2": "Events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "event_cta_label": "Add to Calendar"
       }
     },
     "image_text_column_rhg67G": {

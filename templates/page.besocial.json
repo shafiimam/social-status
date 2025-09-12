@@ -92,6 +92,42 @@
         "flagship_title": "FLAGSHIP PROGRAMS"
       }
     },
+    "rich_text_YdCn3T": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_X8Ywhe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Culture lives here.",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_3yGGyk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Culture lives here. Every month across our spaces we host community driven events that reflect the unique energy of each city. From sneaker drops and performances to book clubs, conversations, and culinary takeovers, Social Status events are built around the pillars that shape culture including innovation, design, conversation, food, sport, lifestyle, and sound. When you attend you are not just showing up. You are joining a collective moment that blends creativity with community. Every event is passion led, authentic, and designed to spark connection. See what is happening next and pull up to an experience where you belong.  When a user selects View More Events, it should go to the Coming Up/Browse All Events sections by City. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_X8Ywhe",
+        "text_3yGGyk"
+      ],
+      "custom_css": [
+        "h2{text-align: center;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
     "list_column_mP47Dk": {
       "type": "list-column",
       "blocks": {
@@ -299,7 +335,7 @@
         "image_d6UDMr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SSDESK2_1f488ffc-8cb4-44c5-af9d-2252ed030e0b.jpg",
+            "image": "shopify://shop_images/SSCLUBRUN.png",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -316,7 +352,7 @@
         "image_hqCW89": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/001ZPL301001M-RED_2.jpg",
+            "image": "shopify://shop_images/AIR_MAX_SS_0126a272-dc74-4765-882e-d85c3d82eb16.jpg",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -333,7 +369,7 @@
         "image_qaGc3G": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/desk4_22038680-836f-49df-bd1f-68b683d8a5a1.jpg",
+            "image": "shopify://shop_images/SSNIKEEVENT.png",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -350,7 +386,7 @@
         "image_q6f3wB": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "image": "shopify://shop_images/SS95.png",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -367,7 +403,7 @@
         "image_m8VDEP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SSMOBNEW.jpg",
+            "image": "shopify://shop_images/SS_Welcome_run.png",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -384,7 +420,7 @@
         "image_3p8x9w": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Artboard_6_0a4ef8cb-19ab-4528-b598-397f5be2ffdb.jpg",
+            "image": "shopify://shop_images/SS_RUn_5_5e0e6439-b76e-46a7-a376-b9ebf43cfbc9.jpg",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -401,7 +437,7 @@
         "image_KXNwxz": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SSXHonorthegift.jpg",
+            "image": "shopify://shop_images/BESOCIAL_a0ce166c-a004-4738-9699-25dab93892b4.jpg",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -418,7 +454,7 @@
         "image_RxXR8A": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SSXHonorthegift.jpg",
+            "image": "shopify://shop_images/NIKEAMLEVISS.png",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -600,6 +636,7 @@
     "main",
     "besocial_hero_zDHDNh",
     "flagship_programs_nEJVzL",
+    "rich_text_YdCn3T",
     "list_column_mP47Dk",
     "events_slider_rF3xgT",
     "media_grid_tgC8EG",

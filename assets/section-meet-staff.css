@@ -17,6 +17,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 .staff-slider__item-content{
     display: flex;
     flex-direction: column;
@@ -68,10 +69,16 @@
     background: #FAFAFA;
 }
 .staff-slider .flickity-prev-next-button{
-    top: 98%;
+    top: 97%;
     z-index: 1;
     color: var(--secondary-text);
 }
 .staff-slider .flickity-prev-next-button.next{
     left: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .staff-slider{
+    height: 100% !important;
+  }
 }

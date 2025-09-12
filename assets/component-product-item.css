@@ -23,6 +23,7 @@
   grid-template-columns: repeat(2, 1fr);
   align-content: start;
 }
+
 @media screen and (max-width: 768px),
   screen and (max-width: 1024px) and (orientation: portrait) {
   .product-grid-border-fix {
@@ -32,6 +33,10 @@
   .product-grid-border-fix[data-grid-columns="2"] {
     grid-template-columns: repeat(1, 1fr);
     display: none;
+  }
+  #section-related-products  .product-grid-border-fix[data-grid-columns="2"] {
+    grid-template-columns: repeat(1, 1fr);
+    display: grid;
   }
 }
 .product-grid-border-fix > .site-box {

@@ -236,9 +236,9 @@
                             <div class="tab-list-item-content-inner">
                               <span class="tab-list-item-subtitle">{{ article.excerpt_or_content | strip_html | truncatewords: 15 }}</span>
                               <span class="tab-list-item-date-mobile-only">{{ event_date | date: "%B %d, %Y" }}</span>
-                              <button
+                              <a
                                 class="tab-list-item-button"
-                                onclick="addToCalendar('{{ article.title }}', '{{ event_date_calendar }}')"
+                               href="{{ article.url }}"
                               >
                                 <span> {{ section.settings.event_cta_label | default: 'Add to Calendar' }} </span>
                                 <svg
@@ -250,7 +250,7 @@
                                 >
                                   <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                              </button>
+                              </a>
                             </div>
                           </div>
                         </div>

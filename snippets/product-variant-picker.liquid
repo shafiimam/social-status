@@ -69,7 +69,7 @@
                 product-variant__item--size
               {% endif %}
             ">
-              <input type="radio" name="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}" id="{{ product.handle }}-option-{{ option.name | escape | downcase | strip }}-{{ forloop.index }}-{{ section.id }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %} class="product-variant__input product-variant-value">
+              <input type="radio" name="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}" id="{{ product.handle }}-option-{{ option.name | escape | downcase | strip }}-{{ forloop.index }}-{{ section.id }}" value="{{ value | escape }}" class="product-variant__input product-variant-value">
               <label for="{{ product.handle }}-option-{{ option.name | escape | downcase | strip }}-{{ forloop.index }}-{{ section.id }}" class="product-variant__label">
 
                 {%- if is_color -%}

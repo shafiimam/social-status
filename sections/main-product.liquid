@@ -359,7 +359,7 @@
                         <button
                           type="submit"
                           name="add"
-                          class="product__add-to-cart product--add-to-cart-button button button--outline {% unless current_variant.available %} disabled {% endunless %}"
+                          class="product__add-to-cart product--add-to-cart-button button button--outline {% unless current_variant.available %} disabled {% endunless %} disabled"
                           data-js-product-add-to-cart
                         >
                           <span
@@ -588,7 +588,11 @@
 
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
-
+            {% when 'fina_sale_message' %}
+              {% render 'final-sale-message', product: product %}
+            {% when 'ineligibile_products' %}
+              {% render 'ineligibile-product-message', vendor_array : block.settings.vendor_array , product: product %}
+            
             {%- when 'share' -%}
               <div {{ block.shopify_attributes }}>
                 {%- render 'share', title: product.title, url: product.url, image: product.featured_media -%}
@@ -671,6 +675,23 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "fina_sale_message",
+      "name" : "Final Sale Message",
+      "limit": 1
+    },
+    {
+      "type": "ineligibile_products",
+      "name": "Ineligibile Products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "vendor_array",
+          "label": "Vendor List",
+          "default": "Jordan Brand, Jordan, JORDAN BRAND, JORDAN, NIKE, Nike, CONVERSE, Converse"
+        }
+      ]
     },
     {
       "type": "size_guide",
@@ -1104,7 +1125,7 @@
       "id": "enable_video_looping",
       "label": "t:sections.main-product.settings.enable_video_looping.label",
       "default": false
-    }
+    },
   ]
 }
 {% endschema %}
