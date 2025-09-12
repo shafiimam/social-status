@@ -71,6 +71,39 @@
             "book_form": true
           }
         },
+        "slide_XjPGyD": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/beSocial_AUG_25_-_CLT.jpg",
+            "title": "Charlotte",
+            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/charlotte#:~:text=Next-,%23Charlotte,-COMING%20UP%3A",
+            "book_event_1": "",
+            "book_event_url_1": "/"
+          }
+        },
+        "slide_pkRiFV": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/beSocial_AUG_25_-_HTX.jpg",
+            "title": "Houston",
+            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/houston#:~:text=Next-,%23houston,-COMING%20UP%3A",
+            "book_event_1": "",
+            "book_event_url_1": "/"
+          }
+        },
+        "slide_aeWewJ": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/beSocial_AUG_25_-_DET.jpg",
+            "title": "Detroit",
+            "url": "https://www.socialstatuspgh.com/blogs/blog-events/tagged/detroit#coming_events",
+            "book_event_1": "",
+            "book_event_url_1": "/"
+          }
+        },
         "sort_articles_HFh7hH": {
           "type": "sort-articles",
           "settings": {
@@ -116,8 +149,15 @@
         "sort_articles_3deqTA": {
           "type": "sort-articles",
           "settings": {
-            "btn_text": "FREE GAME",
-            "btn_tag": "FREEGAME"
+            "btn_text": "TAMPA",
+            "btn_tag": "TAMPA"
+          }
+        },
+        "sort_articles_9KaWh4": {
+          "type": "sort-articles",
+          "settings": {
+            "btn_text": "ATLANTA",
+            "btn_tag": "ATLANTA"
           }
         }
       },
@@ -125,22 +165,25 @@
         "hero_button_NGdMbx",
         "hero_button_Mmx4N4",
         "hero_button_LWwRTB",
+        "slide_XjPGyD",
+        "slide_pkRiFV",
+        "slide_aeWewJ",
         "sort_articles_HFh7hH",
         "sort_articles_Gn7tEN",
         "sort_articles_dQExgW",
         "sort_articles_zDyCCw",
         "sort_articles_BXY6VH",
         "sort_articles_xabRH6",
-        "sort_articles_3deqTA"
+        "sort_articles_3deqTA",
+        "sort_articles_9KaWh4"
       ],
       "custom_css": [
         ".block-slide-content {justify-content: flex-end; padding-bottom: 30px;}"
       ],
       "name": "Blog Events",
       "settings": {
-        "display_hero": true,
-        "display_slider": false,
-        "display_calendar": false,
+        "display_slider": true,
+        "display_calendar": true,
         "hero_image": "shopify://shop_images/BESOCIAL_f24a1680-d5ad-4c05-a12e-5a6c294a1e90.jpg",
         "hero_logo": "shopify://shop_images/title-beSocial.png",
         "hero_title": "beSOCIAL",
@@ -171,7 +214,7 @@
         "image_qbNdGx": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/collage4.jpg",
+            "image": "shopify://shop_images/SS_FInal_copy.png",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -188,7 +231,7 @@
         "image_83deqC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/photo.jpg",
+            "image": "shopify://shop_images/IMG_5173_1.jpg",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -239,7 +282,7 @@
         "image_Uy89WP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/may_8_photo_2.jpg",
+            "image": "shopify://shop_images/SSRUn7.png",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -256,7 +299,7 @@
         "image_EjwwPQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/collage_photo.jpg",
+            "image": "shopify://shop_images/SS_Women.png",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -273,7 +316,7 @@
         "image_kYnVCU": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/collage3.jpg",
+            "image": "shopify://shop_images/BESOCIAL_a0ce166c-a004-4738-9699-25dab93892b4.jpg",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -290,7 +333,7 @@
         "image_nmKHDm": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/collage1.jpg",
+            "image": "shopify://shop_images/SS_DET.png",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -352,6 +395,16 @@
             "link": "https://www.socialstatuspgh.com/pages/besocial#houston"
           }
         },
+        "card_A9yJ7N": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/baltimoree.jpg",
+            "heading": "BAL",
+            "subheading": "Baltimore, MD",
+            "content": "904 S Broadway, Baltimore, MD",
+            "link": ""
+          }
+        },
         "card_B3KDyH": {
           "type": "card",
           "settings": {
@@ -360,6 +413,15 @@
             "subheading": "Detroit, MI",
             "content": "9101 E Jefferson Ave, <br>Unit A, Detroit MI",
             "link": "https://www.socialstatuspgh.com/pages/besocial#houston"
+          }
+        },
+        "card_8YbkeN": {
+          "type": "card",
+          "settings": {
+            "heading": "TPA",
+            "subheading": "Tampa, FL",
+            "content": "1318 E 7th Ave<br>\nTampa, FL 33605",
+            "link": ""
           }
         },
         "card_pfxt3A": {
@@ -382,24 +444,25 @@
             "link": "https://www.socialstatuspgh.com/pages/besocial#pittsburgh"
           }
         },
-        "card_A9yJ7N": {
+        "card_r3X6Yb": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/baltimoree.jpg",
-            "heading": "BAL",
-            "subheading": "Baltimore, MD",
-            "content": "904 S Broadway, Baltimore, MD",
-            "link": ""
+            "heading": "ATL",
+            "subheading": "Atlanta, GA",
+            "content": "280 Elizabeth St, Suite E\nAtlanta, GA 30307",
+            "link": "https://www.socialstatuspgh.com/pages/besocial#pittsburgh"
           }
         }
       },
       "block_order": [
         "card_dRXHyD",
         "card_N9HBnA",
+        "card_A9yJ7N",
         "card_B3KDyH",
+        "card_8YbkeN",
         "card_pfxt3A",
         "card_8cbTyw",
-        "card_A9yJ7N"
+        "card_r3X6Yb"
       ],
       "name": "City Highlights",
       "settings": {

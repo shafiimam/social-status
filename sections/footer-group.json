@@ -24,7 +24,7 @@
         "menu-1": {
           "type": "menu",
           "settings": {
-            "title": "Collections",
+            "title": "Categories",
             "menu": "footer-collections"
           }
         },

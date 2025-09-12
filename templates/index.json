@@ -15,33 +15,38 @@
         "slide_TRJ643": {
           "type": "slide",
           "settings": {
-            "tagline": "Introducing",
-            "title": "Our brand new store",
-            "subtitle": "Showcase your best products",
-            "button_label": "Explore all",
+            "tagline": "AVAILABLE 9/19 AT 11 AM EST",
+            "title": "The Whitaker Group and New Balance 740 \"Willful Bias\" for Discovery",
+            "subtitle": "",
+            "button_label": "enter now",
             "button_link": "",
-            "seo_h_tag": "h2"
+            "image": "shopify://shop_images/NB_740_Hit_e2f322b2-475e-474b-bc18-84fc025cf6fb.png",
+            "mobile_image": "shopify://shop_images/Mobile_NB_740_460e3a7d-7ac0-4191-9e8b-c8baa1cf515c.png",
+            "seo_h_tag": "h1"
           }
         },
         "slide_JYnQnP": {
           "type": "slide",
           "settings": {
-            "tagline": "Why not",
-            "title": "Write about yourself",
-            "subtitle": "Include some awesome images",
-            "button_label": "Learn more",
+            "tagline": "",
+            "title": "BACK TO SCHOOL CAPSULE",
+            "subtitle": "Shop the Latest Looks",
+            "button_label": "explore",
             "button_link": "",
+            "video_object": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
             "seo_h_tag": "h2"
           }
         },
         "slide_7HQxKf": {
           "type": "slide",
           "settings": {
-            "tagline": "Take the opportunity to",
-            "title": "Promote your products",
-            "subtitle": "Include various promotions and flash sales",
-            "button_label": "Shop now",
-            "button_link": "",
+            "tagline": "Crisp Air. Bold Threads. Street Fall Essentials",
+            "title": "FALL STYLE GUIDE",
+            "subtitle": "Shop Fall favorties and more!",
+            "button_label": "shop",
+            "button_link": "shopify://collections/fall-lookbook",
+            "image": "shopify://shop_images/SSVERT2.png",
+            "mobile_image": "shopify://shop_images/SS_VERTICAL_1.png",
             "seo_h_tag": "h2"
           }
         }
@@ -55,7 +60,7 @@
       "settings": {
         "desktop_layout": "split",
         "desktop_image_positioning": "image-on-left",
-        "desktop_text": "rgba(0,0,0,0)",
+        "desktop_text": "#ffffff",
         "desktop_background": "rgba(0,0,0,0)",
         "desktop_overlay": "rgba(0,0,0,0)",
         "mobile_height": "var(--window-height)",
@@ -168,24 +173,25 @@
             "seo_h_tag": "span"
           }
         },
-        "text_YBbiB4": {
-          "type": "text",
+        "button_G7EXPM": {
+          "type": "button",
           "settings": {
-            "text": "<p>shop the second drop of denim shorts this fall </p>"
+            "button_label": "shop",
+            "button_link": "shopify://collections/38a"
           }
         }
       },
       "block_order": [
         "heading_Ha3kN8",
-        "text_YBbiB4"
+        "button_G7EXPM"
       ],
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/38a Shorts Drop 2.mov",
-        "video_height": "var(--window-height)",
+        "video_height": "56.25%",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
-        "custom_overlay": "#757575"
+        "custom_overlay": "rgba(0,0,0,0)"
       }
     },
     "rotating_slider_7yhr3n": {
@@ -202,7 +208,7 @@
         "slide_38DjfE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/WOMEN_SS.png",
+            "image": "shopify://shop_images/jaidedenim.jpg",
             "slide_text": "WOMEN",
             "link": "shopify://collections/womens-1"
           }
@@ -252,9 +258,7 @@
       "settings": {
         "heading": "Collections",
         "subheading": "Browse our Collections and find the best fit",
-        "backdrop_text": "Culture",
-        "padding_top": 124,
-        "padding_bottom": 0
+        "backdrop_text": "Culture"
       }
     },
     "shop_the_look_yJ96E3": {
@@ -263,19 +267,19 @@
         "product_KJNpDX": {
           "type": "product",
           "settings": {
-            "product": ""
+            "product": "a-bathing-ape-line-camo-fb-jersey-green"
           }
         },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
-            "product": ""
+            "product": "godspeed-ny-patchwork-denim-short-black"
           }
         },
         "product_qFEUPt": {
           "type": "product",
           "settings": {
-            "product": ""
+            "product": "peterson-23-low"
           }
         }
       },
@@ -286,6 +290,7 @@
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
+        "image": "shopify://shop_images/SSVERT3.png",
         "desktop_image_positioning": "image-on-left"
       }
     },
@@ -339,16 +344,26 @@
         "events_block_WQY3df": {
           "type": "events_block",
           "settings": {
-            "tab_group_name": "Events @Houston",
+            "tab_group_name": "Events",
             "city_name": "HOUSTON",
             "city_tag": "HOUSTON",
+            "blog": "blog-events"
+          }
+        },
+        "events_block_DB3ERc": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT",
             "blog": "blog-events"
           }
         }
       },
       "block_order": [
         "blog_block_Qztdqd",
-        "events_block_WQY3df"
+        "events_block_WQY3df",
+        "events_block_DB3ERc"
       ],
       "name": "Store Features & Events",
       "settings": {
@@ -359,9 +374,7 @@
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
-        "show_tab_list": true,
-        "max_articles": 5,
-        "view_more_label": "View More"
+        "show_tab_list": true
       }
     },
     "latest_features_f6y9et": {
@@ -437,9 +450,7 @@
         "sub_title_align": "right",
         "arrow_text_1": "Cultutre",
         "arrow_text_2": "Events",
-        "show_tab_list": true,
-        "max_articles": 5,
-        "view_more_label": "View More"
+        "show_tab_list": true
       }
     },
     "image_text_column_rhg67G": {
