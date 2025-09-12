@@ -11,6 +11,54 @@
   "type": "footer",
   "name": "t:sections.refactor_words.labels.footer_group",
   "sections": {
+    "text_columns_with_icons_HGBjqH": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "text_icon_77RCX7": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Delivery",
+            "body": "<p>Reliable shipping that keeps you in the loop from checkout to doorstep.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/carbon_delivery.png"
+          }
+        },
+        "text_icon_J3RApW": {
+          "type": "text-icon",
+          "settings": {
+            "title": "RETURNS & EXCHANGES",
+            "body": "<p>A smooth, flexible process designed to match the ease of your shopping experience.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/streamline_return-2.png"
+          }
+        },
+        "text_icon_8EJa49": {
+          "type": "text-icon",
+          "settings": {
+            "title": "Customer Service",
+            "body": "<p>Real support from real people—ready to help with anything you need.</p>",
+            "label": "",
+            "link": "",
+            "select_icon": "earth-globe",
+            "custom_icon": "shopify://shop_images/ph_chat.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_icon_77RCX7",
+        "text_icon_J3RApW",
+        "text_icon_8EJa49"
+      ],
+      "settings": {
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h3"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -62,6 +110,7 @@
     }
   },
   "order": [
+    "text_columns_with_icons_HGBjqH",
     "footer"
   ]
 }

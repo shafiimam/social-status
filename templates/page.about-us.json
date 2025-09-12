@@ -48,7 +48,7 @@
       ],
       "custom_css": [
         "b {font-weight: bold;}",
-        "h1{text-align: center;}"
+        "h1 {text-align: center;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {

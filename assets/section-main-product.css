@@ -186,6 +186,7 @@ html[dir="ltr"] .product-variant__quantity-progress-bar {
 .product-header .product-title {
   margin-bottom: 20px;
   font-size: 46px;
+  word-wrap: break-word;
 }
 .product-header .product-title:first-child.with-badge {
   padding-inline-end: 100px;

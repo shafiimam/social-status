@@ -24,7 +24,7 @@
           "type": "heading_text",
           "settings": {
             "heading": "Attend An Event",
-            "text": "<p>beSOCIAL is a creative hub and community space designed to spark authentic connections between Social Status and its communities. From workshops and cultural gatherings to a diverse slate of events, it’s a free space for people to make their own, meeting, sharing ideas, pursuing passions, and building lasting relationships. Remember, Talk Is Free, beSOCIAL.</p>"
+            "text": ""
           }
         },
         "button_fTDRRw": {
@@ -42,7 +42,7 @@
       ],
       "name": "Be Social Hero",
       "settings": {
-        "background_image": "shopify://shop_images/besocial-hero.png",
+        "background_image": "shopify://shop_images/Untitled-4-Recovered.jpg",
         "logo": "shopify://shop_images/besocial-logo-light.png"
       }
     },
@@ -87,6 +87,7 @@
       "blocks": {
         "list_item_kHhH7m": {
           "type": "list_item",
+          "disabled": true,
           "settings": {
             "item_text": "Atlanta,",
             "item_text_2": "GA",
@@ -157,6 +158,7 @@
         },
         "list_item_UwmHaT": {
           "type": "list_item",
+          "disabled": true,
           "settings": {
             "item_text": "RALEIGH",
             "item_text_2": ", NC",
@@ -289,36 +291,43 @@
         "flagship_Wx8dpm": {
           "type": "flagship",
           "settings": {
-            "title": "<p><strong>BRAND</strong>(ED)</p>",
-            "text": "<p>Creative collaborations with our brand partners to both help the community and raise brand awareness.</p>"
+            "title": "<p><strong>SIGHT & SOUND MAKERS LAB</strong></p>",
+            "text": "<p>Art, tech, and music focused workshops lead by local creators and makers to skill up young adults and youth.</p>"
           }
         },
         "flagship_N3gYWT": {
           "type": "flagship",
           "settings": {
-            "title": "<p><strong>FREE</strong> GAME</p>",
-            "text": "<p>A platform where we educate our community on topics that aren’t regularly spoken or brought to the forefront.</p>"
+            "title": "<p><strong>MADE TO MATTER </strong></p>",
+            "text": "<p>A platform for conversation and customization, bringing people together to engage with ideas, stories, and self-expression.</p>"
           }
         },
         "flagship_VrLR4U": {
           "type": "flagship",
           "settings": {
-            "title": "<p><strong>WOMEN </strong>WITHIN</p>",
-            "text": "<p>A series promoting and creating community through hands-on workshops and monthly meet-ups.</p>"
+            "title": "<p><strong>VOICES & VIEWS</strong></p>",
+            "text": "<p>A lecture series bringing diverse perspectives and insights across industries and mediums. </p>"
           }
         },
         "flagship_WJKrMP": {
           "type": "flagship",
           "settings": {
-            "title": "<p><strong>BAG </strong>TALK</p>",
-            "text": "<p>Programs that focuses on financial literacy through mentorship and education.</p>"
+            "title": "<p><strong>STAHZH & STAGE </strong></p>",
+            "text": "<p>A culinary residency giving operators in hospitality space to showcase and test new concepts.</p>"
           }
         },
         "flagship_T74fDr": {
           "type": "flagship",
           "settings": {
-            "title": "<p><strong>PRODUCT</strong> SWAP</p>",
-            "text": "<p>A program creating pathways to legal entreprenurship for those who desire to leave street activites as means of income.</p>"
+            "title": "<p><strong>FREE GAME BOOK CLUB </strong></p>",
+            "text": "<p>A reading series that builds the habit of reading for personal growth while sparking dialogue and community around <br/>culture-shaping books.</p>"
+          }
+        },
+        "flagship_kVcnrc": {
+          "type": "flagship",
+          "settings": {
+            "title": "<p><strong>CULTURE CLUBS </strong></p>",
+            "text": "<p>Member-led gatherings built around shared interests in sport, lifestyle, and creativity.</p>"
           }
         }
       },
@@ -327,7 +336,8 @@
         "flagship_N3gYWT",
         "flagship_VrLR4U",
         "flagship_WJKrMP",
-        "flagship_T74fDr"
+        "flagship_T74fDr",
+        "flagship_kVcnrc"
       ],
       "name": "Flagship Programs",
       "settings": {
@@ -375,7 +385,7 @@
         "image_qaGc3G": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SSNIKEEVENT.png",
+            "image": "shopify://shop_images/Photo_Apr_04_2025_6_15_28_PM.jpg",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -392,7 +402,7 @@
         "image_q6f3wB": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SS95.png",
+            "image": "shopify://shop_images/650__SQUIDLIK_1.jpg",
             "column_count": "3",
             "row_count": 2,
             "title": "",
@@ -460,7 +470,7 @@
         "image_RxXR8A": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/NIKEAMLEVISS.png",
+            "image": "shopify://shop_images/Photo_Jun_18_2025_7_19_14_PM.jpg",
             "column_count": "3",
             "row_count": 1,
             "title": "",
@@ -487,7 +497,7 @@
       ],
       "name": "Media Grid",
       "settings": {
-        "section_width": "full",
+        "section_width": "with-padding",
         "desktop_row_height": 250,
         "mobile_row_height": 170,
         "padding_top": 60,
@@ -512,7 +522,7 @@
         "text_q3yWtp": {
           "type": "text",
           "settings": {
-            "text": "<p>Every event is an invitation to connect, learn, and celebrate culture. At beSocial, our programs and gatherings bring people together across cities to share stories, build relationships, and move with purpose. Explore what’s next and make your presence part of the moment.</p>"
+            "text": "<p>beSOCIAL is a creative hub and community space designed to spark authentic connections between Social Status and its communities. From workshops and cultural gatherings to a diverse slate of events, it’s a free space for people to make their own, meeting, sharing ideas, pursuing passions, and building lasting relationships. Remember, Talk Is Free, beSOCIAL.</p>"
           }
         }
       },

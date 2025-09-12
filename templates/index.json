@@ -32,7 +32,7 @@
             "title": "BACK TO SCHOOL CAPSULE",
             "subtitle": "Shop the Latest Looks",
             "button_label": "explore",
-            "button_link": "",
+            "button_link": "shopify://collections/back-to-school",
             "video_object": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
             "seo_h_tag": "h2"
           }
@@ -61,10 +61,10 @@
         "desktop_layout": "split",
         "desktop_image_positioning": "image-on-left",
         "desktop_text": "#000000",
+        "mobile_text": "#ffffff",
         "desktop_background": "rgba(0,0,0,0)",
         "desktop_overlay": "rgba(0,0,0,0)",
         "mobile_height": "var(--window-height)",
-        "mobile_text": "rgba(0,0,0,0)",
         "mobile_background": "rgba(0,0,0,0)",
         "heading_size": "h1"
       }
@@ -499,8 +499,8 @@
         "image_position": "right",
         "padding_top": 60,
         "padding_bottom": 0,
-        "show_border_below": true,
-        "show_border_top": true
+        "show_border_below": false,
+        "show_border_top": false
       }
     },
     "floating_testimonials_KCBbUg": {
@@ -692,54 +692,6 @@
       ],
       "settings": {}
     },
-    "text_columns_with_icons_XQaqxC": {
-      "type": "text-columns-with-icons",
-      "blocks": {
-        "text_icon_FXMTeL": {
-          "type": "text-icon",
-          "settings": {
-            "title": "Delivery",
-            "body": "<p>Reliable shipping that keeps you in the loop from checkout to doorstep.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/carbon_delivery.png"
-          }
-        },
-        "text_icon_HEgmXx": {
-          "type": "text-icon",
-          "settings": {
-            "title": "RETURNS & EXCHANGES",
-            "body": "<p>A smooth, flexible process designed to match the ease of your shopping experience.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/streamline_return-2.png"
-          }
-        },
-        "text_icon_m9hpzL": {
-          "type": "text-icon",
-          "settings": {
-            "title": "Customer Service",
-            "body": "<p>Real support from real people—ready to help with anything you need.</p>",
-            "label": "",
-            "link": "",
-            "select_icon": "earth-globe",
-            "custom_icon": "shopify://shop_images/ph_chat.png"
-          }
-        }
-      },
-      "block_order": [
-        "text_icon_FXMTeL",
-        "text_icon_HEgmXx",
-        "text_icon_m9hpzL"
-      ],
-      "settings": {
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h3"
-      }
-    },
     "newsletter_jVdCeL": {
       "type": "newsletter",
       "blocks": {
@@ -789,7 +741,6 @@
     "perspective_slider_VCQ6DF",
     "custom_liquid_WyGgiH",
     "1756838107933102fa",
-    "text_columns_with_icons_XQaqxC",
     "newsletter_jVdCeL"
   ]
 }

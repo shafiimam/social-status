@@ -55,7 +55,11 @@
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Add to Calendar"
       }
     },
     "video_background_xHpBKL": {

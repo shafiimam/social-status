@@ -275,3 +275,12 @@ td.line_image {
 .cart-policy {
   font-size: 14px;
 }
+.cart-actions.buttons-holder{
+  justify-content: flex-end;
+}
+.cart-actions.buttons-holder button{
+  flex-grow: 0;
+}
+.collection-list-container {
+  gap: 15px;
+}

@@ -99,6 +99,7 @@
       "blocks": {
         "heading_FDUfWR": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Simplicity",
             "seo_h_tag": "h3"
@@ -106,6 +107,7 @@
         },
         "text_EPqAbw": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>RAINS is a Danish rainwear company founded in 2012. Based on an early initiative to interpret the traditional rubber raincoat in a novel way, the company has, since its foundation, grown into an accomplished international rainwear brand. Along with the reinvented classics, RAINS today offers a full line of waterproof outerwear. RAINS is a Danish rainwear company founded in 2012. Based on an early initiative to interpret the traditional rubber raincoat in a novel way.</p>"
           }
@@ -122,6 +124,53 @@
         "btn_url": "",
         "desktop_image_positioning": "image-on-left",
         "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "faq_Ang7Kh": {
+      "type": "faq",
+      "blocks": {
+        "text_nKh94T": {
+          "type": "text",
+          "settings": {
+            "title": "What are the shipping costs?",
+            "body": "<p>Domestic shipping is $16, and international shipping rates vary based on location and order value.</p>"
+          }
+        },
+        "text_rmJCxd": {
+          "type": "text",
+          "settings": {
+            "title": "How long will it take to receive my order?",
+            "body": "<p>Shipping times depend on your location and chosen shipping method. Domestic orders typically arrive within 5 business days, while international shipments may take 7 to 15 business days. This includes 2-3 days for order processing, 1-2 business days for packing and shipping, and additional transit time based on your destination.</p>"
+          }
+        },
+        "text_3PyW9F": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer international shipping?",
+            "body": "<p>We offer international shipping to select countries. Rates and delivery times vary by destination. Duties and taxes are calculated at checkout. </p>"
+          }
+        },
+        "text_WfJGhe": {
+          "type": "text",
+          "settings": {
+            "title": "How can I track my order?",
+            "body": "<p>Once your order ships, you will receive a tracking number via email. You can use this to track your package in real time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_nKh94T",
+        "text_rmJCxd",
+        "text_3PyW9F",
+        "text_WfJGhe"
+      ],
+      "name": "t:sections.faq.presets.name",
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "open_first": false,
         "custom_background": "rgba(0,0,0,0)",
         "custom_text": "rgba(0,0,0,0)",
         "seo_h_tag": "h2"
@@ -199,6 +248,7 @@
   "order": [
     "main",
     "rich_text_pGBT7b",
+    "faq_Ang7Kh",
     "gallery_wpYWHf",
     "video_background_R8tVWr",
     "product-recommendations"

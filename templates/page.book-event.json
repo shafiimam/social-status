@@ -24,7 +24,7 @@
           "type": "heading_text",
           "settings": {
             "heading": "Book An Event",
-            "text": "<p>Social Status offers spaces designed for creativity, connection, and culture. Here, moments transform into experiences and gatherings find their flow. Whether it is a workshop, a celebration, or a cultural activation, we provide more than a venue. You step into an environment shaped with intention, care, and purpose. Host your event with us and create something lasting that brings people together, inspires conversation, and strengthens community from the inside out.</p>"
+            "text": ""
           }
         },
         "button_aYrLAJ": {
@@ -42,7 +42,7 @@
       ],
       "name": "Be Social Hero",
       "settings": {
-        "background_image": "shopify://shop_images/besocial-hero.png",
+        "background_image": "shopify://shop_images/Photo_Apr_03_2025_8_01_52_PM.jpg",
         "logo": "shopify://shop_images/besocial-logo-light.png"
       }
     },
@@ -186,7 +186,7 @@
       ],
       "name": "t:sections.faq.presets.name",
       "settings": {
-        "title": "Frequently asked questions",
+        "title": "Frequently Asked Questions",
         "open_first": true,
         "custom_background": "rgba(0,0,0,0)",
         "custom_text": "rgba(0,0,0,0)",
@@ -197,7 +197,7 @@
       "type": "custom-liquid",
       "name": "t:sections.refactor_words.custom_code.name",
       "settings": {
-        "custom_liquid": "<iframe class=\"clickup-embed clickup-dynamic-height\" src=\"https://forms.clickup.com/90131992999/f/2ky4j4d7-8833/P22XXYCGSTXEEWSH39\" onwheel=\"\" width=\"100%\" height=\"100%\" style=\"background: transparent; border: 1px solid #ccc;\"></iframe><script async src=\"https://app-cdn.clickup.com/assets/js/forms-embed/v1.js\"></script>",
+        "custom_liquid": "<iframe class=\"clickup-embed clickup-dynamic-height\" src=\"https://forms.clickup.com/90131992999/f/2ky4j4d7-8833/P22XXYCGSTXEEWSH39\" onwheel=\"\" width=\"100%\" height=\"100%\" style=\"background: transparent; border: 0px solid #ccc;\"></iframe><script async src=\"https://app-cdn.clickup.com/assets/js/forms-embed/v1.js\"></script>",
         "no_padding": false
       }
     },

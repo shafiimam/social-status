@@ -45,9 +45,9 @@
     },
     "hero_xFNVG8": {
       "type": "hero",
+      "disabled": true,
       "name": "Hero Section",
       "settings": {
-        "mobile_image": "shopify://shop_images/frofeature.jpg",
         "heading": "Features",
         "subheading": "",
         "button_1_text": "Read",
