@@ -10,6 +10,7 @@
   padding-inline-end: 5%;
   align-items: center;
   margin: 0 !important;
+  width: 100%;
 }
 .text-w-icon[data-size="1"] .text-w-icon__container {
   width: 100%;

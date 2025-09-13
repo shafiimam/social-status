@@ -4,9 +4,9 @@
 
 	{%- render 'custom-colors', id: section.id, background: section.settings.custom_background, text: section.settings.custom_text -%}
 
-	<div class="text-columns-with-icons site-box-container" id="section-{{ section.id }}">
+	<div class=" site-box-container" id="section-{{ section.id }}">
 
-		<div class="content-section site-box box--auto-height text-w-icon" data-size="{{ section.blocks.size }}">
+		<div class="text-columns-with-icons content-section site-box box--auto-height text-w-icon" data-size="{{ section.blocks.size }}">
 
 			{%- for block in section.blocks -%}
 
