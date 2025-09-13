@@ -12,7 +12,7 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "layout": "full",
+        "layout": "split",
         "text": ""
       }
     }
