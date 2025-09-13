@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // For even numbers of slides, start from the slide after the middle position
           // For odd numbers, use the middle slide as before
           this.isEvenSlides = this.$slides.length % 2 === 0;
-          this.currentRotationAngle = this.isEvenSlides 
+          this.currentRotationAngle = this.isEvenSlides
             ? -(this.middleSlideIndex * this.slideAngle)
             : -(this.middleSlideIndex * this.slideAngle);
           this.autoRotateIntervalId = !1;
@@ -179,17 +179,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 "center " + (innerRadius + this.settings.slideHeight) + "px";
               const top = upperArcHeight + "px";
               let transform;
-              
+
               // Determine which slide should be active (front/center)
               let isActiveSlide = false;
               if (this.isEvenSlides) {
                 // For even slides, the slide at middleSlideIndex is active initially
-                isActiveSlide = (i === this.middleSlideIndex);
+                isActiveSlide = i === this.middleSlideIndex;
               } else {
                 // For odd slides, the middle slide is active
-                isActiveSlide = (i === this.middleSlideIndex);
+                isActiveSlide = i === this.middleSlideIndex;
               }
-              
+
               if (isActiveSlide) {
                 transform =
                   "translateX(-50%) rotate(" +
@@ -296,14 +296,20 @@ document.addEventListener("DOMContentLoaded", function () {
           // Handle boundary conditions for both odd and even numbers of slides
           let shouldDisableLeft = false;
           let shouldDisableRight = false;
-          
+
           if (this.isEvenSlides) {
             // For even slides, disable controls at the boundaries
             // Since we start at middleSlideIndex, we need to adjust the boundary logic
-            if (currentSlideIndex === 0 && this.directionAction === "clockwise") {
+            if (
+              currentSlideIndex === 0 &&
+              this.directionAction === "clockwise"
+            ) {
               shouldDisableLeft = true;
             }
-            if (currentSlideIndex === totalSlides - 1 && this.directionAction === "counter-clockwise") {
+            if (
+              currentSlideIndex === totalSlides - 1 &&
+              this.directionAction === "counter-clockwise"
+            ) {
               shouldDisableRight = true;
             }
           } else {
@@ -330,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
               .find(".right-arrow")
               .css("pointer-events", "");
           }
-          
+
           if (shouldDisableLeft) {
             this.$directionControls
               .find(".left-arrow")
@@ -340,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
               .find(".left-arrow")
               .css("pointer-events", "");
           }
-          
+
           currentSlide.css(
             "transform",
             "translateX(-50%) rotate(" +
@@ -356,18 +362,19 @@ document.addEventListener("DOMContentLoaded", function () {
           ) {
             currAngle = currAngle >= 360 ? currAngle - 360 : currAngle + 360;
           }
-          
+
           // Calculate current slide index based on rotation angle
           var slideIndex;
           if (this.isEvenSlides) {
             // For even slides, calculate index from the rotation angle
-            slideIndex = Math.round(-currAngle / this.slideAngle) % this.$slides.length;
+            slideIndex =
+              Math.round(-currAngle / this.slideAngle) % this.$slides.length;
             if (slideIndex < 0) slideIndex += this.$slides.length;
           } else {
             // For odd slides, use the original logic
             slideIndex = -currAngle / this.slideAngle;
           }
-          
+
           this.$currentSlide = this.$slides.eq(slideIndex);
           this.$nextSlide = this.$currentSlide.is(":last-child")
             ? this.$slides.first()
@@ -428,16 +435,27 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   })($);
 
-  $(function () {
-    $(".rotating-slider").rotatingSlider({
-      slideHeight: 600,
-      slideWidth: Math.min(350, window.innerWidth - 100),
-      autoRotate: false,
-      draggable: false,
-      afterRotationStart: function () {
-      },
-      afterRotationEnd: function () {
-      },
+  if (window.innerWidth < 600) {
+    $(function () {
+      $(".rotating-slider").rotatingSlider({
+        slideHeight: 500,
+        slideWidth: Math.min(350, window.innerWidth - 100),
+        autoRotate: false,
+        draggable: false,
+        afterRotationStart: function () {},
+        afterRotationEnd: function () {},
+      });
     });
-  });
+  } else {
+    $(function () {
+      $(".rotating-slider").rotatingSlider({
+        slideHeight: 600,
+        slideWidth: Math.min(350, window.innerWidth - 100),
+        autoRotate: false,
+        draggable: false,
+        afterRotationStart: function () {},
+        afterRotationEnd: function () {},
+      });
+    });
+  }
 });

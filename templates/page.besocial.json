@@ -43,7 +43,9 @@
       "name": "Be Social Hero",
       "settings": {
         "background_image": "shopify://shop_images/Untitled-4-Recovered.jpg",
-        "logo": "shopify://shop_images/besocial-logo-light.png"
+        "logo": "shopify://shop_images/besocial-logo-light.png",
+        "color_background": "#000000",
+        "overlay_opacity": 50
       }
     },
     "rich_text_YdCn3T": {
@@ -342,7 +344,9 @@
       "name": "Flagship Programs",
       "settings": {
         "flagship_image": "shopify://shop_images/rad_champion_2_5-18-22_1.jpg",
-        "flagship_title": "FLAGSHIP PROGRAMS"
+        "flagship_title": "FLAGSHIP PROGRAMS",
+        "color_background": "#000000",
+        "overlay_opacity": 50
       }
     },
     "media_grid_tgC8EG": {

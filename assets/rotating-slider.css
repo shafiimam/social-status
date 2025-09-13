@@ -177,8 +177,12 @@ p.slide-text {
   text-transform: uppercase;
   gap: 10px;
 }
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: 550px) {
+  .rotating-slider-backdrop-text{
+    font-size: 90px;
+  }
+}
+@media screen and (min-widt: 550px) and (max-width: 768px){
   .rotating-slider-backdrop-text{
     font-size: 127px;
     top: -100px;
