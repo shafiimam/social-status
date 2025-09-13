@@ -136,7 +136,7 @@
   screen and (max-width: 1024px) and (orientation: portrait) {
   .product-grid-border-fix:not(.fix-borders-top-not)
     .site-box:nth-child(-n + 2) {
-    border-top: 1px solid var(--product-grid-borders);
+    /* border-top: 1px solid var(--product-grid-borders); */
   }
 }
 .product-grid-border-fix.fix-borders-top-two .site-box:nth-child(-n + 2) {

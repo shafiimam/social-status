@@ -311,3 +311,6 @@ span.fina-sale-message {
 .site--box.no-border::after{
   display: none !important;
 }
+.featured-colleciton-header{
+  padding-block: var(--box-auto-top);
+}
