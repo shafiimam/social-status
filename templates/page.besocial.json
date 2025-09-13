@@ -174,7 +174,7 @@
           "settings": {
             "item_text": "TAMPA BAY",
             "item_text_2": ", FL",
-            "button_link": "shopify://pages/our-stores",
+            "button_link": "/pages/besocial?filter=tampa",
             "button_text": "Featured Events",
             "hover_image": "shopify://shop_images/TB_acb88b1b-036e-4fc2-9ef5-1449771fa29e.png"
           }
@@ -250,6 +250,7 @@
         },
         "city_filter_GzgNTw": {
           "type": "city_filter",
+          "disabled": true,
           "settings": {
             "btn_text": "ATLANTA",
             "btn_tag": "ATLANTA"

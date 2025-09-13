@@ -43,7 +43,9 @@
       "name": "Be Social Hero",
       "settings": {
         "background_image": "shopify://shop_images/Photo_Apr_03_2025_8_01_52_PM.jpg",
-        "logo": "shopify://shop_images/besocial-logo-light.png"
+        "logo": "shopify://shop_images/besocial-logo-light.png",
+        "color_background": "#000000",
+        "overlay_opacity": 50
       }
     },
     "rich_text_wNzXz3": {
