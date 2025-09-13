@@ -88,7 +88,7 @@
     "header_text": "#000000",
     "header_borders_opacity": 10,
     "main_background": "#ffffff",
-    "borders_opacity": 10,
+    "borders_opacity": 0,
     "headings_font": "montserrat_n6",
     "headings_size": 64,
     "headings_hr": false,
