@@ -146,6 +146,7 @@
         },
         "store_slide_EAirQh": {
           "type": "store_slide",
+          "disabled": true,
           "settings": {
             "location_title": "SOCIAL STATUS TAMPA",
             "location_info": "<p>1318 E 7th St, Tampa, FL 33605</p><h4>Operation Hours:</h4><p>Monday - Saturday: <strong>12:00PM- 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Contact:</h4><p><a href=\"tel:8136446571\" target=\"_blank\">813-644-6571</a></p>",

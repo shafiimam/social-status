@@ -20,8 +20,8 @@
             "subtitle": "",
             "button_label": "enter now",
             "button_link": "https://socialstatuspgh.runfair.com/en-US/us/the-whitaker-grp-and-new-balance-740-willful-bias-for-discovery",
-            "image": "shopify://shop_images/NB_740_Hit_e2f322b2-475e-474b-bc18-84fc025cf6fb.png",
-            "mobile_image": "shopify://shop_images/Mobile_NB_740_460e3a7d-7ac0-4191-9e8b-c8baa1cf515c.png",
+            "image": "shopify://shop_images/AMM740MOB2.jpg",
+            "mobile_image": "shopify://shop_images/AMM740MOB3.jpg",
             "seo_h_tag": "h1"
           }
         },
@@ -40,12 +40,12 @@
         "slide_7HQxKf": {
           "type": "slide",
           "settings": {
-            "tagline": "Crisp Air. Bold Threads. Street Fall Essentials",
+            "tagline": "Crisp Air. Bold Threads. Streetwear Essentials",
             "title": "FALL STYLE GUIDE",
-            "subtitle": "Shop Fall favorties and more!",
+            "subtitle": "Shop favorites and more!",
             "button_label": "shop",
             "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/SS758.png",
+            "image": "shopify://shop_images/fallss.jpg",
             "mobile_image": "shopify://shop_images/SS_VERTICAL_1.png",
             "seo_h_tag": "h2"
           }
