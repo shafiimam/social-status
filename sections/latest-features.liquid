@@ -145,7 +145,7 @@
                             {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
                           </span>
                           <span class="tab-list-item-date-mobile-only">{{ event_date | date: '%m.%d.%Y' }}</span>
-                          <a 
+                          <a
                             class="tab-list-item-button"
                             href="{{ article.url }}"
                           >
@@ -185,10 +185,14 @@
               >
                 <div class="view-more-container">
                   <div class="tab-cta-container">
-                    <a href="{{ selected_blog.url }}" class="button button--solid button--with-icon">
-                    <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
-                    <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
-                  </a>
+                    {% assign view_more_url = selected_blog.url %}
+                    {% if tab_group == 'Events' %}
+                      {% assign view_more_url = pages['attend-an-event'].url %}
+                    {% endif %}
+                    <a href="{{ view_more_url }}" class="button button--solid button--with-icon">
+                      <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
+                      <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
+                    </a>
                   </div>
                 </div>
               </div>

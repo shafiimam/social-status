@@ -304,9 +304,7 @@ span.fina-sale-message {
 .cart-heading-container::after{
   display: none !important;
 }
-.box--big.cart-heading-box{
-  padding-bottom: 0;
-}
+.box--big.cart-heading-box,
 .box--big.cart-item-box{
   min-height: 65vh !important;
 }

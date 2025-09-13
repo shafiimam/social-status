@@ -1687,12 +1687,6 @@ body.animate-out {
   height: 50vh;
   min-height: 0;
 }
-.box--lg {
-  width: 50%;
-  min-height: 65vh;
-  height: max-content;
-}
-
 
 .box--small-fl {
   width: 100%;

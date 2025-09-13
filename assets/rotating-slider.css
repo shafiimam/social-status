@@ -181,6 +181,9 @@ p.slide-text {
   .rotating-slider-backdrop-text{
     font-size: 90px;
   }
+  p.slide-text{
+    top: 70%;
+  }
 }
 @media screen and (min-widt: 550px) and (max-width: 768px){
   .rotating-slider-backdrop-text{
