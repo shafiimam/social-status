@@ -53,7 +53,10 @@
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "no_event_title": "No Event found",
+        "no_event_info": "There is currently no event available on this location.",
+        "fallback_image": "shopify://shop_images/Photo_Apr_03_2025_8_01_52_PM.jpg"
       }
     },
     "video_background_xHpBKL": {
