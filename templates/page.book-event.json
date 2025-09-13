@@ -70,7 +70,7 @@
         "text_dGc46A"
       ],
       "custom_css": [
-        "h2,p {text-align: center;}"
+        "h2 {text-align: center;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -316,19 +316,6 @@
             "description4": "",
             "description5": ""
           }
-        },
-        "city_iU3HQA": {
-          "type": "city",
-          "settings": {
-            "anchor": "atlanta",
-            "city_name": "Charlotte, NC",
-            "city_name_short": "CLT",
-            "description1": "",
-            "description2": "",
-            "description3": "",
-            "description4": "",
-            "description5": ""
-          }
         }
       },
       "block_order": [
@@ -337,8 +324,7 @@
         "city_MKF6bn",
         "city_nct78g",
         "city_fhxphp",
-        "city_DpQCPm",
-        "city_iU3HQA"
+        "city_DpQCPm"
       ],
       "name": "BeSocial Locations",
       "settings": {

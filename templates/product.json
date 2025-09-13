@@ -51,6 +51,16 @@
             "show_gift_card_recipient": false
           }
         },
+        "fina_sale_message_T4UnVK": {
+          "type": "fina_sale_message",
+          "settings": {}
+        },
+        "ineligibile_products_YCEBdF": {
+          "type": "ineligibile_products",
+          "settings": {
+            "vendor_array": "Jordan Brand, Jordan, JORDAN BRAND, JORDAN, NIKE, Nike, CONVERSE, Converse"
+          }
+        },
         "collapsible_tab_4zwfq4": {
           "type": "collapsible_tab",
           "settings": {
@@ -82,6 +92,8 @@
         "description",
         "variant_picker",
         "buy_buttons",
+        "fina_sale_message_T4UnVK",
+        "ineligibile_products_YCEBdF",
         "collapsible_tab_4zwfq4",
         "collapsible_tab_FFCzxN",
         "share"
@@ -182,7 +194,7 @@
         "image_7838HB": {
           "type": "image",
           "settings": {
-            "image": "{{ product.featured_image }}",
+            "image": "shopify://shop_images/jaidedenim.jpg",
             "link": "",
             "open_in_new_tab": false,
             "caption": ""
