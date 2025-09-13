@@ -62,94 +62,102 @@
     <div class="site-box-content reduce-top-margin">
       <div>
         <div class="form-vertical contact-form-container">
-          {%- assign form_id = 'form-id-' | append: section.id -%}
-          {%- form 'contact', id: form_id -%}
-            {%- if form.posted_successfully? -%}
-              <p class="alert alert--success">
-                {{ 'general.contact_form.success_message' | t }}
-              </p>
-            {% endif %}
+          {% comment %}
+            {%- assign form_id = 'form-id-' | append: section.id -%}
+            {%- form 'contact', id: form_id -%}
+              {%- if form.posted_successfully? -%}
+                <p class="alert alert--success">
+                  {{ 'general.contact_form.success_message' | t }}
+                </p>
+              {% endif %}
 
-            {%- render 'form-errors', form: form -%}
+              {%- render 'form-errors', form: form -%}
 
-            <div class="simple-grid">
-              {%- for block in section.blocks -%}
-                {%- case block.type -%}
-                  {%- when 'title' -%}
-                    <div class="grid__item one-whole" {{ block.shopify_attributes }}>
-                      <h3 class="simple-title h4" style="margin-bottom:0">{{ block.settings.title | escape }}</h3>
-                    </div>
+              <div class="simple-grid">
+                {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                    {%- when 'title' -%}
+                      <div class="grid__item one-whole" {{ block.shopify_attributes }}>
+                        <h3 class="simple-title h4" style="margin-bottom:0">{{ block.settings.title | escape }}</h3>
+                      </div>
 
-                  {%- when 'text' -%}
-                    <div class="grid__item one-whole" {{ block.shopify_attributes }}>
-                      <div class="rte" style="margin-bottom:0">{{ block.settings.content | replace: '<p></p>', '<br><br>' }}</div>
-                    </div>
+                    {%- when 'text' -%}
+                      <div class="grid__item one-whole" {{ block.shopify_attributes }}>
+                        <div class="rte" style="margin-bottom:0">{{ block.settings.content | replace: '<p></p>', '<br><br>' }}</div>
+                      </div>
 
-                  {%- when 'email' -%}
-                    <div class="grid__item one-half portable--one-whole palm--one-whole" {{ block.shopify_attributes }}>
-                      <label for="{{ form_id }}ContactFormName" class="visually-hidden">
-                        {{- 'general.contact_form.name_label' | t -}}
-                      </label>
-                      <input
-                        type="text"
-                        id="{{ form_id }}ContactFormName"
-                        class="input-full"
-                        name="contact[name]"
-                        autocapitalize="words"
-                        value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                        placeholder="{{ 'general.contact_form.name_label' | t }}"
-                        required
-                      >
-                    </div>
-                    <div class="grid__item one-half portable--one-whole palm--one-whole">
-                      <label for="{{ form_id }}ContactFormEmail" class="visually-hidden">
-                        {{- 'general.contact_form.email_label' | t -}}
-                      </label>
-                      <input
-                        type="email"
-                        id="{{ form_id }}ContactFormEmail"
-                        class="input-full"
-                        name="contact[email]"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                        placeholder="{{ 'general.contact_form.email_label' | t }}"
-                        required
-                      >
-                    </div>
+                    {%- when 'email' -%}
+                      <div class="grid__item one-half portable--one-whole palm--one-whole" {{ block.shopify_attributes }}>
+                        <label for="{{ form_id }}ContactFormName" class="visually-hidden">
+                          {{- 'general.contact_form.name_label' | t -}}
+                        </label>
+                        <input
+                          type="text"
+                          id="{{ form_id }}ContactFormName"
+                          class="input-full"
+                          name="contact[name]"
+                          autocapitalize="words"
+                          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                          placeholder="{{ 'general.contact_form.name_label' | t }}"
+                          required
+                        >
+                      </div>
+                      <div class="grid__item one-half portable--one-whole palm--one-whole">
+                        <label for="{{ form_id }}ContactFormEmail" class="visually-hidden">
+                          {{- 'general.contact_form.email_label' | t -}}
+                        </label>
+                        <input
+                          type="email"
+                          id="{{ form_id }}ContactFormEmail"
+                          class="input-full"
+                          name="contact[email]"
+                          autocorrect="off"
+                          autocapitalize="off"
+                          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                          placeholder="{{ 'general.contact_form.email_label' | t }}"
+                          required
+                        >
+                      </div>
 
-                  {%- when 'field' -%}
-                    <div class="grid__item portable--one-whole palm--one-whole" {{ block.shopify_attributes }}>
-                      {%- assign id = block.id | prepend: 'ContactForm-' -%}
-                      <label for="{{ id }}" class="visually-hidden">{{ block.settings.label | escape }}</label>
+                    {%- when 'field' -%}
+                      <div class="grid__item portable--one-whole palm--one-whole" {{ block.shopify_attributes }}>
+                        {%- assign id = block.id | prepend: 'ContactForm-' -%}
+                        <label for="{{ id }}" class="visually-hidden">{{ block.settings.label | escape }}</label>
 
-                      {%- capture element_attributes -%}
-                        placeholder="{{ block.settings.label }}" 
-                        id="{{ id }}" name="contact[{{ block.settings.label | handleize }}]" 
-                        autocorrect="off" autocapitalize="off" autocomplete="off" 
-                        {% if block.settings.required %} required {% endif %}
-                      {%- endcapture -%}
+                        {%- capture element_attributes -%}
+                          placeholder="{{ block.settings.label }}"
+                          id="{{ id }}" name="contact[{{ block.settings.label | handleize }}]"
+                          autocorrect="off" autocapitalize="off" autocomplete="off"
+                          {% if block.settings.required %} required {% endif %}
+                        {%- endcapture -%}
 
-                      {%- if block.settings.type == 'input' -%}
-                        <input type="text" {{ element_attributes }}>
-                      {%- else -%}
-                        <textarea rows="10" {{ element_attributes }}></textarea>
-                      {%- endif -%}
-                    </div>
+                        {%- if block.settings.type == 'input' -%}
+                          <input type="text" {{ element_attributes }}>
+                        {%- else -%}
+                          <textarea rows="10" {{ element_attributes }}></textarea>
+                        {%- endif -%}
+                      </div>
 
-                  {%- when 'button' -%}
-                    <div class="grid__item one-whole">
-                      <button type="submit" class="button button--solid button--with-icon">
-                        <span>{{ 'general.contact_form.submit_label' | t }}</span>
-                        <span class="icon" aria-hidden="true" role="img">
-                          {%- render 'theme-symbols', icon: 'arrow-right' -%}
-                        </span>
-                      </button>
-                    </div>
-                {%- endcase -%}
-              {%- endfor -%}
-            </div>
-          {%- endform -%}
+                    {%- when 'button' -%}
+                      <div class="grid__item one-whole">
+                        <button type="submit" class="button button--solid button--with-icon">
+                          <span>{{ 'general.contact_form.submit_label' | t }}</span>
+                          <span class="icon" aria-hidden="true" role="img">
+                            {%- render 'theme-symbols', icon: 'arrow-right' -%}
+                          </span>
+                        </button>
+                      </div>
+                  {%- endcase -%}
+                {%- endfor -%}
+              </div>
+            {%- endform -%}
+          {% endcomment %}
+          <script
+            defer
+            src="https://contact.gorgias.help/api/contact-forms/loader.js?v=3"
+            data-gorgias-loader-contact-form
+            data-gorgias-contact-form-uid="zr8fi9tb"
+          ></script>
         </div>
       </div>
     </div>
