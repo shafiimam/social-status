@@ -24,8 +24,6 @@
         "background_image": "shopify://shop_images/image_116.png",
         "title": "<p>Amazing <strong>Store</strong></p>",
         "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
-        "button_label": "Book a Visit",
-        "button_url": "",
         "store_address": "<p>Our address</p><p><strong>93 Bayport Ave.</strong></p><p><strong>South Richmond Hill, NY 11419</strong></p><p></p><p>For general inquires</p><p><strong>socialstatus@example.com</strong></p><p></p><p>Phone</p><p><strong>+1 200 884 9600</strong></p><p></p><p>Working hours</p><p><strong>Monday – Friday, 9am – 5pm EST</strong></p>",
         "store_image": "shopify://shop_images/image_115.png"
       }

@@ -25,55 +25,16 @@
         "vertical_alignment": "middle"
       }
     },
-    "rich_text_4Nbw4V": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_GEhag6": {
-          "type": "heading",
-          "settings": {
-            "heading": "About us",
-            "seo_h_tag": "h1"
-          }
-        },
-        "text_QCTLFp": {
-          "type": "text",
-          "settings": {
-            "text": "{{ page.content }}"
-          }
-        }
-      },
-      "block_order": [
-        "heading_GEhag6",
-        "text_QCTLFp"
-      ],
-      "custom_css": [
-        "b {font-weight: bold;}",
-        "h1 {text-align: center;}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "title": "",
-        "btn_label": "",
-        "btn_url": "",
-        "desktop_image_positioning": "image-on-left",
-        "bg_overlay": false,
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h1"
-      }
-    },
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
-        "layout": "full",
+        "layout": "split",
         "text": ""
       }
     }
   },
   "order": [
     "hero_CJA9KA",
-    "rich_text_4Nbw4V",
     "main"
   ]
 }
