@@ -291,7 +291,7 @@ span.fina-sale-message {
 
 @media screen and  (min-width: 1023px){
   .list-collection-item{
-    max-width: 800px;
+    max-width: 700px;
     height: 65vh;
     align-self: end;
   }
@@ -300,7 +300,14 @@ span.fina-sale-message {
   align-items: center;
   justify-content: center;
 }
+.cart-heading-container::before,
+.cart-heading-container::after{
+  display: none !important;
+}
 .box--big.cart-heading-box,
 .box--big.cart-item-box{
   min-height: 65vh !important;
+}
+.site--box.no-border::after{
+  display: none !important;
 }
