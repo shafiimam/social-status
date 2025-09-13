@@ -35,8 +35,8 @@
           "type": "events_block",
           "settings": {
             "tab_group_name": "Events",
-            "city_name": "CHARLOTTE",
-            "city_tag": "CHARLOTTE",
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON",
             "blog": "blog-events"
           }
         }

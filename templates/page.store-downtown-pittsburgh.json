@@ -35,8 +35,8 @@
           "type": "events_block",
           "settings": {
             "tab_group_name": "Events",
-            "city_name": "CHARLOTTE",
-            "city_tag": "CHARLOTTE",
+            "city_name": "DOWNTOWN PITTSBURGH",
+            "city_tag": "PITTSBURGH",
             "blog": "blog-events"
           }
         }
