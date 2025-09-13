@@ -187,7 +187,7 @@ summary::-webkit-details-marker {
 }
 @media screen and (max-width: 374px) {
   :root {
-    --sidebar-movement: 320px;
+    --sidebar-movement: 100%;
   }
 }
 body {

@@ -28,6 +28,28 @@
           {% assign city_image_count = 0 %}
           {% for article in selected_blog.articles %}
             {% assign article_matches_city = false %}
+            {% assign is_future_event = false %}
+            
+            {% comment %} Extract event date and check if it's in the future {% endcomment %}
+            {% assign has_date_tag = false %}
+            {% for tag in article.tags %}
+              {% if tag contains "event-date::" %}
+                {% assign has_date_tag = true %}
+                {% assign event_date_raw = tag | remove: "event-date::" %}
+                {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
+                {% assign today = 'now' | date: "%Y-%m-%d" %}
+                {% if event_date_parsed >= today %}
+                  {% assign is_future_event = true %}
+                {% endif %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            
+            {% comment %} If no date tag found, treat as future event {% endcomment %}
+            {% unless has_date_tag %}
+              {% assign is_future_event = true %}
+            {% endunless %}
+            
             {% for block in section.blocks %}
               {% if block.settings.city_name == city %}
                 {% for tag in article.tags %}
@@ -40,7 +62,7 @@
                 {% endfor %}
               {% endif %}
             {% endfor %}
-            {% if article_matches_city and city_image_count < max_articles %}
+            {% if article_matches_city and is_future_event and city_image_count < max_articles %}
               <div
                 class="tab-image-item {% if image_index == 0 %}active{% endif %}"
                 data-tab-id="article-{{ article.id }}"
@@ -82,6 +104,28 @@
             {% comment %} First pass: count total articles for this city {% endcomment %}
             {% for article in selected_blog.articles %}
               {% assign article_matches_city = false %}
+              {% assign is_future_event = false %}
+              
+              {% comment %} Extract event date and check if it's in the future {% endcomment %}
+              {% assign has_date_tag = false %}
+              {% for tag in article.tags %}
+                {% if tag contains "event-date::" %}
+                  {% assign has_date_tag = true %}
+                  {% assign event_date_raw = tag | remove: "event-date::" %}
+                  {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
+                  {% assign today = 'now' | date: "%Y-%m-%d" %}
+                  {% if event_date_parsed >= today %}
+                    {% assign is_future_event = true %}
+                  {% endif %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              
+              {% comment %} If no date tag found, treat as future event {% endcomment %}
+              {% unless has_date_tag %}
+                {% assign is_future_event = true %}
+              {% endunless %}
+              
               {% for block in section.blocks %}
                 {% if block.settings.city_name == city %}
                   {% for tag in article.tags %}
@@ -94,7 +138,7 @@
                   {% endfor %}
                 {% endif %}
               {% endfor %}
-              {% if article_matches_city %}
+              {% if article_matches_city and is_future_event %}
                 {% assign city_total_articles = city_total_articles | plus: 1 %}
               {% endif %}
             {% endfor %}
@@ -103,16 +147,28 @@
             {% for article in selected_blog.articles %}
               {% assign article_matches_city = false %}
               {% assign event_date = '' %}
+              {% assign is_future_event = false %}
 
+              {% comment %} Extract event date and check if it's in the future {% endcomment %}
+              {% assign has_date_tag = false %}
               {% for tag in article.tags %}
                 {% if tag contains 'event-date::' %}
+                  {% assign has_date_tag = true %}
                   {% assign event_date_raw = tag | remove: 'event-date::' %}
                   {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
                   {% assign event_date = event_date_parsed %}
-                  {% assign event_date_calendar = event_date_raw %}
+                  {% assign today = 'now' | date: '%Y-%m-%d' %}
+                  {% if event_date >= today %}
+                    {% assign is_future_event = true %}
+                  {% endif %}
                   {% break %}
                 {% endif %}
               {% endfor %}
+              
+              {% comment %} If no date tag found, treat as future event {% endcomment %}
+              {% unless has_date_tag %}
+                {% assign is_future_event = true %}
+              {% endunless %}
 
               {% for block in section.blocks %}
                 {% if block.settings.city_name == city %}
@@ -127,7 +183,7 @@
                 {% endif %}
               {% endfor %}
 
-              {% if article_matches_city and city_article_count < max_articles %}
+              {% if article_matches_city and is_future_event and city_article_count < max_articles %}
                 {% assign city_article_count = city_article_count | plus: 1 %}
                 <div
                   class="tab-list-item-container {% if city == first_city %}active{% endif %} {% if city_article_count == 1 %}expanded{% endif %}"
@@ -149,7 +205,7 @@
                             class="tab-list-item-button"
                             href="{{ article.url }}"
                           >
-                            <span> {{ section.settings.event_cta_label | default: 'Add to Calendar' }} </span>
+                            <span> {{ section.settings.event_cta_label | default: 'Register Now' }} </span>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
@@ -186,7 +242,7 @@
                 <div class="view-more-container">
                   <div class="tab-cta-container">
                     {% assign view_more_url = selected_blog.url %}
-                    {% if tab_group == 'Events' %}
+                    {% if city == 'Events' %}
                       {% assign view_more_url = pages['attend-an-event'].url %}
                     {% endif %}
                     <a href="{{ view_more_url }}" class="button button--solid button--with-icon">
@@ -311,7 +367,7 @@
       "type": "text",
       "id": "event_cta_label",
       "label": "Event CTA Label",
-      "default": "Add to Calendar",
+      "default": "Register Now",
       "info": "Label text for event buttons"
     }
   ],

@@ -62,6 +62,8 @@ html[dir=rtl] .newsletter-form .input-group button[type=submit] {
 html[dir=ltr] .newsletter-form .input-group button[type=submit] {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: #fff;
+  color: #000;
 }
 @media screen and (max-width: 480px) {
   /* .newsletter-form .input-group {
