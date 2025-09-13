@@ -353,13 +353,16 @@
                         render 'product-quantity', variant: current_variant, id: section.id
                       endif
                     -%}
-
+                    {% assign product_has_only_one_variant = 'disabled' %}
+                    {% if product.variants_count == 1 %}
+                      {% assign product_has_only_one_variant = '' %}
+                    {% endif %}
                     <div class="buttons-holder-fix">
                       <div class="buttons-holder">
                         <button
                           type="submit"
                           name="add"
-                          class="product__add-to-cart product--add-to-cart-button button button--outline {% unless current_variant.available %} disabled {% endunless %} disabled"
+                          class="{{ product_has_only_one_variant }} product__add-to-cart product--add-to-cart-button button button--outline {% unless current_variant.available %} disabled {% endunless %}"
                           data-js-product-add-to-cart
                         >
                           <span

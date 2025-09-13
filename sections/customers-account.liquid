@@ -1,8 +1,8 @@
 {%- capture date_format -%} {{ 'general.date_format.month_day_year' | t }} {%- endcapture -%}
-  {% assign customer_avatar = customer.metafields.custommer_accounts_system.photo %}
-  {% assign customer_fname = customer.first_name | downcase | split: ' ' | first %}
-  {% assign customer_lname = customer.last_name | downcase | split: ' ' | first %}
-  {% assign customer_initials = customer_fname | slice: 0 | append: customer_lname | slice: 0 %}
+{% assign customer_avatar = customer.metafields.custommer_accounts_system.photo %}
+{% assign customer_fname = customer.first_name | downcase | split: ' ' | first %}
+{% assign customer_lname = customer.last_name | downcase | split: ' ' | first %}
+{% assign customer_initials = customer_fname | slice: 0 | append: customer_lname | slice: 0 %}
 <div id="section-account" class="site-box-container container--fullscreen box--can-stick">
   <div
     class="site-box box--big lap--box--small-fl-auto box--typo-big box--lots-of-text box--top-align box--column-flow box__heading box--add-hr account-action-container"
@@ -18,31 +18,22 @@
           <span class="button-scroll-in">{{ 'general.navigation.logout' | t }}</span>
         </a>
       </div>
-      <div class="customer-avatar mobile-only">
-          {% if customer_avatar != blank %}
-            <img src="{{ customer_avatar | file_url }}" alt="{{ customer.name }}" width="280" height="280">
-          {% else %}
-            <div class="customer-avatar-initials">
-              {{ customer_initials }}
-            </div>
-          {% endif %}
+      {% if customer_avatar != blank %}
+        <div class="customer-avatar mobile-only">
+          <img src="{{ customer_avatar | file_url }}" alt="{{ customer.name }}" width="280" height="280">
         </div>
+      {% endif %}
     </div>
   </div>
 
   <div class="site-box box--big lap--box--bigger box--top-align box--column-flow box__text" data-order="1">
     <div class="site-box-content reduce-top-margin">
       <div>
-        
-        <div class="customer-avatar desktop-only">
-          {% if customer_avatar != blank %}
+        {% if customer_avatar != blank %}
+          <div class="customer-avatar desktop-only">
             <img src="{{ customer_avatar | file_url }}" alt="{{ customer.name }}" width="280" height="280">
-          {% else %}
-            <div class="customer-avatar-initials">
-              {{ customer_initials }}
-            </div>
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
         <div class="simple-block">
           <h4 class="simple-title">{{ 'customers.account_page.orders_table.title' | t }}</h4>
 

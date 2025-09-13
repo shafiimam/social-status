@@ -73,7 +73,7 @@
       "cart": "ตะกร้าสินค้า"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "วัน",
       "hours": "ชั่วโมง",
       "minutes": "นาที",

@@ -271,6 +271,7 @@ td.line_image {
 }
 .terms-relentless {
   order: -1;
+  text-align: left !important;
 }
 .cart-policy {
   font-size: 14px;
@@ -283,4 +284,23 @@ td.line_image {
 }
 .collection-list-container {
   gap: 15px;
+}
+span.fina-sale-message {
+  text-transform: uppercase;
+}
+
+@media screen and  (min-width: 1023px){
+  .list-collection-item{
+    max-width: 800px;
+    height: 65vh;
+    align-self: end;
+  }
+}
+.cart-heading-container{
+  align-items: center;
+  justify-content: center;
+}
+.box--big.cart-heading-box,
+.box--big.cart-item-box{
+  min-height: 65vh !important;
 }

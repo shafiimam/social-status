@@ -73,7 +73,7 @@
       "cart": "Cart"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "Days",
       "hours": "Hours",
       "minutes": "Minutes",

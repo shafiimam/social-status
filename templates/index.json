@@ -188,7 +188,7 @@
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/38a Shorts Drop 2.mov",
-        "video_height": "56.25%",
+        "video_height": "var(--window-height)",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
         "custom_overlay": "rgba(0,0,0,0)"

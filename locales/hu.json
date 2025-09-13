@@ -73,7 +73,7 @@
       "cart": "Kosár"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "Napok",
       "hours": "Órák",
       "minutes": "Percek",

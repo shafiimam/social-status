@@ -65,7 +65,7 @@
       "logged_out": "Connexion"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "Jours",
       "hours": "Heures",
       "minutes": "Minutes",

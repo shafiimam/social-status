@@ -53,6 +53,14 @@ const scrollToItemIfMobile = (item) => {
 };
 
 const handleTabItemClick = (item) => {
+  // Check if the item contains a view more button container
+  const hasViewMoreContainer = item.querySelector('.view-more-container');
+  
+  // Skip the specified functions if view more container is present
+  if (hasViewMoreContainer) {
+    return;
+  }
+  
   const tabId = getTabId(item);
   updateExpandedState(item);
   updateImageForTabItem(tabId);

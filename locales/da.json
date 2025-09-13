@@ -73,7 +73,7 @@
       "cart": "Kurv"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "Dage ",
       "hours": "Timer ",
       "minutes": "Minutter",

@@ -65,7 +65,7 @@
       "logged_out": "Salir"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "Días",
       "hours": "Horas",
       "minutes": "Minutos",

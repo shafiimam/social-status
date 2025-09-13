@@ -73,7 +73,7 @@
       "cart": "カート"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "日々",
       "hours": "時間",
       "minutes": "分",

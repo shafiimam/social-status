@@ -144,7 +144,7 @@
                           <span class="tab-list-item-subtitle">
                             {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
                           </span>
-                          <span class="tab-list-item-date-mobile-only">{{ event_date | date: '%m.%d. %Y' }}</span>
+                          <span class="tab-list-item-date-mobile-only">{{ event_date | date: '%m.%d.%Y' }}</span>
                           <a 
                             class="tab-list-item-button"
                             href="{{ article.url }}"
@@ -163,7 +163,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="tab-list-item-date">{{ event_date | date: '%m.%d. %Y' }}</span>
+                    <span class="tab-list-item-date">{{ event_date | date: '%m.%d.%Y' }}</span>
                   </div>
                   <div class="tab-list-item-mobile-image">
                     <img
@@ -185,10 +185,10 @@
               >
                 <div class="view-more-container">
                   <div class="tab-cta-container">
-                    <button class="button button--solid button--with-icon">
+                    <a href="{{ selected_blog.url }}" class="button button--solid button--with-icon">
                     <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
                     <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
-                  </button>
+                  </a>
                   </div>
                 </div>
               </div>

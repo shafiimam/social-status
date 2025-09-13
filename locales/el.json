@@ -73,7 +73,7 @@
       "cart": "Καλάθι"
     },
     "date_format": {
-      "month_day_year": "%m.%d. %Y",
+      "month_day_year": "%m.%d.%Y",
       "days": "Μέρες",
       "hours": "Ώρες",
       "minutes": "Λεπτά",
