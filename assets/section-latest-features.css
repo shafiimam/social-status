@@ -27,7 +27,7 @@
   font-family: var(--font-stack-headings);
   font-style: normal;
   font-weight: 900;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin: 0;
 }
 

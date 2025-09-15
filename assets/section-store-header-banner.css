@@ -37,7 +37,8 @@
 @media screen and (max-width: 1024px) {
   .store-header-banner {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows:auto;
+    column-gap: 0;
   }
   .store-header-banner-content {
     padding: 80px 16px;

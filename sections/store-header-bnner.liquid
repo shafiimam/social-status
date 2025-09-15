@@ -21,7 +21,7 @@
 </div>
 {% style %}
   .store-header-banner-content {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.37) 0%, rgba(0, 0, 0, 0.37) 100%), url({{ section.settings.background_image | image_url: width: 2000 }}) lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url({{ section.settings.background_image | image_url: width: 2000 }}) lightgray 50% / cover no-repeat;
   }
 {% endstyle %}
 {{ 'section-store-header-banner.css' | asset_url | stylesheet_tag }}

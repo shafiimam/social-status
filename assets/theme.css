@@ -142,7 +142,7 @@ summary::-webkit-details-marker {
   --sidebar-padding: 40px;
   --sidebar-movement: 480px;
   --text-spacing: 30px;
-  --a2ternate-opacity: .58;
+  --alternate-opacity: .58;
   --button-size: 58px;
   --button-padding: 32px;
   --button-extra-margin: 5px;
@@ -656,7 +656,7 @@ textarea::placeholder {
 
 input[type=submit], .button, .btn, .btn-article {
   font-family: var(--font-stack-body);
-  font-weight: var(--font-weig8t-body);
+  font-weight: var(--font-weight-body);
   font-style: var(--font-style-body);
   font-size: calc(18px / 16 * var(--base-body-size) + 0px);
   border: 2px solid transparent;
@@ -1352,12 +1352,8 @@ html[dir=ltr] .site-box.box--text-align-left {
   position: relative;
 }
 .box__heading.box--typo-big {
-  padding-inline: var(--box-big-padding);
-  padding-block: var(--box-big-padding);
-}
-.box__heading.box--typo-big.box-small-padding {
-  padding-inline: var(--box-smaller-padding);
-  padding-block: var(--box-smaller-padding);
+  padding-inline-start: var(--box-big-padding);
+  padding-inline-end: var(--box-big-padding);
 }
 .box__heading.box--typo-big .title:not(:last-child) {
   margin-bottom: var(--text-spacing);

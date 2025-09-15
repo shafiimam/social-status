@@ -1,7 +1,28 @@
 {
   "article": [],
   "blog": [],
-  "collection": [],
+  "collection": [
+    {
+      "key": "seo_title",
+      "namespace": "custom",
+      "name": "SEO Title",
+      "description": "On Page Seo Title",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "seo_description",
+      "namespace": "custom",
+      "name": "SEO Description",
+      "description": "On Page Seo Description",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
   "company": [],
   "company_location": [],
   "location": [],

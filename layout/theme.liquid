@@ -439,11 +439,11 @@
       <script src="{{ 'theme-editor.js' | asset_url }}" defer data-c="{{ shop.email }}" data-i="{{ shop.id }}"></script>
     {%- endif -%}
   </body>
-  {% if template.name == 'index' %}
+  {% comment %} {% if template.name == 'index' %}
     <style>
       #site-header {
         position: absolute;
       }
     </style>
-  {% endif %}
+  {% endif %} {% endcomment %}
 </html>
