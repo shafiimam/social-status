@@ -85,14 +85,14 @@
         "heading_rbXkb7": {
           "type": "heading",
           "settings": {
-            "heading": "SEO COPY HEADING HERE",
+            "heading": "{{ collection.metafields.custom.seo_title.value }}",
             "seo_h_tag": "h3"
           }
         },
         "text_BY4mPe": {
           "type": "text",
           "settings": {
-            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+            "text": "{{ collection.metafields.custom.seo_description | metafield_tag }}"
           }
         }
       },

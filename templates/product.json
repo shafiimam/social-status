@@ -194,8 +194,8 @@
         "image_7838HB": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/jaidedenim.jpg",
-            "link": "",
+            "image": "shopify://shop_images/DSC09079__BRENDEN.MOTLEY.jpg",
+            "link": "shopify://collections/38a",
             "open_in_new_tab": false,
             "caption": ""
           }
@@ -203,8 +203,8 @@
         "image_zNffB3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Carharttwip11.jpg",
-            "link": "",
+            "image": "shopify://shop_images/Adobe_Express_-_file_22.jpg",
+            "link": "shopify://collections/38a",
             "open_in_new_tab": false,
             "caption": ""
           }
@@ -241,6 +241,7 @@
         "heading_R9KcDT",
         "text_Eaeaxr"
       ],
+      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",

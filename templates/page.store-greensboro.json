@@ -23,9 +23,44 @@
       "settings": {
         "background_image": "shopify://shop_images/Greensboro-img.png",
         "title": "<p>social status <strong>greensboro</strong></p>",
-        "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
-        "store_address": "<p><a href=\"https://goo.gl/maps/V3radTbr8ns83UxZ6\" target=\"_blank\">602 Elm Street, Greensboro, NC 27406</a></p><h4></h4><h4>Hours of Operation</h4><p>Monday - Saturday: 12:00PM - 7:00PM</p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4></h4><h4>Store Phone</h4><p><a href=\"tel:(336) 285-6540\">(336) 285-6540</a></p>",
-        "store_image": "shopify://shop_images/image_115.png"
+        "subtitle": "Streetwear and culture in the heart of Greensboro. Shop sneakers, apparel, and exclusive releases.",
+        "store_address": "<p><a href=\"https://goo.gl/maps/V3radTbr8ns83UxZ6\" target=\"_blank\">602 Elm Street, Greensboro, NC 27406</a></p><h4></h4><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4></h4><h4>Contact</h4><p><a href=\"tel:(336) 285-6540\">(336) 285-6540</a></p>",
+        "store_image": "shopify://shop_images/Adobe_Express_-_file_13.jpg"
+      }
+    },
+    "marquee_yT67NL": {
+      "type": "marquee",
+      "blocks": {
+        "text_KmtFYE": {
+          "type": "text",
+          "settings": {
+            "marquee_text": "<strong>Sneakers. Apparel. Accessories. Exclusive Drops. Culture. Community.</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "text_KmtFYE"
+      ],
+      "name": "t:sections.local-extra-words.sections.marquee.name",
+      "settings": {
+        "scroll_direction": "ltr",
+        "speed": 100,
+        "pause_on_hover": true,
+        "horizontal_space": "regular-x-2",
+        "text_size": "text-size--larger",
+        "has_top_border": true,
+        "has_bottom_border": false,
+        "color_background_main": "rgba(0,0,0,0)",
+        "color_text_main": "rgba(0,0,0,0)"
+      }
+    },
+    "image_gJMppj": {
+      "type": "image",
+      "name": "t:sections.image.name",
+      "settings": {
+        "image": "shopify://shop_images/Adobe_Express_-_file_12.jpg",
+        "link": "",
+        "target": false
       }
     },
     "in_store_features_events_nrwdqW": {
@@ -46,10 +81,10 @@
       ],
       "name": "Store Features & Events",
       "settings": {
-        "main_title": "In-STORE Events",
+        "main_title": "beSOCIAL Events",
         "main_title_width": "732",
         "main_title_align": "left",
-        "sub_title": "and EXPERIENCES",
+        "sub_title": "& IN-STORE EXPERIENCES",
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
@@ -59,7 +94,7 @@
         "blog_cta_label": "Read Article",
         "event_cta_label": "Register Now",
         "no_event_title": "No Event found",
-        "no_event_info": "There is currently no event available on this location.",
+        "no_event_info": "There are currently no events available at this location.",
         "fallback_image": "shopify://shop_images/Photo_Apr_03_2025_8_01_52_PM.jpg"
       }
     },
@@ -78,6 +113,7 @@
       "block_order": [
         "heading_4gfyiA"
       ],
+      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/SS Detroit Store .mov",
@@ -125,6 +161,7 @@
         "staff_3Mwm8t",
         "staff_YyyNPN"
       ],
+      "disabled": true,
       "name": "Meet Our Staff",
       "settings": {
         "title": "Meet Our Staff"
@@ -136,14 +173,14 @@
         "heading_ALJbfz": {
           "type": "heading",
           "settings": {
-            "heading": "SEO COPY HEADING HERE",
+            "heading": "Social Status Greensboro",
             "seo_h_tag": "h3"
           }
         },
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+            "text": "<p>Experience Social Status Greensboro, a destination for sneakers, apparel, and culture in North Carolina. Our store highlights a curated selection of streetwear, connecting global style with Greensboro’s local community. From limited-edition releases to cultural activations, Social Status Greensboro blends fashion and creativity in every detail.</p>"
           }
         }
       },
@@ -167,6 +204,8 @@
   "order": [
     "main",
     "store_header_bnner_38J47n",
+    "marquee_yT67NL",
+    "image_gJMppj",
     "in_store_features_events_nrwdqW",
     "video_background_xHpBKL",
     "meet_staff_Qx9fd4",

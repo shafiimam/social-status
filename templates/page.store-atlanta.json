@@ -23,9 +23,9 @@
       "settings": {
         "background_image": "shopify://shop_images/ATL_c1cc9f14-1b42-44f5-ad5a-9820d63c6b69.jpg",
         "title": "<p>Social Status <strong>Atlanta</strong></p>",
-        "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
-        "store_address": "<p><a href=\"https://goo.gl/maps/8mYaGoAaSnAGJYpa8\" target=\"_blank\">280 Elizabeth St. Suite E. Atlanta, GA. 30307</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:470-305-7545\">470-305-7545</a></p>",
-        "store_image": "shopify://shop_images/image_115.png"
+        "subtitle": "The standard of streetwear and culture in Atlanta. Shop sneakers, apparel, accessories, and more.",
+        "store_address": "<p><a href=\"https://goo.gl/maps/8mYaGoAaSnAGJYpa8\" target=\"_blank\">280 Elizabeth St. Suite E. Atlanta, GA. 30307</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p>(<a href=\"tel:470-305-7545\">470) 305-7545</a></p>",
+        "store_image": "shopify://shop_images/7P4A3601.jpg"
       }
     },
     "in_store_features_events_nrwdqW": {
@@ -44,6 +44,7 @@
       "block_order": [
         "events_block_bLHC4t"
       ],
+      "disabled": true,
       "name": "Store Features & Events",
       "settings": {
         "main_title": "In-STORE Events",
@@ -69,7 +70,7 @@
         "heading_4gfyiA": {
           "type": "heading",
           "settings": {
-            "heading": "STORE VIDEO",
+            "heading": "",
             "heading_size": "h2",
             "seo_h_tag": "h4"
           }
@@ -78,6 +79,7 @@
       "block_order": [
         "heading_4gfyiA"
       ],
+      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/SS Detroit Store .mov",
@@ -92,6 +94,7 @@
       "blocks": {
         "staff_3Mwm8t": {
           "type": "staff",
+          "disabled": true,
           "settings": {
             "name": "James Danton",
             "image": "shopify://shop_images/tops-collection-banner.png",
@@ -107,6 +110,7 @@
         },
         "staff_YyyNPN": {
           "type": "staff",
+          "disabled": true,
           "settings": {
             "name": "James Danton",
             "image": "shopify://shop_images/tops-collection-banner.png",
@@ -125,9 +129,45 @@
         "staff_3Mwm8t",
         "staff_YyyNPN"
       ],
+      "disabled": true,
       "name": "Meet Our Staff",
       "settings": {
         "title": "Meet Our Staff"
+      }
+    },
+    "marquee_NVFL36": {
+      "type": "marquee",
+      "blocks": {
+        "text_hmk49n": {
+          "type": "text",
+          "settings": {
+            "marquee_text": "<strong>Sneakers. Apparel. Accessories. Exclusive Drops. Culture. Community.</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "text_hmk49n"
+      ],
+      "name": "t:sections.local-extra-words.sections.marquee.name",
+      "settings": {
+        "scroll_direction": "ltr",
+        "speed": 100,
+        "pause_on_hover": true,
+        "horizontal_space": "regular-x-2",
+        "text_size": "text-size--larger",
+        "has_top_border": true,
+        "has_bottom_border": false,
+        "color_background_main": "rgba(0,0,0,0)",
+        "color_text_main": "rgba(0,0,0,0)"
+      }
+    },
+    "image_wqPYLk": {
+      "type": "image",
+      "name": "t:sections.image.name",
+      "settings": {
+        "image": "shopify://shop_images/7P4A3629_17e3c5f6-6f6a-4bdd-b31d-5c48a849412f.jpg",
+        "link": "",
+        "target": false
       }
     },
     "rich_text_GmBxUz": {
@@ -136,14 +176,14 @@
         "heading_ALJbfz": {
           "type": "heading",
           "settings": {
-            "heading": "SEO COPY HEADING HERE",
+            "heading": "SOCIAL STATUS ATLANTA",
             "seo_h_tag": "h3"
           }
         },
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+            "text": "<p>Discover Social Status Atlanta, the city’s hub for premium streetwear and sneakers. Located in the heart of Atlanta, our store connects culture, style, and community through curated collections from top global and emerging brands. From exclusive sneaker launches to community events, Social Status Atlanta brings together those who set the standard in fashion and creativity.</p>"
           }
         }
       },
@@ -170,6 +210,8 @@
     "in_store_features_events_nrwdqW",
     "video_background_xHpBKL",
     "meet_staff_Qx9fd4",
+    "marquee_NVFL36",
+    "image_wqPYLk",
     "rich_text_GmBxUz"
   ]
 }

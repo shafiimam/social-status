@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "tagline": "AVAILABLE 9/19 AT 11 AM EST",
-            "title": "The Whitaker Group and New Balance 740 \"Willful Bias\" for Discovery",
+            "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
             "subtitle": "",
             "button_label": "enter now",
             "button_link": "https://socialstatuspgh.runfair.com/en-US/us/the-whitaker-grp-and-new-balance-740-willful-bias-for-discovery",
@@ -31,7 +31,7 @@
             "tagline": "",
             "title": "BACK TO SCHOOL CAPSULE",
             "subtitle": "Shop the Latest Looks",
-            "button_label": "explore",
+            "button_label": "explore more",
             "button_link": "shopify://collections/back-to-school",
             "video_object": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
             "seo_h_tag": "h2"
@@ -40,10 +40,10 @@
         "slide_7HQxKf": {
           "type": "slide",
           "settings": {
-            "tagline": "Crisp Air. Bold Threads. Streetwear Essentials",
+            "tagline": "Crisp Air. Bold Threads. Streetwear Essentials.",
             "title": "FALL STYLE GUIDE",
-            "subtitle": "Shop favorites and more!",
-            "button_label": "shop",
+            "subtitle": "Shop Favorites and More!",
+            "button_label": "shop now",
             "button_link": "shopify://collections/fall-lookbook",
             "image": "shopify://shop_images/fallss.jpg",
             "mobile_image": "shopify://shop_images/SS_VERTICAL_1.png",
@@ -74,7 +74,7 @@
       "name": "t:sections.featured-collection.name",
       "settings": {
         "title": "New Arrivals",
-        "subtitle": "Shop now",
+        "subtitle": "Shop Now",
         "collection": "new-arrivals-1",
         "collection_rows": 3,
         "show_view_all": true,
@@ -84,37 +84,37 @@
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
-        "release_card_EXcbkA": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/KOBE9MOONWALKER-1_5a14eb4b-acc0-4e93-9072-85064e0a93dc.jpg",
-            "title": "NIKE KOBE IX ELITE LOW PROTRO \"HYPER GRAPE/WHITE/ CAVE PURPLE\"",
-            "description": "",
-            "release_date": "9.10",
-            "price": "220",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-kobe-ix-elite-low-protro-hyper-grapewhite-cave-purple"
-          }
-        },
         "release_card_ibVcYn": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/DUNKLOWPINKRISE-1_1e2e94ed-db64-44a7-a407-44848d271e29.jpg",
-            "title": "NIKE DUNK LOW RETRO PRM \"PINK RISE/ BLACK\"",
+            "image": "shopify://shop_images/SALEHEBEMBURYJUNIPER_MANUKA_-1_a9aa6287-81cb-4053-9cb4-1ad7cc1d4036.jpg",
+            "title": "CROCS SALEHE BEMBURY JUNIPER \"MANUKA\"",
             "description": "",
-            "release_date": "9.11",
-            "price": "135",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-dunk-low-retro-prm-pink-rise-black"
+            "release_date": "9.17",
+            "price": "140",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/crocs-salehe-bembury-juniper-manuka"
+          }
+        },
+        "release_card_EXcbkA": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/WILLFULBIASXNB740-1_1.jpg",
+            "title": "THE WHITAKER GRouP AND NEW BALANCE 740 WILLFUL BIAS FOR DISCOVERY",
+            "description": "",
+            "release_date": "9.19",
+            "price": "120",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/the-whitaker-grp-and-new-balance-740-willful-bias-for-discovery"
           }
         },
         "release_card_zQXXgz": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AM95CAMOORANGE-1_d9b95e26-437e-47bc-bb94-8190ac3e03fc.jpg",
-            "title": "NIKE AIR MAX 95 \"BLACK/ SAFETY ORANGE/ METALLIC SILVER\"",
+            "image": "shopify://shop_images/AJ3ELVUELO-1_ef3c6eb0-06a5-477c-9b4b-3cd4191a2753.jpg",
+            "title": "AIR JORDAN 3 RETRO \"EL VUELO\"",
             "description": "",
-            "release_date": "9.12",
-            "price": "200",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-max-95-black-safety-orange-metallic-silver"
+            "release_date": "9.20",
+            "price": "230",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-3-retro-el-vuelo"
           }
         },
         "release_card_4YtNad": {
@@ -131,8 +131,8 @@
         }
       },
       "block_order": [
-        "release_card_EXcbkA",
         "release_card_ibVcYn",
+        "release_card_EXcbkA",
         "release_card_zQXXgz",
         "release_card_4YtNad"
       ],
@@ -176,7 +176,7 @@
         "button_G7EXPM": {
           "type": "button",
           "settings": {
-            "button_label": "shop",
+            "button_label": "shop now",
             "button_link": "shopify://collections/38a"
           }
         }
@@ -257,7 +257,7 @@
       "name": "Rotating Slider",
       "settings": {
         "heading": "Collections",
-        "subheading": "Browse our Collections and find the best fit",
+        "subheading": "Discover Our Curated Collections",
         "backdrop_text": "Culture",
         "padding_top": 60,
         "padding_bottom": 60
@@ -269,7 +269,7 @@
         "product_KJNpDX": {
           "type": "product",
           "settings": {
-            "product": "a-bathing-ape-line-camo-fb-jersey-green"
+            "product": "a-bathing-ape-line-camo-fb-jersey-white"
           }
         },
         "product_7Fz9xj": {
@@ -372,7 +372,7 @@
         "main_title": "Latest features",
         "main_title_width": "732",
         "main_title_align": "left",
-        "sub_title": "and events",
+        "sub_title": "& events",
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
@@ -380,7 +380,9 @@
         "max_articles": 5,
         "view_more_label": "View More",
         "blog_cta_label": "Read Article",
-        "event_cta_label": "Register Now"
+        "event_cta_label": "Register Now",
+        "no_event_title": "No Event Found",
+        "no_event_info": "This location does not have an event at this time."
       }
     },
     "latest_features_f6y9et": {
@@ -509,49 +511,43 @@
         "testimonial_bMcE8X": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Avatar.png",
-            "name": "Fabrizio Fernandez",
-            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+            "name": "Evelyn L. (Verified Google Review)",
+            "quote": "“The Ultimate Hype Beast Haven… From limited edition sneakers to exclusive streetwear, Social Status curates a collection that speaks to the heart of contemporary fashion.”"
           }
         },
         "testimonial_HT3x7E": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Avatar.png",
-            "name": "Fabrizio Fernandez",
-            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+            "name": "Adam S. (Verified Google Review)",
+            "quote": "“Al the general manager was amazing as well as his whole staff. Very helpful with picking shoes and shirts while I was on a business trip… Great selection of clothes and shoes and a great team.”"
           }
         },
         "testimonial_BUDmLh": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Avatar.png",
-            "name": "Fabrizio Fernandez",
-            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+            "name": "Amy A. (Verified Yelp Review)",
+            "quote": "“Staff is amazing. The vibe is great. And they've managed to carry an incredible range of brands without making the space feel crowded.”"
           }
         },
         "testimonial_JeRbJh": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Avatar.png",
-            "name": "Fabrizio Fernandez",
-            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+            "name": "Marcus H. (Verified Google Review)",
+            "quote": "“…This store being in Baltimore is very significant to the local community and sneaker heads in Baltimore 💯 highly recommend.”"
           }
         },
         "testimonial_Gc34Nw": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Avatar.png",
-            "name": "Fabrizio Fernandez",
-            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+            "name": "Katie L. (Verified Google Review)",
+            "quote": "“I had a wonderful experience at the Charlotte Social Status. Marquis was so helpful! He went above and beyond to find the shirt I was interested in purchasing.”"
           }
         },
         "testimonial_axGpDT": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Avatar.png",
-            "name": "Fabrizio Fernandez",
-            "quote": "Testing out @launchui's responsive design. That’s the template we’ve all been waiting for. My mobile-first heart is doing a happy dance."
+            "name": "Allie G. (Verified Yelp Review)",
+            "quote": "“Love the vibe, the selection, and prices. Discovered when we were visiting and wish we were local.”"
           }
         }
       },
@@ -565,7 +561,7 @@
       ],
       "name": "Floating Testimonials",
       "settings": {
-        "section_title": "Testimonials"
+        "section_title": "From The Community"
       }
     },
     "perspective_slider_VCQ6DF": {

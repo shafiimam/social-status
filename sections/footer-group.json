@@ -98,7 +98,7 @@
         "social"
       ],
       "settings": {
-        "show_payment_icons": true,
+        "show_payment_icons": false,
         "only_show_custom_icons": false,
         "show_locale_selector": true,
         "show_country_selector": true,

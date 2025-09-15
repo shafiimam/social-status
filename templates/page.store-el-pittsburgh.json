@@ -23,9 +23,44 @@
       "settings": {
         "background_image": "shopify://shop_images/Pitt1_496d2f53-9acb-4e3b-b580-547398058e3e.jpg",
         "title": "<p>Social Status <strong>East Liberty Pittsburgh</strong></p>",
-        "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
-        "store_address": "<p><a href=\"https://www.socialstatuspgh.com/https://goo.gl/maps/r8LoG99Dt4yLCuyk7\" target=\"_blank\">5929 Penn Ave, Pittsburgh, PA 15206</a></p><h4>Hours of Operation</h4><p>Monday - Saturday: <strong>12:00PM - 7:00PM</strong></p><p>Sunday: <strong>12:00PM - 5:00PM</strong></p><h4>Store Phone</h4><p><a href=\"tel:(412) 404-2147\">(412) 404-2147</a></p>",
-        "store_image": "shopify://shop_images/image_115.png"
+        "subtitle": "East Liberty’s creative hub for streetwear and culture. Explore sneakers, apparel, and community events.",
+        "store_address": "<p><a href=\"https://www.socialstatuspgh.com/https://goo.gl/maps/r8LoG99Dt4yLCuyk7\" target=\"_blank\">5929 Penn Ave, Pittsburgh, PA 15206</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(412) 404-2147\">(412) 404-2147</a></p>",
+        "store_image": "shopify://shop_images/Adobe_Express_-_file_11.jpg"
+      }
+    },
+    "marquee_j6QJDT": {
+      "type": "marquee",
+      "blocks": {
+        "text_8zYR6A": {
+          "type": "text",
+          "settings": {
+            "marquee_text": "<strong>Sneakers. Apparel. Accessories. Exclusive Drops. Culture. Community.</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "text_8zYR6A"
+      ],
+      "name": "t:sections.local-extra-words.sections.marquee.name",
+      "settings": {
+        "scroll_direction": "ltr",
+        "speed": 100,
+        "pause_on_hover": true,
+        "horizontal_space": "regular-x-2",
+        "text_size": "text-size--larger",
+        "has_top_border": true,
+        "has_bottom_border": false,
+        "color_background_main": "rgba(0,0,0,0)",
+        "color_text_main": "rgba(0,0,0,0)"
+      }
+    },
+    "image_6Pa4Nc": {
+      "type": "image",
+      "name": "t:sections.image.name",
+      "settings": {
+        "image": "shopify://shop_images/Adobe_Express_-_file_10.jpg",
+        "link": "",
+        "target": false
       }
     },
     "in_store_features_events_nrwdqW": {
@@ -46,16 +81,20 @@
       ],
       "name": "Store Features & Events",
       "settings": {
-        "main_title": "In-STORE Events",
+        "main_title": "beSOCIAL Events",
         "main_title_width": "732",
         "main_title_align": "left",
-        "sub_title": "and EXPERIENCES",
+        "sub_title": "& IN-STORE EXPERIENCES",
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
         "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Register Now",
         "no_event_title": "No Event found",
-        "no_event_info": "There is currently no event available on this location.",
+        "no_event_info": "There are currently no events available at this location.",
         "fallback_image": "shopify://shop_images/Photo_Apr_03_2025_8_01_52_PM.jpg"
       }
     },
@@ -74,6 +113,7 @@
       "block_order": [
         "heading_4gfyiA"
       ],
+      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/SS Detroit Store .mov",
@@ -121,6 +161,7 @@
         "staff_3Mwm8t",
         "staff_YyyNPN"
       ],
+      "disabled": true,
       "name": "Meet Our Staff",
       "settings": {
         "title": "Meet Our Staff"
@@ -132,14 +173,14 @@
         "heading_ALJbfz": {
           "type": "heading",
           "settings": {
-            "heading": "SEO COPY HEADING HERE",
+            "heading": "Social Status East Liberty Pittsburgh",
             "seo_h_tag": "h3"
           }
         },
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>"
+            "text": "<p>Social Status East Liberty blends elevated retail with community storytelling. Explore a curated mix of sneakers, apparel, and streetwear in a space built for culture and connection. From exclusive launches to community events, Social Status East Liberty reflects the creative heartbeat of Pittsburgh.</p>"
           }
         }
       },
@@ -163,6 +204,8 @@
   "order": [
     "main",
     "store_header_bnner_38J47n",
+    "marquee_j6QJDT",
+    "image_6Pa4Nc",
     "in_store_features_events_nrwdqW",
     "video_background_xHpBKL",
     "meet_staff_Qx9fd4",

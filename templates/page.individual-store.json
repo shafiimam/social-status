@@ -53,7 +53,13 @@
         "sub_title_align": "right",
         "arrow_text_1": "culture",
         "arrow_text_2": "events",
-        "show_tab_list": true
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Register Now",
+        "no_event_title": "No Event found",
+        "no_event_info": "There is currently no event available on this location."
       }
     },
     "video_background_xHpBKL": {
@@ -118,6 +124,7 @@
         "staff_3Mwm8t",
         "staff_YyyNPN"
       ],
+      "disabled": true,
       "name": "Meet Our Staff",
       "settings": {
         "title": "Meet Our Staff"
