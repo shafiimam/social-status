@@ -192,7 +192,7 @@ html[dir="ltr"] .product-grid-split-border .box__heading {
   .fix-collection-grid-box-design .box__heading {
     width: 100%;
     min-height: 0 !important;
-    height: auto !important;
+    height: 100% !important;
     max-height: 100vh !important;
   }
   html[dir="ltr"] .box--extra-border {

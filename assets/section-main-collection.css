@@ -43,6 +43,10 @@
     display: none;
   }
 }
+.first-products-2{
+  border-left: 1px solid var(--product-grid-borders);
+  margin-left: -1px;
+}
 
 
 .sale-tape-container {
