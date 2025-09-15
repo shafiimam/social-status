@@ -18,7 +18,7 @@
             "tagline": "AVAILABLE 9/19 AT 11 AM EST",
             "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
             "subtitle": "",
-            "button_label": "enter now",
+            "button_label": "enter raffle now",
             "button_link": "https://socialstatuspgh.runfair.com/en-US/us/the-whitaker-grp-and-new-balance-740-willful-bias-for-discovery",
             "image": "shopify://shop_images/AMM740MOB2.jpg",
             "mobile_image": "shopify://shop_images/AMM740MOB3.jpg",
@@ -269,7 +269,7 @@
         "product_KJNpDX": {
           "type": "product",
           "settings": {
-            "product": "a-bathing-ape-line-camo-fb-jersey-white"
+            "product": "a-bathing-ape-line-camo-fb-jersey-green"
           }
         },
         "product_7Fz9xj": {
@@ -369,7 +369,7 @@
       ],
       "name": "Store Features & Events",
       "settings": {
-        "main_title": "Latest features",
+        "main_title": "LATEST FEATURES",
         "main_title_width": "732",
         "main_title_align": "left",
         "sub_title": "& events",
