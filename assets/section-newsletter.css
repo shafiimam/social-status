@@ -91,3 +91,10 @@ h2.newsletter-title {
   font-size: 15px;
   font-weight: 500;
 }
+html[dir=ltr] .search-form .input-group button[type=submit]{
+  background-color: var(--main-text);
+  color: var(--main-text-foreground);
+}
+html[dir=ltr] .search-form .input-group input[type=search]{
+  border-color: var(--main-text);
+}

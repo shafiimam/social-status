@@ -1,6 +1,4 @@
-
 {%- if template != 'index' and template != blank and template != '404' -%}
-
   {%- liquid
     if template contains 'product'
       assign is_product = true
@@ -15,21 +13,21 @@
       assign is_event_page = true
     endif
   -%}
-    
+
   <nav class="breadcrumb text-size--smaller" role="navigation" aria-label="breadcrumbs">
-    <span class="breadcrumb__link"><a href="{{ routes.root_url }}">{{ 'general.breadcrumb.homepage' | t }}</a></span>
+    <span class="breadcrumb__link"
+      ><a href="{{ routes.root_url }}">{{ 'general.breadcrumb.homepage' | t }}</a></span
+    >
 
     {%- if template contains 'search' -%}
-
       <span class="breadcrumb__separator">/</span>
       <span class="breadcrumb__current">{{ 'general.breadcrumb.search' | t: terms: search.terms }}</span>
 
     {%- elsif is_product or is_collection or is_collections -%}
-
       <span class="breadcrumb__separator {% if has_collection %} lap--hide {% endif %}">/</span>
       <span class="{% if is_collections %} breadcrumb__current {% else %} breadcrumb__link {% endif %} {% if has_collection %} lap--hide {% endif %}">
         {%- unless is_collections -%}<a href="{{ routes.collections_url }}">{%- endunless -%}
-          {{ 'general.breadcrumb.collections' | t }}
+        {{ 'general.breadcrumb.collections' | t }}
         {%- unless is_collections -%}</a>{%- endunless -%}
       </span>
 
@@ -37,7 +35,7 @@
         <span class="breadcrumb__separator">/</span>
         <span class="{% if is_collection %} breadcrumb__current {% else %} breadcrumb__link {% endif %}">
           {%- unless is_collection -%}<a href="{{ collection.url }}">{%- endunless -%}
-            {{ collection.title | escape }}
+          {{ collection.title | escape }}
           {%- unless is_collection -%}</a>{%- endunless -%}
         </span>
       {%- endif -%}
@@ -48,18 +46,19 @@
       {%- endif -%}
 
     {%- else -%}
-
-    
-    {%- if blog or article -%}
-      
-      {% if is_event_page == false %}
-        <span class="breadcrumb__separator">/</span>
-        <span class="{%- if article -%}breadcrumb__link {%- else -%} breadcrumb__current {%- endif -%}">
-        {%- if article -%}<a href="{{ blog.url }}">{%- endif -%}
-          {{ 'general.breadcrumb.blog' | t }}
-        {%- if article -%}</a>{%- endif -%}
-      </span>
-      {% endif %}
+      {%- if blog or article -%}
+        {% if is_event_page == false %}
+          <span class="breadcrumb__separator">/</span>
+          <span class="{%- if article -%}breadcrumb__link {%- else -%} breadcrumb__current {%- endif -%}">
+            {%- if article -%}<a href="{{ blog.url }}">{%- endif -%}
+            {{ 'general.breadcrumb.blog' | t }}
+            {%- if article -%}</a>{%- endif -%}
+        {% else %}
+          <span class="breadcrumb__separator">/</span>
+          <span class="{%- if article -%}breadcrumb__link {%- else -%} breadcrumb__current {%- endif -%}">
+            <a href="/pages/attend-an-event"> Attend an event </a>
+          </span>
+        {% endif %}
 
         {%- if article -%}
           <span class="breadcrumb__separator">/</span>
@@ -67,29 +66,23 @@
         {%- endif -%}
 
       {%- elsif template contains 'customers' -%}
-
         <span class="breadcrumb__current">{{ 'general.breadcrumb.account' | t }}</span>
 
       {%- elsif template contains 'cart' -%}
-
         <span class="breadcrumb__current">{{ 'general.breadcrumb.cart' | t }}</span>
 
-      {%- else -%}  
-
+      {%- else -%}
+        <span class="breadcrumb__separator">/</span>
         <span class="breadcrumb__current">{{ page.title | escape }}</span>
-
       {%- endif -%}
-
     {%- endif -%}
-
   </nav>
-
 {%- endif -%}
 
 {% schema %}
 {
   "name": "t:sections.refactor_words.breadcrumb.name",
-  "settings": [ 
+  "settings": [
     {
       "type": "paragraph",
       "content": "t:sections.refactor_words.breadcrumb.info"

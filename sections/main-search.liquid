@@ -35,7 +35,7 @@
 
         {%- if search.performed and search.results_count > 0 -%}
 
-          <div class="newsletter-form">
+          <div class="newsletter-form search-form">
             <form action="{{ routes.search_url }}" method="get" role="search" autocomplete="off">
               <div class="input-group">
                 <label for="search-form-page" class="visually-hidden">{{ 'general.search.title' | t }}</label>

@@ -704,7 +704,7 @@ input[type=submit], .button, .btn, .btn-article {
   color: var(--main-text);
 }
 .button.button--solid svg path {
-  fill: var(--main-text);
+  fill: var(--main-text-foreground);
 }
 .button.button--solid svg circle {
   stroke: var(--main-text-foreground);
