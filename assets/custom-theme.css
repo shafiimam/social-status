@@ -123,6 +123,9 @@ section#shopify-pc__banner {
 #CollectionProductGrid {
   border-top: 1px solid var(--stroke);
 }
+#CollectionProductGrid.search-page-products{
+  border-top: none !important;
+}
 .no-overflow {
   overflow: hidden !important;
 }

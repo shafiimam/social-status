@@ -90,7 +90,7 @@
 
       {%- if search.performed == false or search.performed and search.results_count == 0 and search.filters == empty -%}
 
-         <div class="newsletter-form">
+         <div class="newsletter-form search-form">
 
           <form action="{{ routes.search_url }}" method="get" role="search" autocomplete="off">
             <div class="input-group">
@@ -120,7 +120,7 @@
 
         {%- paginate search.results by section.settings.products_number -%} 
       
-          <div id="CollectionProductGrid">
+          <div id="CollectionProductGrid" class="search-page-products">
           
             {%- assign products_results = search.results | where: 'object_type', 'product' -%}
 
