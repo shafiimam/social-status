@@ -34,11 +34,20 @@
             "button_link": "#coming_events",
             "book_form": false
           }
+        },
+        "button_UqUTya": {
+          "type": "button",
+          "settings": {
+            "button_text": "Book An Event",
+            "button_link": "shopify://pages/book-an-event",
+            "book_form": false
+          }
         }
       },
       "block_order": [
         "heading_text_VFq3c4",
-        "button_fTDRRw"
+        "button_fTDRRw",
+        "button_UqUTya"
       ],
       "name": "Be Social Hero",
       "settings": {

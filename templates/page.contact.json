@@ -51,10 +51,9 @@
       "settings": {
         "title": "Contact us",
         "content": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at <a href=\"mailto:info@socialstatuspgh.com\" title=\"mailto:info@socialstatuspgh.com\">info@socialstatuspgh.com</a> or on our website via live chat during our business hours. </p>",
-        "title_bottom": "SEO COPY HEADING HERE",
-        "content_bottom": "<p>We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. We want to ensure that your experience with us is smooth and enjoyable. If you have any questions or concerns, don't hesitate to reach out to us at info@socialstatuspgh.com or on our website via live chat during our business hours. </p>",
-        "text_color": "#ffffff",
-        "image": "shopify://shop_images/image_93.png",
+        "title_bottom": "",
+        "content_bottom": "",
+        "text_color": "#000000",
         "map_enable": false,
         "map_address": "",
         "map_api": "",
