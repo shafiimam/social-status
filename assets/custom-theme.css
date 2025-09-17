@@ -317,3 +317,8 @@ span.fina-sale-message {
 .featured-colleciton-header{
   padding-block: var(--box-auto-top);
 }
+
+.customer-login-form-container,
+.customer-register-form-container{
+  max-width: 500px;
+}

@@ -56,7 +56,7 @@
         {% else %}
           <span class="breadcrumb__separator">/</span>
           <span class="{%- if article -%}breadcrumb__link {%- else -%} breadcrumb__current {%- endif -%}">
-            <a href="/pages/attend-an-event"> Attend an event </a>
+            <a href="/pages/attend-an-event"> Attend An Event </a>
           </span>
         {% endif %}
 
@@ -66,8 +66,8 @@
         {%- endif -%}
 
       {%- elsif template contains 'customers' -%}
+        <span class="breadcrumb__separator">/</span>
         <span class="breadcrumb__current">{{ 'general.breadcrumb.account' | t }}</span>
-
       {%- elsif template contains 'cart' -%}
         <span class="breadcrumb__current">{{ 'general.breadcrumb.cart' | t }}</span>
 

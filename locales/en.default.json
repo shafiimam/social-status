@@ -429,7 +429,7 @@
       "submit": "Reset Password"
     },
     "register_page": {
-      "title": "Create an account",
+      "title": "Create An Account",
       "login_text": "Already have an account?",
       "form": {
         "first_name_label": "First Name",

@@ -18,7 +18,7 @@ data-sticky="{{ section.settings.menu_sticky }}">
     {%- endif -%}
   </span>
 
-  {%- render 'logo-size', logo: logosection.settings.logo_src, logo_height: section.settings.logo_height -%}
+  {%- render 'logo-size', logo: section.settings.logo_src, logo_height: section.settings.logo_height -%}
 
   <!-- menu -->
 
@@ -104,6 +104,17 @@ data-sticky="{{ section.settings.menu_sticky }}">
     {%- endif -%}
 
     <span 
+      class="site-menu-handle" 
+      title="go to account/login page"
+    >
+      <span class="visually-hidden">go to account/login page</span>
+      <a href="{{ routes.account_url }}" title="account">
+        <span class="account-menu" aria-hidden="true" style="display:block;margin-top:1px;">
+          {%- render 'icons-pack', icon: 'avatar' -%}
+        </span>
+      </a>
+    </span>
+    <span 
       class="site-search-handle site-menu-handle" 
       title="{{ 'general.accessibility_labels.open_search' | t }}"
       {% if template != 'search' %} 
@@ -112,7 +123,7 @@ data-sticky="{{ section.settings.menu_sticky }}">
       {% endif %} 
     >
       <span class="visually-hidden">{{ 'general.accessibility_labels.open_search' | t }}</span>
-      <a href="{{ routes.search_url }}" title="{{ 'general.accessibility_labels.open_search' | t }}<">
+      <a href="{{ routes.search_url }}" title="{{ 'general.accessibility_labels.open_search' | t }}">
         <span class="search-menu" aria-hidden="true" style="display:block;margin-top:1px;">
           {%- render 'theme-symbols', icon: 'search' -%}
         </span>

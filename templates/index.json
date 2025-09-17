@@ -84,17 +84,6 @@
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
-        "release_card_EXcbkA": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/NIGOXAIRFORCE3LOWSP_OLIVEGREY_PEWTERSUMMITWHITE_-1_6a7ad612-22bf-4c7b-9829-f56ff8c53565.jpg",
-            "title": "NIKE X LEVI X NIGO AIR FORCE 3 LOW SP \"OLIVE GREY/ PEWTER SUMMIT WHITE\"",
-            "description": "",
-            "release_date": "9.18",
-            "price": "150",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-x-nigo-air-force-3-low-sp-olive-grey-pewter-summit-white"
-          }
-        },
         "release_card_zQXXgz": {
           "type": "release-card",
           "settings": {
@@ -117,6 +106,17 @@
             "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-vomero-plus-speckle-anthracite-black-dark-obsidian"
           }
         },
+        "release_card_EXcbkA": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/TRUNNERO_S_ARCHAEOBROWN_PERSIANVIOLET_-1_bca20c3c-2feb-420e-9a2e-d177e9f0e68d.jpg",
+            "title": "JORDAN TRUNNER O/S \"ARCHAEO BROWN/PERSIAN VIOLET\"",
+            "description": "",
+            "release_date": "9.24",
+            "price": "115",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/jordan-trunner-os-archaeo-brownpersian-violet"
+          }
+        },
         "release_card_4YtNad": {
           "type": "release-card",
           "disabled": true,
@@ -131,9 +131,9 @@
         }
       },
       "block_order": [
-        "release_card_EXcbkA",
         "release_card_zQXXgz",
         "release_card_ibVcYn",
+        "release_card_EXcbkA",
         "release_card_4YtNad"
       ],
       "settings": {
