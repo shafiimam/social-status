@@ -12,6 +12,33 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_BXmtP9": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
+            "subtitle": "AVAILABLE NOW & 12 PM LOCAL TIME IN STORE",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/products/new-balance-740-sea-salt",
+            "image": "shopify://shop_images/ss.png",
+            "mobile_image": "shopify://shop_images/ss2.png",
+            "seo_h_tag": "h1"
+          }
+        },
+        "slide_TRJ643": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
+            "subtitle": "AVAILABLE 9/19 AT 11 AM EST",
+            "button_label": "",
+            "button_link": "shopify://collections/new-balance",
+            "image": "shopify://shop_images/golcfcart.png",
+            "mobile_image": "shopify://shop_images/Untitled-32.png",
+            "seo_h_tag": "h1"
+          }
+        },
         "slide_JYnQnP": {
           "type": "slide",
           "settings": {
@@ -22,19 +49,6 @@
             "button_link": "shopify://collections/back-to-school",
             "video_object": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
             "seo_h_tag": "h2"
-          }
-        },
-        "slide_TRJ643": {
-          "type": "slide",
-          "settings": {
-            "tagline": "",
-            "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
-            "subtitle": "AVAILABLE 9/19 AT 11 AM EST",
-            "button_label": "",
-            "button_link": "shopify://collections/new-balance",
-            "image": "shopify://shop_images/golcfcart.png",
-            "mobile_image": "shopify://shop_images/Untitled-32.png",
-            "seo_h_tag": "h1"
           }
         },
         "slide_7HQxKf": {
@@ -49,12 +63,42 @@
             "mobile_image": "shopify://shop_images/SS_VERTICAL_1.png",
             "seo_h_tag": "h2"
           }
+        },
+        "slide_DmtDT3": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "NEW BALANCE MADE IN UK 991V2",
+            "subtitle": "RELEASE 9.26 AT 11 AM EST",
+            "button_label": "",
+            "button_link": "shopify://collections/fall-lookbook",
+            "image": "shopify://shop_images/ss991v2desk.jpg",
+            "mobile_image": "shopify://shop_images/ss991v2mob.jpg",
+            "seo_h_tag": "h3"
+          }
+        },
+        "slide_KKyCMi": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "SUPERVSN",
+            "subtitle": "Shop 90's inspried West Coast pieces",
+            "button_label": "shop new styles",
+            "button_link": "shopify://collections/supervsn",
+            "video_object": "shopify://files/videos/SUPERVSN.mp4",
+            "seo_h_tag": "h2"
+          }
         }
       },
       "block_order": [
-        "slide_JYnQnP",
+        "slide_BXmtP9",
         "slide_TRJ643",
-        "slide_7HQxKf"
+        "slide_JYnQnP",
+        "slide_7HQxKf",
+        "slide_DmtDT3",
+        "slide_KKyCMi"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {

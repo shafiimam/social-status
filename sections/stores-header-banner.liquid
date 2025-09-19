@@ -57,99 +57,24 @@
     const arrowButton = document.querySelector('.arrow-button');
     const rightSlider = document.querySelector('.stores-header-banner .right-slider');
     let currentActiveIndex = 0;
-    let isScrolling = false;
-    let scrollTimeout;
-    let touchStartY = 0;
-    let touchEndY = 0;
-    let isMobile = window.innerWidth <= 1024;
-    let lastScrollTime = 0;
-    let scrollStabilizationTimeout;
 
-    // Mobile-optimized observer options
-    const observerOptions = {
-      threshold: isMobile ? [0.1, 0.3, 0.5, 0.7, 0.9] : [0.3],
-      rootMargin: isMobile ? '0px 0px -200px 0px' : '0px 0px -500px 0px',
-    };
-
-    // Throttle function for better performance
-    function throttle(func, limit) {
-      let inThrottle;
-      return function () {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-          func.apply(context, args);
-          inThrottle = true;
-          setTimeout(() => (inThrottle = false), limit);
-        }
-      };
-    }
-
-    // Debounce function for scroll end detection
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.transform = 'translateY(0)';
-          entry.target.style.opacity = '1';
-
-          // Update bottom content when a slide becomes active
-          const slideIndex = Array.from(sliderCells).indexOf(entry.target);
-          if (slideIndex !== -1 && slideIndex !== currentActiveIndex) {
-            updateBottomContent(slideIndex);
-            currentActiveIndex = slideIndex;
-            updateArrowVisibility();
-          }
-        }
-      });
-    }, observerOptions);
-
-    // Function to update bottom content based on active slide with stabilization
-    function updateBottomContent(activeIndex, forceUpdate = false) {
-      // Clear any pending stabilization timeout
-      if (scrollStabilizationTimeout) {
-        clearTimeout(scrollStabilizationTimeout);
-      }
-
-      // On mobile, add a small delay to prevent rapid changes during scroll
-      if (isMobile && !forceUpdate) {
-        scrollStabilizationTimeout = setTimeout(() => {
-          updateBottomContentImmediate(activeIndex);
-        }, 150);
-      } else {
-        updateBottomContentImmediate(activeIndex);
-      }
-    }
-
-    function updateBottomContentImmediate(activeIndex) {
+    // Simple function to update bottom content
+    function updateBottomContent(activeIndex) {
       bottomContentDivs.forEach((contentDiv, index) => {
         if (index === activeIndex) {
           contentDiv.style.display = 'block';
-          contentDiv.style.opacity = '1';
         } else {
           contentDiv.style.display = 'none';
-          contentDiv.style.opacity = '0';
         }
       });
     }
 
-    // Function to update arrow visibility (hide on last slide)
+    // Simple function to update arrow visibility
     function updateArrowVisibility() {
       const arrowContainer = document.querySelector('.slider-navigation-arrow');
       if (arrowContainer) {
         if (currentActiveIndex >= sliderCells.length - 1) {
-          arrowContainer.style.opacity = '0';
+          arrowContainer.style.opacity = '0.5';
           arrowContainer.style.pointerEvents = 'none';
         } else {
           arrowContainer.style.opacity = '1';
@@ -158,87 +83,24 @@
       }
     }
 
-    // Enhanced scroll to next slide function
+    // Simple scroll to next slide function
     function scrollToNextSlide() {
-      if (currentActiveIndex < sliderCells.length - 1 && !isScrolling) {
-        isScrolling = true;
-        const nextSlide = sliderCells[currentActiveIndex + 1];
+      if (currentActiveIndex < sliderCells.length - 1) {
+        currentActiveIndex++;
+        const nextSlide = sliderCells[currentActiveIndex];
         if (nextSlide) {
-          // Use different scroll behavior for mobile vs desktop
-          const scrollOptions = isMobile
-            ? {
-                behavior: 'smooth',
-                block: 'start',
-              }
-            : {
-                behavior: 'smooth',
-                block: 'start',
-              };
-
-          nextSlide.scrollIntoView(scrollOptions);
-
-          // Reset scrolling flag after animation
-          setTimeout(
-            () => {
-              isScrolling = false;
-            },
-            isMobile ? 800 : 600
-          );
-        }
-      }
-    }
-
-    // Touch event handlers for mobile
-    function handleTouchStart(e) {
-      if (!isMobile) return;
-      touchStartY = e.touches[0].clientY;
-    }
-
-    function handleTouchEnd(e) {
-      if (!isMobile) return;
-      touchEndY = e.changedTouches[0].clientY;
-      handleSwipe();
-    }
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diff = touchStartY - touchEndY;
-
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          // Swipe up - go to next slide
-          scrollToNextSlide();
-        } else {
-          // Swipe down - go to previous slide
-          scrollToPreviousSlide();
-        }
-      }
-    }
-
-    function scrollToPreviousSlide() {
-      if (currentActiveIndex > 0 && !isScrolling) {
-        isScrolling = true;
-        const prevSlide = sliderCells[currentActiveIndex - 1];
-        if (prevSlide) {
-          prevSlide.scrollIntoView({
+          nextSlide.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
           });
-
-          setTimeout(
-            () => {
-              isScrolling = false;
-            },
-            isMobile ? 800 : 600
-          );
+          updateBottomContent(currentActiveIndex);
+          updateArrowVisibility();
         }
       }
     }
 
-    // Enhanced scroll event handling with scroll snap
-    const handleScroll = throttle(() => {
-      if (isScrolling) return;
-
+    // Simple scroll event handling
+    function handleScroll() {
       const scrollTop = rightSlider.scrollTop;
       const slideHeight = rightSlider.clientHeight;
       const newActiveIndex = Math.round(scrollTop / slideHeight);
@@ -248,62 +110,22 @@
         updateBottomContent(currentActiveIndex);
         updateArrowVisibility();
       }
-    }, 100);
+    }
 
-    // Scroll end detection
-    const handleScrollEnd = debounce(() => {
-      isScrolling = false;
-    }, 150);
-
-    // Arrow click event listener
+    // Event listeners
     if (arrowButton) {
       arrowButton.addEventListener('click', scrollToNextSlide);
     }
 
-    // Touch event listeners for mobile
-    if (rightSlider && isMobile) {
-      rightSlider.addEventListener('touchstart', handleTouchStart, { passive: true });
-      rightSlider.addEventListener('touchend', handleTouchEnd, { passive: true });
-      rightSlider.addEventListener('scroll', handleScroll, { passive: true });
-      rightSlider.addEventListener('scroll', handleScrollEnd, { passive: true });
+    if (rightSlider) {
+      rightSlider.addEventListener('scroll', handleScroll);
     }
 
-    // Desktop scroll handling
-    if (rightSlider && !isMobile) {
-      rightSlider.addEventListener('scroll', handleScroll, { passive: true });
-      rightSlider.addEventListener('scroll', handleScrollEnd, { passive: true });
-    }
-
-    // Handle window resize
-    const handleResize = debounce(() => {
-      isMobile = window.innerWidth <= 1024;
-      // Reinitialize observer with new options if needed
-      observer.disconnect();
-      sliderCells.forEach((cell) => observer.observe(cell));
-    }, 250);
-
-    window.addEventListener('resize', handleResize);
-
-    // Initialize first slide as active
+    // Initialize
     if (bottomContentDivs.length > 0) {
       updateBottomContent(0);
     }
     updateArrowVisibility();
-
-    // Initialize slides with optimized transitions
-    sliderCells.forEach((cell, index) => {
-      cell.style.transform = 'translateY(30px)';
-      cell.style.opacity = '0';
-      cell.style.transition = isMobile
-        ? 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      observer.observe(cell);
-    });
-
-    // Add momentum scrolling for iOS
-    if (isMobile && rightSlider) {
-      rightSlider.style.webkitOverflowScrolling = 'touch';
-    }
   });
 </script>
 
