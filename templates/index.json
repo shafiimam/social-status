@@ -12,42 +12,40 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_BXmtP9": {
+        "slide_DmtDT3": {
           "type": "slide",
           "settings": {
             "tagline": "",
-            "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
-            "subtitle": "AVAILABLE NOW & 12 PM LOCAL TIME IN STORE",
-            "button_label": "SHOP NOW",
-            "button_link": "https://www.socialstatuspgh.com/products/new-balance-740-sea-salt",
-            "image": "shopify://shop_images/ss.png",
-            "mobile_image": "shopify://shop_images/ss2.png",
-            "seo_h_tag": "h1"
+            "title": "NIKE AIR MAX 95 \"YARDRUNNERS\"",
+            "subtitle": "AVAILABLE NOW",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/nike",
+            "image": "shopify://shop_images/YARDRUNNER10.png",
+            "mobile_image": "shopify://shop_images/YARDRUNNERS_COLLECTION_MOB.png",
+            "seo_h_tag": "h3"
           }
         },
-        "slide_TRJ643": {
+        "slide_9hccPj": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "THE WHITAKER GROUP AND NEW BALANCE 740 \"WILLFUL BIAS\" FOR DISCOVERY",
-            "subtitle": "AVAILABLE 9/19 AT 11 AM EST",
-            "button_label": "",
-            "button_link": "shopify://collections/new-balance",
-            "image": "shopify://shop_images/golcfcart.png",
-            "mobile_image": "shopify://shop_images/Untitled-32.png",
-            "seo_h_tag": "h1"
+            "title": "GODSPEED",
+            "subtitle": "DISCOVER NEW SETS AND OUTERWEAR",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/godspeed-1",
+            "video_object": "shopify://files/videos/GodSpeed Web.mov",
+            "seo_h_tag": "h2"
           }
         },
-        "slide_JYnQnP": {
+        "slide_KKyCMi": {
           "type": "slide",
           "settings": {
             "tagline": "",
-            "title": "BACK TO SCHOOL CAPSULE",
-            "subtitle": "Shop the Latest Looks",
-            "button_label": "explore more",
-            "button_link": "shopify://collections/back-to-school",
-            "video_object": "shopify://files/videos/SS BACK 2 SCHOOL .mov",
+            "title": "SUPERVSN",
+            "subtitle": "Shop 90's inspried West Coast pieces",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/supervsn",
+            "image": "shopify://shop_images/DSC02173_BM_1.jpg",
             "seo_h_tag": "h2"
           }
         },
@@ -60,45 +58,16 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/fall-lookbook",
             "image": "shopify://shop_images/fallss.jpg",
-            "mobile_image": "shopify://shop_images/SS_VERTICAL_1.png",
-            "seo_h_tag": "h2"
-          }
-        },
-        "slide_DmtDT3": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "NEW BALANCE MADE IN UK 991V2",
-            "subtitle": "RELEASE 9.26 AT 11 AM EST",
-            "button_label": "",
-            "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/ss991v2desk.jpg",
-            "mobile_image": "shopify://shop_images/ss991v2mob.jpg",
-            "seo_h_tag": "h3"
-          }
-        },
-        "slide_KKyCMi": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "SUPERVSN",
-            "subtitle": "Shop 90's inspried West Coast pieces",
-            "button_label": "shop new styles",
-            "button_link": "shopify://collections/supervsn",
-            "video_object": "shopify://files/videos/SUPERVSN.mp4",
+            "mobile_image": "shopify://shop_images/GODSPEEDDESK2.png",
             "seo_h_tag": "h2"
           }
         }
       },
       "block_order": [
-        "slide_BXmtP9",
-        "slide_TRJ643",
-        "slide_JYnQnP",
-        "slide_7HQxKf",
         "slide_DmtDT3",
-        "slide_KKyCMi"
+        "slide_9hccPj",
+        "slide_KKyCMi",
+        "slide_7HQxKf"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -110,7 +79,7 @@
         "desktop_overlay": "rgba(0,0,0,0)",
         "mobile_height": "var(--window-height)",
         "mobile_background": "rgba(0,0,0,0)",
-        "heading_size": "h1"
+        "heading_size": "h2"
       }
     },
     "featured_collection_YCzWJf": {
@@ -131,54 +100,54 @@
         "release_card_zQXXgz": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AJ3ELVUELO-1_ef3c6eb0-06a5-477c-9b4b-3cd4191a2753.jpg",
-            "title": "AIR JORDAN 3 RETRO \"EL VUELO\"",
+            "image": "shopify://shop_images/AIRBALTOROSP_BLACK_WHITE_-1.jpg",
+            "title": "NIKE AIR BALTORO  STÜSSY SP \"BLACK/WHITE\"",
             "description": "",
-            "release_date": "9.20",
-            "price": "230",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-3-retro-el-vuelo"
+            "release_date": "10.17",
+            "price": "155",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-baltoro-sp-blackwhite"
           }
         },
-        "release_card_ibVcYn": {
+        "release_card_4YtNad": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/VOMEROPLUSSPECKLE_ANTHRACITE_BLACK_DARKOBSIDIAN_-1_52fbff5e-5363-42bd-884a-d867d04f524d.jpg",
-            "title": "NIKE VOMERO PLUS SPECKLE \"ANTHRACITE/ BLACK/ DARK OBSIDIAN\"",
+            "image": "shopify://shop_images/AJ1HIFIR-1.jpg",
+            "title": "WOMEN'S AIR JORDAN 1 RETRO HIGH OG “PRO GREEN”",
             "description": "",
-            "release_date": "9.23",
-            "price": "180",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-vomero-plus-speckle-anthracite-black-dark-obsidian"
+            "release_date": "10.18",
+            "price": "185",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-air-jordan-1-retro-high-og-pro-green"
           }
         },
         "release_card_EXcbkA": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/TRUNNERO_S_ARCHAEOBROWN_PERSIANVIOLET_-1_bca20c3c-2feb-420e-9a2e-d177e9f0e68d.jpg",
-            "title": "JORDAN TRUNNER O/S \"ARCHAEO BROWN/PERSIAN VIOLET\"",
+            "image": "shopify://shop_images/GRATEFULDEADXAIRMAX90-1.jpg",
+            "title": "GRATEFUL DEAD x UNIVERSITY OF OREGON x NIKE AIR MAX 90",
             "description": "",
-            "release_date": "9.24",
-            "price": "115",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/jordan-trunner-os-archaeo-brownpersian-violet"
+            "release_date": "10.24",
+            "price": "145",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/grateful-dead-x-university-of-oregon-x-nike-air-max-90"
           }
         },
-        "release_card_4YtNad": {
+        "release_card_ibVcYn": {
           "type": "release-card",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/AJ4CAVESTONEGS-1.jpg",
-            "title": "AIR JORDAN 4 RETRO \"CAVESTONE\" GS",
+            "image": "shopify://shop_images/STEFONDIGGSXGEL-DSTRAINER14_WHITE_BLACK_-1_7a27c952-271e-4c45-aa1d-9d7167c5ee4a.jpg",
+            "title": "ASICS X STEFON DIGGS GEL-DS TRAINER 14 \"WHITE/BLACK\"",
             "description": "",
-            "release_date": "9.06",
+            "release_date": "10.11",
             "price": "160",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-4-retro-cavestone-gs"
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/asics-x-stefon-diggs-gel-ds-trainer-14-whiteblack"
           }
         }
       },
       "block_order": [
         "release_card_zQXXgz",
-        "release_card_ibVcYn",
+        "release_card_4YtNad",
         "release_card_EXcbkA",
-        "release_card_4YtNad"
+        "release_card_ibVcYn"
       ],
       "settings": {
         "title": "Releases",
@@ -212,7 +181,7 @@
         "heading_Ha3kN8": {
           "type": "heading",
           "settings": {
-            "heading": "38a",
+            "heading": "SUPERVSN",
             "heading_size": "h2",
             "seo_h_tag": "span"
           }
@@ -220,8 +189,8 @@
         "button_G7EXPM": {
           "type": "button",
           "settings": {
-            "button_label": "shop now",
-            "button_link": "shopify://collections/38a"
+            "button_label": "shop",
+            "button_link": "shopify://collections/supervsn"
           }
         }
       },
@@ -231,7 +200,7 @@
       ],
       "name": "t:sections.video-background.name",
       "settings": {
-        "video_object": "shopify://files/videos/38a Shorts Drop 2.mov",
+        "video_object": "shopify://files/videos/SUPERVSN.mp4",
         "video_height": "var(--window-height)",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
@@ -313,19 +282,19 @@
         "product_KJNpDX": {
           "type": "product",
           "settings": {
-            "product": "a-bathing-ape-line-camo-fb-jersey-green"
+            "product": "godspeed-ny-checkmate-ls-tee-black"
           }
         },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
-            "product": "godspeed-ny-patchwork-denim-short-black"
+            "product": "godspeed-ny-og-logo-sweatpant-v2-navy-red"
           }
         },
         "product_qFEUPt": {
           "type": "product",
           "settings": {
-            "product": "peterson-23-low"
+            "product": "godspeed-ny-blk-forever-hat"
           }
         }
       },
@@ -336,7 +305,7 @@
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/SSVERT3.png",
+        "image": "shopify://shop_images/SSGODSPEEDSTLF.png",
         "desktop_image_positioning": "image-on-left"
       }
     },

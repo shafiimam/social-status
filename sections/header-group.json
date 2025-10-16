@@ -17,7 +17,7 @@
         "content": {
           "type": "content",
           "settings": {
-            "text": "ENJOY FREE SHIPPING NOW TILL 9.22 ON ALL ONLINE ORDERS",
+            "text": "FREE US DOMESTIC SHIPPING ONLINE. NOW THROUGH 9.22.",
             "link": "",
             "target": false
           }
@@ -26,6 +26,7 @@
       "block_order": [
         "content"
       ],
+      "disabled": true,
       "settings": {
         "visibility": "all",
         "bar_txtcolor": "#ffffff",

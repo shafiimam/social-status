@@ -58,7 +58,7 @@
       ],
       "settings": {
         "show_collection_banner": true,
-        "collection_desktop_layout": "split",
+        "collection_desktop_layout": "full",
         "show_collection_description": false,
         "show_collection_image": true,
         "mobile_overlay_background": "#131313",
