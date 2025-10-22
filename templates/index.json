@@ -12,6 +12,19 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_qimnGd": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "TOM WOOD JEWELRY",
+            "subtitle": "NEW NECKLACES AND RINGS",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/tom-wood",
+            "image": "shopify://shop_images/TOMWOODWEB2.png",
+            "mobile_image": "shopify://shop_images/TOMMOB2.png",
+            "seo_h_tag": "h2"
+          }
+        },
         "slide_DmtDT3": {
           "type": "slide",
           "settings": {
@@ -39,6 +52,7 @@
         },
         "slide_KKyCMi": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "SUPERVSN",
@@ -54,16 +68,17 @@
           "settings": {
             "tagline": "Crisp Air. Bold Threads. Streetwear Essentials.",
             "title": "FALL STYLE GUIDE",
-            "subtitle": "Shop Favorites and More!",
+            "subtitle": "Shop Favorites and More",
             "button_label": "shop now",
             "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/fallss.jpg",
+            "image": "shopify://shop_images/jacket2.png",
             "mobile_image": "shopify://shop_images/GODSPEEDDESK2.png",
             "seo_h_tag": "h2"
           }
         }
       },
       "block_order": [
+        "slide_qimnGd",
         "slide_DmtDT3",
         "slide_9hccPj",
         "slide_KKyCMi",
@@ -86,9 +101,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "New Arrivals",
+        "title": "TOM WOOD",
         "subtitle": "Shop Now",
-        "collection": "new-arrivals-1",
+        "collection": "tom-wood",
         "collection_rows": 3,
         "show_view_all": true,
         "seo_h_tag": "h2"
@@ -97,30 +112,9 @@
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
-        "release_card_zQXXgz": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AIRBALTOROSP_BLACK_WHITE_-1.jpg",
-            "title": "NIKE AIR BALTORO  STÜSSY SP \"BLACK/WHITE\"",
-            "description": "",
-            "release_date": "10.17",
-            "price": "155",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-baltoro-sp-blackwhite"
-          }
-        },
-        "release_card_4YtNad": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AJ1HIFIR-1.jpg",
-            "title": "WOMEN'S AIR JORDAN 1 RETRO HIGH OG “PRO GREEN”",
-            "description": "",
-            "release_date": "10.18",
-            "price": "185",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-air-jordan-1-retro-high-og-pro-green"
-          }
-        },
         "release_card_EXcbkA": {
           "type": "release-card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/GRATEFULDEADXAIRMAX90-1.jpg",
             "title": "GRATEFUL DEAD x UNIVERSITY OF OREGON x NIKE AIR MAX 90",
@@ -132,22 +126,43 @@
         },
         "release_card_ibVcYn": {
           "type": "release-card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/STEFONDIGGSXGEL-DSTRAINER14_WHITE_BLACK_-1_7a27c952-271e-4c45-aa1d-9d7167c5ee4a.jpg",
-            "title": "ASICS X STEFON DIGGS GEL-DS TRAINER 14 \"WHITE/BLACK\"",
+            "image": "shopify://shop_images/AF1HOUSEFLIES-1.jpg",
+            "title": "NIKE AIR FORCE 1 RETRO \"HOUSEFLIES\"",
             "description": "",
-            "release_date": "10.11",
-            "price": "160",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/asics-x-stefon-diggs-gel-ds-trainer-14-whiteblack"
+            "release_date": "10.24",
+            "price": "130",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-force-1-retro-houseflies"
+          }
+        },
+        "release_card_4YtNad": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/AJ3REALTREE-1.jpg",
+            "title": "AIR JORDAN 3 RETRO \"REAL TREE\"",
+            "description": "",
+            "release_date": "10.25",
+            "price": "215",
+            "release_url": "https://socialstatuspgh.runfair.com/us/air-jordan-3-retro-real-tree"
+          }
+        },
+        "release_card_zQXXgz": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/AE2BLUEFUSION-1_c322dc55-a138-41a8-9e8c-f2ac4c1bbf02.jpg",
+            "title": "ANTHONY EDWARDS 2 BLUE FUSION",
+            "description": "",
+            "release_date": "10.25",
+            "price": "130",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/anthony-edwards-2-blue-fusion"
           }
         }
       },
       "block_order": [
-        "release_card_zQXXgz",
-        "release_card_4YtNad",
         "release_card_EXcbkA",
-        "release_card_ibVcYn"
+        "release_card_ibVcYn",
+        "release_card_4YtNad",
+        "release_card_zQXXgz"
       ],
       "settings": {
         "title": "Releases",
@@ -189,7 +204,7 @@
         "button_G7EXPM": {
           "type": "button",
           "settings": {
-            "button_label": "shop",
+            "button_label": "SHOP NOW",
             "button_link": "shopify://collections/supervsn"
           }
         }
@@ -213,7 +228,7 @@
         "slide_azUp4a": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/OUTERWEARSS.png",
+            "image": "shopify://shop_images/CARHARTT.png",
             "slide_text": "OUTERWEAR",
             "link": "shopify://collections/outerwear-3"
           }
@@ -221,7 +236,7 @@
         "slide_38DjfE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/jaidedenim.jpg",
+            "image": "shopify://shop_images/WOMEN.png",
             "slide_text": "WOMEN",
             "link": "shopify://collections/womens-1"
           }
@@ -237,7 +252,7 @@
         "slide_VtQDKD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ACC_SS_59c6c6f2-3b5f-4b07-88b2-f00fe2d8db5b.jpg",
+            "image": "shopify://shop_images/ACC1.png",
             "slide_text": "ACCESSORIES",
             "link": "shopify://collections/accessories-1"
           }
@@ -245,7 +260,7 @@
         "slide_3bbgCr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/TSHIRTSSS.png",
+            "image": "shopify://shop_images/SUPERVSNTEES.png",
             "slide_text": "T-SHIRTS",
             "link": "shopify://collections/t-shirts-2"
           }
@@ -253,7 +268,7 @@
         "slide_VfcA8p": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/HOODSSS.png",
+            "image": "shopify://shop_images/HOODIES3.png",
             "slide_text": "HOODIES",
             "link": "shopify://collections/hoodies-and-sweatshirts"
           }
@@ -510,7 +525,7 @@
       ],
       "name": "Image Text Column",
       "settings": {
-        "image": "shopify://shop_images/image_84.png",
+        "image": "shopify://shop_images/BESOCIAL1.png",
         "image_position": "right",
         "padding_top": 60,
         "padding_bottom": 0,

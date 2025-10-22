@@ -8,7 +8,7 @@
     class="site-box box--big lap--box--small-fl-auto box__heading box--typo-big box--center-align box--top-align-if-first box--column-flow
      
     " data-order="0" 
-    {% if section.settings.title == blank and section.settings.btn_label == blank and section.settings.bg_img == blank %} style="display: none;" {% endif %}
+    {% if section.settings.title == blank and section.settings.btn_label == blank and section.settings.bg_img == blank and section.settings.bg_video == blank %} style="display: none;" {% endif %}
     >
 
     <div class="site-box-content reduce-top-margin-if-first">
@@ -30,24 +30,47 @@
       </div>
     </div>
 
-    {%- unless section.settings.bg_img == blank -%}  
+    {%- unless section.settings.bg_img == blank and section.settings.bg_video == blank -%}  
 
       <span class="site-box-background {% if section.settings.bg_overlay %} with-image {% endif %}">
 
-        {%- liquid
-          if section.index == 1
-            assign preload = true
-          else
-            assign preload = false
-          endif
-        -%}
+        {%- if section.settings.bg_img != blank -%}
+          {%- liquid
+            if section.index == 1
+              assign preload = true
+            else
+              assign preload = false
+            endif
+          -%}
 
-        {%- liquid
-          render 'lazy-image', image: section.settings.bg_img, id: section.id, sizes: '(max-width: 1024px) and (orientation: portrait) max(100vw, 60vh), (max-width: 768px) max(100vw, 60vh), max(50vw, 100vh)', image_alignment: true, preload: preload
-          if settings.show_preloader and section.settings.title == blank
-            render 'preloader'
-          endif
-        -%}
+          {%- liquid
+            render 'lazy-image', image: section.settings.bg_img, id: section.id, sizes: '(max-width: 1024px) and (orientation: portrait) max(100vw, 60vh), (max-width: 768px) max(100vw, 60vh), max(50vw, 100vh)', image_alignment: true, preload: preload
+            if settings.show_preloader and section.settings.title == blank
+              render 'preloader'
+            endif
+          -%}
+
+        {%- elsif section.settings.bg_video != blank -%}
+          <video 
+            class="site-box-background-video"
+            {% if section.settings.video_autoplay %}autoplay{% endif %}
+            {% if section.settings.video_muted %}muted{% endif %}
+            {% if section.settings.video_loop %}loop{% endif %}
+            {% if section.settings.video_controls %}controls{% endif %}
+            playsinline
+            style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"
+          >
+            {% for source in section.settings.bg_video.sources %}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {% endfor %}
+            Your browser does not support the video tag.
+          </video>
+
+          {%- if settings.show_preloader and section.settings.title == blank -%}
+            {%- render 'preloader' -%}
+          {%- endif -%}
+
+        {%- endif -%}
 
       </span> 
 
@@ -57,7 +80,7 @@
 
   {%- if section.blocks.size > 0 -%}
 
-    <div class="site-box box--big lap--box--bigger box__text box--typo-big box--center-align box--column-flow" data-order="1" {% if section.settings.title == blank and section.settings.btn_label == blank and section.settings.bg_img == blank %} style="width: 100% !important; height: auto !important; min-height: 0 !important;" {% endif %}>
+    <div class="site-box box--big lap--box--bigger box__text box--typo-big box--center-align box--column-flow" data-order="1" {% if section.settings.title == blank and section.settings.btn_label == blank and section.settings.bg_img == blank and section.settings.bg_video == blank %} style="width: 100% !important; height: auto !important; min-height: 0 !important;" {% endif %}>
 
         <div class="site-box-content">
 
@@ -117,6 +140,40 @@
         "type": "image_picker",
         "id": "bg_img",
         "label": "t:sections.image-with-text.blocks.image.settings.image.label"
+      },
+      {
+        "type": "video",
+        "id": "bg_video",
+        "label": "Background Video",
+        "info": "Video will be shown if no background image is set"
+      },
+      {
+        "type": "checkbox",
+        "id": "video_autoplay",
+        "label": "Autoplay Video",
+        "default": true,
+        "info": "Video will play automatically when page loads"
+      },
+      {
+        "type": "checkbox",
+        "id": "video_muted",
+        "label": "Mute Video",
+        "default": true,
+        "info": "Video will be muted by default (required for autoplay in most browsers)"
+      },
+      {
+        "type": "checkbox",
+        "id": "video_loop",
+        "label": "Loop Video",
+        "default": true,
+        "info": "Video will repeat continuously"
+      },
+      {
+        "type": "checkbox",
+        "id": "video_controls",
+        "label": "Show Video Controls",
+        "default": false,
+        "info": "Display play/pause and other video controls"
       },
       {
         "type": "select",

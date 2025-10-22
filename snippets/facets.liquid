@@ -95,6 +95,38 @@
 
                       {%- when 'boolean' or 'list' -%}
 
+                        {%- liquid
+                          assign is_brand_filter = false
+                          assign should_hide_filter = false
+                          
+                          if filter.param_name contains 'vendor' or filter.label contains 'Brand' or filter.label contains 'brand' or filter.label contains 'Vendor' or filter.label contains 'vendor'
+                            assign is_brand_filter = true
+                          endif
+                          
+                          if is_brand_filter
+                            if filter.values.size == 1
+                              assign single_brand = filter.values.first.label
+                              
+                              assign collection_brand = ''
+                              if collection.current_vendor
+                                assign collection_brand = collection.current_vendor
+                              else
+                                assign collection_title_lower = collection.title | downcase
+                                assign single_brand_lower = single_brand | downcase
+                                
+                                if collection_title_lower contains single_brand_lower
+                                  assign collection_brand = single_brand
+                                endif
+                              endif
+                              
+                              if collection_brand != blank and collection_brand == single_brand
+                                assign should_hide_filter = true
+                              endif
+                            endif
+                          endif
+                        -%}
+
+                        {%- unless should_hide_filter -%}
                         <details id="Filter-{{ filter.param_name | handleize }}" class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}" {% if filter.operator == 'AND' %} data-and-operator {% endif %}>
                           <summary class="facets__summary">
                             {{ filter.label | escape }} 
@@ -114,6 +146,7 @@
 
                           </div>
                         </details>
+                        {%- endunless -%}
 
                       {%- when 'price_range' -%}
 
