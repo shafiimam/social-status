@@ -16,12 +16,11 @@
           "type": "slide",
           "settings": {
             "tagline": "",
-            "title": "TOM WOOD JEWELRY",
-            "subtitle": "NEW NECKLACES AND RINGS",
+            "title": "VOWELS",
+            "subtitle": "NOW AVAILABLE",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/tom-wood",
-            "image": "shopify://shop_images/TOMWOODWEB2.png",
-            "mobile_image": "shopify://shop_images/TOMMOB2.png",
+            "button_link": "shopify://collections/vowels",
+            "image": "shopify://shop_images/DSC04332_BRENDEN.MOTLEY.jpg",
             "seo_h_tag": "h2"
           }
         },
@@ -29,12 +28,12 @@
           "type": "slide",
           "settings": {
             "tagline": "",
-            "title": "NIKE AIR MAX 95 \"YARDRUNNERS\"",
-            "subtitle": "AVAILABLE NOW",
+            "title": "HOME + LIFESTYLE",
+            "subtitle": "EXPLORE HOME DECOR",
             "button_label": "shop now",
-            "button_link": "shopify://collections/nike",
-            "image": "shopify://shop_images/YARDRUNNER10.png",
-            "mobile_image": "shopify://shop_images/YARDRUNNERS_COLLECTION_MOB.png",
+            "button_link": "shopify://collections/home-goods",
+            "image": "shopify://shop_images/WHITEJORDANBOOK.png",
+            "mobile_image": "shopify://shop_images/WHITEJORDANBOOK.png",
             "seo_h_tag": "h3"
           }
         },
@@ -50,6 +49,19 @@
             "seo_h_tag": "h2"
           }
         },
+        "slide_7HQxKf": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "FALL STYLE GUIDE",
+            "subtitle": "SHOP FAVORITES & MORE",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/fall-lookbook",
+            "image": "shopify://shop_images/VOWELS.2_men.png",
+            "mobile_image": "shopify://shop_images/VOWELS._BROWN_SWEATER.png",
+            "seo_h_tag": "h2"
+          }
+        },
         "slide_KKyCMi": {
           "type": "slide",
           "disabled": true,
@@ -62,27 +74,14 @@
             "image": "shopify://shop_images/DSC02173_BM_1.jpg",
             "seo_h_tag": "h2"
           }
-        },
-        "slide_7HQxKf": {
-          "type": "slide",
-          "settings": {
-            "tagline": "Crisp Air. Bold Threads. Streetwear Essentials.",
-            "title": "FALL STYLE GUIDE",
-            "subtitle": "Shop Favorites and More",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/jacket2.png",
-            "mobile_image": "shopify://shop_images/GODSPEEDDESK2.png",
-            "seo_h_tag": "h2"
-          }
         }
       },
       "block_order": [
         "slide_qimnGd",
         "slide_DmtDT3",
         "slide_9hccPj",
-        "slide_KKyCMi",
-        "slide_7HQxKf"
+        "slide_7HQxKf",
+        "slide_KKyCMi"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -97,14 +96,14 @@
         "heading_size": "h2"
       }
     },
-    "featured_collection_YCzWJf": {
+    "featured_collection_74ekAh": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "TOM WOOD",
+        "title": "FEAR OF GOD ESSENTIALS",
         "subtitle": "Shop Now",
-        "collection": "tom-wood",
-        "collection_rows": 3,
+        "collection": "fear-of-god-essentials",
+        "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2"
       }
@@ -127,42 +126,42 @@
         "release_card_ibVcYn": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AF1HOUSEFLIES-1.jpg",
-            "title": "NIKE AIR FORCE 1 RETRO \"HOUSEFLIES\"",
+            "image": "shopify://shop_images/AJ1XZIONLOWVOODOOALTGS-1.jpg",
+            "title": "ZION WILLIAMSON x AIR JORDAN 1 RETRO LOW OG \"VOODOO ALTERNATE\" GS",
             "description": "",
-            "release_date": "10.24",
-            "price": "130",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-force-1-retro-houseflies"
-          }
-        },
-        "release_card_4YtNad": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AJ3REALTREE-1.jpg",
-            "title": "AIR JORDAN 3 RETRO \"REAL TREE\"",
-            "description": "",
-            "release_date": "10.25",
-            "price": "215",
-            "release_url": "https://socialstatuspgh.runfair.com/us/air-jordan-3-retro-real-tree"
+            "release_date": "10.29",
+            "price": "120",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/zion-williamson-x-air-jordan-1-retro-low-og-voodoo-alternate-gs"
           }
         },
         "release_card_zQXXgz": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AE2BLUEFUSION-1_c322dc55-a138-41a8-9e8c-f2ac4c1bbf02.jpg",
-            "title": "ANTHONY EDWARDS 2 BLUE FUSION",
+            "image": "shopify://shop_images/AIRBALTORO-1.jpg",
+            "title": "NIAIR BALTORO \"BRIGHT SPRUCE/KUMQUAT\"",
             "description": "",
-            "release_date": "10.25",
-            "price": "130",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/anthony-edwards-2-blue-fusion"
+            "release_date": "11.01",
+            "price": "145",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-baltoro"
+          }
+        },
+        "release_card_4YtNad": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/AJ4COZYGIRL-1.jpg",
+            "title": "WOMEN'S AIR JORDAN 4 “COZY GIRL”",
+            "description": "",
+            "release_date": "11.01",
+            "price": "220",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-air-jordan-4-cozy-girl"
           }
         }
       },
       "block_order": [
         "release_card_EXcbkA",
         "release_card_ibVcYn",
-        "release_card_4YtNad",
-        "release_card_zQXXgz"
+        "release_card_zQXXgz",
+        "release_card_4YtNad"
       ],
       "settings": {
         "title": "Releases",
@@ -190,14 +189,26 @@
         ]
       }
     },
+    "featured_collection_YCzWJf": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "FOOTWEAR",
+        "subtitle": "Shop Now",
+        "collection": "footwear",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2"
+      }
+    },
     "video_background_eCcVXP": {
       "type": "video-background",
       "blocks": {
         "heading_Ha3kN8": {
           "type": "heading",
           "settings": {
-            "heading": "SUPERVSN",
-            "heading_size": "h2",
+            "heading": "VOWELS",
+            "heading_size": "h1",
             "seo_h_tag": "span"
           }
         },
@@ -205,7 +216,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/supervsn"
+            "button_link": "shopify://collections/vowels"
           }
         }
       },
@@ -215,11 +226,65 @@
       ],
       "name": "t:sections.video-background.name",
       "settings": {
-        "video_object": "shopify://files/videos/SUPERVSN.mp4",
+        "video_object": "shopify://files/videos/3x4 cut 1.mov",
         "video_height": "var(--window-height)",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
         "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "featured_product_yq8epL": {
+      "type": "featured-product",
+      "blocks": {
+        "header_pTE3Fh": {
+          "type": "header",
+          "settings": {
+            "show_vendor": true,
+            "show_badge": true,
+            "show_reviews": true,
+            "show_tax_info": false,
+            "show_sku": false,
+            "show_barcode": false,
+            "stick_product_header_on_mobile": true
+          }
+        },
+        "variant_picker_PbPTGX": {
+          "type": "variant_picker",
+          "settings": {
+            "variants_style": "radio",
+            "show_color_swatches": true,
+            "unavailable_variants": "show"
+          }
+        },
+        "buy_buttons_xrRqnJ": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_preorder": false,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description_KdpbUJ": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "header_pTE3Fh",
+        "variant_picker_PbPTGX",
+        "buy_buttons_xrRqnJ",
+        "description_KdpbUJ"
+      ],
+      "disabled": true,
+      "name": "t:sections.featured-product.name",
+      "settings": {
+        "product": "assouline-air-jordan-classic-book-white",
+        "gallery_style": "slider",
+        "gallery_aspect": false,
+        "gallery_pagination": "dots",
+        "enable_zoom": true,
+        "enable_video_looping": false
       }
     },
     "rotating_slider_7yhr3n": {
@@ -297,19 +362,19 @@
         "product_KJNpDX": {
           "type": "product",
           "settings": {
-            "product": "godspeed-ny-checkmate-ls-tee-black"
+            "product": "vowels-cable-knit-zip-up-green"
           }
         },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
-            "product": "godspeed-ny-og-logo-sweatpant-v2-navy-red"
+            "product": "vowels-floral-embroidered-tee-white"
           }
         },
         "product_qFEUPt": {
           "type": "product",
           "settings": {
-            "product": "godspeed-ny-blk-forever-hat"
+            "product": "vowels-og-fit-denim-blue"
           }
         }
       },
@@ -320,7 +385,7 @@
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/SSGODSPEEDSTLF.png",
+        "image": "shopify://shop_images/VOWELS.GREEN_SWEATER.png",
         "desktop_image_positioning": "image-on-left"
       }
     },
@@ -715,14 +780,55 @@
         "instafeed_app_block_Lm4dJE"
       ],
       "settings": {}
+    },
+    "rich_text_ekPAek": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bJaM7A": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_qaqnyP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bJaM7A",
+        "text_qaqnyP"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "bg_video": "shopify://files/videos/FRFR WEB.mov",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
     }
   },
   "order": [
     "split_screen_slider_R3zQCG",
-    "featured_collection_YCzWJf",
+    "featured_collection_74ekAh",
     "releases_pHU7Rr",
     "product_masonry_Fnqqrw",
+    "featured_collection_YCzWJf",
     "video_background_eCcVXP",
+    "featured_product_yq8epL",
     "rotating_slider_7yhr3n",
     "shop_the_look_yJ96E3",
     "virtual_try_on_nBhXAa",
@@ -732,6 +838,7 @@
     "floating_testimonials_KCBbUg",
     "perspective_slider_VCQ6DF",
     "custom_liquid_WyGgiH",
-    "1756838107933102fa"
+    "1756838107933102fa",
+    "rich_text_ekPAek"
   ]
 }

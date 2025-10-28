@@ -23,6 +23,13 @@
   endif 
 
 -%}
+{% if section.settings.hide_product_price  %}
+<style>
+  #section-{{ section.id }} .product-item .caption .price{
+    display: none;
+  }
+</style>
+{% endif %}
 
 <div id="section-{{ section.id }}" class="site-box-container container--fullscreen" style="border:none">
 
@@ -158,6 +165,12 @@
           }
         ],
         "default": "h2"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_product_price",
+        "label": "Hide product price",
+        "default": false
       }
     ],  
     "presets": [
