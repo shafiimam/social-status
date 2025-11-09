@@ -24,7 +24,6 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     scroll-snap-align: start;
@@ -32,10 +31,11 @@
     gap: 16px;
     padding-inline: var(--site-horizontal-padding);
     padding-block: 40px;
+    cursor: grab;
   }
   .subcollection-item a {
     height: 100%;
-    min-width: 200px;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,11 +47,70 @@
     height: 100%;
     aspect-ratio: 0.7;
     object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
   }
   .subcollection-title {
     font-size: 16px;
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.subcollections-container');
+    if (!container) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isDragging = false;
+
+    // Prevent default drag behavior on images and links
+    container.querySelectorAll('img, a').forEach(element => {
+      element.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+      });
+      element.addEventListener('click', (e) => {
+        if (isDragging) {
+          e.preventDefault();
+        }
+      });
+    });
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      isDragging = false;
+      container.style.cursor = 'grabbing';
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+      container.style.scrollSnapType = 'none';
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false;
+      container.style.cursor = 'grab';
+      container.style.scrollSnapType = 'x mandatory';
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDown = false;
+      container.style.cursor = 'grab';
+      container.style.scrollSnapType = 'x mandatory';
+      setTimeout(() => {
+        isDragging = false;
+      }, 10);
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      isDragging = true;
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      container.scrollLeft = scrollLeft - walk;
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Subcollection Navigation",

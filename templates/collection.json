@@ -9,6 +9,11 @@
  */
 {
   "sections": {
+    "subcollection_nav_7VWFei": {
+      "type": "subcollection-nav",
+      "name": "Subcollection Navigation",
+      "settings": {}
+    },
     "main": {
       "type": "main-collection",
       "blocks": {
@@ -105,6 +110,10 @@
         "title": "",
         "btn_label": "",
         "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
         "desktop_image_positioning": "image-on-left",
         "bg_overlay": false,
         "custom_background": "rgba(0,0,0,0)",
@@ -114,6 +123,7 @@
     }
   },
   "order": [
+    "subcollection_nav_7VWFei",
     "main",
     "navigation",
     "rich_text_RiUdjd"
