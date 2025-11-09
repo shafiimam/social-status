@@ -1,5 +1,11 @@
 {{ 'section-shop-the-look.css' | asset_url | stylesheet_tag }}
-
+{% if section.settings.hide_product_price  %}
+  <style>
+    #section-{{ section.id }} .product-item .caption .price{
+      display: none;
+    }
+  </style>
+  {% endif %}
 <div id="section-{{ section.id }}" class="site-box-container container--fullscreen box--can-stick"
   data-image-position="{{ section.settings.desktop_image_positioning }}"
 >
@@ -80,6 +86,12 @@
           }
         ],
         "default": "image-on-left"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_product_price",
+        "label": "Hide product price",
+        "default": false
       }
     ],
     "blocks": [

@@ -12,8 +12,36 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_KKyCMi": {
+          "type": "slide",
+          "name": "11/7 ",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "SOCIAL STATUS X NEW ERA CAPS",
+            "subtitle": "",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/social-status-1",
+            "image": "shopify://shop_images/SSHATSFINALDESK.png",
+            "mobile_image": "shopify://shop_images/SSHATS3MOBILE.png",
+            "seo_h_tag": "h1"
+          }
+        },
+        "slide_iRqVHU": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "SOCIAL STATUS X NEW ERA CAPS",
+            "subtitle": "",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/social-status-1",
+            "image": "shopify://shop_images/SS_HATS_MOBILE.png",
+            "seo_h_tag": "h2"
+          }
+        },
         "slide_qimnGd": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "VOWELS",
@@ -37,18 +65,6 @@
             "seo_h_tag": "h3"
           }
         },
-        "slide_9hccPj": {
-          "type": "slide",
-          "settings": {
-            "tagline": "",
-            "title": "GODSPEED",
-            "subtitle": "DISCOVER NEW SETS AND OUTERWEAR",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/godspeed-1",
-            "video_object": "shopify://files/videos/GodSpeed Web.mov",
-            "seo_h_tag": "h2"
-          }
-        },
         "slide_7HQxKf": {
           "type": "slide",
           "settings": {
@@ -57,31 +73,18 @@
             "subtitle": "SHOP FAVORITES & MORE",
             "button_label": "shop now",
             "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/VOWELS.2_men.png",
-            "mobile_image": "shopify://shop_images/VOWELS._BROWN_SWEATER.png",
-            "seo_h_tag": "h2"
-          }
-        },
-        "slide_KKyCMi": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "SUPERVSN",
-            "subtitle": "Shop 90's inspried West Coast pieces",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/supervsn",
-            "image": "shopify://shop_images/DSC02173_BM_1.jpg",
+            "image": "shopify://shop_images/DSC06241_BRENDEN.MOTLEY.jpg",
+            "mobile_image": "shopify://shop_images/768x900.jpg",
             "seo_h_tag": "h2"
           }
         }
       },
       "block_order": [
+        "slide_KKyCMi",
+        "slide_iRqVHU",
         "slide_qimnGd",
         "slide_DmtDT3",
-        "slide_9hccPj",
-        "slide_7HQxKf",
-        "slide_KKyCMi"
+        "slide_7HQxKf"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -96,72 +99,74 @@
         "heading_size": "h2"
       }
     },
-    "featured_collection_74ekAh": {
+    "featured_collection_YCzWJf": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "FEAR OF GOD ESSENTIALS",
+        "title": "FOOTWEAR",
         "subtitle": "Shop Now",
-        "collection": "fear-of-god-essentials",
+        "collection": "footwear",
         "collection_rows": 2,
         "show_view_all": true,
-        "seo_h_tag": "h2"
+        "seo_h_tag": "h2",
+        "hide_product_price": true
       }
     },
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
-        "release_card_EXcbkA": {
-          "type": "release-card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/GRATEFULDEADXAIRMAX90-1.jpg",
-            "title": "GRATEFUL DEAD x UNIVERSITY OF OREGON x NIKE AIR MAX 90",
-            "description": "",
-            "release_date": "10.24",
-            "price": "145",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/grateful-dead-x-university-of-oregon-x-nike-air-max-90"
-          }
-        },
-        "release_card_ibVcYn": {
+        "release_card_tzjy8N": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AJ1XZIONLOWVOODOOALTGS-1.jpg",
-            "title": "ZION WILLIAMSON x AIR JORDAN 1 RETRO LOW OG \"VOODOO ALTERNATE\" GS",
+            "image": "shopify://shop_images/AJ11PEARL-1.jpg",
+            "title": "WOMEN'S AIR JORDAN 11 RETRO \"PEARL\"",
             "description": "",
-            "release_date": "10.29",
-            "price": "120",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/zion-williamson-x-air-jordan-1-retro-low-og-voodoo-alternate-gs"
+            "release_date": "11.11",
+            "price": "235",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-air-jordan-11-retro-pearl"
           }
         },
         "release_card_zQXXgz": {
           "type": "release-card",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/AIRBALTORO-1.jpg",
-            "title": "NIAIR BALTORO \"BRIGHT SPRUCE/KUMQUAT\"",
+            "image": "shopify://shop_images/AJ12TAXI-1.jpg",
+            "title": "AIR JORDAN 12 RETRO \"TAXI\"",
             "description": "",
-            "release_date": "11.01",
-            "price": "145",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-baltoro"
+            "release_date": "11.08",
+            "price": "215",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-12-retro-taxi"
           }
         },
-        "release_card_4YtNad": {
+        "release_card_ibVcYn": {
+          "type": "release-card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/AJ12TAXIGS-1.jpg",
+            "title": "AIR JORDAN 12 RETRO \"TAXI\" GS",
+            "description": "",
+            "release_date": "11.08",
+            "price": "160",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-12-retro-taxi-gs"
+          }
+        },
+        "release_card_wi7AmF": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AJ4COZYGIRL-1.jpg",
-            "title": "WOMEN'S AIR JORDAN 4 “COZY GIRL”",
+            "image": "shopify://shop_images/AF1JAMORANTYELLOW-1.jpg",
+            "title": "NIKE AIR FORCE 1 '07 \"JA MORANT\"",
             "description": "",
-            "release_date": "11.01",
-            "price": "220",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-air-jordan-4-cozy-girl"
+            "release_date": "11.14",
+            "price": "125",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-force-1-07-ja-morant"
           }
         }
       },
       "block_order": [
-        "release_card_EXcbkA",
-        "release_card_ibVcYn",
+        "release_card_tzjy8N",
         "release_card_zQXXgz",
-        "release_card_4YtNad"
+        "release_card_ibVcYn",
+        "release_card_wi7AmF"
       ],
       "settings": {
         "title": "Releases",
@@ -189,16 +194,51 @@
         ]
       }
     },
-    "featured_collection_YCzWJf": {
+    "featured_collection_74ekAh": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "FOOTWEAR",
+        "title": "A BATHING APE",
         "subtitle": "Shop Now",
-        "collection": "footwear",
+        "collection": "a-bathing-ape",
         "collection_rows": 2,
         "show_view_all": true,
-        "seo_h_tag": "h2"
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "shop_the_look_yJ96E3": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_KJNpDX": {
+          "type": "product",
+          "settings": {
+            "product": "social-status-new-era-2008-pine-need-snapback-green-blue"
+          }
+        },
+        "product_7Fz9xj": {
+          "type": "product",
+          "settings": {
+            "product": "honor-the-gift-oil-hoodie-black"
+          }
+        },
+        "product_qFEUPt": {
+          "type": "product",
+          "settings": {
+            "product": "honor-the-gift-oil-sweatpant-black"
+          }
+        }
+      },
+      "block_order": [
+        "product_KJNpDX",
+        "product_7Fz9xj",
+        "product_qFEUPt"
+      ],
+      "name": "t:sections.shop-the-look.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DSC06362_BRENDEN.MOTLEY.jpg",
+        "desktop_image_positioning": "image-on-left",
+        "hide_product_price": true
       }
     },
     "video_background_eCcVXP": {
@@ -224,6 +264,7 @@
         "heading_Ha3kN8",
         "button_G7EXPM"
       ],
+      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/3x4 cut 1.mov",
@@ -356,37 +397,83 @@
         "padding_bottom": 60
       }
     },
-    "shop_the_look_yJ96E3": {
-      "type": "shop-the-look",
+    "heading_KjpKfp": {
+      "type": "heading",
       "blocks": {
-        "product_KJNpDX": {
-          "type": "product",
+        "heading_kcE6L4": {
+          "type": "heading",
           "settings": {
-            "product": "vowels-cable-knit-zip-up-green"
+            "heading": "TEAM PICKS @ SOCIAL STATUS  GREENSBORO",
+            "heading_size": "h2",
+            "seo_h_tag": "h2"
           }
         },
-        "product_7Fz9xj": {
-          "type": "product",
+        "text_RictDL": {
+          "type": "text",
+          "disabled": true,
           "settings": {
-            "product": "vowels-floral-embroidered-tee-white"
+            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
           }
         },
-        "product_qFEUPt": {
-          "type": "product",
+        "button_xgG68q": {
+          "type": "button",
           "settings": {
-            "product": "vowels-og-fit-denim-blue"
+            "button_label": "SHOP LOCATION",
+            "button_link": "shopify://pages/social-status-greensboro"
           }
         }
       },
       "block_order": [
-        "product_KJNpDX",
-        "product_7Fz9xj",
-        "product_qFEUPt"
+        "heading_kcE6L4",
+        "text_RictDL",
+        "button_xgG68q"
+      ],
+      "name": "t:sections.heading.name",
+      "settings": {
+        "text_alignment": "center",
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)"
+      }
+    },
+    "shop_the_look_CQnRNW": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_7ijGBz": {
+          "type": "product",
+          "settings": {
+            "product": "honor-the-gift-beaded-cardigan-black"
+          }
+        },
+        "product_B6qGyQ": {
+          "type": "product",
+          "settings": {
+            "product": "honor-the-gift-art-that-reflects-tee-off-white"
+          }
+        },
+        "product_zdwtcN": {
+          "type": "product",
+          "settings": {
+            "product": "social-status-new-era-2008-snapback-black-purple"
+          }
+        },
+        "product_AVfkaH": {
+          "type": "product",
+          "settings": {
+            "product": "carhartt-aviation-pant-1"
+          }
+        }
+      },
+      "block_order": [
+        "product_7ijGBz",
+        "product_B6qGyQ",
+        "product_zdwtcN",
+        "product_AVfkaH"
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/VOWELS.GREEN_SWEATER.png",
-        "desktop_image_positioning": "image-on-left"
+        "image": "shopify://shop_images/SSGSO.HP1.jpg",
+        "desktop_image_positioning": "image-on-left",
+        "hide_product_price": true
       }
     },
     "virtual_try_on_nBhXAa": {
@@ -823,14 +910,16 @@
   },
   "order": [
     "split_screen_slider_R3zQCG",
-    "featured_collection_74ekAh",
+    "featured_collection_YCzWJf",
     "releases_pHU7Rr",
     "product_masonry_Fnqqrw",
-    "featured_collection_YCzWJf",
+    "featured_collection_74ekAh",
+    "shop_the_look_yJ96E3",
     "video_background_eCcVXP",
     "featured_product_yq8epL",
     "rotating_slider_7yhr3n",
-    "shop_the_look_yJ96E3",
+    "heading_KjpKfp",
+    "shop_the_look_CQnRNW",
     "virtual_try_on_nBhXAa",
     "in_store_features_events_PYU3XM",
     "latest_features_f6y9et",
