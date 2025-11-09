@@ -1,7 +1,38 @@
 {
   "article": [],
   "blog": [],
-  "collection": [],
+  "collection": [
+    {
+      "key": "seo_title",
+      "namespace": "custom",
+      "name": "SEO Title",
+      "description": "On Page Seo Title",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "seo_description",
+      "namespace": "custom",
+      "name": "SEO Description",
+      "description": "On Page Seo Description",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "subcollections",
+      "namespace": "custom",
+      "name": "subcollections",
+      "description": "",
+      "type": {
+        "name": "list.collection_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "company": [],
   "company_location": [],
   "location": [],
@@ -10,23 +41,163 @@
   "page": [],
   "product": [
     {
-      "key": "rating",
-      "namespace": "reviews",
-      "name": "Product rating",
-      "description": "Average rating from customers",
+      "key": "custom_product",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Product",
+      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
       "type": {
-        "name": "rating",
-        "category": "RATING"
+        "name": "boolean",
+        "category": "TRUE_FALSE"
       }
     },
     {
-      "key": "rating_count",
-      "namespace": "reviews",
-      "name": "Product rating count",
-      "description": "Total number of ratings from customers",
+      "key": "shoe-size",
+      "namespace": "shopify",
+      "name": "Shoe size",
+      "description": "Used to define the size of footwear, e.g. Extra large (XL), 9.5",
       "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "size",
+      "namespace": "shopify",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "footwear-material",
+      "namespace": "shopify",
+      "name": "Footwear material",
+      "description": "Specifies the type of material used in footwear, such as suede or rubber",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "fabric",
+      "namespace": "shopify",
+      "name": "Fabric",
+      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "occasion-style",
+      "namespace": "shopify",
+      "name": "Occasion style",
+      "description": "Helps categorize products based on occasion, e.g. casual, dress",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "accessory-size",
+      "namespace": "shopify",
+      "name": "Accessory size",
+      "description": "Defines the size of an accessory product, such as one size or compact",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "closure-type",
+      "namespace": "shopify",
+      "name": "Closure type",
+      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "heel-height-type",
+      "namespace": "shopify",
+      "name": "Heel height type",
+      "description": "Defines the height of a shoe's heel, such as flat or high",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "toe-style",
+      "namespace": "shopify",
+      "name": "Toe style",
+      "description": "Defines the shape or design of a shoe's toe, such as open or pointed",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sneaker-style",
+      "namespace": "shopify",
+      "name": "Sneaker style",
+      "description": "Identifies the design or type of sneakers, such as athletic or high-top",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "headwear-features",
+      "namespace": "shopify",
+      "name": "Headwear features",
+      "description": "Highlights unique features of headwear, e.g. collapsible, versatile",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     },
     {
@@ -67,96 +238,6 @@
       "type": {
         "name": "list.product_reference",
         "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "style",
-      "namespace": "custom",
-      "name": "Style",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "room",
-      "namespace": "custom",
-      "name": "Room",
-      "description": "",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "fixtures",
-      "namespace": "custom",
-      "name": "Fixture",
-      "description": "",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_product",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Product",
-      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "overview",
-      "namespace": "custom",
-      "name": "Overview",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "measurements_details",
-      "namespace": "custom",
-      "name": "Measurements & Details",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "technical_specifications",
-      "namespace": "custom",
-      "name": "Technical Specifications",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "highlights",
-      "namespace": "custom",
-      "name": "Highlights",
-      "description": "",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "campaigns",
-      "namespace": "intelligems",
-      "name": "ProductMetafields",
-      "description": "Metafields configuring product inclusion for offers",
-      "type": {
-        "name": "json",
-        "category": "JSON"
       }
     }
   ],
@@ -272,26 +353,15 @@
       }
     },
     {
-      "key": "variationPrices",
-      "namespace": "intelligems",
-      "name": "PriceTestVariant",
-      "description": "Metafields configuring product variant prices per variation",
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
       "type": {
-        "name": "json",
-        "category": "JSON"
+        "name": "single_line_text_field",
+        "category": "TEXT"
       }
     }
   ],
-  "shop": [
-    {
-      "key": "globalSettings",
-      "namespace": "intelligems",
-      "name": "GlobalSettings",
-      "description": "Global settings for Intelligems features",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    }
-  ]
+  "shop": []
 }

@@ -1,0 +1,61 @@
+{% assign current_collection = collection %}
+{% assign sub_collections = current_collection.metafields.custom.subcollections.value %}
+<div class="subcollections-container">
+  {% for sub_collection in sub_collections %}
+   {% assign collection_image = sub_collection.featured_image | image_url: width: 400  %}
+   {% if collection_image == blank %}
+      {% assign collection_image = sub_collection.products.first.featured_media | image_url: width: 400  %}
+   {% endif %}
+    <div class="subcollection-item">
+      <a href="{{ sub_collection.url }}" class="">
+        <img
+          src="{{ collection_image }}"
+          alt="{{ sub_collection.title }}"
+          width="100"
+          height="100"
+        >
+        <span class="subcollection-title">{{ sub_collection.title }}</span>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+<style>
+  .subcollections-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    gap: 16px;
+    padding-inline: var(--site-horizontal-padding);
+    padding-block: 40px;
+  }
+  .subcollection-item a {
+    height: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .subcollection-item img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 0.7;
+    object-fit: cover;
+  }
+  .subcollection-title {
+    font-size: 16px;
+  }
+</style>
+{% schema %}
+{
+  "name": "Subcollection Navigation",
+  "settings": [],
+  "presets": [{ "name": "Subcollection Navigation" }]
+}
+{% endschema %}
