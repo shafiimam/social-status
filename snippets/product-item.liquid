@@ -9,7 +9,7 @@
 <div class="product-item style--{{ settings.product_animation }} {% if large %} lap--box--small-lg {% endif %} {% if settings.product_show_secondary and product.images.size >= 2 %} with-secondary-image {% endif %}" data-js-product-item>
 
   <a href="{{ product_url }}" title="{{ product.title | escape }}" class="product-item__special-link">{{ product.title | escape }}</a>
-
+  <span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
   <div class="box--product-image primary" style="padding-top: {{ 100 | divided_by: settings.product_card_aspect_ratio }}%">
 
     {%- liquid
