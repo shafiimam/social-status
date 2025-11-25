@@ -14,17 +14,31 @@
       "blocks": {
         "slide_KKyCMi": {
           "type": "slide",
-          "name": "11/7 ",
+          "name": "AJ6 RELEASE",
           "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "SOCIAL STATUS X NEW ERA CAPS",
-            "subtitle": "",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/social-status-1",
-            "image": "shopify://shop_images/SSHATSFINALDESK.png",
-            "mobile_image": "shopify://shop_images/SSHATS3MOBILE.png",
+            "title": "A Ma Maniére x Air Jordan 6 Retro SP \"Smoky Mauve\"",
+            "subtitle": "AVAILABLE NOW",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.a-ma-maniere.com/",
+            "image": "shopify://shop_images/DARKSSDESK.jpg",
+            "mobile_image": "shopify://shop_images/Untitled-33-Recovered.png",
             "seo_h_tag": "h1"
+          }
+        },
+        "slide_qimnGd": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "AIR JORDAN 11 H-TOWN",
+            "subtitle": "IN-STORE RAFFLE ONLY. NOVEMBER 19TH & 20TH, 1PM-6PM  AT SOCIAL STATUS HOUSTON",
+            "button_label": "HOUSTON STORE",
+            "button_link": "shopify://pages/social-status-houston",
+            "image": "shopify://shop_images/central.jpg",
+            "mobile_image": "shopify://shop_images/CENTRAL2.png",
+            "seo_h_tag": "h2"
           }
         },
         "slide_iRqVHU": {
@@ -36,19 +50,6 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/social-status-1",
             "image": "shopify://shop_images/SS_HATS_MOBILE.png",
-            "seo_h_tag": "h2"
-          }
-        },
-        "slide_qimnGd": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "VOWELS",
-            "subtitle": "NOW AVAILABLE",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/vowels",
-            "image": "shopify://shop_images/DSC04332_BRENDEN.MOTLEY.jpg",
             "seo_h_tag": "h2"
           }
         },
@@ -81,8 +82,8 @@
       },
       "block_order": [
         "slide_KKyCMi",
-        "slide_iRqVHU",
         "slide_qimnGd",
+        "slide_iRqVHU",
         "slide_DmtDT3",
         "slide_7HQxKf"
       ],
@@ -115,57 +116,45 @@
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
-        "release_card_tzjy8N": {
+        "release_card_ibVcYn": {
           "type": "release-card",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/AJ11PEARL-1.jpg",
-            "title": "WOMEN'S AIR JORDAN 11 RETRO \"PEARL\"",
+            "image": "shopify://shop_images/AJ3CHAMPAGNE-1.jpg",
+            "title": "AIR JORDAN 3 \"SAIL AND PALE IVORY",
             "description": "",
-            "release_date": "11.11",
-            "price": "235",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-air-jordan-11-retro-pearl"
+            "release_date": "11.22",
+            "price": "205",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-3-sail-and-pale-ivory"
           }
         },
         "release_card_zQXXgz": {
           "type": "release-card",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/AJ12TAXI-1.jpg",
-            "title": "AIR JORDAN 12 RETRO \"TAXI\"",
+            "image": "shopify://shop_images/HALI1POPPYPINK-1_4b54f7cf-e7b2-4b39-806d-a20b96478de0.jpg",
+            "title": "PUMA HALI I \"HIBISCUS\"",
             "description": "",
-            "release_date": "11.08",
-            "price": "215",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-12-retro-taxi"
-          }
-        },
-        "release_card_ibVcYn": {
-          "type": "release-card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/AJ12TAXIGS-1.jpg",
-            "title": "AIR JORDAN 12 RETRO \"TAXI\" GS",
-            "description": "",
-            "release_date": "11.08",
-            "price": "160",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-12-retro-taxi-gs"
+            "release_date": "11.26",
+            "price": "130",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/puma-hali-i-hibiscus"
           }
         },
         "release_card_wi7AmF": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AF1JAMORANTYELLOW-1.jpg",
-            "title": "NIKE AIR FORCE 1 '07 \"JA MORANT\"",
+            "image": "shopify://shop_images/AJ4BLACKCAT-1_1.jpg",
+            "title": "AIR JORDAN 4 \"BLACK CAT\"",
             "description": "",
-            "release_date": "11.14",
-            "price": "125",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-force-1-07-ja-morant"
+            "release_date": "11.28",
+            "price": "220",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-4-black-cat"
           }
         }
       },
       "block_order": [
-        "release_card_tzjy8N",
-        "release_card_zQXXgz",
         "release_card_ibVcYn",
+        "release_card_zQXXgz",
         "release_card_wi7AmF"
       ],
       "settings": {
@@ -403,7 +392,7 @@
         "heading_kcE6L4": {
           "type": "heading",
           "settings": {
-            "heading": "TEAM PICKS @ SOCIAL STATUS  GREENSBORO",
+            "heading": "TEAM PICKS @ SOCIAL STATUS  RALEIGH",
             "heading_size": "h2",
             "seo_h_tag": "h2"
           }
@@ -419,7 +408,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP LOCATION",
-            "button_link": "shopify://pages/social-status-greensboro"
+            "button_link": "shopify://pages/social-status-raleigh"
           }
         }
       },
@@ -441,25 +430,25 @@
         "product_7ijGBz": {
           "type": "product",
           "settings": {
-            "product": "honor-the-gift-beaded-cardigan-black"
+            "product": "jordan-brand-brooklyn-realtree-hockey-jersey-olive"
           }
         },
         "product_B6qGyQ": {
           "type": "product",
           "settings": {
-            "product": "honor-the-gift-art-that-reflects-tee-off-white"
+            "product": "jordan-brand-brooklyn-woven-realtree-pant-olive"
           }
         },
         "product_zdwtcN": {
           "type": "product",
           "settings": {
-            "product": "social-status-new-era-2008-snapback-black-purple"
+            "product": "ray-ban-a-ap-rocky-puffy-wayfarer-sunglasses-black"
           }
         },
         "product_AVfkaH": {
           "type": "product",
           "settings": {
-            "product": "carhartt-aviation-pant-1"
+            "product": "song-for-the-mute-adizero-pr-green-black-silver"
           }
         }
       },
@@ -471,7 +460,7 @@
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/SSGSO.HP1.jpg",
+        "image": "shopify://shop_images/inside.1.900x600.jpg",
         "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }

@@ -322,35 +322,3 @@ span.fina-sale-message {
 .customer-register-form-container{
   max-width: 500px;
 }
-
-span.smartwishlist {
-  position: absolute;
-  inset-block-start: .5rem;
-  inset-inline-end: .5rem;
-  z-index: 100 !important;
-}
-
-span.smartwishlist .fa {
-  font-size: 14px;
-  color: #545454;
-}
-
-a.wishlist-icon {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-span.topbadge {
-  position: absolute;
-  top: 0px;
-  right: -4px;
-  background: transparent !important;
-  color: #000 !important;
-}
-a.wishlist-icon i.fa.fa-bookmark-o{
-  font-size: 25px !important;
-}
-.wishlistpage .product .image img {
-  min-height: 300px;
-  object-fit: cover;
-}

@@ -28,7 +28,7 @@
     scroll-snap-type: x mandatory;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    gap: 16px;
+    gap: {{section.settings.spacing_card}}px;
     padding-inline: var(--site-horizontal-padding);
     padding-block: 40px;
     cursor: grab;
@@ -114,7 +114,18 @@
 {% schema %}
 {
   "name": "Subcollection Navigation",
-  "settings": [],
+  "settings": [
+    {
+      "type": "range",
+      "id": "spacing_card",
+      "label": "Collection card spacing",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    }
+  ],
   "presets": [{ "name": "Subcollection Navigation" }]
 }
 {% endschema %}
