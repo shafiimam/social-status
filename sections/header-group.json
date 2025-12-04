@@ -17,7 +17,7 @@
         "content": {
           "type": "content",
           "settings": {
-            "text": "FREE US DOMESTIC SHIPPING ONLINE. NOW THROUGH 9.22.",
+            "text": "Enjoy FREE SHIPPING On All Domestic Orders Now Until 12/10.",
             "link": "",
             "target": false
           }
@@ -26,7 +26,6 @@
       "block_order": [
         "content"
       ],
-      "disabled": true,
       "settings": {
         "visibility": "all",
         "bar_txtcolor": "#ffffff",
@@ -47,12 +46,13 @@
         "collection_linklist": "",
         "show_collection_image": false,
         "show_promotion_block": true,
-        "promotion_header": "ENTER THE IN-STORE RAFFLE FOR AIR JORDAN 11 \"285\"",
-        "promotion_content": "<p>11.19 & 11.20. 1:00PM- 6:00PM</p>",
-        "promotion_button_label": "ATLANTA STORE",
-        "promotion_button_link": "shopify://pages/social-status-atlanta",
+        "promotion_header": "",
+        "promotion_content": "",
+        "promotion_button_label": "EXPLORE",
+        "promotion_button_link": "https://www.off--season.com/",
         "promotion_color_txt": "#ffffff",
         "promotion_color_bg": "rgba(0,0,0,0)",
+        "promotion_image": "shopify://shop_images/OFFSZN-Sale_WEB.jpg",
         "show_locale_selector": true,
         "show_country_selector": true
       }

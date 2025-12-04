@@ -89,7 +89,23 @@
       >
 
         {%- for block in section.blocks -%}
+           {% if block.settings.hide_text_mobile == true %}
+            <style>
+              @media screen and (max-width: 768px){
 
+                #block-{{ block.id }} {
+                  .box__heading .site-box-content .tagline,
+                  .box__heading .site-box-content h2,
+                  .box__heading .site-box-content .subtitle{
+                      visibility: hidden !important;
+                  }
+                  .box__heading .site-box-content .button{
+                      margin-top: 150px;
+                  }
+                }
+              }
+            </style>
+          {% endif %}
           <div id="block-{{ block.id }}" {{ block.shopify_attributes }} class="slider-item">
 
             <div class="site-box box--big box--typo-big box--center-align box--top-align-if-first box--column-flow box__heading remove-border">
@@ -323,6 +339,12 @@
               }
             ],
             "default": "h2"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_text_mobile",
+            "label": "hide text in mobile",
+            "default": false
           }
         ]
       }

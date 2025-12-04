@@ -12,49 +12,53 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_KKyCMi": {
+        "slide_AKb7xE": {
           "type": "slide",
-          "name": "AJ6 RELEASE",
-          "disabled": true,
+          "name": "FREESHIPPING",
           "settings": {
             "tagline": "",
-            "title": "A Ma Maniére x Air Jordan 6 Retro SP \"Smoky Mauve\"",
-            "subtitle": "AVAILABLE NOW",
-            "button_label": "SHOP NOW",
-            "button_link": "https://www.a-ma-maniere.com/",
-            "image": "shopify://shop_images/DARKSSDESK.jpg",
-            "mobile_image": "shopify://shop_images/Untitled-33-Recovered.png",
-            "seo_h_tag": "h1"
-          }
-        },
-        "slide_qimnGd": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "AIR JORDAN 11 H-TOWN",
-            "subtitle": "IN-STORE RAFFLE ONLY. NOVEMBER 19TH & 20TH, 1PM-6PM  AT SOCIAL STATUS HOUSTON",
-            "button_label": "HOUSTON STORE",
-            "button_link": "shopify://pages/social-status-houston",
-            "image": "shopify://shop_images/central.jpg",
-            "mobile_image": "shopify://shop_images/CENTRAL2.png",
-            "seo_h_tag": "h2"
+            "title": "ENJOY COMPLIMENTARY SHIPPING ON ALL ORDERS NOW UNTIL 12.10",
+            "subtitle": "APPLIES TO DOMESTIC ORDERS ONLY",
+            "button_label": "",
+            "button_link": "shopify://collections/all",
+            "image": "shopify://shop_images/SHIPPING_SS-Website.jpg",
+            "mobile_image": "shopify://shop_images/SHIPPING_SS-Story.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": true
           }
         },
         "slide_iRqVHU": {
           "type": "slide",
+          "name": "LES TIEN",
           "settings": {
             "tagline": "",
-            "title": "SOCIAL STATUS X NEW ERA CAPS",
-            "subtitle": "",
+            "title": "LES TIEN",
+            "subtitle": "DISCOVER LEISUREWEAR STAPLES",
             "button_label": "shop now",
-            "button_link": "shopify://collections/social-status-1",
-            "image": "shopify://shop_images/SS_HATS_MOBILE.png",
-            "seo_h_tag": "h2"
+            "button_link": "shopify://collections/les-tien",
+            "video_object": "shopify://files/videos/4k No logo WEB.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_7HQxKf": {
+          "type": "slide",
+          "name": "HOLIDAY",
+          "settings": {
+            "tagline": "",
+            "title": "HOLIDAY GIFT GUIDE",
+            "subtitle": "SHOP FAVORITES & MORE",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/gifts-for-him",
+            "image": "shopify://shop_images/GIFTGUIDESS.png",
+            "mobile_image": "shopify://shop_images/GG2.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
           }
         },
         "slide_DmtDT3": {
           "type": "slide",
+          "name": "HOME GOODS",
           "settings": {
             "tagline": "",
             "title": "HOME + LIFESTYLE",
@@ -63,29 +67,16 @@
             "button_link": "shopify://collections/home-goods",
             "image": "shopify://shop_images/WHITEJORDANBOOK.png",
             "mobile_image": "shopify://shop_images/WHITEJORDANBOOK.png",
-            "seo_h_tag": "h3"
-          }
-        },
-        "slide_7HQxKf": {
-          "type": "slide",
-          "settings": {
-            "tagline": "",
-            "title": "FALL STYLE GUIDE",
-            "subtitle": "SHOP FAVORITES & MORE",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/fall-lookbook",
-            "image": "shopify://shop_images/DSC06241_BRENDEN.MOTLEY.jpg",
-            "mobile_image": "shopify://shop_images/768x900.jpg",
-            "seo_h_tag": "h2"
+            "seo_h_tag": "h3",
+            "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_KKyCMi",
-        "slide_qimnGd",
+        "slide_AKb7xE",
         "slide_iRqVHU",
-        "slide_DmtDT3",
-        "slide_7HQxKf"
+        "slide_7HQxKf",
+        "slide_DmtDT3"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -100,17 +91,36 @@
         "heading_size": "h2"
       }
     },
-    "featured_collection_YCzWJf": {
+    "featured_collection_74ekAh": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "FOOTWEAR",
+        "title": "NEW ARRIVALS",
         "subtitle": "Shop Now",
-        "collection": "footwear",
+        "collection": "new-arrivals-1",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
+      }
+    },
+    "product_masonry_Fnqqrw": {
+      "type": "product-masonry",
+      "disabled": true,
+      "name": "Product Masonry Gallery",
+      "settings": {
+        "title": "Shop knits",
+        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
+        "image": "shopify://shop_images/masonry-gallery-image.png",
+        "image_caption": "knits",
+        "button_label": "shop",
+        "button_link": "shopify://collections/knits-1",
+        "product_list": [
+          "home-studyos-03-planter-pierre",
+          "home-studyos-03-planter-pierre-1",
+          "human-made-6-panel-cap-3",
+          "nb-582"
+        ]
       }
     },
     "releases_pHU7Rr": {
@@ -157,6 +167,7 @@
         "release_card_zQXXgz",
         "release_card_wi7AmF"
       ],
+      "disabled": true,
       "settings": {
         "title": "Releases",
         "column_size": 3,
@@ -164,36 +175,55 @@
         "padding_bottom": 30
       }
     },
-    "product_masonry_Fnqqrw": {
-      "type": "product-masonry",
-      "disabled": true,
-      "name": "Product Masonry Gallery",
-      "settings": {
-        "title": "Shop knits",
-        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
-        "image": "shopify://shop_images/masonry-gallery-image.png",
-        "image_caption": "knits",
-        "button_label": "shop",
-        "button_link": "shopify://collections/knits-1",
-        "product_list": [
-          "home-studyos-03-planter-pierre",
-          "home-studyos-03-planter-pierre-1",
-          "human-made-6-panel-cap-3",
-          "nb-582"
-        ]
-      }
-    },
-    "featured_collection_74ekAh": {
+    "featured_collection_YCzWJf": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "A BATHING APE",
+        "title": "HOODIES & SWEATERS",
         "subtitle": "Shop Now",
-        "collection": "a-bathing-ape",
+        "collection": "hoodies-and-sweatshirts",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
+      }
+    },
+    "heading_8ewcgT": {
+      "type": "heading",
+      "blocks": {
+        "heading_3pNq48": {
+          "type": "heading",
+          "settings": {
+            "heading": "SHOP OUTERWEAR",
+            "heading_size": "h2",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_Vy4UYY": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_eVnfGU": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/outerwear-3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3pNq48",
+        "text_Vy4UYY",
+        "button_eVnfGU"
+      ],
+      "name": "t:sections.heading.name",
+      "settings": {
+        "text_alignment": "center",
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)"
       }
     },
     "shop_the_look_yJ96E3": {
@@ -202,19 +232,19 @@
         "product_KJNpDX": {
           "type": "product",
           "settings": {
-            "product": "social-status-new-era-2008-pine-need-snapback-green-blue"
+            "product": "comme-des-garcons-woven-jacket"
           }
         },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
-            "product": "honor-the-gift-oil-hoodie-black"
+            "product": "awake-ny-alpha-m1-jacket-teal"
           }
         },
         "product_qFEUPt": {
           "type": "product",
           "settings": {
-            "product": "honor-the-gift-oil-sweatpant-black"
+            "product": "nike-stussy-jacket-multi"
           }
         }
       },
@@ -225,7 +255,7 @@
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/DSC06362_BRENDEN.MOTLEY.jpg",
+        "image": "shopify://shop_images/HQ8520-900_front.jpg",
         "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }
@@ -256,7 +286,6 @@
       "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
-        "video_object": "shopify://files/videos/3x4 cut 1.mov",
         "video_height": "var(--window-height)",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
@@ -392,7 +421,7 @@
         "heading_kcE6L4": {
           "type": "heading",
           "settings": {
-            "heading": "TEAM PICKS @ SOCIAL STATUS  RALEIGH",
+            "heading": "TEAM PICKS @ SOCIAL STATUS  TAMPA BAY",
             "heading_size": "h2",
             "seo_h_tag": "h2"
           }
@@ -408,7 +437,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP LOCATION",
-            "button_link": "shopify://pages/social-status-raleigh"
+            "button_link": "shopify://pages/social-status-tampa-bay"
           }
         }
       },
@@ -430,25 +459,25 @@
         "product_7ijGBz": {
           "type": "product",
           "settings": {
-            "product": "jordan-brand-brooklyn-realtree-hockey-jersey-olive"
+            "product": "rhude-thousand-palms-tee-white-black"
           }
         },
         "product_B6qGyQ": {
           "type": "product",
           "settings": {
-            "product": "jordan-brand-brooklyn-woven-realtree-pant-olive"
+            "product": "carhartt-aviation-pant"
           }
         },
         "product_zdwtcN": {
           "type": "product",
           "settings": {
-            "product": "ray-ban-a-ap-rocky-puffy-wayfarer-sunglasses-black"
+            "product": "a-bathing-ape-abc-camo-tote-bag"
           }
         },
         "product_AVfkaH": {
           "type": "product",
           "settings": {
-            "product": "song-for-the-mute-adizero-pr-green-black-silver"
+            "product": "vomero-plus-2"
           }
         }
       },
@@ -460,8 +489,8 @@
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/inside.1.900x600.jpg",
-        "desktop_image_positioning": "image-on-left",
+        "image": "shopify://shop_images/SStampa_8046e470-1b4d-4065-8afb-931d369e7f6e.jpg",
+        "desktop_image_positioning": "image-on-right",
         "hide_product_price": true
       }
     },
@@ -884,7 +913,6 @@
         "title": "",
         "btn_label": "",
         "btn_url": "",
-        "bg_video": "shopify://files/videos/FRFR WEB.mov",
         "video_autoplay": true,
         "video_muted": true,
         "video_loop": true,
@@ -899,10 +927,11 @@
   },
   "order": [
     "split_screen_slider_R3zQCG",
-    "featured_collection_YCzWJf",
-    "releases_pHU7Rr",
-    "product_masonry_Fnqqrw",
     "featured_collection_74ekAh",
+    "product_masonry_Fnqqrw",
+    "releases_pHU7Rr",
+    "featured_collection_YCzWJf",
+    "heading_8ewcgT",
     "shop_the_look_yJ96E3",
     "video_background_eCcVXP",
     "featured_product_yq8epL",

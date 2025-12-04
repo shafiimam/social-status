@@ -5,7 +5,7 @@
   data-video-loop="{{ section.settings.video_loop | default: true }}"
 >
   {%- for block in section.blocks -%}
-    <div class="hero-slide" {{ block.shopify_attributes }}>
+    <div  class="hero-slide" {{ block.shopify_attributes }}>
       {% assign has_desktop_video = false %}
       {% assign has_mobile_video = false %}
       {% assign has_any_video = false %}
@@ -131,6 +131,7 @@
         {%- endif -%}
       </div>
     </div>
+   
   {%- endfor -%}
 </div>
 {{ 'section-hero-slideshow.css' | asset_url | stylesheet_tag }}
