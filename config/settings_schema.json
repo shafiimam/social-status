@@ -458,6 +458,42 @@
 				"id": "product_card_badge_sale_text_color",
 				"label": "t:sections.refactor_words.product-card.badges.sold_out.sale_text",
 				"default": "#ffffff"
+			},
+			{
+				"type": "header",
+				"content": "Custom Tag Badge"
+			},
+			{
+				"type": "checkbox",
+				"id": "product_card_custom_tag_badge_enabled",
+				"label": "Enable custom tag badge",
+				"default": false,
+				"info": "Show a badge on products that don't have a specific tag"
+			},
+			{
+				"type": "text",
+				"id": "product_card_custom_tag_badge_exclude_tag",
+				"label": "Exclude tag",
+				"default": "nosale",
+				"info": "Products without this tag will show the badge"
+			},
+			{
+				"type": "text",
+				"id": "product_card_custom_tag_badge_text",
+				"label": "Badge text",
+				"default": "BLACKFRIDAY"
+			},
+			{
+				"type": "color",
+				"id": "product_card_custom_tag_badge_background_color",
+				"label": "Badge background color",
+				"default": "#000000"
+			},
+			{
+				"type": "color",
+				"id": "product_card_custom_tag_badge_text_color",
+				"label": "Badge text color",
+				"default": "#ffffff"
 			}
     ]
   },

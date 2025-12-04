@@ -69,4 +69,21 @@
 		><span>{{ 'products.grid.new_product' | t }}</span></div>
 	{%- endif -%}
 
+	{%- if settings.product_card_custom_tag_badge_enabled -%}
+		{%- assign exclude_tag = settings.product_card_custom_tag_badge_exclude_tag | downcase | strip -%}
+		{%- assign has_exclude_tag = false -%}
+		{%- for tag in product.tags -%}
+			{%- assign tag_downcase = tag | downcase | strip -%}
+			{%- if tag_downcase == exclude_tag -%}
+				{%- assign has_exclude_tag = true -%}
+				{%- break -%}
+			{%- endif -%}
+		{%- endfor -%}
+		{%- unless has_exclude_tag -%}
+			<div class="product-badge product-badge__custom-tag text-size--smaller"
+				style="background-color: {{ settings.product_card_custom_tag_badge_background_color }}; color: {{ settings.product_card_custom_tag_badge_text_color }}"
+			><span>{{ settings.product_card_custom_tag_badge_text }}</span></div>
+		{%- endunless -%}
+	{%- endif -%}
+
 </div>

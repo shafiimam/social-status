@@ -1,108 +1,13 @@
 {
-  "article": [
-    {
-      "key": "event_date_time",
-      "namespace": "custom",
-      "name": "event_date_time",
-      "description": "",
-      "type": {
-        "name": "date_time",
-        "category": "DATE_TIME"
-      }
-    },
-    {
-      "key": "event_location",
-      "namespace": "custom",
-      "name": "event location",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "lookbook_article",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this article",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "event_trigger_id",
-      "namespace": "custom",
-      "name": "event id",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
-  "blog": [
-    {
-      "key": "lookbook_blog",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this blog",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
-  "collection": [
-    {
-      "key": "lookbook_collection",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this collection",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "subcollections",
-      "namespace": "custom",
-      "name": "subcollections",
-      "description": "",
-      "type": {
-        "name": "list.collection_reference",
-        "category": "REFERENCE"
-      }
-    }
-  ],
+  "article": [],
+  "blog": [],
+  "collection": [],
   "company": [],
   "company_location": [],
   "location": [],
-  "market": [
-    {
-      "key": "lookbook_market_e64770f7-8079-4fd7-acd3-ffea6ebb3d3e",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook My Lookbook",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "market": [],
   "order": [],
-  "page": [
-    {
-      "key": "lookbook_page",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this page",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "page": [],
   "product": [
     {
       "key": "custom_product",
@@ -115,172 +20,132 @@
       }
     },
     {
-      "key": "shoe-size",
+      "key": "color-pattern",
       "namespace": "shopify",
-      "name": "Shoe size",
-      "description": "Used to define the size of footwear, e.g. Extra large (XL), 9.5",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "size",
+      "key": "age-group",
       "namespace": "shopify",
-      "name": "Size",
-      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "taxcode",
-      "namespace": "avalara",
-      "name": "Avalara Tax Code",
-      "description": "Used only for Avalara integration.",
+      "key": "coffee-roast",
+      "namespace": "shopify",
+      "name": "Coffee roast",
+      "description": "Defines the roast level of coffee products, e.g. light, medium, dark",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "queries",
-      "namespace": "shopify--discovery--product_search_boost",
-      "name": "Search product boosts",
-      "description": "List of search queries for which a product gets higher rank in search results",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "related_products",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Related products",
-      "description": "List of related products",
-      "type": {
-        "name": "list.product_reference",
+        "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "related_products_display",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Related products settings",
-      "description": "Determines how related products are displayed along with algorithmic product recommendations",
+      "key": "flavor",
+      "namespace": "shopify",
+      "name": "Flavor",
+      "description": "Specifies the taste or flavor of a product, e.g. vanilla, mint",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "complementary_products",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Complementary products",
-      "description": "List of complementary products",
-      "type": {
-        "name": "list.product_reference",
+        "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "lookbook_product",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this product",
+      "key": "country",
+      "namespace": "shopify",
+      "name": "Country",
+      "description": "Specifies the country associated with the product, such as Japan or Germany",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
+      "type": {
+        "name": "rating",
+        "category": "RATING"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "dietary-preferences",
+      "namespace": "shopify",
+      "name": "Dietary preferences",
+      "description": "Helps identify products suitable for specific diets, e.g. vegan, nut free",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "mini_images",
+      "namespace": "foursixty",
+      "name": "Foursixty Shop Mini Product Images",
+      "description": null,
+      "type": {
+        "name": "list.file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "mini_available",
+      "namespace": "foursixty",
+      "name": "Show Foursixty Product Mini",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "coffee-product-form",
+      "namespace": "shopify",
+      "name": "Coffee product form",
+      "description": "Specifies the type of coffee product, such as ground or beans",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "caffeine-content",
+      "namespace": "shopify",
+      "name": "Caffeine content",
+      "description": "Indicates the amount of caffeine present in a product, e.g. decaffeinated, low caffeine",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     }
   ],
   "variant": [
     {
-      "key": "custom_label_4",
+      "key": "age_group",
       "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_3",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_2",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_1",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_0",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_system",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Size System",
-      "description": "The country of the size system used by your product.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_type",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Size Type",
-      "description": "Your apparel product’s cut.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "mpn",
-      "namespace": "mm-google-shopping",
-      "name": "Google: MPN",
-      "description": "Your product’s Manufacturer Part Number (MPN).",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "gender",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Gender",
-      "description": "The gender for which your product is intended.",
+      "name": "Google: Age Group",
+      "description": "The demographic for which your product is intended.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -297,25 +162,116 @@
       }
     },
     {
-      "key": "age_group",
+      "key": "gender",
       "namespace": "mm-google-shopping",
-      "name": "Google: Age Group",
-      "description": "The demographic for which your product is intended.",
+      "name": "Google: Gender",
+      "description": "The gender for which your product is intended.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "taxcode",
-      "namespace": "avalara",
-      "name": "Avalara Tax Code",
-      "description": "Used only for Avalara integration.",
+      "key": "mpn",
+      "namespace": "mm-google-shopping",
+      "name": "Google: MPN",
+      "description": "Your product’s Manufacturer Part Number (MPN).",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_type",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Size Type",
+      "description": "Your apparel product’s cut.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_system",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Size System",
+      "description": "The country of the size system used by your product.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_0",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 0",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_1",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 1",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_2",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 2",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_3",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 3",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_4",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 4",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     }
   ],
-  "shop": []
+  "shop": [
+    {
+      "key": "mini_images",
+      "namespace": "foursixty",
+      "name": "Foursixty Shop Mini Store Images",
+      "description": null,
+      "type": {
+        "name": "list.file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "mini_available",
+      "namespace": "foursixty",
+      "name": "Show Foursixty Store Mini",
+      "description": null,
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    }
+  ]
 }
