@@ -32,11 +32,7 @@ data-sticky="{{ section.settings.menu_sticky }}">
 
             <span class="menu-promotion-title">{{ section.settings.promotion_header | escape }}</span>
             <div class="rte">{{ section.settings.promotion_content }}</div>
-            {%- if section.settings.promotion_button_label != blank -%}
-              <a class="button" href="{{ section.settings.promotion_button_link | escape }}">
-                <span class="button-scroll-in">{{ section.settings.promotion_button_label | escape }}</span>
-              </a>
-            {%- endif -%}
+            
 
             {%- unless section.settings.promotion_image == blank -%}
               <div class="site-box-background with-image">
@@ -52,7 +48,11 @@ data-sticky="{{ section.settings.menu_sticky }}">
             {%- endunless -%}
 
           </div>
-
+          {%- if section.settings.promotion_button_label != blank -%}
+            <a class="button button--solid" href="{{ section.settings.promotion_button_link | escape }}">
+              <span class="button-scroll-in">{{ section.settings.promotion_button_label | escape }}</span>
+            </a>
+          {%- endif -%}
           <style>
             {%- liquid
               assign color_text_brightness = section.settings.promotion_color_txt | color_brightness
@@ -69,8 +69,8 @@ data-sticky="{{ section.settings.menu_sticky }}">
               color: {{ section.settings.promotion_color_txt }};
             }
             #menu-promotion .button {
-              color: {{ color_text_foreground }} !important;
-              background: {{ section.settings.promotion_color_txt }} !important;
+              background;: {{ color_text_foreground }} !important;
+              color: {{ section.settings.promotion_color_txt }} !important;
             }
             {%- if section.settings.promotion_image == blank -%}
               #menu-promotion > div {

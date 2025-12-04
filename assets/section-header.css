@@ -869,7 +869,7 @@ html[dir=ltr] .site-nav form[role=search] button {
 .menu-promotion > div {
   width: 100%;
   min-height: 200px;
-  padding: 60px 25px;
+  padding-top: 60px;
   text-align: center;
   position: relative;
 }
