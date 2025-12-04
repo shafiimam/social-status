@@ -80,7 +80,6 @@
       ],
       "name": "t:sections.video-background.name",
       "settings": {
-        "video_object": "shopify://files/videos/SS Detroit Store .mov",
         "video_height": "56.25%",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",

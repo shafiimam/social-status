@@ -1,7 +1,38 @@
 {
   "article": [],
   "blog": [],
-  "collection": [],
+  "collection": [
+    {
+      "key": "seo_title",
+      "namespace": "custom",
+      "name": "SEO Title",
+      "description": "On Page Seo Title",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "seo_description",
+      "namespace": "custom",
+      "name": "SEO Description",
+      "description": "On Page Seo Description",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "subcollections",
+      "namespace": "custom",
+      "name": "subcollections",
+      "description": "",
+      "type": {
+        "name": "list.collection_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "company": [],
   "company_location": [],
   "location": [],
@@ -20,10 +51,110 @@
       }
     },
     {
+      "key": "shoe-size",
+      "namespace": "shopify",
+      "name": "Shoe size",
+      "description": "Used to define the size of footwear, e.g. Extra large (XL), 9.5",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "size",
+      "namespace": "shopify",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "footwear-material",
+      "namespace": "shopify",
+      "name": "Footwear material",
+      "description": "Specifies the type of material used in footwear, such as suede or rubber",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "fabric",
+      "namespace": "shopify",
+      "name": "Fabric",
+      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "occasion-style",
+      "namespace": "shopify",
+      "name": "Occasion style",
+      "description": "Helps categorize products based on occasion, e.g. casual, dress",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "accessory-size",
+      "namespace": "shopify",
+      "name": "Accessory size",
+      "description": "Defines the size of an accessory product, such as one size or compact",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
       "key": "color-pattern",
       "namespace": "shopify",
       "name": "Color",
       "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "closure-type",
+      "namespace": "shopify",
+      "name": "Closure type",
+      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "heel-height-type",
+      "namespace": "shopify",
+      "name": "Heel height type",
+      "description": "Defines the height of a shoe's heel, such as flat or high",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "toe-style",
+      "namespace": "shopify",
+      "name": "Toe style",
+      "description": "Defines the shape or design of a shoe's toe, such as open or pointed",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sneaker-style",
+      "namespace": "shopify",
+      "name": "Sneaker style",
+      "description": "Identifies the design or type of sneakers, such as athletic or high-top",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
@@ -40,152 +171,122 @@
       }
     },
     {
-      "key": "coffee-roast",
+      "key": "target-gender",
       "namespace": "shopify",
-      "name": "Coffee roast",
-      "description": "Defines the roast level of coffee products, e.g. light, medium, dark",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "flavor",
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "headwear-features",
       "namespace": "shopify",
-      "name": "Flavor",
-      "description": "Specifies the taste or flavor of a product, e.g. vanilla, mint",
+      "name": "Headwear features",
+      "description": "Highlights unique features of headwear, e.g. collapsible, versatile",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "country",
-      "namespace": "shopify",
-      "name": "Country",
-      "description": "Specifies the country associated with the product, such as Japan or Germany",
+      "key": "queries",
+      "namespace": "shopify--discovery--product_search_boost",
+      "name": "Search product boosts",
+      "description": "List of search queries for which a product gets higher rank in search results",
       "type": {
-        "name": "list.metaobject_reference",
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products",
+      "description": "List of related products",
+      "type": {
+        "name": "list.product_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "rating",
-      "namespace": "reviews",
-      "name": "Product rating",
-      "description": "Average rating from customers",
+      "key": "related_products_display",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products settings",
+      "description": "Determines how related products are displayed along with algorithmic product recommendations",
       "type": {
-        "name": "rating",
-        "category": "RATING"
+        "name": "single_line_text_field",
+        "category": "TEXT"
       }
     },
     {
-      "key": "rating_count",
-      "namespace": "reviews",
-      "name": "Product rating count",
-      "description": "Total number of ratings from customers",
+      "key": "complementary_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Complementary products",
+      "description": "List of complementary products",
       "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "dietary-preferences",
-      "namespace": "shopify",
-      "name": "Dietary preferences",
-      "description": "Helps identify products suitable for specific diets, e.g. vegan, nut free",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "mini_images",
-      "namespace": "foursixty",
-      "name": "Foursixty Shop Mini Product Images",
-      "description": null,
-      "type": {
-        "name": "list.file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "mini_available",
-      "namespace": "foursixty",
-      "name": "Show Foursixty Product Mini",
-      "description": null,
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "coffee-product-form",
-      "namespace": "shopify",
-      "name": "Coffee product form",
-      "description": "Specifies the type of coffee product, such as ground or beans",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "caffeine-content",
-      "namespace": "shopify",
-      "name": "Caffeine content",
-      "description": "Indicates the amount of caffeine present in a product, e.g. decaffeinated, low caffeine",
-      "type": {
-        "name": "list.metaobject_reference",
+        "name": "list.product_reference",
         "category": "REFERENCE"
       }
     }
   ],
   "variant": [
     {
-      "key": "age_group",
+      "key": "custom_label_4",
       "namespace": "mm-google-shopping",
-      "name": "Google: Age Group",
-      "description": "The demographic for which your product is intended.",
+      "name": "Google: Custom Label 4",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "condition",
+      "key": "custom_label_3",
       "namespace": "mm-google-shopping",
-      "name": "Google: Condition",
-      "description": "The condition of your product at time of sale.",
+      "name": "Google: Custom Label 3",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "gender",
+      "key": "custom_label_2",
       "namespace": "mm-google-shopping",
-      "name": "Google: Gender",
-      "description": "The gender for which your product is intended.",
+      "name": "Google: Custom Label 2",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "mpn",
+      "key": "custom_label_1",
       "namespace": "mm-google-shopping",
-      "name": "Google: MPN",
-      "description": "Your product’s Manufacturer Part Number (MPN).",
+      "name": "Google: Custom Label 1",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "size_type",
+      "key": "custom_label_0",
       "namespace": "mm-google-shopping",
-      "name": "Google: Size Type",
-      "description": "Your apparel product’s cut.",
+      "name": "Google: Custom Label 0",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -202,76 +303,65 @@
       }
     },
     {
-      "key": "custom_label_0",
+      "key": "size_type",
       "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "name": "Google: Size Type",
+      "description": "Your apparel product’s cut.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "custom_label_1",
+      "key": "mpn",
       "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "name": "Google: MPN",
+      "description": "Your product’s Manufacturer Part Number (MPN).",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "custom_label_2",
+      "key": "gender",
       "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "name": "Google: Gender",
+      "description": "The gender for which your product is intended.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "custom_label_3",
+      "key": "condition",
       "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "name": "Google: Condition",
+      "description": "The condition of your product at time of sale.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "custom_label_4",
+      "key": "age_group",
       "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "name": "Google: Age Group",
+      "description": "The demographic for which your product is intended.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     }
   ],
-  "shop": [
-    {
-      "key": "mini_images",
-      "namespace": "foursixty",
-      "name": "Foursixty Shop Mini Store Images",
-      "description": null,
-      "type": {
-        "name": "list.file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "mini_available",
-      "namespace": "foursixty",
-      "name": "Show Foursixty Store Mini",
-      "description": null,
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    }
-  ]
+  "shop": []
 }
