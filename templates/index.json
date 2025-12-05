@@ -12,19 +12,18 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_AKb7xE": {
+        "slide_DmtDT3": {
           "type": "slide",
-          "name": "FREESHIPPING",
+          "name": "HOME GOODS",
           "settings": {
             "tagline": "",
-            "title": "ENJOY COMPLIMENTARY SHIPPING ON ALL ORDERS NOW UNTIL 12.10",
-            "subtitle": "APPLIES TO DOMESTIC ORDERS ONLY",
-            "button_label": "",
-            "button_link": "shopify://collections/all",
-            "image": "shopify://shop_images/SHIPPING_SS-Website.jpg",
-            "mobile_image": "shopify://shop_images/SHIPPING_SS-Story.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": true
+            "title": "OUTERWEAR",
+            "subtitle": "SUIT UP. SHOW UP .",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/outerwear-3",
+            "video_object": "shopify://files/videos/4k WEB.mov",
+            "seo_h_tag": "h3",
+            "hide_text_mobile": false
           }
         },
         "slide_iRqVHU": {
@@ -56,27 +55,27 @@
             "hide_text_mobile": false
           }
         },
-        "slide_DmtDT3": {
+        "slide_AKb7xE": {
           "type": "slide",
-          "name": "HOME GOODS",
+          "name": "FREESHIPPING",
           "settings": {
             "tagline": "",
-            "title": "HOME + LIFESTYLE",
-            "subtitle": "EXPLORE HOME DECOR",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/home-goods",
-            "image": "shopify://shop_images/WHITEJORDANBOOK.png",
-            "mobile_image": "shopify://shop_images/WHITEJORDANBOOK.png",
-            "seo_h_tag": "h3",
-            "hide_text_mobile": false
+            "title": "ENJOY COMPLIMENTARY SHIPPING ON ALL ORDERS NOW UNTIL 12.10",
+            "subtitle": "APPLIES TO DOMESTIC ORDERS ONLY",
+            "button_label": "",
+            "button_link": "shopify://collections/all",
+            "image": "shopify://shop_images/SHIPPING_SS-Website.jpg",
+            "mobile_image": "shopify://shop_images/SHIPPING_SS-Story.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": true
           }
         }
       },
       "block_order": [
-        "slide_AKb7xE",
+        "slide_DmtDT3",
         "slide_iRqVHU",
         "slide_7HQxKf",
-        "slide_DmtDT3"
+        "slide_AKb7xE"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
