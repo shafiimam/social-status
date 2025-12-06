@@ -53,6 +53,19 @@ if ( typeof SplitScreenSlider !== 'function' ) {
 						}
 					});
 				});
+
+				// // Play all videos when slider is ready
+				// this.querySelectorAll('video').forEach(video => {
+				// 	video.play();
+				// });
+
+				// Initialize video mute controls
+				this._initVideoMuteControls();
+			});
+
+			// Mute all videos when slide changes
+			cssSlider.addEventListener('change', () => {
+				this._muteAllVideos();
 			});
 
 			let previous = -1,
@@ -113,6 +126,15 @@ if ( typeof SplitScreenSlider !== 'function' ) {
 			window.addEventListener('scroll', this.SCROLL_SliderHelper, {passive:true});
 			this.SCROLL_SliderHelper();
 
+			// Initialize video mute controls if videos are already loaded
+			if (document.readyState !== 'loading') {
+				this._initVideoMuteControls();
+			} else {
+				document.addEventListener('DOMContentLoaded', () => {
+					this._initVideoMuteControls();
+				});
+			}
+
 		}
 
 		unmount() {
@@ -146,6 +168,74 @@ if ( typeof SplitScreenSlider !== 'function' ) {
 			const rect = elm.getBoundingClientRect();
 			const win = elm.ownerDocument.defaultView;
 			return rect.top + win.pageYOffset;
+		}
+
+		_initVideoMuteControls() {
+			const muteButtons = this.querySelectorAll('.video-mute-toggle');
+			
+			muteButtons.forEach(button => {
+				// Skip if already initialized
+				if (button.dataset.initialized === 'true') return;
+				button.dataset.initialized = 'true';
+
+				const videoId = button.getAttribute('data-video-toggle');
+				const video = this.querySelector(`video[data-video-id="${videoId}"]`);
+				const muteIcon = button.querySelector('.mute-icon');
+				const unmuteIcon = button.querySelector('.unmute-icon');
+				
+				if (!video || !muteIcon || !unmuteIcon) return;
+
+				// Set initial state based on video muted attribute
+				// When muted: show unmute icon (speaker with sound waves) so user can click to unmute
+				// When unmuted: show mute icon (speaker with slash) so user can click to mute
+				const updateButtonState = () => {
+					if (video.muted) {
+						muteIcon.style.display = 'none';
+						unmuteIcon.style.display = 'block';
+						button.setAttribute('aria-label', 'Unmute video');
+					} else {
+						muteIcon.style.display = 'block';
+						unmuteIcon.style.display = 'none';
+						button.setAttribute('aria-label', 'Mute video');
+					}
+				};
+
+				// Update on load and when video metadata loads
+				updateButtonState();
+				video.addEventListener('loadedmetadata', updateButtonState);
+
+				// Toggle on click
+				button.addEventListener('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					video.muted = !video.muted;
+					updateButtonState();
+				});
+
+				// Update if video muted state changes externally
+				video.addEventListener('volumechange', updateButtonState);
+			});
+		}
+
+		_muteAllVideos() {
+			const allVideos = this.querySelectorAll('video');
+			const allMuteButtons = this.querySelectorAll('.video-mute-toggle');
+			
+			allVideos.forEach(video => {
+				video.muted = true;
+			});
+			
+			// Update button states to reflect muted status
+			allMuteButtons.forEach(button => {
+				const muteIcon = button.querySelector('.mute-icon');
+				const unmuteIcon = button.querySelector('.unmute-icon');
+				if (muteIcon && unmuteIcon) {
+					muteIcon.style.display = 'none';
+					unmuteIcon.style.display = 'block';
+					button.setAttribute('aria-label', 'Unmute video');
+				}
+			});
 		}
 
 	}

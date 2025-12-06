@@ -65,6 +65,36 @@
     #section-{{ section.id }} .button.button--solid svg path{
       fill: var(--main-text-foreground);
     }
+    #section-{{ section.id }} .video-mute-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 12;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: white;
+      padding: 0;
+    }
+    .video-mute-toggle span{
+      line-height: normal;
+    }
+    #section-{{ section.id }} .video-mute-toggle:hover {
+      border-color: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
+    }
+    #section-{{ section.id }} .video-mute-toggle svg {
+      /* width: 24px;
+      height: 24px; */
+    }
+    #section-{{ section.id }} .slider-item-media-holder {
+      position: relative;
+    }
   </style>
 
   <div id="section-{{ section.id }}" class="site-box-container container--fullscreen remove-background">
@@ -107,7 +137,20 @@
             </style>
           {% endif %}
           <div id="block-{{ block.id }}" {{ block.shopify_attributes }} class="slider-item">
-
+            {% if block.settings.video_object != blank %}
+              <button class="video-mute-toggle" data-video-toggle="{{ block.id }}" aria-label="Toggle video sound" type="button">
+                <span class="mute-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="unmute-icon" aria-hidden="true" style="display: none;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23V5.29C16.89 6.15 19 8.83 19 12ZM4.27 3L3 4.27L7.73 9H3V15H7L12 20V13.27L16.25 17.53C15.58 18.04 14.83 18.46 14 18.7V20.74C15.38 20.41 16.63 19.78 17.68 18.96L19.73 21L21 19.73L12 10.73L4.27 3ZM12 4L9.91 6.09L12 8.18V4Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </button>
+            {% endif %}
             <div class="site-box box--big box--typo-big box--center-align box--top-align-if-first box--column-flow box__heading remove-border">
               <div class="site-box-content slider-item-content reduce-top-margin-if-first">
                 <div>
@@ -155,7 +198,7 @@
 
                       {%- if block.settings.video_object != blank -%}
                         <video-background-element data-id="{{ block.id }}">
-                          <video autoplay muted loop playsinline class="slider-item-media-element">
+                          <video autoplay muted loop playsinline class="slider-item-media-element" data-video-id="{{ block.id }}">
                             {%- for source in block.settings.video_object.sources -%}
                               <source data-src="{{ source.url }}" type="{{ source.mime_type }}">
                             {%- endfor -%}
