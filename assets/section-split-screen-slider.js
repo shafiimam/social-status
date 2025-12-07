@@ -175,8 +175,6 @@ if ( typeof SplitScreenSlider !== 'function' ) {
 			
 			muteButtons.forEach(button => {
 				// Skip if already initialized
-				if (button.dataset.initialized === 'true') return;
-				button.dataset.initialized = 'true';
 
 				const videoId = button.getAttribute('data-video-toggle');
 				const video = this.querySelector(`video[data-video-id="${videoId}"]`);
@@ -204,13 +202,31 @@ if ( typeof SplitScreenSlider !== 'function' ) {
 				updateButtonState();
 				video.addEventListener('loadedmetadata', updateButtonState);
 
-				// Toggle on click
-				button.addEventListener('click', function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-					
+				// Toggle function
+				const toggleMute = (e) => {
+					if (e) {
+						e.preventDefault();
+						e.stopPropagation();
+						e.stopImmediatePropagation();
+					}
 					video.muted = !video.muted;
 					updateButtonState();
+				};
+
+				// Handle click (desktop) and touch (mobile)
+				button.addEventListener('click', toggleMute);
+				
+				// Handle touch events - prevent slider from intercepting
+				button.addEventListener('touchend', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					e.stopImmediatePropagation();
+					toggleMute(e);
+				});
+
+				// Stop touch events from bubbling to slider
+				button.addEventListener('touchstart', function(e) {
+					e.stopPropagation();
 				});
 
 				// Update if video muted state changes externally

@@ -80,20 +80,31 @@
       transition: all 0.3s ease;
       color: white;
       padding: 0;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      pointer-events: auto;
     }
     .video-mute-toggle span{
       line-height: normal;
     }
     #section-{{ section.id }} .video-mute-toggle:hover {
-      border-color: rgba(255, 255, 255, 1);
       transform: scale(1.1);
     }
     #section-{{ section.id }} .video-mute-toggle svg {
       /* width: 24px;
       height: 24px; */
     }
+    /* Ensure button is always clickable, even when slider is dragging */
+    #section-{{ section.id }} .css-slider-holder.dragging .video-mute-toggle,
+    #section-{{ section.id }} .css-slider-holder.pointer-events-off .video-mute-toggle {
+      pointer-events: auto !important;
+    }
     #section-{{ section.id }} .slider-item-media-holder {
       position: relative;
+    }
+    /* Ensure button is always on top and clickable */
+    #section-{{ section.id }} .video-mute-toggle {
+      z-index: 999 !important;
     }
   </style>
 
