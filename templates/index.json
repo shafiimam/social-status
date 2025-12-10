@@ -12,6 +12,21 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_NQjLcn": {
+          "type": "slide",
+          "name": "AJ4 RAFFLE",
+          "settings": {
+            "tagline": "",
+            "title": "A Ma Maniére x Air Jordan 4 \"Dark Mocha\"",
+            "subtitle": "EXCLUSIVE RELEASE 12.19 AT 11 AM EST",
+            "button_label": "enter draw",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha",
+            "image": "shopify://shop_images/SSAJ6.jpg",
+            "mobile_image": "shopify://shop_images/SSAJ6.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_DmtDT3": {
           "type": "slide",
           "name": "HOME GOODS",
@@ -72,6 +87,7 @@
         }
       },
       "block_order": [
+        "slide_NQjLcn",
         "slide_DmtDT3",
         "slide_iRqVHU",
         "slide_7HQxKf",
@@ -125,48 +141,45 @@
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
+        "release_card_wi7AmF": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/SHAI2.avif",
+            "title": "CONVERSE SHAI 001 \"NORTH POLE\"",
+            "description": "",
+            "release_date": "12.11",
+            "price": "130",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/converse-shai-001-north-pole"
+          }
+        },
         "release_card_ibVcYn": {
           "type": "release-card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/AJ3CHAMPAGNE-1.jpg",
-            "title": "AIR JORDAN 3 \"SAIL AND PALE IVORY",
+            "image": "shopify://shop_images/NBDRIFTWOOD.avif",
+            "title": "NEW BALANCE MADE IN USA 992 \"DRIFTWOOD\"",
             "description": "",
-            "release_date": "11.22",
-            "price": "205",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-3-sail-and-pale-ivory"
+            "release_date": "12.11",
+            "price": "200",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/new-balance-made-in-usa-992-driftwood"
           }
         },
         "release_card_zQXXgz": {
           "type": "release-card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/HALI1POPPYPINK-1_4b54f7cf-e7b2-4b39-806d-a20b96478de0.jpg",
-            "title": "PUMA HALI I \"HIBISCUS\"",
+            "image": "shopify://shop_images/GAMMAADULT.avif",
+            "title": "AIR JORDAN 11 RETRO \"GAMMA BLUE\"",
             "description": "",
-            "release_date": "11.26",
-            "price": "130",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/puma-hali-i-hibiscus"
-          }
-        },
-        "release_card_wi7AmF": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AJ4BLACKCAT-1_1.jpg",
-            "title": "AIR JORDAN 4 \"BLACK CAT\"",
-            "description": "",
-            "release_date": "11.28",
-            "price": "220",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-4-black-cat"
+            "release_date": "12.13",
+            "price": "235",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-11-retro-gamma-blue"
           }
         }
       },
       "block_order": [
+        "release_card_wi7AmF",
         "release_card_ibVcYn",
-        "release_card_zQXXgz",
-        "release_card_wi7AmF"
+        "release_card_zQXXgz"
       ],
-      "disabled": true,
       "settings": {
         "title": "Releases",
         "column_size": 3,
