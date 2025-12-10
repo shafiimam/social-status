@@ -70,20 +70,38 @@
 	{%- endif -%}
 
 	{%- if settings.product_card_custom_tag_badge_enabled -%}
+		{%- assign include_tag = settings.product_card_custom_tag_badge_include_tag | downcase | strip -%}
 		{%- assign exclude_tag = settings.product_card_custom_tag_badge_exclude_tag | downcase | strip -%}
-		{%- assign has_exclude_tag = false -%}
-		{%- for tag in product.tags -%}
-			{%- assign tag_downcase = tag | downcase | strip -%}
-			{%- if tag_downcase == exclude_tag -%}
-				{%- assign has_exclude_tag = true -%}
-				{%- break -%}
+		{%- assign show_custom_badge = false -%}
+		
+		{%- if include_tag != blank -%}
+			{%- comment -%} If Include Tag is set, show badge ONLY for products with that tag {%- endcomment -%}
+			{%- for tag in product.tags -%}
+				{%- assign tag_downcase = tag | downcase | strip -%}
+				{%- if tag_downcase == include_tag -%}
+					{%- assign show_custom_badge = true -%}
+					{%- break -%}
+				{%- endif -%}
+			{%- endfor -%}
+		{%- else -%}
+			{%- comment -%} If Include Tag is empty, use exclude tag logic (show by default, hide if exclude tag matches) {%- endcomment -%}
+			{%- assign show_custom_badge = true -%}
+			{%- if exclude_tag != blank -%}
+				{%- for tag in product.tags -%}
+					{%- assign tag_downcase = tag | downcase | strip -%}
+					{%- if tag_downcase == exclude_tag -%}
+						{%- assign show_custom_badge = false -%}
+						{%- break -%}
+					{%- endif -%}
+				{%- endfor -%}
 			{%- endif -%}
-		{%- endfor -%}
-		{%- unless has_exclude_tag -%}
+		{%- endif -%}
+		
+		{%- if show_custom_badge -%}
 			<div class="product-badge product-badge__custom-tag text-size--smaller"
 				style="background-color: {{ settings.product_card_custom_tag_badge_background_color }}; color: {{ settings.product_card_custom_tag_badge_text_color }}"
 			><span>{{ settings.product_card_custom_tag_badge_text }}</span></div>
-		{%- endunless -%}
+		{%- endif -%}
 	{%- endif -%}
 
 </div>

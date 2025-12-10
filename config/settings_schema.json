@@ -472,10 +472,16 @@
 			},
 			{
 				"type": "text",
+				"id": "product_card_custom_tag_badge_include_tag",
+				"label": "Include Tag",
+				"info": "Products with this tag WILL show the custom badge. If set, this overrides the exclude tag logic."
+			},
+			{
+				"type": "text",
 				"id": "product_card_custom_tag_badge_exclude_tag",
 				"label": "Exclude tag",
 				"default": "nosale",
-				"info": "Products without this tag will show the badge"
+				"info": "Products without this tag will show the badge. Ignored when Include Tag is set."
 			},
 			{
 				"type": "text",
