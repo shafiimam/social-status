@@ -27,9 +27,24 @@
             "hide_text_mobile": false
           }
         },
+        "slide_CXxkqd": {
+          "type": "slide",
+          "name": "12 DAYS ",
+          "settings": {
+            "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
+            "title": "Day 1: 15% Off Women's & Kids Apparel",
+            "subtitle": "",
+            "button_label": "",
+            "button_link": "",
+            "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
+            "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_DmtDT3": {
           "type": "slide",
-          "name": "HOME GOODS",
+          "name": "OUTERWEAR",
           "settings": {
             "tagline": "",
             "title": "OUTERWEAR",
@@ -38,20 +53,6 @@
             "button_link": "shopify://collections/outerwear-3",
             "video_object": "shopify://files/videos/4k WEB.mov",
             "seo_h_tag": "h3",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_iRqVHU": {
-          "type": "slide",
-          "name": "LES TIEN",
-          "settings": {
-            "tagline": "",
-            "title": "LES TIEN",
-            "subtitle": "DISCOVER LEISUREWEAR STAPLES",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/les-tien",
-            "video_object": "shopify://files/videos/4k No logo WEB.mov",
-            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
@@ -70,28 +71,28 @@
             "hide_text_mobile": false
           }
         },
-        "slide_AKb7xE": {
+        "slide_iRqVHU": {
           "type": "slide",
-          "name": "FREESHIPPING",
+          "name": "LES TIEN",
+          "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "ENJOY COMPLIMENTARY SHIPPING ON ALL ORDERS NOW UNTIL 12.10",
-            "subtitle": "APPLIES TO DOMESTIC ORDERS ONLY",
-            "button_label": "",
-            "button_link": "shopify://collections/all",
-            "image": "shopify://shop_images/SHIPPING_SS-Website.jpg",
-            "mobile_image": "shopify://shop_images/SHIPPING_SS-Story.jpg",
+            "title": "LES TIEN",
+            "subtitle": "DISCOVER LEISUREWEAR STAPLES",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/les-tien",
+            "video_object": "shopify://files/videos/4k No logo WEB.mov",
             "seo_h_tag": "h2",
-            "hide_text_mobile": true
+            "hide_text_mobile": false
           }
         }
       },
       "block_order": [
         "slide_NQjLcn",
+        "slide_CXxkqd",
         "slide_DmtDT3",
-        "slide_iRqVHU",
         "slide_7HQxKf",
-        "slide_AKb7xE"
+        "slide_iRqVHU"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -110,9 +111,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "NEW ARRIVALS",
+        "title": "WOMEN",
         "subtitle": "Shop Now",
-        "collection": "new-arrivals-1",
+        "collection": "womens-1",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -141,28 +142,6 @@
     "releases_pHU7Rr": {
       "type": "releases",
       "blocks": {
-        "release_card_wi7AmF": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/SHAI2.avif",
-            "title": "CONVERSE SHAI 001 \"NORTH POLE\"",
-            "description": "",
-            "release_date": "12.11",
-            "price": "130",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/converse-shai-001-north-pole"
-          }
-        },
-        "release_card_ibVcYn": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/NBDRIFTWOOD.avif",
-            "title": "NEW BALANCE MADE IN USA 992 \"DRIFTWOOD\"",
-            "description": "",
-            "release_date": "12.11",
-            "price": "200",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/new-balance-made-in-usa-992-driftwood"
-          }
-        },
         "release_card_zQXXgz": {
           "type": "release-card",
           "settings": {
@@ -173,12 +152,22 @@
             "price": "235",
             "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-11-retro-gamma-blue"
           }
+        },
+        "release_card_zmfRnj": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/AMMXAJ4DARKMOCHA-1.jpg",
+            "title": "A MA MANIÉRE X AIR JORDAN 4 \"DARK MOCHA\"",
+            "description": "",
+            "release_date": "12.19",
+            "price": "225",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha"
+          }
         }
       },
       "block_order": [
-        "release_card_wi7AmF",
-        "release_card_ibVcYn",
-        "release_card_zQXXgz"
+        "release_card_zQXXgz",
+        "release_card_zmfRnj"
       ],
       "settings": {
         "title": "Releases",
@@ -191,9 +180,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "HOODIES & SWEATERS",
+        "title": "KIDS",
         "subtitle": "Shop Now",
-        "collection": "hoodies-and-sweatshirts",
+        "collection": "kids",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
