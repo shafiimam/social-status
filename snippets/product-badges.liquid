@@ -1,13 +1,100 @@
 <div class="product-badges-holder">
-	{%- if product.available == false -%}
+	{%- liquid
+		assign show_custom_badges = false
+		assign has_exclude_tag = false
+		
+		if settings.custom_badge_enable and settings.custom_badge_text != blank
+			# Split badge texts by comma
+			assign badge_texts = settings.custom_badge_text | split: ','
+			
+			# Process include tags (comma-separated)
+			assign include_tag_raw = settings.custom_badge_include_tag | strip
+			assign exclude_tag_raw = settings.custom_badge_exclude_tag | strip
+			
+			# Normalize all product tags once
+			assign normalized_product_tags = ""
+			for product_tag in product.tags
+				assign normalized_tag = product_tag | strip | downcase
+				if normalized_product_tags == blank
+					assign normalized_product_tags = normalized_tag
+				else
+					assign normalized_product_tags = normalized_product_tags | append: "|" | append: normalized_tag
+				endif
+			endfor
+			
+			if include_tag_raw != blank
+				# Include tag logic: show badges for each matching include tag
+				assign include_tags = include_tag_raw | split: ','
+			else
+				# Exclude tag logic: check if product should be excluded
+				if exclude_tag_raw != blank
+					assign exclude_tags = exclude_tag_raw | split: ','
+					assign product_tags_array = normalized_product_tags | split: "|"
+					
+					for exclude_tag_item in exclude_tags
+						assign normalized_exclude_tag = exclude_tag_item | strip | downcase
+						for check_tag in product_tags_array
+							if check_tag == normalized_exclude_tag
+								assign has_exclude_tag = true
+								break
+							endif
+						endfor
+						if has_exclude_tag
+							break
+						endif
+					endfor
+				endif
+			endif
+		endif
+	-%}
 
-		<div class="product-badge product-badge__sold text-size--smaller"
-			style="background-color: {{ settings.product_card_badge_sold_out_color }}; color: {{ settings.product_card_badge_sold_out_text_color }}"
-		><span>{{ 'products.grid.sold_out_product' | t }}</span></div>
+	{%- if settings.custom_badge_enable and settings.custom_badge_text != blank -%}
+		{%- if include_tag_raw != blank -%}
+			{%- comment -%} Include tag mode: show badge for each matching tag {%- endcomment -%}
+			{%- for include_tag_item in include_tags -%}
+				{%- liquid
+					assign normalized_include_tag = include_tag_item | strip | downcase
+					assign tag_index = forloop.index0
+					assign product_tags_array = normalized_product_tags | split: "|"
+					assign exact_match = false
+					
+					for check_tag in product_tags_array
+						if check_tag == normalized_include_tag
+							assign exact_match = true
+							break
+						endif
+					endfor
+				-%}
+				{%- if exact_match and tag_index < badge_texts.size -%}
+					{%- assign badge_text = badge_texts[tag_index] | strip -%}
+					{%- if badge_text != blank -%}
+						<div class="product-badge product-badge__custom-tag text-size--smaller"
+							style="background-color: {{ settings.product_card_badge_regular_background_color }}; color: {{ settings.product_card_badge_regular_text_color }}; border-color: {{ settings.product_card_badge_regular_border_color }}"
+						><span>{{ badge_text }}</span></div>
+						{%- assign show_custom_badges = true -%}
+					{%- endif -%}
+				{%- endif -%}
+			{%- endfor -%}
+		{%- else -%}
+			{%- comment -%} Exclude tag mode: show first badge if not excluded {%- endcomment -%}
+			{%- if has_exclude_tag == false and badge_texts.size > 0 -%}
+				{%- assign badge_text = badge_texts[0] | strip -%}
+				{%- if badge_text != blank -%}
+					<div class="product-badge product-badge__custom-tag text-size--smaller"
+						style="background-color: {{ settings.product_card_badge_regular_background_color }}; color: {{ settings.product_card_badge_regular_text_color }}; border-color: {{ settings.product_card_badge_regular_border_color }}"
+					><span>{{ badge_text }}</span></div>
+					{%- assign show_custom_badges = true -%}
+				{%- endif -%}
+			{%- endif -%}
+		{%- endif -%}
+	{%- endif -%}
 
-	{%- else -%}
-
-		{%- if product.compare_at_price > product.price -%}
+	{%- if show_custom_badges == false -%}
+		{%- if product.available == false -%}
+			<div class="product-badge product-badge__sold text-size--smaller"
+				style="background-color: {{ settings.product_card_badge_sold_out_color }}; color: {{ settings.product_card_badge_sold_out_text_color }}"
+			><span>{{ 'products.grid.sold_out_product' | t }}</span></div>
+		{%- elsif product.compare_at_price > product.price and product.available -%}
 			<span class="product-badge product-badge__sale text-size--smaller"
 				style="background-color: {{ settings.product_card_badge_sale_color }}; color: {{ settings.product_card_badge_sale_text_color }}"
 			> 

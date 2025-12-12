@@ -461,6 +461,34 @@
 			},
 			{
 				"type": "header",
+				"content": "Custom Badge"
+			},
+			{
+				"type": "checkbox",
+				"id": "custom_badge_enable",
+				"default": false,
+				"label": "Enable Custom Badge"
+			},
+			{
+				"type": "text",
+				"id": "custom_badge_text",
+				"label": "Custom Badge Text",
+				"info": "Enter comma-separated badge texts (e.g., 'Featured,New,Special'). Each badge text corresponds to a tag at the same index in the Include Tag field."
+			},
+			{
+				"type": "text",
+				"id": "custom_badge_include_tag",
+				"label": "Include Tag",
+				"info": "Products with these tags WILL show the custom badge. Enter comma-separated tags (e.g., 'featured,new,special'). If set, this overrides the exclude tag logic. Each tag corresponds to a badge text at the same index."
+			},
+			{
+				"type": "text",
+				"id": "custom_badge_exclude_tag",
+				"label": "Exclude Tag",
+				"info": "Products with these tags will NOT show the custom badge. Enter comma-separated tags. Ignored when Include Tag is set."
+			},
+			{
+				"type": "header",
 				"content": "Custom Tag Badge"
 			},
 			{
