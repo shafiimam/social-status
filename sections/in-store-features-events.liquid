@@ -42,8 +42,8 @@
                         <img
                           src="{{ article.image | image_url: width: 1920 }}"
                           alt="{{ article.title }}"
-                          width="100%"
-                          height="100%"
+                          width="{{ article.image.width }}"
+                          height="{{ article.image.height }}"
                         >
                       {% endif %}
                     </div>
@@ -55,8 +55,8 @@
                 <img
                   src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
                   alt="{{ article.title }}"
-                  width="100%"
-                  height="100%"
+                  width="{{ section.settings.fallback_image.width }}"
+                  height="{{ section.settings.fallback_image.height }}"
                 >
               {% endif %}
             {% elsif block.type == 'events_block' %}
@@ -146,8 +146,8 @@
                         <img
                           src="{{ article.image | image_url: width: 1920 }}"
                           alt="{{ article.title }}"
-                          width="100%"
-                          height="100%"
+                          width="{{ article.image.width }}"
+                          height="{{ article.image.height }}"
                         >
                       {% endif %}
                     </div>
@@ -159,8 +159,8 @@
                 <img
                   src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
                   alt="{{ article.title }}"
-                  width="100%"
-                  height="100%"
+                  width="{{ section.settings.fallback_image.width }}"
+                  height="{{ section.settings.fallback_image.height }}"
                 >
               {% endif %}
             {% endif %}
@@ -178,7 +178,7 @@
           {% endfor %}
         </div>
       {% endif %}
-      <ul class="tab-list-item-contents">
+      <div class="tab-list-item-contents">
         {% for tab_group in tabs_list %}
           {% assign first_tab_group = tabs_list.first %}
           {% assign total_item_count = 0 %}
@@ -451,7 +451,7 @@
             </div>
           {% endunless %}
         {% endfor %}
-      </ul>
+      </div>
     </div>
   </div>
 </div>

@@ -23,7 +23,7 @@
             "button_link": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha",
             "image": "shopify://shop_images/SSAJ6.jpg",
             "mobile_image": "shopify://shop_images/SSAJ6.jpg",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -38,7 +38,7 @@
             "button_link": "",
             "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
             "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -52,7 +52,7 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/outerwear-3",
             "video_object": "shopify://files/videos/4k WEB.mov",
-            "seo_h_tag": "h3",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -67,7 +67,7 @@
             "button_link": "shopify://collections/gifts-for-him",
             "image": "shopify://shop_images/GIFTGUIDESS.png",
             "mobile_image": "shopify://shop_images/GG2.jpg",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -82,7 +82,7 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/les-tien",
             "video_object": "shopify://files/videos/4k No logo WEB.mov",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         }

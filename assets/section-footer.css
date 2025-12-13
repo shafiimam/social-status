@@ -199,7 +199,7 @@ shop-login-button {
   margin-top: 20px;
   font-size: 18px !important;
   font-weight: 400;
-  color: #727272;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-image img {

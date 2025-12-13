@@ -72,8 +72,8 @@
                 <img
                   src="{{ article.image | image_url: width: 1920 }}"
                   alt="{{ article.title }}"
-                  width="100%"
-                  height="100%"
+                  width="{{ article.image.width }}"
+                  height="{{ article.image.height }}"
                 >
               </div>
               {% assign image_index = image_index | plus: 1 %}
@@ -93,7 +93,7 @@
           {% endfor %}
         </div>
       {% endif %}
-      <ul class="tab-list-item-contents">
+      <div class="tab-list-item-contents">
         {% if selected_blog %}
           {% for city in tabs_list %}
             {% assign city_article_count = 0 %}
@@ -225,8 +225,8 @@
                     <img
                       src="{{ article.image | image_url: width: 1920 }}"
                       alt="{{ article.title }}"
-                      width="100%"
-                      height="100%"
+                      width="{{ article.image.width }}"
+                      height="{{ article.image.height }}"
                     >
                   </div>
                 </div>
@@ -278,7 +278,7 @@
             {% endif %}
           {% endfor %}
         {% endif %}
-      </ul>
+      </div>
     </div>
   </div>
 </div>

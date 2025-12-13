@@ -36,7 +36,7 @@
   text-align: center;
   font-size: 28px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: 6.72px;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
   text-align: center;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -131,7 +131,7 @@
   background: var(--brand-color);
 }
 .tab-list-nav-item-title {
-  color: var(--card-foreground, #09090b);
+  color:#000000;
   font-family: var(--font-stack-headings);
   font-size: 18px;
   font-style: normal;
@@ -140,7 +140,7 @@
   width: max-content;
 }
 .tabs-panel .tab-list-nav-item.active .tab-list-nav-item-title {
-  color: #fff;
+  color: #000000;
 }
 .tab-list-item-title {
   color: #040404;

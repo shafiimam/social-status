@@ -7,14 +7,14 @@ data-sticky="{{ section.settings.menu_sticky }}">
   
   <span class="logo">
     {%- if section.settings.logo_src -%}
-      <a class="logo-img logo-light" href="{{ routes.root_url }}" style="display:flex;align-items:center">
+      <a class="logo-img logo-light" href="{{ routes.root_url }}" style="display:flex;align-items:center" aria-label="{{ shop.name }} – Returns to Home Page">
         <img src="{{ section.settings.logo_src | image_url: width: 200 }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
       </a>
-      <a class="logo-img logo-inverted" href="{{ routes.root_url }}" style="display:flex;align-items:center">
+      <a class="logo-img logo-inverted" href="{{ routes.root_url }}" style="display:flex;align-items:center" aria-label="{{ shop.name }} – Returns to Home Page">
         <img src="{{ section.settings.logo_inverted_src | image_url : width: 200 }}" alt="{{ shop.name | escape }}" style="max-height:{{ section.settings.logo_height }}px" width="{{ section.settings.logo_src.width }}" height="{{ section.settings.logo_src.height }}" />
       </a>
     {%- else -%}
-      <a class="logo-txt" href="{{ routes.root_url }}">{{ shop.name | escape }}</a>
+      <a class="logo-txt" href="{{ routes.root_url }}" aria-label="{{ shop.name }} – Returns to Home Page">{{ shop.name | escape }}</a>
     {%- endif -%}
   </span>
 
@@ -117,13 +117,19 @@ data-sticky="{{ section.settings.menu_sticky }}">
     <span 
       class="site-search-handle site-menu-handle" 
       title="{{ 'general.accessibility_labels.open_search' | t }}"
-      {% if template != 'search' %} 
-        id="site-search-handle" aria-expanded="false" aria-controls="site-search" 
-        data-js-sidebar-handle
-      {% endif %} 
     >
       <span class="visually-hidden">{{ 'general.accessibility_labels.open_search' | t }}</span>
-      <a href="{{ routes.search_url }}" title="{{ 'general.accessibility_labels.open_search' | t }}">
+      <a 
+        href="{{ routes.search_url }}" 
+        title="{{ 'general.accessibility_labels.open_search' | t }}"
+        {% if template != 'search' %} 
+          id="site-search-handle" 
+          role="button"
+          aria-expanded="false" 
+          aria-controls="site-search" 
+          data-js-sidebar-handle
+        {% endif %}
+      >
         <span class="search-menu" aria-hidden="true" style="display:block;margin-top:1px;">
           {%- render 'theme-symbols', icon: 'search' -%}
         </span>
@@ -133,13 +139,19 @@ data-sticky="{{ section.settings.menu_sticky }}">
     <span 
       class="site-cart-handle site-menu-handle {{ settings.cart_action }}"
       title="{{ 'general.accessibility_labels.open_cart' | t }}"
-      {% if settings.cart_action == 'overlay' %} 
-        id="site-cart-handle" aria-expanded="false" aria-controls="site-cart" 
-        data-js-sidebar-handle
-      {% endif %}
     >
       <span class="visually-hidden">{{ 'general.accessibility_labels.open_cart' | t }}</span>
-      <a href="{{ routes.cart_url }}" title="{{ 'general.accessibility_labels.open_cart' | t }}">
+      <a 
+        href="{{ routes.cart_url }}" 
+        title="{{ 'general.accessibility_labels.open_cart' | t }}"
+        {% if settings.cart_action == 'overlay' %} 
+          id="site-cart-handle" 
+          role="button"
+          aria-expanded="false" 
+          aria-controls="site-cart" 
+          data-js-sidebar-handle
+        {% endif %}
+      >
         <span class="cart-menu" aria-hidden="true">
           {%- render 'theme-symbols', icon: 'cart' -%}
           <span class="count-holder"><span class="count" data-header-cart-count>{{ cart.item_count }}</span></span>
