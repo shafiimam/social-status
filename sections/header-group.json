@@ -14,6 +14,23 @@
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
+        "content_7kJfqU": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "text": "DAY 3: 20% DENIM & BOTTOM APPAREL",
+            "link": "",
+            "target": false
+          }
+        },
+        "content_L7PbgY": {
+          "type": "content",
+          "settings": {
+            "text": "Day 2 : 20% OFF OUTERWEAR APPAREL",
+            "link": "shopify://collections/outerwear-3",
+            "target": false
+          }
+        },
         "content": {
           "type": "content",
           "settings": {
@@ -24,6 +41,8 @@
         }
       },
       "block_order": [
+        "content_7kJfqU",
+        "content_L7PbgY",
         "content"
       ],
       "settings": {

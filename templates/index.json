@@ -23,7 +23,7 @@
             "button_link": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha",
             "image": "shopify://shop_images/SSAJ6.jpg",
             "mobile_image": "shopify://shop_images/SSAJ6.jpg",
-            "seo_h_tag": "h1",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
@@ -32,13 +32,13 @@
           "name": "12 DAYS ",
           "settings": {
             "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "Day 1: 15% Off Women's & Kids Apparel",
+            "title": "DAY 2: 20% OFF OUTERWEAR APPAREL",
             "subtitle": "",
             "button_label": "",
             "button_link": "",
             "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
             "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
-            "seo_h_tag": "h1",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
@@ -52,7 +52,7 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/outerwear-3",
             "video_object": "shopify://files/videos/4k WEB.mov",
-            "seo_h_tag": "h1",
+            "seo_h_tag": "h3",
             "hide_text_mobile": false
           }
         },
@@ -67,7 +67,7 @@
             "button_link": "shopify://collections/gifts-for-him",
             "image": "shopify://shop_images/GIFTGUIDESS.png",
             "mobile_image": "shopify://shop_images/GG2.jpg",
-            "seo_h_tag": "h1",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
@@ -82,7 +82,7 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/les-tien",
             "video_object": "shopify://files/videos/4k No logo WEB.mov",
-            "seo_h_tag": "h1",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         }
@@ -111,9 +111,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "WOMEN",
+        "title": "OUTERWEAR",
         "subtitle": "Shop Now",
-        "collection": "womens-1",
+        "collection": "outerwear-3",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -180,10 +180,10 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "KIDS",
+        "title": "BOMBER JACKETS",
         "subtitle": "Shop Now",
-        "collection": "kids",
-        "collection_rows": 2,
+        "collection": "bomber-jackets",
+        "collection_rows": 3,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
@@ -195,7 +195,7 @@
         "heading_3pNq48": {
           "type": "heading",
           "settings": {
-            "heading": "SHOP OUTERWEAR",
+            "heading": "Foundational Essentials",
             "heading_size": "h2",
             "seo_h_tag": "h2"
           }
@@ -211,7 +211,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/outerwear-3"
+            "button_link": "shopify://collections/foundational-essentials"
           }
         }
       },
@@ -230,33 +230,33 @@
     "shop_the_look_yJ96E3": {
       "type": "shop-the-look",
       "blocks": {
-        "product_KJNpDX": {
-          "type": "product",
-          "settings": {
-            "product": "comme-des-garcons-woven-jacket"
-          }
-        },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
-            "product": "awake-ny-alpha-m1-jacket-teal"
+            "product": "les-tien-hw-raw-zip-hoodie-grey"
+          }
+        },
+        "product_KJNpDX": {
+          "type": "product",
+          "settings": {
+            "product": "les-tien-hw-mock-neck-polo-black"
           }
         },
         "product_qFEUPt": {
           "type": "product",
           "settings": {
-            "product": "nike-stussy-jacket-multi"
+            "product": "les-tien-hw-carpenter-workwear-pant-grey"
           }
         }
       },
       "block_order": [
-        "product_KJNpDX",
         "product_7Fz9xj",
+        "product_KJNpDX",
         "product_qFEUPt"
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/HQ8520-900_front.jpg",
+        "image": "shopify://shop_images/DSC03810_BM.jpg",
         "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }
@@ -353,7 +353,7 @@
         "slide_azUp4a": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/CARHARTT.png",
+            "image": "shopify://shop_images/DSC04943_BM.jpg",
             "slide_text": "OUTERWEAR",
             "link": "shopify://collections/outerwear-3"
           }
@@ -361,7 +361,7 @@
         "slide_38DjfE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/WOMEN.png",
+            "image": "shopify://shop_images/1897SQUIDLIK.jpg",
             "slide_text": "WOMEN",
             "link": "shopify://collections/womens-1"
           }
@@ -369,15 +369,15 @@
         "slide_FnQCft": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DENIM_SS.png",
-            "slide_text": "PANTS",
-            "link": "shopify://collections/pants"
+            "image": "shopify://shop_images/sweatpants3354x6013.jpg",
+            "slide_text": "SWEATPANTS",
+            "link": "shopify://collections/sweatpants"
           }
         },
         "slide_VtQDKD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ACC1.png",
+            "image": "shopify://shop_images/DSC06102_BRENDEN.MOTLEY.jpg",
             "slide_text": "ACCESSORIES",
             "link": "shopify://collections/accessories-1"
           }
@@ -385,7 +385,7 @@
         "slide_3bbgCr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/SUPERVSNTEES.png",
+            "image": "shopify://shop_images/GODSPEEDSHOPTLOOK.png",
             "slide_text": "T-SHIRTS",
             "link": "shopify://collections/t-shirts-2"
           }
@@ -393,7 +393,7 @@
         "slide_VfcA8p": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/HOODIES3.png",
+            "image": "shopify://shop_images/DSC06362_BRENDEN.MOTLEY.jpg",
             "slide_text": "HOODIES",
             "link": "shopify://collections/hoodies-and-sweatshirts"
           }
@@ -422,7 +422,7 @@
         "heading_kcE6L4": {
           "type": "heading",
           "settings": {
-            "heading": "TEAM PICKS @ SOCIAL STATUS  TAMPA BAY",
+            "heading": "TEAM PICKS @ SOCIAL STATUS  CHARLOTTE",
             "heading_size": "h2",
             "seo_h_tag": "h2"
           }
@@ -460,37 +460,37 @@
         "product_7ijGBz": {
           "type": "product",
           "settings": {
-            "product": "rhude-thousand-palms-tee-white-black"
-          }
-        },
-        "product_B6qGyQ": {
-          "type": "product",
-          "settings": {
-            "product": "carhartt-aviation-pant"
+            "product": "barriers-ezy-ryder-hoodie-black"
           }
         },
         "product_zdwtcN": {
           "type": "product",
           "settings": {
-            "product": "a-bathing-ape-abc-camo-tote-bag"
+            "product": "honor-the-gift-feature-presentation-tee-black"
+          }
+        },
+        "product_B6qGyQ": {
+          "type": "product",
+          "settings": {
+            "product": "carhartt-duck-landon-pant-grey"
           }
         },
         "product_AVfkaH": {
           "type": "product",
           "settings": {
-            "product": "vomero-plus-2"
+            "product": "air-force-1-07-ja-morant"
           }
         }
       },
       "block_order": [
         "product_7ijGBz",
-        "product_B6qGyQ",
         "product_zdwtcN",
+        "product_B6qGyQ",
         "product_AVfkaH"
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/SStampa_8046e470-1b4d-4065-8afb-931d369e7f6e.jpg",
+        "image": "shopify://shop_images/1574x1050.jpg",
         "desktop_image_positioning": "image-on-right",
         "hide_product_price": true
       }
