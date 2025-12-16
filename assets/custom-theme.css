@@ -322,3 +322,6 @@ span.fina-sale-message {
 .customer-register-form-container{
   max-width: 500px;
 }
+.search-results.predictive-search .search-item .content .item-title{
+  line-height: 24px !important;
+}
