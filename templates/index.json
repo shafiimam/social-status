@@ -34,7 +34,7 @@
           "disabled": true,
           "settings": {
             "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "DAY 4: 30% OFF ACCESSORIES",
+            "title": "DAY 7: 15% OFF ALL NEW BALANCE FOOTWEAR",
             "subtitle": "",
             "button_label": "",
             "button_link": "",
@@ -49,7 +49,7 @@
           "name": "12 DAYS ",
           "settings": {
             "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "Day 5: 20% OFF ALL NIKE/JORDAN FOOTWEAR",
+            "title": "DAY 6: 25% OFF TEES",
             "subtitle": "",
             "button_label": "",
             "button_link": "",
@@ -130,9 +130,9 @@
       "disabled": true,
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "ACCESSORIES",
+        "title": "NEW BALANCE",
         "subtitle": "Shop Now",
-        "collection": "accessories-1",
+        "collection": "new-balance",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -143,9 +143,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "FOOTWEAR",
+        "title": "T-SHIRTS",
         "subtitle": "Shop Now",
-        "collection": "footwear",
+        "collection": "t-shirts-2",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -440,6 +440,7 @@
         "slide_3bbgCr",
         "slide_VfcA8p"
       ],
+      "disabled": true,
       "name": "Rotating Slider",
       "settings": {
         "heading": "Collections",

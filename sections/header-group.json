@@ -24,18 +24,18 @@
         },
         "content_7kJfqU": {
           "type": "content",
-          "disabled": true,
           "settings": {
-            "text": "DAY 4: 30% OFF ACCESSORIES",
+            "text": "DAY 6: 25% OFF TEES",
             "link": "",
             "target": false
           }
         },
         "content_L7PbgY": {
           "type": "content",
+          "disabled": true,
           "settings": {
-            "text": "DAY5: 20% OFF ALL NIKE/JORDAN FOOTWEAR",
-            "link": "shopify://collections/footwear",
+            "text": "DAY 7: 15% OFF ALL NEW BALANCE FOOTWEAR",
+            "link": "",
             "target": false
           }
         }
