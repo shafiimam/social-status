@@ -15,6 +15,7 @@
         "slide_NQjLcn": {
           "type": "slide",
           "name": "AJ4 RAFFLE",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "A Ma Maniére x Air Jordan 4 \"Dark Mocha\"",
@@ -23,22 +24,38 @@
             "button_link": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha",
             "image": "shopify://shop_images/SSAJ6.jpg",
             "mobile_image": "shopify://shop_images/SSAJ6.jpg",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
         "slide_CXxkqd": {
           "type": "slide",
           "name": "12 DAYS ",
+          "disabled": true,
           "settings": {
             "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "DAY 2: 20% OFF OUTERWEAR APPAREL",
+            "title": "DAY 4: 30% OFF ACCESSORIES",
             "subtitle": "",
             "button_label": "",
             "button_link": "",
             "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
             "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_YJYY8H": {
+          "type": "slide",
+          "name": "12 DAYS ",
+          "settings": {
+            "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
+            "title": "Day 5: 20% OFF ALL NIKE/JORDAN FOOTWEAR",
+            "subtitle": "",
+            "button_label": "",
+            "button_link": "",
+            "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
+            "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -52,7 +69,7 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/outerwear-3",
             "video_object": "shopify://files/videos/4k WEB.mov",
-            "seo_h_tag": "h3",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -67,7 +84,7 @@
             "button_link": "shopify://collections/gifts-for-him",
             "image": "shopify://shop_images/GIFTGUIDESS.png",
             "mobile_image": "shopify://shop_images/GG2.jpg",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
@@ -82,7 +99,7 @@
             "button_label": "shop now",
             "button_link": "shopify://collections/les-tien",
             "video_object": "shopify://files/videos/4k No logo WEB.mov",
-            "seo_h_tag": "h2",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         }
@@ -90,6 +107,7 @@
       "block_order": [
         "slide_NQjLcn",
         "slide_CXxkqd",
+        "slide_YJYY8H",
         "slide_DmtDT3",
         "slide_7HQxKf",
         "slide_iRqVHU"
@@ -109,11 +127,25 @@
     },
     "featured_collection_74ekAh": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "OUTERWEAR",
+        "title": "ACCESSORIES",
         "subtitle": "Shop Now",
-        "collection": "outerwear-3",
+        "collection": "accessories-1",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "featured_collection_aPacB7": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "FOOTWEAR",
+        "subtitle": "Shop Now",
+        "collection": "footwear",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -169,6 +201,7 @@
         "release_card_zQXXgz",
         "release_card_zmfRnj"
       ],
+      "disabled": true,
       "settings": {
         "title": "Releases",
         "column_size": 3,
@@ -856,7 +889,7 @@
       ],
       "name": "t:sections.refactor_words.custom_code.name",
       "settings": {
-        "custom_liquid": "<h1 class=\"h1 heading text-center heading\"><strong>@<strong><span>thesocialstatus</span><h1>",
+        "custom_liquid": "<h2 class=\"h1 heading text-center heading\"><strong>@<strong><span>thesocialstatus</span><h2>",
         "no_padding": true
       }
     },
@@ -929,6 +962,7 @@
   "order": [
     "split_screen_slider_R3zQCG",
     "featured_collection_74ekAh",
+    "featured_collection_aPacB7",
     "product_masonry_Fnqqrw",
     "releases_pHU7Rr",
     "featured_collection_YCzWJf",

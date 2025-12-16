@@ -14,23 +14,6 @@
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
-        "content_7kJfqU": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "text": "DAY 3: 20% DENIM & BOTTOM APPAREL",
-            "link": "",
-            "target": false
-          }
-        },
-        "content_L7PbgY": {
-          "type": "content",
-          "settings": {
-            "text": "Day 2 : 20% OFF OUTERWEAR APPAREL",
-            "link": "shopify://collections/outerwear-3",
-            "target": false
-          }
-        },
         "content": {
           "type": "content",
           "settings": {
@@ -38,12 +21,29 @@
             "link": "",
             "target": false
           }
+        },
+        "content_7kJfqU": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "text": "DAY 4: 30% OFF ACCESSORIES",
+            "link": "",
+            "target": false
+          }
+        },
+        "content_L7PbgY": {
+          "type": "content",
+          "settings": {
+            "text": "DAY5: 20% OFF ALL NIKE/JORDAN FOOTWEAR",
+            "link": "shopify://collections/footwear",
+            "target": false
+          }
         }
       },
       "block_order": [
+        "content",
         "content_7kJfqU",
-        "content_L7PbgY",
-        "content"
+        "content_L7PbgY"
       ],
       "settings": {
         "visibility": "all",

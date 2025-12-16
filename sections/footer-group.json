@@ -56,7 +56,7 @@
       "settings": {
         "custom_background": "rgba(0,0,0,0)",
         "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h3"
+        "seo_h_tag": "h2"
       }
     },
     "newsletter_cVRheC": {
@@ -137,7 +137,7 @@
         "enable_follow_on_shop": true,
         "custom_background": "#1d1f20",
         "custom_text": "#ffffff",
-        "seo_h_tag": "h4"
+        "seo_h_tag": "h1"
       }
     }
   },
