@@ -67,10 +67,7 @@
   flex: 1;
 }
 .arrow-label {
-  writing-mode: sideways-lr;
-  transform: rotate(180deg);
-  font-weight: bold;
-  position: relative;
+  max-width: 163px;
   margin-right: 52px;
   @media (max-width: 980px) {
     margin-right: 0;

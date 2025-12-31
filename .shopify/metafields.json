@@ -1,66 +1,24 @@
 {
-  "article": [
-    {
-      "key": "event_date_time",
-      "namespace": "custom",
-      "name": "event_date_time",
-      "description": "",
-      "type": {
-        "name": "date_time",
-        "category": "DATE_TIME"
-      }
-    },
-    {
-      "key": "event_location",
-      "namespace": "custom",
-      "name": "event location",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "lookbook_article",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this article",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "event_trigger_id",
-      "namespace": "custom",
-      "name": "event id",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
-  "blog": [
-    {
-      "key": "lookbook_blog",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this blog",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "article": [],
+  "blog": [],
   "collection": [
     {
-      "key": "lookbook_collection",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this collection",
+      "key": "seo_title",
+      "namespace": "custom",
+      "name": "SEO Title",
+      "description": "On Page Seo Title",
       "type": {
         "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "seo_description",
+      "namespace": "custom",
+      "name": "SEO Description",
+      "description": "On Page Seo Description",
+      "type": {
+        "name": "rich_text_field",
         "category": "TEXT"
       }
     },
@@ -78,31 +36,9 @@
   "company": [],
   "company_location": [],
   "location": [],
-  "market": [
-    {
-      "key": "lookbook_market_e64770f7-8079-4fd7-acd3-ffea6ebb3d3e",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook My Lookbook",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "market": [],
   "order": [],
-  "page": [
-    {
-      "key": "lookbook_page",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this page",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "page": [],
   "product": [
     {
       "key": "custom_product",
@@ -135,6 +71,116 @@
       }
     },
     {
+      "key": "footwear-material",
+      "namespace": "shopify",
+      "name": "Footwear material",
+      "description": "Specifies the type of material used in footwear, such as suede or rubber",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "fabric",
+      "namespace": "shopify",
+      "name": "Fabric",
+      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "occasion-style",
+      "namespace": "shopify",
+      "name": "Occasion style",
+      "description": "Helps categorize products based on occasion, e.g. casual, dress",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "accessory-size",
+      "namespace": "shopify",
+      "name": "Accessory size",
+      "description": "Defines the size of an accessory product, such as one size or compact",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "closure-type",
+      "namespace": "shopify",
+      "name": "Closure type",
+      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "heel-height-type",
+      "namespace": "shopify",
+      "name": "Heel height type",
+      "description": "Defines the height of a shoe's heel, such as flat or high",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "toe-style",
+      "namespace": "shopify",
+      "name": "Toe style",
+      "description": "Defines the shape or design of a shoe's toe, such as open or pointed",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sneaker-style",
+      "namespace": "shopify",
+      "name": "Sneaker style",
+      "description": "Identifies the design or type of sneakers, such as athletic or high-top",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
       "key": "taxcode",
       "namespace": "avalara",
       "name": "Avalara Tax Code",
@@ -142,6 +188,16 @@
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
+      }
+    },
+    {
+      "key": "headwear-features",
+      "namespace": "shopify",
+      "name": "Headwear features",
+      "description": "Highlights unique features of headwear, e.g. collapsible, versatile",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     },
     {
@@ -182,16 +238,6 @@
       "type": {
         "name": "list.product_reference",
         "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "lookbook_product",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this product",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
       }
     }
   ],
@@ -319,16 +365,6 @@
   ],
   "shop": [
     {
-      "key": "show_store_widget_app_embed_block",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Show Store Widget App Embed Block",
-      "description": "Indicates if the store widget app embed block should be shown.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
       "key": "merchant_id",
       "namespace": "mm_google_shopping_extension",
       "name": "Google: Merchant ID",
@@ -336,6 +372,16 @@
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
+      }
+    },
+    {
+      "key": "show_store_widget_app_embed_block",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Show Store Widget App Embed Block",
+      "description": "Indicates if the store widget app embed block should be shown.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
       }
     }
   ]

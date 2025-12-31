@@ -13,9 +13,7 @@
       </h2>
     </div>
     <div class="arrow-label">
-      <span class="arrow-text-vertical font-zen" aria-hidden="true">{{ section.settings.arrow_text_1 }}</span>
-      <span class="arrow-text-horizontal-1 font-zen" aria-hidden="true">{{ section.settings.arrow_text_2 }}</span>
-      <span class="arrow-text-horizontal-2 font-zen" aria-hidden="true">{{ section.settings.arrow_text_2 }}</span>
+      {{ section.settings.section_aside_image | image_url: width: 500 | image_tag }}
     </div>
   </div>
 
@@ -334,14 +332,9 @@
       "default": "left"
     },
     {
-      "type": "text",
-      "id": "arrow_text_1",
-      "label": "Arrow Text Vertical"
-    },
-    {
-      "type": "text",
-      "id": "arrow_text_2",
-      "label": "Arrow Text Horizontal"
+      "type": "image_picker",
+      "id": "section_aside_image",
+      "label": "Section Aside Image"
     },
     {
       "type": "checkbox",
