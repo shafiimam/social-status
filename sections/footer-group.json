@@ -56,7 +56,7 @@
       "settings": {
         "custom_background": "rgba(0,0,0,0)",
         "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h4"
+        "seo_h_tag": "span"
       }
     },
     "newsletter_cVRheC": {

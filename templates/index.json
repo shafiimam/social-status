@@ -12,47 +12,59 @@
     "split_screen_slider_R3zQCG": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_NQjLcn": {
+        "slide_9ceTt7": {
           "type": "slide",
-          "name": "AJ4 RAFFLE",
-          "disabled": true,
           "settings": {
-            "tagline": "",
-            "title": "A Ma Maniére x Air Jordan 4 \"Dark Mocha\"",
-            "subtitle": "EXCLUSIVE RELEASE 12.19 AT 11 AM EST",
-            "button_label": "enter draw",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha",
-            "image": "shopify://shop_images/SSAJ6.jpg",
-            "mobile_image": "shopify://shop_images/SSAJ6.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_CXxkqd": {
-          "type": "slide",
-          "name": "12 DAYS ",
-          "disabled": true,
-          "settings": {
-            "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "DAY 7: 15% OFF ALL NEW BALANCE FOOTWEAR",
+            "tagline": "In-Store & Online",
+            "title": "End of Year Markdowns",
             "subtitle": "",
-            "button_label": "",
-            "button_link": "",
-            "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
-            "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
-            "seo_h_tag": "h1",
+            "button_label": "Shop Now",
+            "button_link": "https://www.socialstatuspgh.com/collections/sales",
+            "image": "shopify://shop_images/SS_EOY25_-_WEB.jpg",
+            "mobile_image": "shopify://shop_images/SS_EOY25_-_MOBILE.jpg",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
         "slide_YJYY8H": {
           "type": "slide",
+          "name": "RAY-BAN",
+          "settings": {
+            "tagline": "NEW STYLES AVAILABLE",
+            "title": "RAY-BAN META",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/ray-ban",
+            "image": "shopify://shop_images/PNGRAYBANDESK.png",
+            "mobile_image": "shopify://shop_images/PNGRAYBANDESK_d29c503c-3cf3-4c76-a6f0-a933b490b018.png",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_iRqVHU": {
+          "type": "slide",
+          "name": "38a",
+          "settings": {
+            "tagline": "",
+            "title": "38a",
+            "subtitle": "Shop New Denim Styles",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/38a",
+            "video_object": "shopify://files/videos/WEB (1).mov",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_Qy93Kw": {
+          "type": "slide",
           "name": "12 DAYS ",
+          "disabled": true,
           "settings": {
             "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "DAY 6: 25% OFF TEES",
+            "title": "DAY 12: 30% OFF ENTIRE SITE",
             "subtitle": "",
-            "button_label": "",
-            "button_link": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/all",
             "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
             "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
             "seo_h_tag": "h1",
@@ -76,6 +88,7 @@
         "slide_7HQxKf": {
           "type": "slide",
           "name": "HOLIDAY",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "HOLIDAY GIFT GUIDE",
@@ -84,33 +97,18 @@
             "button_link": "shopify://collections/gifts-for-him",
             "image": "shopify://shop_images/GIFTGUIDESS.png",
             "mobile_image": "shopify://shop_images/GG2.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_iRqVHU": {
-          "type": "slide",
-          "name": "LES TIEN",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "LES TIEN",
-            "subtitle": "DISCOVER LEISUREWEAR STAPLES",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/les-tien",
-            "video_object": "shopify://files/videos/4k No logo WEB.mov",
-            "seo_h_tag": "h1",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_NQjLcn",
-        "slide_CXxkqd",
+        "slide_9ceTt7",
         "slide_YJYY8H",
+        "slide_iRqVHU",
+        "slide_Qy93Kw",
         "slide_DmtDT3",
-        "slide_7HQxKf",
-        "slide_iRqVHU"
+        "slide_7HQxKf"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -121,35 +119,8 @@
         "desktop_background": "rgba(0,0,0,0)",
         "desktop_overlay": "rgba(0,0,0,0)",
         "mobile_height": "var(--window-height)",
-        "mobile_background": "rgba(0,0,0,0)",
-        "heading_size": "h2"
-      }
-    },
-    "featured_collection_74ekAh": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "NEW BALANCE",
-        "subtitle": "Shop Now",
-        "collection": "new-balance",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
-      }
-    },
-    "featured_collection_aPacB7": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "T-SHIRTS",
-        "subtitle": "Shop Now",
-        "collection": "t-shirts-2",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
+        "mobile_background": "#000000",
+        "heading_size": "h1"
       }
     },
     "product_masonry_Fnqqrw": {
@@ -213,10 +184,51 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "BOMBER JACKETS",
+        "title": "RAY-BAN",
         "subtitle": "Shop Now",
-        "collection": "bomber-jackets",
-        "collection_rows": 3,
+        "collection": "ray-ban",
+        "collection_rows": 1,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "featured_collection_74ekAh": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "ADIDAS",
+        "subtitle": "Shop Now",
+        "collection": "adidas",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "featured_collection_T6KDfP": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "OUTERWEAR",
+        "subtitle": "Shop Now",
+        "collection": "outerwear-3",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "featured_collection_Ec3k3R": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "NEW ARRIVALS",
+        "subtitle": "Shop Now",
+        "collection": "new-arrivals-1",
+        "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
@@ -440,7 +452,6 @@
         "slide_3bbgCr",
         "slide_VfcA8p"
       ],
-      "disabled": true,
       "name": "Rotating Slider",
       "settings": {
         "heading": "Collections",
@@ -962,11 +973,12 @@
   },
   "order": [
     "split_screen_slider_R3zQCG",
-    "featured_collection_74ekAh",
-    "featured_collection_aPacB7",
     "product_masonry_Fnqqrw",
     "releases_pHU7Rr",
     "featured_collection_YCzWJf",
+    "featured_collection_74ekAh",
+    "featured_collection_T6KDfP",
+    "featured_collection_Ec3k3R",
     "heading_8ewcgT",
     "shop_the_look_yJ96E3",
     "video_background_eCcVXP",

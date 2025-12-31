@@ -16,16 +16,18 @@
       "blocks": {
         "content": {
           "type": "content",
+          "disabled": true,
           "settings": {
-            "text": "Enjoy FREE SHIPPING On All Domestic Orders Now Until 12/17.",
+            "text": "DAY 10: 15% OFF ALL ADIDAS FOOTWEAR",
             "link": "",
             "target": false
           }
         },
         "content_7kJfqU": {
           "type": "content",
+          "disabled": true,
           "settings": {
-            "text": "DAY 6: 25% OFF TEES",
+            "text": "DAY 9: 25% OFF ALL ACCESSORIES",
             "link": "",
             "target": false
           }
@@ -34,7 +36,16 @@
           "type": "content",
           "disabled": true,
           "settings": {
-            "text": "DAY 7: 15% OFF ALL NEW BALANCE FOOTWEAR",
+            "text": "DAY 11: 15% OFF ALL OUTWEAR APPAREL",
+            "link": "",
+            "target": false
+          }
+        },
+        "content_ziUXBt": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "text": "DAY 12: 30% OFF ENTIRE SITE",
             "link": "",
             "target": false
           }
@@ -43,8 +54,10 @@
       "block_order": [
         "content",
         "content_7kJfqU",
-        "content_L7PbgY"
+        "content_L7PbgY",
+        "content_ziUXBt"
       ],
+      "disabled": true,
       "settings": {
         "visibility": "all",
         "bar_txtcolor": "#ffffff",
