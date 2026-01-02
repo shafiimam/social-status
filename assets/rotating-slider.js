@@ -211,11 +211,11 @@ document.addEventListener("DOMContentLoaded", function () {
            if (this.settings.directionControls) {
              var directionArrowsHTML = '<ul class="direction-controls">';
              directionArrowsHTML +=
-               '<li class="left-arrow"><button>' +
+               '<li class="left-arrow"><button aria-label="Previous slide">' +
                this.left_arrow +
                "</button></li>";
              directionArrowsHTML +=
-               '<li class="right-arrow"><button>' +
+               '<li class="right-arrow"><button aria-label="Next slide">' +
                this.right_arrow +
                "</button></li>";
              directionArrowsHTML += "</ul>";
