@@ -17,7 +17,7 @@
   z-index: 0;
 }
 .hover-image-container h3 span {
-  color: #dedede;
+  color: #747474;
   font-family: Yantramanav;
   font-size: clamp(48px, 10vw + 10px, 175px);
   font-style: normal;

@@ -146,6 +146,11 @@ section.blog-locations {
   height: 100%;
   display: block;
 }
+/* Prevent focusable elements in aria-hidden containers */
+[aria-hidden="true"] a {
+  pointer-events: none;
+  visibility: hidden;
+}
 .gallery-item img {
   height: 100%;
   width: 100%;

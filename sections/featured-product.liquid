@@ -356,7 +356,7 @@
             {%- when 'collapsible_tab' -%}
 
               <toggle-tab class="toggle" {{ block.shopify_attributes }}>
-                <span class="toggle__title" tabindex="0" aria-expanded="false" aria-controls="toggle-{{ block.id }}" data-js-title>{{ block.settings.heading | escape }}</span>
+                <span class="toggle__title" role="button" tabindex="0" aria-expanded="false" aria-controls="toggle-{{ block.id }}" data-js-title>{{ block.settings.heading | escape }}</span>
                 <div id="toggle--{{ block.id }}" class="toggle__content" data-js-content>
                   {%- liquid
                     echo block.settings.content

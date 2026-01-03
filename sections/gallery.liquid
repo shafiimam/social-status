@@ -55,7 +55,7 @@
       <div class="site-box box--center-align box--column-flow {{ size_class }} box__image-text box__gallery" {{ block.shopify_attributes }}>
 
         {%- unless block.settings.link == blank -%}
-          <a href="{{ block.settings.link }}"  {% if block.settings.open_in_new_tab %} target="_blank" {% endif %}>
+          <a href="{{ block.settings.link }}" {% if block.settings.caption != blank %} aria-label="{{ block.settings.caption | escape }}" {% else %} aria-label="View gallery item" {% endif %} {% if block.settings.open_in_new_tab %} target="_blank" {% endif %}>
         {%- endunless -%}
 
           <div class="site-box-background">

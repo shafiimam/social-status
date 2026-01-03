@@ -27,7 +27,7 @@
       </div>
     {%- endif -%}
     <div class="blog-item__content">
-      <h4 class=" yantramanav title {% if index == 1 %}h2{% else %}h3{% endif %}">{{ article.title }}</h4>
+      <h2 class=" yantramanav title {% if index == 1 %}h2{% else %}h3{% endif %}">{{ article.title }}</h2>
       {% comment %}
         <span class="blog-item__info text-size--smaller">
           <span class="blog-item__date">{{ article.published_at | date: date_format }}</span>

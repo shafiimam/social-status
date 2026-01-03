@@ -31,7 +31,7 @@
         </div>
         
         <div class="locations-gallery-slider">
-          <div class="slider" data-flickity='{
+          <div class="slider slider-{{ block.id }}" data-flickity='{
           "cellAlign": "left",
           "contain": true,
           "prevNextButtons": true,
@@ -39,7 +39,8 @@
           "wrapAround": false,
           "autoPlay": false,
           "groupCells": false,
-          "freeScroll": true
+          "freeScroll": true,
+          "accessibility": false
         }'>            
             {% comment %} Dynamic gallery images loop {% endcomment %}
             {% for i in (1..5) %}
@@ -50,7 +51,7 @@
               
               {% if gallery_image != blank %}
                 <div class="gallery-item slide">
-                  <a href="{{ gallery_image | img_url: 'master' }}" data-fancybox="gallery-{{ block.id }}" >
+                  <a href="{{ gallery_image | img_url: 'master' }}" data-fancybox="gallery-{{ block.id }}">
                     <img src="{{ gallery_image | img_url: 'master' }}" alt="{{ gallery_description | default: 'Gallery image' | escape }}" loading="lazy">
                     {% if gallery_description != blank %}
                       <div class="gallery-info">

@@ -779,7 +779,7 @@ html[dir=ltr] .no-touchevents .button--with-icon:hover .icon, html[dir=ltr] .but
 }
 .button.disabled {
   pointer-events: none;
-  opacity: 0.32;
+  opacity: 0.6;
 }
 .no-touchevents .button:not(.button--with-icon) {
   overflow: hidden;

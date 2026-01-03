@@ -55,22 +55,6 @@
             "hide_text_mobile": false
           }
         },
-        "slide_Qy93Kw": {
-          "type": "slide",
-          "name": "12 DAYS ",
-          "disabled": true,
-          "settings": {
-            "tagline": "12 DAYS OF GIFTING: 12.11-12.22",
-            "title": "DAY 12: 30% OFF ENTIRE SITE",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/all",
-            "image": "shopify://shop_images/SS_-_12_DAYS_WEB_95267903-a259-4d1f-b18c-01bf43e79c79.jpg",
-            "mobile_image": "shopify://shop_images/SS_-_12_DAYS_MOBILE.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
         "slide_DmtDT3": {
           "type": "slide",
           "name": "OUTERWEAR",
@@ -84,31 +68,13 @@
             "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
-        },
-        "slide_7HQxKf": {
-          "type": "slide",
-          "name": "HOLIDAY",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "HOLIDAY GIFT GUIDE",
-            "subtitle": "SHOP FAVORITES & MORE",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/gifts-for-him",
-            "image": "shopify://shop_images/GIFTGUIDESS.png",
-            "mobile_image": "shopify://shop_images/GG2.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
         }
       },
       "block_order": [
         "slide_9ceTt7",
         "slide_YJYY8H",
         "slide_iRqVHU",
-        "slide_Qy93Kw",
-        "slide_DmtDT3",
-        "slide_7HQxKf"
+        "slide_DmtDT3"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -180,47 +146,6 @@
         "padding_bottom": 30
       }
     },
-    "featured_collection_YCzWJf": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "RAY-BAN",
-        "subtitle": "Shop Now",
-        "collection": "ray-ban",
-        "collection_rows": 1,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
-      }
-    },
-    "featured_collection_74ekAh": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "ADIDAS",
-        "subtitle": "Shop Now",
-        "collection": "adidas",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
-      }
-    },
-    "featured_collection_T6KDfP": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "OUTERWEAR",
-        "subtitle": "Shop Now",
-        "collection": "outerwear-3",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
-      }
-    },
     "featured_collection_Ec3k3R": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
@@ -229,6 +154,73 @@
         "subtitle": "Shop Now",
         "collection": "new-arrivals-1",
         "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "featured_product_yq8epL": {
+      "type": "featured-product",
+      "blocks": {
+        "header_pTE3Fh": {
+          "type": "header",
+          "settings": {
+            "show_vendor": true,
+            "show_badge": true,
+            "show_reviews": true,
+            "show_tax_info": false,
+            "show_sku": false,
+            "show_barcode": false,
+            "stick_product_header_on_mobile": true
+          }
+        },
+        "variant_picker_PbPTGX": {
+          "type": "variant_picker",
+          "settings": {
+            "variants_style": "radio",
+            "show_color_swatches": true,
+            "unavailable_variants": "show"
+          }
+        },
+        "buy_buttons_xrRqnJ": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_preorder": false,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description_KdpbUJ": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "header_pTE3Fh",
+        "variant_picker_PbPTGX",
+        "buy_buttons_xrRqnJ",
+        "description_KdpbUJ"
+      ],
+      "disabled": true,
+      "name": "t:sections.featured-product.name",
+      "settings": {
+        "product": "assouline-air-jordan-classic-book-white",
+        "gallery_style": "slider",
+        "gallery_aspect": false,
+        "gallery_pagination": "dots",
+        "enable_zoom": true,
+        "enable_video_looping": false
+      }
+    },
+    "featured_collection_YCzWJf": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "MARKDOWNS",
+        "subtitle": "Shop Now",
+        "collection": "sales",
+        "collection_rows": 1,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
@@ -336,60 +328,6 @@
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",
         "custom_overlay": "rgba(0,0,0,0)"
-      }
-    },
-    "featured_product_yq8epL": {
-      "type": "featured-product",
-      "blocks": {
-        "header_pTE3Fh": {
-          "type": "header",
-          "settings": {
-            "show_vendor": true,
-            "show_badge": true,
-            "show_reviews": true,
-            "show_tax_info": false,
-            "show_sku": false,
-            "show_barcode": false,
-            "stick_product_header_on_mobile": true
-          }
-        },
-        "variant_picker_PbPTGX": {
-          "type": "variant_picker",
-          "settings": {
-            "variants_style": "radio",
-            "show_color_swatches": true,
-            "unavailable_variants": "show"
-          }
-        },
-        "buy_buttons_xrRqnJ": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_preorder": false,
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
-          }
-        },
-        "description_KdpbUJ": {
-          "type": "description",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "header_pTE3Fh",
-        "variant_picker_PbPTGX",
-        "buy_buttons_xrRqnJ",
-        "description_KdpbUJ"
-      ],
-      "disabled": true,
-      "name": "t:sections.featured-product.name",
-      "settings": {
-        "product": "assouline-air-jordan-classic-book-white",
-        "gallery_style": "slider",
-        "gallery_aspect": false,
-        "gallery_pagination": "dots",
-        "enable_zoom": true,
-        "enable_video_looping": false
       }
     },
     "rotating_slider_7yhr3n": {
@@ -972,14 +910,12 @@
     "split_screen_slider_R3zQCG",
     "product_masonry_Fnqqrw",
     "releases_pHU7Rr",
-    "featured_collection_YCzWJf",
-    "featured_collection_74ekAh",
-    "featured_collection_T6KDfP",
     "featured_collection_Ec3k3R",
+    "featured_product_yq8epL",
+    "featured_collection_YCzWJf",
     "heading_8ewcgT",
     "shop_the_look_yJ96E3",
     "video_background_eCcVXP",
-    "featured_product_yq8epL",
     "rotating_slider_7yhr3n",
     "heading_KjpKfp",
     "shop_the_look_CQnRNW",
