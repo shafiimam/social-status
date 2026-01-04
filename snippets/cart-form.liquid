@@ -40,7 +40,7 @@
 
 		        <div class="cart-item" data-js-cart-item data-title="{{ item.product.title | escape }} {%- unless item.product.has_only_default_variant -%} ({{ item.variant.title | escape }}) {%- endunless -%}" data-id="{{ item.key }}" data-variant="{{ item.variant.id }}" data-qty="{{ item.quantity }}" data-line="{{ forloop.index }}" data-product-id="{{ item.product.id }}">
 
-		          <a href="{{ item.url }}" class="thumbnail">
+		          <a href="{{ item.url }}" class="thumbnail" aria-label="{{ item.product.title | escape }}{% unless item.product.has_only_default_variant %} ({{ item.variant.title | escape }}){% endunless %}">
 								{%- render 'lazy-image-small', image: item.image, sizes: '110px' -%}
 		          </a>
 
@@ -129,7 +129,7 @@
 											  <button class="qty-button qty-minus" aria-label="{{ 'general.accessibility_labels.decrease_quantity' | t }}" role="button" controls="updates_{{ item.id }}">
 											    <svg width="12" height="12" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.518738 0H11.5154V1H0.518738V0Z" fill="#262627"/></svg>
 											  </button>
-											  <label for="qty-{{ id }}" class="visually-hidden">{{ 'general.accessibility_labels.quantity' | t }}</label>
+											  <label for="updates_{{ item.id }}" class="visually-hidden">{{ 'general.accessibility_labels.quantity' | t }}</label>
 											  <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="qty qty-selector product__quantity" id="updates_{{ item.id }}" data-href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=$qty">
 											  <button class="qty-button qty-plus" aria-label="{{ 'general.accessibility_labels.increase_quantity' | t }}" role="button" controls="updates_{{ item.id }}">
 													<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.49988 0.503113V11.4998H5.49988V0.503113H6.49988Z" fill="#262627"/><path d="M0.501526 5.49835H11.4982V6.49835H0.501526V5.49835Z" fill="#262627"/></svg>
