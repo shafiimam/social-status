@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "featured_collection_ibe9dL": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "The Valentine's Edit",
+        "subtitle": "Shop Now",
+        "collection": "the-valentines-day-edit",
+        "collection_rows": 2,
+        "show_view_all": false,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "blog_tags_wcznHX": {
+          "type": "blog_tags",
+          "disabled": true,
+          "settings": {}
+        },
+        "social_sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "blog_navigation": {
+          "type": "blog_navigation",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "blog_tags_wcznHX",
+        "social_sharing",
+        "blog_navigation"
+      ],
+      "settings": {
+        "layout": "title-on-left with-image",
+        "mobile_overlay_background": "rgba(0,0,0,0)",
+        "mobile_overlay_text": "rgba(0,0,0,0)",
+        "blog_show_date": true,
+        "blog_show_author": false,
+        "blog_show_comments": false
+      }
+    }
+  },
+  "order": [
+    "featured_collection_ibe9dL",
+    "main"
+  ]
+}

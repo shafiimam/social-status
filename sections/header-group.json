@@ -14,11 +14,18 @@
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
+        "content_CeVihB": {
+          "type": "content",
+          "settings": {
+            "text": "Due to severe weather conditions, our warehouse operations may be impacted, and some orders or returns could experience slight delays.",
+            "link": "",
+            "target": false
+          }
+        },
         "content": {
           "type": "content",
-          "disabled": true,
           "settings": {
-            "text": "DAY 10: 15% OFF ALL ADIDAS FOOTWEAR",
+            "text": "ENJOY FREE SHIPPING ON ALL DOMESTIC ORDERS NOW UNTIL 1.30",
             "link": "",
             "target": false
           }
@@ -27,37 +34,17 @@
           "type": "content",
           "disabled": true,
           "settings": {
-            "text": "DAY 9: 25% OFF ALL ACCESSORIES",
-            "link": "",
-            "target": false
-          }
-        },
-        "content_L7PbgY": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "text": "DAY 11: 15% OFF ALL OUTWEAR APPAREL",
-            "link": "",
-            "target": false
-          }
-        },
-        "content_ziUXBt": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "text": "DAY 12: 30% OFF ENTIRE SITE",
-            "link": "",
+            "text": "15% OFF ENTIRE ORDER ON OFF-SEASON NOW UNTIL 1.27",
+            "link": "https://www.off--season.com/",
             "target": false
           }
         }
       },
       "block_order": [
+        "content_CeVihB",
         "content",
-        "content_7kJfqU",
-        "content_L7PbgY",
-        "content_ziUXBt"
+        "content_7kJfqU"
       ],
-      "disabled": true,
       "settings": {
         "visibility": "all",
         "bar_txtcolor": "#ffffff",
@@ -72,19 +59,19 @@
         "logo_inverted_src": "shopify://shop_images/SS-logo-white_8d1e4185-4ed3-4f10-9abb-3baac11067ec.png",
         "logo_height": 50,
         "main_linklist": "new-menu-2025",
-        "menu_style": "minimal",
+        "menu_style": "classic",
         "menu_sticky": "sticky",
         "menu_hide_border": true,
         "collection_linklist": "",
         "show_collection_image": false,
-        "show_promotion_block": true,
+        "show_promotion_block": false,
         "promotion_header": "",
         "promotion_content": "",
-        "promotion_button_label": "EXPLORE",
+        "promotion_button_label": "SHOP",
         "promotion_button_link": "https://www.off--season.com/",
         "promotion_color_txt": "#ffffff",
         "promotion_color_bg": "rgba(0,0,0,0)",
-        "promotion_image": "shopify://shop_images/OFFSZN-Sale_WEB.jpg",
+        "promotion_image": "shopify://shop_images/OS_15OFF_-_WEB_2.jpg",
         "show_locale_selector": true,
         "show_country_selector": true
       }

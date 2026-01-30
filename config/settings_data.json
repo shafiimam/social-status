@@ -113,7 +113,7 @@
     "product_card_custom_tag_badge_exclude_tag": "",
     "product_card_custom_tag_badge_text": "",
     "favicon": "shopify://shop_images/LOOP_LOGO_2_dc8b95cc-4458-489b-80a3-2a41330d1c08.png",
-    "cart_action": "overlay",
+    "cart_action": "no-overlay",
     "cart_notes_enable": false,
     "cart_drawer_actions": "show-checkout",
     "cart_image_ratio": "1",
@@ -151,6 +151,11 @@
       },
       "10864971697205422121": {
         "type": "shopify://apps/gorgias-live-chat-helpdesk/blocks/gorgias/a66db725-7b96-4e3f-916e-6c8e6f87aaaa",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
       }

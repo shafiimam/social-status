@@ -1,0 +1,154 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_Hw8xwi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iANpbF": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_KqrwnL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iANpbF",
+        "text_KqrwnL"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "hero_xFNVG8": {
+      "type": "hero",
+      "disabled": true,
+      "name": "Hero Section",
+      "settings": {
+        "heading": "Features",
+        "subheading": "",
+        "button_1_text": "Read",
+        "button_1_link": "",
+        "button_2_text": "Button 2",
+        "button_2_link": "",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "info": {
+          "type": "info",
+          "settings": {
+            "show_date": true,
+            "show_author": false
+          }
+        },
+        "summary": {
+          "type": "summary",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "info",
+        "summary"
+      ],
+      "settings": {
+        "enable_tags": false,
+        "post_limit": 22,
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "featured_collection_8cHUYf": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "Valentine's Edit",
+        "subtitle": "",
+        "collection": "the-valentines-day-edit",
+        "collection_rows": 3,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": false
+      }
+    },
+    "rich_text_Ch3qU3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_werDAz": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURES",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_zMrDdt": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Features</em> is where Social Status brings the stories that shape our community to life. From style and sneakers to music, art, and everyday moments, this is where inspiration meets conversation.</p><p>Discover exclusive interviews, behind the scenes looks at upcoming launches, and perspectives that highlight the people and places moving culture forward. Each story is crafted to reflect the energy of the streets and the spirit of those who define them.</p><p>Social Status Features is more than content. It is a space to learn, connect, and be part of something bigger.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_werDAz",
+        "text_zMrDdt"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    }
+  },
+  "order": [
+    "rich_text_Hw8xwi",
+    "hero_xFNVG8",
+    "main",
+    "featured_collection_8cHUYf",
+    "rich_text_Ch3qU3"
+  ]
+}

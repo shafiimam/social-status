@@ -9,6 +9,8 @@
   {% render 'product-variant-picker', style: 'select', product: product, show_color_swatches: true %}
 {% endcomment %}
 
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
 {%- if style == 'select' -%}
 
   <div class="product-variants product-variants--select buttons-holder">
@@ -17,8 +19,21 @@
 
         <label for="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}">{{ 'products.page.select_variant' | t: variant: option.name }}</label>
         <select class="product-variant-container" data-js-product-variant-container id="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}">
+          {%- liquid
+            assign selected_value_for_option = option.selected_value
+            if selected_value_for_option == blank
+              case option.position
+                when 1
+                  assign selected_value_for_option = current_variant.option1
+                when 2
+                  assign selected_value_for_option = current_variant.option2
+                when 3
+                  assign selected_value_for_option = current_variant.option3
+              endcase
+            endif
+          -%}
           {%- for value in option.values -%}
-            <option class="product-variant-value" value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
+            <option class="product-variant-value" value="{{ value | escape }}" {% if selected_value_for_option == value %}selected{% endif %}>
               {{ value | escape }}
             </option>
           {%- endfor -%}
@@ -54,6 +69,18 @@
           assign is_color = false
         endif
 
+        assign selected_value_for_option = option.selected_value
+        if selected_value_for_option == blank
+          case option.position
+            when 1
+              assign selected_value_for_option = current_variant.option1
+            when 2
+              assign selected_value_for_option = current_variant.option2
+            when 3
+              assign selected_value_for_option = current_variant.option3
+          endcase
+        endif
+
       -%}
 
       <div class="product-variant" data-js-product-variant data-name="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}">
@@ -68,11 +95,18 @@
             <div class="product-variant__item 
               {% if is_color %} 
                 product-variant__item--color 
-              {% elsif size_label contains downcased_option %}
+              {% elsif size_label contains option_downcased %}
                 product-variant__item--size
               {% endif %}
             ">
-              <input type="radio" name="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}" id="{{ product.handle }}-option-{{ option.name | escape | downcase | strip }}-{{ forloop.index }}-{{ section.id }}" value="{{ value | escape }}" {% if product_has_one_option %}checked{% endif %} class="product-variant__input product-variant-value">
+              <input
+                type="radio"
+                name="product-{{ option.name | escape | downcase | strip }}-{{ section.id }}"
+                id="{{ product.handle }}-option-{{ option.name | escape | downcase | strip }}-{{ forloop.index }}-{{ section.id }}"
+                value="{{ value | escape }}"
+                {% if selected_value_for_option == value or product_has_one_option %}checked{% endif %}
+                class="product-variant__input product-variant-value"
+              >
               <label for="{{ product.handle }}-option-{{ option.name | escape | downcase | strip }}-{{ forloop.index }}-{{ section.id }}" class="product-variant__label">
 
                 {%- if is_color -%}
