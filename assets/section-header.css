@@ -640,9 +640,13 @@ html[dir=ltr] .site-nav.style--classic .has-submenu:last-child .babymenu {
 .site-nav.style--classic .submenu.normal-menu .submenu-holder {
   padding: 20px 0;
   margin-top: -1px;
+}
+/* Select normal-menu submenu holders without children having the 'has-babymenu' class */
+.site-nav.style--classic .submenu.normal-menu .submenu-holder:not(:has(> .has-babymenu)) {
   overflow: scroll;
   max-height: 90vh;
 }
+
 .site-nav.style--classic .submenu.normal-menu .submenu-holder > li {
   display: block;
   position: relative;
