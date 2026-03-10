@@ -1,0 +1,285 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "eql_launches_eql_draw_FD3wYd": {
+          "type": "shopify://apps/eql-launches/blocks/eql-draw/527a5c25-0ce4-4c16-8597-6f87dfefb064",
+          "settings": {
+            "base_size": 16,
+            "border_radius": "0",
+            "widget_width": 560,
+            "gap_size": 16,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "color_background": "#FFFFFF00",
+            "color_button_background": "#000000",
+            "color_button_text": "#FFFFFF",
+            "color_error_text": "#FF0000",
+            "color_field_background": "#FFFFFF",
+            "color_field_text": "#000000",
+            "color_field_border": "#000000",
+            "color_text": "#000000",
+            "color_mode": "light",
+            "draw_state": "OPEN"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_vendor": true,
+            "show_badge": true,
+            "show_reviews": true,
+            "show_tax_info": false,
+            "show_sku": false,
+            "show_barcode": false,
+            "stick_product_header_on_mobile": false
+          }
+        },
+        "custom_liquid_UVmX7X": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variants_style": "radio",
+            "show_color_swatches": true,
+            "unavailable_variants": "show"
+          }
+        },
+        "fina_sale_message_T4UnVK": {
+          "type": "fina_sale_message",
+          "settings": {}
+        },
+        "ineligibile_products_YCEBdF": {
+          "type": "ineligibile_products",
+          "settings": {
+            "vendor_array": "Jordan Brand, Jordan, JORDAN BRAND, JORDAN, NIKE, Nike, CONVERSE, Converse"
+          }
+        },
+        "collapsible_tab_4zwfq4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Details",
+            "content": "",
+            "markup": "{{ product.description | split: \"<!-- Details -->\" | last }}",
+            "page": "",
+            "hide_block_if": false
+          }
+        },
+        "collapsible_tab_FFCzxN": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "content": "",
+            "markup": "{% for tag in product.tags %}                                  {% assign _tag = tag | downcase %}                              {% if _tag contains \"shipping-1\" %} \nOur special release and draw products are considered a final sale.  All unauthorized returns will be subject to Restock Fee. We reserve the right to cancel orders at our own discretion.                                                                             <br>                                   {% elsif _tag contains \"shipping-2\" %}                                   All shipping is done through FedEx both domestically and internationally. All international orders are final sale. The customer is responsible for all duties and taxes.                                   <br>                                  {% endif %}\n                                {% endfor %}",
+            "page": "",
+            "hide_block_if": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "eql_launches_eql_draw_FD3wYd",
+        "header",
+        "custom_liquid_UVmX7X",
+        "description",
+        "variant_picker",
+        "fina_sale_message_T4UnVK",
+        "ineligibile_products_YCEBdF",
+        "collapsible_tab_4zwfq4",
+        "collapsible_tab_FFCzxN",
+        "share"
+      ],
+      "settings": {
+        "gallery_style": "scroll",
+        "gallery_aspect": false,
+        "gallery_pagination": "dots",
+        "enable_zoom": true,
+        "enable_video_looping": false
+      }
+    },
+    "rich_text_pGBT7b": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FDUfWR": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Simplicity",
+            "seo_h_tag": "h3"
+          }
+        },
+        "text_EPqAbw": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>RAINS is a Danish rainwear company founded in 2012. Based on an early initiative to interpret the traditional rubber raincoat in a novel way, the company has, since its foundation, grown into an accomplished international rainwear brand. Along with the reinvented classics, RAINS today offers a full line of waterproof outerwear. RAINS is a Danish rainwear company founded in 2012. Based on an early initiative to interpret the traditional rubber raincoat in a novel way.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FDUfWR",
+        "text_EPqAbw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "faq_Ang7Kh": {
+      "type": "faq",
+      "blocks": {
+        "text_nKh94T": {
+          "type": "text",
+          "settings": {
+            "title": "What are the shipping costs?",
+            "body": "<p>Domestic shipping is $16, and international shipping rates vary based on location and order value.</p>"
+          }
+        },
+        "text_rmJCxd": {
+          "type": "text",
+          "settings": {
+            "title": "How long will it take to receive my order?",
+            "body": "<p>Shipping times depend on your location and chosen shipping method. Domestic orders typically arrive within 5 business days, while international shipments may take 7 to 15 business days. This includes 2-3 days for order processing, 1-2 business days for packing and shipping, and additional transit time based on your destination.</p>"
+          }
+        },
+        "text_3PyW9F": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer international shipping?",
+            "body": "<p>We offer international shipping to select countries. Rates and delivery times vary by destination. Duties and taxes are calculated at checkout. </p>"
+          }
+        },
+        "text_WfJGhe": {
+          "type": "text",
+          "settings": {
+            "title": "How can I track my order?",
+            "body": "<p>Once your order ships, you will receive a tracking number via email. You can use this to track your package in real time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_nKh94T",
+        "text_rmJCxd",
+        "text_3PyW9F",
+        "text_WfJGhe"
+      ],
+      "name": "t:sections.faq.presets.name",
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "open_first": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "gallery_wpYWHf": {
+      "type": "gallery",
+      "blocks": {
+        "image_7838HB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC09079__BRENDEN.MOTLEY.jpg",
+            "link": "shopify://collections/38a",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        },
+        "image_zNffB3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Adobe_Express_-_file_22.jpg",
+            "link": "shopify://collections/38a",
+            "open_in_new_tab": false,
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_7838HB",
+        "image_zNffB3"
+      ],
+      "name": "t:sections.gallery.name",
+      "settings": {
+        "image_height": "full"
+      }
+    },
+    "video_background_R8tVWr": {
+      "type": "video-background",
+      "blocks": {
+        "heading_R9KcDT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2",
+            "seo_h_tag": "span"
+          }
+        },
+        "text_Eaeaxr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_R9KcDT",
+        "text_Eaeaxr"
+      ],
+      "disabled": true,
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "#ffffff",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_pGBT7b",
+    "faq_Ang7Kh",
+    "gallery_wpYWHf",
+    "video_background_R8tVWr",
+    "product-recommendations"
+  ]
+}

@@ -23,7 +23,6 @@
 }
 .releases-container {
   display: grid;
-  grid-template-columns: var(--column-size);
   flex-wrap: wrap;
   gap: 27px;
   position: relative;
@@ -35,7 +34,7 @@
     font-size: 40px;
   }
   .releases-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
 .release-card {

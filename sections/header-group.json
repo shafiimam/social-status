@@ -14,18 +14,18 @@
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
-        "content_CeVihB": {
+        "content_JgPaB6": {
           "type": "content",
           "settings": {
-            "text": "Due to severe weather conditions, our warehouse operations may be impacted, and some orders or returns could experience slight delays.",
-            "link": "",
+            "text": "DISCOVER SPECIAL OFFERS ON SELECT STYLES",
+            "link": "https://www.socialstatuspgh.com/collections/special-offer",
             "target": false
           }
         },
         "content": {
           "type": "content",
           "settings": {
-            "text": "ENJOY FREE SHIPPING ON ALL DOMESTIC ORDERS NOW UNTIL 1.30",
+            "text": "FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $300",
             "link": "",
             "target": false
           }
@@ -41,7 +41,7 @@
         }
       },
       "block_order": [
-        "content_CeVihB",
+        "content_JgPaB6",
         "content",
         "content_7kJfqU"
       ],

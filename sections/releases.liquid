@@ -1,4 +1,4 @@
-<section class="releases-section">
+<section class="releases-section site-box-container" id="release-section-{{ section.id }}">
   <div class="container">
     <div class="releases__header">
       <h1 class="releases__title h1 text-uppercase">{{ section.settings.title }}</h1>
@@ -14,14 +14,13 @@
   </div>
 </section>
 <style>
-  :root{
-      --column-size: repeat({{ section.settings.column_size }}, 1fr);
+  #release-section-{{ section.id }} .releases-container {
+    grid-template-columns:  repeat({{ section.settings.column_size }}, 1fr);
   }
-
-    .releases-section{
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  #release-section-{{ section.id }}.releases-section{
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
 </style>
 {{ 'section-releases.css' | asset_url | stylesheet_tag }}
 

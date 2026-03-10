@@ -9,86 +9,109 @@
  */
 {
   "sections": {
-    "split_screen_slider_R3zQCG": {
+    "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_Vfh63j": {
+        "slide_UAiqwg": {
           "type": "slide",
+          "name": "DND ",
           "settings": {
             "tagline": "",
-            "title": "The Valentine's Day Edit",
-            "subtitle": "Shop it Together or Claim it Solo",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/the-valentines-day-edit",
-            "video_object": "shopify://files/videos/4 Web.mov",
+            "title": "DO NOT DUPLICATE: HOUSTON RODEO PACK",
+            "subtitle": "AVAILABLE MARCH 20",
+            "button_label": "Enter draw",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
+            "mobile_image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
-        "slide_DmtDT3": {
+        "slide_jpCQ6L": {
           "type": "slide",
-          "name": "OUTERWEAR",
+          "name": "NB 1890",
           "settings": {
             "tagline": "",
-            "title": "OUTERWEAR",
-            "subtitle": "SUIT UP. SHOW UP .",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/outerwear-3",
-            "video_object": "shopify://files/videos/4k WEB.mov",
-            "seo_h_tag": "h1",
+            "title": "NEW BALANCE ABZORB 1890",
+            "subtitle": "Launches First March 12",
+            "button_label": "ENTER DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/new-balance-1890-star-burst",
+            "image": "shopify://shop_images/MOB2_bacb91c3-96cb-466b-b64f-26674dbb5295.png",
+            "mobile_image": "shopify://shop_images/MOB2_c38523cc-00e0-49f9-ba5c-2b55a1962d99.png",
+            "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
-        "slide_YJYY8H": {
+        "slide_mMArCW": {
           "type": "slide",
-          "name": "FLIGHT CLUBS",
+          "name": "CROCS RIPPLE",
+          "disabled": true,
           "settings": {
-            "tagline": "",
-            "title": "AIR JORDAN 4 RETRO OG \"FLIGHT CLUB\"",
+            "tagline": "Comfort Meets Motion",
+            "title": "CROCS RIPPLE",
             "subtitle": "",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://products/air-jordan-4-retro-og-fc-sail-black-university-red",
-            "image": "shopify://shop_images/DSC08136_BM.jpg",
-            "mobile_image": "shopify://shop_images/DSC08136_BM_bd18a47a-72ab-447b-baa2-1d3d5535f570.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_NbgUpE": {
-          "type": "slide",
-          "settings": {
-            "tagline": "",
-            "title": "New Arrivals",
-            "subtitle": "Fresh Looks Are Here",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/new-arrivals-1",
-            "video_object": "shopify://files/videos/Web remived jacket .mov",
+            "button_link": "shopify://products/ripple-sneaker",
+            "image": "shopify://shop_images/B_DSC09750.jpg",
+            "mobile_image": "shopify://shop_images/B_DSC09750_376dd163-92b9-4b61-95a5-d7fb3d56cc2b.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
-        "slide_iRqVHU": {
+        "slide_NfXV6a": {
           "type": "slide",
-          "name": "38a",
+          "name": "38A WW",
           "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "38a",
-            "subtitle": "Shop New Denim Styles",
+            "title": "New 38a Workwear Essentials",
+            "subtitle": "",
             "button_label": "shop now",
             "button_link": "shopify://collections/38a",
-            "video_object": "shopify://files/videos/WEB (1).mov",
+            "image": "shopify://shop_images/Untitled-1.png",
+            "mobile_image": "shopify://shop_images/Untitled-1.png",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_dUPVHn": {
+          "type": "slide",
+          "name": "non-dnd",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "Discover The Exclusive adidas Capsule",
+            "subtitle": "",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/adidas",
+            "video_object": "shopify://files/videos/SS 1.mov",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_QRCkNW": {
+          "type": "slide",
+          "name": "nahmias",
+          "disabled": true,
+          "settings": {
+            "tagline": "FROM SUMMERLAND WITH LOVE",
+            "title": "PUMA X NAHMIAS SS26",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/puma",
+            "video_object": "shopify://files/videos/26SS_SP_SELECT_NAHMIAS_BLACK_1_7s.mp4",
             "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_Vfh63j",
-        "slide_DmtDT3",
-        "slide_YJYY8H",
-        "slide_NbgUpE",
-        "slide_iRqVHU"
+        "slide_UAiqwg",
+        "slide_jpCQ6L",
+        "slide_mMArCW",
+        "slide_NfXV6a",
+        "slide_dUPVHn",
+        "slide_QRCkNW"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -99,119 +122,103 @@
         "desktop_background": "rgba(0,0,0,0)",
         "desktop_overlay": "rgba(0,0,0,0)",
         "mobile_height": "var(--window-height)",
-        "mobile_background": "#000000",
+        "mobile_background": "rgba(0,0,0,0)",
         "heading_size": "h1"
       }
     },
-    "product_masonry_Fnqqrw": {
-      "type": "product-masonry",
-      "disabled": true,
-      "name": "Product Masonry Gallery",
+    "featured_collection_Ec3k3R": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "Shop knits",
-        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
-        "image": "shopify://shop_images/masonry-gallery-image.png",
-        "image_caption": "knits",
-        "button_label": "shop",
-        "button_link": "shopify://collections/knits-1",
-        "product_list": [
-          "home-studyos-03-planter-pierre",
-          "home-studyos-03-planter-pierre-1",
-          "human-made-6-panel-cap-3",
-          "nb-582"
-        ]
+        "title": "Maison Mihara Yasuhiro",
+        "subtitle": "",
+        "collection": "maison-mihara-yasuhiro",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
       }
     },
-    "releases_pHU7Rr": {
+    "releases_JCnmxR": {
       "type": "releases",
       "blocks": {
-        "release_card_zQXXgz": {
+        "release_card_KcqCdc": {
           "type": "release-card",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/GAMMAADULT.avif",
-            "title": "AIR JORDAN 11 RETRO \"GAMMA BLUE\"",
+            "image": "shopify://shop_images/PACEXGELKAYANO12.1-1.jpg",
+            "title": "ASICS X PACE GEL KAYANO 12.1",
             "description": "",
-            "release_date": "12.13",
-            "price": "235",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-11-retro-gamma-blue"
+            "release_date": "3.6",
+            "price": "200",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/asics-x-pace-gel-kayano-121"
           }
         },
-        "release_card_zmfRnj": {
+        "release_card_GcLNPA": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/AMMXAJ4DARKMOCHA-1.jpg",
-            "title": "A MA MANIÉRE X AIR JORDAN 4 \"DARK MOCHA\"",
+            "image": "shopify://shop_images/NB1890YLWBLK-1.jpg",
+            "title": "NEW BALANCE ABZORB 1890",
             "description": "",
-            "release_date": "12.19",
-            "price": "225",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/a-ma-maniere-x-air-jordan-4-retro-og-sp-dark-mocha"
+            "release_date": "3.12",
+            "price": "180",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/new-balance-1890-star-burst"
+          }
+        },
+        "release_card_QKM9B7": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/SHAI001PINK-1.jpg",
+            "title": "CONVERSE SHAI 001 \"TICKLED PINK\"",
+            "description": "",
+            "release_date": "3.12",
+            "price": "130",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/converse-shai-001-tickled-pink"
+          }
+        },
+        "release_card_3JYewV": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/AJ13TRUERED-1.jpg",
+            "title": "AIR JORDAN 13 \"TRUE RED CHICAGO\"",
+            "description": "",
+            "release_date": "3.13",
+            "price": "215",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-13-true-red-chicago"
           }
         }
       },
       "block_order": [
-        "release_card_zQXXgz",
-        "release_card_zmfRnj"
+        "release_card_KcqCdc",
+        "release_card_GcLNPA",
+        "release_card_QKM9B7",
+        "release_card_3JYewV"
       ],
-      "disabled": true,
       "settings": {
         "title": "Releases",
-        "column_size": 3,
+        "column_size": 4,
         "padding_top": 40,
         "padding_bottom": 30
       }
     },
-    "featured_product_yq8epL": {
-      "type": "featured-product",
+    "shop_the_look_yJ96E3": {
+      "type": "shop-the-look",
       "blocks": {
-        "header_pTE3Fh": {
-          "type": "header",
+        "product_7Fz9xj": {
+          "type": "product",
           "settings": {
-            "show_vendor": true,
-            "show_badge": true,
-            "show_reviews": true,
-            "show_tax_info": false,
-            "show_sku": false,
-            "show_barcode": false,
-            "stick_product_header_on_mobile": true
+            "product": "asap-rocky-x-ray-ban-bold-metal-sunglasses-green-lens"
           }
-        },
-        "variant_picker_PbPTGX": {
-          "type": "variant_picker",
-          "settings": {
-            "variants_style": "radio",
-            "show_color_swatches": true,
-            "unavailable_variants": "show"
-          }
-        },
-        "buy_buttons_xrRqnJ": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_preorder": false,
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
-          }
-        },
-        "description_KdpbUJ": {
-          "type": "description",
-          "settings": {}
         }
       },
       "block_order": [
-        "header_pTE3Fh",
-        "variant_picker_PbPTGX",
-        "buy_buttons_xrRqnJ",
-        "description_KdpbUJ"
+        "product_7Fz9xj"
       ],
-      "disabled": true,
-      "name": "t:sections.featured-product.name",
+      "name": "RAYBAN",
       "settings": {
-        "product": "assouline-air-jordan-classic-book-white",
-        "gallery_style": "slider",
-        "gallery_aspect": false,
-        "gallery_pagination": "dots",
-        "enable_zoom": true,
-        "enable_video_looping": false
+        "image": "shopify://shop_images/DSC09627_BM.jpg",
+        "desktop_image_positioning": "image-on-left",
+        "hide_product_price": true
       }
     },
     "featured_collection_YCzWJf": {
@@ -227,26 +234,27 @@
         "hide_product_price": true
       }
     },
-    "heading_8ewcgT": {
+    "heading_4BtYw6": {
       "type": "heading",
       "blocks": {
-        "heading_3pNq48": {
+        "heading_UTUaUj": {
           "type": "heading",
           "settings": {
-            "heading": "Layering Essentials",
-            "heading_size": "h2",
+            "heading": "Shop the Look",
+            "heading_size": "h3",
             "seo_h_tag": "h1"
           }
         },
-        "text_Vy4UYY": {
+        "text_BK9wEE": {
           "type": "text",
           "disabled": true,
           "settings": {
             "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
           }
         },
-        "button_eVnfGU": {
+        "button_GDGeHV": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "SHOP NOW",
             "button_link": "shopify://collections/layering-essentials"
@@ -254,69 +262,16 @@
         }
       },
       "block_order": [
-        "heading_3pNq48",
-        "text_Vy4UYY",
-        "button_eVnfGU"
+        "heading_UTUaUj",
+        "text_BK9wEE",
+        "button_GDGeHV"
       ],
+      "disabled": true,
       "name": "t:sections.heading.name",
       "settings": {
         "text_alignment": "center",
         "custom_background": "rgba(0,0,0,0)",
         "custom_text": "rgba(0,0,0,0)"
-      }
-    },
-    "shop_the_look_yJ96E3": {
-      "type": "shop-the-look",
-      "blocks": {
-        "product_7Fz9xj": {
-          "type": "product",
-          "settings": {
-            "product": "diet-starts-monday-chainstitch-hoodie-orange"
-          }
-        },
-        "product_4RXRPV": {
-          "type": "product",
-          "settings": {
-            "product": "diet-starts-monday-chainstitch-sweatpants-orange"
-          }
-        },
-        "product_KJNpDX": {
-          "type": "product",
-          "settings": {
-            "product": "stussy-sherpa-rev-jacket-drk-green"
-          }
-        },
-        "product_qFEUPt": {
-          "type": "product",
-          "settings": {
-            "product": "honor-the-gift-oil-sweatpant-black"
-          }
-        }
-      },
-      "block_order": [
-        "product_7Fz9xj",
-        "product_4RXRPV",
-        "product_KJNpDX",
-        "product_qFEUPt"
-      ],
-      "name": "t:sections.shop-the-look.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/layeringessentials.png",
-        "desktop_image_positioning": "image-on-left",
-        "hide_product_price": true
-      }
-    },
-    "featured_collection_Ec3k3R": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "FOOTWEAR",
-        "subtitle": "Shop Now",
-        "collection": "footwear",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
       }
     },
     "video_background_eCcVXP": {
@@ -381,7 +336,7 @@
         "slide_VtQDKD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/hats.png",
+            "image": "shopify://shop_images/3CL.jpg",
             "slide_text": "ACCESSORIES",
             "link": "shopify://collections/accessories-1"
           }
@@ -418,6 +373,57 @@
         "backdrop_text": "Culture",
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "in_store_features_events_PYU3XM": {
+      "type": "in-store-features-events",
+      "blocks": {
+        "blog_block_Qztdqd": {
+          "type": "blog_block",
+          "settings": {
+            "tab_group_name": "Features",
+            "blog": "social-status"
+          }
+        },
+        "events_block_WQY3df": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON",
+            "blog": "blog-events"
+          }
+        },
+        "events_block_DB3ERc": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT",
+            "blog": "blog-events"
+          }
+        }
+      },
+      "block_order": [
+        "blog_block_Qztdqd",
+        "events_block_WQY3df",
+        "events_block_DB3ERc"
+      ],
+      "name": "Store Features & Events",
+      "settings": {
+        "main_title": "LATEST FEATURES",
+        "main_title_width": "732",
+        "main_title_align": "left",
+        "sub_title": "& events",
+        "sub_title_align": "right",
+        "section_aside_image": "shopify://shop_images/culture-logo.png",
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Register Now",
+        "no_event_title": "No Event Found",
+        "no_event_info": "This location does not have an event at this time."
       }
     },
     "heading_KjpKfp": {
@@ -481,6 +487,7 @@
         },
         "product_AVfkaH": {
           "type": "product",
+          "disabled": true,
           "settings": {
             "product": "air-force-1-07-ja-morant"
           }
@@ -534,57 +541,6 @@
       "settings": {
         "heading": "Step In The Culture",
         "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN <strong>AR  </strong></p>"
-      }
-    },
-    "in_store_features_events_PYU3XM": {
-      "type": "in-store-features-events",
-      "blocks": {
-        "blog_block_Qztdqd": {
-          "type": "blog_block",
-          "settings": {
-            "tab_group_name": "Features",
-            "blog": "social-status"
-          }
-        },
-        "events_block_WQY3df": {
-          "type": "events_block",
-          "settings": {
-            "tab_group_name": "Events",
-            "city_name": "HOUSTON",
-            "city_tag": "HOUSTON",
-            "blog": "blog-events"
-          }
-        },
-        "events_block_DB3ERc": {
-          "type": "events_block",
-          "settings": {
-            "tab_group_name": "Events",
-            "city_name": "DETROIT",
-            "city_tag": "DETROIT",
-            "blog": "blog-events"
-          }
-        }
-      },
-      "block_order": [
-        "blog_block_Qztdqd",
-        "events_block_WQY3df",
-        "events_block_DB3ERc"
-      ],
-      "name": "Store Features & Events",
-      "settings": {
-        "main_title": "LATEST FEATURES",
-        "main_title_width": "732",
-        "main_title_align": "left",
-        "sub_title": "& events",
-        "sub_title_align": "right",
-        "section_aside_image": "shopify://shop_images/culture-logo.png",
-        "show_tab_list": true,
-        "max_articles": 5,
-        "view_more_label": "View More",
-        "blog_cta_label": "Read Article",
-        "event_cta_label": "Register Now",
-        "no_event_title": "No Event Found",
-        "no_event_info": "This location does not have an event at this time."
       }
     },
     "latest_features_f6y9et": {
@@ -698,11 +654,30 @@
       "name": "Image Text Column",
       "settings": {
         "image": "shopify://shop_images/BESOCIAL1.png",
-        "image_position": "right",
+        "image_position": "left",
         "padding_top": 60,
         "padding_bottom": 0,
         "show_border_below": false,
         "show_border_top": false
+      }
+    },
+    "product_masonry_Fnqqrw": {
+      "type": "product-masonry",
+      "disabled": true,
+      "name": "Product Masonry Gallery",
+      "settings": {
+        "title": "Shop knits",
+        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
+        "image": "shopify://shop_images/masonry-gallery-image.png",
+        "image_caption": "knits",
+        "button_label": "shop",
+        "button_link": "shopify://collections/knits-1",
+        "product_list": [
+          "home-studyos-03-planter-pierre",
+          "home-studyos-03-planter-pierre-1",
+          "human-made-6-panel-cap-3",
+          "nb-582"
+        ]
       }
     },
     "floating_testimonials_KCBbUg": {
@@ -887,67 +862,27 @@
         "instafeed_app_block_Lm4dJE"
       ],
       "settings": {}
-    },
-    "rich_text_ekPAek": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_bJaM7A": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "seo_h_tag": "h3"
-          }
-        },
-        "text_qaqnyP": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bJaM7A",
-        "text_qaqnyP"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "title": "",
-        "btn_label": "",
-        "btn_url": "",
-        "video_autoplay": true,
-        "video_muted": true,
-        "video_loop": true,
-        "video_controls": false,
-        "desktop_image_positioning": "image-on-left",
-        "bg_overlay": false,
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h2"
-      }
     }
   },
   "order": [
-    "split_screen_slider_R3zQCG",
-    "product_masonry_Fnqqrw",
-    "releases_pHU7Rr",
-    "featured_product_yq8epL",
-    "featured_collection_YCzWJf",
-    "heading_8ewcgT",
-    "shop_the_look_yJ96E3",
+    "split_screen_slider_6tb98K",
     "featured_collection_Ec3k3R",
+    "releases_JCnmxR",
+    "shop_the_look_yJ96E3",
+    "featured_collection_YCzWJf",
+    "heading_4BtYw6",
     "video_background_eCcVXP",
     "rotating_slider_7yhr3n",
+    "in_store_features_events_PYU3XM",
     "heading_KjpKfp",
     "shop_the_look_CQnRNW",
     "virtual_try_on_nBhXAa",
-    "in_store_features_events_PYU3XM",
     "latest_features_f6y9et",
     "image_text_column_rhg67G",
+    "product_masonry_Fnqqrw",
     "floating_testimonials_KCBbUg",
     "perspective_slider_VCQ6DF",
     "custom_liquid_WyGgiH",
-    "1756838107933102fa",
-    "rich_text_ekPAek"
+    "1756838107933102fa"
   ]
 }

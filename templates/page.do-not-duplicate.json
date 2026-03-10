@@ -1,0 +1,246 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "split",
+        "text": ""
+      }
+    },
+    "hero_KEaJFE": {
+      "type": "hero",
+      "name": "Hero Section",
+      "settings": {
+        "desktop_image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
+        "heading": "",
+        "subheading": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "Button 2",
+        "button_2_link": "",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "bottom"
+      }
+    },
+    "rich_text_fHmAkH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UTHCPj": {
+          "type": "heading",
+          "settings": {
+            "heading": "do not duplicate",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_8Um3YJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Whitaker Group and adidas introduce Do Not Duplicate, a cultural platform grounded in individuality, creative authorship, and the lived experiences that shape how people move through sport and culture.<br/><br/>The first expression of Do Not Duplicate draws inspiration from the grit, craft, and enduring traditions of the Houston Rodeo, where instinct, timing, and discipline define every moment. Rodeo culture has long reflected qualities systems cannot reproduce. Feel. Precision. The ability to read a moment and move with conviction.<br/><br/>Retail ranges from $150–$240 USD.<br/><br/>Enter the EQL draw now through March 16 at 3 PM EST for the opportunity to secure your pair ahead of the March 20 release across A Ma Maniére, Social Status, APB, and JAIDE.<br/><br/><strong>Individuality Cannot Be Reproduced</strong><br/>Do Not Duplicate begins with a belief that individuality cannot be copied.<br/><br/>Across communities and cultures, the people shaping the future move with instinct and perspective rather than imitation. These moments cannot be studied or reproduced because they belong to the individuals creating them.<br/><br/><strong>A Reflection of Culture</strong><br/>Culture moves through people.<br/><br/>From music and art to sport and community traditions, creativity appears wherever individuals trust their instincts and move with confidence. The Houston Rodeo reflects this same spirit, where feel and timing define every moment.<br/><br/><strong>A Commitment to Individuality</strong><br/>The Houston Rodeo Pack interprets the visual language of Western riding culture through adidas Originals silhouettes.<br/><br/>Hair-on leather panels, snakeskin and croc-embossed textures, suede overlays, and metal stud detailing reference the materials found in traditional Western boots, belts, and riding gear.<br/><br/>The Do Not Duplicate chain tag marks each pair as part of the platform.<br/><br/><strong>The Expression Continues</strong><br/>Do Not Duplicate will continue to unfold through future releases and cultural moments across The Whitaker Group ecosystem.<br/><br/>The platform reflects the individuals and communities shaping culture through instinct, creativity, and lived experience</p>"
+          }
+        },
+        "text_Nn6mTt": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>All final sale. No returns or exchanges. Please allow for 5-10 days for domestic and 10-15 days for international. Reminder to also verify your shipping address is correct.<br/></p><p><strong>PLEASE NOTE: </strong>SOME SHIPPING DESTINATION EXCLUSIONS APPLY, SHIPPING CHARGES AND LIMITED AVAILABILITY TO DESTINATIONS OUTSIDE OF THE U.S. ARE BASED ON YOUR COUNTRY’S POLICIES AND MAY DIFFER. ALL WINNING ENTRIES WILL BE SELECTED BEFORE LAUNCH AND SHIPPED AFTER LAUNCH.</p>"
+          }
+        },
+        "button_7LYTqe": {
+          "type": "button",
+          "settings": {
+            "button_label": "Enter Draw",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UTHCPj",
+        "text_8Um3YJ",
+        "text_Nn6mTt",
+        "button_7LYTqe"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "bg_img": "shopify://shop_images/dndamm.png",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "video_background_wGCCYM": {
+      "type": "video-background",
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/MBTS4k H.265.mov",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-center vertical-middle",
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "custom_liquid_4CPpMn": {
+      "type": "custom-liquid",
+      "name": "t:sections.refactor_words.custom_code.name",
+      "settings": {
+        "custom_liquid": "<div style=\"margin-bottom: 40px;\"></div>",
+        "no_padding": true
+      }
+    },
+    "media_grid_GxerBq": {
+      "type": "media-grid",
+      "blocks": {
+        "image_BHYcTk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC00497BB.jpg",
+            "column_count": "8",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_YaGaNA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/whitecalf.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_GgzfQn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ssmodel.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_wTPUEx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/f50.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_dVp3Wz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-33.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_L6cipj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/APBDND2.png",
+            "column_count": "12",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_BHYcTk",
+        "image_YaGaNA",
+        "image_GgzfQn",
+        "image_wTPUEx",
+        "image_dVp3Wz",
+        "image_L6cipj"
+      ],
+      "custom_css": [],
+      "name": "Media Grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 420,
+        "mobile_row_height": 310,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_KEaJFE",
+    "rich_text_fHmAkH",
+    "video_background_wGCCYM",
+    "custom_liquid_4CPpMn",
+    "media_grid_GxerBq"
+  ]
+}
