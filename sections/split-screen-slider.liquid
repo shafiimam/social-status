@@ -186,6 +186,14 @@
                     </a>
                   {%- endunless -%}
 
+                  {%- unless block.settings.button_label_2 == blank -%}
+                    <a class="button button--solid button--with-icon" {% unless block.settings.button_link_2 == blank %} href="{{ block.settings.button_link_2 }}" {% endunless %}> 
+                      <span>
+                      {{ block.settings.button_label_2 | escape }}</span>
+                      <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow_icon_smallest' -%}</span>
+                    </a>
+                  {%- endunless -%}
+
                 </div>
               </div>
             </div>
@@ -338,6 +346,16 @@
             "type": "url",
             "id": "button_link",
             "label": "t:sections.rich-text.blocks.button.settings.button_link.label"
+          },
+          {
+            "type": "text",
+            "id": "button_label_2",
+            "label": "Button 2 label"
+          },
+          {
+            "type": "url",
+            "id": "button_link_2",
+            "label": "Button 2 link"
           },
           {
             "type": "header",
