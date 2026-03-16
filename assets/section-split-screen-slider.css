@@ -322,3 +322,9 @@ html[dir=ltr] body.sidebar-move split-screen-slider:not(.back-to-normal) .slider
     display: none;
   }
 }
+
+.button-wrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

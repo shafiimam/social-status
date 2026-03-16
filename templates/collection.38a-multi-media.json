@@ -1,0 +1,170 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "subcollection_nav_zpW3PX": {
+      "type": "subcollection-nav",
+      "name": "Subcollection Navigation",
+      "settings": {
+        "spacing_card": 16
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "featured_product_BqDbw8": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "product": "honor-the-gift-1988-t-shirt-blue",
+            "badge_text": "New",
+            "badge_color": "#000000",
+            "badge_text_color": "#ffffff",
+            "position": 5,
+            "block_span": 2
+          }
+        },
+        "image_hotspot_wWDTMJ": {
+          "type": "image_hotspot",
+          "disabled": true,
+          "settings": {
+            "position": 11,
+            "block_span": 2,
+            "color_background": "#000000",
+            "color_text": "",
+            "image": "shopify://shop_images/CarharttWIP_Mobile.jpg",
+            "hotspot_product_1": "carhartt-active-jacket-1",
+            "hotspot_vertical_offset_1": 31,
+            "hotspot_horizontal_offset_1": 50,
+            "tooltip_position_1": "right",
+            "hotspot_product_2": "m1000v1",
+            "hotspot_vertical_offset_2": 65,
+            "hotspot_horizontal_offset_2": 50,
+            "tooltip_position_2": "bottom",
+            "hotspot_product_3": "m1000v1",
+            "hotspot_vertical_offset_3": 51,
+            "hotspot_horizontal_offset_3": 21,
+            "tooltip_position_3": "right",
+            "hotspot_product_4": "",
+            "hotspot_vertical_offset_4": 23,
+            "hotspot_horizontal_offset_4": 50,
+            "tooltip_position_4": "top"
+          }
+        }
+      },
+      "block_order": [
+        "featured_product_BqDbw8",
+        "image_hotspot_wWDTMJ"
+      ],
+      "settings": {
+        "show_collection_banner": true,
+        "collection_desktop_layout": "full",
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "mobile_overlay_background": "#131313",
+        "mobile_overlay_text": "rgba(0,0,0,0)",
+        "collection_rows": 16,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "image_filter_layout": "onecolumn"
+      }
+    },
+    "navigation": {
+      "type": "main-collection-navigation",
+      "disabled": true,
+      "settings": {
+        "navigation_style": "2",
+        "navigation_images": false,
+        "custom_text": "rgba(0,0,0,0)",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "media_grid_yfMMXy": {
+      "type": "media-grid",
+      "blocks": {
+        "image_4UJJAq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06164_BM_1_80.jpg",
+            "column_count": "8",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_3ApW4G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06180_BM_50.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_Ce47w3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06203_BM_50.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_4UJJAq",
+        "image_3ApW4G",
+        "image_Ce47w3"
+      ],
+      "name": "Media Grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 290,
+        "mobile_row_height": 180,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "spacing": "md",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "subcollection_nav_zpW3PX",
+    "main",
+    "navigation",
+    "media_grid_yfMMXy"
+  ]
+}

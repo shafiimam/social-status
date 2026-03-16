@@ -12,17 +12,19 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_UAiqwg": {
+        "slide_mMArCW": {
           "type": "slide",
-          "name": "DND ",
+          "name": "ONE OF THESE DAYS ",
           "settings": {
-            "tagline": "",
-            "title": "DO NOT DUPLICATE: HOUSTON RODEO PACK",
-            "subtitle": "AVAILABLE MARCH 20",
-            "button_label": "Enter draw",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
-            "image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
-            "mobile_image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
+            "tagline": "Western Influence. Modern Execution.",
+            "title": "SOCIAL STATUS X ONE OF THESE DAYS",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/one-of-these-days",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/blackshirt.png",
+            "mobile_image": "shopify://shop_images/hero.png",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -33,27 +35,30 @@
           "settings": {
             "tagline": "",
             "title": "NEW BALANCE ABZORB 1890",
-            "subtitle": "Launches First March 12",
-            "button_label": "ENTER DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/new-balance-1890-star-burst",
-            "image": "shopify://shop_images/MOB2_bacb91c3-96cb-466b-b64f-26674dbb5295.png",
-            "mobile_image": "shopify://shop_images/MOB2_c38523cc-00e0-49f9-ba5c-2b55a1962d99.png",
+            "subtitle": "Exclusively Available Now",
+            "button_label": "SHop now",
+            "button_link": "shopify://products/twg-x-1890-star-burst",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/DSC00585_DC__2_copy_2_6750ab89-5357-4399-bb0c-2059e64857dd.jpg",
+            "mobile_image": "shopify://shop_images/DSC00585_DC__2_copy_2.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
-        "slide_mMArCW": {
+        "slide_UAiqwg": {
           "type": "slide",
-          "name": "CROCS RIPPLE",
-          "disabled": true,
+          "name": "DND ",
           "settings": {
-            "tagline": "Comfort Meets Motion",
-            "title": "CROCS RIPPLE",
+            "tagline": "",
+            "title": "DO NOT DUPLICATE: HOUSTON RODEO PACK",
             "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://products/ripple-sneaker",
-            "image": "shopify://shop_images/B_DSC09750.jpg",
-            "mobile_image": "shopify://shop_images/B_DSC09750_376dd163-92b9-4b61-95a5-d7fb3d56cc2b.jpg",
+            "button_label": "Enter draw",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "explore the story",
+            "button_link_2": "shopify://pages/do-not-duplicate-houston-rodeo",
+            "image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
+            "mobile_image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -68,6 +73,8 @@
             "subtitle": "",
             "button_label": "shop now",
             "button_link": "shopify://collections/38a",
+            "button_label_2": "",
+            "button_link_2": "",
             "image": "shopify://shop_images/Untitled-1.png",
             "mobile_image": "shopify://shop_images/Untitled-1.png",
             "seo_h_tag": "h1",
@@ -84,34 +91,20 @@
             "subtitle": "",
             "button_label": "shop now",
             "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
             "video_object": "shopify://files/videos/SS 1.mov",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_QRCkNW": {
-          "type": "slide",
-          "name": "nahmias",
-          "disabled": true,
-          "settings": {
-            "tagline": "FROM SUMMERLAND WITH LOVE",
-            "title": "PUMA X NAHMIAS SS26",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/puma",
-            "video_object": "shopify://files/videos/26SS_SP_SELECT_NAHMIAS_BLACK_1_7s.mp4",
             "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_UAiqwg",
-        "slide_jpCQ6L",
         "slide_mMArCW",
+        "slide_jpCQ6L",
+        "slide_UAiqwg",
         "slide_NfXV6a",
-        "slide_dUPVHn",
-        "slide_QRCkNW"
+        "slide_dUPVHn"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -120,19 +113,19 @@
         "desktop_text": "#000000",
         "mobile_text": "#ffffff",
         "desktop_background": "rgba(0,0,0,0)",
-        "desktop_overlay": "rgba(0,0,0,0)",
+        "desktop_overlay": "#e7e7e7",
         "mobile_height": "var(--window-height)",
-        "mobile_background": "rgba(0,0,0,0)",
+        "mobile_background": "#000000",
         "heading_size": "h1"
       }
     },
-    "featured_collection_Ec3k3R": {
+    "featured_collection_YCzWJf": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "Maison Mihara Yasuhiro",
-        "subtitle": "",
-        "collection": "maison-mihara-yasuhiro",
+        "title": "NEW ARRIVALS",
+        "subtitle": "Shop Now",
+        "collection": "new-arrivals-1",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -142,31 +135,9 @@
     "releases_JCnmxR": {
       "type": "releases",
       "blocks": {
-        "release_card_KcqCdc": {
-          "type": "release-card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/PACEXGELKAYANO12.1-1.jpg",
-            "title": "ASICS X PACE GEL KAYANO 12.1",
-            "description": "",
-            "release_date": "3.6",
-            "price": "200",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/asics-x-pace-gel-kayano-121"
-          }
-        },
-        "release_card_GcLNPA": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/NB1890YLWBLK-1.jpg",
-            "title": "NEW BALANCE ABZORB 1890",
-            "description": "",
-            "release_date": "3.12",
-            "price": "180",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/new-balance-1890-star-burst"
-          }
-        },
         "release_card_QKM9B7": {
           "type": "release-card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/SHAI001PINK-1.jpg",
             "title": "CONVERSE SHAI 001 \"TICKLED PINK\"",
@@ -178,6 +149,7 @@
         },
         "release_card_3JYewV": {
           "type": "release-card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/AJ13TRUERED-1.jpg",
             "title": "AIR JORDAN 13 \"TRUE RED CHICAGO\"",
@@ -186,17 +158,87 @@
             "price": "215",
             "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-13-true-red-chicago"
           }
+        },
+        "release_card_GcLNPA": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/KK5007HANDBALLSPEZIALBROWNSNAKESKIN-1.jpg",
+            "title": "WOMEN'S HANDBALL SPEZIAL HOUSTON RODEO \"SNAKESKIN BROWN/BLACK\"",
+            "description": "",
+            "release_date": "3.20",
+            "price": "140",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-do-not-duplicate-handball-spezial-houston-rodeo-snakeskin-brownblack"
+          }
+        },
+        "release_card_KcqCdc": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/BWARMYBLKBEIGE-1.jpg",
+            "title": "BW ARMY HOUSTON RODEO \"BLACK/WONDER WHITE\"",
+            "description": "",
+            "release_date": "3.20",
+            "price": "150",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/do-not-duplicate-bw-army-houston-rodeo-blackwonder-white"
+          }
+        },
+        "release_card_kPpTpk": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/F50SNAKESKINLIME-1.jpg",
+            "title": "WOMEN'S F50 ADIFRAME HOUSTON RODEO \"SNAKESKIN BROWN\"",
+            "description": "",
+            "release_date": "3.20",
+            "price": "240",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-do-not-duplicate-f50-adiframe-houston-rodeo-snakeskin-brown"
+          }
+        },
+        "release_card_CBxYzc": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/BWARMYWHTGUM-1.jpg",
+            "title": "BW ARMY HOUSTON RODEO \"WONDER WHITE/CREAM\"",
+            "description": "",
+            "release_date": "3.20",
+            "price": "150",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/do-not-duplicate-bw-army-houston-rodeo-wonder-whitecream"
+          }
+        },
+        "release_card_ey4833": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/HANDBALLSPEZIALCREAMSNAKESKIN-1.jpg",
+            "title": "WOMEN'S DO NOT DUPLICATE HANDBALL SPEZIAL HOUSTON RODEO \"SNAKESKIN BROWN/WHITE\"",
+            "description": "",
+            "release_date": "3.20",
+            "price": "140",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/womens-do-not-duplicate-handball-spezial-houston-rodeo-snakeskin-brownwhite"
+          }
+        },
+        "release_card_KhTN9y": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/BWARMYBROWNCOW-1.jpg",
+            "title": "BW ARMY HOUSTON RODEO \"BROWN/WONDER WHITE/CREAM\"",
+            "description": "",
+            "release_date": "3.20",
+            "price": "150",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/do-not-duplicate-bw-army-houston-rodeo-brownwonder-whitecream"
+          }
         }
       },
       "block_order": [
-        "release_card_KcqCdc",
-        "release_card_GcLNPA",
         "release_card_QKM9B7",
-        "release_card_3JYewV"
+        "release_card_3JYewV",
+        "release_card_GcLNPA",
+        "release_card_KcqCdc",
+        "release_card_kPpTpk",
+        "release_card_CBxYzc",
+        "release_card_ey4833",
+        "release_card_KhTN9y"
       ],
       "settings": {
         "title": "Releases",
-        "column_size": 4,
+        "column_size": 3,
         "padding_top": 40,
         "padding_bottom": 30
       }
@@ -204,6 +246,12 @@
     "shop_the_look_yJ96E3": {
       "type": "shop-the-look",
       "blocks": {
+        "product_Arm4qU": {
+          "type": "product",
+          "settings": {
+            "product": "asap-rocky-x-ray-ban-bold-metal-sunglasses-dark-grey-lens"
+          }
+        },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
@@ -212,22 +260,23 @@
         }
       },
       "block_order": [
+        "product_Arm4qU",
         "product_7Fz9xj"
       ],
       "name": "RAYBAN",
       "settings": {
-        "image": "shopify://shop_images/DSC09627_BM.jpg",
+        "image": "shopify://shop_images/divinerayban.png",
         "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }
     },
-    "featured_collection_YCzWJf": {
+    "featured_collection_Ec3k3R": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "NEW ARRIVALS",
-        "subtitle": "Shop Now",
-        "collection": "new-arrivals-1",
+        "title": "Maison Mihara Yasuhiro",
+        "subtitle": "",
+        "collection": "maison-mihara-yasuhiro",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -432,7 +481,7 @@
         "heading_kcE6L4": {
           "type": "heading",
           "settings": {
-            "heading": "TEAM PICKS @ SOCIAL STATUS  CHARLOTTE",
+            "heading": "TEAM PICKS @ SOCIAL STATUS  BALTIMORE",
             "heading_size": "h2",
             "seo_h_tag": "h2"
           }
@@ -448,7 +497,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP LOCATION",
-            "button_link": "shopify://pages/social-status-tampa-bay"
+            "button_link": "shopify://pages/locations-1"
           }
         }
       },
@@ -467,42 +516,41 @@
     "shop_the_look_CQnRNW": {
       "type": "shop-the-look",
       "blocks": {
-        "product_7ijGBz": {
+        "product_gXK3nd": {
           "type": "product",
           "settings": {
-            "product": "barriers-ezy-ryder-hoodie-black"
+            "product": "bape-art-camo-hooded-jacket-white-multi"
           }
         },
-        "product_zdwtcN": {
+        "product_LjTrLY": {
           "type": "product",
           "settings": {
-            "product": "honor-the-gift-feature-presentation-tee-black"
+            "product": "carhartt-mirror-t-shirt-off-white"
           }
         },
-        "product_B6qGyQ": {
+        "product_WQwEPw": {
           "type": "product",
           "settings": {
-            "product": "carhartt-duck-landon-pant-grey"
+            "product": "38a-canvas-double-knee-pant-brown"
           }
         },
-        "product_AVfkaH": {
+        "product_A7LXrC": {
           "type": "product",
-          "disabled": true,
           "settings": {
-            "product": "air-force-1-07-ja-morant"
+            "product": "nike-shox-tl"
           }
         }
       },
       "block_order": [
-        "product_7ijGBz",
-        "product_zdwtcN",
-        "product_B6qGyQ",
-        "product_AVfkaH"
+        "product_gXK3nd",
+        "product_LjTrLY",
+        "product_WQwEPw",
+        "product_A7LXrC"
       ],
       "name": "t:sections.shop-the-look.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1574x1050.jpg",
-        "desktop_image_positioning": "image-on-right",
+        "image": "shopify://shop_images/SET0418.jpg",
+        "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }
     },
@@ -866,10 +914,10 @@
   },
   "order": [
     "split_screen_slider_6tb98K",
-    "featured_collection_Ec3k3R",
+    "featured_collection_YCzWJf",
     "releases_JCnmxR",
     "shop_the_look_yJ96E3",
-    "featured_collection_YCzWJf",
+    "featured_collection_Ec3k3R",
     "heading_4BtYw6",
     "video_background_eCcVXP",
     "rotating_slider_7yhr3n",

@@ -1363,9 +1363,7 @@ html[dir=ltr] .site-box.box--text-align-left {
   display: block;
   margin-bottom: var(--text-spacing);
 }
-.box__heading .button:not(:first-child) {
-  margin-top: 5px;
-}
+
 .box__heading.box--typo-small {
   text-align: center;
 }

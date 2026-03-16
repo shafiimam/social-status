@@ -178,7 +178,8 @@
                     <span class="subtitle">{{ block.settings.subtitle | escape }}</span>
                   {%- endunless -%}
 
-                  {%- unless block.settings.button_label == blank -%}
+                  <div class="button-wrapper">
+                    {%- unless block.settings.button_label == blank -%}
                     <a class="button button--solid button--with-icon" {% unless block.settings.button_link == blank %} href="{{ block.settings.button_link }}" {% endunless %}> 
                       <span>
                       {{ block.settings.button_label | escape }}</span>
@@ -193,6 +194,7 @@
                       <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow_icon_smallest' -%}</span>
                     </a>
                   {%- endunless -%}
+                  </div>
 
                 </div>
               </div>

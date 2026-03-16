@@ -134,6 +134,10 @@
         "title": "",
         "btn_label": "",
         "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
         "desktop_image_positioning": "image-on-left",
         "bg_overlay": false,
         "custom_background": "rgba(0,0,0,0)",
@@ -193,17 +197,18 @@
       "blocks": {
         "image_7838HB": {
           "type": "image",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/DSC09079__BRENDEN.MOTLEY.jpg",
+            "image": "shopify://shop_images/DSC06643_BM.jpg",
             "link": "shopify://collections/38a",
             "open_in_new_tab": false,
-            "caption": ""
+            "caption": "EXPLORE 38a"
           }
         },
         "image_zNffB3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Adobe_Express_-_file_22.jpg",
+            "image": "shopify://shop_images/DSC06697_BM.jpg",
             "link": "shopify://collections/38a",
             "open_in_new_tab": false,
             "caption": ""
@@ -241,7 +246,6 @@
         "heading_R9KcDT",
         "text_Eaeaxr"
       ],
-      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",

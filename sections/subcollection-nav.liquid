@@ -1,5 +1,6 @@
 {% assign current_collection = collection %}
 {% assign sub_collections = current_collection.metafields.custom.subcollections.value %}
+{% if sub_collections != blank %}
 <div class="subcollections-container">
   {% for sub_collection in sub_collections %}
    {% assign collection_image = sub_collection.featured_image | image_url: width: 400  %}
@@ -19,6 +20,7 @@
     </div>
   {% endfor %}
 </div>
+{% endif %}
 <style>
   .subcollections-container {
     display: flex;
