@@ -1,5 +1,42 @@
-{% if product.compare_at_price > product.price %}
-    <span class="fina-sale-message" style="display: block; text-align: center; color: #CF0C28; font-size: 14px; line-height: 1.25; margin: 25px 0 25px 0;">
-      This item is on final sale, it cannot be exchanged or returned.
-    </span>
-  {% endif %}
+{% comment %}
+  Renders final sale notice when product is on sale (compare_at) or has a matching tag.
+
+  Accepts:
+  - product: {Object} Product object (required)
+  - match_tag: {String} Tag to match, case-insensitive (default: finalsale)
+  - message: {String} Message text (optional; uses default below if blank)
+  - compare_price_rule_enabled: {Boolean} If true, show when compare_at_price > price (default: true when omitted)
+{% endcomment %}
+
+{% liquid
+  assign match_tag_normalized = match_tag | default: 'finalsale' | strip | downcase
+  assign show_final_sale_message = false
+  if compare_price_rule_enabled == nil
+    assign use_compare_price_rule = true
+  else
+    assign use_compare_price_rule = compare_price_rule_enabled
+  endif
+
+  if use_compare_price_rule and product.compare_at_price > product.price
+    assign show_final_sale_message = true
+  endif
+
+  if match_tag_normalized != blank
+    for tag in product.tags
+      assign tag_normalized = tag | strip | downcase
+      if tag_normalized == match_tag_normalized
+        assign show_final_sale_message = true
+      endif
+    endfor
+  endif
+
+  assign message_text = message | default: 'This item is on final sale, it cannot be exchanged or returned.'
+  if message_text == blank
+    assign message_text = 'This item is on final sale, it cannot be exchanged or returned.'
+  endif
+%}
+{% if show_final_sale_message %}
+  <span class="fina-sale-message" style="display: block; text-align: center; color: #CF0C28; font-size: 14px; line-height: 1.25; margin: 25px 0 25px 0;">
+    {{ message_text | escape | newline_to_br }}
+  </span>
+{% endif %}

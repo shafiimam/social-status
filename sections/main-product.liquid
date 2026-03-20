@@ -588,7 +588,14 @@
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {% when 'fina_sale_message' %}
-              {% render 'final-sale-message', product: product %}
+              <div {{ block.shopify_attributes }}>
+                {% render 'final-sale-message',
+                  product: product,
+                  match_tag: block.settings.match_tag,
+                  message: block.settings.message,
+                  compare_price_rule_enabled: block.settings.enable_compare_at_price
+                %}
+              </div>
             {% when 'ineligibile_products' %}
               {% render 'ineligibile-product-message', vendor_array : block.settings.vendor_array , product: product %}
             
@@ -678,8 +685,30 @@
     },
     {
       "type": "fina_sale_message",
-      "name" : "Final Sale Message",
-      "limit": 1
+      "name": "Final Sale Message",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_compare_at_price",
+          "label": "Enable compare at price rule",
+          "default": true,
+          "info": "When enabled, the message shows if compare-at price is greater than the current price."
+        },
+        {
+          "type": "text",
+          "id": "match_tag",
+          "label": "Product tag to match",
+          "default": "finalsale",
+          "info": "If the product has this tag, the message shows (compared case-insensitively). Example: FinalSale, finalsale, FINALSALE."
+        },
+        {
+          "type": "textarea",
+          "id": "message",
+          "label": "Message",
+          "default": "This item is on final sale, it cannot be exchanged or returned."
+        }
+      ]
     },
     {
       "type": "ineligibile_products",

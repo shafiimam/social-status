@@ -146,8 +146,8 @@ section.blog-locations {
   height: 100%;
   display: block;
 }
-/* Prevent focusable elements in aria-hidden containers */
-[aria-hidden="true"] a {
+/* Prevent focusable elements in aria-hidden containers for legacy slick slider only */
+.locations-gallery-slider .slick-slider [aria-hidden="true"] a {
   pointer-events: none;
   visibility: hidden;
 }

@@ -65,7 +65,7 @@
         "heading_LVqPka": {
           "type": "heading",
           "settings": {
-            "heading": "Subscribe to our newsletter",
+            "heading": "Stay connected",
             "seo_h_tag": "h2"
           }
         },
@@ -76,7 +76,7 @@
         "paragraph_wifhBt": {
           "type": "paragraph",
           "settings": {
-            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>"
+            "paragraph": "<p>Get updates on releases, events, and what’s happening in your city.</p><p></p>"
           }
         }
       },
@@ -97,7 +97,7 @@
         "image_iAAAyC": {
           "type": "image",
           "settings": {
-            "title": "Where community, culture, and fashion come together.",
+            "title": "Built for the community that moves culture forward.",
             "image": "shopify://shop_images/logo.svg"
           }
         },
