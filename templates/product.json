@@ -53,7 +53,11 @@
         },
         "fina_sale_message_T4UnVK": {
           "type": "fina_sale_message",
-          "settings": {}
+          "settings": {
+            "enable_compare_at_price": true,
+            "match_tag": "rodeodnd",
+            "message": "This item is final sale and not eligible for return. Exchanges are available only if an incorrect size is received."
+          }
         },
         "ineligibile_products_YCEBdF": {
           "type": "ineligibile_products",

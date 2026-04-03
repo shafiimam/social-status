@@ -121,6 +121,7 @@
     "cart_image_border": "#f1f1f1",
     "cart_free_shipping": true,
     "cart_free_shipping_amount": "300",
+    "show_preloader": true,
     "show_gotop": true,
     "social_facebook": "https://www.facebook.com/socialstatuspgh",
     "social_instagram": "https://www.instagram.com/thesocialstatus/?hl=en",
@@ -160,6 +161,15 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+      },
+      "14349870748161389483": {
+        "type": "shopify://apps/ryzo/blocks/image-search-in-searcchbar/d9b723f6-8afa-453c-b308-fc923609d126",
+        "disabled": true,
+        "settings": {
+          "icon_color": "#000000",
+          "icon_size": 20,
+          "button_right_offset": 40
+        }
       }
     }
   }

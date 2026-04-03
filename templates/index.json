@@ -12,81 +12,95 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_AN8J4W": {
+        "slide_DnQDKb": {
           "type": "slide",
-          "name": "Rodeo 3.20",
+          "name": "4.3 peachtree",
           "settings": {
-            "tagline": "AVAILABLE NOW",
-            "title": "DO NOT DUPLICATE: HOUSTON RODEO PACK",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
+            "tagline": "",
+            "title": "Do Not Duplicate: 404 Peachtree Pack",
+            "subtitle": "Exclusively Available Now",
+            "button_label": "Shop Now",
             "button_link": "shopify://collections/do-not-duplicate",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/COWSS.png",
-            "mobile_image": "shopify://shop_images/COWSS.png",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_mMArCW": {
-          "type": "slide",
-          "name": "ONE OF THESE DAYS ",
-          "settings": {
-            "tagline": "Western Influence. Modern Execution.",
-            "title": "SOCIAL STATUS X ONE OF THESE DAYS",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/one-of-these-days",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/blackshirt.png",
-            "mobile_image": "shopify://shop_images/hero.png",
+            "button_label_2": "Explore the Story",
+            "button_link_2": "shopify://pages/do-not-duplicate-drop-2",
+            "video_object": "shopify://files/videos/app new 3.mov",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
         "slide_jpCQ6L": {
           "type": "slide",
-          "name": "NB 1890",
+          "name": "404 peachtree",
           "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "NEW BALANCE ABZORB 1890",
-            "subtitle": "Exclusively Available Now",
-            "button_label": "SHop now",
-            "button_link": "shopify://products/twg-x-1890-star-burst",
+            "title": "Do Not Duplicate: 404 Peachtree Pack",
+            "subtitle": "Exclusively Available April 3",
+            "button_label": "",
+            "button_link": "#",
+            "button_label_2": "explore the story",
+            "button_link_2": "shopify://pages/do-not-duplicate-drop-2",
+            "image": "shopify://shop_images/ssmicrohero.png",
+            "mobile_image": "shopify://shop_images/DSC07251_DC_1_copy78_1.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_imfi7X": {
+          "type": "slide",
+          "name": "b.r.c",
+          "settings": {
+            "tagline": "Introducing",
+            "title": "Birth Of Royal Child",
+            "subtitle": "Available In-store and Online",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/birth-of-royal-child",
             "button_label_2": "",
             "button_link_2": "",
-            "image": "shopify://shop_images/DSC00585_DC__2_copy_2_6750ab89-5357-4399-bb0c-2059e64857dd.jpg",
-            "mobile_image": "shopify://shop_images/DSC00585_DC__2_copy_2.jpg",
+            "video_object": "shopify://files/videos/BRC WEB 4k H.265.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_7kQAQe": {
+          "type": "slide",
+          "name": "H.T.G",
+          "settings": {
+            "tagline": "",
+            "title": "Honor The Gift",
+            "subtitle": "New Spring Styles",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/honor-the-gift",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/4k WEB 4k H.265.mov",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
         "slide_UAiqwg": {
           "type": "slide",
-          "name": "DND ",
-          "disabled": true,
+          "name": "38a shorts",
           "settings": {
             "tagline": "",
-            "title": "DO NOT DUPLICATE: HOUSTON RODEO PACK",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
-            "button_label_2": "explore the story",
-            "button_link_2": "shopify://pages/do-not-duplicate-houston-rodeo",
-            "image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
-            "mobile_image": "shopify://shop_images/9F9A0477_DC_1_copy2.jpg",
+            "title": "38a",
+            "subtitle": "Essentials Built For Movement",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/38a",
+            "button_label_2": "",
+            "button_link_2": "#",
+            "image": "shopify://shop_images/DSC09556_copy__BRENDEN.MOTLEY_bd37180e-8d0f-494c-973e-27b662ff9409.jpg",
+            "mobile_image": "shopify://shop_images/DSC09556_copy__BRENDEN.MOTLEY_5d915244-0a49-4600-8f50-509f59220966.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_AN8J4W",
-        "slide_mMArCW",
+        "slide_DnQDKb",
         "slide_jpCQ6L",
+        "slide_imfi7X",
+        "slide_7kQAQe",
         "slide_UAiqwg"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
@@ -102,126 +116,92 @@
         "heading_size": "h1"
       }
     },
-    "featured_collection_Ec3k3R": {
+    "releases_JCnmxR": {
+      "type": "releases",
+      "blocks": {
+        "release_card_zEtVr4": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/EVOSLRED-1.jpg",
+            "title": "DO NOT DUPLICATE EVO SL 404 PEACHTREE",
+            "description": "",
+            "release_date": "4.3",
+            "price": "170",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/evo-sl-404-day-peachtree"
+          }
+        },
+        "release_card_mjf6Jx": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/96OGATLRED-1.jpg",
+            "title": "DO NOT DUPLICATE ATLANTA 96 OG 404 DAY PEACHTREE",
+            "description": "",
+            "release_date": "4.3",
+            "price": "120",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/dnd-atlanta-96-og-404-day-peachtree"
+          }
+        },
+        "release_card_7Hiydh": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/EVOSLPEACH-1.jpg",
+            "title": "DO NOT DUPLICATE EVO SL 404 PEACHTREE",
+            "description": "",
+            "release_date": "4.3",
+            "price": "170",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/dnd-evo-sl-404-day-peachtree"
+          }
+        },
+        "release_card_z6e9wj": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/ATLTRAINERPINK-1.jpg",
+            "title": "DO NOT DUPLICATE ATLANTA TRAINER 404 DAY PEACHTREE",
+            "description": "",
+            "release_date": "4.3",
+            "price": "120",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/dnd-atl-trainer-404-day"
+          }
+        }
+      },
+      "block_order": [
+        "release_card_zEtVr4",
+        "release_card_mjf6Jx",
+        "release_card_7Hiydh",
+        "release_card_z6e9wj"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Releases",
+        "column_size": 4,
+        "padding_top": 40,
+        "padding_bottom": 30
+      }
+    },
+    "featured_collection_YCzWJf": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "DO NOT DUPLICATE: HOUSTON RODEO PACK",
+        "title": "Stüssy",
         "subtitle": "",
-        "collection": "do-not-duplicate",
+        "collection": "stussy",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
       }
     },
-    "releases_JCnmxR": {
-      "type": "releases",
-      "blocks": {
-        "release_card_GnYniC": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/KOBEVPROTRO_METALLICSILVER_TEAMRED_-1.jpg",
-            "title": "KOBE V PROTRO \"LOWER MERION ACES AWAY\"",
-            "description": "",
-            "release_date": "3.23",
-            "price": "200",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/kobe-v-protro-lower-merion-aces-away"
-          }
-        },
-        "release_card_9UfrjT": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/KOBEAIRFORCE1LOW_WHITE_TEAMRED_-1.jpg",
-            "title": "KOBE AIR FORCE 1 LOW \"LOWER MERION ACES\"",
-            "description": "",
-            "release_date": "3.23",
-            "price": "120",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/kobe-air-force-1-low-lower-merion-aces"
-          }
-        },
-        "release_card_EUqX4K": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AF1LOWTEAMUSA-1.jpg",
-            "title": "NIKE AIR FORCE 1 \"TEAM USA\"",
-            "description": "",
-            "release_date": "3.23",
-            "price": "125",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-force-1-team-usa"
-          }
-        },
-        "release_card_8jD96m": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AM95PAISLEYNEON-1.jpg",
-            "title": "NIKE AIR MAX 95 BIG BUBBLE \"PAISLEY NEON\"",
-            "description": "",
-            "release_date": "3.26",
-            "price": "190",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-max-95-big-bubble-paisley-neon"
-          }
-        },
-        "release_card_zEtVr4": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AM95GREEDYBB-1.jpg",
-            "title": "NIKE AIR MAX 95 BIG BUBBLE \"GREEDY\"",
-            "description": "",
-            "release_date": "3.26",
-            "price": "190",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-max-95-big-bubble-greedy"
-          }
-        },
-        "release_card_mjf6Jx": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/FOAMPOSITEUNIVERSITYBLUE-1.jpg",
-            "title": "NIKE AIR FOAMPOSITE PRO \"UNIVERSITY BLUE\"",
-            "description": "",
-            "release_date": "3.27",
-            "price": "240",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-foamposite-pro-university-blue"
-          }
-        },
-        "release_card_7Hiydh": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/AJ3SPRING-1.jpg",
-            "title": "AIR JORDAN 3 OG \"SPRING IS IN THE AIR\"",
-            "description": "",
-            "release_date": "3.28",
-            "price": "215",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/air-jordan-3-og-spring-is-in-the-air"
-          }
-        },
-        "release_card_z6e9wj": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/GUIZIOKLIM-1.jpg",
-            "title": "PUMA X GUIZIO KLIM",
-            "description": "",
-            "release_date": "3.28",
-            "price": "130",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/puma-x-guizio-klim"
-          }
-        }
-      },
-      "block_order": [
-        "release_card_GnYniC",
-        "release_card_9UfrjT",
-        "release_card_EUqX4K",
-        "release_card_8jD96m",
-        "release_card_zEtVr4",
-        "release_card_mjf6Jx",
-        "release_card_7Hiydh",
-        "release_card_z6e9wj"
-      ],
+    "featured_collection_GEVmtc": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "Releases",
-        "column_size": 3,
-        "padding_top": 40,
-        "padding_bottom": 30
+        "title": "Footwear",
+        "subtitle": "",
+        "collection": "footwear",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
       }
     },
     "shop_the_look_yJ96E3": {
@@ -230,13 +210,13 @@
         "product_Arm4qU": {
           "type": "product",
           "settings": {
-            "product": "asap-rocky-x-ray-ban-bold-metal-sunglasses-dark-grey-lens"
+            "product": "tom-wood-kay-ring-kambaba-silver"
           }
         },
         "product_7Fz9xj": {
           "type": "product",
           "settings": {
-            "product": "asap-rocky-x-ray-ban-bold-metal-sunglasses-green-lens"
+            "product": "tom-wood-rue-bracelet-duo-gold-silver"
           }
         }
       },
@@ -244,20 +224,20 @@
         "product_Arm4qU",
         "product_7Fz9xj"
       ],
-      "name": "RAYBAN",
+      "name": "tomwood",
       "settings": {
-        "image": "shopify://shop_images/divinerayban.png",
+        "image": "shopify://shop_images/53CL.jpg",
         "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }
     },
-    "featured_collection_YCzWJf": {
+    "featured_collection_Ec3k3R": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "STÜSSY",
-        "subtitle": "Shop Now",
-        "collection": "stussy",
+        "title": "Birth Of Royal Child",
+        "subtitle": "",
+        "collection": "birth-of-royal-child",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -895,10 +875,11 @@
   },
   "order": [
     "split_screen_slider_6tb98K",
-    "featured_collection_Ec3k3R",
     "releases_JCnmxR",
-    "shop_the_look_yJ96E3",
     "featured_collection_YCzWJf",
+    "featured_collection_GEVmtc",
+    "shop_the_look_yJ96E3",
+    "featured_collection_Ec3k3R",
     "heading_4BtYw6",
     "video_background_eCcVXP",
     "rotating_slider_7yhr3n",
