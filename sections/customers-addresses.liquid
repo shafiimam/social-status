@@ -47,10 +47,11 @@
                         type="text"
                         id="AddressFirstName_{{ form.id }}"
                         class="input-full"
-                        name="address[first_name]"
-                        value="{{ form.first_name }}"
-                        autocapitalize="words"
-                      >
+	                        name="address[first_name]"
+	                        value="{{ form.first_name }}"
+	                        autocapitalize="words"
+	                        autocomplete="given-name"
+	                      >
                     </div>
 
                     <div class="grid__item one-half portable--one-whole">
@@ -61,10 +62,11 @@
                         type="text"
                         id="AddressLastName_{{ form.id }}"
                         class="input-full"
-                        name="address[last_name]"
-                        value="{{ form.last_name }}"
-                        autocapitalize="words"
-                      >
+	                        name="address[last_name]"
+	                        value="{{ form.last_name }}"
+	                        autocapitalize="words"
+	                        autocomplete="family-name"
+	                      >
                     </div>
 
                     <div class="grid__item one-whole">
@@ -75,10 +77,11 @@
                         type="text"
                         id="AddressCompany_{{ form.id }}"
                         class="input-full"
-                        name="address[company]"
-                        value="{{ form.company }}"
-                        autocapitalize="words"
-                      >
+	                        name="address[company]"
+	                        value="{{ form.company }}"
+	                        autocapitalize="words"
+	                        autocomplete="organization"
+	                      >
                     </div>
 
                     <div class="grid__item one-whole">
@@ -89,10 +92,11 @@
                         type="text"
                         id="AddressAddress1_{{ form.id }}"
                         class="input-full"
-                        name="address[address1]"
-                        value="{{ form.address1 }}"
-                        autocapitalize="words"
-                      >
+	                        name="address[address1]"
+	                        value="{{ form.address1 }}"
+	                        autocapitalize="words"
+	                        autocomplete="address-line1"
+	                      >
                     </div>
 
                     <div class="grid__item one-whole">
@@ -103,10 +107,11 @@
                         type="text"
                         id="AddressAddress2_{{ form.id }}"
                         class="input-full"
-                        name="address[address2]"
-                        value="{{ form.address2 }}"
-                        autocapitalize="words"
-                      >
+	                        name="address[address2]"
+	                        value="{{ form.address2 }}"
+	                        autocapitalize="words"
+	                        autocomplete="address-line2"
+	                      >
                     </div>
 
                     <div class="grid__item one-whole">
@@ -117,10 +122,11 @@
                         type="text"
                         id="AddressCity_{{ form.id }}"
                         class="input-full"
-                        name="address[city]"
-                        value="{{ form.city }}"
-                        autocapitalize="words"
-                      >
+	                        name="address[city]"
+	                        value="{{ form.city }}"
+	                        autocapitalize="words"
+	                        autocomplete="address-level2"
+	                      >
                     </div>
 
                     <div class="grid__item one-whole">
@@ -130,9 +136,10 @@
                       <select
                         id="AddressCountry_{{ form.id }}"
                         class="input-full"
-                        name="address[country]"
-                        data-default="{{ form.country }}"
-                      >
+	                        name="address[country]"
+	                        data-default="{{ form.country }}"
+	                        autocomplete="country"
+	                      >
                         {{ country_option_tags }}
                       </select>
                     </div>
@@ -143,10 +150,11 @@
                       </label>
                       <select
                         id="AddressProvince_{{ form.id }}"
-                        class="input-full"
-                        name="address[province]"
-                        data-default="{{ form.province }}"
-                      ></select>
+	                        class="input-full"
+	                        name="address[province]"
+	                        data-default="{{ form.province }}"
+	                        autocomplete="address-level1"
+	                      ></select>
                     </div>
 
                     <div class="grid__item one-half portable--one-whole">
@@ -155,10 +163,11 @@
                         type="text"
                         id="AddressZip_{{ form.id }}"
                         class="input-full"
-                        name="address[zip]"
-                        value="{{ form.zip }}"
-                        autocapitalize="characters"
-                      >
+	                        name="address[zip]"
+	                        value="{{ form.zip }}"
+	                        autocapitalize="characters"
+	                        autocomplete="postal-code"
+	                      >
                     </div>
 
                     <div class="grid__item one-half portable--one-whole">
@@ -168,10 +177,11 @@
                       <input
                         type="tel"
                         id="AddressPhone_{{ form.id }}"
-                        class="input-full"
-                        name="address[phone]"
-                        value="{{ form.phone }}"
-                      >
+	                        class="input-full"
+	                        name="address[phone]"
+	                        value="{{ form.phone }}"
+	                        autocomplete="tel"
+	                      >
                     </div>
 
                     <div class="grid__item one-whole">
@@ -220,10 +230,11 @@
                       type="text"
                       id="AddressFirstNameNew"
                       class="input-full"
-                      name="address[first_name]"
-                      value="{{ form.first_name }}"
-                      autocapitalize="words"
-                    >
+	                      name="address[first_name]"
+	                      value="{{ form.first_name }}"
+	                      autocapitalize="words"
+	                      autocomplete="given-name"
+	                    >
                   </div>
 
                   <div class="grid__item one-half portable--one-whole">
@@ -232,10 +243,11 @@
                       type="text"
                       id="AddressLastNameNew"
                       class="input-full"
-                      name="address[last_name]"
-                      value="{{ form.last_name }}"
-                      autocapitalize="words"
-                    >
+	                      name="address[last_name]"
+	                      value="{{ form.last_name }}"
+	                      autocapitalize="words"
+	                      autocomplete="family-name"
+	                    >
                   </div>
 
                   <div class="grid__item one-whole">
@@ -244,10 +256,11 @@
                       type="text"
                       id="AddressCompanyNew"
                       class="input-full"
-                      name="address[company]"
-                      value="{{ form.company }}"
-                      autocapitalize="words"
-                    >
+	                      name="address[company]"
+	                      value="{{ form.company }}"
+	                      autocapitalize="words"
+	                      autocomplete="organization"
+	                    >
                   </div>
 
                   <div class="grid__item one-whole">
@@ -256,10 +269,11 @@
                       type="text"
                       id="AddressAddress1New"
                       class="input-full"
-                      name="address[address1]"
-                      value="{{ form.address1 }}"
-                      autocapitalize="words"
-                    >
+	                      name="address[address1]"
+	                      value="{{ form.address1 }}"
+	                      autocapitalize="words"
+	                      autocomplete="address-line1"
+	                    >
                   </div>
 
                   <div class="grid__item one-whole">
@@ -268,10 +282,11 @@
                       type="text"
                       id="AddressAddress2New"
                       class="input-full"
-                      name="address[address2]"
-                      value="{{ form.address2 }}"
-                      autocapitalize="words"
-                    >
+	                      name="address[address2]"
+	                      value="{{ form.address2 }}"
+	                      autocapitalize="words"
+	                      autocomplete="address-line2"
+	                    >
                   </div>
 
                   <div class="grid__item one-whole">
@@ -280,10 +295,11 @@
                       type="text"
                       id="AddressCityNew"
                       class="input-full"
-                      name="address[city]"
-                      value="{{ form.city }}"
-                      autocapitalize="words"
-                    >
+	                      name="address[city]"
+	                      value="{{ form.city }}"
+	                      autocapitalize="words"
+	                      autocomplete="address-level2"
+	                    >
                   </div>
 
                   <div class="grid__item one-whole">
@@ -291,9 +307,10 @@
                     <select
                       id="AddressCountryNew"
                       class="input-full"
-                      name="address[country]"
-                      data-default="{{ form.country }}"
-                    >
+	                      name="address[country]"
+	                      data-default="{{ form.country }}"
+	                      autocomplete="country"
+	                    >
                       {{ country_option_tags }}
                     </select>
                   </div>
@@ -302,10 +319,11 @@
                     <label for="AddressProvinceNew">{{ 'customers.addresses_page.form.province_label' | t }}</label>
                     <select
                       id="AddressProvinceNew"
-                      class="input-full"
-                      name="address[province]"
-                      data-default="{{ form.province }}"
-                    ></select>
+	                      class="input-full"
+	                      name="address[province]"
+	                      data-default="{{ form.province }}"
+	                      autocomplete="address-level1"
+	                    ></select>
                   </div>
 
                   <div class="grid__item one-half portable--one-whole">
@@ -314,10 +332,11 @@
                       type="text"
                       id="AddressZipNew"
                       class="input-full"
-                      name="address[zip]"
-                      value="{{ form.zip }}"
-                      autocapitalize="characters"
-                    >
+	                      name="address[zip]"
+	                      value="{{ form.zip }}"
+	                      autocapitalize="characters"
+	                      autocomplete="postal-code"
+	                    >
                   </div>
 
                   <div class="grid__item one-half portable--one-whole">
@@ -325,10 +344,11 @@
                     <input
                       type="tel"
                       id="AddressPhoneNew"
-                      class="input-full"
-                      name="address[phone]"
-                      value="{{ form.phone }}"
-                    >
+	                      class="input-full"
+	                      name="address[phone]"
+	                      value="{{ form.phone }}"
+	                      autocomplete="tel"
+	                    >
                   </div>
 
                   <div class="grid__item one-whole">

@@ -169,7 +169,7 @@ data-sticky="{{ section.settings.menu_sticky }}">
 </main-header>
 <script>window.fixVhByVars();</script>
 
-<sidebar-drawer id="site-nav--mobile" class="site-nav style--sidebar" tabindex="-1" role="dialog" aria-modal="true" style="display:none">
+<sidebar-drawer id="site-nav--mobile" class="site-nav style--sidebar" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="site-navigation-title" style="display:none">
   
   <button class="site-close-handle" title="{{ 'general.accessibility_labels.close_sidebar' | t }}">
     <span class="visually-hidden">{{ 'general.accessibility_labels.close_sidebar' | t }}</span>
@@ -180,7 +180,7 @@ data-sticky="{{ section.settings.menu_sticky }}">
 
     <div class="site-nav-container-last">
 
-      <p class="title sidebar-title add-hr-below">{{ 'sidebar.menu_title' | t }}</p>
+      <p class="title sidebar-title add-hr-below" id="site-navigation-title">{{ 'sidebar.menu_title' | t }}</p>
 
       <div class="top">
 

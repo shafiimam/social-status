@@ -23,22 +23,22 @@
 
             <div class="grid__item one-half">
               <label for="FirstName" class="hidden-label">{{ 'customers.register_page.form.first_name_label' | t }}</label>
-              <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="{{ 'customers.register_page.form.first_name_label' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+              <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="{{ 'customers.register_page.form.first_name_label' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autocomplete="given-name" autofocus>
             </div>
 
             <div class="grid__item one-half">
               <label for="LastName" class="hidden-label">{{ 'customers.register_page.form.last_name_label' | t }}</label>
-              <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="{{ 'customers.register_page.form.last_name_label' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+              <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="{{ 'customers.register_page.form.last_name_label' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words" autocomplete="family-name">
             </div>
 
             <div class="grid__item one-whole">
               <label for="Email" class="hidden-label">{{ 'customers.register_page.form.email_label' | t }}</label>
-              <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customers.register_page.form.email_label' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+              <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customers.register_page.form.email_label' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" autocomplete="email" spellcheck="false">
             </div>
 
             <div class="grid__item one-whole">
               <label for="CreatePassword" class="hidden-label">{{ 'customers.register_page.form.password_label' | t }}</label>
-              <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customers.register_page.form.password_label' | t }}">
+              <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customers.register_page.form.password_label' | t }}" autocomplete="new-password">
             </div>
 
             <div class="grid__item one-whole">

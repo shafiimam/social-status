@@ -52,7 +52,7 @@
               <div class="alert alert--success">{{ 'general.newsletter.confirmation' | t }}</div>
             {%- else -%}
               <div class="input-group">
-                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter.email_label' | t }}" name="contact[email]" id="Email-{{ section.id }}" aria-label="{{ 'general.newsletter.email_label' | t }}" autocorrect="off" autocapitalize="off" required>
+                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter.email_label' | t }}" name="contact[email]" id="Email-{{ section.id }}" aria-label="{{ 'general.newsletter.email_label' | t }}" autocorrect="off" autocapitalize="off" autocomplete="email" spellcheck="false" required>
                 <button class="button button--solid" type="submit" name="commit" id="Subscribe-{{ section.id }}">{{ 'general.newsletter.submit_label' | t }}</button>
               </div>
                 <input type="hidden" name="contact[tags]" value="newsletter">

@@ -3,7 +3,7 @@
 	{%- if template != 'cart' -%}
 
 		<div class="site-cart-heading">
-			<p class="title sidebar-title">{{ 'sidebar.cart_title' | t }}</p>
+				<p class="title sidebar-title" id="site-cart-title">{{ 'sidebar.cart_title' | t }}</p>
 			<p class="subtitle">{{ 'cart.items_count' | t: count: cart.item_count }}</p> 
 		</div>
 

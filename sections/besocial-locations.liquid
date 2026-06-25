@@ -3,7 +3,7 @@
 <!-- City Highlight -->
 <div class="container blog-locations-container">
   <div class="blog-locations-title">
-    <img class="" src="https://cdn.shopify.com/s/files/1/0262/2475/files/title-beSocial_9cbde4df-af0b-4b6e-a20b-e2ef1afb4599.png?v=1614415301" alt="{{ page_title }}" style="max-height: 300px;">
+    <img class="" src="https://cdn.shopify.com/s/files/1/0262/2475/files/title-beSocial_9cbde4df-af0b-4b6e-a20b-e2ef1afb4599.png?v=1614415301" alt="{{ page_title }}" width="500" height="150" style="width: auto; height: auto; max-height: 300px;">
     <h1 class="h1">LOCATIONS</h1>  
   </div>
   {% for block in section.blocks %}
@@ -14,7 +14,7 @@
           {% if block.settings.image != blank %}
             <!-- Desktop -->
             <div {{ block.shopify_attributes }} class="city-item">
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="image-{{ forloop.index }}" loading="lazy">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.city_name | escape }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" loading="lazy">
                 <div class="city-info">
                   <span class="city-name">{{ block.settings.city_name }}</span>
                   <span class="city-name-short">{{ block.settings.city_name_short }}</span>
@@ -40,7 +40,7 @@
           "autoPlay": false,
           "groupCells": false,
           "freeScroll": true,
-          "accessibility": false
+          "accessibility": true
         }'>            
             {% comment %} Dynamic gallery images loop {% endcomment %}
             {% for i in (1..5) %}
@@ -52,7 +52,7 @@
               {% if gallery_image != blank %}
                 <div class="gallery-item slide">
                   <a href="{{ gallery_image | img_url: 'master' }}" data-fancybox="gallery-{{ block.id }}">
-                    <img src="{{ gallery_image | img_url: 'master' }}" alt="{{ gallery_description | default: 'Gallery image' | escape }}" loading="lazy">
+                    <img src="{{ gallery_image | img_url: 'master' }}" alt="{{ gallery_description | default: gallery_image.alt | escape }}" width="{{ gallery_image.width }}" height="{{ gallery_image.height }}" loading="lazy">
                     {% if gallery_description != blank %}
                       <div class="gallery-info">
                         <p class="gallery-description">{{ gallery_description }}</p>

@@ -346,7 +346,7 @@
   display: block;
   padding: var(--box-auto-top) var(--box-smaller-padding);
 }
-a.button.button--solid.events-toggle-btn{
+.button.button--solid.events-toggle-btn{
   margin-top: 30px;
 }
 .events-slider-view.hide {

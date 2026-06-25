@@ -39,13 +39,13 @@
 
             <div class="grid__item one-whole">
               <label for="CustomerEmail" class="hidden-label">{{ 'customers.login_page.form_email_label' | t }}</label>
-              <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customers.login_page.form_email_label' | t }}" autocorrect="off" autocapitalize="off" autofocus>
+              <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customers.login_page.form_email_label' | t }}" autocorrect="off" autocapitalize="off" autocomplete="email" spellcheck="false" autofocus>
             </div>
 
             <div class="grid__item one-whole">
               {% if form.password_needed %}
                 <label for="CustomerPassword" class="hidden-label">{{ 'customers.login_page.form_password_label' | t }}</label>
-                <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customers.login_page.form_password_label' | t }}">
+                <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customers.login_page.form_password_label' | t }}" autocomplete="current-password">
               {% endif %}
             </div>
 
@@ -63,7 +63,7 @@
                     </a></p>
                 {% endif %}
                 {% assign customer_register_text = 'customers.login_page.sign_up_label' | t | prepend: '<span class="underline-animation">' | append: '</span>' %}
-                <p href="#"><span style="opacity: .62">{{ 'customers.login_page.new_customer_button' | t }}</span> {{ customer_register_text | customer_register_link }}</p>
+                <p><span style="opacity: .62">{{ 'customers.login_page.new_customer_button' | t }}</span> {{ customer_register_text | customer_register_link }}</p>
               </div>
 
             </div>
@@ -91,7 +91,7 @@
 
               <div class="grid__item one-whole">
                 <label for="RecoverEmail" class="hidden-label">{{ 'customers.login_page.password_reset.email_label' | t }}</label>
-                <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{{ 'customers.login_page.password_reset.email_label' | t }}" autocorrect="off" autocapitalize="off">
+                <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{{ 'customers.login_page.password_reset.email_label' | t }}" autocorrect="off" autocapitalize="off" autocomplete="email" spellcheck="false">
               </div>
 
               <div class="grid__item one-whole">

@@ -311,6 +311,10 @@ html[dir="ltr"] .product-header .product-badges-holder {
 .product-gallery-item:focus {
   outline: none;
 }
+.product-gallery-item:focus-visible {
+  outline: 2px solid var(--main-text);
+  outline-offset: 3px;
+}
 
 shopify-payment-terms {
   font-size: 90%;
@@ -987,9 +991,12 @@ product-variants[data-hide-variants="hide"][data-style="select"]
   width: 100%;
   height: 100%;
 }
-.product-gallery__item:focus,
-.product-gallery__item:focus-visible {
+.product-gallery__item:focus {
   outline: none !important;
+}
+.product-gallery__item:focus-visible {
+  outline: 2px solid var(--main-text) !important;
+  outline-offset: 3px;
 }
 
 .product__view-in-space {

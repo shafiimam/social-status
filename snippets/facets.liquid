@@ -13,7 +13,7 @@
 {{ 'component-range-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
 
-<sidebar-drawer id="site-filters" class="site-nav style--sidebar" tabindex="-1" role="dialog" aria-modal="true" style="display:none" style="display:none">
+<sidebar-drawer id="site-filters" class="site-nav style--sidebar" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="site-filters-title" style="display:none">
 
   <button class="site-close-handle" title="{{ 'general.accessibility_labels.close_sidebar' | t }}">
     <span class="visually-hidden">{{ 'general.accessibility_labels.close_sidebar' | t }}</span>
@@ -23,7 +23,7 @@
   <div class="site-nav-container">
     <div class="site-nav-container-last">
 
-      <p class="title sidebar-title">{{ 'sidebar.filtering_title' | t }}</p>
+      <p class="title sidebar-title" id="site-filters-title">{{ 'sidebar.filtering_title' | t }}</p>
       <p class="subtitle" id="CollectionProductCount" role="status">
         {%- if results.results_count -%}
           {{ 'collections.results_with_count' | t: count: results.results_count }}

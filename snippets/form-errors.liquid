@@ -1,6 +1,6 @@
 {%- if form.errors -%}
 	{%- for field in form.errors -%}
-		<span class="alert alert--error">
+			<span class="alert alert--error" role="alert" aria-live="polite">
 			 {% if field == 'form' %}
 		    {{ form.errors.messages[field] }}
 		  {%- else -%}

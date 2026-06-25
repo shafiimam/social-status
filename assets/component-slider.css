@@ -22,6 +22,12 @@
   scroll-snap-type: x mandatory;
   cursor: grab;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .css-slider-holder {
+    scroll-behavior: auto;
+  }
+}
 .css-slider-holder::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;

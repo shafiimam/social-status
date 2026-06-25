@@ -51,7 +51,7 @@
 
   <div class="gift-card__actions">
     <a href="{{ shop.secure_url }}" class="button button--solid" target="_blank">{{ 'gift_card.shop_link' | t }}</a>
-    <a href="#" class="button button--outline" onclick="window.print();">{{ 'gift_card.print' | t }}</a>
+    <button type="button" class="button button--outline" onclick="window.print();">{{ 'gift_card.print' | t }}</button>
     {% if gift_card.pass_url %}
       <a class="add-to-apple-wallet" href="{{ gift_card.pass_url }}">
         {% # theme-check-disable ImgWidthAndHeight %}

@@ -12,7 +12,7 @@
             <div class="staff-slider__item" data-block-id="{{ block.id }}">
               <div class="staff-slider__item-inner">
                 <div class="staff-slider__item-image">
-                  <img src="{{ block.settings.image | image_url: width: 550 }}" alt="{{ block.settings.image.alt }}">
+	                  <img src="{{ block.settings.image | image_url: width: 550 }}" alt="{{ block.settings.image.alt }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
                 </div>
                 <div class="staff-slider__item-content">
                   <div class="staff-info">

@@ -119,12 +119,12 @@
       {% if has_coming_articles %}
         <div class="section_title">
           <h1 class="h1">{{ section.settings.events_coming }}</h1>
-          <a class="button button--solid events-toggle-btn" href="#" data-toggle="events-view">
+          <button class="button button--solid events-toggle-btn" type="button" data-toggle="events-view">
             <span class="btn-text-show">{{ section.settings.btn_coming }}</span>
             <span class="btn-text-hide" style="display: none;">
               {{- section.settings.btn_hide_coming | default: 'Hide Upcoming Events' -}}
             </span>
-          </a>
+          </button>
         </div>
 
         <!-- Perspective Slider View (First 8 events) - Default -->

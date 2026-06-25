@@ -572,6 +572,10 @@ search-form input[type=search] {
 .search-results.predictive-search .search-item:focus {
   outline: none !important;
 }
+.search-results.predictive-search .search-item:focus-visible {
+  outline: 2px solid var(--main-text) !important;
+  outline-offset: 3px;
+}
 .no-touchevents .search-results.predictive-search .search-item:hover img {
   transform: scale(1.05);
 }

@@ -83,6 +83,10 @@
   box-shadow: none;
   touch-action: manipulation;
 }
+.basicLightboxClose:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
 
 .basicLightbox {
   z-index: 99999;

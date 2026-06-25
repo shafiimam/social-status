@@ -77,6 +77,20 @@ html[dir="ltr"] .site-footer .site-payment:first-child {
 .site-footer .footer-bottom > div:first-child {
   margin-inline-end: 50px;
 }
+.site-footer .footer-localization-accessibility {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.site-footer .footer-ada-compliance {
+  line-height: 0;
+}
+.site-footer .footer-ada-compliance img {
+  display: block;
+  width: 80px;
+  height: auto;
+}
 @media screen and (max-width: 726px) {
   .site-footer .footer-bottom {
     flex-direction: column;
@@ -93,7 +107,8 @@ html[dir="ltr"] .site-footer .site-payment:first-child {
   html[dir="ltr"] .site-footer .footer-bottom .site-payment {
     text-align: left !important;
   }
-  .site-footer .footer-bottom .localization-form-holder ~ .footer-copyright {
+  .site-footer .footer-bottom .localization-form-holder ~ .footer-copyright,
+  .site-footer .footer-bottom .footer-localization-accessibility ~ .footer-copyright {
     margin-top: 50px;
   }
   .site-footer .footer-bottom .site-payment {

@@ -85,11 +85,24 @@
           assign locale_selector = true
         endif 
 
-        if country_selector or locale_selector
-          render 'localization-form', show_country_selector: country_selector, show_locale_selector: locale_selector, location: 'footer'
-        endif
-
       -%}
+
+      {%- if country_selector or locale_selector -%}
+        <div class="footer-localization-accessibility">
+          {%- render 'localization-form', show_country_selector: country_selector, show_locale_selector: locale_selector, location: 'footer' -%}
+          {%- if section.settings.ada_compliance_logo -%}
+            <div class="footer-ada-compliance">
+              <img
+                src="{{ section.settings.ada_compliance_logo | image_url: width: 160 }}"
+                alt="{{ section.settings.ada_compliance_logo.alt | default: 'ADA compliant site' | escape }}"
+                width="{{ section.settings.ada_compliance_logo.width }}"
+                height="{{ section.settings.ada_compliance_logo.height }}"
+                loading="lazy"
+              >
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
 
       <div class="footer-copyright">
         
@@ -251,6 +264,11 @@
         "id": "show_locale_selector",
         "label": "t:sections.footer.settings.language_selector_show.label",
         "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "ada_compliance_logo",
+        "label": "ADA compliant logo"
       },
       {
         "type": "header",
