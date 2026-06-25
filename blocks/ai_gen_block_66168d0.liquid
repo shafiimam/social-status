@@ -1,0 +1,542 @@
+{% doc %}
+  @prompt
+    Create a flexible image banner section with the following features:
+    - Separate image settings for desktop and mobile (responsive display)
+    - A heading field
+    - A subheading field
+    - A body copy / rich text field
+    - A button with customizable label and link
+    - A setting to position the text content (heading, subheading, body, button) either ABOVE or BELOW the image
+    - The section should be full width
+    - Clean, premium layout suitable for a sneaker/streetwear brand
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-banner-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-image-banner__container-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-image-banner__wrapper-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: {{ block.settings.content_position }};
+    gap: {{ block.settings.content_spacing }}px;
+    align-items: center;
+  }
+
+  .ai-image-banner__image-container-{{ ai_gen_id }} {
+    width: 100%;
+    position: relative;
+  }
+
+  .ai-image-banner__image-desktop-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-image-banner__image-mobile-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  .ai-image-banner__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 400px;
+  }
+
+  .ai-image-banner__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 400px;
+  }
+
+  .ai-image-banner__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-image-banner__content-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.content_padding_vertical }}px {{ block.settings.content_padding_horizontal }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-image-banner__heading-{{ ai_gen_id }} {
+    font-family: {{ settings.headings_font.family }}, {{ settings.headings_font.fallback_families }};
+    font-weight: {{ settings.headings_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .ai-image-banner__subheading-{{ ai_gen_id }} {
+    font-family: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+    font-weight: {{ settings.body_font.weight }};
+    font-size: {{ block.settings.subheading_size }}px;
+    line-height: 1.4;
+    color: {{ block.settings.subheading_color }};
+    margin: 0 0 {{ block.settings.subheading_spacing }}px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .ai-image-banner__body-{{ ai_gen_id }} {
+    font-family: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+    font-weight: {{ settings.body_font.weight }};
+    font-size: {{ block.settings.body_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.body_color }};
+    margin: 0 0 {{ block.settings.body_spacing }}px 0;
+  }
+
+  .ai-image-banner__body-{{ ai_gen_id }} p {
+    margin: 0 0 1em 0;
+  }
+
+  .ai-image-banner__body-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-image-banner__button-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: {% if block.settings.text_alignment == 'left' %}flex-start{% elsif block.settings.text_alignment == 'center' %}center{% else %}flex-end{% endif %};
+  }
+
+  .ai-image-banner__button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    font-family: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+    font-weight: 600;
+    font-size: {{ block.settings.button_font_size }}px;
+    text-decoration: none;
+    border: none;
+    border-radius: {{ settings.buttons_radius }}px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .ai-image-banner__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-banner__image-desktop-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-image-banner__image-mobile-{{ ai_gen_id }} {
+      display: block;
+    }
+
+    .ai-image-banner__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.6 }}px;
+    }
+
+    .ai-image-banner__subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.8 }}px;
+    }
+
+    .ai-image-banner__body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+
+    .ai-image-banner__button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_font_size | times: 0.9 }}px;
+    }
+
+    .ai-image-banner__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding_vertical | times: 0.7 }}px {{ block.settings.content_padding_horizontal | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-image-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-image-banner__container-{{ ai_gen_id }}">
+    <div class="ai-image-banner__wrapper-{{ ai_gen_id }}">
+      <div class="ai-image-banner__image-container-{{ ai_gen_id }}">
+        {% if block.settings.image_desktop or block.settings.image_mobile %}
+          {% if block.settings.image_desktop %}
+            <img
+              src="{{ block.settings.image_desktop | image_url: width: 2000 }}"
+              alt="{{ block.settings.image_desktop.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image_desktop.width }}"
+              height="{{ block.settings.image_desktop.height }}"
+              class="ai-image-banner__image-desktop-{{ ai_gen_id }}"
+            >
+          {% endif %}
+          {% if block.settings.image_mobile %}
+            <img
+              src="{{ block.settings.image_mobile | image_url: width: 1000 }}"
+              alt="{{ block.settings.image_mobile.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image_mobile.width }}"
+              height="{{ block.settings.image_mobile.height }}"
+              class="ai-image-banner__image-mobile-{{ ai_gen_id }}"
+            >
+          {% elsif block.settings.image_desktop %}
+            <img
+              src="{{ block.settings.image_desktop | image_url: width: 1000 }}"
+              alt="{{ block.settings.image_desktop.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image_desktop.width }}"
+              height="{{ block.settings.image_desktop.height }}"
+              class="ai-image-banner__image-mobile-{{ ai_gen_id }}"
+            >
+          {% endif %}
+        {% else %}
+          <div class="ai-image-banner__image-placeholder-{{ ai_gen_id }}">
+            {{ 'hero-apparel-1' | placeholder_svg_tag }}
+            <div class="ai-image-banner__empty-state-{{ ai_gen_id }}">
+              Add desktop and mobile images
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-image-banner__content-{{ ai_gen_id }}">
+        {% if block.settings.subheading != blank %}
+          <div class="ai-image-banner__subheading-{{ ai_gen_id }}">
+            {{ block.settings.subheading }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-image-banner__heading-{{ ai_gen_id }}">
+            {{ block.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.body != blank %}
+          <div class="ai-image-banner__body-{{ ai_gen_id }}">
+            {{ block.settings.body }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+          <div class="ai-image-banner__button-wrapper-{{ ai_gen_id }}">
+            <a
+              href="{{ block.settings.button_link }}"
+              class="ai-image-banner__button-{{ ai_gen_id }}"
+            >
+              {{ block.settings.button_label }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "New arrivals"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Premium streetwear collection"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Discover the latest drops from exclusive brands and limited-edition collaborations.</p>"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "column",
+          "label": "Below image"
+        },
+        {
+          "value": "column-reverse",
+          "label": "Above image"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "label": "Content spacing",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_spacing",
+      "label": "Subheading spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "body_spacing",
+      "label": "Body spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_padding_vertical",
+      "label": "Content padding vertical",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding_horizontal",
+      "label": "Content padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Button padding vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Button padding horizontal",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image banner"
+    }
+  ]
+}
+{% endschema %}

@@ -51,11 +51,34 @@
             "show_gift_card_recipient": false
           }
         },
+        "genlook_virtual_try_on_genlook_widget_VnRckN": {
+          "type": "shopify://apps/genlook-virtual-try-on/blocks/genlook-widget/01997bc6-1dc6-7c96-853a-98a7952a6ec3",
+          "settings": {
+            "widget_primary_color": "#0a1810",
+            "theme_primary": "#000000",
+            "button_text": "DEFAULT",
+            "button_style": "full-width",
+            "button_size": "medium",
+            "icon_type": "sparkles",
+            "disable_on_out_of_stock": true,
+            "show_remaining_try_ons": false,
+            "icon_position": "left",
+            "gender_context": "default",
+            "corner_radius": "full",
+            "shadow_intensity": "medium",
+            "font_weight": "semibold",
+            "custom_css": "{}",
+            "upload_info_text": "",
+            "header_title": "",
+            "header_subtitle": "",
+            "hide_button": false
+          }
+        },
         "fina_sale_message_T4UnVK": {
           "type": "fina_sale_message",
           "settings": {
             "enable_compare_at_price": true,
-            "match_tag": "rodeodnd",
+            "match_tag": "finalsale",
             "message": "This item is final sale and not eligible for return. Exchanges are available only if an incorrect size is received."
           }
         },
@@ -96,6 +119,7 @@
         "description",
         "variant_picker",
         "buy_buttons",
+        "genlook_virtual_try_on_genlook_widget_VnRckN",
         "fina_sale_message_T4UnVK",
         "ineligibile_products_YCEBdF",
         "collapsible_tab_4zwfq4",
@@ -223,6 +247,7 @@
         "image_7838HB",
         "image_zNffB3"
       ],
+      "disabled": true,
       "name": "t:sections.gallery.name",
       "settings": {
         "image_height": "full"
@@ -234,7 +259,7 @@
         "heading_R9KcDT": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "",
             "heading_size": "h2",
             "seo_h_tag": "span"
           }
@@ -242,7 +267,7 @@
         "text_Eaeaxr": {
           "type": "text",
           "settings": {
-            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+            "text": ""
           }
         }
       },
@@ -252,7 +277,7 @@
       ],
       "name": "t:sections.video-background.name",
       "settings": {
-        "video_object": "shopify://files/videos/6643E286-088A-4D7F-A8BD-60792E2038C2.MOV",
+        "video_object": "shopify://files/videos/SS LOOKBOOK WEB.mp4",
         "video_height": "56.25%",
         "text_alignment": "horizontal-center vertical-middle",
         "custom_text": "#ffffff",

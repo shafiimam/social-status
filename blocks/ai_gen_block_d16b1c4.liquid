@@ -1,0 +1,679 @@
+{% doc %}
+  @prompt
+    Update an existing Shopify OS 2.0 enhanced hero image section to add an optional image link. Add a URL input field in the schema settings that, when filled in, wraps the entire hero image in an anchor tag making it clickable. The link should support opening in the same tab or a new tab (add a checkbox toggle for this). Keep all existing functionality intact: desktop/mobile image uploads, contain/cover toggle, section height controls, overlay opacity, text above/below image, overlay text with 9-position placement, and button CTAs. If I do not have a button but I have text and vice versa, reduce the space between the image. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    display: block;
+  }
+
+  .ai-hero-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.section_height_desktop }}px;
+    overflow: hidden;
+  }
+
+  .ai-hero-image-link-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .ai-hero-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .ai-hero-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ block.settings.image_fit }};
+    display: block;
+  }
+
+  .ai-hero-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    pointer-events: none;
+  }
+
+  .ai-hero-content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: {{ block.settings.text_position_vertical }};
+    justify-content: {{ block.settings.text_position_horizontal }};
+    padding: 40px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .ai-hero-text-wrapper-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    max-width: {{ block.settings.text_max_width }}px;
+    pointer-events: auto;
+  }
+
+  .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+  }
+
+  .ai-hero-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+  }
+
+  .ai-hero-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ settings.buttons_radius }}px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .ai-hero-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-hero-text-above-{{ ai_gen_id }} {
+    padding: 40px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-hero-text-below-{{ ai_gen_id }} {
+    padding: 40px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-hero-text-above-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }},
+  .ai-hero-text-below-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color_outside }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-hero-text-above-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }},
+  .ai-hero-text-below-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.text_color_outside }};
+    margin: 0 0 24px 0;
+  }
+
+  .ai-hero-text-above-{{ ai_gen_id }} .ai-hero-button-{{ ai_gen_id }},
+  .ai-hero-text-below-{{ ai_gen_id }} .ai-hero-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_background_outside }};
+    color: {{ block.settings.button_text_color_outside }};
+  }
+
+  .ai-hero-text-above-{{ ai_gen_id }} .ai-hero-button-{{ ai_gen_id }}:hover,
+  .ai-hero-text-below-{{ ai_gen_id }} .ai-hero-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_outside }};
+    color: {{ block.settings.button_hover_text_color_outside }};
+  }
+
+  {% if block.settings.text_position == 'above' %}
+    {% if block.settings.heading_above == blank and block.settings.subheading_above == blank %}
+      .ai-hero-text-above-{{ ai_gen_id }} {
+        padding: 0;
+      }
+    {% elsif block.settings.button_text_above == blank %}
+      .ai-hero-text-above-{{ ai_gen_id }} {
+        padding-bottom: 20px;
+      }
+    {% endif %}
+  {% endif %}
+
+  {% if block.settings.text_position == 'below' %}
+    {% if block.settings.heading_below == blank and block.settings.subheading_below == blank %}
+      .ai-hero-text-below-{{ ai_gen_id }} {
+        padding: 0;
+      }
+    {% elsif block.settings.button_text_below == blank %}
+      .ai-hero-text-below-{{ ai_gen_id }} {
+        padding-bottom: 20px;
+      }
+    {% endif %}
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-container-{{ ai_gen_id }} {
+      height: {{ block.settings.section_height_mobile }}px;
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.6 }}px;
+    }
+
+    .ai-hero-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.8 }}px;
+    }
+
+    .ai-hero-content-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+
+    .ai-hero-text-above-{{ ai_gen_id }},
+    .ai-hero-text-below-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.text_position == 'above' %}
+    {% if block.settings.heading_above != blank or block.settings.subheading_above != blank or block.settings.button_text_above != blank %}
+      <div class="ai-hero-text-above-{{ ai_gen_id }}">
+        {% if block.settings.heading_above != blank %}
+          <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.heading_above }}</h2>
+        {% endif %}
+        {% if block.settings.subheading_above != blank %}
+          <div class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.subheading_above }}</div>
+        {% endif %}
+        {% if block.settings.button_text_above != blank %}
+          <a href="{{ block.settings.button_link_above }}" class="ai-hero-button-{{ ai_gen_id }}">
+            {{ block.settings.button_text_above }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <div class="ai-hero-container-{{ ai_gen_id }}">
+    {% if block.settings.image_link != blank %}
+      <a 
+        href="{{ block.settings.image_link }}" 
+        class="ai-hero-image-link-{{ ai_gen_id }}"
+        {% if block.settings.image_link_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+      >
+    {% else %}
+      <div class="ai-hero-image-link-{{ ai_gen_id }}">
+    {% endif %}
+
+      <div class="ai-hero-image-wrapper-{{ ai_gen_id }}">
+        {% assign desktop_image = block.settings.image_desktop %}
+        {% assign mobile_image = block.settings.image_mobile %}
+        
+        {% if desktop_image != blank %}
+          <picture>
+            {% if mobile_image != blank %}
+              <source 
+                media="(max-width: 749px)" 
+                srcset="{{ mobile_image | image_url: width: 750 }} 750w, {{ mobile_image | image_url: width: 1500 }} 1500w"
+              >
+            {% endif %}
+            <img
+              src="{{ desktop_image | image_url: width: 1920 }}"
+              srcset="{{ desktop_image | image_url: width: 1920 }} 1920w, {{ desktop_image | image_url: width: 2560 }} 2560w"
+              alt="{{ desktop_image.alt | escape }}"
+              loading="lazy"
+              width="{{ desktop_image.width }}"
+              height="{{ desktop_image.height }}"
+              class="ai-hero-image-{{ ai_gen_id }}"
+            >
+          </picture>
+        {% else %}
+          <div class="ai-hero-image-placeholder-{{ ai_gen_id }}">
+            {{ 'hero-apparel-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.overlay_opacity > 0 %}
+          <div class="ai-hero-overlay-{{ ai_gen_id }}"></div>
+        {% endif %}
+      </div>
+
+    {% if block.settings.image_link != blank %}
+      </a>
+    {% else %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.text_position == 'overlay' %}
+      {% if block.settings.heading_overlay != blank or block.settings.subheading_overlay != blank or block.settings.button_text_overlay != blank %}
+        <div class="ai-hero-content-{{ ai_gen_id }}">
+          <div class="ai-hero-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.heading_overlay != blank %}
+              <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.heading_overlay }}</h2>
+            {% endif %}
+            {% if block.settings.subheading_overlay != blank %}
+              <div class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.subheading_overlay }}</div>
+            {% endif %}
+            {% if block.settings.button_text_overlay != blank %}
+              <a href="{{ block.settings.button_link_overlay }}" class="ai-hero-button-{{ ai_gen_id }}">
+                {{ block.settings.button_text_overlay }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if block.settings.text_position == 'below' %}
+    {% if block.settings.heading_below != blank or block.settings.subheading_below != blank or block.settings.button_text_below != blank %}
+      <div class="ai-hero-text-below-{{ ai_gen_id }}">
+        {% if block.settings.heading_below != blank %}
+          <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.heading_below }}</h2>
+        {% endif %}
+        {% if block.settings.subheading_below != blank %}
+          <div class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.subheading_below }}</div>
+        {% endif %}
+        {% if block.settings.button_text_below != blank %}
+          <a href="{{ block.settings.button_link_below }}" class="ai-hero-button-{{ ai_gen_id }}">
+            {{ block.settings.button_text_below }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Enhanced hero image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Image link"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_link_new_tab",
+      "label": "Open link in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Section height"
+    },
+    {
+      "type": "range",
+      "id": "section_height_desktop",
+      "label": "Desktop height",
+      "min": 200,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "label": "Mobile height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Text position"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "above",
+          "label": "Above image"
+        },
+        {
+          "value": "overlay",
+          "label": "Overlay on image"
+        },
+        {
+          "value": "below",
+          "label": "Below image"
+        }
+      ],
+      "default": "overlay"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Overlay text position"
+    },
+    {
+      "type": "select",
+      "id": "text_position_vertical",
+      "label": "Vertical position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_position_horizontal",
+      "label": "Horizontal position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "Text max width",
+      "min": 300,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Text above image"
+    },
+    {
+      "type": "text",
+      "id": "heading_above",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading_above",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button_text_above",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link_above",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Overlay text"
+    },
+    {
+      "type": "text",
+      "id": "heading_overlay",
+      "label": "Heading",
+      "default": "Hero heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading_overlay",
+      "label": "Subheading",
+      "default": "Introduce your brand story or highlight a special collection"
+    },
+    {
+      "type": "text",
+      "id": "button_text_overlay",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link_overlay",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Text below image"
+    },
+    {
+      "type": "text",
+      "id": "heading_below",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading_below",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button_text_below",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link_below",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Text outside image colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color_outside",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Overlay button style"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Outside button style"
+    },
+    {
+      "type": "color",
+      "id": "button_background_outside",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_outside",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_outside",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color_outside",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Enhanced hero image"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

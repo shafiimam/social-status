@@ -14,20 +14,28 @@
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
+        "content": {
+          "type": "content",
+          "settings": {
+            "text": "FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $250+",
+            "link": "",
+            "target": false
+          }
+        },
+        "content_8wLtby": {
+          "type": "content",
+          "settings": {
+            "text": "VISIT OUR STORES",
+            "link": "shopify://pages/our-stores",
+            "target": false
+          }
+        },
         "content_JgPaB6": {
           "type": "content",
           "disabled": true,
           "settings": {
-            "text": "DISCOVER 20% OFF SELECT STYLES AT OFF-SEASON NOW UNTIL 3.30",
-            "link": "https://www.off--season.com/",
-            "target": false
-          }
-        },
-        "content": {
-          "type": "content",
-          "settings": {
-            "text": "FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $300",
-            "link": "",
+            "text": "DISCOVER 20% OFF + 10% OFF MARKDOWNS NOW UNTIL 5.26",
+            "link": "shopify://collections/new-arrivals-1",
             "target": false
           }
         },
@@ -42,8 +50,9 @@
         }
       },
       "block_order": [
-        "content_JgPaB6",
         "content",
+        "content_8wLtby",
+        "content_JgPaB6",
         "content_7kJfqU"
       ],
       "settings": {

@@ -1,0 +1,849 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "split",
+        "text": ""
+      }
+    },
+    "hero_KEaJFE": {
+      "type": "hero",
+      "name": "Hero Section",
+      "settings": {
+        "desktop_image": "shopify://shop_images/ssmicro.png",
+        "heading": "",
+        "subheading": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "Button 2",
+        "button_2_link": "",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "bottom"
+      }
+    },
+    "rich_text_fHmAkH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UTHCPj": {
+          "type": "heading",
+          "settings": {
+            "heading": "do not duplicate",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_8Um3YJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Whitaker Group and adidas present Do Not Duplicate, a cultural platform grounded in individuality, creative authorship, and the lived experiences that shape how people move through sport and culture.<strong><br/><br/>Individuality Cannot Be Reproduced</strong></p><p>Within Do Not Duplicate, individuality is revealed through instinct and intention.</p><p>Those shaping culture are not repeating patterns. They move with awareness, guided by lived experience and the discipline to recognize a moment before it becomes visible to others. Expression is formed through perspective and conviction rather than imitation.</p><p><strong>A Reflection of Culture</strong></p><p>Culture evolves through individuals who see differently.</p><p>Every environment carries its own rhythm, shaped by tradition, energy, and lived experience. Do Not Duplicate draws from these moments, translating them into expressions that reflect both origin and evolution without replication.</p><p><strong>A Commitment to Individuality</strong></p><p>At its core, Do Not Duplicate is a commitment to personal authorship.</p><p>Each expression interprets cultural reference points through material, form, and construction. Texture, proportion, and detail are used with intention, creating pieces that reflect individuality rather than conformity.</p><p><strong>The Expression Continues</strong></p><p>Do Not Duplicate is an ongoing exploration of instinct and identity.</p><p>Each chapter builds on the last, examining how individuals move through culture with clarity and purpose. What emerges is not repetition, but a series of distinct expressions shaped by perspective, discipline, and time.<br/><br/>The platform reflects the individuals and communities shaping culture through instinct, creativity, and lived experience.</p>"
+          }
+        },
+        "text_Nn6mTt": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>All final sale. No returns or exchanges. Please allow for 5-10 days for domestic and 10-15 days for international. Reminder to also verify your shipping address is correct.<br/></p><p><strong>PLEASE NOTE: </strong>SOME SHIPPING DESTINATION EXCLUSIONS APPLY, SHIPPING CHARGES AND LIMITED AVAILABILITY TO DESTINATIONS OUTSIDE OF THE U.S. ARE BASED ON YOUR COUNTRY’S POLICIES AND MAY DIFFER. ALL WINNING ENTRIES WILL BE SELECTED BEFORE LAUNCH AND SHIPPED AFTER LAUNCH.</p>"
+          }
+        },
+        "button_7LYTqe": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UTHCPj",
+        "text_8Um3YJ",
+        "text_Nn6mTt",
+        "button_7LYTqe"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "bg_img": "shopify://shop_images/sscollection.png",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-left",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h2"
+      }
+    },
+    "rich_text_zLRCcz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AJ6wGw": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Collection",
+            "seo_h_tag": "h1"
+          }
+        },
+        "text_C7tVRr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This collection shows up as a pack, defined by refusal rather than repetition.<br/>The BW 2000’s leads as a new silhouette exclusive to The Whitaker Group, with the Handball Spezial extending the collection through a familiar form.</p>"
+          }
+        },
+        "button_dGkfQU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Enter Draws",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AJ6wGw",
+        "text_C7tVRr",
+        "button_dGkfQU"
+      ],
+      "name": "collection copy",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-right",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h1"
+      }
+    },
+    "media_grid_X7tj9w": {
+      "type": "media-grid",
+      "blocks": {
+        "image_dYxAWT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ss1.png",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_U4Mj7g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ss3.png",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_qgttYJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ss2_7b3024e4-4b1d-4fa5-9012-0af2dfb5f42f.png",
+            "column_count": "6",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_7MK8Mi": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/DSC05635BB.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_zqzTVq": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/APBDND2.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_npqzeb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ssred_a915b5e4-5857-4727-bff7-93d134c16c3c.png",
+            "column_count": "6",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_dYxAWT",
+        "image_U4Mj7g",
+        "image_qgttYJ",
+        "image_7MK8Mi",
+        "image_zqzTVq",
+        "image_npqzeb"
+      ],
+      "custom_css": [],
+      "name": "collection grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 390,
+        "mobile_row_height": 310,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "text_alignment": "center"
+      }
+    },
+    "rich_text_QVncUP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cpbFYt": {
+          "type": "heading",
+          "settings": {
+            "heading": "day glow PACK",
+            "seo_h_tag": "h1"
+          }
+        },
+        "text_KbEV3M": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Day Glow Pack moves through the moment before the day fully opens. Light isn’t settled yet, but the pace is already there. Movement starts early and carries through as the day comes into view. One pair catches that first break of light, shifting from yellow into orange. The other stays grounded in darker tones, held in the moment just before. They move together, keeping the same rhythm from start to finish</p>"
+          }
+        },
+        "button_V8bpYT": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Enter Draws",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cpbFYt",
+        "text_KbEV3M",
+        "button_V8bpYT"
+      ],
+      "name": "dayglow copy",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-right",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h1"
+      }
+    },
+    "media_grid_NmthUN": {
+      "type": "media-grid",
+      "blocks": {
+        "image_8B4Rkx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC05768BB.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_C8gUpk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06051BB.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_wJw6Vy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC05963BB.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_9ijMHm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC05601BB.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_7VAeyV": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/DSC05635BB.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_VemT8H": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/DSC05471BB.jpg",
+            "column_count": "6",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_mqLqjX": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/APBDND2.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_qEBXK6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC06074BB_1.jpg",
+            "column_count": "12",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_8B4Rkx",
+        "image_C8gUpk",
+        "image_wJw6Vy",
+        "image_9ijMHm",
+        "image_7VAeyV",
+        "image_VemT8H",
+        "image_mqLqjX",
+        "image_qEBXK6"
+      ],
+      "custom_css": [],
+      "name": "dayglow grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 390,
+        "mobile_row_height": 310,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "text_alignment": "center"
+      }
+    },
+    "rich_text_JnDeyc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PKQV7Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "404 Peachtree",
+            "seo_h_tag": "h1"
+          }
+        },
+        "text_CYTtNe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>404 Peachtree comes out of Atlanta, where culture is created in real time and carried through everyday movement. The city built its own lane and continues to move on its own terms. Featuring Ben Reilly and Cleotrvpv, this chapter reflects how sound, space, and energy come together through lived experience. The silhouettes follow that same rhythm, made to move from day to night without switching up.</p>"
+          }
+        },
+        "button_ipfJfx": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Enter Draws",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PKQV7Y",
+        "text_CYTtNe",
+        "button_ipfJfx"
+      ],
+      "name": "404 copy",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-right",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h1"
+      }
+    },
+    "media_grid_36ANKf": {
+      "type": "media-grid",
+      "blocks": {
+        "image_EKPAFg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ammpink.png",
+            "column_count": "8",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_VW6Ymw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/redss.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_UdaTRw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC03701_BM.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_mUqkWc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC04386_BM.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_YbAUFG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/redss2.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_6Gipwz": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/APBDND2.png",
+            "column_count": "12",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_EKPAFg",
+        "image_VW6Ymw",
+        "image_UdaTRw",
+        "image_mUqkWc",
+        "image_YbAUFG",
+        "image_6Gipwz"
+      ],
+      "custom_css": [],
+      "name": "404 grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 420,
+        "mobile_row_height": 310,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "text_alignment": "center"
+      }
+    },
+    "custom_liquid_4CPpMn": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.refactor_words.custom_code.name",
+      "settings": {
+        "custom_liquid": "<div style=\"margin-bottom: 40px;\"></div>",
+        "no_padding": true
+      }
+    },
+    "rich_text_LXXmpT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QdhwJr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Houston Rodeo",
+            "seo_h_tag": "h2"
+          }
+        },
+        "text_cRJMTt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Houston Rodeo is rooted in a culture where movement is learned, practiced, and passed down. It reflects a way of showing up shaped through discipline and instinct, built over time in real environments. The silhouettes carry that forward, grounded in tradition and worn in everyday life, where performance is felt, not announced.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QdhwJr",
+        "text_cRJMTt"
+      ],
+      "name": "rodeo copy",
+      "settings": {
+        "title": "",
+        "btn_label": "",
+        "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "desktop_image_positioning": "image-on-right",
+        "bg_overlay": false,
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)",
+        "seo_h_tag": "h1"
+      }
+    },
+    "media_grid_GxerBq": {
+      "type": "media-grid",
+      "blocks": {
+        "image_BHYcTk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC00497BB.jpg",
+            "column_count": "12",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_YaGaNA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/whitecalf.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_GgzfQn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ssmodel.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_wTPUEx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/f50.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_dVp3Wz": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Untitled-33.png",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_L6cipj": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/APBDND2.png",
+            "column_count": "12",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_BHYcTk",
+        "image_YaGaNA",
+        "image_GgzfQn",
+        "image_wTPUEx",
+        "image_dVp3Wz",
+        "image_L6cipj"
+      ],
+      "custom_css": [],
+      "name": "rodeo grid",
+      "settings": {
+        "section_width": "full",
+        "desktop_row_height": 420,
+        "mobile_row_height": 310,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_KEaJFE",
+    "rich_text_fHmAkH",
+    "rich_text_zLRCcz",
+    "media_grid_X7tj9w",
+    "rich_text_QVncUP",
+    "media_grid_NmthUN",
+    "rich_text_JnDeyc",
+    "media_grid_36ANKf",
+    "custom_liquid_4CPpMn",
+    "rich_text_LXXmpT",
+    "media_grid_GxerBq"
+  ]
+}

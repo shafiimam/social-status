@@ -1,72 +1,157 @@
 {
   "article": [
     {
-      "key": "mobile_banner_image",
+      "key": "event_date_time",
       "namespace": "custom",
-      "name": "Mobile Banner Image",
+      "name": "event_date_time",
       "description": "",
       "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
+        "name": "date_time",
+        "category": "DATE_TIME"
       }
     },
     {
-      "key": "cta_url",
+      "key": "event_location",
       "namespace": "custom",
-      "name": "CTA URL",
+      "name": "event location",
       "description": "",
       "type": {
-        "name": "url",
-        "category": "URL"
-      }
-    }
-  ],
-  "blog": [],
-  "collection": [],
-  "company": [],
-  "company_location": [],
-  "location": [],
-  "market": [],
-  "order": [],
-  "page": [],
-  "product": [
-    {
-      "key": "rating",
-      "namespace": "reviews",
-      "name": "Product rating",
-      "description": "Average rating from customers",
-      "type": {
-        "name": "rating",
-        "category": "RATING"
-      }
-    },
-    {
-      "key": "rating_count",
-      "namespace": "reviews",
-      "name": "Product rating count",
-      "description": "Total number of ratings from customers",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "trade_item_description",
-      "namespace": "import_information",
-      "name": "Trade item description",
-      "description": "A precise product description that describes specific attributes of the product for customs and import.",
-      "type": {
-        "name": "multi_line_text_field",
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "care_guide",
-      "namespace": "descriptors",
-      "name": "Care guide",
-      "description": "Instructions for taking care of a product or apparel",
+      "key": "lookbook_article",
+      "namespace": "nitro_lookbook",
+      "name": "Nitro lookbook id",
+      "description": "Enter lookbook ID from Nitro Lookbook app to show on this article",
       "type": {
-        "name": "multi_line_text_field",
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "event_trigger_id",
+      "namespace": "custom",
+      "name": "event id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "blog": [
+    {
+      "key": "lookbook_blog",
+      "namespace": "nitro_lookbook",
+      "name": "Nitro lookbook id",
+      "description": "Enter lookbook ID from Nitro Lookbook app to show on this blog",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "collection": [
+    {
+      "key": "lookbook_collection",
+      "namespace": "nitro_lookbook",
+      "name": "Nitro lookbook id",
+      "description": "Enter lookbook ID from Nitro Lookbook app to show on this collection",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "subcollections",
+      "namespace": "custom",
+      "name": "subcollections",
+      "description": "",
+      "type": {
+        "name": "list.collection_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [
+    {
+      "key": "lookbook_market_e64770f7-8079-4fd7-acd3-ffea6ebb3d3e",
+      "namespace": "nitro_lookbook",
+      "name": "Nitro lookbook My Lookbook",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "order": [
+    {
+      "key": "order_uuid",
+      "namespace": "AddressVerification",
+      "name": "Address Verification Order UUID",
+      "description": "UUID identifying the validation record created during checkout. Auto-copied from cart metafield to order metafield via cartToOrderCopyable capability.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "page": [
+    {
+      "key": "lookbook_page",
+      "namespace": "nitro_lookbook",
+      "name": "Nitro lookbook id",
+      "description": "Enter lookbook ID from Nitro Lookbook app to show on this page",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "product": [
+    {
+      "key": "custom_product",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Product",
+      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "shoe-size",
+      "namespace": "shopify",
+      "name": "Shoe size",
+      "description": "Used to define the size of footwear, e.g. Extra large (XL), 9.5",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "size",
+      "namespace": "shopify",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
+      "type": {
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
@@ -111,32 +196,12 @@
       }
     },
     {
-      "key": "color_filter_swatch",
-      "namespace": "custom",
-      "name": "Color Filter Swatch",
-      "description": "",
+      "key": "lookbook_product",
+      "namespace": "nitro_lookbook",
+      "name": "Nitro lookbook id",
+      "description": "Enter lookbook ID from Nitro Lookbook app to show on this product",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "custom_product",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Product",
-      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "title",
-      "namespace": "custom",
-      "name": "Description",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
@@ -151,353 +216,13 @@
       }
     },
     {
-      "key": "fabric",
-      "namespace": "shopify",
-      "name": "Fabric",
-      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "size",
-      "namespace": "shopify",
-      "name": "Size",
-      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "age-group",
-      "namespace": "shopify",
-      "name": "Age group",
-      "description": "Defines the target age range for a product, such as adults or kids",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "neckline",
-      "namespace": "shopify",
-      "name": "Neckline",
-      "description": "Used to describe the neck shape of a garment, such as V-neck or boat",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "target-gender",
-      "namespace": "shopify",
-      "name": "Target gender",
-      "description": "Identifies the intended gender for a product, such as female, male or unisex",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "pants-length-type",
-      "namespace": "shopify",
-      "name": "Pants length type",
-      "description": "Used to defines the length of pants, such as cropped or long",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "activewear-clothing-features",
-      "namespace": "shopify",
-      "name": "Activewear clothing features",
-      "description": "Identifies unique characteristics of activewear, such as four-way stretch or breathable design",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "activity",
-      "namespace": "shopify",
-      "name": "Activity",
-      "description": "Specifies the sport or activity the product is designed for, such as tennis or pilates",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "clothing-features",
-      "namespace": "shopify",
-      "name": "Clothing features",
-      "description": "Describes unique properties of apparel, such as water resistant or wrinkle resistant",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sleeve-length-type",
-      "namespace": "shopify",
-      "name": "Sleeve length type",
-      "description": "Specifies the style of sleeves on clothing items, such as short or sleeveless",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "top-length-type",
-      "namespace": "shopify",
-      "name": "Top length type",
-      "description": "Defines the length of tops or shirts, like crop top or long",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "accessory-size",
-      "namespace": "shopify",
-      "name": "Accessory size",
-      "description": "Defines the size of an accessory product, such as one size or compact",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "outerwear-clothing-features",
-      "namespace": "shopify",
-      "name": "Outerwear clothing features",
-      "description": "Identifies special characteristics of outerwear, like insulated or waterproof",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "best-uses",
-      "namespace": "shopify",
-      "name": "Best uses",
-      "description": "Highlights optimal activities for product use, like traveling, hiking, or diving",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "skirt-dress-length-type",
-      "namespace": "shopify",
-      "name": "Skirt/Dress length type",
-      "description": "Defines the length of skirts or dresses, such as mini or maxi",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "fit",
-      "namespace": "shopify",
-      "name": "Fit",
-      "description": "Describes the fit of a garment, typically pant shape; e.g. skinny leg, wide",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "cup-size",
-      "namespace": "shopify",
-      "name": "Cup size",
-      "description": "Specifies bust size of bras, such as AA or L",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "care-instructions",
-      "namespace": "shopify",
-      "name": "Care instructions",
-      "description": "Provides guidance for product upkeep, such as hand wash or dry clean only",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "waist-rise",
-      "namespace": "shopify",
-      "name": "Waist rise",
-      "description": "Indicates where on the waist a garment sits, like low, medium or high",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "skirt-style",
-      "namespace": "shopify",
-      "name": "Skirt style",
-      "description": "Describes the design or cut of a skirt, such as pencil or pleated",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "dress-occasion",
-      "namespace": "shopify",
-      "name": "Dress occasion",
-      "description": "Specifies the intended occasion for a dress, e.g. holiday, everyday",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "dress-style",
-      "namespace": "shopify",
-      "name": "Dress style",
-      "description": "Identifies the design of a dress, such as wrap or empire waist",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "carry-options",
-      "namespace": "shopify",
-      "name": "Carry options",
-      "description": "Specifies the carrying methods available for items, such as a handle or shoulder strap",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bag-case-material",
-      "namespace": "shopify",
-      "name": "Bag/Case material",
-      "description": "Identifies the main material used in a bag or case, such as leather or canvas",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "badge",
-      "namespace": "theme",
-      "name": "badge",
-      "description": "",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_guide_text",
+      "key": "in_stock",
       "namespace": "custom",
-      "name": "size guide text",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "is_final_sale",
-      "namespace": "custom",
-      "name": "Is FInal Sale",
-      "description": "Product is final sale?",
+      "name": "In stock",
+      "description": "This metafield is a part of a custom flow that decides the product is in stock or not. ",
       "type": {
         "name": "boolean",
         "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "product_material_data",
-      "namespace": "custom",
-      "name": "Product Material Data",
-      "description": "",
-      "type": {
-        "name": "metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "feel_and_fit",
-      "namespace": "custom",
-      "name": "Feel And Fit",
-      "description": "Feel And Fit",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "care_and_composition",
-      "namespace": "custom",
-      "name": "Care and composition",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "bag-case-features",
-      "namespace": "shopify",
-      "name": "Bag/Case features",
-      "description": "Describes the unique characteristics of a bag or case, like waterproof or lightweight",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bag-case-storage-features",
-      "namespace": "shopify",
-      "name": "Bag/Case storage features",
-      "description": "Identifies unique storage elements in bags or cases, such as adjustable dividers or external pockets",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bra-features",
-      "namespace": "shopify",
-      "name": "Bra features",
-      "description": "Details the unique features of bras, e.g. removable padding, sweat-wicking fabric",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bra-strap-type",
-      "namespace": "shopify",
-      "name": "Bra strap type",
-      "description": "Specifies the style and functionality of bra straps, such as racerback",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bra-support-level",
-      "namespace": "shopify",
-      "name": "Bra support level",
-      "description": "Indicates the level of support provided by a bra, e.g. low, medium, high",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
       }
     }
   ],
@@ -506,7 +231,7 @@
       "key": "custom_label_4",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -516,7 +241,7 @@
       "key": "custom_label_3",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -526,7 +251,7 @@
       "key": "custom_label_2",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -536,7 +261,7 @@
       "key": "custom_label_1",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -546,7 +271,7 @@
       "key": "custom_label_0",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -613,27 +338,17 @@
       }
     },
     {
-      "key": "individual_description",
-      "namespace": "custom",
-      "name": "Individual Description",
-      "description": "Individual Description",
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
       "type": {
-        "name": "multi_line_text_field",
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     }
   ],
   "shop": [
-    {
-      "key": "blocks_list_checkout_static_content",
-      "namespace": "checkoutblocks",
-      "name": "Checkout Blocks: Blocks List for: checkout_static_content",
-      "description": null,
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
     {
       "key": "show_store_widget_app_embed_block",
       "namespace": "mm_google_shopping_extension",

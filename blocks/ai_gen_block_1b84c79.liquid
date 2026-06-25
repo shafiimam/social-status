@@ -1,0 +1,1025 @@
+{% doc %}
+  @prompt
+    Update an existing Shopify OS 2.0 enhanced hero image section to add full responsive typography controls. Replace the current single global font size settings with separate desktop and mobile font size controls for each text element. Required font size settings:
+    
+    **For each text area (above-image block, overlay/on-image text, below-image block):**
+    - Heading font size — desktop (px) and mobile (px), separate inputs
+    - Subheading font size — desktop (px) and mobile (px), separate inputs
+    - Body copy font size — desktop (px) and mobile (px), separate inputs
+    
+    Use CSS custom properties and a mobile media query (max-width: 768px) to apply the mobile sizes responsively.
+    
+    Keep all existing functionality intact: desktop/mobile image uploads, image link URL with new tab toggle, contain/cover toggle, section height controls, overlay opacity, text above/below image with alignment controls, overlay text with 9-position placement, button CTAs with color controls, padding controls, and content max-width.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    height: {{ block.settings.section_height_desktop }}px;
+  }
+
+  .ai-hero-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-hero-above-{{ ai_gen_id }} {
+    padding: {{ block.settings.above_padding_top }}px {{ block.settings.above_padding_horizontal }}px {{ block.settings.above_padding_bottom }}px;
+    text-align: {{ block.settings.above_text_align }};
+    background-color: {{ block.settings.above_bg_color }};
+  }
+
+  .ai-hero-above-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.above_heading_size_desktop }}px;
+    color: {{ block.settings.above_heading_color }};
+    margin: 0 0 {{ block.settings.above_heading_margin }}px;
+    line-height: 1.2;
+  }
+
+  .ai-hero-above-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.above_subheading_size_desktop }}px;
+    color: {{ block.settings.above_subheading_color }};
+    margin: 0 0 {{ block.settings.above_subheading_margin }}px;
+    line-height: 1.4;
+  }
+
+  .ai-hero-above-{{ ai_gen_id }} .ai-hero-body-{{ ai_gen_id }} {
+    font-size: {{ block.settings.above_body_size_desktop }}px;
+    color: {{ block.settings.above_body_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-hero-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .ai-hero-image-link-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .ai-hero-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ block.settings.image_fit }};
+    display: block;
+  }
+
+  .ai-hero-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-hero-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-hero-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity }});
+    display: flex;
+    align-items: {{ block.settings.overlay_vertical_align }};
+    justify-content: {{ block.settings.overlay_horizontal_align }};
+    padding: 40px;
+    pointer-events: none;
+  }
+
+  .ai-hero-overlay-content-{{ ai_gen_id }} {
+    max-width: {{ block.settings.overlay_max_width }}px;
+    text-align: {{ block.settings.overlay_text_align }};
+    pointer-events: auto;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.overlay_heading_size_desktop }}px;
+    color: {{ block.settings.overlay_heading_color }};
+    margin: 0 0 {{ block.settings.overlay_heading_margin }}px;
+    line-height: 1.2;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.overlay_subheading_size_desktop }}px;
+    color: {{ block.settings.overlay_subheading_color }};
+    margin: 0 0 {{ block.settings.overlay_subheading_margin }}px;
+    line-height: 1.4;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} .ai-hero-body-{{ ai_gen_id }} {
+    font-size: {{ block.settings.overlay_body_size_desktop }}px;
+    color: {{ block.settings.overlay_body_color }};
+    margin: 0 0 {{ block.settings.overlay_body_margin }}px;
+    line-height: 1.6;
+  }
+
+  .ai-hero-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .ai-hero-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-hero-below-{{ ai_gen_id }} {
+    padding: {{ block.settings.below_padding_top }}px {{ block.settings.below_padding_horizontal }}px {{ block.settings.below_padding_bottom }}px;
+    text-align: {{ block.settings.below_text_align }};
+    background-color: {{ block.settings.below_bg_color }};
+  }
+
+  .ai-hero-below-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.below_heading_size_desktop }}px;
+    color: {{ block.settings.below_heading_color }};
+    margin: 0 0 {{ block.settings.below_heading_margin }}px;
+    line-height: 1.2;
+  }
+
+  .ai-hero-below-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.below_subheading_size_desktop }}px;
+    color: {{ block.settings.below_subheading_color }};
+    margin: 0 0 {{ block.settings.below_subheading_margin }}px;
+    line-height: 1.4;
+  }
+
+  .ai-hero-below-{{ ai_gen_id }} .ai-hero-body-{{ ai_gen_id }} {
+    font-size: {{ block.settings.below_body_size_desktop }}px;
+    color: {{ block.settings.below_body_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-hero-{{ ai_gen_id }} {
+      height: {{ block.settings.section_height_mobile }}px;
+    }
+
+    .ai-hero-above-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.above_heading_size_mobile }}px;
+    }
+
+    .ai-hero-above-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.above_subheading_size_mobile }}px;
+    }
+
+    .ai-hero-above-{{ ai_gen_id }} .ai-hero-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.above_body_size_mobile }}px;
+    }
+
+    .ai-hero-overlay-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.overlay_heading_size_mobile }}px;
+    }
+
+    .ai-hero-overlay-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.overlay_subheading_size_mobile }}px;
+    }
+
+    .ai-hero-overlay-{{ ai_gen_id }} .ai-hero-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.overlay_body_size_mobile }}px;
+    }
+
+    .ai-hero-below-{{ ai_gen_id }} .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.below_heading_size_mobile }}px;
+    }
+
+    .ai-hero-below-{{ ai_gen_id }} .ai-hero-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.below_subheading_size_mobile }}px;
+    }
+
+    .ai-hero-below-{{ ai_gen_id }} .ai-hero-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.below_body_size_mobile }}px;
+    }
+
+    .ai-hero-overlay-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-container-{{ ai_gen_id }}">
+    {% if block.settings.above_heading != blank or block.settings.above_subheading != blank or block.settings.above_body != blank %}
+      <div class="ai-hero-above-{{ ai_gen_id }}">
+        {% if block.settings.above_heading != blank %}
+          <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.above_heading }}</h2>
+        {% endif %}
+        {% if block.settings.above_subheading != blank %}
+          <h3 class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.above_subheading }}</h3>
+        {% endif %}
+        {% if block.settings.above_body != blank %}
+          <div class="ai-hero-body-{{ ai_gen_id }}">{{ block.settings.above_body }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-hero-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image_link != blank %}
+        <a
+          href="{{ block.settings.image_link }}"
+          class="ai-hero-image-link-{{ ai_gen_id }}"
+          {% if block.settings.image_link_new_tab %}target="_blank" rel="noopener"{% endif %}
+        >
+      {% else %}
+        <div class="ai-hero-image-link-{{ ai_gen_id }}">
+      {% endif %}
+
+        {% if block.settings.image_desktop != blank %}
+          <picture>
+            {% if block.settings.image_mobile != blank %}
+              <source
+                media="(max-width: 768px)"
+                srcset="{{ block.settings.image_mobile | image_url: width: 800 }}"
+              >
+            {% endif %}
+            <img
+              src="{{ block.settings.image_desktop | image_url: width: 2000 }}"
+              alt="{{ block.settings.image_desktop.alt | escape }}"
+              class="ai-hero-image-{{ ai_gen_id }}"
+              loading="lazy"
+              width="{{ block.settings.image_desktop.width }}"
+              height="{{ block.settings.image_desktop.height }}"
+            >
+          </picture>
+        {% else %}
+          <div class="ai-hero-image-placeholder-{{ ai_gen_id }}">
+            {{ 'hero-apparel-1' | placeholder_svg_tag }}
+            <div class="ai-hero-empty-state-{{ ai_gen_id }}">
+              Add a desktop image to get started
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.overlay_heading != blank or block.settings.overlay_subheading != blank or block.settings.overlay_body != blank or block.settings.button_text != blank %}
+          <div class="ai-hero-overlay-{{ ai_gen_id }}">
+            <div class="ai-hero-overlay-content-{{ ai_gen_id }}">
+              {% if block.settings.overlay_heading != blank %}
+                <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.overlay_heading }}</h2>
+              {% endif %}
+              {% if block.settings.overlay_subheading != blank %}
+                <h3 class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.overlay_subheading }}</h3>
+              {% endif %}
+              {% if block.settings.overlay_body != blank %}
+                <div class="ai-hero-body-{{ ai_gen_id }}">{{ block.settings.overlay_body }}</div>
+              {% endif %}
+              {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+                <a
+                  href="{{ block.settings.button_link }}"
+                  class="ai-hero-button-{{ ai_gen_id }}"
+                  {% if block.settings.button_link_new_tab %}target="_blank" rel="noopener"{% endif %}
+                >
+                  {{ block.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+      {% if block.settings.image_link != blank %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if block.settings.below_heading != blank or block.settings.below_subheading != blank or block.settings.below_body != blank %}
+      <div class="ai-hero-below-{{ ai_gen_id }}">
+        {% if block.settings.below_heading != blank %}
+          <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.below_heading }}</h2>
+        {% endif %}
+        {% if block.settings.below_subheading != blank %}
+          <h3 class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.below_subheading }}</h3>
+        {% endif %}
+        {% if block.settings.below_body != blank %}
+          <div class="ai-hero-body-{{ ai_gen_id }}">{{ block.settings.below_body }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Enhanced hero image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section dimensions"
+    },
+    {
+      "type": "range",
+      "id": "section_height_desktop",
+      "label": "Desktop height",
+      "min": 200,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "label": "Mobile height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Image link"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_link_new_tab",
+      "label": "Open link in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Text above image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "above_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "above_heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "above_heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "above_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "above_heading_margin",
+      "label": "Heading bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "inline_richtext",
+      "id": "above_subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "above_subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "above_subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "above_subheading_color",
+      "label": "Subheading color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "above_subheading_margin",
+      "label": "Subheading bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "richtext",
+      "id": "above_body",
+      "label": "Body copy"
+    },
+    {
+      "type": "range",
+      "id": "above_body_size_desktop",
+      "label": "Body size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "above_body_size_mobile",
+      "label": "Body size (mobile)",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "above_body_color",
+      "label": "Body color",
+      "default": "#666666"
+    },
+    {
+      "type": "select",
+      "id": "above_text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "above_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "above_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "above_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "above_padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Overlay text (on image)"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "overlay_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "overlay_heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "overlay_heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "overlay_heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_heading_margin",
+      "label": "Heading bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "inline_richtext",
+      "id": "overlay_subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "overlay_subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "overlay_subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "overlay_subheading_color",
+      "label": "Subheading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_subheading_margin",
+      "label": "Subheading bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "richtext",
+      "id": "overlay_body",
+      "label": "Body copy"
+    },
+    {
+      "type": "range",
+      "id": "overlay_body_size_desktop",
+      "label": "Body size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "overlay_body_size_mobile",
+      "label": "Body size (mobile)",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "overlay_body_color",
+      "label": "Body color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_body_margin",
+      "label": "Body bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "overlay_vertical_align",
+      "label": "Vertical position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "overlay_horizontal_align",
+      "label": "Horizontal position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "overlay_text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "overlay_max_width",
+      "label": "Content max width",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_link_new_tab",
+      "label": "Open link in new tab",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Text below image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "below_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "below_heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "below_heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "below_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "below_heading_margin",
+      "label": "Heading bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "inline_richtext",
+      "id": "below_subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "below_subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "below_subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "below_subheading_color",
+      "label": "Subheading color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "below_subheading_margin",
+      "label": "Subheading bottom margin",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "richtext",
+      "id": "below_body",
+      "label": "Body copy"
+    },
+    {
+      "type": "range",
+      "id": "below_body_size_desktop",
+      "label": "Body size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "below_body_size_mobile",
+      "label": "Body size (mobile)",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "below_body_color",
+      "label": "Body color",
+      "default": "#666666"
+    },
+    {
+      "type": "select",
+      "id": "below_text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "below_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "below_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "below_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "below_padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Enhanced hero image"
+    }
+  ]
+}
+{% endschema %}

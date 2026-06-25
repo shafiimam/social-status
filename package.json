@@ -1,0 +1,24 @@
+{
+  "name": "social-status",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "shopify theme dev --store=social-status.myshopify.com",
+    "pull": "shopify theme pull --store=social-status.myshopify.com",
+    "push": "shopify theme push --store=social-status.myshopify.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shafiimam/social-status.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shafiimam/social-status/issues"
+  },
+  "homepage": "https://github.com/shafiimam/social-status#readme"
+}

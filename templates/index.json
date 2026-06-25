@@ -12,96 +12,97 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_DnQDKb": {
+        "slide_d4GgqN": {
           "type": "slide",
-          "name": "4.3 peachtree",
+          "name": "jae tips 6.24",
           "settings": {
             "tagline": "",
-            "title": "Do Not Duplicate: 404 Peachtree Pack",
-            "subtitle": "Exclusively Available Now",
-            "button_label": "Shop Now",
-            "button_link": "shopify://collections/do-not-duplicate",
-            "button_label_2": "Explore the Story",
-            "button_link_2": "shopify://pages/do-not-duplicate-drop-2",
-            "video_object": "shopify://files/videos/app new 3.mov",
+            "title": "The Whitaker Group and JaeTips  \"Started From The Soil\"",
+            "subtitle": "Available in-store & online June 26 at 12 PM EST",
+            "button_label": "",
+            "button_link": "#",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/ssjaet.jpg",
+            "mobile_image": "shopify://shop_images/ssjaet.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
-        "slide_jpCQ6L": {
+        "slide_pVXwXG": {
           "type": "slide",
-          "name": "404 peachtree",
+          "name": "F50 SALA W.C.",
+          "settings": {
+            "tagline": "",
+            "title": "DO NOT DUPLICATE F50 SALA WORLD CUP",
+            "subtitle": "Available June 26 at 12PM EST",
+            "button_label": "enter the draw",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/14CL.jpg",
+            "mobile_image": "shopify://shop_images/30CL_1.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_3WbihL": {
+          "type": "slide",
+          "name": "OoTD",
           "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "Do Not Duplicate: 404 Peachtree Pack",
-            "subtitle": "Exclusively Available April 3",
-            "button_label": "",
-            "button_link": "#",
-            "button_label_2": "explore the story",
-            "button_link_2": "shopify://pages/do-not-duplicate-drop-2",
-            "image": "shopify://shop_images/ssmicrohero.png",
-            "mobile_image": "shopify://shop_images/DSC07251_DC_1_copy78_1.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_imfi7X": {
-          "type": "slide",
-          "name": "b.r.c",
-          "settings": {
-            "tagline": "Introducing",
-            "title": "Birth Of Royal Child",
-            "subtitle": "Available In-store and Online",
+            "title": "One Of These Days",
+            "subtitle": "Shop New Graphic Tees & Bottoms",
             "button_label": "Shop Now",
-            "button_link": "shopify://collections/birth-of-royal-child",
+            "button_link": "shopify://collections/one-of-these-days",
             "button_label_2": "",
             "button_link_2": "",
-            "video_object": "shopify://files/videos/BRC WEB 4k H.265.mov",
+            "video_object": "shopify://files/videos/One of these Days.mov",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
-        "slide_7kQAQe": {
+        "slide_f87VFB": {
           "type": "slide",
-          "name": "H.T.G",
+          "name": "38A GUIDE ",
           "settings": {
             "tagline": "",
-            "title": "Honor The Gift",
-            "subtitle": "New Spring Styles",
-            "button_label": "Shop Now",
-            "button_link": "shopify://collections/honor-the-gift",
+            "title": "38a Denim Style Guide",
+            "subtitle": "Summer Styling, Simplified",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/38a-1",
             "button_label_2": "",
             "button_link_2": "",
-            "video_object": "shopify://files/videos/4k WEB 4k H.265.mov",
-            "seo_h_tag": "h2",
+            "image": "shopify://shop_images/4CL_2.jpg",
+            "mobile_image": "shopify://shop_images/4CL_2.jpg",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
-        "slide_UAiqwg": {
+        "slide_zdQw8a": {
           "type": "slide",
-          "name": "38a shorts",
+          "name": "DT",
           "settings": {
             "tagline": "",
-            "title": "38a",
-            "subtitle": "Essentials Built For Movement",
-            "button_label": "shop now",
-            "button_link": "shopify://collections/38a",
+            "title": "Denim Tears",
+            "subtitle": "Shop New Styles Available In-store Only",
+            "button_label": "Explore Locations",
+            "button_link": "shopify://pages/our-stores",
             "button_label_2": "",
-            "button_link_2": "#",
-            "image": "shopify://shop_images/DSC09556_copy__BRENDEN.MOTLEY_bd37180e-8d0f-494c-973e-27b662ff9409.jpg",
-            "mobile_image": "shopify://shop_images/DSC09556_copy__BRENDEN.MOTLEY_5d915244-0a49-4600-8f50-509f59220966.jpg",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/APB DT 4k H.265.mov",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_DnQDKb",
-        "slide_jpCQ6L",
-        "slide_imfi7X",
-        "slide_7kQAQe",
-        "slide_UAiqwg"
+        "slide_d4GgqN",
+        "slide_pVXwXG",
+        "slide_3WbihL",
+        "slide_f87VFB",
+        "slide_zdQw8a"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -113,64 +114,63 @@
         "desktop_overlay": "#e7e7e7",
         "mobile_height": "var(--window-height)",
         "mobile_background": "#000000",
-        "heading_size": "h1"
+        "heading_size": "h2"
       }
     },
     "releases_JCnmxR": {
       "type": "releases",
       "blocks": {
-        "release_card_zEtVr4": {
+        "release_card_6MrYX6": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/EVOSLRED-1.jpg",
-            "title": "DO NOT DUPLICATE EVO SL 404 PEACHTREE",
+            "image": "shopify://shop_images/KH8098F50SALAGREEN-1.jpg",
+            "title": "DO NOT DUPLICATE F50 SALA WORLD CUP",
             "description": "",
-            "release_date": "4.3",
-            "price": "170",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/evo-sl-404-day-peachtree"
+            "release_date": "6.26",
+            "price": "140",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/do-not-duplicate-f50-sala-world-cup"
           }
         },
-        "release_card_mjf6Jx": {
+        "release_card_t3Txj9": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/96OGATLRED-1.jpg",
-            "title": "DO NOT DUPLICATE ATLANTA 96 OG 404 DAY PEACHTREE",
+            "image": "shopify://shop_images/KZ9149F50SALACREAM-1.jpg",
+            "title": "DO NOT DUPLICATE F50 SALA WORLD CUP",
             "description": "",
-            "release_date": "4.3",
-            "price": "120",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/dnd-atlanta-96-og-404-day-peachtree"
-          }
-        },
-        "release_card_7Hiydh": {
-          "type": "release-card",
-          "settings": {
-            "image": "shopify://shop_images/EVOSLPEACH-1.jpg",
-            "title": "DO NOT DUPLICATE EVO SL 404 PEACHTREE",
-            "description": "",
-            "release_date": "4.3",
-            "price": "170",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/dnd-evo-sl-404-day-peachtree"
+            "release_date": "6.26",
+            "price": "140",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/do-not-duplicate-f50-sala-world-cup-white"
           }
         },
         "release_card_z6e9wj": {
           "type": "release-card",
           "settings": {
-            "image": "shopify://shop_images/ATLTRAINERPINK-1.jpg",
-            "title": "DO NOT DUPLICATE ATLANTA TRAINER 404 DAY PEACHTREE",
+            "image": "shopify://shop_images/AF1LOWWHTGRN-1.jpg",
+            "title": "NIKE AIR FORCE 1 '07",
             "description": "",
-            "release_date": "4.3",
-            "price": "120",
-            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/dnd-atl-trainer-404-day"
+            "release_date": "6.26",
+            "price": "130",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-air-force-1-07"
+          }
+        },
+        "release_card_6YeA9f": {
+          "type": "release-card",
+          "settings": {
+            "image": "shopify://shop_images/SHOXBB4NAVYWHT-1.jpg",
+            "title": "NIKE SHOX BB4 \"OLYMPIC\"",
+            "description": "",
+            "release_date": "6.26",
+            "price": "190",
+            "release_url": "https://socialstatuspgh.runfair.com/en-US/us/nike-shox-bb4-olympic"
           }
         }
       },
       "block_order": [
-        "release_card_zEtVr4",
-        "release_card_mjf6Jx",
-        "release_card_7Hiydh",
-        "release_card_z6e9wj"
+        "release_card_6MrYX6",
+        "release_card_t3Txj9",
+        "release_card_z6e9wj",
+        "release_card_6YeA9f"
       ],
-      "disabled": true,
       "settings": {
         "title": "Releases",
         "column_size": 4,
@@ -180,54 +180,15 @@
     },
     "featured_collection_YCzWJf": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "Stüssy",
+        "title": "Do Not Duplicate: 404 Peachtree Pack",
         "subtitle": "",
-        "collection": "stussy",
+        "collection": "do-not-duplicate",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
-        "hide_product_price": true
-      }
-    },
-    "featured_collection_GEVmtc": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "Footwear",
-        "subtitle": "",
-        "collection": "footwear",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
-      }
-    },
-    "shop_the_look_yJ96E3": {
-      "type": "shop-the-look",
-      "blocks": {
-        "product_Arm4qU": {
-          "type": "product",
-          "settings": {
-            "product": "tom-wood-kay-ring-kambaba-silver"
-          }
-        },
-        "product_7Fz9xj": {
-          "type": "product",
-          "settings": {
-            "product": "tom-wood-rue-bracelet-duo-gold-silver"
-          }
-        }
-      },
-      "block_order": [
-        "product_Arm4qU",
-        "product_7Fz9xj"
-      ],
-      "name": "tomwood",
-      "settings": {
-        "image": "shopify://shop_images/53CL.jpg",
-        "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
       }
     },
@@ -235,86 +196,88 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "Birth Of Royal Child",
+        "title": "38a",
         "subtitle": "",
-        "collection": "birth-of-royal-child",
+        "collection": "38a-1",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
         "hide_product_price": true
       }
     },
-    "heading_4BtYw6": {
-      "type": "heading",
-      "blocks": {
-        "heading_UTUaUj": {
-          "type": "heading",
-          "settings": {
-            "heading": "Shop the Look",
-            "heading_size": "h3",
-            "seo_h_tag": "h1"
-          }
-        },
-        "text_BK9wEE": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_GDGeHV": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/layering-essentials"
-          }
-        }
-      },
-      "block_order": [
-        "heading_UTUaUj",
-        "text_BK9wEE",
-        "button_GDGeHV"
-      ],
-      "disabled": true,
-      "name": "t:sections.heading.name",
+    "product_masonry_Fnqqrw": {
+      "type": "product-masonry",
+      "name": "Product Masonry Gallery",
       "settings": {
-        "text_alignment": "center",
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)"
+        "title": "VOWELS",
+        "description": "<p>Graphic-driven pieces rooted in contrast, energy, and a point of view that doesn’t sit still.</p><p></p><p></p>",
+        "image": "shopify://shop_images/VO-26SS-T002-81_1.webp",
+        "image_caption": "",
+        "button_label": "shop",
+        "button_link": "shopify://products/vowels-faded-collegiate-tee-matcha",
+        "product_list": [
+          "vowels-faded-collegiate-tee-black",
+          "vowels-flower-tee-white",
+          "vowels-og-fit-denim-blue",
+          "vowels-overdyed-painter-shorts-black"
+        ]
       }
     },
-    "video_background_eCcVXP": {
-      "type": "video-background",
+    "featured_collection_GEVmtc": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "New Arrivals",
+        "subtitle": "",
+        "collection": "new-arrivals-1",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "1778793005702a75b7": {
+      "type": "_blocks",
       "blocks": {
-        "heading_Ha3kN8": {
-          "type": "heading",
+        "ai_gen_block_66168d0_W9QfHP": {
+          "type": "ai_gen_block_66168d0",
           "settings": {
-            "heading": "VOWELS",
-            "heading_size": "h1",
-            "seo_h_tag": "span"
-          }
-        },
-        "button_G7EXPM": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/vowels"
-          }
+            "subheading": "New arrivals",
+            "heading": "Sneaker Corner",
+            "body": "<p>Performance, lifestyle, and streetwear silhouettes in constant rotation.</p><h2></h2>",
+            "content_position": "column-reverse",
+            "text_alignment": "center",
+            "button_label": "Shop now",
+            "button_link": "shopify://collections/sneakers-1",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "subheading_color": "#666666",
+            "body_color": "#000000",
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "heading_size": 34,
+            "subheading_size": 12,
+            "body_size": 16,
+            "button_font_size": 14,
+            "content_spacing": 40,
+            "heading_spacing": 16,
+            "subheading_spacing": 12,
+            "body_spacing": 24,
+            "content_padding_vertical": 40,
+            "content_padding_horizontal": 20,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "heading_Ha3kN8",
-        "button_G7EXPM"
+        "ai_gen_block_66168d0_W9QfHP"
       ],
       "disabled": true,
-      "name": "t:sections.video-background.name",
-      "settings": {
-        "video_height": "var(--window-height)",
-        "text_alignment": "horizontal-center vertical-middle",
-        "custom_text": "#ffffff",
-        "custom_overlay": "rgba(0,0,0,0)"
-      }
+      "settings": {}
     },
     "rotating_slider_7yhr3n": {
       "type": "rotating-slider",
@@ -385,55 +348,17 @@
         "padding_bottom": 60
       }
     },
-    "in_store_features_events_PYU3XM": {
-      "type": "in-store-features-events",
-      "blocks": {
-        "blog_block_Qztdqd": {
-          "type": "blog_block",
-          "settings": {
-            "tab_group_name": "Features",
-            "blog": "social-status"
-          }
-        },
-        "events_block_WQY3df": {
-          "type": "events_block",
-          "settings": {
-            "tab_group_name": "Events",
-            "city_name": "HOUSTON",
-            "city_tag": "HOUSTON",
-            "blog": "blog-events"
-          }
-        },
-        "events_block_DB3ERc": {
-          "type": "events_block",
-          "settings": {
-            "tab_group_name": "Events",
-            "city_name": "DETROIT",
-            "city_tag": "DETROIT",
-            "blog": "blog-events"
-          }
-        }
-      },
-      "block_order": [
-        "blog_block_Qztdqd",
-        "events_block_WQY3df",
-        "events_block_DB3ERc"
-      ],
-      "name": "Store Features & Events",
+    "featured_collection_FnMVbN": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
       "settings": {
-        "main_title": "LATEST FEATURES",
-        "main_title_width": "732",
-        "main_title_align": "left",
-        "sub_title": "& events",
-        "sub_title_align": "right",
-        "section_aside_image": "shopify://shop_images/culture-logo.png",
-        "show_tab_list": true,
-        "max_articles": 5,
-        "view_more_label": "View More",
-        "blog_cta_label": "Read Article",
-        "event_cta_label": "Register Now",
-        "no_event_title": "No Event Found",
-        "no_event_info": "This location does not have an event at this time."
+        "title": "Stüssy",
+        "subtitle": "",
+        "collection": "stussy",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
       }
     },
     "heading_KjpKfp": {
@@ -513,6 +438,57 @@
         "image": "shopify://shop_images/SET0418.jpg",
         "desktop_image_positioning": "image-on-left",
         "hide_product_price": true
+      }
+    },
+    "in_store_features_events_PYU3XM": {
+      "type": "in-store-features-events",
+      "blocks": {
+        "blog_block_Qztdqd": {
+          "type": "blog_block",
+          "settings": {
+            "tab_group_name": "Features",
+            "blog": "social-status"
+          }
+        },
+        "events_block_WQY3df": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON",
+            "blog": "blog-events"
+          }
+        },
+        "events_block_DB3ERc": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT",
+            "blog": "blog-events"
+          }
+        }
+      },
+      "block_order": [
+        "blog_block_Qztdqd",
+        "events_block_WQY3df",
+        "events_block_DB3ERc"
+      ],
+      "name": "Store Features & Events",
+      "settings": {
+        "main_title": "LATEST FEATURES",
+        "main_title_width": "732",
+        "main_title_align": "left",
+        "sub_title": "& events",
+        "sub_title_align": "right",
+        "section_aside_image": "shopify://shop_images/culture-logo.png",
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Register Now",
+        "no_event_title": "No Event Found",
+        "no_event_info": "This location does not have an event at this time."
       }
     },
     "virtual_try_on_nBhXAa": {
@@ -668,25 +644,6 @@
         "padding_bottom": 0,
         "show_border_below": false,
         "show_border_top": false
-      }
-    },
-    "product_masonry_Fnqqrw": {
-      "type": "product-masonry",
-      "disabled": true,
-      "name": "Product Masonry Gallery",
-      "settings": {
-        "title": "Shop knits",
-        "description": "<p>knits copy sbfjbjakbfgjdsbglbgjsdbkgld</p>",
-        "image": "shopify://shop_images/masonry-gallery-image.png",
-        "image_caption": "knits",
-        "button_label": "shop",
-        "button_link": "shopify://collections/knits-1",
-        "product_list": [
-          "home-studyos-03-planter-pierre",
-          "home-studyos-03-planter-pierre-1",
-          "human-made-6-panel-cap-3",
-          "nb-582"
-        ]
       }
     },
     "floating_testimonials_KCBbUg": {
@@ -871,28 +828,90 @@
         "instafeed_app_block_Lm4dJE"
       ],
       "settings": {}
+    },
+    "1778790749de47905e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d16b1c4_b7wJzU": {
+          "type": "ai_gen_block_d16b1c4",
+          "settings": {
+            "image_fit": "cover",
+            "image_link": "shopify://collections/sneakers-1",
+            "image_link_new_tab": true,
+            "section_height_desktop": 850,
+            "section_height_mobile": 600,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "text_position": "above",
+            "text_alignment": "center",
+            "text_position_vertical": "center",
+            "text_position_horizontal": "center",
+            "text_max_width": 600,
+            "heading_above": "Sneaker Corner",
+            "subheading_above": "Performance, lifestyle, and streetwear silhouettes in constant rotation.",
+            "button_text_above": "",
+            "button_link_above": "",
+            "heading_overlay": "Hero heading",
+            "subheading_overlay": "Introduce your brand story or highlight a special collection",
+            "button_text_overlay": "Shop now",
+            "button_link_overlay": "",
+            "text_color": "#ffffff",
+            "heading_below": "",
+            "subheading_below": "",
+            "button_text_below": "",
+            "button_link_below": "",
+            "text_color_outside": "#000000",
+            "heading_size": 48,
+            "subheading_size": 18,
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_background_outside": "#000000",
+            "button_text_color_outside": "#ffffff",
+            "button_hover_background_outside": "#333333",
+            "button_hover_text_color_outside": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d16b1c4_b7wJzU"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "image_FDrKgd": {
+      "type": "image",
+      "disabled": true,
+      "name": "t:sections.image.name",
+      "settings": {
+        "link": "",
+        "target": false
+      }
     }
   },
   "order": [
     "split_screen_slider_6tb98K",
     "releases_JCnmxR",
     "featured_collection_YCzWJf",
-    "featured_collection_GEVmtc",
-    "shop_the_look_yJ96E3",
     "featured_collection_Ec3k3R",
-    "heading_4BtYw6",
-    "video_background_eCcVXP",
+    "product_masonry_Fnqqrw",
+    "featured_collection_GEVmtc",
+    "1778793005702a75b7",
     "rotating_slider_7yhr3n",
-    "in_store_features_events_PYU3XM",
+    "featured_collection_FnMVbN",
     "heading_KjpKfp",
     "shop_the_look_CQnRNW",
+    "in_store_features_events_PYU3XM",
     "virtual_try_on_nBhXAa",
     "latest_features_f6y9et",
     "image_text_column_rhg67G",
-    "product_masonry_Fnqqrw",
     "floating_testimonials_KCBbUg",
     "perspective_slider_VCQ6DF",
     "custom_liquid_WyGgiH",
-    "1756838107933102fa"
+    "1756838107933102fa",
+    "1778790749de47905e",
+    "image_FDrKgd"
   ]
 }

@@ -387,3 +387,8 @@ img.ryzo-product-image  {
 #searchbar-image-search path{
   fill: none !important;
 }
+
+.price-content .current-price {
+  color: #1c1c1c !important;
+  font-weight: normal !important;
+}
