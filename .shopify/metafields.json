@@ -1,69 +1,7 @@
 {
-  "article": [
-    {
-      "key": "event_date_time",
-      "namespace": "custom",
-      "name": "event_date_time",
-      "description": "",
-      "type": {
-        "name": "date_time",
-        "category": "DATE_TIME"
-      }
-    },
-    {
-      "key": "event_location",
-      "namespace": "custom",
-      "name": "event location",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "lookbook_article",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this article",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "event_trigger_id",
-      "namespace": "custom",
-      "name": "event id",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
-  "blog": [
-    {
-      "key": "lookbook_blog",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this blog",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "article": [],
+  "blog": [],
   "collection": [
-    {
-      "key": "lookbook_collection",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this collection",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
     {
       "key": "subcollections",
       "namespace": "custom",
@@ -78,18 +16,7 @@
   "company": [],
   "company_location": [],
   "location": [],
-  "market": [
-    {
-      "key": "lookbook_market_e64770f7-8079-4fd7-acd3-ffea6ebb3d3e",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook My Lookbook",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "market": [],
   "order": [
     {
       "key": "order_uuid",
@@ -104,13 +31,13 @@
   ],
   "page": [
     {
-      "key": "lookbook_page",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this page",
+      "key": "seo_noindex",
+      "namespace": "custom",
+      "name": "Seo No Index",
+      "description": "",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "boolean",
+        "category": "TRUE_FALSE"
       }
     }
   ],
@@ -136,6 +63,26 @@
       }
     },
     {
+      "key": "shoe-fit",
+      "namespace": "shopify",
+      "name": "Shoe fit",
+      "description": "Defines the width of footwear, such as narrow or wide",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "shoe-features",
+      "namespace": "shopify",
+      "name": "Shoe features",
+      "description": "Identifies special characteristics of shoes, such as waterproof or lightweight",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
       "key": "size",
       "namespace": "shopify",
       "name": "Size",
@@ -146,13 +93,23 @@
       }
     },
     {
-      "key": "taxcode",
-      "namespace": "avalara",
-      "name": "Avalara Tax Code",
-      "description": "Used only for Avalara integration.",
+      "key": "footwear-material",
+      "namespace": "shopify",
+      "name": "Footwear material",
+      "description": "Specifies the type of material used in footwear, such as suede or rubber",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "accessory-size",
+      "namespace": "shopify",
+      "name": "Accessory size",
+      "description": "Defines the size of an accessory product, such as one size or compact",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     },
     {
@@ -196,16 +153,6 @@
       }
     },
     {
-      "key": "lookbook_product",
-      "namespace": "nitro_lookbook",
-      "name": "Nitro lookbook id",
-      "description": "Enter lookbook ID from Nitro Lookbook app to show on this product",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "color-pattern",
       "namespace": "shopify",
       "name": "Color",
@@ -216,13 +163,253 @@
       }
     },
     {
-      "key": "in_stock",
+      "key": "activity",
+      "namespace": "shopify",
+      "name": "Activity",
+      "description": "Specifies the sport or activity the product is designed for, such as tennis or pilates",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "closure-type",
+      "namespace": "shopify",
+      "name": "Closure type",
+      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "heel-height-type",
+      "namespace": "shopify",
+      "name": "Heel height type",
+      "description": "Defines the height of a shoe's heel, such as flat or high",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "toe-style",
+      "namespace": "shopify",
+      "name": "Toe style",
+      "description": "Defines the shape or design of a shoe's toe, such as open or pointed",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "occasion-style",
+      "namespace": "shopify",
+      "name": "Occasion style",
+      "description": "Helps categorize products based on occasion, e.g. casual, dress",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sneaker-style",
+      "namespace": "shopify",
+      "name": "Sneaker style",
+      "description": "Identifies the design or type of sneakers, such as athletic or high-top",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "taxcode",
+      "namespace": "avalara",
+      "name": "Avalara Tax Code",
+      "description": "Used only for Avalara integration.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "launchId",
+      "namespace": "eqlLaunchesApp",
+      "name": "EQL Launch ID",
+      "description": null,
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "launchType",
+      "namespace": "eqlLaunchesApp",
+      "name": "EQL Launch Type",
+      "description": null,
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "hidden",
+      "namespace": "seo",
+      "name": "Search Hidden",
+      "description": "Hide from onsite and offsite (Google) search",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "international_shipping_unavailable",
       "namespace": "custom",
-      "name": "In stock",
-      "description": "This metafield is a part of a custom flow that decides the product is in stock or not. ",
+      "name": "international_shipping_unavailable",
+      "description": "Unavailable for international shipping",
       "type": {
         "name": "boolean",
         "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "percentage_off",
+      "namespace": "custom",
+      "name": "percentage off ",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "age",
+      "namespace": "custom",
+      "name": "Age",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gender",
+      "namespace": "custom",
+      "name": "Gender",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "season",
+      "namespace": "custom",
+      "name": "season",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "color",
+      "namespace": "custom",
+      "name": "color",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "pants-length-type",
+      "namespace": "shopify",
+      "name": "Pants length type",
+      "description": "Used to defines the length of pants, such as cropped or long",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "fabric",
+      "namespace": "shopify",
+      "name": "Fabric",
+      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "shop_the_look_endpoint",
+      "namespace": "custom",
+      "name": "Shop the look endpoint",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "ball-size",
+      "namespace": "shopify",
+      "name": "Ball size",
+      "description": "Defines the size of sports or game balls, e.g. 5, youth",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sleeve-length-type",
+      "namespace": "shopify",
+      "name": "Sleeve length type",
+      "description": "Specifies the style of sleeves on clothing items, such as short or sleeveless",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "neckline",
+      "namespace": "shopify",
+      "name": "Neckline",
+      "description": "Used to describe the neck shape of a garment, such as V-neck or boat",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "top-length-type",
+      "namespace": "shopify",
+      "name": "Top length type",
+      "description": "Defines the length of tops or shirts, like crop top or long",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     }
   ],
@@ -350,20 +537,10 @@
   ],
   "shop": [
     {
-      "key": "show_store_widget_app_embed_block",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Show Store Widget App Embed Block",
-      "description": "Indicates if the store widget app embed block should be shown.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "merchant_id",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Merchant ID",
-      "description": "Currently Linked Merchant Center ID",
+      "key": "channel_key",
+      "namespace": "smile",
+      "name": "Channel key",
+      "description": "The Smile sales channel key, read by storefront and customer account extensions.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"

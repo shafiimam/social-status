@@ -12,108 +12,161 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
-        "slide_d4GgqN": {
+        "slide_7z3WT4": {
           "type": "slide",
-          "name": "jae tips 6.24",
+          "name": "TWG REJUVEN8",
+          "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "The Whitaker Group and JaeTips  \"Started From The Soil\"",
-            "subtitle": "Available in-store & online June 26 at 12 PM EST",
-            "button_label": "",
-            "button_link": "#",
+            "title": "THE WHITAKER GROUP X NIKE REACTX REJUVEN8 \"SPLATTER PACK\"",
+            "subtitle": "",
+            "button_label": "ENTER THE DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
             "button_label_2": "",
             "button_link_2": "",
-            "image": "shopify://shop_images/ssjaet.jpg",
-            "mobile_image": "shopify://shop_images/ssjaet.jpg",
+            "image": "shopify://shop_images/splatter2.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_tN6FiN": {
+          "type": "slide",
+          "name": "38a",
+          "settings": {
+            "tagline": "",
+            "title": "38a SUMMER CAPSULE",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/38a-1",
+            "button_label_2": "",
+            "button_link_2": "shopify://collections/38a-1",
+            "video_object": "shopify://files/videos/the38a promo.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_F3KQd9": {
+          "type": "slide",
+          "name": "puma coda",
+          "settings": {
+            "tagline": "Introducing",
+            "title": "THE WHITAKER GROUP AND PUMA CODA",
+            "subtitle": "",
+            "button_label": "",
+            "button_link": "",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/1PUMACODA.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_yc6QmM": {
+          "type": "slide",
+          "name": "euphoria draw ",
+          "settings": {
+            "tagline": "",
+            "title": "adidas HYPERBOOST EUPHORIA",
+            "subtitle": "",
+            "button_label": "Shop now",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/euphoriawhite.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_Ah7qQ6": {
+          "type": "slide",
+          "name": "sp5der",
+          "settings": {
+            "tagline": "",
+            "title": "adidas Originals x SP5DER",
+            "subtitle": "Lamine Yamal kicks back in adidas F50 Cleats and SP5DER set",
+            "button_label": "Shop the collection",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/Originals_FW26_Sp5der_Drop2_HeroMotion_23s_9x16_Clean.mp4",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
         },
         "slide_pVXwXG": {
           "type": "slide",
-          "name": "F50 SALA W.C.",
-          "settings": {
-            "tagline": "",
-            "title": "DO NOT DUPLICATE F50 SALA WORLD CUP",
-            "subtitle": "Available June 26 at 12PM EST",
-            "button_label": "enter the draw",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/14CL.jpg",
-            "mobile_image": "shopify://shop_images/30CL_1.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_3WbihL": {
-          "type": "slide",
-          "name": "OoTD",
+          "name": "MUNDIAL JULY 16",
           "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "One Of These Days",
-            "subtitle": "Shop New Graphic Tees & Bottoms",
-            "button_label": "Shop Now",
-            "button_link": "shopify://collections/one-of-these-days",
-            "button_label_2": "",
-            "button_link_2": "",
-            "video_object": "shopify://files/videos/One of these Days.mov",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_f87VFB": {
-          "type": "slide",
-          "name": "38A GUIDE ",
-          "settings": {
-            "tagline": "",
-            "title": "38a Denim Style Guide",
-            "subtitle": "Summer Styling, Simplified",
+            "title": "DO NOT DUPLICATE adidas BW Mundial World Cup",
+            "subtitle": "Exclusively Available Now",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/38a-1",
+            "button_link": "shopify://collections/do-not-duplicate",
             "button_label_2": "",
             "button_link_2": "",
-            "image": "shopify://shop_images/4CL_2.jpg",
-            "mobile_image": "shopify://shop_images/4CL_2.jpg",
+            "image": "shopify://shop_images/ammmundial.jpg",
             "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         },
         "slide_zdQw8a": {
           "type": "slide",
-          "name": "DT",
+          "name": "A$AP PUMA ",
+          "disabled": true,
           "settings": {
             "tagline": "",
-            "title": "Denim Tears",
-            "subtitle": "Shop New Styles Available In-store Only",
-            "button_label": "Explore Locations",
-            "button_link": "shopify://pages/our-stores",
+            "title": "A$AP ROCKY X PUMA SUEDE '94",
+            "subtitle": "Explore the newest version of a 90's classic.",
+            "button_label": "Shop Now",
+            "button_link": "https://www.socialstatuspgh.com/collections/new-arrivals-1/products/a-ap-rocky-x-puma-suede-94-black-white",
             "button_label_2": "",
             "button_link_2": "",
-            "video_object": "shopify://files/videos/APB DT 4k H.265.mov",
+            "image": "shopify://shop_images/26AW_Social-SC-Story_SP_ASAP-Rocky_Suede_July_15_9x16_1080x1920px.jpg",
+            "mobile_image": "shopify://shop_images/26AW_Social-SC-Story_SP_ASAP-Rocky_Suede_July_15_9x16_1080x1920px.jpg",
             "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_tmCntp": {
+          "type": "slide",
+          "name": "JAETIPS 6.26",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "The Whitaker Group and JaeTips  \"Started From The Soil\"",
+            "subtitle": "Exclusively Available In-store & Online",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/new-era",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/SSJAE2.jpg",
+            "mobile_image": "shopify://shop_images/SSJAE2.jpg",
+            "seo_h_tag": "h1",
             "hide_text_mobile": false
           }
         }
       },
       "block_order": [
-        "slide_d4GgqN",
+        "slide_7z3WT4",
+        "slide_tN6FiN",
+        "slide_F3KQd9",
+        "slide_yc6QmM",
+        "slide_Ah7qQ6",
         "slide_pVXwXG",
-        "slide_3WbihL",
-        "slide_f87VFB",
-        "slide_zdQw8a"
+        "slide_zdQw8a",
+        "slide_tmCntp"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
         "desktop_layout": "split",
         "desktop_image_positioning": "image-on-left",
-        "desktop_text": "#000000",
+        "desktop_text": "#ffffff",
         "mobile_text": "#ffffff",
-        "desktop_background": "rgba(0,0,0,0)",
+        "desktop_background": "#0c0c0c",
         "desktop_overlay": "#e7e7e7",
         "mobile_height": "var(--window-height)",
-        "mobile_background": "#000000",
+        "mobile_background": "rgba(0,0,0,0)",
         "heading_size": "h2"
       }
     },
@@ -171,6 +224,7 @@
         "release_card_z6e9wj",
         "release_card_6YeA9f"
       ],
+      "disabled": true,
       "settings": {
         "title": "Releases",
         "column_size": 4,
@@ -194,11 +248,63 @@
     },
     "featured_collection_Ec3k3R": {
       "type": "featured-collection",
+      "name": "new arrivals ",
+      "settings": {
+        "title": "New Arrivals",
+        "subtitle": "",
+        "collection": "new-arrivals-1",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "video_background_HYdxwr": {
+      "type": "video-background",
+      "blocks": {
+        "heading_kdxzpT": {
+          "type": "heading",
+          "settings": {
+            "heading": "HONOR THE GIFT",
+            "heading_size": "h2",
+            "seo_h_tag": "span"
+          }
+        },
+        "text_XD7gpr": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Discover New T-Shirts, Hoodies and More</strong></p>"
+          }
+        },
+        "button_RHj9bC": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/honor-the-gift"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kdxzpT",
+        "text_XD7gpr",
+        "button_RHj9bC"
+      ],
+      "name": "t:sections.video-background.name",
+      "settings": {
+        "video_object": "shopify://files/videos/4k w no logo.mov",
+        "video_height": "56.25%",
+        "text_alignment": "horizontal-left vertical-top",
+        "custom_text": "#ffffff",
+        "custom_overlay": "rgba(0,0,0,0)"
+      }
+    },
+    "featured_collection_FnMVbN": {
+      "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "38a",
+        "title": "A Bathing Ape",
         "subtitle": "",
-        "collection": "38a-1",
+        "collection": "a-bathing-ape",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -209,31 +315,18 @@
       "type": "product-masonry",
       "name": "Product Masonry Gallery",
       "settings": {
-        "title": "VOWELS",
+        "title": "PATTA",
         "description": "<p>Graphic-driven pieces rooted in contrast, energy, and a point of view that doesn’t sit still.</p><p></p><p></p>",
-        "image": "shopify://shop_images/VO-26SS-T002-81_1.webp",
+        "image": "shopify://shop_images/patta_86b4b956-9f29-46f9-96bf-3a348638f654.jpg",
         "image_caption": "",
         "button_label": "shop",
-        "button_link": "shopify://products/vowels-faded-collegiate-tee-matcha",
+        "button_link": "shopify://products/patta-stripe-football-jersey-french-blue",
         "product_list": [
-          "vowels-faded-collegiate-tee-black",
-          "vowels-flower-tee-white",
-          "vowels-og-fit-denim-blue",
-          "vowels-overdyed-painter-shorts-black"
+          "patta-victory-t-shirt-white",
+          "patta-light-wash-denim-shorts-light-blue-denim",
+          "patta-protect-yourself-tee-white",
+          "patta-athletic-mesh-shorts-black"
         ]
-      }
-    },
-    "featured_collection_GEVmtc": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "New Arrivals",
-        "subtitle": "",
-        "collection": "new-arrivals-1",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
       }
     },
     "1778793005702a75b7": {
@@ -278,6 +371,20 @@
       ],
       "disabled": true,
       "settings": {}
+    },
+    "featured_collection_GEVmtc": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "title": "New Arrivals",
+        "subtitle": "",
+        "collection": "new-arrivals-1",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
     },
     "rotating_slider_7yhr3n": {
       "type": "rotating-slider",
@@ -346,19 +453,6 @@
         "backdrop_text": "Culture",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "featured_collection_FnMVbN": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "title": "Stüssy",
-        "subtitle": "",
-        "collection": "stussy",
-        "collection_rows": 2,
-        "show_view_all": true,
-        "seo_h_tag": "h2",
-        "hide_product_price": true
       }
     },
     "heading_KjpKfp": {
@@ -896,11 +990,12 @@
     "releases_JCnmxR",
     "featured_collection_YCzWJf",
     "featured_collection_Ec3k3R",
-    "product_masonry_Fnqqrw",
-    "featured_collection_GEVmtc",
-    "1778793005702a75b7",
-    "rotating_slider_7yhr3n",
+    "video_background_HYdxwr",
     "featured_collection_FnMVbN",
+    "product_masonry_Fnqqrw",
+    "1778793005702a75b7",
+    "featured_collection_GEVmtc",
+    "rotating_slider_7yhr3n",
     "heading_KjpKfp",
     "shop_the_look_CQnRNW",
     "in_store_features_events_PYU3XM",

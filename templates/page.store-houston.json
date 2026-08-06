@@ -58,7 +58,7 @@
       "type": "image",
       "name": "t:sections.image.name",
       "settings": {
-        "image": "shopify://shop_images/Adobe_Express_-_file_14.jpg",
+        "image": "shopify://shop_images/SS_Houston-9.jpg",
         "link": "",
         "target": false
       }
@@ -86,8 +86,6 @@
         "main_title_align": "left",
         "sub_title": "& IN-STORE EXPERIENCES",
         "sub_title_align": "right",
-        "arrow_text_1": "culture",
-        "arrow_text_2": "events",
         "show_tab_list": true,
         "max_articles": 5,
         "view_more_label": "View More",
@@ -192,6 +190,10 @@
         "title": "",
         "btn_label": "",
         "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
         "desktop_image_positioning": "image-on-left",
         "bg_overlay": false,
         "custom_background": "rgba(0,0,0,0)",

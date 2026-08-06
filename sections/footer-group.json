@@ -133,6 +133,7 @@
         "show_payment_icons": false,
         "only_show_custom_icons": false,
         "show_locale_selector": true,
+        "ada_compliance_logo": "shopify://shop_images/ADA_Website_Accessibility_Logo.jpg",
         "show_country_selector": true,
         "enable_follow_on_shop": true,
         "custom_background": "#1d1f20",
