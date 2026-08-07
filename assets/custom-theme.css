@@ -1,6 +1,53 @@
 :root {
   --brand-color: #e77e21;
 }
+
+shopify-account {
+  --shopify-account-avatar-size: 40px;
+  --shopify-account-signed-in-avatar-size: 32px;
+  --shopify-account-signed-in-avatar-color-background: var(--brand-primary);
+  --shopify-account-signed-in-avatar-color-text: var(--black);
+  --shopify-account-color-accent: var(--brand-primary);
+  --shopify-account-color-accent-hover: #c96616;
+  --shopify-account-color-accent-text: var(--black);
+  --shopify-account-color-background: var(--main-background);
+  --shopify-account-color-background-subdued: #f5f5f5;
+  --shopify-account-color-border: var(--stroke);
+  --shopify-account-color-card-background: var(--white);
+  --shopify-account-color-card-text: var(--main-text);
+  --shopify-account-color-control-background: var(--white);
+  --shopify-account-color-control-text: var(--main-text);
+  --shopify-account-color-shadow: rgba(0, 0, 0, 0.18);
+  --shopify-account-color-text: var(--main-text);
+  --shopify-account-color-text-subdued: var(--secondary-text);
+  --shopify-account-font-body: var(--font-stack-body);
+  --shopify-account-font-body-transform: none;
+  --shopify-account-font-body-weight: var(--font-weight-body);
+  --shopify-account-font-heading: var(--font-stack-headings);
+  --shopify-account-font-heading-transform: uppercase;
+  --shopify-account-font-heading-weight: var(--font-weight-headings);
+  --shopify-account-radius-base: var(--buttons-radius);
+  --shopify-account-radius-button: var(--buttons-radius);
+  --shopify-account-radius-button-small: var(--buttons-radius);
+  --shopify-account-radius-dialog: var(--buttons-radius);
+  --shopify-account-radius-input: var(--buttons-radius);
+}
+
+.site-account-handle shopify-account {
+  display: block;
+}
+
+.site-account-drawer {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .site-account-drawer {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+}
 .yantramanav-thin {
   font-family: "Yantramanav", sans-serif;
   font-weight: 100;

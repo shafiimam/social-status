@@ -103,17 +103,11 @@ data-sticky="{{ section.settings.menu_sticky }}">
       </noscript>
     {%- endif -%}
 
-    <span 
-      class="site-menu-handle" 
-      title="go to account/login page"
-    >
-      <span class="visually-hidden">go to account/login page</span>
-      <a href="{{ routes.account_url }}" title="account">
-        <span class="account-menu" aria-hidden="true" style="display:block;margin-top:1px;">
-          {%- render 'icons-pack', icon: 'avatar' -%}
-        </span>
-      </a>
-    </span>
+    {% if shop.customer_accounts_enabled %}
+      <span class="site-menu-handle site-account-handle portable--hide">
+        <shopify-account menu="{{ section.settings.customer_account_menu | escape }}"></shopify-account>
+      </span>
+    {% endif %}
     <span 
       class="site-search-handle site-menu-handle" 
       title="{{ 'general.accessibility_labels.open_search' | t }}"
@@ -186,6 +180,12 @@ data-sticky="{{ section.settings.menu_sticky }}">
 
         <nav class="primary-menu">{%- render 'site-nav', linklist: section.settings.main_linklist, collection_linklist: section.settings.collection_linklist, show_collection_images: false, type: 'sidebar', show_locale_selector: section.settings.show_locale_selector, show_country_selector: section.settings.show_country_selector -%}</nav>
 
+        {% if shop.customer_accounts_enabled %}
+          <div class="site-account-drawer">
+            <shopify-account menu="{{ section.settings.customer_account_menu | escape }}"></shopify-account>
+          </div>
+        {% endif %}
+
       </div>
 
       <div class="to-bottom-content">
@@ -241,6 +241,12 @@ data-sticky="{{ section.settings.menu_sticky }}">
         "id": "main_linklist",
         "label": "t:sections.split-extra-words.sections.header.settings.menu",
         "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "customer_account_menu",
+        "label": "Customer account menu",
+        "default": "customer-account-main-menu"
       },
       {
         "type": "select",

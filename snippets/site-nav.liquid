@@ -159,18 +159,6 @@
 
 	{% endfor %}
 
-	{% if shop.customer_accounts_enabled %}
-		<li class="login">
-			<a class="menu-link {% if link.active %} active {% endif %}" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
-				{% if customer %}
-					<span class="underline-animation">{{ 'general.navigation.account' | t }}</span>
-				{% else %}
-					<span class="underline-animation">{{ 'general.navigation.login' | t }}</span>
-				{% endif %}
-			</a>
-		</li>
-	{% endif %}
-
 	{%- if show_locale_selector or show_country_selector -%}
 		<li class="menu-link">{%- render 'localization-form', show_locale_selector: show_locale_selector, show_country_selector: show_country_selector, location: 'header' %}</li>
 	{%- endif -%}
