@@ -29,6 +29,22 @@
             "hide_text_mobile": false
           }
         },
+        "slide_pVXwXG": {
+          "type": "slide",
+          "name": "CODA ECHO POINTS",
+          "settings": {
+            "tagline": "",
+            "title": "THE WHITAKER GROUP & PUMA SUEDE CODA \"ECHO POINTS\"",
+            "subtitle": "AVAILABLE AUGUST 21",
+            "button_label": "ENTER DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/pumacoda3.jpg",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
         "slide_tN6FiN": {
           "type": "slide",
           "name": "38a",
@@ -93,23 +109,6 @@
             "hide_text_mobile": false
           }
         },
-        "slide_pVXwXG": {
-          "type": "slide",
-          "name": "MUNDIAL JULY 16",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "DO NOT DUPLICATE adidas BW Mundial World Cup",
-            "subtitle": "Exclusively Available Now",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/do-not-duplicate",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/ammmundial.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
         "slide_zdQw8a": {
           "type": "slide",
           "name": "A$AP PUMA ",
@@ -149,11 +148,11 @@
       },
       "block_order": [
         "slide_7z3WT4",
+        "slide_pVXwXG",
         "slide_tN6FiN",
         "slide_F3KQd9",
         "slide_yc6QmM",
         "slide_Ah7qQ6",
-        "slide_pVXwXG",
         "slide_zdQw8a",
         "slide_tmCntp"
       ],

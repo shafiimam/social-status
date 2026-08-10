@@ -1,38 +1,88 @@
 {
-  "article": [],
-  "blog": [],
-  "collection": [
+  "article": [
     {
-      "key": "seo_title",
+      "key": "event_city",
       "namespace": "custom",
-      "name": "SEO Title",
-      "description": "On Page Seo Title",
+      "name": "Event City",
+      "description": "For blog 'Events'",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "seo_description",
+      "key": "event_button_url",
       "namespace": "custom",
-      "name": "SEO Description",
-      "description": "On Page Seo Description",
+      "name": "Event Button url",
+      "description": "For blog 'Events'",
       "type": {
-        "name": "rich_text_field",
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "event_button_text",
+      "namespace": "custom",
+      "name": "Event Button text",
+      "description": "For blog 'Events'",
+      "type": {
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "subcollections",
+      "key": "event_date",
       "namespace": "custom",
-      "name": "subcollections",
-      "description": "",
+      "name": "Event Date",
+      "description": "For blog 'Events'",
       "type": {
-        "name": "list.collection_reference",
+        "name": "date_time",
+        "category": "DATE_TIME"
+      }
+    },
+    {
+      "key": "event_details",
+      "namespace": "custom",
+      "name": "Event Details",
+      "description": "For blog 'Events'",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "event_heading",
+      "namespace": "custom",
+      "name": "Event Heading",
+      "description": "For blog 'Events'",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "event_location",
+      "namespace": "custom",
+      "name": "Event Location",
+      "description": "For blog 'Events'",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "featured_image",
+      "namespace": "custom",
+      "name": "Featured Image",
+      "description": "Image for article card",
+      "type": {
+        "name": "file_reference",
         "category": "REFERENCE"
       }
     }
   ],
+  "blog": [],
+  "collection": [],
   "company": [],
   "company_location": [],
   "location": [],
@@ -52,13 +102,23 @@
   "page": [],
   "product": [
     {
-      "key": "custom_product",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Product",
-      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
+      "key": "details",
+      "namespace": "custom",
+      "name": "Details",
+      "description": "",
       "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "model_info",
+      "namespace": "custom",
+      "name": "Model Info",
+      "description": "Additional description",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
       }
     },
     {
@@ -86,126 +146,6 @@
       "namespace": "shopify",
       "name": "Footwear material",
       "description": "Specifies the type of material used in footwear, such as suede or rubber",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "fabric",
-      "namespace": "shopify",
-      "name": "Fabric",
-      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "occasion-style",
-      "namespace": "shopify",
-      "name": "Occasion style",
-      "description": "Helps categorize products based on occasion, e.g. casual, dress",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "accessory-size",
-      "namespace": "shopify",
-      "name": "Accessory size",
-      "description": "Defines the size of an accessory product, such as one size or compact",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "color-pattern",
-      "namespace": "shopify",
-      "name": "Color",
-      "description": "Defines the primary color or pattern, such as blue or striped",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "closure-type",
-      "namespace": "shopify",
-      "name": "Closure type",
-      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "heel-height-type",
-      "namespace": "shopify",
-      "name": "Heel height type",
-      "description": "Defines the height of a shoe's heel, such as flat or high",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "toe-style",
-      "namespace": "shopify",
-      "name": "Toe style",
-      "description": "Defines the shape or design of a shoe's toe, such as open or pointed",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sneaker-style",
-      "namespace": "shopify",
-      "name": "Sneaker style",
-      "description": "Identifies the design or type of sneakers, such as athletic or high-top",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "age-group",
-      "namespace": "shopify",
-      "name": "Age group",
-      "description": "Defines the target age range for a product, such as adults or kids",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "target-gender",
-      "namespace": "shopify",
-      "name": "Target gender",
-      "description": "Identifies the intended gender for a product, such as female, male or unisex",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "taxcode",
-      "namespace": "avalara",
-      "name": "Avalara Tax Code",
-      "description": "Used only for Avalara integration.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "headwear-features",
-      "namespace": "shopify",
-      "name": "Headwear features",
-      "description": "Highlights unique features of headwear, e.g. collapsible, versatile",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
@@ -252,178 +192,6 @@
       }
     },
     {
-      "key": "percentage_off",
-      "namespace": "custom",
-      "name": "percentage off",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "age",
-      "namespace": "custom",
-      "name": "Age",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "gender",
-      "namespace": "custom",
-      "name": "Gender",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "shoe-features",
-      "namespace": "shopify",
-      "name": "Shoe features",
-      "description": "Identifies special characteristics of shoes, such as waterproof or lightweight",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "launchId",
-      "namespace": "eqlLaunchesApp",
-      "name": "EQL Launch ID",
-      "description": null,
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "launchType",
-      "namespace": "eqlLaunchesApp",
-      "name": "EQL Launch Type",
-      "description": null,
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
-  "variant": [
-    {
-      "key": "custom_label_4",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_3",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_2",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_1",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_label_0",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_system",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Size System",
-      "description": "The country of the size system used by your product.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_type",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Size Type",
-      "description": "Your apparel product’s cut.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "mpn",
-      "namespace": "mm-google-shopping",
-      "name": "Google: MPN",
-      "description": "Your product’s Manufacturer Part Number (MPN).",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "gender",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Gender",
-      "description": "The gender for which your product is intended.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "condition",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Condition",
-      "description": "The condition of your product at time of sale.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "age_group",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Age Group",
-      "description": "The demographic for which your product is intended.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "taxcode",
       "namespace": "avalara",
       "name": "Avalara Tax Code",
@@ -432,48 +200,18 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
-  "shop": [
-    {
-      "key": "merchant_id",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Merchant ID",
-      "description": "Currently Linked Merchant Center ID",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "show_store_widget_app_embed_block",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Show Store Widget App Embed Block",
-      "description": "Indicates if the store widget app embed block should be shown.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "token",
-      "namespace": "loyaltylion",
-      "name": "LoyaltyLion Site token",
-      "description": null,
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "secret",
-      "namespace": "loyaltylion",
-      "name": "LoyaltyLion SDK token",
-      "description": null,
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ]
+  "variant": [],
+  "shop": []
 }
