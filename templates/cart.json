@@ -35,12 +35,17 @@
     "1772729728c476f1a0": {
       "type": "_blocks",
       "settings": {}
+    },
+    "17832597846d1feeab": {
+      "type": "apps",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "custom_liquid_bXn3yk",
     "product-recommendations",
-    "1772729728c476f1a0"
+    "1772729728c476f1a0",
+    "17832597846d1feeab"
   ]
 }

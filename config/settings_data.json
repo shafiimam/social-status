@@ -92,7 +92,9 @@
     "headings_font": "montserrat_n6",
     "headings_size": 64,
     "headings_hr": false,
-    "body_font": "work_sans_n4",
+    "body_font": "work_sans_n7",
+    "body_size": 20,
+    "body_line": 1.6,
     "secondary_font": "montserrat_n4",
     "buttons_radius": 30,
     "product_card_aspect_ratio": "0.83333",
@@ -120,7 +122,7 @@
     "cart_image_fit": true,
     "cart_image_border": "#f1f1f1",
     "cart_free_shipping": true,
-    "cart_free_shipping_amount": "300",
+    "cart_free_shipping_amount": "250",
     "show_preloader": true,
     "show_gotop": true,
     "social_facebook": "https://www.facebook.com/socialstatuspgh",
@@ -172,5 +174,8 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": []
   }
 }
