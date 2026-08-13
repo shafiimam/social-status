@@ -1,7 +1,7 @@
 {% comment %}
   Hero Section
   - Accepts: desktop image, mobile image, desktop video, mobile video
-  - Content: heading, subheading, two buttons
+  - Content: heading, subheading and button blocks
   - Content alignment: horizontal and vertical
   - Shows desktop video on desktop, mobile video on mobile (if set), otherwise desktop video on both.
   - Same logic for images.
@@ -32,40 +32,6 @@
       "label": "Mobile Video"
     },
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Your Heading Here"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Your subheading here"
-    },
-    {
-      "type": "text",
-      "id": "button_1_text",
-      "label": "Button 1 Text",
-      "default": "Button 1"
-    },
-    {
-      "type": "url",
-      "id": "button_1_link",
-      "label": "Button 1 Link"
-    },
-    {
-      "type": "text",
-      "id": "button_2_text",
-      "label": "Button 2 Text",
-      "default": "Button 2"
-    },
-    {
-      "type": "url",
-      "id": "button_2_link",
-      "label": "Button 2 Link"
-    },
-    {
       "type": "select",
       "id": "horizontal_alignment",
       "label": "Horizontal Alignment",
@@ -88,108 +54,208 @@
       "default": "middle"
     }
   ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Your Heading Here"
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "<p>Your subheading here</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Hero Section"
+      "name": "Hero Section",
+      "blocks": [
+        { "type": "heading" },
+        { "type": "subheading" },
+        { "type": "button" }
+      ]
     }
   ]
 }
 {% endschema %}
 
-{% assign horizontal = section.settings.horizontal_alignment %}
-{% assign vertical = section.settings.vertical_alignment %}
-{% assign has_desktop_video = false %}
-{% assign has_mobile_video = false %}
-{% assign has_any_video = false %}
-{% if section.settings.desktop_video != blank %}
-  {% assign has_desktop_video = true %}
-{% endif %}
-{% if section.settings.mobile_video != blank %}
-  {% assign has_mobile_video = true %}
-{% endif %}
-{% if has_desktop_video or has_mobile_video %}
-  {% assign has_any_video = true %}
-{% endif %}
+{%- liquid
+  assign horizontal = section.settings.horizontal_alignment
+  assign vertical = section.settings.vertical_alignment
 
-<div
-  class="hero-section"
-  style="display: flex; align-items: {% if vertical == 'top' %}flex-start{% elsif vertical == 'middle' %}center{% else %}flex-end{% endif %}; justify-content: {% if horizontal == 'left' %}flex-start{% elsif horizontal == 'center' %}center{% else %}flex-end{% endif %}; min-height: 60vh; position: relative; overflow: hidden;"
->
+  case horizontal
+    when 'left'
+      assign justify = 'flex-start'
+    when 'right'
+      assign justify = 'flex-end'
+    else
+      assign justify = 'center'
+  endcase
+
+  case vertical
+    when 'top'
+      assign align = 'flex-start'
+    when 'bottom'
+      assign align = 'flex-end'
+    else
+      assign align = 'center'
+  endcase
+
+  assign has_desktop_video = false
+  assign has_mobile_video = false
+  assign has_any_video = false
+
+  if section.settings.desktop_video != blank
+    assign has_desktop_video = true
+  endif
+  if section.settings.mobile_video != blank
+    assign has_mobile_video = true
+  endif
+  if has_desktop_video or has_mobile_video
+    assign has_any_video = true
+  endif
+
+  assign button_blocks = section.blocks | where: 'type', 'button'
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .hero-section {
+    --hero-justify: {{ justify }};
+    --hero-align: {{ align }};
+    --hero-text-align: {{ horizontal }};
+  }
+{%- endstyle -%}
+
+<div class="hero-section">
   {%- comment -%} Background Media {%- endcomment -%}
-  <div class="hero-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;">
+  <div class="hero-bg">
     {% if has_any_video %}
       {% if has_desktop_video %}
-        <video autoplay loop="true" muted="false" class="hero-video-desktop hero-video">
+        <video autoplay loop muted playsinline class="hero-video-desktop hero-video">
           {% for source in section.settings.desktop_video.sources %}
             <source src="{{ source.url }}" type="{{ source.mime_type }}">
           {% endfor %}
         </video>
       {% endif %}
       {% if has_mobile_video %}
-        <video autoplay loop="true" muted="false" class="hero-video-mobile hero-video">
+        <video autoplay loop muted playsinline class="hero-video-mobile hero-video">
           {% for source in section.settings.mobile_video.sources %}
             <source src="{{ source.url }}" type="{{ source.mime_type }}">
           {% endfor %}
         </video>
-      {% else %}
-        <video autoplay muted="false" class="hero-video-mobile hero-video">
+      {% elsif has_desktop_video %}
+        <video autoplay loop muted playsinline class="hero-video-mobile hero-video">
           {% for source in section.settings.desktop_video.sources %}
             <source src="{{ source.url }}" type="{{ source.mime_type }}">
           {% endfor %}
         </video>
       {% endif %}
-    {% else %}
-      {% if section.settings.desktop_image != blank %}
-        <picture>
+    {% elsif section.settings.desktop_image != blank %}
+      <picture>
+        {% if section.settings.mobile_image != blank %}
           <source srcset="{{ section.settings.mobile_image | image_url: width: 800 }}" media="(max-width: 768px)">
-          <img
-            src="{{ section.settings.desktop_image | image_url: width: 2000 }}"
-            alt="{{ section.settings.heading | escape }}"
-            width="100%"
-            height="100%"
-          >
-        </picture>
-      {% endif %}
+        {% endif %}
+        <img
+          src="{{ section.settings.desktop_image | image_url: width: 2000 }}"
+          alt="{{ section.settings.desktop_image.alt | escape }}"
+          width="{{ section.settings.desktop_image.width }}"
+          height="{{ section.settings.desktop_image.height }}"
+          loading="lazy"
+        >
+      </picture>
     {% endif %}
   </div>
 
-  <div class="hero-content" style="position: relative; z-index: 2; text-align: {{ horizontal }};">
-    {% if section.settings.heading != blank %}
-      <h1 class="hero-heading h1">{{ section.settings.heading }}</h1>
-    {% endif %}
-    {% if section.settings.subheading != blank %}
-      <h2 class="hero-subheading h3">{{ section.settings.subheading }}</h2>
-    {% endif %}
-    <div class="hero-buttons" style="margin-top: 1.5em;">
-      {% if section.settings.button_1_text != blank and section.settings.button_1_link != blank %}
-        <a href="{{ section.settings.button_1_link }}" class="hero-btn hero-btn-1">
-          {{- section.settings.button_1_text -}}
-        </a>
-      {% endif %}
-      {% if section.settings.button_2_text != blank and section.settings.button_2_link != blank %}
-        <a href="{{ section.settings.button_2_link }}" class="hero-btn hero-btn-2">
-          {{- section.settings.button_2_text -}}
-        </a>
-      {% endif %}
-    </div>
+  <div class="hero-content">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'heading' -%}
+          {% if block.settings.heading != blank %}
+            <h1 class="hero-heading h1" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h1>
+          {% endif %}
+        {%- when 'subheading' -%}
+          {% if block.settings.subheading != blank %}
+            <div class="hero-subheading h3" {{ block.shopify_attributes }}>{{ block.settings.subheading }}</div>
+          {% endif %}
+      {%- endcase -%}
+    {%- endfor -%}
+
+    {%- if button_blocks.size > 0 -%}
+      <div class="hero-buttons">
+        {%- for block in button_blocks -%}
+          {% if block.settings.button_text != blank %}
+            <a
+              href="{{ block.settings.button_link | default: '#' }}"
+              class="hero-btn"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.button_text -}}
+            </a>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
 <style>
-  .hero-section {
+  #shopify-section-{{ section.id }} .hero-section {
+    display: flex;
+    align-items: var(--hero-align);
+    justify-content: var(--hero-justify);
     width: 100%;
     min-height: 60vh;
     position: relative;
     overflow: hidden;
   }
-  .hero-bg video,
-  .hero-bg img {
+  #shopify-section-{{ section.id }} .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  #shopify-section-{{ section.id }} .hero-bg video,
+  #shopify-section-{{ section.id }} .hero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   /* Responsive styles for desktop and mobile video */
-  .hero-video {
+  #shopify-section-{{ section.id }} .hero-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -200,36 +266,46 @@
     z-index: 1;
     background: #000;
   }
-  .hero-video-desktop {
+  #shopify-section-{{ section.id }} .hero-video-desktop {
     display: block;
   }
-  .hero-video-mobile {
+  #shopify-section-{{ section.id }} .hero-video-mobile {
     display: none;
   }
   @media (max-width: 768px) {
-    .hero-video-desktop {
+    #shopify-section-{{ section.id }} .hero-video-desktop {
       display: none;
     }
-    .hero-video-mobile {
+    #shopify-section-{{ section.id }} .hero-video-mobile {
       display: block;
     }
   }
-  .hero-content {
+  #shopify-section-{{ section.id }} .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0;
     padding: 3rem 1.5rem;
     color: #fff;
+    text-align: var(--hero-text-align);
   }
-  .hero-heading {
+  #shopify-section-{{ section.id }} .hero-heading {
     text-transform: uppercase;
   }
-  .hero-buttons {
+  #shopify-section-{{ section.id }} .hero-subheading > p {
+    margin: 0;
+  }
+  #shopify-section-{{ section.id }} .hero-subheading > p + p {
+    margin-top: 0.5em;
+  }
+  #shopify-section-{{ section.id }} .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: inherit;
+    margin-top: 1.5em;
+    justify-content: var(--hero-justify);
   }
-  .hero-btn {
+  #shopify-section-{{ section.id }} .hero-btn {
     display: inline-block;
     padding: 0.75em 2em;
     background: #000;
@@ -239,14 +315,14 @@
     font-weight: 600;
     transition: background 0.2s;
   }
-  .hero-btn:hover {
+  #shopify-section-{{ section.id }} .hero-btn:hover {
     background: #333;
   }
   @media (max-width: 749px) {
-    .hero-content {
+    #shopify-section-{{ section.id }} .hero-content {
       padding: 2rem 1rem;
     }
-    .hero-heading {
+    #shopify-section-{{ section.id }} .hero-heading {
       font-size: 1.75rem;
     }
   }
