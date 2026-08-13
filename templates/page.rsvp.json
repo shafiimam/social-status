@@ -17,41 +17,31 @@
         "text": ""
       }
     },
-    "rich_text_XkUaae": {
-      "type": "rich-text",
+    "hero_P3qKNY": {
+      "type": "hero",
       "blocks": {
-        "heading_nyUhJL": {
+        "heading_DpKmeR": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
-            "seo_h_tag": "h3"
+            "heading": "Social Status Pittsburgh Flagship Opening"
           }
         },
-        "text_WzLqmP": {
-          "type": "text",
+        "subheading_QNgxkR": {
+          "type": "subheading",
           "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "subheading": "<p>Where: 2623 Penn Avenue Pittsburgh, PA 15222</p><p>When: Opening details will be shared with confirmed guests via email.</p>"
           }
         }
       },
       "block_order": [
-        "heading_nyUhJL",
-        "text_WzLqmP"
+        "heading_DpKmeR",
+        "subheading_QNgxkR"
       ],
-      "name": "t:sections.rich-text.presets.name",
+      "name": "Hero Section",
       "settings": {
-        "title": "",
-        "btn_label": "",
-        "btn_url": "",
-        "video_autoplay": true,
-        "video_muted": true,
-        "video_loop": true,
-        "video_controls": false,
-        "desktop_image_positioning": "image-on-left",
-        "bg_overlay": false,
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h1"
+        "desktop_image": "shopify://shop_images/Top_Photo_1.jpg",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle"
       }
     },
     "1785174564b8860711": {
@@ -72,7 +62,7 @@
   },
   "order": [
     "main",
-    "rich_text_XkUaae",
+    "hero_P3qKNY",
     "1785174564b8860711"
   ]
 }
