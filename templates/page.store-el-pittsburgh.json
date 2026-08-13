@@ -19,6 +19,7 @@
     },
     "store_header_bnner_38J47n": {
       "type": "store-header-bnner",
+      "disabled": true,
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/Pitt1_496d2f53-9acb-4e3b-b580-547398058e3e.jpg",
@@ -41,6 +42,7 @@
       "block_order": [
         "text_8zYR6A"
       ],
+      "disabled": true,
       "name": "t:sections.local-extra-words.sections.marquee.name",
       "settings": {
         "scroll_direction": "ltr",
@@ -56,6 +58,7 @@
     },
     "image_6Pa4Nc": {
       "type": "image",
+      "disabled": true,
       "name": "t:sections.image.name",
       "settings": {
         "image": "shopify://shop_images/Adobe_Express_-_file_10.jpg",
@@ -79,6 +82,7 @@
       "block_order": [
         "events_block_bLHC4t"
       ],
+      "disabled": true,
       "name": "Store Features & Events",
       "settings": {
         "main_title": "beSOCIAL EVENTS",
@@ -86,8 +90,6 @@
         "main_title_align": "left",
         "sub_title": "& IN-STORE EXPERIENCES",
         "sub_title_align": "right",
-        "arrow_text_1": "culture",
-        "arrow_text_2": "events",
         "show_tab_list": true,
         "max_articles": 5,
         "view_more_label": "View More",
@@ -187,16 +189,48 @@
         "heading_ALJbfz",
         "text_JtR7Ya"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "title": "",
         "btn_label": "",
         "btn_url": "",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
         "desktop_image_positioning": "image-on-left",
         "bg_overlay": false,
         "custom_background": "rgba(0,0,0,0)",
         "custom_text": "rgba(0,0,0,0)",
         "seo_h_tag": "h2"
+      }
+    },
+    "hero_Y9Vtjz": {
+      "type": "hero",
+      "blocks": {
+        "heading_Lw7CCY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Social Status Pittsburgh Flagship Opening"
+          }
+        },
+        "subheading_q3qrwa": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<p>Where: 2623 Penn Avenue Pittsburgh, PA 15222</p><p>When: Opening details will be shared with confirmed guests via email.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Lw7CCY",
+        "subheading_q3qrwa"
+      ],
+      "name": "Hero Section",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Top_Photo_1.jpg",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "middle"
       }
     }
   },
@@ -208,6 +242,7 @@
     "in_store_features_events_nrwdqW",
     "video_background_xHpBKL",
     "meet_staff_Qx9fd4",
-    "rich_text_GmBxUz"
+    "rich_text_GmBxUz",
+    "hero_Y9Vtjz"
   ]
 }

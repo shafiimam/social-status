@@ -69,6 +69,7 @@
         "logo_inverted_src": "shopify://shop_images/SS-logo-white_8d1e4185-4ed3-4f10-9abb-3baac11067ec.png",
         "logo_height": 50,
         "main_linklist": "new-menu-2025",
+        "customer_account_menu": "customer-account-main-menu",
         "menu_style": "classic",
         "menu_sticky": "sticky",
         "menu_hide_border": true,
@@ -86,6 +87,29 @@
         "show_country_selector": true
       }
     },
+    "announcement_bar_UF6TYB": {
+      "type": "announcement-bar",
+      "blocks": {
+        "content_pWVWtV": {
+          "type": "content",
+          "settings": {
+            "text": "PITTSBURGH FLAGSHIP STORE OPENING - CLICK HERE TO RSVP",
+            "link": "https://www.socialstatuspgh.com/pages/social-status-pittsburgh-flagship",
+            "target": false
+          }
+        }
+      },
+      "block_order": [
+        "content_pWVWtV"
+      ],
+      "name": "t:sections.announcement-bar.name",
+      "settings": {
+        "visibility": "all",
+        "bar_txtcolor": "#ffffff",
+        "bar_bgcolor": "#111111",
+        "bar_bordercolor": "rgba(0,0,0,0)"
+      }
+    },
     "breadcrumb": {
       "type": "breadcrumb",
       "settings": {}
@@ -94,6 +118,7 @@
   "order": [
     "announcement",
     "header",
+    "announcement_bar_UF6TYB",
     "breadcrumb"
   ]
 }

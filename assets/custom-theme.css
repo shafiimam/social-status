@@ -439,3 +439,106 @@ img.ryzo-product-image  {
   color: #1c1c1c !important;
   font-weight: normal !important;
 }
+
+/*
+  Globo Powerful Form Builder — restore field labels.
+
+  The form's selected Globo style (theme 842, v4.3.1, loaded from
+  dnhcnb9q6pxc3.cloudfront.net) visually hides `.globo-label` on all text-style
+  field types and sets `.gfb_material_outlined` to `display: none`. That style
+  expects labels to be replaced by input placeholders; this form has no
+  placeholders, so the fields render with no visible label on the storefront.
+  The Globo app editor does not load this stylesheet, which is why labels
+  appear there.
+
+  Fix: render the label text from the wrapper's `data-label` attribute above
+  each field, and keep the real `<label for>` in the DOM (visually hidden, not
+  `display: none`) so inputs retain an accessible name.
+
+  Type list mirrors the exact selectors theme 842 hides — do not widen it, or
+  field types that already show their own label (switcher, checkbox, radio)
+  will render a duplicate.
+*/
+.globo-formbuilder .globo-form-control[data-type='colorPicker'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='country'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='email'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='name'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='password'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='phone'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='file'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='datetime'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='repeater'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='url'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='number'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='quantity'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='select'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='selectImages'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='text'] > .globo-label[data-label],
+.globo-formbuilder .globo-form-control[data-type='textarea'] > .globo-label[data-label] {
+  clip: auto !important;
+  clip-path: none !important;
+  position: static !important;
+  height: auto !important;
+  width: auto !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.globo-formbuilder .globo-form-control[data-type='colorPicker'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='country'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='email'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='name'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='password'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='phone'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='file'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='datetime'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='repeater'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='url'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='number'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='quantity'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='select'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='selectImages'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='text'] > .globo-label[data-label]::before,
+.globo-formbuilder .globo-form-control[data-type='textarea'] > .globo-label[data-label]::before {
+  content: attr(data-label);
+}
+
+/* Required marker — Globo flags required fields with a `presence` attribute. */
+.globo-formbuilder .globo-form-control[data-type='colorPicker']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='country']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='email']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='name']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='password']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='phone']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='file']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='datetime']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='repeater']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='url']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='number']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='quantity']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='select']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='selectImages']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='text']:has([presence]) > .globo-label[data-label]::after,
+.globo-formbuilder .globo-form-control[data-type='textarea']:has([presence]) > .globo-label[data-label]::after {
+  content: ' *';
+  color: var(--gfb-error-color, #dc3545);
+}
+
+/*
+  Keep the real `<label for>` in the accessibility tree. Theme 842 sets this
+  wrapper to `display: none`, which strips the label from the a11y tree and
+  leaves the inputs with no accessible name. Visually hidden instead.
+*/
+.globo-formbuilder .globo-form-control .gfb_material_outlined {
+  display: block !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
