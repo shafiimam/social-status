@@ -100,7 +100,7 @@
 
 	{% for link in linklists[linklist].links %}
 
-		<li {% if link.links != blank %} class="has-submenu" aria-controls="SiteNavLabel-{{ link.handle }}-{{ type }}" aria-expanded="false" {% endif %} id="menu-item-{{ link.handle }}-secondary">
+		<li {% if link.links != blank %} class="has-submenu" aria-controls="SiteNavLabel-{{ link.handle }}-{{ type }}" aria-expanded="false" {% endif %} id="menu-item-{{ link.handle }}-secondary-{{ type }}">
 
 			<a class="menu-link parent-link {% if link.active or link.child_active %} active {% endif %}" href="{{ link.url }}">
 
@@ -159,20 +159,8 @@
 
 	{% endfor %}
 
-	{% if shop.customer_accounts_enabled %}
-		<li class="login">
-			<a class="menu-link {% if link.active %} active {% endif %}" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
-				{% if customer %}
-					<span class="underline-animation">{{ 'general.navigation.account' | t }}</span>
-				{% else %}
-					<span class="underline-animation">{{ 'general.navigation.login' | t }}</span>
-				{% endif %}
-			</a>
-		</li>
-	{% endif %}
-
 	{%- if show_locale_selector or show_country_selector -%}
-		<li class="menu-link">{%- render 'localization-form', show_locale_selector: show_locale_selector, show_country_selector: show_country_selector, location: 'header' %}</li>
+		<li class="menu-link">{%- render 'localization-form', show_locale_selector: show_locale_selector, show_country_selector: show_country_selector, location: 'header', id_suffix: type %}</li>
 	{%- endif -%}
 
 </ul>

@@ -83,7 +83,7 @@
         "promotion_color_txt": "#ffffff",
         "promotion_color_bg": "rgba(0,0,0,0)",
         "promotion_image": "shopify://shop_images/OFFSZN-PromoSale_FEED.jpg",
-        "show_locale_selector": true,
+        "show_locale_selector": false,
         "show_country_selector": true
       }
     },

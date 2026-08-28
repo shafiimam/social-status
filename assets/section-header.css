@@ -570,7 +570,7 @@ html[dir=ltr] .skip-to-content:focus {
   opacity: 0;
   visibility: hidden;
   transition: opacity 100ms linear 40ms, visibility 100ms linear 40ms;
-  padding-top: 24px;
+  padding-top: var(--submenu-offset, 24px);
 }
 .site-nav.style--classic .submenu .submenu-holder {
   opacity: 0;
@@ -580,7 +580,7 @@ html[dir=ltr] .skip-to-content:focus {
 .site-nav.style--classic .submenu:after {
   content: "";
   position: absolute;
-  top: 21px;
+  top: var(--submenu-offset, 24px);
   left: 0;
   width: 100%;
   height: 0;
@@ -591,7 +591,6 @@ html[dir=ltr] .skip-to-content:focus {
   transition: height 100ms cubic-bezier(0.39, 0.575, 0.565, 1) 40ms;
 }
 .site-header--no-border .site-nav.style--classic .submenu:after {
-  top: 20px;
   border-top: 1px solid var(--header-grid-borders);
 }
 .site-nav.style--classic .has-submenu:hover .submenu,
@@ -604,7 +603,7 @@ html[dir=ltr] .skip-to-content:focus {
 .site-nav.style--classic .has-submenu:hover .submenu:after,
 .site-nav.style--classic .has-submenu.focus .submenu:after,
 .site-nav.style--classic #menu-item-collections.focus .submenu:after {
-  height: calc(100% - 24px);
+  height: calc(100% - var(--submenu-offset, 24px));
   transition: height 140ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .site-nav.style--classic .has-submenu:hover .submenu .submenu-holder,
@@ -643,7 +642,9 @@ html[dir=ltr] .site-nav.style--classic .has-submenu:last-child .babymenu {
 }
 /* Select normal-menu submenu holders without children having the 'has-babymenu' class */
 .site-nav.style--classic .submenu.normal-menu .submenu-holder:not(:has(> .has-babymenu)) {
-  overflow: scroll;
+  /* `scroll` painted both tracks permanently, even on menus that fit */
+  overflow-x: hidden;
+  overflow-y: auto;
   max-height: 90vh;
 }
 
@@ -720,7 +721,7 @@ html[dir=ltr] .site-nav.style--classic .submenu.normal-menu .babymenu {
 .site-nav.style--classic .submenu.mega-menu {
   left: 0;
   width: 100%;
-  padding: 70px 0;
+  padding: calc(var(--submenu-offset, 24px) + 70px) 0 70px;
   display: flex;
 }
 .site-nav.style--classic .submenu.mega-menu:after {
@@ -953,4 +954,21 @@ html[dir=ltr] .site-nav form[role=search] button {
 }
 .site-nav.style--sidebar .css-slider-navigation-container:before {
   display: none !important;
+}
+/*============================================
+  #Header [desktop nav fit]
+  The classic menu is laid out with flex-wrap:nowrap and non-shrinking
+  items, so once it outgrows the header it paints over the account /
+  search / cart icons. These rules keep it inside its lane between the
+  1024px portable breakpoint and the width where the full menu fits.
+==================================================*/
+#site-nav--desktop {
+  min-width: 0;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .site-nav.style--classic .menu-link {
+    padding-left: clamp(6px, 0.95vw, 20px);
+    padding-right: clamp(6px, 0.95vw, 20px);
+  }
 }
