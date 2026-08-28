@@ -29,7 +29,7 @@
         "subheading_FHBNzE": {
           "type": "subheading",
           "settings": {
-            "subheading": "<p>Where: 2623 Penn Avenue Pittsburgh, PA 15222</p><p>When: Opening details will be shared with confirmed guests via email.</p>"
+            "subheading": "<p>Where: 2623 Penn Avenue Pittsburgh, PA 15222</p><p>When: THURSDAY, AUGUST 20, 2026<br/>7PM - 10PM</p>"
           }
         }
       },
@@ -39,7 +39,7 @@
       ],
       "name": "Hero Section",
       "settings": {
-        "desktop_image": "shopify://shop_images/Top_Photo_1.jpg",
+        "desktop_image": "shopify://shop_images/ss_03ef6bf3-be79-4023-93d1-88e617af2b14.jpg",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle"
       }

@@ -109,7 +109,7 @@
             "text_alignment": "center",
             "section_padding": 40,
             "spacing_between_elements": 20,
-            "background_color": "#B5ADAD",
+            "background_color": "#FFFFFF",
             "heading_color": "#000000",
             "text_color": "#000000",
             "heading_size": 40,
@@ -128,7 +128,7 @@
             "modal_content_spacing": 20,
             "modal_background_color": "#ffffff",
             "modal_text_color": "#000000",
-            "overlay_color": "rgba(0, 0, 0, 0.7)",
+            "overlay_color": "#000000b3",
             "modal_title_size": 28,
             "modal_content_size": 16
           },
@@ -148,7 +148,7 @@
             "text_alignment": "center",
             "section_padding": 0,
             "spacing_between_elements": 10,
-            "background_color": "#B5ADAD",
+            "background_color": "#FFFFFF",
             "heading_color": "#000000",
             "text_color": "#000000",
             "heading_size": 40,
@@ -167,7 +167,7 @@
             "modal_content_spacing": 20,
             "modal_background_color": "#ffffff",
             "modal_text_color": "#000000",
-            "overlay_color": "rgba(0, 0, 0, 0.7)",
+            "overlay_color": "#000000b3",
             "modal_title_size": 28,
             "modal_content_size": 16
           },
@@ -178,6 +178,7 @@
         "ai_gen_block_87396a5_indty6",
         "ai_gen_block_87396a5_zTcQze"
       ],
+      "disabled": true,
       "name": "Text with modal CTA",
       "settings": {}
     },

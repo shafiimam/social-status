@@ -94,7 +94,7 @@
           "type": "content",
           "settings": {
             "text": "PITTSBURGH FLAGSHIP STORE OPENING - CLICK HERE TO RSVP",
-            "link": "https://www.socialstatuspgh.com/pages/social-status-pittsburgh-flagship",
+            "link": "https://www.socialstatuspgh.com/pages/about-us?view=rsvp",
             "target": false
           }
         }
@@ -102,6 +102,7 @@
       "block_order": [
         "content_pWVWtV"
       ],
+      "disabled": true,
       "name": "t:sections.announcement-bar.name",
       "settings": {
         "visibility": "all",

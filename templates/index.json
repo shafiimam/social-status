@@ -12,6 +12,23 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_zdQw8a": {
+          "type": "slide",
+          "name": "DND BEACH HOUSE",
+          "settings": {
+            "tagline": "More than a destination, Beach House is a state of mind.",
+            "title": "WELCOME TO THE BEACH HOUSE",
+            "subtitle": "The Adidas DND Beach House Collection arrives August 28.",
+            "button_label": "SHOP THE COLLECTION",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/Social_Status_Beach_House_MOBILE_NO_SPACING_1080x1350_0c2cd87d-26d7-418b-8ce6-015ea9c9d35e.jpg",
+            "mobile_image": "shopify://shop_images/Social_Status_Beach_House_MOBILE_NO_SPACING_1080x1350_0c2cd87d-26d7-418b-8ce6-015ea9c9d35e.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_7z3WT4": {
           "type": "slide",
           "name": "TWG REJUVEN8",
@@ -29,15 +46,33 @@
             "hide_text_mobile": false
           }
         },
+        "slide_yc6QmM": {
+          "type": "slide",
+          "name": "SS PITT FLAGSHIP",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "SOCIAL STATUS PITTSBURGH FLAGSHIP OPENING",
+            "subtitle": "THURSDAY, AUGUST 20, 2026",
+            "button_label": "RSVP",
+            "button_link": "shopify://pages/social-status-pittsburgh-flagship",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/SSpitt2.jpg",
+            "mobile_image": "shopify://shop_images/SSpitt.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_pVXwXG": {
           "type": "slide",
           "name": "CODA ECHO POINTS",
           "settings": {
             "tagline": "",
             "title": "THE WHITAKER GROUP & PUMA SUEDE CODA \"ECHO POINTS\"",
-            "subtitle": "AVAILABLE AUGUST 21",
-            "button_label": "ENTER DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/puma",
             "button_label_2": "",
             "button_link_2": "",
             "image": "shopify://shop_images/pumacoda3.jpg",
@@ -64,6 +99,7 @@
         "slide_F3KQd9": {
           "type": "slide",
           "name": "puma coda",
+          "disabled": true,
           "settings": {
             "tagline": "Introducing",
             "title": "THE WHITAKER GROUP AND PUMA CODA",
@@ -77,25 +113,10 @@
             "hide_text_mobile": false
           }
         },
-        "slide_yc6QmM": {
-          "type": "slide",
-          "name": "euphoria draw ",
-          "settings": {
-            "tagline": "",
-            "title": "adidas HYPERBOOST EUPHORIA",
-            "subtitle": "",
-            "button_label": "Shop now",
-            "button_link": "shopify://collections/adidas",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/euphoriawhite.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
         "slide_Ah7qQ6": {
           "type": "slide",
           "name": "sp5der",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "adidas Originals x SP5DER",
@@ -105,24 +126,6 @@
             "button_label_2": "",
             "button_link_2": "",
             "video_object": "shopify://files/videos/Originals_FW26_Sp5der_Drop2_HeroMotion_23s_9x16_Clean.mp4",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_zdQw8a": {
-          "type": "slide",
-          "name": "A$AP PUMA ",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "A$AP ROCKY X PUMA SUEDE '94",
-            "subtitle": "Explore the newest version of a 90's classic.",
-            "button_label": "Shop Now",
-            "button_link": "https://www.socialstatuspgh.com/collections/new-arrivals-1/products/a-ap-rocky-x-puma-suede-94-black-white",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/26AW_Social-SC-Story_SP_ASAP-Rocky_Suede_July_15_9x16_1080x1920px.jpg",
-            "mobile_image": "shopify://shop_images/26AW_Social-SC-Story_SP_ASAP-Rocky_Suede_July_15_9x16_1080x1920px.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -147,13 +150,13 @@
         }
       },
       "block_order": [
+        "slide_zdQw8a",
         "slide_7z3WT4",
+        "slide_yc6QmM",
         "slide_pVXwXG",
         "slide_tN6FiN",
         "slide_F3KQd9",
-        "slide_yc6QmM",
         "slide_Ah7qQ6",
-        "slide_zdQw8a",
         "slide_tmCntp"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
@@ -258,6 +261,59 @@
         "hide_product_price": true
       }
     },
+    "1778790749de47905e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d16b1c4_b7wJzU": {
+          "type": "ai_gen_block_d16b1c4",
+          "settings": {
+            "image_desktop": "shopify://shop_images/IMG_5806.jpg",
+            "image_mobile": "shopify://shop_images/38a_fd884b9b-fabc-4dbb-84c0-8786dc7cec6f.jpg",
+            "image_fit": "cover",
+            "image_link": "shopify://collections/38a-1",
+            "image_link_new_tab": true,
+            "section_height_desktop": 1000,
+            "section_height_mobile": 600,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "text_position": "overlay",
+            "text_alignment": "center",
+            "text_position_vertical": "center",
+            "text_position_horizontal": "center",
+            "text_max_width": 600,
+            "heading_above": "",
+            "subheading_above": "",
+            "button_text_above": "",
+            "button_link_above": "",
+            "heading_overlay": "38a Collection",
+            "subheading_overlay": "Everyday Uniforms, Reworked.\nBuilt around utility and ease, 38a reimagines everyday staples through relaxed proportions, workwear-inspired details, & effortless layering.",
+            "button_text_overlay": "SHOP NOW",
+            "button_link_overlay": "shopify://collections/38a-1",
+            "text_color": "#ffffff",
+            "heading_below": "",
+            "subheading_below": "",
+            "button_text_below": "",
+            "button_link_below": "",
+            "text_color_outside": "#000000",
+            "heading_size": 48,
+            "subheading_size": 18,
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_background_outside": "#000000",
+            "button_text_color_outside": "#ffffff",
+            "button_hover_background_outside": "#333333",
+            "button_hover_text_color_outside": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d16b1c4_b7wJzU"
+      ],
+      "settings": {}
+    },
     "video_background_HYdxwr": {
       "type": "video-background",
       "blocks": {
@@ -288,6 +344,7 @@
         "text_XD7gpr",
         "button_RHj9bC"
       ],
+      "disabled": true,
       "name": "t:sections.video-background.name",
       "settings": {
         "video_object": "shopify://files/videos/4k w no logo.mov",
@@ -301,9 +358,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
       "settings": {
-        "title": "A Bathing Ape",
+        "title": "38a",
         "subtitle": "",
-        "collection": "a-bathing-ape",
+        "collection": "38a-1",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -312,6 +369,7 @@
     },
     "product_masonry_Fnqqrw": {
       "type": "product-masonry",
+      "disabled": true,
       "name": "Product Masonry Gallery",
       "settings": {
         "title": "PATTA",
@@ -325,6 +383,24 @@
           "patta-light-wash-denim-shorts-light-blue-denim",
           "patta-protect-yourself-tee-white",
           "patta-athletic-mesh-shorts-black"
+        ]
+      }
+    },
+    "product_masonry_EEcRh7": {
+      "type": "product-masonry",
+      "name": "AWAKE NY",
+      "settings": {
+        "title": "AWAKE NY",
+        "description": "<p>New York energy meets bold graphics, unexpected details, and a distinct approach to modern streetwear. </p><p></p><p></p>",
+        "image": "shopify://shop_images/awake_11d1ccf5-6332-4d97-abeb-a3ddf2f93cc3.jpg",
+        "image_caption": "",
+        "button_label": "shop",
+        "button_link": "shopify://collections/awake-ny",
+        "product_list": [
+          "awake-ny-mundial-crown-jersey-white",
+          "awake-ny-headcrack-champs-jersey-zip-hoodie-green",
+          "awake-ny-campus-shorts-heather-grey",
+          "awake-ny-collegiate-open-hem-sweatpant-navy"
         ]
       }
     },
@@ -922,58 +998,6 @@
       ],
       "settings": {}
     },
-    "1778790749de47905e": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_d16b1c4_b7wJzU": {
-          "type": "ai_gen_block_d16b1c4",
-          "settings": {
-            "image_fit": "cover",
-            "image_link": "shopify://collections/sneakers-1",
-            "image_link_new_tab": true,
-            "section_height_desktop": 850,
-            "section_height_mobile": 600,
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "text_position": "above",
-            "text_alignment": "center",
-            "text_position_vertical": "center",
-            "text_position_horizontal": "center",
-            "text_max_width": 600,
-            "heading_above": "Sneaker Corner",
-            "subheading_above": "Performance, lifestyle, and streetwear silhouettes in constant rotation.",
-            "button_text_above": "",
-            "button_link_above": "",
-            "heading_overlay": "Hero heading",
-            "subheading_overlay": "Introduce your brand story or highlight a special collection",
-            "button_text_overlay": "Shop now",
-            "button_link_overlay": "",
-            "text_color": "#ffffff",
-            "heading_below": "",
-            "subheading_below": "",
-            "button_text_below": "",
-            "button_link_below": "",
-            "text_color_outside": "#000000",
-            "heading_size": 48,
-            "subheading_size": 18,
-            "button_background": "#000000",
-            "button_text_color": "#ffffff",
-            "button_hover_background": "#333333",
-            "button_hover_text_color": "#ffffff",
-            "button_background_outside": "#000000",
-            "button_text_color_outside": "#ffffff",
-            "button_hover_background_outside": "#333333",
-            "button_hover_text_color_outside": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_d16b1c4_b7wJzU"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
     "image_FDrKgd": {
       "type": "image",
       "disabled": true,
@@ -989,9 +1013,11 @@
     "releases_JCnmxR",
     "featured_collection_YCzWJf",
     "featured_collection_Ec3k3R",
+    "1778790749de47905e",
     "video_background_HYdxwr",
     "featured_collection_FnMVbN",
     "product_masonry_Fnqqrw",
+    "product_masonry_EEcRh7",
     "1778793005702a75b7",
     "featured_collection_GEVmtc",
     "rotating_slider_7yhr3n",
@@ -1005,7 +1031,6 @@
     "perspective_slider_VCQ6DF",
     "custom_liquid_WyGgiH",
     "1756838107933102fa",
-    "1778790749de47905e",
     "image_FDrKgd"
   ]
 }
