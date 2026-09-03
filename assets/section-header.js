@@ -69,22 +69,70 @@ if ( typeof MainHeader !== 'function' ) {
 
 			// swap long menus with mobile version
 
-			if ( document.querySelector('.site-nav.style--classic > .site-nav-container') ) {
-				let classicMenuWidth = 0;
-				let iconsMenuWidth = 0;
-				document.querySelectorAll('.site-nav.style--classic > .site-nav-container .primary-menu > ul > li').forEach(elm=>{
-					classicMenuWidth += elm.offsetWidth;
-				});
-				document.querySelectorAll('.site-nav .site-menu-handle').forEach(elm=>{
-					if ( ! elm.classList.contains('hide') ) {
-						iconsMenuWidth += elm.offsetWidth;
+			this.classicMenuContainer = document.querySelector('.site-nav.style--classic > .site-nav-container');
+
+			if ( this.classicMenuContainer ) {
+
+				// measures the menu at its natural width, even while it is swapped out
+				this._measureClassicMenuWidth = () => {
+					const elm = this.classicMenuContainer;
+					const isSwapped = document.body.classList.contains('switch-menus');
+					if ( isSwapped ) {
+						elm.style.setProperty('display', 'flex', 'important');
+						elm.style.setProperty('visibility', 'hidden', 'important');
+						elm.style.setProperty('position', 'absolute', 'important');
 					}
-				});
-				
-				if ( classicMenuWidth > document.getElementById('site-header').offsetWidth - 200 - document.querySelector('.logo').offsetWidth - iconsMenuWidth ) {
-					document.body.classList.add('switch-menus');
+					let width = 0;
+					elm.querySelectorAll('.primary-menu > ul > li').forEach(item=>{
+						width += item.offsetWidth;
+					});
+					if ( isSwapped ) {
+						elm.style.removeProperty('display');
+						elm.style.removeProperty('visibility');
+						elm.style.removeProperty('position');
+					}
+					return width;
+				};
+
+				this.evaluateMenuFit = () => {
+
+					const header = document.getElementById('site-header');
+					const logo = document.querySelector('.logo');
+					if ( ! header || ! logo || ! header.clientWidth ) return;
+
+					const menuWidth = this._measureClassicMenuWidth();
+					if ( ! menuWidth ) return;
+
+					let iconsWidth = 0;
+					document.querySelectorAll('.site-nav .site-menu-handle:not(.site-burger-handle)').forEach(elm=>{
+						iconsWidth += elm.offsetWidth;
+					});
+
+					const headerStyle = window.getComputedStyle(header);
+					const containerStyle = window.getComputedStyle(this.classicMenuContainer);
+
+					const available = header.clientWidth
+						- parseFloat(headerStyle.paddingInlineStart || 0)
+						- parseFloat(headerStyle.paddingInlineEnd || 0)
+						- logo.offsetWidth
+						- parseFloat(containerStyle.marginInlineEnd || 0)
+						- iconsWidth;
+
+					document.body.classList.toggle('switch-menus', menuWidth > available);
+
+				};
+
+				this.evaluateMenuFit();
+
+				// text metrics change once the webfonts land
+				if ( document.fonts && document.fonts.ready ) {
+					document.fonts.ready.then(()=>this.evaluateMenuFit());
 				}
-			} 
+
+				this.RESIZE_MenuFitHelper = debounce(()=>this.evaluateMenuFit(), 150);
+				window.addEventListener('resize', this.RESIZE_MenuFitHelper);
+
+			}
 
 			// _end of drawers
 
@@ -93,12 +141,29 @@ if ( typeof MainHeader !== 'function' ) {
 			this.siteHeader = document.getElementById('site-header');
 
 			if ( document.querySelector('.site-nav.style--classic') ) {
-				const submenuPadding = Math.ceil(( this.siteHeader.offsetHeight - document.querySelector('.site-nav.style--classic').offsetHeight ) / 2);
-				const submenuStyle = document.createElement('style');
-				submenuStyle.id = 'site-nav-classic';
-				submenuStyle.setAttribute('type', 'text/css');
-				submenuStyle.innerHTML = `.site-nav.style--classic .submenu { padding-top: ${submenuPadding}px; } .site-nav.style--classic .submenu:after { top: ${submenuPadding}px; height: calc(100% - ${submenuPadding}px) !important; } .site-nav.style--classic .submenu.mega-menu { padding-top: ${submenuPadding+70}px; } .site-nav.style--classic .submenu.mega-menu:after { top: ${submenuPadding}px; }`;
-				document.getElementsByTagName('head')[0].appendChild(submenuStyle);
+
+				// The dropdown panel hangs off the bottom of the header, so the gap
+				// between the menu row and the header edge has to be measured here.
+				// It is published as a custom property rather than an injected
+				// stylesheet: section-header.css is emitted inside <body>, so a
+				// <style> in <head> loses the cascade and the panel ends up
+				// misaligned with its own contents.
+				this.updateSubmenuOffset = () => {
+					const nav = document.querySelector('.site-nav.style--classic');
+					if ( ! nav || ! this.siteHeader.offsetHeight ) return;
+					const offset = Math.ceil(( this.siteHeader.offsetHeight - nav.offsetHeight ) / 2);
+					this.siteHeader.style.setProperty('--submenu-offset', `${offset}px`);
+				};
+
+				this.updateSubmenuOffset();
+
+				if ( document.fonts && document.fonts.ready ) {
+					document.fonts.ready.then(()=>this.updateSubmenuOffset());
+				}
+
+				this.RESIZE_SubmenuOffsetHelper = debounce(()=>this.updateSubmenuOffset(), 150);
+				window.addEventListener('resize', this.RESIZE_SubmenuOffsetHelper);
+
 			}
 
 			// tab navigation for classic menu ___ TO WORK ON THIS !!!
@@ -307,7 +372,10 @@ if ( typeof MainHeader !== 'function' ) {
 
 		unmount(){
 			window.removeEventListener('resize', this.RESIZE_SidebarHelper);
+			window.removeEventListener('resize', this.RESIZE_MenuFitHelper);
+			window.removeEventListener('resize', this.RESIZE_SubmenuOffsetHelper);
 			window.removeEventListener('scroll', this.SCROLL_StickyHelper);
+			document.body.classList.remove('switch-menus');
 		}
 
 	}
@@ -350,6 +418,9 @@ if ( typeof SidebarDrawer !== 'function' ) {
 		}
 
 		hide(){
+			document.querySelectorAll(`[aria-controls="${this.id}"][aria-expanded="true"]`).forEach(elm=>{
+				elm.setAttribute('aria-expanded', 'false');
+			});
 			this.classList.remove('active');
 			this.siteOverlay.classList.remove('active');
 			document.body.classList.remove('sidebar-move');

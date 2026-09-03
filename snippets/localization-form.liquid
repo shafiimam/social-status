@@ -9,13 +9,16 @@
 -%}
 
 {%- if country_selector or locale_selector -%}
-  
+
+  {%- comment -%} ids must be unique per render; `location` still drives styling {%- endcomment -%}
+  {%- assign id_scope = id_suffix | default: location -%}
+
   {{ 'component-localization-form.css' | asset_url | stylesheet_tag }}
 
   <div class="localization-form-holder localization-form--{{ location }}">
     
     {% # theme-check-disable VariableName %}
-    {%- assign formId = 'localization_form-' | append: location -%}
+    {%- assign formId = 'localization_form-' | append: id_scope -%}
     {% # theme-check-enable VariableName %}
 
     {%- form 'localization', id: formId, class: 'localization-form' -%}
@@ -23,18 +26,18 @@
       {%- if locale_selector -%}
         <localization-form class="localization-form__item">
 
-          <span class="localization-form__label text-size--smaller" id="lang-heading-{{ location }}">{{ 'general.accessibility_labels.language_dropdown_label' | t }}</span>
+          <span class="localization-form__label text-size--smaller" id="lang-heading-{{ id_scope }}">{{ 'general.accessibility_labels.language_dropdown_label' | t }}</span>
 
           <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}" />
 
-          <button class="{% if location == 'footer' %} regular-select-cover {% endif %}" data-js-localization-form-button aria-expanded="false" aria-controls="lang-list-{{ location }}" data-location="{{ location }}">
+          <button class="{% if location == 'footer' %} regular-select-cover {% endif %}" data-js-localization-form-button aria-expanded="false" aria-controls="lang-list-{{ id_scope }}" data-location="{{ location }}">
             <span class="{% if location == 'footer' %} regular-select-inner {% else %} underline-animation {% endif %}"><span>{{ localization.language.endonym_name | capitalize }}</span></span>
             {%- if location == 'header' -%}
               <span class="icon">{%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}</span>
             {%- endif -%}
           </button>
 
-          <ul id="lang-list-{{ location }}" data-js-localization-form-content class="regular-select-content {% if location == 'footer' %} invert-permanent {% endif %}">
+          <ul id="lang-list-{{ id_scope }}" data-js-localization-form-content class="regular-select-content {% if location == 'footer' %} invert-permanent {% endif %}">
             {%- for language in localization.available_languages -%}
               <li class="regular-select-item {% if language.iso_code == localization.language.iso_code %}regular-select-item--selected{% endif %}">
                 <button type="submit" name="locale_code" lang="{{ language.iso_code }}" value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %}>{{ language.endonym_name | capitalize }}</button>
@@ -48,11 +51,11 @@
       {%- if country_selector -%}
         <localization-form class="localization-form__item">
 
-          <span class="localization-form__label text-size--smaller" id="currency-heading-{{ location }}">{{ 'general.accessibility_labels.country_dropdown_label' | t }}</span>
+          <span class="localization-form__label text-size--smaller" id="currency-heading-{{ id_scope }}">{{ 'general.accessibility_labels.country_dropdown_label' | t }}</span>
 
-          <input type="hidden" name="country_code" id="CurrencySelector-{{ location }}" value="{{ localization.country.iso_code }}" />
+          <input type="hidden" name="country_code" id="CurrencySelector-{{ id_scope }}" value="{{ localization.country.iso_code }}" />
 
-          <button class="{% if location == 'footer' %} regular-select-cover {% endif %}" data-js-localization-form-button aria-expanded="false" aria-controls="country-list-{{ location }}" data-location="{{ location }}">
+          <button class="{% if location == 'footer' %} regular-select-cover {% endif %}" data-js-localization-form-button aria-expanded="false" aria-controls="country-list-{{ id_scope }}" data-location="{{ location }}">
             <span class="{% if location == 'footer' %} regular-select-inner {% else %} underline-animation {% endif %}">
               <span>
                 {%- unless location == 'header' -%}
@@ -66,7 +69,7 @@
             {%- endif -%}
           </button>
 
-          <ul id="country-list-{{ location }}" data-js-localization-form-content data-js-localization-form-insert-helper-content class="regular-select-content {% if location == 'footer' %} invert-permanent {% endif %}"></ul>
+          <ul id="country-list-{{ id_scope }}" data-js-localization-form-content data-js-localization-form-insert-helper-content class="regular-select-content {% if location == 'footer' %} invert-permanent {% endif %}"></ul>
 
         </localization-form>
       {%- endif -%}

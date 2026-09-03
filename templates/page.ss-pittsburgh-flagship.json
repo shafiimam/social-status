@@ -17,246 +17,37 @@
         "text": ""
       }
     },
-    "hero_KEaJFE": {
+    "hero_8fUGhD": {
       "type": "hero",
+      "blocks": {
+        "heading_zRRMxj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Social Status Pittsburgh Flagship Opening"
+          }
+        },
+        "subheading_FHBNzE": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<p>Where: 2623 Penn Avenue Pittsburgh, PA 15222</p><p>When: THURSDAY, AUGUST 20, 2026<br/>7PM - 10PM</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zRRMxj",
+        "subheading_FHBNzE"
+      ],
       "name": "Hero Section",
       "settings": {
-        "desktop_image": "shopify://shop_images/ssmicro.png",
-        "heading": "",
-        "subheading": "",
-        "button_1_text": "",
-        "button_1_link": "",
-        "button_2_text": "Button 2",
-        "button_2_link": "",
+        "desktop_image": "shopify://shop_images/ss_03ef6bf3-be79-4023-93d1-88e617af2b14.jpg",
         "horizontal_alignment": "center",
-        "vertical_alignment": "bottom"
+        "vertical_alignment": "middle"
       }
     },
-    "rich_text_zLRCcz": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_AJ6wGw": {
-          "type": "heading",
-          "settings": {
-            "heading": "Social Status Pittsburgh Flagship",
-            "seo_h_tag": "h2"
-          }
-        },
-        "text_C7tVRr": {
-          "type": "text",
-          "settings": {
-            "text": "<p>zgiowaehtowehtiwtehiwoehtgwghiwojgwpghiwgrJWpgowp</p>"
-          }
-        },
-        "button_dGkfQU": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Enter Draws",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
-          }
-        }
-      },
-      "block_order": [
-        "heading_AJ6wGw",
-        "text_C7tVRr",
-        "button_dGkfQU"
-      ],
-      "name": "collection copy",
-      "settings": {
-        "title": "",
-        "btn_label": "",
-        "btn_url": "",
-        "video_autoplay": true,
-        "video_muted": true,
-        "video_loop": true,
-        "video_controls": false,
-        "desktop_image_positioning": "image-on-right",
-        "bg_overlay": false,
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h1"
-      }
-    },
-    "video_background_eBYnze": {
-      "type": "video-background",
-      "blocks": {
-        "heading_CPiFJz": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2",
-            "seo_h_tag": "span"
-          }
-        },
-        "text_G79cTd": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_CPiFJz",
-        "text_G79cTd"
-      ],
-      "name": "t:sections.video-background.name",
-      "settings": {
-        "video_height": "56.25%",
-        "text_alignment": "horizontal-center vertical-middle",
-        "custom_text": "rgba(0,0,0,0)",
-        "custom_overlay": "rgba(0,0,0,0)"
-      }
-    },
-    "rich_text_fHmAkH": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_UTHCPj": {
-          "type": "heading",
-          "settings": {
-            "heading": "Social Status Pittsburgh",
-            "seo_h_tag": "h2"
-          }
-        },
-        "text_8Um3YJ": {
-          "type": "text",
-          "settings": {
-            "text": ""
-          }
-        },
-        "text_Nn6mTt": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>All final sale. No returns or exchanges. Please allow for 5-10 days for domestic and 10-15 days for international. Reminder to also verify your shipping address is correct.<br/></p><p><strong>PLEASE NOTE: </strong>SOME SHIPPING DESTINATION EXCLUSIONS APPLY, SHIPPING CHARGES AND LIMITED AVAILABILITY TO DESTINATIONS OUTSIDE OF THE U.S. ARE BASED ON YOUR COUNTRY’S POLICIES AND MAY DIFFER. ALL WINNING ENTRIES WILL BE SELECTED BEFORE LAUNCH AND SHIPPED AFTER LAUNCH.</p>"
-          }
-        },
-        "button_7LYTqe": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us"
-          }
-        }
-      },
-      "block_order": [
-        "heading_UTHCPj",
-        "text_8Um3YJ",
-        "text_Nn6mTt",
-        "button_7LYTqe"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "title": "",
-        "btn_label": "",
-        "btn_url": "",
-        "bg_img": "shopify://shop_images/sscollection.png",
-        "video_autoplay": true,
-        "video_muted": true,
-        "video_loop": true,
-        "video_controls": false,
-        "desktop_image_positioning": "image-on-left",
-        "bg_overlay": false,
-        "custom_background": "rgba(0,0,0,0)",
-        "custom_text": "rgba(0,0,0,0)",
-        "seo_h_tag": "h2"
-      }
-    },
-    "media_grid_X7tj9w": {
-      "type": "media-grid",
-      "blocks": {
-        "image_dYxAWT": {
-          "type": "image",
-          "settings": {
-            "column_count": "3",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_U4Mj7g": {
-          "type": "image",
-          "settings": {
-            "column_count": "3",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_qgttYJ": {
-          "type": "image",
-          "settings": {
-            "column_count": "6",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "image_npqzeb": {
-          "type": "image",
-          "settings": {
-            "column_count": "6",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_dYxAWT",
-        "image_U4Mj7g",
-        "image_qgttYJ",
-        "image_npqzeb"
-      ],
-      "custom_css": [],
-      "name": "grid",
-      "settings": {
-        "section_width": "full",
-        "desktop_row_height": 390,
-        "mobile_row_height": 310,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "spacing": "xs",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "text_alignment": "center"
-      }
-    },
-    "1785176488696ae4ac": {
+    "apps_Mhfycd": {
       "type": "apps",
       "blocks": {
-        "powerful_form_builder_app_block_PY8BEF": {
+        "powerful_form_builder_app_block_iQzQVk": {
           "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
           "settings": {
             "shortcode": "<div class=\"globo-formbuilder\" data-id=\"MTMxMDIx\"></div>"
@@ -264,18 +55,14 @@
         }
       },
       "block_order": [
-        "powerful_form_builder_app_block_PY8BEF"
+        "powerful_form_builder_app_block_iQzQVk"
       ],
       "settings": {}
     }
   },
   "order": [
     "main",
-    "hero_KEaJFE",
-    "rich_text_zLRCcz",
-    "video_background_eBYnze",
-    "rich_text_fHmAkH",
-    "media_grid_X7tj9w",
-    "1785176488696ae4ac"
+    "hero_8fUGhD",
+    "apps_Mhfycd"
   ]
 }
