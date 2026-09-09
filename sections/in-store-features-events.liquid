@@ -1,6 +1,10 @@
 {{ 'section-latest-features.css' | asset_url | stylesheet_tag }}
 
-{% assign tabs_list = section.blocks | map: 'settings' | map: 'tab_group_name' | uniq %}
+{%- liquid
+  assign tabs_list = section.blocks | map: 'settings' | map: 'tab_group_name' | uniq
+  assign max_articles = section.settings.max_articles | default: 5
+  assign today = 'now' | date: '%Y-%m-%d'
+-%}
 <div class="latest-features-section">
   <div class="header-row">
     <div class="title-column" style="max-width: {{ section.settings.main_title_width }}px;">
@@ -12,416 +16,361 @@
       </h2>
     </div>
     <div class="arrow-label">
-      {% if section.settings.section_aside_image %}
+      {%- if section.settings.section_aside_image -%}
         {{ section.settings.section_aside_image | image_url: width: 500 | image_tag }}
-      {% endif %}
+      {%- endif -%}
     </div>
   </div>
 
   <div class="tab-groups-container">
     <div class="tab-images-column">
-      {% assign image_index = 0 %}
-      {% assign max_articles = section.settings.max_articles | default: 5 %}
-      {% for tab_group in tabs_list %}
-        {% assign tab_image_count = 0 %}
-        {% comment %} Loop through all blocks and filter by tab group {% endcomment %}
-        {% for block in section.blocks %}
-          {% if block.settings.tab_group_name == tab_group %}
-            {% if block.type == 'blog_block' %}
-              {% assign selected_blog = blogs[block.settings.blog] %}
-              {% if selected_blog %}
-                {% for article in selected_blog.articles %}
-                  {% if tab_image_count < max_articles %}
-                    <div
-                      class="tab-image-item {% if image_index == 0 %}active{% endif %}"
-                      data-tab-id="blog-{{ block.id }}-{{ article.id }}"
-                      data-tab-image-index="{{ image_index }}"
-                      data-tab-group-title="{{ tab_group }}"
-                    >
-                      {% if article.image %}
-                        <img
-                          src="{{ article.image | image_url: width: 1920 }}"
-                          alt="{{ article.title }}"
-                          width="{{ article.image.width }}"
-                          height="{{ article.image.height }}"
-                        >
-                      {% endif %}
-                    </div>
-                    {% assign image_index = image_index | plus: 1 %}
-                    {% assign tab_image_count = tab_image_count | plus: 1 %}
-                  {% endif %}
-                {% endfor %}
-              {% elsif section.settings.fallback_image %}
-                <img
-                  src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
-                  alt="{{ article.title }}"
-                  width="{{ section.settings.fallback_image.width }}"
-                  height="{{ section.settings.fallback_image.height }}"
+      {%- assign image_index = 0 -%}
+      {%- for tab_group in tabs_list -%}
+        {%- assign tab_image_count = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.tab_group_name != tab_group -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign selected_blog = blogs[block.settings.blog] -%}
+
+          {%- if block.type == 'blog_block' -%}
+            {%- if selected_blog -%}
+              {%- for article in selected_blog.articles -%}
+                {%- if tab_image_count >= max_articles -%}
+                  {%- break -%}
+                {%- endif -%}
+                <div
+                  class="tab-image-item {% if image_index == 0 %}active{% endif %}"
+                  data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                  data-tab-image-index="{{ image_index }}"
+                  data-tab-group-title="{{ tab_group }}"
                 >
-              {% endif %}
-            {% elsif block.type == 'events_block' %}
-              {% assign selected_blog = blogs[block.settings.blog] %}
-              {% comment %} Determine if there is any event for the city and set has_event for the selected_blog {% endcomment %}
-              {% assign has_event = false %}
-              {% if selected_blog %}
-                {% for article in selected_blog.articles %}
-                  {% assign article_matches_city = false %}
-                  {% assign event_date = '' %}
-                  {% assign is_future_event = false %}
-                  {% assign has_date_tag = false %}
-                  {% for tag in article.tags %}
-                    {% if tag contains 'event-date::' %}
-                      {% assign has_date_tag = true %}
-                      {% assign event_date_raw = tag | remove: 'event-date::' %}
-                      {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
-                      {% assign event_date = event_date_parsed %}
-                      {% assign today = 'now' | date: '%Y-%m-%d' %}
-                      {% if event_date >= today %}
-                        {% assign is_future_event = true %}
-                      {% endif %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                  {% unless has_date_tag %}
-                    {% assign is_future_event = true %}
-                  {% endunless %}
-                  {% for tag in article.tags %}
-                    {% assign normalized_tag = tag | downcase | remove: '#' %}
-                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                    {% if normalized_tag == normalized_city_tag %}
-                      {% assign article_matches_city = true %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if article_matches_city and is_future_event %}
-                    {% assign has_event = true %}
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-              {% if selected_blog and has_event %}
-                {% for article in selected_blog.articles %}
-                  {% assign article_matches_city = false %}
-                  {% assign event_date = '' %}
-                  {% assign is_future_event = false %}
-
-                  {% comment %} Extract event date and check if it's in the future {% endcomment %}
-                  {% assign has_date_tag = false %}
-                  {% for tag in article.tags %}
-                    {% if tag contains 'event-date::' %}
-                      {% assign has_date_tag = true %}
-                      {% assign event_date_raw = tag | remove: 'event-date::' %}
-                      {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
-                      {% assign event_date = event_date_parsed %}
-                      {% assign today = 'now' | date: '%Y-%m-%d' %}
-                      {% if event_date >= today %}
-                        {% assign is_future_event = true %}
-                      {% endif %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-
-                  {% comment %} If no date tag found, treat as future event {% endcomment %}
-                  {% unless has_date_tag %}
-                    {% assign is_future_event = true %}
-                  {% endunless %}
-
-                  {% comment %} Check if article matches city {% endcomment %}
-                  {% for tag in article.tags %}
-                    {% assign normalized_tag = tag | downcase | remove: '#' %}
-                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                    {% if normalized_tag == normalized_city_tag %}
-                      {% assign article_matches_city = true %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if article_matches_city and is_future_event and tab_image_count < max_articles %}
-                    <div
-                      class="tab-image-item {% if image_index == 0 %}active{% endif %}"
-                      data-tab-id="event-{{ block.id }}-{{ article.id }}"
-                      data-tab-image-index="{{ image_index }}"
-                      data-tab-group-title="{{ tab_group }}"
+                  {%- if article.image -%}
+                    <img
+                      src="{{ article.image | image_url: width: 1920 }}"
+                      alt="{{ article.title }}"
+                      width="{{ article.image.width }}"
+                      height="{{ article.image.height }}"
+                      loading="lazy"
                     >
-                      {% if article.image %}
-                        <img
-                          src="{{ article.image | image_url: width: 1920 }}"
-                          alt="{{ article.title }}"
-                          width="{{ article.image.width }}"
-                          height="{{ article.image.height }}"
-                        >
-                      {% endif %}
-                    </div>
-                    {% assign image_index = image_index | plus: 1 %}
-                    {% assign tab_image_count = tab_image_count | plus: 1 %}
-                  {% endif %}
-                {% endfor %}
-              {% elsif section.settings.fallback_image %}
-                <img
-                  src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
-                  alt="{{ article.title }}"
-                  width="{{ section.settings.fallback_image.width }}"
-                  height="{{ section.settings.fallback_image.height }}"
-                >
-              {% endif %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+                  {%- endif -%}
+                </div>
+                {%- liquid
+                  assign image_index = image_index | plus: 1
+                  assign tab_image_count = tab_image_count | plus: 1
+                -%}
+              {%- endfor -%}
+            {%- elsif section.settings.fallback_image -%}
+              <img
+                src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
+                alt="{{ article.title }}"
+                width="{{ section.settings.fallback_image.width }}"
+                height="{{ section.settings.fallback_image.height }}"
+                loading="lazy"
+              >
+            {%- endif -%}
+
+          {%- elsif block.type == 'events_block' -%}
+            {%- comment -%}
+              Buffer the markup so we can tell "this city has events" from
+              "this city has none" without a separate probe pass over the blog.
+            {%- endcomment -%}
+            {%- assign has_event = false -%}
+            {%- capture event_images -%}
+              {%- if selected_blog -%}
+                {%- assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' -%}
+                {%- for article in selected_blog.articles -%}
+                  {%- liquid
+                    assign article_matches_city = false
+                    assign is_future_event = false
+                    assign has_date_tag = false
+
+                    for tag in article.tags
+                      if tag contains 'event-date::'
+                        assign has_date_tag = true
+                        assign event_date = tag | remove: 'event-date::' | date: '%Y-%m-%d'
+                        if event_date >= today
+                          assign is_future_event = true
+                        endif
+                        break
+                      endif
+                    endfor
+
+                    unless has_date_tag
+                      assign is_future_event = true
+                    endunless
+
+                    if is_future_event
+                      for tag in article.tags
+                        assign normalized_tag = tag | downcase | remove: '#'
+                        if normalized_tag == normalized_city_tag
+                          assign article_matches_city = true
+                          break
+                        endif
+                      endfor
+                    endif
+                  -%}
+                  {%- if article_matches_city and is_future_event -%}
+                    {%- assign has_event = true -%}
+                    {%- if tab_image_count < max_articles -%}
+                      <div
+                        class="tab-image-item {% if image_index == 0 %}active{% endif %}"
+                        data-tab-id="event-{{ block.id }}-{{ article.id }}"
+                        data-tab-image-index="{{ image_index }}"
+                        data-tab-group-title="{{ tab_group }}"
+                      >
+                        {%- if article.image -%}
+                          <img
+                            src="{{ article.image | image_url: width: 1920 }}"
+                            alt="{{ article.title }}"
+                            width="{{ article.image.width }}"
+                            height="{{ article.image.height }}"
+                            loading="lazy"
+                          >
+                        {%- endif -%}
+                      </div>
+                      {%- liquid
+                        assign image_index = image_index | plus: 1
+                        assign tab_image_count = tab_image_count | plus: 1
+                      -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endcapture -%}
+            {%- if selected_blog and has_event -%}
+              {{ event_images }}
+            {%- elsif section.settings.fallback_image -%}
+              <img
+                src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
+                alt="{{ article.title }}"
+                width="{{ section.settings.fallback_image.width }}"
+                height="{{ section.settings.fallback_image.height }}"
+                loading="lazy"
+              >
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
     </div>
     <div class="tab-list-navs" data-tabs-hidden="{{ section.settings.show_tab_list }}">
-      {% if section.settings.show_tab_list %}
+      {%- if section.settings.show_tab_list -%}
         <div class="tabs-panel">
-          {% for tab in tabs_list %}
+          {%- for tab in tabs_list -%}
             <button class="tab-list-nav-item {% if forloop.first %}active{% endif %}" data-tab-group-title="{{ tab }}">
               <span class="tab-list-nav-item-title">{{ tab }}</span>
             </button>
-          {% endfor %}
+          {%- endfor -%}
         </div>
-      {% endif %}
+      {%- endif -%}
       <div class="tab-list-item-contents">
-        {% for tab_group in tabs_list %}
-          {% assign first_tab_group = tabs_list.first %}
-          {% assign total_item_count = 0 %}
-          {% assign has_content = false %}
-          {% assign max_articles = section.settings.max_articles | default: 5 %}
+        {%- assign first_tab_group = tabs_list.first -%}
+        {%- for tab_group in tabs_list -%}
+          {%- liquid
+            assign total_item_count = 0
+            assign has_content = false
+            assign current_item_count = 0
+          -%}
 
-          {% comment %} First pass: count total items and check if there's content {% endcomment %}
-          {% for block in section.blocks %}
-            {% if block.settings.tab_group_name == tab_group %}
-              {% if block.type == 'blog_block' %}
-                {% assign selected_blog = blogs[block.settings.blog] %}
-                {% if selected_blog %}
-                  {% assign total_item_count = total_item_count | plus: selected_blog.articles.size %}
-                  {% assign has_content = true %}
-                {% endif %}
-              {% elsif block.type == 'events_block' %}
-                {% assign selected_blog = blogs[block.settings.blog] %}
-                {% if selected_blog %}
-                  {% for article in selected_blog.articles %}
-                    {% assign article_matches_city = false %}
-                    {% assign is_future_event = false %}
+          {%- comment -%}
+            Single pass: render up to max_articles while still counting
+            everything, so the View More button below stays accurate.
+          {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.tab_group_name != tab_group -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- assign selected_blog = blogs[block.settings.blog] -%}
 
-                    {% comment %} Extract event date and check if it's in the future {% endcomment %}
-                    {% assign has_date_tag = false %}
-                    {% for tag in article.tags %}
-                      {% if tag contains 'event-date::' %}
-                        {% assign has_date_tag = true %}
-                        {% assign event_date_raw = tag | remove: 'event-date::' %}
-                        {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
-                        {% assign today = 'now' | date: '%Y-%m-%d' %}
-                        {% if event_date_parsed >= today %}
-                          {% assign is_future_event = true %}
-                        {% endif %}
-                        {% break %}
-                      {% endif %}
-                    {% endfor %}
-
-                    {% comment %} If no date tag found, treat as future event {% endcomment %}
-                    {% unless has_date_tag %}
-                      {% assign is_future_event = true %}
-                    {% endunless %}
-
-                    {% comment %} Check if article matches city {% endcomment %}
-                    {% for tag in article.tags %}
-                      {% assign normalized_tag = tag | downcase | remove: '#' %}
-                      {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                      {% if normalized_tag == normalized_city_tag %}
-                        {% assign article_matches_city = true %}
-                        {% break %}
-                      {% endif %}
-                    {% endfor %}
-                    {% if article_matches_city and is_future_event %}
-                      {% assign total_item_count = total_item_count | plus: 1 %}
-                      {% assign has_content = true %}
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-
-          {% comment %} Second pass: render content {% endcomment %}
-          {% assign current_item_count = 0 %}
-          {% for block in section.blocks %}
-            {% if block.settings.tab_group_name == tab_group %}
-              {% if block.type == 'blog_block' %}
-                {% assign selected_blog = blogs[block.settings.blog] %}
-                {% if selected_blog %}
-                  {% for article in selected_blog.articles %}
-                    {% if current_item_count < max_articles %}
-                      {% assign current_item_count = current_item_count | plus: 1 %}
-                      <div
-                        class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
-                        data-tab-group-title="{{ tab_group }}"
-                        data-tab-id="blog-{{ block.id }}-{{ article.id }}"
-                      >
-                        <div class="tab-list-item-header">
-                          <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
-                          <div class="tab-list-item-content-container">
-                            <div class="tab-list-item-content">
-                              <span class="tab-list-item-title font-zen">{{ article.title }}</span>
-                              <div class="tab-list-item-content-inner">
-                                <span class="tab-list-item-subtitle">
-                                  {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
-                                </span>
-                                <span class="tab-list-item-date-mobile-only">
-                                  {{- article.created_at | date: '%m.%d.%Y' -}}
-                                </span>
-                                <a
-                                  href="{{ article.url }}"
-                                  class="tab-list-item-button"
-                                >
-                                  <span> {{ section.settings.blog_cta_label | default: 'Read Article' }} </span>
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none"
-                                  >
-                                    <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
-                                </a>
-                              </div>
-                            </div>
+            {%- if block.type == 'blog_block' -%}
+              {%- if selected_blog -%}
+                {%- liquid
+                  assign has_content = true
+                  assign total_item_count = total_item_count | plus: selected_blog.articles.size
+                -%}
+                {%- for article in selected_blog.articles -%}
+                  {%- if current_item_count >= max_articles -%}
+                    {%- break -%}
+                  {%- endif -%}
+                  {%- assign current_item_count = current_item_count | plus: 1 -%}
+                  <div
+                    class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
+                    data-tab-group-title="{{ tab_group }}"
+                    data-tab-id="blog-{{ block.id }}-{{ article.id }}"
+                  >
+                    <div class="tab-list-item-header">
+                      <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
+                      <div class="tab-list-item-content-container">
+                        <div class="tab-list-item-content">
+                          <span class="tab-list-item-title font-zen">{{ article.title }}</span>
+                          <div class="tab-list-item-content-inner">
+                            <span class="tab-list-item-subtitle">
+                              {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
+                            </span>
+                            <span class="tab-list-item-date-mobile-only">
+                              {{- article.created_at | date: '%m.%d.%Y' -}}
+                            </span>
+                            <a
+                              href="{{ article.url }}"
+                              class="tab-list-item-button"
+                            >
+                              <span> {{ section.settings.blog_cta_label | default: 'Read Article' }} </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </a>
                           </div>
-                          <span class="tab-list-item-date">{{ article.created_at | date: '%m.%d.%Y' }}</span>
-                        </div>
-                        <div class="tab-list-item-mobile-image">
-                          {% if article.image %}
-                            <img
-                              src="{{ article.image | image_url: width: 1920 }}"
-                              alt="{{ article.title }}"
-                              width="100%"
-                              height="100%"
-                            >
-                          {% elsif section.settings.fallback_image %}
-                            <img
-                              src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
-                              alt="{{ article.title }}"
-                              width="100%"
-                              height="100%"
-                            >
-                          {% endif %}
                         </div>
                       </div>
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% elsif block.type == 'events_block' %}
-                {% assign selected_blog = blogs[block.settings.blog] %}
-                {% if selected_blog %}
-                  {% for article in selected_blog.articles %}
-                    {% assign article_matches_city = false %}
-                    {% assign event_date = '' %}
-                    {% assign is_future_event = false %}
+                      <span class="tab-list-item-date">{{ article.created_at | date: '%m.%d.%Y' }}</span>
+                    </div>
+                    <div class="tab-list-item-mobile-image">
+                      {%- if article.image -%}
+                        <img
+                          src="{{ article.image | image_url: width: 1920 }}"
+                          alt="{{ article.title }}"
+                          width="100%"
+                          height="100%"
+                          loading="lazy"
+                        >
+                      {%- elsif section.settings.fallback_image -%}
+                        <img
+                          src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
+                          alt="{{ article.title }}"
+                          width="100%"
+                          height="100%"
+                          loading="lazy"
+                        >
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              {%- endif -%}
 
-                    {% comment %} Extract event date and check if it's in the future {% endcomment %}
-                    {% assign has_date_tag = false %}
-                    {% for tag in article.tags %}
-                      {% if tag contains 'event-date::' %}
-                        {% assign has_date_tag = true %}
-                        {% assign event_date_raw = tag | remove: 'event-date::' %}
-                        {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
-                        {% assign event_date = event_date_parsed %}
-                        {% assign today = 'now' | date: '%Y-%m-%d' %}
-                        {% if event_date >= today %}
-                          {% assign is_future_event = true %}
-                        {% endif %}
-                        {% break %}
-                      {% endif %}
-                    {% endfor %}
+            {%- elsif block.type == 'events_block' -%}
+              {%- if selected_blog -%}
+                {%- assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' -%}
+                {%- for article in selected_blog.articles -%}
+                  {%- liquid
+                    assign article_matches_city = false
+                    assign event_date = ''
+                    assign is_future_event = false
+                    assign has_date_tag = false
 
-                    {% comment %} If no date tag found, treat as future event {% endcomment %}
-                    {% unless has_date_tag %}
-                      {% assign is_future_event = true %}
-                    {% endunless %}
+                    for tag in article.tags
+                      if tag contains 'event-date::'
+                        assign has_date_tag = true
+                        assign event_date = tag | remove: 'event-date::' | date: '%Y-%m-%d'
+                        if event_date >= today
+                          assign is_future_event = true
+                        endif
+                        break
+                      endif
+                    endfor
 
-                    {% comment %} Check if article matches city {% endcomment %}
-                    {% for tag in article.tags %}
-                      {% assign normalized_tag = tag | downcase | remove: '#' %}
-                      {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                      {% if normalized_tag == normalized_city_tag %}
-                        {% assign article_matches_city = true %}
-                        {% break %}
-                      {% endif %}
-                    {% endfor %}
+                    unless has_date_tag
+                      assign is_future_event = true
+                    endunless
 
-                    {% if article_matches_city and is_future_event and current_item_count < max_articles %}
-                      {% assign current_item_count = current_item_count | plus: 1 %}
-                      <div
-                        class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
-                        data-tab-group-title="{{ tab_group }}"
-                        data-tab-id="event-{{ block.id }}-{{ article.id }}"
-                        data-article-url="{{ article.url }}"
-                      >
-                        <div class="tab-list-item-header">
-                          <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
-                          <div class="tab-list-item-content-container">
-                            <div class="tab-list-item-content">
-                              <span class="tab-list-item-title font-zen">{{ article.title }}</span>
-                              <div class="tab-list-item-content-inner">
-                                <span class="tab-list-item-subtitle">
-                                  {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
-                                </span>
-                                <span class="tab-list-item-date-mobile-only">{{ event_date | date: '%m.%d.%Y' }}</span>
-                                <a
-                                  class="tab-list-item-button"
-                                  href="{{ article.url }}"
+                    if is_future_event
+                      for tag in article.tags
+                        assign normalized_tag = tag | downcase | remove: '#'
+                        if normalized_tag == normalized_city_tag
+                          assign article_matches_city = true
+                          break
+                        endif
+                      endfor
+                    endif
+
+                    if article_matches_city and is_future_event
+                      assign total_item_count = total_item_count | plus: 1
+                      assign has_content = true
+                    endif
+                  -%}
+                  {%- if article_matches_city and is_future_event and current_item_count < max_articles -%}
+                    {%- assign current_item_count = current_item_count | plus: 1 -%}
+                    <div
+                      class="tab-list-item-container {% if tab_group == first_tab_group %}active{% endif %} {% if current_item_count == 1 %}expanded{% endif %}"
+                      data-tab-group-title="{{ tab_group }}"
+                      data-tab-id="event-{{ block.id }}-{{ article.id }}"
+                      data-article-url="{{ article.url }}"
+                    >
+                      <div class="tab-list-item-header">
+                        <p class="tab-list-item-index">/{{ current_item_count | prepend: '0' | slice: -2, 2 }}</p>
+                        <div class="tab-list-item-content-container">
+                          <div class="tab-list-item-content">
+                            <span class="tab-list-item-title font-zen">{{ article.title }}</span>
+                            <div class="tab-list-item-content-inner">
+                              <span class="tab-list-item-subtitle">
+                                {{- article.excerpt_or_content | strip_html | truncatewords: 15 -}}
+                              </span>
+                              <span class="tab-list-item-date-mobile-only">{{ event_date | date: '%m.%d.%Y' }}</span>
+                              <a
+                                class="tab-list-item-button"
+                                href="{{ article.url }}"
+                              >
+                                <span> {{ section.settings.event_cta_label | default: 'Register Now' }} </span>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
                                 >
-                                  <span> {{ section.settings.event_cta_label | default: 'Register Now' }} </span>
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none"
-                                  >
-                                    <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
-                                </a>
-                              </div>
+                                  <path d="M7.91675 5L12.9167 10L7.91675 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </a>
                             </div>
                           </div>
-                          <span class="tab-list-item-date">{{ event_date | date: '%m.%d.%Y' }}</span>
                         </div>
-                        <div class="tab-list-item-mobile-image">
-                          {% if article.image %}
-                            <img
-                              src="{{ article.image | image_url: width: 1920 }}"
-                              alt="{{ article.title }}"
-                              width="100%"
-                              height="100%"
-                            >
-                          {% elsif section.settings.fallback_image %}
-                            <img
-                              src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
-                              alt="{{ article.title }}"
-                              width="100%"
-                              height="100%"
-                            >
-                          {% endif %}
-                        </div>
+                        <span class="tab-list-item-date">{{ event_date | date: '%m.%d.%Y' }}</span>
                       </div>
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
+                      <div class="tab-list-item-mobile-image">
+                        {%- if article.image -%}
+                          <img
+                            src="{{ article.image | image_url: width: 1920 }}"
+                            alt="{{ article.title }}"
+                            width="100%"
+                            height="100%"
+                            loading="lazy"
+                          >
+                        {%- elsif section.settings.fallback_image -%}
+                          <img
+                            src="{{ section.settings.fallback_image | image_url: width: 1920 }}"
+                            alt="{{ article.title }}"
+                            width="100%"
+                            height="100%"
+                            loading="lazy"
+                          >
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
 
-          {% comment %} Add View More button if there are more items than the limit {% endcomment %}
-          {% if total_item_count > max_articles %}
+          {%- comment -%} Add View More button if there are more items than the limit {%- endcomment -%}
+          {%- if total_item_count > max_articles -%}
             <div
               class="tab-list-item-container view-more-container {% if tab_group == first_tab_group %}active{% endif %}"
               data-tab-group-title="{{ tab_group }}"
             >
               <div class="view-more-container">
                 <div class="tab-cta-container">
-                  {% assign view_more_url = selected_blog.url %}
-                  {% if tab_group == 'Events' %}
-                    {% assign view_more_url = pages['attend-an-event'].url %}
-                  {% endif %}
+                  {%- liquid
+                    assign view_more_url = selected_blog.url
+                    if tab_group == 'Events'
+                      assign view_more_url = pages['attend-an-event'].url
+                    endif
+                  -%}
                   <a href="{{ view_more_url }}" class="button button--solid button--with-icon">
                     <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
                     <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
@@ -429,10 +378,10 @@
                 </div>
               </div>
             </div>
-          {% endif %}
+          {%- endif -%}
 
-          {% comment %} Show "No content found" if no content in any blocks for this tab group {% endcomment %}
-          {% unless has_content %}
+          {%- comment -%} Show "No content found" if no content in any blocks for this tab group {%- endcomment -%}
+          {%- unless has_content -%}
             <div
               class="tab-list-item-container active expanded no-events {% if tab_group == first_tab_group %}active{% endif %}"
               data-tab-group-title="{{ tab_group }}"
@@ -449,8 +398,8 @@
                 </div>
               </div>
             </div>
-          {% endunless %}
-        {% endfor %}
+          {%- endunless -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
