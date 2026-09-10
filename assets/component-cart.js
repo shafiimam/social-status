@@ -100,7 +100,7 @@ if ( typeof CartForm !== 'function' ) {
 
 				})
 				.catch(e => {
-					console.log(e);
+					console.error(e);
 					let alert = document.createElement('span');
 					alert.classList.add('alert', 'alert--error');
 					alert.textContent = KROWN.settings.locales.cart_general_error;

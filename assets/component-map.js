@@ -169,7 +169,7 @@ if ( typeof ContactMap !== 'function' ) {
 								alert("No results found for the given address");
 							}
 						} else {
-							console.log("Geocode was not successful for the following reason: " + status);
+							console.warn("Geocode was not successful for the following reason: " + status);
 						}
 
 					});

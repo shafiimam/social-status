@@ -89,7 +89,7 @@ if ( typeof LocalizationForm !== 'function' ) {
 					}
 				})
 				.catch(e=>{
-					console.log(e);
+					console.error(e);
 				})
 		}
 

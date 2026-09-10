@@ -563,7 +563,7 @@ if ( typeof ProductForm !== 'function' ) {
 
 				})
 				.catch(e => {
-					console.log(e);
+					console.error(e);
 				})
 				.finally(() => {
 					submitButton.classList.remove('working');
