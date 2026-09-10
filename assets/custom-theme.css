@@ -563,3 +563,46 @@ img.ryzo-product-image  {
   outline: 2px solid var(--main-text);
   outline-offset: 2px;
 }
+
+
+/* ---------------------------------------------------------------------------
+   Cart drawer: keep the subtotal + Checkout button in view.
+
+   Measured before this change: with one item in the cart the Checkout button
+   sat at y=1107 in a 929px viewport, because the drawer column is
+   cart items -> six "You may also like" cards -> subtotal, and the whole
+   column scrolls.
+
+   The scroll container is .site-nav-container. #AjaxCartSubtotal is nested
+   inside .site-nav-container-last, which sets overflow:hidden -- that alone
+   makes position:sticky a no-op on anything inside it, so the override below
+   is required for the sticky to take effect at all. Scoped to #site-cart so
+   the menu and search drawers (which rely on that clipping for .site-meta)
+   are untouched.
+   --------------------------------------------------------------------------- */
+#site-cart .site-nav-container-last {
+  overflow: visible;
+}
+
+#site-cart #AjaxCartSubtotal {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  background: var(--main-background);
+  /* bleed over the drawer's horizontal padding so items don't show through
+     the sides of the bar as they scroll under it */
+  margin-left: calc(var(--sidebar-padding) * -1);
+  margin-right: calc(var(--sidebar-padding) * -1);
+  padding: 16px var(--sidebar-padding) 0;
+  border-top: 1px solid var(--main-borders);
+}
+
+/* Empty cart hides .cart-out, so don't leave an empty bordered bar behind. */
+#site-cart #AjaxCartSubtotal:has(div[data-cart-empty]) {
+  position: static;
+  border-top: 0;
+  background: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
