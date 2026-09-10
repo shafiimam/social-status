@@ -261,7 +261,7 @@
                         {%- liquid
 
                           if block.settings.image != blank
-                            render 'lazy-image', image: block.settings.image, id: block.id, sizes: '100vw', class: image_class, preload: preload, image_alignment: true
+                            render 'lazy-image', image: block.settings.image, id: block.id, sizes: '100vw', class: image_class, preload: preload, image_alignment: true, fetchpriority: 'high'
                           endif
 
                           if settings.show_preloader
