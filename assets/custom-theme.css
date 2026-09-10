@@ -542,3 +542,24 @@ img.ryzo-product-image  {
   white-space: nowrap !important;
   pointer-events: none !important;
 }
+
+/* go-top is a <button> for keyboard access; strip UA button styling
+   so it renders exactly as the previous <span> did. */
+.main-go-top {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+/* The point of making go-top a button is keyboard access, so it needs a
+   visible focus ring. Mouse users still get none. */
+.main-go-top:focus-visible {
+  outline: 2px solid var(--main-text);
+  outline-offset: 2px;
+}
