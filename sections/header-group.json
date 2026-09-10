@@ -16,6 +16,7 @@
       "blocks": {
         "content_Whn7wa": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "text": "We Are Now Offering Package Protection with Route!",
             "link": "",
@@ -32,7 +33,6 @@
         },
         "content_8wLtby": {
           "type": "content",
-          "disabled": true,
           "settings": {
             "text": "VISIT OUR STORES",
             "link": "shopify://pages/our-stores",
@@ -69,7 +69,16 @@
         "visibility": "all",
         "bar_txtcolor": "#ffffff",
         "bar_bgcolor": "#111111",
-        "bar_bordercolor": "rgba(0,0,0,0)"
+        "bar_bordercolor": "rgba(0,0,0,0)",
+        "display_style": "marquee",
+        "desktop_font_size": 12,
+        "mobile_font_size": 11,
+        "marquee_speed": 0.3,
+        "marquee_direction": "left",
+        "marquee_pause_on_hover": true,
+        "marquee_separator": "•",
+        "marquee_gap_mobile": 20,
+        "marquee_gap_desktop": 40
       }
     },
     "header": {
@@ -118,7 +127,16 @@
         "visibility": "all",
         "bar_txtcolor": "#ffffff",
         "bar_bgcolor": "#111111",
-        "bar_bordercolor": "rgba(0,0,0,0)"
+        "bar_bordercolor": "rgba(0,0,0,0)",
+        "display_style": "marquee",
+        "desktop_font_size": 12,
+        "mobile_font_size": 11,
+        "marquee_speed": 0.3,
+        "marquee_direction": "left",
+        "marquee_pause_on_hover": true,
+        "marquee_separator": "•",
+        "marquee_gap_mobile": 20,
+        "marquee_gap_desktop": 40
       }
     },
     "breadcrumb": {

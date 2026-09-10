@@ -12,6 +12,22 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_yc6QmM": {
+          "type": "slide",
+          "name": "JAIDE 11",
+          "settings": {
+            "tagline": "",
+            "title": "JAIDE AIR JORDAN 11 LOW",
+            "subtitle": "",
+            "button_label": "ENTER THE DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/JAIDE 11_9X16_2.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_7z3WT4": {
           "type": "slide",
           "name": "TWG REJUVEN8",
@@ -19,8 +35,8 @@
             "tagline": "",
             "title": "THE WHITAKER GROUP X NIKE REACTX REJUVEN8 \"SPLATTER PACK\"",
             "subtitle": "",
-            "button_label": "ENTER THE DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/new-arrivals-1",
             "button_label_2": "",
             "button_link_2": "",
             "image": "shopify://shop_images/splatter2.jpg",
@@ -41,24 +57,6 @@
             "button_link_2": "",
             "image": "shopify://shop_images/Social_Status_Beach_House_MOBILE_NO_SPACING_1080x1350_0c2cd87d-26d7-418b-8ce6-015ea9c9d35e.jpg",
             "mobile_image": "shopify://shop_images/Social_Status_Beach_House_MOBILE_NO_SPACING_1080x1350_0c2cd87d-26d7-418b-8ce6-015ea9c9d35e.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_yc6QmM": {
-          "type": "slide",
-          "name": "SS PITT FLAGSHIP",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "SOCIAL STATUS PITTSBURGH FLAGSHIP OPENING",
-            "subtitle": "THURSDAY, AUGUST 20, 2026",
-            "button_label": "RSVP",
-            "button_link": "shopify://pages/social-status-pittsburgh-flagship",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/SSpitt2.jpg",
-            "mobile_image": "shopify://shop_images/SSpitt.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -149,9 +147,9 @@
         }
       },
       "block_order": [
+        "slide_yc6QmM",
         "slide_7z3WT4",
         "slide_zdQw8a",
-        "slide_yc6QmM",
         "slide_pVXwXG",
         "slide_tN6FiN",
         "slide_F3KQd9",
@@ -420,7 +418,7 @@
             "heading_size": 48,
             "subheading": "<p>No rules. No formula. No direction required.</p>",
             "subheading_size": 18,
-            "text_color": "#FFFFFF",
+            "text_color": "#ffffff",
             "spacing_between_elements": 16,
             "horizontal_alignment": "center",
             "vertical_alignment": "center",
@@ -435,7 +433,7 @@
             "button_border_radius": 30,
             "button_border_width": 0,
             "button_background_color": "#000000",
-            "button_text_color": "#FFFFFF",
+            "button_text_color": "#ffffff",
             "button_border_color": "#000000",
             "button_hover_background_color": "#333333",
             "button_hover_text_color": "#ffffff",
