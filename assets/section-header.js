@@ -393,18 +393,49 @@ if ( typeof SidebarDrawer !== 'function' ) {
 		constructor(){
 			super();
 			this.siteOverlay = document.getElementById('site-overlay');
+			this.opener = null;
 			this.querySelector('.site-close-handle').addEventListener('click', ()=>{
 				this.hide();
 			});
+			// Keyboard: Esc closes; Tab wraps inside the drawer. The rest of the
+			// page is already `inert` while a drawer is open, so the wrap is only a
+			// fallback for browsers without inert support (Safari < 15.5).
+			this.addEventListener('keydown', (e)=>{
+				if ( e.key === 'Escape' ) {
+					e.preventDefault();
+					this.hide();
+					return;
+				}
+				if ( e.key !== 'Tab' ) return;
+				const focusable = this._focusable();
+				if ( ! focusable.length ) return;
+				const first = focusable[0], last = focusable[focusable.length - 1];
+				if ( e.shiftKey && (document.activeElement === first || document.activeElement === this) ) {
+					e.preventDefault(); last.focus();
+				} else if ( ! e.shiftKey && document.activeElement === last ) {
+					e.preventDefault(); first.focus();
+				}
+			});
+		}
+
+		_focusable(){
+			return Array.from(this.querySelectorAll(
+				'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+			)).filter(el => el.offsetParent !== null);
 		}
 
 		show(){
+			// Remember what opened us so hide() can hand focus back.
+			this.opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
 			this.style.display = 'block';
 			setTimeout(()=>{
 				this.classList.add('active');
 				window.inertElems.forEach(elm=>{
 					elm.setAttribute('inert', '');
 				});
+				// Focus the drawer itself (tabindex=-1, aria-labelledby) so screen
+				// readers announce the dialog name; Tab then goes to the close button.
+				this.focus({ preventScroll: true });
 			}, 10);
 			this.siteOverlay.classList.add('active');
 			document.body.classList.add('sidebar-move');
@@ -432,6 +463,12 @@ if ( typeof SidebarDrawer !== 'function' ) {
 			setTimeout(()=>{
 				this.style.display = 'none';
 			}, 250);
+			// Return focus to the element that opened the drawer, if it is still
+			// on the page (e.g. the Add-to-cart button, the menu/cart icon).
+			if ( this.opener && document.contains(this.opener) && typeof this.opener.focus === 'function' ) {
+				this.opener.focus({ preventScroll: true });
+			}
+			this.opener = null;
 		}
 
 	}

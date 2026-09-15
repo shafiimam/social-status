@@ -606,3 +606,11 @@ img.ryzo-product-image  {
   margin-right: 0;
   padding: 0;
 }
+
+/* Drawers receive programmatic focus on open (see SidebarDrawer.show) so the
+   dialog name is announced. The container itself is not interactive, so no
+   ring on it -- the close button and links inside keep their own rings. */
+.site-nav.style--sidebar:focus,
+.site-nav.style--sidebar:focus-visible {
+  outline: none;
+}
