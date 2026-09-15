@@ -12,13 +12,62 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_F3KQd9": {
+          "type": "slide",
+          "name": "38a Fleece",
+          "settings": {
+            "tagline": "Introducing",
+            "title": "38a Fleece Collection",
+            "subtitle": "Made for the in-between. Relaxed fits, essential tones, and everyday comfort define the latest from 38a.",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/38a-1",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/38afleece.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_yc6QmM": {
+          "type": "slide",
+          "name": "JAIDE 11",
+          "settings": {
+            "tagline": "",
+            "title": "JAIDE AIR JORDAN 11 LOW",
+            "subtitle": "",
+            "button_label": "ENTER THE DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/jaide-x-air-jordan-11-low-retro",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/JAIDE 11_9X16_2.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_7z3WT4": {
+          "type": "slide",
+          "name": "TWG REJUVEN8",
+          "settings": {
+            "tagline": "",
+            "title": "THE WHITAKER GROUP X NIKE REACTX REJUVEN8 \"SPLATTER PACK\"",
+            "subtitle": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/new-arrivals-1",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/splatter2.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_zdQw8a": {
           "type": "slide",
           "name": "DND BEACH HOUSE",
+          "disabled": true,
           "settings": {
             "tagline": "More than a destination, Beach House is a state of mind.",
             "title": "WELCOME TO THE BEACH HOUSE",
-            "subtitle": "The Adidas DND Beach House Collection arrives August 28.",
+            "subtitle": "The Adidas DND Beach House Collection is available now.",
             "button_label": "SHOP THE COLLECTION",
             "button_link": "shopify://collections/adidas",
             "button_label_2": "",
@@ -29,44 +78,10 @@
             "hide_text_mobile": false
           }
         },
-        "slide_7z3WT4": {
-          "type": "slide",
-          "name": "TWG REJUVEN8",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "THE WHITAKER GROUP X NIKE REACTX REJUVEN8 \"SPLATTER PACK\"",
-            "subtitle": "",
-            "button_label": "ENTER THE DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/splatter2.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_yc6QmM": {
-          "type": "slide",
-          "name": "SS PITT FLAGSHIP",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "SOCIAL STATUS PITTSBURGH FLAGSHIP OPENING",
-            "subtitle": "THURSDAY, AUGUST 20, 2026",
-            "button_label": "RSVP",
-            "button_link": "shopify://pages/social-status-pittsburgh-flagship",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/SSpitt2.jpg",
-            "mobile_image": "shopify://shop_images/SSpitt.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
         "slide_pVXwXG": {
           "type": "slide",
           "name": "CODA ECHO POINTS",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "THE WHITAKER GROUP & PUMA SUEDE CODA \"ECHO POINTS\"",
@@ -83,6 +98,7 @@
         "slide_tN6FiN": {
           "type": "slide",
           "name": "38a",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "38a SUMMER CAPSULE",
@@ -92,23 +108,6 @@
             "button_label_2": "",
             "button_link_2": "shopify://collections/38a-1",
             "video_object": "shopify://files/videos/the38a promo.mov",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_F3KQd9": {
-          "type": "slide",
-          "name": "puma coda",
-          "disabled": true,
-          "settings": {
-            "tagline": "Introducing",
-            "title": "THE WHITAKER GROUP AND PUMA CODA",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": "",
-            "button_label_2": "",
-            "button_link_2": "",
-            "video_object": "shopify://files/videos/1PUMACODA.mov",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -150,12 +149,12 @@
         }
       },
       "block_order": [
-        "slide_zdQw8a",
-        "slide_7z3WT4",
+        "slide_F3KQd9",
         "slide_yc6QmM",
+        "slide_7z3WT4",
+        "slide_zdQw8a",
         "slide_pVXwXG",
         "slide_tN6FiN",
-        "slide_F3KQd9",
         "slide_Ah7qQ6",
         "slide_tmCntp"
       ],
@@ -167,7 +166,7 @@
         "mobile_text": "#ffffff",
         "desktop_background": "#0c0c0c",
         "desktop_overlay": "#e7e7e7",
-        "mobile_height": "var(--window-height)",
+        "mobile_height": "75vh",
         "mobile_background": "rgba(0,0,0,0)",
         "heading_size": "h2"
       }
@@ -356,6 +355,7 @@
     },
     "featured_collection_FnMVbN": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.name",
       "settings": {
         "title": "38a",
@@ -386,6 +386,52 @@
         ]
       }
     },
+    "1788279469afffb629": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_796f0b7_LamTXL": {
+          "type": "ai_gen_block_796f0b7",
+          "settings": {
+            "image": "shopify://shop_images/IMG_5825.jpg",
+            "image_aspect_ratio": "1.77",
+            "image_border_radius": 0,
+            "desktop_width_percent": 100,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "heading": "Diet Starts Monday",
+            "heading_size": 48,
+            "subheading": "<p>No rules. No formula. No direction required.</p>",
+            "subheading_size": 18,
+            "text_color": "#ffffff",
+            "spacing_between_elements": 16,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
+            "text_alignment": "center",
+            "text_max_width": 80,
+            "content_padding": 40,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/diet-starts-monday",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 30,
+            "button_border_width": 0,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#000000",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#333333"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_796f0b7_LamTXL"
+      ],
+      "settings": {}
+    },
     "product_masonry_EEcRh7": {
       "type": "product-masonry",
       "name": "AWAKE NY",
@@ -403,89 +449,6 @@
           "awake-ny-collegiate-open-hem-sweatpant-navy"
         ]
       }
-    },
-    "17879401714d30dc0d": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_13d6a24_B3idzU": {
-          "type": "ai_gen_block_13d6a24",
-          "settings": {
-            "banner_image": "shopify://shop_images/IMG_5825.jpg",
-            "banner_height": 800,
-            "mobile_banner_height": 250,
-            "banner_border_radius": 0,
-            "desktop_width_percent": 100,
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 0.2,
-            "heading": "<p>DIET STARTS MONDAY</p>",
-            "description": "<p>No rules. No formula. No direction required.</p>",
-            "content_max_width": 600,
-            "vertical_alignment": "center",
-            "horizontal_alignment": "center",
-            "text_color": "#ffffff",
-            "heading_size": 48,
-            "description_size": 16,
-            "button_text": "SHOP NOW",
-            "button_link": "shopify://collections/diet-starts-monday",
-            "button_font_size": 16,
-            "button_border_radius": 30,
-            "button_bg_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_hover_bg_color": "#333333",
-            "button_hover_text_color": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_13d6a24_B3idzU"
-      ],
-      "settings": {}
-    },
-    "1778793005702a75b7": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_66168d0_W9QfHP": {
-          "type": "ai_gen_block_66168d0",
-          "settings": {
-            "image_desktop": "shopify://shop_images/IMG_5825.jpg",
-            "subheading": "New arrivals",
-            "heading": "Sneaker Corner",
-            "body": "<p>Performance, lifestyle, and streetwear silhouettes in constant rotation.</p><h2></h2>",
-            "content_position": "column-reverse",
-            "text_alignment": "center",
-            "button_label": "Shop now",
-            "button_link": "shopify://collections/sneakers-1",
-            "background_color": "#ffffff",
-            "heading_color": "#000000",
-            "subheading_color": "#666666",
-            "body_color": "#000000",
-            "button_background_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_hover_background_color": "#333333",
-            "button_hover_text_color": "#ffffff",
-            "heading_size": 34,
-            "subheading_size": 12,
-            "body_size": 16,
-            "button_font_size": 14,
-            "content_spacing": 40,
-            "heading_spacing": 16,
-            "subheading_spacing": 12,
-            "body_spacing": 24,
-            "content_padding_vertical": 40,
-            "content_padding_horizontal": 20,
-            "button_padding_vertical": 14,
-            "button_padding_horizontal": 32
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_66168d0_W9QfHP"
-      ],
-      "disabled": true,
-      "settings": {}
     },
     "featured_collection_GEVmtc": {
       "type": "featured-collection",
@@ -1037,15 +1000,6 @@
         "instafeed_app_block_Lm4dJE"
       ],
       "settings": {}
-    },
-    "image_FDrKgd": {
-      "type": "image",
-      "disabled": true,
-      "name": "t:sections.image.name",
-      "settings": {
-        "link": "",
-        "target": false
-      }
     }
   },
   "order": [
@@ -1057,9 +1011,8 @@
     "video_background_HYdxwr",
     "featured_collection_FnMVbN",
     "product_masonry_Fnqqrw",
+    "1788279469afffb629",
     "product_masonry_EEcRh7",
-    "17879401714d30dc0d",
-    "1778793005702a75b7",
     "featured_collection_GEVmtc",
     "rotating_slider_7yhr3n",
     "heading_KjpKfp",
@@ -1071,7 +1024,6 @@
     "floating_testimonials_KCBbUg",
     "perspective_slider_VCQ6DF",
     "custom_liquid_WyGgiH",
-    "1756838107933102fa",
-    "image_FDrKgd"
+    "1756838107933102fa"
   ]
 }
