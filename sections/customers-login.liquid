@@ -58,7 +58,7 @@
               <div class="helper">
                 {% if form.password_needed %}
                   <p style="margin-bottom: 0;">
-                    <a href="#recover" id="RecoverPassword" onclick="showRecoverPasswordForm();return false;">
+                    <a href="#recover" id="RecoverPassword">
                       <span class="underline-animation">{{ 'customers.login_page.forgot_password_check' | t }}</span>
                     </a></p>
                 {% endif %}
@@ -99,7 +99,7 @@
                   <button type="submit" class="button button--solid">
                     <span class="button-scroll-in">{{ 'customers.login_page.password_reset.submit_button' | t }}</span>
                   </button>  
-                  <button onclick="hideRecoverPasswordForm();return false;" class="button button--outline" id="HideRecoverPasswordLink">
+                  <button type="button" class="button button--outline" id="HideRecoverPasswordLink">
                     <span class="button-scroll-in">{{ 'customers.login_page.password_reset.cancel_button' | t }}</span>
                   </button>
                 </div>
@@ -142,6 +142,17 @@
   }
 
   if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+
+  document.getElementById('RecoverPassword')?.addEventListener('click', function(e){
+    e.preventDefault();
+    showRecoverPasswordForm();
+    document.getElementById('RecoverPasswordForm')?.querySelector('input:not([type="hidden"])')?.focus();
+  });
+  document.getElementById('HideRecoverPasswordLink')?.addEventListener('click', function(e){
+    e.preventDefault();
+    hideRecoverPasswordForm();
+    document.getElementById('RecoverPassword')?.focus();
+  });
 
 </script>
 

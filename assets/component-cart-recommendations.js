@@ -22,3 +22,13 @@ class CartRecommendations extends HTMLElement {
 	}
 }
 customElements.define('cart-recommendations', CartRecommendations);
+
+// "Quick buy" inside the cart-drawer recommendations opens the quick-view
+// modal, so the drawer itself has to close. The markup is injected via the
+// Section Rendering API, so delegate from document instead of inline onclick.
+document.addEventListener('click', (e) => {
+	if ( e.target.closest('[data-js-close-cart]') ) {
+		const cart = document.getElementById('site-cart');
+		if ( cart && typeof cart.hide === 'function' ) cart.hide();
+	}
+});
