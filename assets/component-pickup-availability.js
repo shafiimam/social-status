@@ -20,7 +20,7 @@ if ( typeof PickupAvailability !== 'function' ) {
 					this.renderPreview(sectionInnerHTML);
 				})
 				.catch(e => {
-					console.log(e);
+					console.error(e);
 					if ( this.querySelector('button') ) {
 						this.querySelector('button').removeEventListener('click', this.onClickRefreshList);
 					}

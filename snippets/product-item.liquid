@@ -26,11 +26,11 @@
         assign sizes = '(max-width: 767px) 100px, 300px'
       endunless
 
-      if section.index == 1 and index <= 4
-        assign preload = true
-      else
-        assign preload = false
-      endif
+      # preload is opt-in from the calling section. Do NOT derive it from
+      # section.index here: any section before the product grid (this theme's
+      # collection template has subcollection_nav at index 1) makes that test
+      # false and lazy-loads the LCP image. Callers that render above the fold
+      # pass preload: true explicitly.
       
       unless blank_product
         render 'lazy-image', image: product.featured_media, preload: preload, sizes: sizes 

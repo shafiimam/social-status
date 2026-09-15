@@ -1,2 +1,51 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{%- comment -%}
+  Loads jQuery and Fancybox only on the templates that actually need them.
+
+  jQuery is required by:
+    - assets/rotating-slider.js  (sections/rotating-slider.liquid -> templates/index.json)
+    - Fancybox (it is a jQuery plugin)
+
+  Fancybox is required by:
+    - sections/besocial-locations.liquid  (data-fancybox gallery links)
+
+  IMPORTANT: Liquid `assign` does not leak between sections, so a section cannot
+  tell this layout snippet that it needs a library. If either section is added to
+  a new template in the theme editor, add that template below or the feature will
+  silently stop working. rotating-slider.js logs a console warning when jQuery is
+  missing, so check the browser console first if a slider or gallery goes dead.
+
+  Template strings are the full `template` value, e.g. "page.book-event" for
+  templates/page.book-event.json, and "index" for templates/index.json.
+{%- endcomment -%}
+
+{%- liquid
+  assign fancybox_templates = 'page.besocial,page.book-event,page.attend-event' | split: ','
+  assign jquery_only_templates = 'index' | split: ','
+
+  assign needs_fancybox = false
+  assign needs_jquery = false
+
+  if fancybox_templates contains template
+    assign needs_fancybox = true
+    assign needs_jquery = true
+  endif
+
+  if jquery_only_templates contains template
+    assign needs_jquery = true
+  endif
+-%}
+
+{%- comment -%} jQuery must come first: Fancybox and rotating-slider.js both depend on it. {%- endcomment -%}
+{%- if needs_jquery -%}
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+    defer
+  ></script>
+{%- endif -%}
+
+{%- if needs_fancybox -%}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{%- endif -%}

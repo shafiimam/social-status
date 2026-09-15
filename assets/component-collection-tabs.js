@@ -39,7 +39,6 @@ if ( typeof CollectionTabs !== 'function' ) {
           }
 
           panels.forEach(panel => {
-            console.log(this.querySelector('button'), panel.id);
             if (panel.id === targetPanelId) {
               panel.classList.add('active');
             }

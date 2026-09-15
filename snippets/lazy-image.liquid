@@ -16,7 +16,9 @@
   " 
   {% if sync %} decoding="sync" {% endif %}
   sizes="{%- if sizes -%} {{ sizes }} {%- else -%} 100vw {%- endif -%}"
-  {% unless preload %} loading="lazy" {% endunless %} class="lazy {{ class }}"
+  {% unless preload %} loading="lazy" {% endunless %}
+  {% if preload and fetchpriority %} fetchpriority="{{ fetchpriority }}" {% endif %}
+  class="lazy {{ class }}"
   {% if id %} id="responsive-background-{{ id }}" {% endif %}
   data-ratio="{{ image.aspect_ratio }}" 
   width="{{ image.width }}" height="{{ image.height }}"

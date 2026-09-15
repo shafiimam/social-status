@@ -27,6 +27,7 @@ if ( typeof CartForm !== 'function' ) {
 					qty.addEventListener('input', debounce(e=>{
 						e.preventDefault();
 						e.target.blur();
+						e
 						this.updateCartQty(item, parseInt(qty.value));
 					}, 500));
 					qty.addEventListener('click', (e)=>{
@@ -100,7 +101,7 @@ if ( typeof CartForm !== 'function' ) {
 
 				})
 				.catch(e => {
-					console.log(e);
+					console.error(e);
 					let alert = document.createElement('span');
 					alert.classList.add('alert', 'alert--error');
 					alert.textContent = KROWN.settings.locales.cart_general_error;

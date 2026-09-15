@@ -22,9 +22,10 @@
 
       if section.index == 1 and index == 0 
         assign preload = true
+        assign fetchpriority = 'high'
       endif
       
-      render 'lazy-image', image: media, id: image_id, sizes: '(max-width: 1024px) and (orientation: portrait) 100vw, (max-width: 768px) 100vw, 50vw', preload: preload
+      render 'lazy-image', image: media, id: image_id, sizes: '(max-width: 1024px) and (orientation: portrait) 100vw, (max-width: 768px) 100vw, 50vw', preload: preload, fetchpriority: fetchpriority
 
       if settings.show_preloader
         render 'preloader'

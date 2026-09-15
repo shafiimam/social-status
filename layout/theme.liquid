@@ -119,12 +119,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </noscript>
 
     <script src="{{ 'component-video-background.js' | asset_url }}" defer></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-      defer
-    ></script>
     <script src="{{ 'flickity.min.js' | asset_url }}" defer></script>
 
     {% render 'conditional-imports' %}
@@ -396,7 +390,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {%- endif -%}
     {%- endif -%}
 
-    <script src="{{ 'component-modal.js' | asset_url }}" defer></script>
     {{ 'component-modal.css' | asset_url | stylesheet_tag }}
 
     <div class="stacked-popups">{%- sections 'overlay-group' -%}</div>
@@ -404,29 +397,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
 
     {%- if settings.show_gotop -%}
-      <span
+      <button
+        type="button"
         id="go-top"
         class="main-go-top"
-        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
       >
         <span class="visually-hidden">{{ 'general.accessibility_labels.go_to_top' | t }}</span>
         <span class="main-go-top__icon" aria-hidden="true">
           {%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}
         </span>
         <span class="main-go-top__text" aria-hidden="true">{{ 'general.accessibility_labels.top' | t }}</span>
-      </span>
+      </button>
       <script>
-        window.addEventListener(
-          'scroll',
-          () => {
-            if (window.scrollY > 500) {
-              document.getElementById('go-top').classList.add('show');
-            } else {
-              document.getElementById('go-top').classList.remove('show');
-            }
-          },
-          { passive: true }
-        );
+        (function () {
+          var goTop = document.getElementById('go-top');
+          if (!goTop) return;
+
+          var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+          goTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+          });
+
+          window.addEventListener(
+            'scroll',
+            function () {
+              goTop.classList.toggle('show', window.scrollY > 500);
+            },
+            { passive: true }
+          );
+        })();
       </script>
     {%- endif -%}
 

@@ -1,7 +1,11 @@
 {{ 'section-latest-features.css' | asset_url | stylesheet_tag }}
 
-{% assign selected_blog = blogs[section.settings.blog] %}
-{% assign tabs_list = section.blocks | map: 'settings' | map: 'city_name' | uniq %}
+{%- liquid
+  assign selected_blog = blogs[section.settings.blog]
+  assign tabs_list = section.blocks | map: 'settings' | map: 'city_name' | uniq
+  assign max_articles = section.settings.max_articles | default: 5
+  assign today = 'now' | date: '%Y-%m-%d'
+-%}
 <div class="latest-features-section" id="events-section">
   <div class="header-row">
     <div class="title-column" style="max-width: {{ section.settings.main_title_width }}px;">
@@ -19,48 +23,55 @@
 
   <div class="tab-groups-container">
     <div class="tab-images-column">
-      {% if selected_blog %}
-        {% assign image_index = 0 %}
-        {% assign max_articles = section.settings.max_articles | default: 5 %}
-        {% for city in tabs_list %}
-          {% assign city_image_count = 0 %}
-          {% for article in selected_blog.articles %}
-            {% assign article_matches_city = false %}
-            {% assign is_future_event = false %}
-            
-            {% comment %} Extract event date and check if it's in the future {% endcomment %}
-            {% assign has_date_tag = false %}
-            {% for tag in article.tags %}
-              {% if tag contains "event-date::" %}
-                {% assign has_date_tag = true %}
-                {% assign event_date_raw = tag | remove: "event-date::" %}
-                {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
-                {% assign today = 'now' | date: "%Y-%m-%d" %}
-                {% if event_date_parsed >= today %}
-                  {% assign is_future_event = true %}
-                {% endif %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            
-            {% comment %} If no date tag found, treat as future event {% endcomment %}
-            {% unless has_date_tag %}
-              {% assign is_future_event = true %}
-            {% endunless %}
-            
-            {% for block in section.blocks %}
-              {% if block.settings.city_name == city %}
-                {% for tag in article.tags %}
-                  {% assign normalized_tag = tag | downcase | remove: '#' %}
-                  {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                  {% if normalized_tag == normalized_city_tag %}
-                    {% assign article_matches_city = true %}
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-            {% if article_matches_city and is_future_event and city_image_count < max_articles %}
+      {%- if selected_blog -%}
+        {%- assign image_index = 0 -%}
+        {%- for city in tabs_list -%}
+          {%- comment -%} Build this city's tag lookup once, not once per article {%- endcomment -%}
+          {%- liquid
+            assign city_tag_list = ''
+            for block in section.blocks
+              if block.settings.city_name == city
+                assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#'
+                assign city_tag_list = city_tag_list | append: '|' | append: normalized_city_tag | append: '|'
+              endif
+            endfor
+            assign city_image_count = 0
+          -%}
+          {%- for article in selected_blog.articles -%}
+            {%- if city_image_count >= max_articles -%}
+              {%- break -%}
+            {%- endif -%}
+            {%- liquid
+              assign article_matches_city = false
+              assign is_future_event = false
+              assign has_date_tag = false
+
+              for tag in article.tags
+                if tag contains 'event-date::'
+                  assign has_date_tag = true
+                  assign event_date = tag | remove: 'event-date::' | date: '%Y-%m-%d'
+                  if event_date >= today
+                    assign is_future_event = true
+                  endif
+                  break
+                endif
+              endfor
+
+              unless has_date_tag
+                assign is_future_event = true
+              endunless
+
+              if is_future_event
+                for tag in article.tags
+                  assign padded_tag = tag | downcase | remove: '#' | prepend: '|' | append: '|'
+                  if city_tag_list contains padded_tag
+                    assign article_matches_city = true
+                    break
+                  endif
+                endfor
+              endif
+            -%}
+            {%- if article_matches_city and is_future_event -%}
               <div
                 class="tab-image-item {% if image_index == 0 %}active{% endif %}"
                 data-tab-id="article-{{ article.id }}"
@@ -72,117 +83,84 @@
                   alt="{{ article.title }}"
                   width="{{ article.image.width }}"
                   height="{{ article.image.height }}"
+                  loading="lazy"
                 >
               </div>
-              {% assign image_index = image_index | plus: 1 %}
-              {% assign city_image_count = city_image_count | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-      {% endif %}
+              {%- liquid
+                assign image_index = image_index | plus: 1
+                assign city_image_count = city_image_count | plus: 1
+              -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endif -%}
     </div>
     <div class="tab-list-navs" data-tabs-hidden="{{ section.settings.show_tab_list }}">
-      {% if section.settings.show_tab_list %}
+      {%- if section.settings.show_tab_list -%}
         <div class="tabs-panel">
-          {% for tab in tabs_list %}
+          {%- for tab in tabs_list -%}
             <button class="tab-list-nav-item {% if forloop.first %}active{% endif %}" data-tab-group-title="{{ tab }}">
               <span class="tab-list-nav-item-title">{{ tab }}</span>
             </button>
-          {% endfor %}
+          {%- endfor -%}
         </div>
-      {% endif %}
+      {%- endif -%}
       <div class="tab-list-item-contents">
-        {% if selected_blog %}
-          {% for city in tabs_list %}
-            {% assign city_article_count = 0 %}
-            {% assign city_total_articles = 0 %}
-            {% assign first_city = tabs_list.first %}
-            {% assign max_articles = section.settings.max_articles | default: 5 %}
+        {%- if selected_blog -%}
+          {%- assign first_city = tabs_list.first -%}
+          {%- for city in tabs_list -%}
+            {%- comment -%} Build this city's tag lookup once, not once per article {%- endcomment -%}
+            {%- liquid
+              assign city_tag_list = ''
+              for block in section.blocks
+                if block.settings.city_name == city
+                  assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#'
+                  assign city_tag_list = city_tag_list | append: '|' | append: normalized_city_tag | append: '|'
+                endif
+              endfor
+              assign city_article_count = 0
+              assign city_total_articles = 0
+            -%}
 
-            {% comment %} First pass: count total articles for this city {% endcomment %}
-            {% for article in selected_blog.articles %}
-              {% assign article_matches_city = false %}
-              {% assign is_future_event = false %}
-              
-              {% comment %} Extract event date and check if it's in the future {% endcomment %}
-              {% assign has_date_tag = false %}
-              {% for tag in article.tags %}
-                {% if tag contains "event-date::" %}
-                  {% assign has_date_tag = true %}
-                  {% assign event_date_raw = tag | remove: "event-date::" %}
-                  {% assign event_date_parsed = event_date_raw | date: "%Y-%m-%d" %}
-                  {% assign today = 'now' | date: "%Y-%m-%d" %}
-                  {% if event_date_parsed >= today %}
-                    {% assign is_future_event = true %}
-                  {% endif %}
-                  {% break %}
-                {% endif %}
-              {% endfor %}
-              
-              {% comment %} If no date tag found, treat as future event {% endcomment %}
-              {% unless has_date_tag %}
-                {% assign is_future_event = true %}
-              {% endunless %}
-              
-              {% for block in section.blocks %}
-                {% if block.settings.city_name == city %}
-                  {% for tag in article.tags %}
-                    {% assign normalized_tag = tag | downcase | remove: '#' %}
-                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                    {% if normalized_tag == normalized_city_tag %}
-                      {% assign article_matches_city = true %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endfor %}
-              {% if article_matches_city and is_future_event %}
-                {% assign city_total_articles = city_total_articles | plus: 1 %}
-              {% endif %}
-            {% endfor %}
+            {%- comment -%} Single pass: render up to max_articles, keep counting for the View More button {%- endcomment -%}
+            {%- for article in selected_blog.articles -%}
+              {%- liquid
+                assign article_matches_city = false
+                assign is_future_event = false
+                assign has_date_tag = false
+                assign event_date = ''
 
-            {% comment %} Second pass: display articles up to limit {% endcomment %}
-            {% for article in selected_blog.articles %}
-              {% assign article_matches_city = false %}
-              {% assign event_date = '' %}
-              {% assign is_future_event = false %}
+                for tag in article.tags
+                  if tag contains 'event-date::'
+                    assign has_date_tag = true
+                    assign event_date = tag | remove: 'event-date::' | date: '%Y-%m-%d'
+                    if event_date >= today
+                      assign is_future_event = true
+                    endif
+                    break
+                  endif
+                endfor
 
-              {% comment %} Extract event date and check if it's in the future {% endcomment %}
-              {% assign has_date_tag = false %}
-              {% for tag in article.tags %}
-                {% if tag contains 'event-date::' %}
-                  {% assign has_date_tag = true %}
-                  {% assign event_date_raw = tag | remove: 'event-date::' %}
-                  {% assign event_date_parsed = event_date_raw | date: '%Y-%m-%d' %}
-                  {% assign event_date = event_date_parsed %}
-                  {% assign today = 'now' | date: '%Y-%m-%d' %}
-                  {% if event_date >= today %}
-                    {% assign is_future_event = true %}
-                  {% endif %}
-                  {% break %}
-                {% endif %}
-              {% endfor %}
-              
-              {% comment %} If no date tag found, treat as future event {% endcomment %}
-              {% unless has_date_tag %}
-                {% assign is_future_event = true %}
-              {% endunless %}
+                unless has_date_tag
+                  assign is_future_event = true
+                endunless
 
-              {% for block in section.blocks %}
-                {% if block.settings.city_name == city %}
-                  {% for tag in article.tags %}
-                    {% assign normalized_tag = tag | downcase | remove: '#' %}
-                    {% assign normalized_city_tag = block.settings.city_tag | downcase | remove: '#' %}
-                    {% if normalized_tag == normalized_city_tag %}
-                      {% assign article_matches_city = true %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endfor %}
+                if is_future_event
+                  for tag in article.tags
+                    assign padded_tag = tag | downcase | remove: '#' | prepend: '|' | append: '|'
+                    if city_tag_list contains padded_tag
+                      assign article_matches_city = true
+                      break
+                    endif
+                  endfor
+                endif
 
-              {% if article_matches_city and is_future_event and city_article_count < max_articles %}
-                {% assign city_article_count = city_article_count | plus: 1 %}
+                if article_matches_city and is_future_event
+                  assign city_total_articles = city_total_articles | plus: 1
+                endif
+              -%}
+              {%- if article_matches_city and is_future_event and city_article_count < max_articles -%}
+                {%- assign city_article_count = city_article_count | plus: 1 -%}
                 <div
                   class="tab-list-item-container {% if city == first_city %}active{% endif %} {% if city_article_count == 1 %}expanded{% endif %}"
                   data-tab-group-title="{{ city }}"
@@ -225,24 +203,27 @@
                       alt="{{ article.title }}"
                       width="{{ article.image.width }}"
                       height="{{ article.image.height }}"
+                      loading="lazy"
                     >
                   </div>
                 </div>
-              {% endif %}
-            {% endfor %}
+              {%- endif -%}
+            {%- endfor -%}
 
-            {% comment %} Add View More button if there are more articles than the limit {% endcomment %}
-            {% if city_total_articles > max_articles %}
+            {%- comment -%} Add View More button if there are more articles than the limit {%- endcomment -%}
+            {%- if city_total_articles > max_articles -%}
               <div
                 class="tab-list-item-container view-more-container {% if city == first_city %}active{% endif %}"
                 data-tab-group-title="{{ city }}"
               >
                 <div class="view-more-container">
                   <div class="tab-cta-container">
-                    {% assign view_more_url = selected_blog.url %}
-                    {% if city == 'Events' %}
-                      {% assign view_more_url = pages['attend-an-event'].url %}
-                    {% endif %}
+                    {%- liquid
+                      assign view_more_url = selected_blog.url
+                      if city == 'Events'
+                        assign view_more_url = pages['attend-an-event'].url
+                      endif
+                    -%}
                     <a href="{{ view_more_url }}" class="button button--solid button--with-icon">
                       <span class="view-more-text">{{ section.settings.view_more_label | default: 'View More' }}</span>
                       <span class="icon" aria-hidden="true">{%- render 'theme-symbols', icon: 'arrow-right' -%}</span>
@@ -250,11 +231,10 @@
                   </div>
                 </div>
               </div>
-            {% endif %}
+            {%- endif -%}
 
-            {% comment %} Show "No events found" if no articles matched this city {% endcomment %}
-            {% if city_article_count == 0 %}
-              {% assign first_city = tabs_list.first %}
+            {%- comment -%} Show "No events found" if no articles matched this city {%- endcomment -%}
+            {%- if city_article_count == 0 -%}
               <div
                 class="tab-list-item-container no-events {% if city == first_city %}active{% endif %}"
                 data-tab-group-title="{{ city }}"
@@ -273,9 +253,9 @@
                   </div>
                 </div>
               </div>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     </div>
   </div>
