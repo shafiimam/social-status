@@ -116,7 +116,7 @@
   object-fit: cover;
 }
 
-.events_slider_section h1 {
+.events_slider_section h2 {
   padding: 1rem;
   font-size: 1.2rem;
   margin: 0;
@@ -677,7 +677,7 @@
     text-align: center;
   }
   
-  .section_title h1 {
+  .section_title h2 {
     font-size: 2rem;
   }
   

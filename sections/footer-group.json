@@ -138,7 +138,7 @@
         "enable_follow_on_shop": true,
         "custom_background": "#1d1f20",
         "custom_text": "#ffffff",
-        "seo_h_tag": "h1"
+        "seo_h_tag": "h2"
       }
     }
   },

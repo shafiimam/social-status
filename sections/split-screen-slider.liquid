@@ -171,7 +171,19 @@
                   {%- endunless -%}
 
                   {%- unless block.settings.title == blank -%}
-                    <{{ block.settings.seo_h_tag }} class="title {{ section.settings.heading_size }}">{{ block.settings.title | escape }}</{{ block.settings.seo_h_tag }}>
+                    {%- liquid
+                      # One <h1> per page: only the first slide of the top-most
+                      # section may be an h1. Every other slide that is set to
+                      # h1 in the editor is demoted to h2 so slides 2..n never
+                      # add extra h1s (Lighthouse/SEO). Other tags are respected.
+                      assign heading_tag = block.settings.seo_h_tag
+                      if section.index == 1 and forloop.first
+                        assign heading_tag = 'h1'
+                      elsif heading_tag == 'h1'
+                        assign heading_tag = 'h2'
+                      endif
+                    -%}
+                    <{{ heading_tag }} class="title {{ section.settings.heading_size }}">{{ block.settings.title | escape }}</{{ heading_tag }}>
                   {%- endunless -%}
 
                   {%- unless block.settings.subtitle == blank -%}

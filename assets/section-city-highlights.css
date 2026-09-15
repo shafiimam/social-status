@@ -23,7 +23,7 @@
     text-transform: uppercase;
     text-align: center;
 }
-.city-highlight-card-content h1{
+.city-highlight-card-content h3{
     font-size: calc(30px / 60 * var(--base-headings-size) + 0px);
 }
 .city-highlight-card-content h2{
@@ -51,7 +51,7 @@
         height: 400px;
     }
     
-    .city-highlight-card-content h1 {
+    .city-highlight-card-content h3 {
         font-size: calc(24px / 60 * var(--base-headings-size) + 0px);
     }
     
@@ -71,7 +71,7 @@
         height: 300px;
     }
     
-    .city-highlight-card-content h1 {
+    .city-highlight-card-content h3 {
         font-size: calc(20px / 60 * var(--base-headings-size) + 0px);
     }
     
