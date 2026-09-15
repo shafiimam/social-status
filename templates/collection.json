@@ -70,7 +70,7 @@
         "show_collection_image": true,
         "mobile_overlay_background": "#131313",
         "mobile_overlay_text": "rgba(0,0,0,0)",
-        "collection_rows": 16,
+        "collection_rows": 8,
         "enable_filtering": true,
         "enable_sorting": true,
         "image_filter_layout": "onecolumn"

@@ -33,7 +33,7 @@
       # pass preload: true explicitly.
       
       unless blank_product
-        render 'lazy-image', image: product.featured_media, preload: preload, sizes: sizes 
+        render 'lazy-image', image: product.featured_media, preload: preload, fetchpriority: fetchpriority, sizes: sizes
       else
         assign no = index | modulo: 6 | plus: 1
         echo 'product-X' | replace: 'X', no | placeholder_svg_tag

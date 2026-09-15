@@ -51,14 +51,16 @@
           <div class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow box__collection" data-order="{{ forloop.index }}">
             <div class="site-box-content product-holder">
               {%- liquid
-                # First row of cards, above the fold on every desktop layout.
-                # Skip only when the collection image is shown -- that image is
-                # then the LCP element and already carries preload itself.
-                assign preload = false
-                unless section.settings.show_collection_image and collection.image
-                  assign preload = true
-                endunless
-                render 'product-item', product: product, product_collection: collection, index: forloop.index0, preload: preload
+                # First row of cards is above the fold on every layout. Always
+                # eager-load it: on mobile the first card (not the collection
+                # banner) is the LCP element even when show_collection_image is on.
+                # Only the very first card gets fetchpriority=high.
+                assign preload = true
+                assign fetchpriority = nil
+                if forloop.first
+                  assign fetchpriority = 'high'
+                endif
+                render 'product-item', product: product, product_collection: collection, index: forloop.index0, preload: preload, fetchpriority: fetchpriority
               -%}
             </div>
           </div>
