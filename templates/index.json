@@ -12,15 +12,31 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_F3KQd9": {
+          "type": "slide",
+          "name": "38a Fleece",
+          "settings": {
+            "tagline": "Introducing",
+            "title": "38a Fleece Collection",
+            "subtitle": "Made for the in-between. Relaxed fits, essential tones, and everyday comfort define the latest from 38a.",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/38a-1",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/38afleece.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_yc6QmM": {
           "type": "slide",
           "name": "JAIDE 11",
           "settings": {
             "tagline": "",
             "title": "JAIDE AIR JORDAN 11 LOW",
-            "subtitle": "",
-            "button_label": "ENTER THE DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "subtitle": "AVAILABLE FRIDAY, SEPT 18",
+            "button_label": "",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/jaide-x-air-jordan-11-low-retro",
             "button_label_2": "",
             "button_link_2": "",
             "video_object": "shopify://files/videos/JAIDE 11_9X16_2.mov",
@@ -47,6 +63,7 @@
         "slide_zdQw8a": {
           "type": "slide",
           "name": "DND BEACH HOUSE",
+          "disabled": true,
           "settings": {
             "tagline": "More than a destination, Beach House is a state of mind.",
             "title": "WELCOME TO THE BEACH HOUSE",
@@ -64,6 +81,7 @@
         "slide_pVXwXG": {
           "type": "slide",
           "name": "CODA ECHO POINTS",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "THE WHITAKER GROUP & PUMA SUEDE CODA \"ECHO POINTS\"",
@@ -80,6 +98,7 @@
         "slide_tN6FiN": {
           "type": "slide",
           "name": "38a",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "38a SUMMER CAPSULE",
@@ -89,23 +108,6 @@
             "button_label_2": "",
             "button_link_2": "shopify://collections/38a-1",
             "video_object": "shopify://files/videos/the38a promo.mov",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_F3KQd9": {
-          "type": "slide",
-          "name": "puma coda",
-          "disabled": true,
-          "settings": {
-            "tagline": "Introducing",
-            "title": "THE WHITAKER GROUP AND PUMA CODA",
-            "subtitle": "",
-            "button_label": "",
-            "button_link": "",
-            "button_label_2": "",
-            "button_link_2": "",
-            "video_object": "shopify://files/videos/1PUMACODA.mov",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -147,12 +149,12 @@
         }
       },
       "block_order": [
+        "slide_F3KQd9",
         "slide_yc6QmM",
         "slide_7z3WT4",
         "slide_zdQw8a",
         "slide_pVXwXG",
         "slide_tN6FiN",
-        "slide_F3KQd9",
         "slide_Ah7qQ6",
         "slide_tmCntp"
       ],
@@ -164,7 +166,7 @@
         "mobile_text": "#ffffff",
         "desktop_background": "#0c0c0c",
         "desktop_overlay": "#e7e7e7",
-        "mobile_height": "var(--window-height)",
+        "mobile_height": "75vh",
         "mobile_background": "rgba(0,0,0,0)",
         "heading_size": "h2"
       }
@@ -353,6 +355,7 @@
     },
     "featured_collection_FnMVbN": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.name",
       "settings": {
         "title": "38a",
@@ -380,24 +383,6 @@
           "patta-light-wash-denim-shorts-light-blue-denim",
           "patta-protect-yourself-tee-white",
           "patta-athletic-mesh-shorts-black"
-        ]
-      }
-    },
-    "product_masonry_EEcRh7": {
-      "type": "product-masonry",
-      "name": "AWAKE NY",
-      "settings": {
-        "title": "AWAKE NY",
-        "description": "<p>New York energy meets bold graphics, unexpected details, and a distinct approach to modern streetwear. </p><p></p><p></p>",
-        "image": "shopify://shop_images/awake_11d1ccf5-6332-4d97-abeb-a3ddf2f93cc3.jpg",
-        "image_caption": "",
-        "button_label": "shop",
-        "button_link": "shopify://collections/awake-ny",
-        "product_list": [
-          "awake-ny-mundial-crown-jersey-white",
-          "awake-ny-headcrack-champs-jersey-zip-hoodie-green",
-          "awake-ny-campus-shorts-heather-grey",
-          "awake-ny-collegiate-open-hem-sweatpant-navy"
         ]
       }
     },
@@ -446,6 +431,24 @@
         "ai_gen_block_796f0b7_LamTXL"
       ],
       "settings": {}
+    },
+    "product_masonry_EEcRh7": {
+      "type": "product-masonry",
+      "name": "AWAKE NY",
+      "settings": {
+        "title": "AWAKE NY",
+        "description": "<p>New York energy meets bold graphics, unexpected details, and a distinct approach to modern streetwear. </p><p></p><p></p>",
+        "image": "shopify://shop_images/awake_11d1ccf5-6332-4d97-abeb-a3ddf2f93cc3.jpg",
+        "image_caption": "",
+        "button_label": "shop",
+        "button_link": "shopify://collections/awake-ny",
+        "product_list": [
+          "awake-ny-mundial-crown-jersey-white",
+          "awake-ny-headcrack-champs-jersey-zip-hoodie-green",
+          "awake-ny-campus-shorts-heather-grey",
+          "awake-ny-collegiate-open-hem-sweatpant-navy"
+        ]
+      }
     },
     "featured_collection_GEVmtc": {
       "type": "featured-collection",
@@ -1008,8 +1011,8 @@
     "video_background_HYdxwr",
     "featured_collection_FnMVbN",
     "product_masonry_Fnqqrw",
-    "product_masonry_EEcRh7",
     "1788279469afffb629",
+    "product_masonry_EEcRh7",
     "featured_collection_GEVmtc",
     "rotating_slider_7yhr3n",
     "heading_KjpKfp",
