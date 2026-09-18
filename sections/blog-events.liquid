@@ -62,7 +62,7 @@
                                       <figure style="background-image: url({{ block.settings.image | image_url: width: 400 }})">
                                           <img class="" src="{{ block.settings.image | image_url: width: 400 }}" alt="{{block.settings.title}}" width="400" height="300">
                                       </figure>
-                                      <h1>{{block.settings.title}}</h1>
+                                      <h2>{{block.settings.title}}</h2>
                                     </a>
                                     {% if block.settings.book_event_1 != blank %}
                                         <div class="events_slider_book">
@@ -157,7 +157,7 @@
             
               {% if has_coming_articles %}
                   <div class="section_title">
-                      <h1 class="h1">{{ section.settings.events_coming }}</h1>
+                      <h2 class="h1">{{ section.settings.events_coming }}</h2>
                       <button class="button button--solid events-toggle-btn" type="button" data-toggle="events-view">
                           <span class="btn-text-show">{{ section.settings.btn_coming }}</span>
                           <span class="btn-text-hide" style="display: none;">{{ section.settings.btn_hide_coming | default: "Hide Upcoming Events" }}</span>
@@ -259,7 +259,7 @@
             <div class="container">
             
                 <div class="section_title">
-                    <h1>{{ section.settings.events_previous }}</h1>
+                    <h2>{{ section.settings.events_previous }}</h2>
                     <a class="button button--solid shown" href="" data-show=".previous_all" data-hide=".cols">
                         <span>{{ section.settings.btn_previous }}</span>
                     </a>
