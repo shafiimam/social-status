@@ -349,11 +349,11 @@
         </div>
         <div class="group">
             <label for="form-date">Date of the Event:</label>
-            <input type="text" id="form-date" name="contact[date]" placeholder="11/02/2022" required>
+            <input type="date" id="form-date" name="contact[date]" required>
         </div>
         <div class="group">
             <label for="form-locations">Locations:</label>
-            <select name="form-locations" id="form-locations" name="contact[location]">
+            <select id="form-locations" name="contact[location]" autocomplete="off">
                 {% for block in section.blocks %}
                     {% if block.type == "event_location" %}
                         <option value="{{ block.settings.short_name }}">{{ block.settings.short_name }}</option>
@@ -363,7 +363,7 @@
         </div>
         <div class="group">
             <label for="form-desc">Event Description:</label>
-            <textarea name="form-desc" id="form-desc" name="contact[body]" placeholder="Event description" rows="5" required></textarea>
+            <textarea id="form-desc" name="contact[body]" placeholder="Event description" rows="5" required></textarea>
         </div>
         <div class="form-bottom">
             <button class="btn-submit button button--solid" value="send" type="submit">Send</button>

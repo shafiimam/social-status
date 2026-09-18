@@ -27,7 +27,6 @@ if ( typeof MainHeader !== 'function' ) {
 						if ( e.keyCode == window.KEYCODES.RETURN ) {
 							elm.setAttribute('aria-expanded', 'true');
 							elmSidebar.show();
-							elmSidebar.querySelector('.site-close-handle').focus();
 						}
 					})
 				}
@@ -398,13 +397,39 @@ if ( typeof SidebarDrawer !== 'function' ) {
 			});
 		}
 
+		// Elements outside the drawer that get inert while it is open.
+		// window.inertElems only holds the announcement bar, which left the whole
+		// page behind the drawer tabbable and focus stranded on the opener.
+		_backgroundElems(){
+			return Array.from(document.body.children).filter(elm=>{
+				if ( elm === this ) return false;
+				if ( elm.contains(this) ) return false;
+				if ( elm.id === 'site-overlay' ) return false;
+				const tag = elm.tagName;
+				if ( tag === 'SCRIPT' || tag === 'STYLE' || tag === 'LINK' || tag === 'META' ) return false;
+				return true;
+			});
+		}
+
 		show(){
+			// Remember who opened us so focus can go back there on close (WCAG 2.4.3).
+			this._opener = document.activeElement;
 			this.style.display = 'block';
 			setTimeout(()=>{
 				this.classList.add('active');
 				window.inertElems.forEach(elm=>{
 					elm.setAttribute('inert', '');
 				});
+				this._inertedElems = this._backgroundElems();
+				this._inertedElems.forEach(elm=>{
+					if ( ! elm.hasAttribute('inert') ) {
+						elm.setAttribute('inert', '');
+						elm.setAttribute('data-drawer-inert', '');
+					}
+				});
+				// Move focus inside. Every open path lands here, not just keyboard.
+				const firstFocus = this.querySelector('[data-js-first-focus]') || this.querySelector('.site-close-handle');
+				if ( firstFocus ) firstFocus.focus();
 			}, 10);
 			this.siteOverlay.classList.add('active');
 			document.body.classList.add('sidebar-move');
@@ -429,6 +454,35 @@ if ( typeof SidebarDrawer !== 'function' ) {
 			window.inertElems.forEach(elm=>{
 				elm.removeAttribute('inert');
 			})
+			if ( this._inertedElems ) {
+				this._inertedElems.forEach(elm=>{
+					if ( elm.hasAttribute('data-drawer-inert') ) {
+						elm.removeAttribute('inert');
+						elm.removeAttribute('data-drawer-inert');
+					}
+				});
+				this._inertedElems = null;
+			}
+			// Return focus to the control that opened the drawer. The opener can be
+			// display:none by now (the mobile menu handle at desktop widths), and
+			// .focus() on a hidden element silently does nothing - which would drop
+			// focus to <body> and lose the user's place. Fall back to any visible
+			// control pointing at this drawer, then to the skip link.
+			if ( this._opener ) {
+				this._opener.focus();
+				if ( document.activeElement !== this._opener ) {
+					const fallback = Array.from(
+						document.querySelectorAll(`[aria-controls="${this.id}"]`)
+					).find(elm => elm.offsetParent !== null);
+					if ( fallback ) {
+						fallback.focus();
+					} else {
+						const skip = document.querySelector('.skip-to-content');
+						if ( skip ) skip.focus();
+					}
+				}
+			}
+			this._opener = null;
 			setTimeout(()=>{
 				this.style.display = 'none';
 			}, 250);

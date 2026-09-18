@@ -606,3 +606,35 @@ img.ryzo-product-image  {
   margin-right: 0;
   padding: 0;
 }
+
+/* ---------------------------------------------------------------------------
+   Keyboard focus visibility (WCAG 2.4.7)
+
+   The theme resets outlines in several places. Most pair the reset with a
+   :focus-visible replacement and are fine. These four remove the indicator
+   with nothing in its place:
+
+     theme.css:695            .button:focus           (every button, sitewide)
+     component-blog-item.css  .blog-tags-select select
+     component-lightbox.css   .basicLightboxClose
+     section-before-after.css .before-after__slider
+
+   Fixed here rather than in those files so the theme's own stylesheets stay
+   closer to upstream. :focus-visible means mouse users still see no ring.
+--------------------------------------------------------------------------- */
+
+.button:focus-visible,
+.blog-header .blog-tags-select select:focus-visible,
+.basicLightboxClose:focus-visible,
+.before-after .before-after__slider:focus-visible {
+  outline: 2px solid var(--main-text) !important;
+  outline-offset: 3px;
+}
+
+/* The lightbox close sits on top of imagery, so a plain dark ring can vanish
+   against a dark photo. Double ring keeps it visible on any backdrop. */
+.basicLightboxClose:focus-visible {
+  outline-color: #fff !important;
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.75);
+  border-radius: 2px;
+}
