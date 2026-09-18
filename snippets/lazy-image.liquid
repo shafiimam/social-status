@@ -1,26 +1,43 @@
+{%- liquid
+  # Responsive width ladder.
+  #
+  # Default ladder is for full-bleed images. Callers that render into a known
+  # box pass `widths` with a shorter ladder: every candidate the browser can
+  # never pick is dead bytes in the HTML, and on a 64-product collection grid
+  # each extra step costs ~93 B x 128 images.
+  #
+  # Product cards top out at 1280 device px (25vw of a 2560 viewport at DPR 2,
+  # or 50vw of a 430px phone at DPR 3 = 645), so they stop at 1280.
+  assign srcset_ladder = '360,420,480,640,840,1080,1280,1540,1860,2100,2460,2820' | split: ','
+  if widths
+    assign srcset_ladder = widths | split: ','
+  endif
+  assign src_width = 640
+  assign ladder_top = srcset_ladder | last | times: 1
+  if ladder_top < 640
+    assign src_width = ladder_top
+  endif
+-%}
 <img
-  src="{{ image | image_url: width: 640 }}" alt="{{ image.alt | escape }}"
+  src="{{ image | image_url: width: src_width }}" alt="{{ image.alt | escape }}"
   srcset="
-    {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w{%- endif -%} 
-    {%- if image.width >= 420 -%},{{ image | image_url: width: 420 }} 420w{%- endif -%} 
-    {%- if image.width >= 480 -%},{{ image | image_url: width: 480 }} 480w{%- endif -%} 
-    {%- if image.width >= 640 -%},{{ image | image_url: width: 640 }} 640w{%- endif -%} 
-    {%- if image.width >= 840 -%},{{ image | image_url: width: 840 }} 840w{%- endif -%} 
-    {%- if image.width >= 1080 -%},{{ image | image_url: width: 1080 }} 1080w{%- endif -%} 
-    {%- if image.width >= 1280 -%},{{ image | image_url: width: 1280 }} 1280w{%- endif -%} 
-    {%- if image.width >= 1540 -%},{{ image | image_url: width: 1540 }} 1540w{%- endif -%} 
-    {%- if image.width >= 1860 -%},{{ image | image_url: width: 1860 }} 1860w{%- endif -%} 
-    {%- if image.width >= 2100 -%},{{ image | image_url: width: 2100 }} 2100w{%- endif -%}
-    {%- if image.width >= 2460 -%},{{ image | image_url: width: 2460 }} 2460w{%- endif -%}
-    {%- if image.width >= 2820 -%},{{ image | image_url: width: 2820 }} 2820w{%- endif -%}
-  " 
+    {%- assign first_candidate = true -%}
+    {%- for w in srcset_ladder -%}
+      {%- assign wnum = w | times: 1 -%}
+      {%- if image.width >= wnum -%}
+        {%- unless first_candidate -%},{%- endunless -%}
+        {{- image | image_url: width: wnum }} {{ wnum }}w
+        {%- assign first_candidate = false -%}
+      {%- endif -%}
+    {%- endfor -%}
+  "
   {% if sync %} decoding="sync" {% endif %}
   sizes="{%- if sizes -%} {{ sizes }} {%- else -%} 100vw {%- endif -%}"
   {% unless preload %} loading="lazy" {% endunless %}
   {% if preload and fetchpriority %} fetchpriority="{{ fetchpriority }}" {% endif %}
   class="lazy {{ class }}"
   {% if id %} id="responsive-background-{{ id }}" {% endif %}
-  data-ratio="{{ image.aspect_ratio }}" 
+  data-ratio="{{ image.aspect_ratio }}"
   width="{{ image.width }}" height="{{ image.height }}"
   {% if image_alignment %} style="object-position: {{ image.presentation.focal_point }}" {% endif %}
   onload="this.classList.add('lazyloaded')"
