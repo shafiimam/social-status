@@ -3,33 +3,203 @@
   "blog": [],
   "collection": [
     {
-      "key": "seo_title",
+      "key": "banner_image",
       "namespace": "custom",
-      "name": "SEO Title",
-      "description": "On Page Seo Title",
+      "name": "Banner Image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "mobile_banner_image",
+      "namespace": "custom",
+      "name": "Mobile Banner image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collections",
+      "namespace": "custom",
+      "name": "Sub Collections (MAIN)",
+      "description": "",
+      "type": {
+        "name": "list.collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_3",
+      "namespace": "custom",
+      "name": "Sub Collection 3",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_1",
+      "namespace": "custom",
+      "name": "Sub Collection 1",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_2",
+      "namespace": "custom",
+      "name": "Sub Collection 2",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_4",
+      "namespace": "custom",
+      "name": "Sub Collection 4",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_5",
+      "namespace": "custom",
+      "name": "Sub Collection 5",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_6",
+      "namespace": "custom",
+      "name": "Sub Collection 6",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sub_collection_7",
+      "namespace": "custom",
+      "name": "Sub Collection 7",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "collection_homepage_title",
+      "namespace": "custom",
+      "name": "Collection Homepage Title",
+      "description": "",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "seo_description",
+      "key": "custom_image",
       "namespace": "custom",
-      "name": "SEO Description",
-      "description": "On Page Seo Description",
+      "name": "Custom Image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "faq_description",
+      "namespace": "custom",
+      "name": "FAQ Description",
+      "description": "The blurb on top of the FAQ section on the collection pages",
       "type": {
         "name": "rich_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "subcollections",
+      "key": "faq_title",
       "namespace": "custom",
-      "name": "subcollections",
+      "name": "FAQ Title",
       "description": "",
       "type": {
-        "name": "list.collection_reference",
-        "category": "REFERENCE"
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faq_q1",
+      "namespace": "custom",
+      "name": "FAQ Q1",
+      "description": "FAQ Question 1",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faq_a1",
+      "namespace": "custom",
+      "name": "FAQ A1",
+      "description": "FAQ Answer 1",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faq_q2",
+      "namespace": "custom",
+      "name": "FAQ Q2",
+      "description": "Collection FAQ Question 2",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faq_a2",
+      "namespace": "custom",
+      "name": "FAQ A2",
+      "description": "Collection FAQ Answer 2",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faq_q3",
+      "namespace": "custom",
+      "name": "FAQ Q3",
+      "description": "Collection FAQ Question 3",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "faq_a3",
+      "namespace": "custom",
+      "name": "FAQ A3",
+      "description": "Collection FAQ Answer 3",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
       }
     }
   ],
@@ -39,17 +209,38 @@
   "market": [],
   "order": [
     {
-      "key": "order_uuid",
-      "namespace": "AddressVerification",
-      "name": "Address Verification Order UUID",
-      "description": "UUID identifying the validation record created during checkout. Auto-copied from cart metafield to order metafield via cartToOrderCopyable capability.",
+      "key": "responses",
+      "namespace": "surveys",
+      "name": "Survey Responses",
+      "description": "Stores survey responses with survey ID and submission timestamp",
       "type": {
-        "name": "single_line_text_field",
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "responses_readable",
+      "namespace": "surveys",
+      "name": "Survey Responses (Simplified)",
+      "description": "Stores survey responses in a simplified text format",
+      "type": {
+        "name": "multi_line_text_field",
         "category": "TEXT"
       }
     }
   ],
-  "page": [],
+  "page": [
+    {
+      "key": "collection_homepage_collection",
+      "namespace": "custom",
+      "name": "Collection Homepage - Collection",
+      "description": "",
+      "type": {
+        "name": "collection_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "product": [
     {
       "key": "custom_product",
@@ -62,63 +253,63 @@
       }
     },
     {
-      "key": "shoe-size",
-      "namespace": "shopify",
-      "name": "Shoe size",
-      "description": "Used to define the size of footwear, e.g. Extra large (XL), 9.5",
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "rating",
+        "category": "RATING"
       }
     },
     {
-      "key": "size",
-      "namespace": "shopify",
-      "name": "Size",
-      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "number_integer",
+        "category": "NUMBER"
       }
     },
     {
-      "key": "footwear-material",
-      "namespace": "shopify",
-      "name": "Footwear material",
-      "description": "Specifies the type of material used in footwear, such as suede or rubber",
+      "key": "product_details",
+      "namespace": "custom",
+      "name": "Product Details",
+      "description": "short blurb for the product information ",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "rich_text_field",
+        "category": "TEXT"
       }
     },
     {
-      "key": "fabric",
-      "namespace": "shopify",
-      "name": "Fabric",
-      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
+      "key": "how_to_use",
+      "namespace": "custom",
+      "name": "How to Use",
+      "description": "how to use the product/write product how-to instructions here",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "rich_text_field",
+        "category": "TEXT"
       }
     },
     {
-      "key": "occasion-style",
-      "namespace": "shopify",
-      "name": "Occasion style",
-      "description": "Helps categorize products based on occasion, e.g. casual, dress",
+      "key": "product_ingredients",
+      "namespace": "custom",
+      "name": "Product Ingredients",
+      "description": "",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "rich_text_field",
+        "category": "TEXT"
       }
     },
     {
-      "key": "accessory-size",
-      "namespace": "shopify",
-      "name": "Accessory size",
-      "description": "Defines the size of an accessory product, such as one size or compact",
+      "key": "pre_order_timeline_disclaimer",
+      "namespace": "custom",
+      "name": "Pre-Order Timeline Disclaimer",
+      "description": "Pre-order: Expected to ship ______",
       "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
+        "name": "rich_text_field",
+        "category": "TEXT"
       }
     },
     {
@@ -132,80 +323,20 @@
       }
     },
     {
-      "key": "closure-type",
+      "key": "care-instructions",
       "namespace": "shopify",
-      "name": "Closure type",
-      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
+      "name": "Care instructions",
+      "description": "Provides guidance for product upkeep, such as hand wash or dry clean only",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "heel-height-type",
+      "key": "fabric",
       "namespace": "shopify",
-      "name": "Heel height type",
-      "description": "Defines the height of a shoe's heel, such as flat or high",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "toe-style",
-      "namespace": "shopify",
-      "name": "Toe style",
-      "description": "Defines the shape or design of a shoe's toe, such as open or pointed",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sneaker-style",
-      "namespace": "shopify",
-      "name": "Sneaker style",
-      "description": "Identifies the design or type of sneakers, such as athletic or high-top",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "age-group",
-      "namespace": "shopify",
-      "name": "Age group",
-      "description": "Defines the target age range for a product, such as adults or kids",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "target-gender",
-      "namespace": "shopify",
-      "name": "Target gender",
-      "description": "Identifies the intended gender for a product, such as female, male or unisex",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "taxcode",
-      "namespace": "avalara",
-      "name": "Avalara Tax Code",
-      "description": "Used only for Avalara integration.",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "headwear-features",
-      "namespace": "shopify",
-      "name": "Headwear features",
-      "description": "Highlights unique features of headwear, e.g. collapsible, versatile",
+      "name": "Fabric",
+      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
@@ -252,63 +383,33 @@
       }
     },
     {
-      "key": "percentage_off",
+      "key": "product_video",
       "namespace": "custom",
-      "name": "percentage off",
+      "name": "Product Video",
       "description": "",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "age",
-      "namespace": "custom",
-      "name": "Age",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "gender",
-      "namespace": "custom",
-      "name": "Gender",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "shoe-features",
-      "namespace": "shopify",
-      "name": "Shoe features",
-      "description": "Identifies special characteristics of shoes, such as waterproof or lightweight",
-      "type": {
-        "name": "list.metaobject_reference",
+        "name": "list.file_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "launchId",
-      "namespace": "eqlLaunchesApp",
-      "name": "EQL Launch ID",
-      "description": null,
+      "key": "video",
+      "namespace": "custom",
+      "name": "Video",
+      "description": "",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "file_reference",
+        "category": "REFERENCE"
       }
     },
     {
-      "key": "launchType",
-      "namespace": "eqlLaunchesApp",
-      "name": "EQL Launch Type",
+      "key": "group_data",
+      "namespace": "vkcl",
+      "name": "variant king combined listing group data",
       "description": null,
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "json",
+        "category": "JSON"
       }
     }
   ],
@@ -424,35 +525,125 @@
       }
     },
     {
-      "key": "taxcode",
-      "namespace": "avalara",
-      "name": "Avalara Tax Code",
-      "description": "Used only for Avalara integration.",
+      "key": "preorder_count",
+      "namespace": "restockrocket_production",
+      "name": "Preorder Count",
+      "description": "Current preorder count for the variant",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "number_integer",
+        "category": "NUMBER"
       }
-    }
-  ],
-  "shop": [
+    },
     {
-      "key": "merchant_id",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Merchant ID",
-      "description": "Currently Linked Merchant Center ID",
+      "key": "preorder_max_count",
+      "namespace": "restockrocket_production",
+      "name": "Preorder Max Count",
+      "description": "Maximum preorder count allowed for the variant",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "shipping_text",
+      "namespace": "restockrocket_production",
+      "name": "Shipping Text",
+      "description": "Custom shipping text for the variant",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "show_store_widget_app_embed_block",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Show Store Widget App Embed Block",
-      "description": "Indicates if the store widget app embed block should be shown.",
+      "key": "market_preorder_count",
+      "namespace": "restockrocket_production",
+      "name": "Market Preorder Count",
+      "description": "Market-specific preorder counts for the variant",
       "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "market_preorder_max_count",
+      "namespace": "restockrocket_production",
+      "name": "Market Preorder Max Count",
+      "description": "Market-specific preorder max counts for the variant",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "market_shipping_text",
+      "namespace": "restockrocket_production",
+      "name": "Market Shipping Text",
+      "description": "Market-specific shipping text for the variant",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    }
+  ],
+  "shop": [
+    {
+      "key": "settings",
+      "namespace": "restockrocket_production",
+      "name": "Settings",
+      "description": "Settings for the app",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "selling_plans",
+      "namespace": "restockrocket_production",
+      "name": "Selling Plans",
+      "description": "Settings and variant IDs for preorder offers",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "out_of_stock_variant_ids",
+      "namespace": "restockrocket_production",
+      "name": "Out of Stock Variant IDs",
+      "description": "List of variant IDs that are currently out of stock",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "in_stock_variant_ids",
+      "namespace": "restockrocket_production",
+      "name": "In Stock Variant IDs",
+      "description": "List of variant IDs that are currently in stock",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "preorder_variant_ids",
+      "namespace": "restockrocket_production",
+      "name": "Preorder Variant IDs",
+      "description": "List of variant IDs that are available for preorder",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "freegifts_custom_data",
+      "namespace": "secomapp",
+      "name": "BOGOS custom_data (Do not edit)",
+      "description": null,
+      "type": {
+        "name": "json",
+        "category": "JSON"
       }
     },
     {
@@ -473,6 +664,16 @@
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
+      }
+    },
+    {
+      "key": "post_purchase_content",
+      "namespace": "checkout_plus",
+      "name": "Post-Purchase Content",
+      "description": "Configuration for multi-type post-purchase experiences (upsells, CTAs, surveys).",
+      "type": {
+        "name": "json",
+        "category": "JSON"
       }
     }
   ]
