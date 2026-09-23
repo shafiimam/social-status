@@ -18,7 +18,7 @@
       }
     },
     "store_header_bnner_38J47n": {
-      "type": "store-header-bnner",
+      "type": "store-header-banner",
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/TB_acb88b1b-036e-4fc2-9ef5-1449771fa29e.jpg",

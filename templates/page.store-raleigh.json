@@ -18,7 +18,7 @@
       }
     },
     "store_header_bnner_38J47n": {
-      "type": "store-header-bnner",
+      "type": "store-header-banner",
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg",

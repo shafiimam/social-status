@@ -18,7 +18,7 @@
       }
     },
     "store_header_bnner_38J47n": {
-      "type": "store-header-bnner",
+      "type": "store-header-banner",
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/Pitt2_085331fa-da2d-4887-b44f-983dfa122311.jpg",
