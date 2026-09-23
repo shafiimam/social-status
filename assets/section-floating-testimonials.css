@@ -58,14 +58,6 @@
   z-index: 2;
   pointer-events: none;
 }
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 .vignette-left {
   left: 0;
   /* backgrsound: linear-gradient(to right, #fff 70%, transparent); */
@@ -88,5 +80,90 @@
   }
   .floating-testimonials-section__testimonial {
     width: 350px;
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   Marquee rows (replaces two Flickity instances)
+
+   The track holds the block set twice and translates 0 -> -50%. Because the two
+   halves are identical, the frame at -50% matches the frame at 0%, so the reset
+   is invisible and there is no jump to conceal. The optional seam fade is a
+   deliberate beat on top of that, not a cover-up — it's a theme setting.
+
+   Row 2 runs in reverse at 1.25x the duration so the rows never lock in step.
+--------------------------------------------------------------------------- */
+
+.floating-testimonials-section {
+  --ft-cycle: 70s;
+}
+
+.floating-testimonials-section__row {
+  overflow: hidden;
+}
+
+.floating-testimonials-section__testimonial-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: ft-drift var(--ft-cycle) linear infinite;
+}
+
+.floating-testimonials-section__set {
+  display: flex;
+}
+
+.floating-testimonials-section__testimonial-track--reverse {
+  animation-direction: reverse;
+  animation-duration: calc(var(--ft-cycle) * 1.25);
+}
+
+.floating-testimonials-section--seam-fade .floating-testimonials-section__testimonial-track {
+  animation-name: ft-drift, ft-seam;
+  animation-duration: var(--ft-cycle), var(--ft-cycle);
+  /* ft-seam starts at opacity 0 (the loop point sits on the 0%/100% boundary, which
+     is where the dip has to be). Without this the section would fade UP from
+     invisible on first paint. A negative delay starts the cycle past the fade-in,
+     so the row is fully visible the instant the page renders. */
+  animation-delay: calc(var(--ft-cycle) * -0.1), calc(var(--ft-cycle) * -0.1);
+}
+
+.floating-testimonials-section--seam-fade
+  .floating-testimonials-section__testimonial-track--reverse {
+  animation-duration: calc(var(--ft-cycle) * 1.25), calc(var(--ft-cycle) * 1.25);
+  animation-direction: reverse, normal;
+  animation-delay: calc(var(--ft-cycle) * -0.125), calc(var(--ft-cycle) * -0.125);
+}
+
+/* Let people stop it to actually read a quote — and keyboard users too. */
+.floating-testimonials-section__row:hover .floating-testimonials-section__testimonial-track,
+.floating-testimonials-section__row:focus-within .floating-testimonials-section__testimonial-track {
+  animation-play-state: paused;
+}
+
+@keyframes ft-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes ft-seam {
+  0%   { opacity: 0; }
+  7%   { opacity: 1; }
+  93%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Continuous horizontal motion is a vestibular trigger. Stop dead, drop the
+   duplicate set, and leave a row the visitor can scroll themselves. */
+@media (prefers-reduced-motion: reduce) {
+  .floating-testimonials-section__testimonial-track {
+    animation: none;
+  }
+  .floating-testimonials-section__set[aria-hidden="true"] {
+    display: none;
+  }
+  .floating-testimonials-section__row {
+    overflow-x: auto;
   }
 }

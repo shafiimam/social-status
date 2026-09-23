@@ -5,7 +5,7 @@
       <div class="floating-testimonials-section__testimonial-header">
         {% if block.settings.avatar != blank %}
           <img
-            src="{{ block.settings.avatar | img_url: '100x100' }}"
+            src="{{ block.settings.avatar | image_url: width: 100, height: 100 }}"
             alt="{{ block.settings.name }}"
             class="w-10 h-10 rounded-full object-cover"
             width="50"
@@ -18,7 +18,10 @@
     </div>
   {% endfor %}
 {% endcapture %}
-<section class="floating-testimonials-section">
+<section
+  class="floating-testimonials-section{% if section.settings.seam_fade %} floating-testimonials-section--seam-fade{% endif %}"
+  style="--ft-cycle: {{ section.settings.cycle_seconds | default: 70 }}s;"
+>
   <div class="floating-testimonials-section__inner">
     <div class="floating-testimonials-section__header">
       <h2 class="h1 heading text-center">{{ section.settings.section_title }}</h2>
@@ -27,41 +30,26 @@
     <div class="floating-testimonials-section__testimonial-container">
       <div class="floating-testimonials-section__right-overlay"></div>
       <div class="floating-testimonials-section__left-overlay"></div>
-      <div
-        class="floating-testimonials-section__testimonial-track"
-        data-flickity='
-          {
-            "wrapAround": true,
-            "pauseAutoPlayOnHover": false,
-            "prevNextButtons": false,
-            "pageDots": false,
-            "freeScroll": true,
-            "freeScrollFriction": 0.01,
-            "cellAlign": "left",
-            "autoPlay": 3000
-          }
-        '
-      >
-        {{ testimonial_content }}
+
+      {%- comment -%}
+        Each row is a CSS marquee, not a slider. The track holds the same set twice and
+        translates from 0 to -50%, so the frame it resets to is identical to the frame it
+        started from and the loop is invisible. The second set is decorative duplication,
+        so it carries aria-hidden to keep screen readers from reading every quote twice.
+      {%- endcomment -%}
+
+      <div class="floating-testimonials-section__row">
+        <div class="floating-testimonials-section__testimonial-track">
+          <div class="floating-testimonials-section__set">{{ testimonial_content }}</div>
+          <div class="floating-testimonials-section__set" aria-hidden="true">{{ testimonial_content }}</div>
+        </div>
       </div>
-      <div
-        class="floating-testimonials-section__testimonial-track "
-        data-flickity='
-          {
-            "wrapAround": true,
-            "pauseAutoPlayOnHover": false,
-            "prevNextButtons": false,
-            "pageDots": false,
-            "freeScroll": true,
-            "freeScrollFriction": 0.01,
-            "cellAlign": "right",
-            "autoPlay": 4000,
-            "rightToLeft": true
-          }
-        '
-      >
-        {%- comment -%} Duplicate blocks for infinite illusion {%- endcomment -%}
-        {{ testimonial_content }}
+
+      <div class="floating-testimonials-section__row">
+        <div class="floating-testimonials-section__testimonial-track floating-testimonials-section__testimonial-track--reverse">
+          <div class="floating-testimonials-section__set">{{ testimonial_content }}</div>
+          <div class="floating-testimonials-section__set" aria-hidden="true">{{ testimonial_content }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -70,6 +58,24 @@
 {
   "name": "Floating Testimonials",
   "settings": [
+    {
+      "type": "range",
+      "id": "cycle_seconds",
+      "label": "Seconds per full loop",
+      "info": "Higher is slower. A card returns to the same spot once per loop.",
+      "min": 20,
+      "max": 140,
+      "step": 5,
+      "unit": "s",
+      "default": 70
+    },
+    {
+      "type": "checkbox",
+      "id": "seam_fade",
+      "label": "Fade at the loop point",
+      "info": "Dims the row as the loop closes and lifts it as it reopens.",
+      "default": true
+    },
     {
       "type": "text",
       "id": "section_title",
