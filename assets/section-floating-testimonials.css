@@ -142,6 +142,19 @@
   animation-play-state: paused;
 }
 
+/* With the seam fade on, pausing BOTH animations can freeze the row mid-dip —
+   rest the cursor at the wrong moment and the testimonials sit there invisible.
+   animation-play-state takes a list, so hold the drift and let the opacity keep
+   running to full. */
+.floating-testimonials-section--seam-fade
+  .floating-testimonials-section__row:hover
+  .floating-testimonials-section__testimonial-track,
+.floating-testimonials-section--seam-fade
+  .floating-testimonials-section__row:focus-within
+  .floating-testimonials-section__testimonial-track {
+  animation-play-state: paused, running;
+}
+
 @keyframes ft-drift {
   from { transform: translate3d(0, 0, 0); }
   to   { transform: translate3d(-50%, 0, 0); }
