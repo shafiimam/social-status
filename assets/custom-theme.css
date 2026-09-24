@@ -638,3 +638,12 @@ img.ryzo-product-image  {
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.75);
   border-radius: 2px;
 }
+
+/* section-header.css:839 kills the ring on the drawer's search input with no
+   replacement. This matters more since the drawer fix: opening search now sends
+   focus straight to this field, so without a ring the user lands nowhere visible.
+   Inset, because the field sits flush against the drawer edge. */
+.site-nav form[role="search"] input[type="search"]:focus-visible {
+  outline: 2px solid var(--main-text) !important;
+  outline-offset: -3px;
+}
