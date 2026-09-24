@@ -1,37 +1,45 @@
 # Social Status — Sprint Summary (Week 2)
 
 **Developer:** Shafi
-**Week ending:** September 18, 2026
+**Week ending:** September 19, 2026
 **Hours:** 10
 
-All work is on the development theme. Nothing has been published to the live store yet.
+All work sits on a development theme. **Nothing has been published to the live store yet** — the
+live site is unchanged and was re-checked this morning to confirm that.
 
 ---
 
 ## Site speed
 
-| Item | Result |
-|---|---|
-| Replaced 63 repeated cart icons with a single shared copy | −38 KB per collection page |
-| Trimmed oversized image options on product cards | −24 KB per collection page |
-| (Carried over from last week) header and menu cleanup | −43 KB on every page |
+Collection pages carry the most weight on the site, so that's where the work went.
 
-**Collection pages are now 722 KB → 656 KB of page code, a 9% reduction.** Product images
-themselves are unchanged — this is all code weight, which is what slows phones down most.
+| Change | Saving |
+|---|---|
+| Replaced 63 repeated cart icons with one shared copy | −38 KB per collection page |
+| Removed image size options the browser can never use | −24 KB per collection page |
+| Header and menu cleanup (carried over from last week) | −43 KB on every page |
+
+**Collection pages go from 722 KB to 656 KB of page code — a 9% reduction.** Product images are
+untouched; this is all code weight, which is the part that slows phones down most.
+
+One note on the second item: the original plan was to trim the largest image sizes. On measuring,
+those were never being generated in the first place, so that would have saved nothing. The real
+waste was three near-identical small sizes competing with each other. Same outcome, different fix.
 
 ---
 
 ## Accessibility
 
-- **Cart, search and menu drawers now trap keyboard focus correctly.** Previously, opening the
-  cart with a keyboard left the cursor stranded on the page behind it, and closing it lost the
-  user's place entirely. This was listed in the June ADA report as a partial issue; it turned out
-  to be a complete one.
-- Restored the visible focus outline on buttons, the lightbox close button and two form controls
-  where it had been switched off with no replacement.
-- Fixed the event booking form, where two fields were submitting under the wrong names and so
-  weren't reaching the notification email. The form isn't currently live on any page, so no
-  bookings were lost — it's fixed ahead of being switched on.
+- **Cart, search and menu drawers now hold keyboard focus properly.** Previously, opening the cart
+  with a keyboard left the cursor stranded on the page behind it, and closing it lost the user's
+  place entirely. The June ADA report listed this as a partial issue; on inspection it was a
+  complete one.
+- **Restored the visible focus outline in five places** where it had been switched off with no
+  replacement — including the search box inside the drawer, which matters more now that opening
+  search puts the cursor straight into that field.
+- **Fixed the event booking form**, where two fields were submitting under the wrong names and so
+  never reached the notification email. The form isn't live on any page yet, so no bookings were
+  lost — it's fixed ahead of being switched on.
 
 ---
 
@@ -40,34 +48,49 @@ themselves are unchanged — this is all code weight, which is what slows phones
 **Every page now has exactly one main heading.** Previously the homepage had eight, collection
 pages five, and every other page at least five.
 
-The main cause was a single setting: the footer column titles (*Categories*, *Quick Links*,
-*Follow Us*) were set to the top heading level, which put four of them on **every page of the
-site**. Fixed once, applied everywhere. Nine section headings were also stepped down a level —
-no visual change, the text is the same size as before.
+Most of it traced to a single setting: the footer column titles — *Categories*, *Quick Links*,
+*Follow Us* — were set to the top heading level, which placed four of them on **every page of the
+site**. Fixed once, applied everywhere. Nine section headings were also stepped down a level, with
+no visual change; the text is the same size as before.
 
 ---
 
-## Client decision document
+## Third-party tools — reviewed and resolved
 
-Produced an inventory of every third-party tool running on the storefront: **20 vendors, 44
-requests on a single page.** Written as a set of keep/remove decisions rather than a technical
-report.
+Produced an inventory of every third-party tool on the storefront: **20 vendors, 44 requests on a
+single page.** Written as keep/remove decisions rather than a technical report.
 
-The technical owner has since reviewed it. Ten tools are confirmed keepers, one (OrderLogic) is
-being uninstalled, and **three open questions remain** — all in one category: a second tool doing
-a job another tool already does.
+Both reviews are now in. **Eleven tools are confirmed keepers. Four are cleared for removal:**
 
-- **Email marketing** — Klaviyo is the one in use. Omnisend and Mailchimp also load.
-- **Support chat** — Gorgias is the one in use. Re:amaze also loads, and appears to do nothing.
-- **Session recording** — Hotjar and Clarity both record every session. One would do.
+| Tool | Job | Weight today |
+|---|---|---|
+| Hotjar | Session recording (Clarity does the same job, and stays) | 254 KB |
+| Omnisend | Email marketing (Klaviyo does this) | 135 KB |
+| Mailchimp | Email marketing (Klaviyo does this) | 1 file |
+| OrderLogic | Purchase limits | 3 files |
 
-None of these are urgent, and none should be switched off without checking what's connected to
-them first — a marketing tool can hold live contact lists even when it looks idle.
+**That's roughly 390 KB and 8 requests off every page of the site — and it needs no development
+work.** None of the four has any code in the theme; all four are removed by uninstalling an app or
+deleting a tag.
+
+Worth putting next to the sprint numbers: the ten hours of theme work saved 66 KB on collection
+pages. Removing four tools nobody uses saves close to six times that, for free. If there's a choice
+about where the next block of hours goes, this is the honest comparison.
+
+Two practical notes. **Hotjar is not a Shopify app** — it runs through Google Tag Manager, so
+looking for it in the app list won't find it; that removal sits with whoever holds GTM access. And
+before either email tool is uninstalled, someone should export contact lists and confirm nothing is
+still scheduled inside them — that isn't recoverable afterwards.
+
+One question is still open: **Re:amaze**, an older support chat tool. It loads on every page and
+appears to do nothing, with Gorgias handling support. Likely a leftover, but worth a quick
+confirmation before it's switched off.
 
 ## Notes for planning
 
-- Two stylesheets were locked by a running process all week and could not be checked. Small
-  follow-up, needs doing.
-- One duplicate heading remains on product pages. I left it deliberately rather than guess —
-  it needs a check on a real phone, which I can do next session.
-- **Nothing is live.** All ten hours are on the development theme, awaiting review and publish.
+- **Nothing is live.** All ten hours are on a development theme. Publishing is a separate step and
+  needs a short verification pass on a real phone first.
+- One duplicate heading remains on product pages. I left it deliberately rather than guess — it
+  needs checking at phone screen width, which is the first item next session.
+- Two stylesheets that couldn't be checked mid-week have now been reviewed; one contained the
+  search-box issue listed above, now fixed.
