@@ -18,6 +18,27 @@
     </div>
   {% endfor %}
 {% endcapture %}
+
+{%- comment -%}
+  The marquee translates by exactly -50%, so each half of the track must be at
+  least as wide as the viewport or a gap opens at the trailing edge. Card width
+  is 420px + 24px margin. With six testimonials one pass is already ~2664px and
+  reps stays 1, but if the client trims the list to two or three this keeps the
+  row full instead of silently breaking.
+{%- endcomment -%}
+{%- liquid
+  assign card_width = 444
+  assign block_count = section.blocks.size
+  if block_count < 1
+    assign block_count = 1
+  endif
+  assign pass_width = block_count | times: card_width
+  assign reps = 2560 | divided_by: pass_width | plus: 1
+-%}
+{%- capture testimonial_set -%}
+  {%- for i in (1..reps) -%}{{ testimonial_content }}{%- endfor -%}
+{%- endcapture -%}
+
 <section
   class="floating-testimonials-section{% if section.settings.seam_fade %} floating-testimonials-section--seam-fade{% endif %}"
   style="--ft-cycle: {{ section.settings.cycle_seconds | default: 70 }}s;"
@@ -40,15 +61,15 @@
 
       <div class="floating-testimonials-section__row">
         <div class="floating-testimonials-section__testimonial-track">
-          <div class="floating-testimonials-section__set">{{ testimonial_content }}</div>
-          <div class="floating-testimonials-section__set" aria-hidden="true">{{ testimonial_content }}</div>
+          <div class="floating-testimonials-section__set">{{ testimonial_set }}</div>
+          <div class="floating-testimonials-section__set" aria-hidden="true">{{ testimonial_set }}</div>
         </div>
       </div>
 
       <div class="floating-testimonials-section__row">
         <div class="floating-testimonials-section__testimonial-track floating-testimonials-section__testimonial-track--reverse">
-          <div class="floating-testimonials-section__set">{{ testimonial_content }}</div>
-          <div class="floating-testimonials-section__set" aria-hidden="true">{{ testimonial_content }}</div>
+          <div class="floating-testimonials-section__set">{{ testimonial_set }}</div>
+          <div class="floating-testimonials-section__set" aria-hidden="true">{{ testimonial_set }}</div>
         </div>
       </div>
     </div>

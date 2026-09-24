@@ -1,6 +1,6 @@
 {{ 'section-flagship-programs.css' | asset_url | stylesheet_tag }}
 
-{% assign flagshipImage = section.settings.flagship_image | img_url: 'master' %}
+{% assign flagshipImage = section.settings.flagship_image | image_url: width: 5760 %}
 {% assign alpha_value = section.settings.overlay_opacity | divided_by: 100.00 %}
 <div id="flagship_programs" class="bgImg" style="background-image: url('{{ flagshipImage }}')">
   <div 

@@ -14,7 +14,7 @@
           {% if block.settings.image != blank %}
             <!-- Desktop -->
             <div {{ block.shopify_attributes }} class="city-item">
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.city_name | escape }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" loading="lazy">
+                <img src="{{ block.settings.image | image_url: width: 5760 }}" alt="{{ block.settings.city_name | escape }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" loading="lazy">
                 <div class="city-info">
                   <span class="city-name">{{ block.settings.city_name }}</span>
                   <span class="city-name-short">{{ block.settings.city_name_short }}</span>
@@ -51,8 +51,8 @@
               
               {% if gallery_image != blank %}
                 <div class="gallery-item slide">
-                  <a href="{{ gallery_image | img_url: 'master' }}" data-fancybox="gallery-{{ block.id }}">
-                    <img src="{{ gallery_image | img_url: 'master' }}" alt="{{ gallery_description | default: gallery_image.alt | escape }}" width="{{ gallery_image.width }}" height="{{ gallery_image.height }}" loading="lazy">
+                  <a href="{{ gallery_image | image_url: width: 5760 }}" data-fancybox="gallery-{{ block.id }}">
+                    <img src="{{ gallery_image | image_url: width: 5760 }}" alt="{{ gallery_description | default: gallery_image.alt | escape }}" width="{{ gallery_image.width }}" height="{{ gallery_image.height }}" loading="lazy">
                     {% if gallery_description != blank %}
                       <div class="gallery-info">
                         <p class="gallery-description">{{ gallery_description }}</p>

@@ -14,7 +14,7 @@
       <div class="product-masonry__content-media">
         {% if section.settings.image %}
           <div class="product-masonry__content-media-image">
-            <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
+            <img src="{{ section.settings.image | image_url: width: 5760 }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
             <div class="product-masonry__content-media-image-caption_container">
               {% if section.settings.image_caption %}
                 <h2 class="product-masonry__content-media-image-caption h2 yantramanav-bold">
