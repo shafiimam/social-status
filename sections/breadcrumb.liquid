@@ -51,6 +51,7 @@
             {%- if article -%}<a href="{{ blog.url }}">{%- endif -%}
             {{ 'general.breadcrumb.blog' | t }}
             {%- if article -%}</a>{%- endif -%}
+          </span>
         {% else %}
           <span class="breadcrumb__separator">/</span>
           <span class="{%- if article -%}breadcrumb__link {%- else -%} breadcrumb__current {%- endif -%}">

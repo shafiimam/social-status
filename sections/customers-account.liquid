@@ -1,8 +1,5 @@
 {%- capture date_format -%} {{ 'general.date_format.month_day_year' | t }} {%- endcapture -%}
 {% assign customer_avatar = customer.metafields.custommer_accounts_system.photo %}
-{% assign customer_fname = customer.first_name | downcase | split: ' ' | first %}
-{% assign customer_lname = customer.last_name | downcase | split: ' ' | first %}
-{% assign customer_initials = customer_fname | slice: 0 | append: customer_lname | slice: 0 %}
 <div id="section-account" class="site-box-container container--fullscreen box--can-stick">
   <div
     class="site-box box--big lap--box--small-fl-auto box--typo-big box--lots-of-text box--top-align box--column-flow box__heading box--add-hr account-action-container"
