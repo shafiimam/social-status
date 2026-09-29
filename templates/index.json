@@ -12,6 +12,38 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_zdQw8a": {
+          "type": "slide",
+          "name": "DND ATL FASHION WEEK",
+          "settings": {
+            "tagline": "",
+            "title": "ADIDAS DND ATL FASHION WEEK PACK",
+            "subtitle": "",
+            "button_label": "ENTER THE DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/DND3.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_pVXwXG": {
+          "type": "slide",
+          "name": "TWG X NEWBALANCE 2010",
+          "settings": {
+            "tagline": "",
+            "title": "THE WHITAKER GROUP X NEW BALANCE 2010 \"OSTRICH\"",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/products/twg-new-balance-2010",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/nb3.png",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
         "slide_F3KQd9": {
           "type": "slide",
           "name": "38a Fleece",
@@ -31,6 +63,7 @@
         "slide_yc6QmM": {
           "type": "slide",
           "name": "JAIDE 11",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "JAIDE AIR JORDAN 11 LOW",
@@ -40,6 +73,22 @@
             "button_label_2": "",
             "button_link_2": "",
             "video_object": "shopify://files/videos/JAIDE 11_9X16_2.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_Ah7qQ6": {
+          "type": "slide",
+          "name": "PACE",
+          "settings": {
+            "tagline": "",
+            "title": "PACE",
+            "subtitle": "Built from heritage and shaped by culture, PACE brings Brazilian and Okinawan influences into a distinctly modern design language.",
+            "button_label": "Shop the collection",
+            "button_link": "shopify://collections/pace",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/PACE_10a6bdb0-5cb5-4c94-83bf-871ee2652826.mp4",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -60,41 +109,6 @@
             "hide_text_mobile": false
           }
         },
-        "slide_zdQw8a": {
-          "type": "slide",
-          "name": "DND BEACH HOUSE",
-          "disabled": true,
-          "settings": {
-            "tagline": "More than a destination, Beach House is a state of mind.",
-            "title": "WELCOME TO THE BEACH HOUSE",
-            "subtitle": "The Adidas DND Beach House Collection is available now.",
-            "button_label": "SHOP THE COLLECTION",
-            "button_link": "shopify://collections/adidas",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/Social_Status_Beach_House_MOBILE_NO_SPACING_1080x1350_0c2cd87d-26d7-418b-8ce6-015ea9c9d35e.jpg",
-            "mobile_image": "shopify://shop_images/Social_Status_Beach_House_MOBILE_NO_SPACING_1080x1350_0c2cd87d-26d7-418b-8ce6-015ea9c9d35e.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_pVXwXG": {
-          "type": "slide",
-          "name": "CODA ECHO POINTS",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "THE WHITAKER GROUP & PUMA SUEDE CODA \"ECHO POINTS\"",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/puma",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/pumacoda3.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
-        },
         "slide_tN6FiN": {
           "type": "slide",
           "name": "38a",
@@ -108,23 +122,6 @@
             "button_label_2": "",
             "button_link_2": "shopify://collections/38a-1",
             "video_object": "shopify://files/videos/the38a promo.mov",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_Ah7qQ6": {
-          "type": "slide",
-          "name": "sp5der",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "adidas Originals x SP5DER",
-            "subtitle": "Lamine Yamal kicks back in adidas F50 Cleats and SP5DER set",
-            "button_label": "Shop the collection",
-            "button_link": "shopify://collections/adidas",
-            "button_label_2": "",
-            "button_link_2": "",
-            "video_object": "shopify://files/videos/Originals_FW26_Sp5der_Drop2_HeroMotion_23s_9x16_Clean.mp4",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -149,13 +146,13 @@
         }
       },
       "block_order": [
-        "slide_F3KQd9",
-        "slide_yc6QmM",
-        "slide_7z3WT4",
         "slide_zdQw8a",
         "slide_pVXwXG",
-        "slide_tN6FiN",
+        "slide_F3KQd9",
+        "slide_yc6QmM",
         "slide_Ah7qQ6",
+        "slide_7z3WT4",
+        "slide_tN6FiN",
         "slide_tmCntp"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
@@ -170,6 +167,57 @@
         "mobile_background": "rgba(0,0,0,0)",
         "heading_size": "h2"
       }
+    },
+    "1789662849689d7bc2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1f752c2_ExgRwQ": {
+          "type": "ai_gen_block_1f752c2",
+          "settings": {
+            "spacing_height": 10,
+            "mobile_spacing_height": 15,
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_f08ccbd_Vc8aXT": {
+          "type": "ai_gen_block_f08ccbd",
+          "name": "JAIDE 11 BANNER",
+          "settings": {
+            "heading": "JAIDE JORDAN 11 LOW",
+            "description": "THE FEELING IS IN THE DETAILS",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/products/jaide-x-air-jordan-11-low-retro",
+            "left_image": "shopify://shop_images/jaide11.png",
+            "right_image": "shopify://shop_images/jaide11x2.png",
+            "desktop_width_percent": 100,
+            "section_height": 600,
+            "mobile_height": 360,
+            "content_width": 650,
+            "text_alignment": "center",
+            "heading_size": 40,
+            "mobile_heading_size": 28,
+            "description_size": 16,
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background_color": "#222222",
+            "placeholder_color": "#dddddd",
+            "placeholder_icon_color": "#555555",
+            "button_color": "#020202",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#97abaa"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_1f752c2_ExgRwQ",
+        "ai_gen_block_f08ccbd_Vc8aXT"
+      ],
+      "disabled": true,
+      "settings": {}
     },
     "releases_JCnmxR": {
       "type": "releases",
@@ -1004,6 +1052,7 @@
   },
   "order": [
     "split_screen_slider_6tb98K",
+    "1789662849689d7bc2",
     "releases_JCnmxR",
     "featured_collection_YCzWJf",
     "featured_collection_Ec3k3R",
