@@ -171,7 +171,16 @@
                   {%- endunless -%}
 
                   {%- unless block.settings.title == blank -%}
-                    <{{ block.settings.seo_h_tag }} class="title {{ section.settings.heading_size }}">{{ block.settings.title | escape }}</{{ block.settings.seo_h_tag }}>
+                    {%- liquid
+                      # Homepage h1 comes from layout/theme.liquid (visually hidden), so any
+                      # heading set to h1 in the theme editor is demoted to h2 here. Keeps
+                      # exactly one <h1> on the homepage no matter what the editor says.
+                      assign h_tag = block.settings.seo_h_tag
+                      if template.name == 'index' and h_tag == 'h1'
+                        assign h_tag = 'h2'
+                      endif
+                    -%}
+                    <{{ h_tag }} class="title {{ section.settings.heading_size }}">{{ block.settings.title | escape }}</{{ h_tag }}>
                   {%- endunless -%}
 
                   {%- unless block.settings.subtitle == blank -%}

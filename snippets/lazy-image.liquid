@@ -17,29 +17,37 @@
   if ladder_top < 640
     assign src_width = ladder_top
   endif
+
+  # image_url returns protocol-relative URLs with the full storefront host
+  # ("//www.socialstatuspgh.com/cdn/shop/files/..."). Same-origin, so the host
+  # is dead weight: 7 URLs per image, 128 images on a collection page = ~23 KB.
+  # Strip it to a root-relative "/cdn/shop/..." URL. If the host ever differs
+  # (preview domain, CDN change) remove_first matches nothing and the URL is
+  # left untouched.
+  assign img_host = '//' | append: request.host
 -%}
 <img
-  src="{{ image | image_url: width: src_width }}" alt="{{ image.alt | escape }}"
+  src="{{ image | image_url: width: src_width | remove_first: img_host }}" alt="{{ image.alt | escape }}"
   srcset="
     {%- assign first_candidate = true -%}
     {%- for w in srcset_ladder -%}
       {%- assign wnum = w | times: 1 -%}
       {%- if image.width >= wnum -%}
         {%- unless first_candidate -%},{%- endunless -%}
-        {{- image | image_url: width: wnum }} {{ wnum }}w
+        {{- image | image_url: width: wnum | remove_first: img_host }} {{ wnum }}w
         {%- assign first_candidate = false -%}
       {%- endif -%}
     {%- endfor -%}
   "
-  {% if sync %} decoding="sync" {% endif %}
+  {%- if sync %} decoding="sync"{% endif %}
   sizes="{%- if sizes -%} {{ sizes }} {%- else -%} 100vw {%- endif -%}"
-  {% unless preload %} loading="lazy" {% endunless %}
-  {% if preload and fetchpriority %} fetchpriority="{{ fetchpriority }}" {% endif %}
+  {%- unless preload %} loading="lazy"{% endunless %}
+  {%- if preload and fetchpriority %} fetchpriority="{{ fetchpriority }}"{% endif %}
   class="lazy {{ class }}"
-  {% if id %} id="responsive-background-{{ id }}" {% endif %}
+  {%- if id %} id="responsive-background-{{ id }}"{% endif %}
   data-ratio="{{ image.aspect_ratio }}"
   width="{{ image.width }}" height="{{ image.height }}"
-  {% if image_alignment %} style="object-position: {{ image.presentation.focal_point }}" {% endif %}
+  {%- if image_alignment %} style="object-position: {{ image.presentation.focal_point }}"{% endif %}
   onload="this.classList.add('lazyloaded')"
 />
 {%- if id -%}

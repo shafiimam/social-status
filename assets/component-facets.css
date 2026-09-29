@@ -243,12 +243,18 @@ html[dir=ltr] .site-filter-handle-holder {
   padding-inline-start: 12px;
   display: none;
 }
-.no-touchevents .site-filter-handle:hover {
+.no-touchevents .site-filter-handle:hover,
+.site-filter-handle:focus-visible {
   max-width: 250px;
   width: max-content;
   transition: all 150ms linear !important;
 }
-.no-touchevents .site-filter-handle:hover .filter-text {
+.site-filter-handle:focus-visible {
+  outline: 2px solid var(--main-text);
+  outline-offset: 3px;
+}
+.no-touchevents .site-filter-handle:hover .filter-text,
+.site-filter-handle:focus-visible .filter-text {
   display: block;
   white-space: nowrap;
   overflow: hidden;

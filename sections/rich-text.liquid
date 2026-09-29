@@ -16,7 +16,16 @@
         <div>
                 
           {%- unless section.settings.title == blank -%}
-            <{{ section.settings.seo_h_tag }} class="title h1">{{ section.settings.title | escape }}</{{ section.settings.seo_h_tag }}>
+            {%- liquid
+              # Homepage h1 comes from layout/theme.liquid (visually hidden), so any
+              # heading set to h1 in the theme editor is demoted to h2 here. Keeps
+              # exactly one <h1> on the homepage no matter what the editor says.
+              assign h_tag = section.settings.seo_h_tag
+              if template.name == 'index' and h_tag == 'h1'
+                assign h_tag = 'h2'
+              endif
+            -%}
+            <{{ h_tag }} class="title h1">{{ section.settings.title | escape }}</{{ h_tag }}>
           {%- endunless -%}
 
           {%- unless section.settings.btn_label == blank -%}
@@ -89,7 +98,16 @@
           {%- case block.type -%}
 
             {%- when 'heading' -%}
-              <{{ block.settings.seo_h_tag }} class="heading h3" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</{{ block.settings.seo_h_tag }}>
+              {%- liquid
+                # Homepage h1 comes from layout/theme.liquid (visually hidden), so any
+                # heading set to h1 in the theme editor is demoted to h2 here. Keeps
+                # exactly one <h1> on the homepage no matter what the editor says.
+                assign h_tag = block.settings.seo_h_tag
+                if template.name == 'index' and h_tag == 'h1'
+                  assign h_tag = 'h2'
+                endif
+              -%}
+              <{{ h_tag }} class="heading h3" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</{{ h_tag }}>
 
             {%- when 'text' -%}
               <div class="rte" {{ block.shopify_attributes }}>

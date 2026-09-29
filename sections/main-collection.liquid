@@ -21,24 +21,24 @@
     {%- capture collection_mobile_filter_button -%}
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <div class="site-filter-handle-holder site-filter-handle-holder-mobile">
+          {%- liquid
+            if section.settings.enable_filtering and section.settings.enable_sorting
+              assign filter_label = 'collections.filter_and_sort' | t
+            elsif section.settings.enable_filtering
+              assign filter_label = 'collections.filter_button' | t
+            elsif section.settings.enable_sorting
+              assign filter_label = 'collections.sort_button' | t
+            endif
+          -%}
           <site-filter-handle 
             class="site-menu-handle site-filter-handle site-filter-handle-mobile" 
+            role="button" tabindex="0" aria-label="{{ filter_label | escape }}"
             aria-expanded="false" aria-controls="site-filters"
           >
             <span class="filter-menu" aria-hidden="true">
               {%- render 'theme-symbols', icon: 'filter' -%}
             </span>
-            <span class="filter-text">
-              {%- liquid
-                if section.settings.enable_filtering and section.settings.enable_sorting
-                  echo 'collections.filter_and_sort' | t
-                elsif section.settings.enable_filtering
-                  echo 'collections.filter_button' | t
-                elsif section.settings.enable_sorting
-                  echo 'collections.sort_button' | t
-                endif
-              -%}
-            </span>
+            <span class="filter-text" aria-hidden="true">{{ filter_label }}</span>
           </site-filter-handle>
         </div>
       {%- endif -%}
