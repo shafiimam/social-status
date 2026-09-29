@@ -1,21 +1,9 @@
 {
-  "article": [],
-  "blog": [],
-  "collection": [
-    {
-      "key": "banner_image",
-      "namespace": "custom",
-      "name": "Banner Image",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
+  "article": [
     {
       "key": "mobile_banner_image",
       "namespace": "custom",
-      "name": "Mobile Banner image",
+      "name": "Mobile Banner Image",
       "description": "",
       "type": {
         "name": "file_reference",
@@ -23,235 +11,25 @@
       }
     },
     {
-      "key": "sub_collections",
+      "key": "cta_url",
       "namespace": "custom",
-      "name": "Sub Collections (MAIN)",
+      "name": "CTA URL",
       "description": "",
       "type": {
-        "name": "list.collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_3",
-      "namespace": "custom",
-      "name": "Sub Collection 3",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_1",
-      "namespace": "custom",
-      "name": "Sub Collection 1",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_2",
-      "namespace": "custom",
-      "name": "Sub Collection 2",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_4",
-      "namespace": "custom",
-      "name": "Sub Collection 4",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_5",
-      "namespace": "custom",
-      "name": "Sub Collection 5",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_6",
-      "namespace": "custom",
-      "name": "Sub Collection 6",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sub_collection_7",
-      "namespace": "custom",
-      "name": "Sub Collection 7",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "collection_homepage_title",
-      "namespace": "custom",
-      "name": "Collection Homepage Title",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "custom_image",
-      "namespace": "custom",
-      "name": "Custom Image",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "faq_description",
-      "namespace": "custom",
-      "name": "FAQ Description",
-      "description": "The blurb on top of the FAQ section on the collection pages",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_title",
-      "namespace": "custom",
-      "name": "FAQ Title",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_q1",
-      "namespace": "custom",
-      "name": "FAQ Q1",
-      "description": "FAQ Question 1",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_a1",
-      "namespace": "custom",
-      "name": "FAQ A1",
-      "description": "FAQ Answer 1",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_q2",
-      "namespace": "custom",
-      "name": "FAQ Q2",
-      "description": "Collection FAQ Question 2",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_a2",
-      "namespace": "custom",
-      "name": "FAQ A2",
-      "description": "Collection FAQ Answer 2",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_q3",
-      "namespace": "custom",
-      "name": "FAQ Q3",
-      "description": "Collection FAQ Question 3",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "faq_a3",
-      "namespace": "custom",
-      "name": "FAQ A3",
-      "description": "Collection FAQ Answer 3",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "url",
+        "category": "URL"
       }
     }
   ],
+  "blog": [],
+  "collection": [],
   "company": [],
   "company_location": [],
   "location": [],
   "market": [],
-  "order": [
-    {
-      "key": "responses",
-      "namespace": "surveys",
-      "name": "Survey Responses",
-      "description": "Stores survey responses with survey ID and submission timestamp",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "responses_readable",
-      "namespace": "surveys",
-      "name": "Survey Responses (Simplified)",
-      "description": "Stores survey responses in a simplified text format",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
-  "page": [
-    {
-      "key": "collection_homepage_collection",
-      "namespace": "custom",
-      "name": "Collection Homepage - Collection",
-      "description": "",
-      "type": {
-        "name": "collection_reference",
-        "category": "REFERENCE"
-      }
-    }
-  ],
+  "order": [],
+  "page": [],
   "product": [
-    {
-      "key": "custom_product",
-      "namespace": "mm-google-shopping",
-      "name": "Google: Custom Product",
-      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
     {
       "key": "rating",
       "namespace": "reviews",
@@ -273,73 +51,13 @@
       }
     },
     {
-      "key": "product_details",
-      "namespace": "custom",
-      "name": "Product Details",
-      "description": "short blurb for the product information ",
+      "key": "trade_item_description",
+      "namespace": "import_information",
+      "name": "Trade item description",
+      "description": "A precise product description that describes specific attributes of the product for customs and import.",
       "type": {
-        "name": "rich_text_field",
+        "name": "multi_line_text_field",
         "category": "TEXT"
-      }
-    },
-    {
-      "key": "how_to_use",
-      "namespace": "custom",
-      "name": "How to Use",
-      "description": "how to use the product/write product how-to instructions here",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_ingredients",
-      "namespace": "custom",
-      "name": "Product Ingredients",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "pre_order_timeline_disclaimer",
-      "namespace": "custom",
-      "name": "Pre-Order Timeline Disclaimer",
-      "description": "Pre-order: Expected to ship ______",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "color-pattern",
-      "namespace": "shopify",
-      "name": "Color",
-      "description": "Defines the primary color or pattern, such as blue or striped",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "care-instructions",
-      "namespace": "shopify",
-      "name": "Care instructions",
-      "description": "Provides guidance for product upkeep, such as hand wash or dry clean only",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "fabric",
-      "namespace": "shopify",
-      "name": "Fabric",
-      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
       }
     },
     {
@@ -383,33 +101,463 @@
       }
     },
     {
-      "key": "product_video",
+      "key": "color_filter_swatch",
       "namespace": "custom",
-      "name": "Product Video",
+      "name": "Color Filter Swatch",
       "description": "",
       "type": {
-        "name": "list.file_reference",
+        "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "video",
+      "key": "custom_product",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Product",
+      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "title",
       "namespace": "custom",
-      "name": "Video",
+      "name": "Description",
       "description": "",
       "type": {
-        "name": "file_reference",
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "group_data",
-      "namespace": "vkcl",
-      "name": "variant king combined listing group data",
-      "description": null,
+      "key": "fabric",
+      "namespace": "shopify",
+      "name": "Fabric",
+      "description": "Identifies the type of fabric used in a product, for example, cotton or denim",
       "type": {
-        "name": "json",
-        "category": "JSON"
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "size",
+      "namespace": "shopify",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "neckline",
+      "namespace": "shopify",
+      "name": "Neckline",
+      "description": "Used to describe the neck shape of a garment, such as V-neck or boat",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "pants-length-type",
+      "namespace": "shopify",
+      "name": "Pants length type",
+      "description": "Used to defines the length of pants, such as cropped or long",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "activewear-clothing-features",
+      "namespace": "shopify",
+      "name": "Activewear clothing features",
+      "description": "Identifies unique characteristics of activewear, such as four-way stretch or breathable design",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "activity",
+      "namespace": "shopify",
+      "name": "Activity",
+      "description": "Specifies the sport or activity the product is designed for, such as tennis or pilates",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "clothing-features",
+      "namespace": "shopify",
+      "name": "Clothing features",
+      "description": "Describes unique properties of apparel, such as water resistant or wrinkle resistant",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sleeve-length-type",
+      "namespace": "shopify",
+      "name": "Sleeve length type",
+      "description": "Specifies the style of sleeves on clothing items, such as short or sleeveless",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "top-length-type",
+      "namespace": "shopify",
+      "name": "Top length type",
+      "description": "Defines the length of tops or shirts, like crop top or long",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "accessory-size",
+      "namespace": "shopify",
+      "name": "Accessory size",
+      "description": "Defines the size of an accessory product, such as one size or compact",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "outerwear-clothing-features",
+      "namespace": "shopify",
+      "name": "Outerwear clothing features",
+      "description": "Identifies special characteristics of outerwear, like insulated or waterproof",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "best-uses",
+      "namespace": "shopify",
+      "name": "Best uses",
+      "description": "Highlights optimal activities for product use, like traveling, hiking, or diving",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "skirt-dress-length-type",
+      "namespace": "shopify",
+      "name": "Skirt/Dress length type",
+      "description": "Defines the length of skirts or dresses, such as mini or maxi",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "fit",
+      "namespace": "shopify",
+      "name": "Fit",
+      "description": "Describes the fit of a garment, typically pant shape; e.g. skinny leg, wide",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "cup-size",
+      "namespace": "shopify",
+      "name": "Cup size",
+      "description": "Specifies bust size of bras, such as AA or L",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "care-instructions",
+      "namespace": "shopify",
+      "name": "Care instructions",
+      "description": "Provides guidance for product upkeep, such as hand wash or dry clean only",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "waist-rise",
+      "namespace": "shopify",
+      "name": "Waist rise",
+      "description": "Indicates where on the waist a garment sits, like low, medium or high",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "skirt-style",
+      "namespace": "shopify",
+      "name": "Skirt style",
+      "description": "Describes the design or cut of a skirt, such as pencil or pleated",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "dress-occasion",
+      "namespace": "shopify",
+      "name": "Dress occasion",
+      "description": "Specifies the intended occasion for a dress, e.g. holiday, everyday",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "dress-style",
+      "namespace": "shopify",
+      "name": "Dress style",
+      "description": "Identifies the design of a dress, such as wrap or empire waist",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "carry-options",
+      "namespace": "shopify",
+      "name": "Carry options",
+      "description": "Specifies the carrying methods available for items, such as a handle or shoulder strap",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bag-case-material",
+      "namespace": "shopify",
+      "name": "Bag/Case material",
+      "description": "Identifies the main material used in a bag or case, such as leather or canvas",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "badge",
+      "namespace": "theme",
+      "name": "badge",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_guide_text",
+      "namespace": "custom",
+      "name": "size guide text",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "is_final_sale",
+      "namespace": "custom",
+      "name": "Is FInal Sale",
+      "description": "Product is final sale?",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "product_material_data",
+      "namespace": "custom",
+      "name": "Product Material Data",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "feel_and_fit",
+      "namespace": "custom",
+      "name": "Feel And Fit",
+      "description": "Feel And Fit",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "care_and_composition",
+      "namespace": "custom",
+      "name": "Care and composition",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "bag-case-features",
+      "namespace": "shopify",
+      "name": "Bag/Case features",
+      "description": "Describes the unique characteristics of a bag or case, like waterproof or lightweight",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bag-case-storage-features",
+      "namespace": "shopify",
+      "name": "Bag/Case storage features",
+      "description": "Identifies unique storage elements in bags or cases, such as adjustable dividers or external pockets",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bra-features",
+      "namespace": "shopify",
+      "name": "Bra features",
+      "description": "Details the unique features of bras, e.g. removable padding, sweat-wicking fabric",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bra-strap-type",
+      "namespace": "shopify",
+      "name": "Bra strap type",
+      "description": "Specifies the style and functionality of bra straps, such as racerback",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bra-support-level",
+      "namespace": "shopify",
+      "name": "Bra support level",
+      "description": "Indicates the level of support provided by a bra, e.g. low, medium, high",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "sustainability",
+      "namespace": "custom",
+      "name": "Sustainability",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "best_for",
+      "namespace": "custom",
+      "name": "Best For",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "bra-closure-type",
+      "namespace": "shopify",
+      "name": "Bra closure type",
+      "description": "Identifies how bras are fastened or opened, e.g. front, pull-on (no closure)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bra-coverage",
+      "namespace": "shopify",
+      "name": "Bra coverage",
+      "description": "Specifies the level of coverage provided by a bra, such as full or demi",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bra-style",
+      "namespace": "shopify",
+      "name": "Bra style",
+      "description": "Identifies the design or style of a bra, such as push-up or strapless",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "tote-handle-type",
+      "namespace": "shopify",
+      "name": "Tote handle type",
+      "description": "Identifies the style of handles on a tote bag, such as short or long",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "stretch-level",
+      "namespace": "shopify",
+      "name": "Stretch level",
+      "description": "Indicates how much the textile stretches in use.",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     }
   ],
@@ -418,7 +566,7 @@
       "key": "custom_label_4",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -428,7 +576,7 @@
       "key": "custom_label_3",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -438,7 +586,7 @@
       "key": "custom_label_2",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -448,7 +596,7 @@
       "key": "custom_label_1",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -458,7 +606,7 @@
       "key": "custom_label_0",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -525,155 +673,55 @@
       }
     },
     {
-      "key": "preorder_count",
-      "namespace": "restockrocket_production",
-      "name": "Preorder Count",
-      "description": "Current preorder count for the variant",
+      "key": "individual_description",
+      "namespace": "custom",
+      "name": "Individual Description",
+      "description": "Individual Description",
       "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "preorder_max_count",
-      "namespace": "restockrocket_production",
-      "name": "Preorder Max Count",
-      "description": "Maximum preorder count allowed for the variant",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "shipping_text",
-      "namespace": "restockrocket_production",
-      "name": "Shipping Text",
-      "description": "Custom shipping text for the variant",
-      "type": {
-        "name": "single_line_text_field",
+        "name": "multi_line_text_field",
         "category": "TEXT"
-      }
-    },
-    {
-      "key": "market_preorder_count",
-      "namespace": "restockrocket_production",
-      "name": "Market Preorder Count",
-      "description": "Market-specific preorder counts for the variant",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "market_preorder_max_count",
-      "namespace": "restockrocket_production",
-      "name": "Market Preorder Max Count",
-      "description": "Market-specific preorder max counts for the variant",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "market_shipping_text",
-      "namespace": "restockrocket_production",
-      "name": "Market Shipping Text",
-      "description": "Market-specific shipping text for the variant",
-      "type": {
-        "name": "json",
-        "category": "JSON"
       }
     }
   ],
   "shop": [
     {
-      "key": "settings",
-      "namespace": "restockrocket_production",
-      "name": "Settings",
-      "description": "Settings for the app",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "selling_plans",
-      "namespace": "restockrocket_production",
-      "name": "Selling Plans",
-      "description": "Settings and variant IDs for preorder offers",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "out_of_stock_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "Out of Stock Variant IDs",
-      "description": "List of variant IDs that are currently out of stock",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "in_stock_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "In Stock Variant IDs",
-      "description": "List of variant IDs that are currently in stock",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "preorder_variant_ids",
-      "namespace": "restockrocket_production",
-      "name": "Preorder Variant IDs",
-      "description": "List of variant IDs that are available for preorder",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "freegifts_custom_data",
-      "namespace": "secomapp",
-      "name": "BOGOS custom_data (Do not edit)",
+      "key": "blocks_list_checkout_static_content",
+      "namespace": "checkoutblocks",
+      "name": "Checkout Blocks: Blocks List for: checkout_static_content",
       "description": null,
       "type": {
-        "name": "json",
-        "category": "JSON"
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
       }
     },
     {
-      "key": "token",
-      "namespace": "loyaltylion",
-      "name": "LoyaltyLion Site token",
-      "description": null,
+      "key": "show_store_widget_app_embed_block",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Show Store Widget App Embed Block",
+      "description": "Indicates if the store widget app embed block should be shown.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "merchant_id",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Merchant ID",
+      "description": "Currently Linked Merchant Center ID",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "secret",
-      "namespace": "loyaltylion",
-      "name": "LoyaltyLion SDK token",
+      "key": "SubscriberId",
+      "namespace": "okendo",
+      "name": "Okendo Store ID",
       "description": null,
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
-      }
-    },
-    {
-      "key": "post_purchase_content",
-      "namespace": "checkout_plus",
-      "name": "Post-Purchase Content",
-      "description": "Configuration for multi-type post-purchase experiences (upsells, CTAs, surveys).",
-      "type": {
-        "name": "json",
-        "category": "JSON"
       }
     }
   ]
