@@ -216,4 +216,14 @@
 			"groups": ["custom.overlay", "header"]
 		}
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "            render 'blog-item', index: forloop.index | modulo: 6 | plus:
+    1"
+  to: "            render 'blog-item', index: forloop.index, modulo: 6, plus: 1"
+  position: 1792..1864
+{%- endcomment -%}

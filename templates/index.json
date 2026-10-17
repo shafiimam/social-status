@@ -12,6 +12,38 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_yc6QmM": {
+          "type": "slide",
+          "name": "APB 11",
+          "settings": {
+            "tagline": "",
+            "title": "APB X AIR JORDAN 11 LOW",
+            "subtitle": "\"MADE FOR LOCALS\"",
+            "button_label": "ENTER THE DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/apb-x-air-jordan-11-low-made-for-locals",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/apb11.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_tN6FiN": {
+          "type": "slide",
+          "name": "DND CHICAGO MARATHON",
+          "settings": {
+            "tagline": "ADIDAS DO NOT DUPLICATE",
+            "title": "CHICAGO PACK",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "shopify://collections/adidas",
+            "image": "shopify://shop_images/IMG_7571.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_zdQw8a": {
           "type": "slide",
           "name": "DND ATL FASHION WEEK",
@@ -19,8 +51,8 @@
             "tagline": "",
             "title": "ADIDAS DND ATL FASHION WEEK PACK",
             "subtitle": "",
-            "button_label": "ENTER THE DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/adidas",
             "button_label_2": "",
             "button_link_2": "",
             "image": "shopify://shop_images/DND3.png",
@@ -60,23 +92,6 @@
             "hide_text_mobile": false
           }
         },
-        "slide_yc6QmM": {
-          "type": "slide",
-          "name": "JAIDE 11",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "JAIDE AIR JORDAN 11 LOW",
-            "subtitle": "AVAILABLE FRIDAY, SEPT 18",
-            "button_label": "",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/jaide-x-air-jordan-11-low-retro",
-            "button_label_2": "",
-            "button_link_2": "",
-            "video_object": "shopify://files/videos/JAIDE 11_9X16_2.mov",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
         "slide_Ah7qQ6": {
           "type": "slide",
           "name": "PACE",
@@ -95,33 +110,16 @@
         },
         "slide_7z3WT4": {
           "type": "slide",
-          "name": "TWG REJUVEN8",
+          "name": "PUMA CODA",
           "settings": {
             "tagline": "",
-            "title": "THE WHITAKER GROUP X NIKE REACTX REJUVEN8 \"SPLATTER PACK\"",
+            "title": "THE WHITAKER GRP X PUMA CODA \"ECHO POINTS\"",
             "subtitle": "",
             "button_label": "Shop Now",
-            "button_link": "shopify://collections/new-arrivals-1",
+            "button_link": "shopify://collections/puma-coda",
             "button_label_2": "",
             "button_link_2": "",
-            "image": "shopify://shop_images/splatter2.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_tN6FiN": {
-          "type": "slide",
-          "name": "38a",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "38a SUMMER CAPSULE",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/38a-1",
-            "button_label_2": "",
-            "button_link_2": "shopify://collections/38a-1",
-            "video_object": "shopify://files/videos/the38a promo.mov",
+            "image": "shopify://shop_images/pumacoda3.jpg",
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
@@ -146,13 +144,13 @@
         }
       },
       "block_order": [
+        "slide_yc6QmM",
+        "slide_tN6FiN",
         "slide_zdQw8a",
         "slide_pVXwXG",
         "slide_F3KQd9",
-        "slide_yc6QmM",
         "slide_Ah7qQ6",
         "slide_7z3WT4",
-        "slide_tN6FiN",
         "slide_tmCntp"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
@@ -922,6 +920,8 @@
       ],
       "name": "Floating Testimonials",
       "settings": {
+        "cycle_seconds": 70,
+        "seam_fade": true,
         "section_title": "From The Community"
       }
     },
