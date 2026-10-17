@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="{{ 'flickity.min.js' | asset_url }}" defer></script>
 
     {% render 'conditional-imports' %}
-
+    <meta name="clarity-site-verification" content="1d451962-b2e6-4a19-883c-cb7ece740f8d"/>
   </head>
 
   <body
@@ -139,12 +139,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility_labels.skip_to_content' | t }}</a>
     {%- render 'icon-sprite' -%}
 
-    {%- comment -%}
-      The homepage's headings are all section titles, so demoting them to h2
-      left the page with no h1 at all. The logo is a link, not a heading, so
-      there is nothing to promote - this supplies the page-level h1 without
-      changing the design.
-    {%- endcomment -%}
     {%- if template.name == 'index' -%}
       <h1 class="visually-hidden">{{ page_title | default: shop.name }}</h1>
     {%- endif -%}
