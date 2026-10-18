@@ -16,7 +16,9 @@
           <div class="product-masonry__content-media-image">
             <img src="{{ section.settings.image | image_url: width: 5760 }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
             <div class="product-masonry__content-media-image-caption_container">
-              {% if section.settings.image_caption %}
+              {%- comment -%} SEO: empty string is truthy in Liquid; skip blank captions so no empty h2 {%- endcomment -%}
+              {% assign caption_text = section.settings.image_caption | strip %}
+              {% if caption_text != blank %}
                 <h2 class="product-masonry__content-media-image-caption h2 yantramanav-bold">
                   {{ section.settings.image_caption }}
                 </h2>
