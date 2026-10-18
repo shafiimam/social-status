@@ -23,8 +23,17 @@
                 if template.name == 'index' and h_tag == 'h1'
                   assign h_tag = 'h2'
                 endif
+                # SEO DEV-04: this section has no title of its own, so h3-h6 would skip
+                # a level after the page h1. Promote to h2; heading_size class keeps the look.
+                if 'h3,h4,h5,h6' contains h_tag
+                  assign h_tag = 'h2'
+                endif
+                # Empty heading text: output nothing.
+                assign h_text = block.settings.heading | strip
               -%}
-              <{{ h_tag }} class="title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</{{ h_tag }}>
+              {%- if h_text != blank -%}
+                <{{ h_tag }} class="title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ h_text | escape }}</{{ h_tag }}>
+              {%- endif -%}
 
             {%- when 'text' -%}
               <div class="subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
