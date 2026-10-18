@@ -34,7 +34,7 @@
          <div class="product-masonry-item" data-product-masonry-block-id="{{ block.id }}" data-active="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}">
           <div class="product-masonry-item-inner">
             {% for product in block.settings.product_list %}
-              {% render 'product-item', product: product, index: forloop.index0, masonry_context= true %}
+              {% render 'product-item', product: product, index: forloop.index0 %}
             {% endfor %}
           </div>
          </div>
@@ -127,3 +127,14 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-item', product: product, index: forloop.index0, masonry_context=
+    true %}"
+  to: "{% render 'product-item', product: product, index: forloop.index0 %}"
+  position: 1743..1811
+{% endcomment %}
