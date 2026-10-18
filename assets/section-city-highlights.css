@@ -26,10 +26,10 @@
 .city-highlight-card-content h1{
     font-size: calc(30px / 60 * var(--base-headings-size) + 0px);
 }
-.city-highlight-card-content h2{
+.city-highlight-card-content .city-card__big{
     font-size: calc(90px / 60 * var(--base-headings-size) + 0px);
 }
-.city-highlight-card-content h3{
+.city-highlight-card-content .city-card__small{
     font-size: calc(24px / 60 * var(--base-headings-size) + 0px);
 }
 .card-overlay{
@@ -55,11 +55,11 @@
         font-size: calc(24px / 60 * var(--base-headings-size) + 0px);
     }
     
-    .city-highlight-card-content h2 {
+    .city-highlight-card-content .city-card__big {
         font-size: calc(60px / 60 * var(--base-headings-size) + 0px);
     }
     
-    .city-highlight-card-content h3 {
+    .city-highlight-card-content .city-card__small {
         font-size: calc(18px / 60 * var(--base-headings-size) + 0px);
     }
 }
@@ -75,11 +75,11 @@
         font-size: calc(20px / 60 * var(--base-headings-size) + 0px);
     }
     
-    .city-highlight-card-content h2 {
+    .city-highlight-card-content .city-card__big {
         font-size: calc(48px / 60 * var(--base-headings-size) + 0px);
     }
     
-    .city-highlight-card-content h3 {
+    .city-highlight-card-content .city-card__small {
         font-size: calc(16px / 60 * var(--base-headings-size) + 0px);
     }
 }

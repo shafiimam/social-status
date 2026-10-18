@@ -43,6 +43,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       endunless
     -%}
 
+    {%- comment -%} SEO DEV-01: keep search results and tag-filtered listings out of the index; links still followed {%- endcomment -%}
+    {%- if request.page_type == 'search' or current_tags -%}
+      <meta name="robots" content="noindex, follow">
+    {%- endif -%}
+
     <link rel="canonical" href="{{ canonical_url }}">
 
     <link rel="preconnect" href="https://cdn.shopify.com">

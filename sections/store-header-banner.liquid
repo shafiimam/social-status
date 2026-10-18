@@ -5,7 +5,8 @@
   </div>
   <aside class="store-address-container">
     <div class="store-address">
-      {{ section.settings.store_address | replace : '<p></p>', '<br>' }}
+      {%- comment -%} SEO DEV-04: editor h4s here directly follow the page h1; output h2 with the h4 look {%- endcomment -%}
+      {{ section.settings.store_address | replace : '<p></p>', '<br>' | replace: '<h4>', '<h2 class="h4">' | replace: '</h4>', '</h2>' }}
     </div>
     <div class="store-image">
       {% if section.settings.store_image != blank %}
