@@ -1,6 +1,6 @@
 <div class="store-header-banner">
   <div class="store-header-banner-content">
-    <h1 class="title h1 heading">{{ section.settings.title }}</h1>
+    <h1 class="title h1 heading">{{ section.settings.title | remove: '<p>' | remove: '</p>' }}</h1>
     <p class="subtitle">{{ section.settings.subtitle }}</p>
   </div>
   <aside class="store-address-container">

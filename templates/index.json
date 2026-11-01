@@ -12,6 +12,39 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_tmCntp": {
+          "type": "slide",
+          "name": "NB WILLFUL BIAS",
+          "disabled": true,
+          "settings": {
+            "tagline": "",
+            "title": "NEW BALANCE WILLFUL BIAS “FOR IDENTITY” 2010",
+            "subtitle": "",
+            "button_label": "ENTER DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/willful_bias.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_7z3WT4": {
+          "type": "slide",
+          "name": "HALLOWEEN CANDY",
+          "settings": {
+            "tagline": "",
+            "title": "ADIDAS DND HALLOWEEN CANDY PACK",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/IMG_8943.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_yc6QmM": {
           "type": "slide",
           "name": "APB 11",
@@ -19,8 +52,8 @@
             "tagline": "",
             "title": "APB X AIR JORDAN 11 LOW",
             "subtitle": "\"MADE FOR LOCALS\"",
-            "button_label": "ENTER THE DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us/apb-x-air-jordan-11-low-made-for-locals",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/products/apb-x-air-jordan-11-low-binary-blue-x-rust-pink",
             "button_label_2": "",
             "button_link_2": "",
             "image": "shopify://shop_images/apb11.png",
@@ -107,51 +140,17 @@
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
-        },
-        "slide_7z3WT4": {
-          "type": "slide",
-          "name": "PUMA CODA",
-          "settings": {
-            "tagline": "",
-            "title": "THE WHITAKER GRP X PUMA CODA \"ECHO POINTS\"",
-            "subtitle": "",
-            "button_label": "Shop Now",
-            "button_link": "shopify://collections/puma-coda",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/pumacoda3.jpg",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
-        "slide_tmCntp": {
-          "type": "slide",
-          "name": "JAETIPS 6.26",
-          "disabled": true,
-          "settings": {
-            "tagline": "",
-            "title": "The Whitaker Group and JaeTips  \"Started From The Soil\"",
-            "subtitle": "Exclusively Available In-store & Online",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/new-era",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/SSJAE2.jpg",
-            "mobile_image": "shopify://shop_images/SSJAE2.jpg",
-            "seo_h_tag": "h1",
-            "hide_text_mobile": false
-          }
         }
       },
       "block_order": [
+        "slide_tmCntp",
+        "slide_7z3WT4",
         "slide_yc6QmM",
         "slide_tN6FiN",
         "slide_zdQw8a",
         "slide_pVXwXG",
         "slide_F3KQd9",
-        "slide_Ah7qQ6",
-        "slide_7z3WT4",
-        "slide_tmCntp"
+        "slide_Ah7qQ6"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {
@@ -295,11 +294,25 @@
     },
     "featured_collection_Ec3k3R": {
       "type": "featured-collection",
+      "name": "FOOTWEAR",
+      "settings": {
+        "title": "FOOTWEAR",
+        "subtitle": "",
+        "collection": "footwear",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "featured_collection_Jd3xjK": {
+      "type": "featured-collection",
+      "disabled": true,
       "name": "new arrivals ",
       "settings": {
-        "title": "New Arrivals",
+        "title": "FOOTWEAR",
         "subtitle": "",
-        "collection": "new-arrivals-1",
+        "collection": "footwear",
         "collection_rows": 2,
         "show_view_all": true,
         "seo_h_tag": "h2",
@@ -356,6 +369,129 @@
       },
       "block_order": [
         "ai_gen_block_d16b1c4_b7wJzU"
+      ],
+      "settings": {}
+    },
+    "1788279469afffb629": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1f752c2_ddGtUV": {
+          "type": "ai_gen_block_1f752c2",
+          "name": "Section spacer",
+          "settings": {
+            "spacing_height": 25,
+            "mobile_spacing_height": 5,
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_796f0b7_LamTXL": {
+          "type": "ai_gen_block_796f0b7",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8851.jpg",
+            "image_aspect_ratio": "1.77",
+            "image_border_radius": 0,
+            "desktop_width_percent": 100,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "heading": "HONOR THE GIFT",
+            "heading_size": 54,
+            "subheading": "<p>Inspired by purpose. Driven by creativity. Built to honor the journey.</p>",
+            "subheading_size": 18,
+            "text_color": "#ffffff",
+            "spacing_between_elements": 16,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "flex-end",
+            "text_alignment": "center",
+            "text_max_width": 80,
+            "content_padding": 40,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/honor-the-gift",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 30,
+            "button_border_width": 0,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#000000",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#333333"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_1f752c2_TtPbtP": {
+          "type": "ai_gen_block_1f752c2",
+          "name": "Section spacer",
+          "settings": {
+            "spacing_height": 25,
+            "mobile_spacing_height": 5,
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_1f752c2_ddGtUV",
+        "ai_gen_block_796f0b7_LamTXL",
+        "ai_gen_block_1f752c2_TtPbtP"
+      ],
+      "settings": {}
+    },
+    "blocks_ViwBHN": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d16b1c4_XL69YK": {
+          "type": "ai_gen_block_d16b1c4",
+          "settings": {
+            "image_desktop": "shopify://shop_images/IMG_8464_3ce55212-fdf9-4f8b-853f-bb2ee6eccbe8.jpg",
+            "image_mobile": "shopify://shop_images/IMG_8466.jpg",
+            "image_fit": "cover",
+            "image_link": "shopify://collections/carhartt-w-i-p",
+            "image_link_new_tab": true,
+            "section_height_desktop": 1000,
+            "section_height_mobile": 600,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "text_position": "overlay",
+            "text_alignment": "center",
+            "text_position_vertical": "center",
+            "text_position_horizontal": "center",
+            "text_max_width": 600,
+            "heading_above": "",
+            "subheading_above": "",
+            "button_text_above": "",
+            "button_link_above": "",
+            "heading_overlay": "CARHARTT",
+            "subheading_overlay": "Rooted in workwear heritage, redefined for everyday wear. Carhartt W.I.P blends timeless utility with contemporary streetwear through durable fabrics, relaxed silhouettes, and effortless versatility.",
+            "button_text_overlay": "SHOP NOW",
+            "button_link_overlay": "shopify://collections/carhartt-w-i-p",
+            "text_color": "#ffffff",
+            "heading_below": "",
+            "subheading_below": "",
+            "button_text_below": "",
+            "button_link_below": "",
+            "text_color_outside": "#000000",
+            "heading_size": 48,
+            "subheading_size": 18,
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_background_outside": "#000000",
+            "button_text_color_outside": "#ffffff",
+            "button_hover_background_outside": "#333333",
+            "button_hover_text_color_outside": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d16b1c4_XL69YK"
       ],
       "settings": {}
     },
@@ -431,52 +567,6 @@
           "patta-athletic-mesh-shorts-black"
         ]
       }
-    },
-    "1788279469afffb629": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_796f0b7_LamTXL": {
-          "type": "ai_gen_block_796f0b7",
-          "settings": {
-            "image": "shopify://shop_images/IMG_5825.jpg",
-            "image_aspect_ratio": "1.77",
-            "image_border_radius": 0,
-            "desktop_width_percent": 100,
-            "enable_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "heading": "Diet Starts Monday",
-            "heading_size": 48,
-            "subheading": "<p>No rules. No formula. No direction required.</p>",
-            "subheading_size": 18,
-            "text_color": "#ffffff",
-            "spacing_between_elements": 16,
-            "horizontal_alignment": "center",
-            "vertical_alignment": "center",
-            "text_alignment": "center",
-            "text_max_width": 80,
-            "content_padding": 40,
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/diet-starts-monday",
-            "button_font_size": 16,
-            "button_padding_vertical": 14,
-            "button_padding_horizontal": 32,
-            "button_border_radius": 30,
-            "button_border_width": 0,
-            "button_background_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_border_color": "#000000",
-            "button_hover_background_color": "#333333",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_border_color": "#333333"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_796f0b7_LamTXL"
-      ],
-      "settings": {}
     },
     "product_masonry_EEcRh7": {
       "type": "product-masonry",
@@ -1056,11 +1146,13 @@
     "releases_JCnmxR",
     "featured_collection_YCzWJf",
     "featured_collection_Ec3k3R",
+    "featured_collection_Jd3xjK",
     "1778790749de47905e",
+    "1788279469afffb629",
+    "blocks_ViwBHN",
     "video_background_HYdxwr",
     "featured_collection_FnMVbN",
     "product_masonry_Fnqqrw",
-    "1788279469afffb629",
     "product_masonry_EEcRh7",
     "featured_collection_GEVmtc",
     "rotating_slider_7yhr3n",

@@ -22,7 +22,7 @@
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/Greensboro-img.png",
-        "title": "<p>social status <strong>greensboro</strong></p>",
+        "title": "<p>Social Status <strong>Greensboro</strong></p>",
         "subtitle": "Streetwear and culture in the heart of Greensboro. Shop sneakers, apparel, and exclusive releases.",
         "store_address": "<p><a href=\"https://goo.gl/maps/V3radTbr8ns83UxZ6\" target=\"_blank\">602 Elm Street, Greensboro, NC 27406</a></p><h4></h4><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4></h4><h4>Contact</h4><p><a href=\"tel:(336) 285-6540\">(336) 285-6540</a></p>",
         "store_image": "shopify://shop_images/Adobe_Express_-_file_13.jpg"
@@ -177,7 +177,7 @@
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience Social Status Greensboro, a destination for sneakers, apparel, and culture in North Carolina. Our store highlights a curated selection of streetwear, connecting global style with Greensboro’s local community. From limited-edition releases to cultural activations, Social Status Greensboro blends fashion and creativity in every detail.</p>"
+            "text": "<p>Social Status Greensboro sits on Elm Street in a city once home to Cone Mills, one of the most famous denim mills in the world. Surrounded by colleges and universities, the store connects that denim heritage with today's youth culture. Shop sneakers, denim and streetwear from global and emerging brands. Visit us at 602 Elm St, open Monday to Saturday 12pm to 7pm and Sunday 12pm to 5pm.</p>"
           }
         }
       },

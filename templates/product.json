@@ -51,27 +51,23 @@
             "show_gift_card_recipient": false
           }
         },
-        "genlook_virtual_try_on_genlook_widget_VnRckN": {
-          "type": "shopify://apps/genlook-virtual-try-on/blocks/genlook-widget/01997bc6-1dc6-7c96-853a-98a7952a6ec3",
+        "genlook_virtual_try_on_genlook_button_xWdEky": {
+          "type": "shopify://apps/genlook-virtual-try-on/blocks/genlook-button/01997bc6-1dc6-7c96-853a-98a7952a6ec3",
           "settings": {
-            "widget_primary_color": "#0a1810",
-            "theme_primary": "#000000",
             "button_text": "DEFAULT",
-            "button_style": "full-width",
-            "button_size": "medium",
-            "icon_type": "sparkles",
+            "primary_color": "#000000",
+            "text_color": "",
+            "bold_text": true,
+            "use_default_font": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "style": "outline",
+            "full_width": true,
+            "size": "large",
+            "corner_radius": "pill",
+            "icon_type": "camera",
             "disable_on_out_of_stock": true,
-            "show_remaining_try_ons": false,
-            "icon_position": "left",
-            "gender_context": "default",
-            "corner_radius": "full",
-            "shadow_intensity": "medium",
-            "font_weight": "semibold",
-            "custom_css": "{}",
-            "upload_info_text": "",
-            "header_title": "",
-            "header_subtitle": "",
-            "hide_button": false
+            "custom_css": ""
           }
         },
         "fina_sale_message_T4UnVK": {
@@ -119,7 +115,7 @@
         "description",
         "variant_picker",
         "buy_buttons",
-        "genlook_virtual_try_on_genlook_widget_VnRckN",
+        "genlook_virtual_try_on_genlook_button_xWdEky",
         "fina_sale_message_T4UnVK",
         "ineligibile_products_YCEBdF",
         "collapsible_tab_4zwfq4",

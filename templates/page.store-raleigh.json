@@ -22,7 +22,7 @@
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/Raleigh_e585f5a3-dfec-45a6-98c8-cbc95a1e0cb6.jpg",
-        "title": "<p>social status <strong>raleigh</strong></p>",
+        "title": "<p>Social Status <strong>Raleigh</strong></p>",
         "subtitle": "We want to ensure that your experience with us is smooth and enjoyable.",
         "store_address": "<p><a href=\"https://goo.gl/maps/YcTMNUrimYZqj3at9\" target=\"_blank\">308 Parham Street, Raleigh, NC 27601</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(919) 803-5371\">(919) 803-5371</a></p>",
         "store_image": "shopify://shop_images/Adobe_Express_-_file_17.jpg"
@@ -178,7 +178,7 @@
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>Social Status Raleigh is a hub for style and culture in North Carolina’s capital city. Featuring a curated selection of sneakers, apparel, and accessories, our store connects global streetwear with Raleigh’s creative energy. More than shopping, Social Status Raleigh offers a space for events, conversations, and cultural exchange.</p>"
+            "text": "<p>Social Status Raleigh is in City Market, a historic arts district in the heart of downtown. Cobblestone streets, galleries and music festivals give the area its energy, and students from NC State, UNC and Duke make the scene even more eclectic. Shop the latest sneakers, apparel and accessories from Nike, Jordan, New Balance and more at 308 Parham St, open Monday to Saturday 12pm to 7pm and Sunday 12pm to 5pm.</p>"
           }
         }
       },

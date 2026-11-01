@@ -170,6 +170,11 @@
           "icon_size": 20,
           "button_right_offset": 40
         }
+      },
+      "16445118900870725264": {
+        "type": "shopify://apps/genlook-virtual-try-on/blocks/genlook-global/01997bc6-1dc6-7c96-853a-98a7952a6ec3",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

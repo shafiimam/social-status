@@ -27,7 +27,6 @@ if ( typeof CartForm !== 'function' ) {
 					qty.addEventListener('input', debounce(e=>{
 						e.preventDefault();
 						e.target.blur();
-						e
 						this.updateCartQty(item, parseInt(qty.value));
 					}, 500));
 					qty.addEventListener('click', (e)=>{

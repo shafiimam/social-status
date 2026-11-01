@@ -19,13 +19,12 @@
     },
     "store_header_bnner_38J47n": {
       "type": "store-header-banner",
-      "disabled": true,
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/Pitt1_496d2f53-9acb-4e3b-b580-547398058e3e.jpg",
         "title": "<p>Social Status <strong>East Liberty Pittsburgh</strong></p>",
         "subtitle": "East Liberty’s creative hub for streetwear and culture. Explore sneakers, apparel, and community events.",
-        "store_address": "<p><a href=\"https://www.socialstatuspgh.com/https://goo.gl/maps/r8LoG99Dt4yLCuyk7\" target=\"_blank\">5929 Penn Ave, Pittsburgh, PA 15206</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(412) 404-2147\">(412) 404-2147</a></p>",
+        "store_address": "<p><a href=\"https://goo.gl/maps/r8LoG99Dt4yLCuyk7\" target=\"_blank\">5929 Penn Ave, Pittsburgh, PA 15206</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(412) 404-2147\">(412) 404-2147</a></p>",
         "store_image": "shopify://shop_images/Adobe_Express_-_file_11.jpg"
       }
     },
@@ -42,7 +41,6 @@
       "block_order": [
         "text_8zYR6A"
       ],
-      "disabled": true,
       "name": "t:sections.local-extra-words.sections.marquee.name",
       "settings": {
         "scroll_direction": "ltr",
@@ -58,7 +56,6 @@
     },
     "image_6Pa4Nc": {
       "type": "image",
-      "disabled": true,
       "name": "t:sections.image.name",
       "settings": {
         "image": "shopify://shop_images/Adobe_Express_-_file_10.jpg",
@@ -181,7 +178,7 @@
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>Social Status East Liberty blends elevated retail with community storytelling. Explore a curated mix of sneakers, apparel, and streetwear in a space built for culture and connection. From exclusive launches to community events, Social Status East Liberty reflects the creative heartbeat of Pittsburgh.</p>"
+            "text": "<p>Social Status East Liberty opened in 2012 as Pittsburgh's eastern corridor came back to life, and it has been a key part of the city's fashion scene ever since. The store has dedicated sneaker and apparel spaces, hand-stained woodwork and iPads to explore brands and products. Shop the latest from Nike, Jordan, New Balance and more at 5929 Penn Ave, open Monday to Saturday 12pm to 7pm and Sunday 12pm to 5pm.</p>"
           }
         }
       },
@@ -189,7 +186,6 @@
         "heading_ALJbfz",
         "text_JtR7Ya"
       ],
-      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "title": "",
@@ -231,7 +227,8 @@
         "desktop_image": "shopify://shop_images/Top_Photo_1.jpg",
         "horizontal_alignment": "center",
         "vertical_alignment": "middle"
-      }
+      },
+      "disabled": true
     }
   },
   "order": [

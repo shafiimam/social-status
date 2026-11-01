@@ -22,9 +22,9 @@
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/cover_copy.jpg",
-        "title": "<p>social status <strong>detroit</strong></p>",
+        "title": "<p>Social Status <strong>Detroit</strong></p>",
         "subtitle": "Detroit’s hub for streetwear, sneakers, and culture. Fashion and creativity, redefined.",
-        "store_address": "<p><a href=\"https://www.socialstatuspgh.com/\" target=\"_blank\">9101 E Jefferson Ave, Unit A, Detroit MI, 48214</a></p><h4></h4><h4>Hours of Operation</h4><p>Mon to Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(313)499-8299\">(313) 499-8299</a></p>",
+        "store_address": "<p><a href=\"https://www.google.com/maps/search/?api=1&query=9101+E+Jefferson+Ave+Unit+A+Detroit+MI+48214\" target=\"_blank\">9101 E Jefferson Ave, Unit A, Detroit MI, 48214</a></p><h4></h4><h4>Hours of Operation</h4><p>Mon to Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(313)499-8299\">(313) 499-8299</a></p>",
         "store_image": "shopify://shop_images/Adobe_Express_-_file_7.jpg"
       }
     },
@@ -176,7 +176,7 @@
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>Social Status Detroit redefines streetwear shopping in the Motor City. Featuring an elevated mix of sneakers, apparel, and accessories, our Detroit store celebrates individuality and cultural expression. More than retail, Social Status Detroit is a place for connection, events, and storytelling that reflect the city’s creative spirit.</p>"
+            "text": "<p>Social Status Detroit is our East Side flagship on East Jefferson Avenue. More than a store, it's part of our commitment to reinvesting in historically Black neighborhoods. Inside, you'll find elevated streetwear, exclusive footwear and a space built for community, culture and storytelling, with events throughout the year. Visit us at 9101 E Jefferson Ave, Unit A, open Monday to Saturday 12pm to 7pm and Sunday 12pm to 5pm.</p>"
           }
         }
       },

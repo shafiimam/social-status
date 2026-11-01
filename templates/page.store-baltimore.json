@@ -22,7 +22,7 @@
       "name": "Individual Store Banner",
       "settings": {
         "background_image": "shopify://shop_images/stockvault-baltimore-inner-harbor106254_3c43cbf2-28d9-41c3-a276-b112b63fe5d6.jpg",
-        "title": "<p>SOCIAL STATUS <strong>BALTIMORE</strong></p>",
+        "title": "<p>Social Status <strong>Baltimore</strong></p>",
         "subtitle": "Where Baltimore’s style and culture meet. Discover sneakers, apparel, accessories, and more.",
         "store_address": "<p><a href=\"https://goo.gl/maps/rcAoeyNQaMVXznQ38\" target=\"_blank\">904 S Broadway, Baltimore MD 21231 </a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p>(<a href=\"tel:410-617-0916\">410) 617-0916</a></p>",
         "store_image": "shopify://shop_images/SET0295.jpg"
@@ -178,7 +178,7 @@
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>Social Status Baltimore is where streetwear and culture meet. Anchored in the city’s deep creative roots, our store offers the latest sneakers and apparel while also serving as a platform for local voices. Explore our curated collections and discover a space where Baltimore’s style, heritage, and community come alive.</p>"
+            "text": "<p>Social Status Baltimore sits in a historic three-story townhouse in Fells Point, steps from the harbor. Inside, you'll find the latest sneakers, streetwear and accessories from global and emerging brands, plus a beSocial space that hosts community programs and events. The store honors Baltimore's culture and history while bringing the modern Social Status experience to the waterfront. Visit us at 904 S Broadway, open Monday to Saturday 12pm to 7pm and Sunday 12pm to 5pm.</p>"
           }
         }
       },

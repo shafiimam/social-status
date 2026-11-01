@@ -197,10 +197,8 @@
                           <span class="button-scroll-in">{{ 'customers.addresses_page.form.update_button' | t }}</span>
                         </button>
                         <button
-                          type="button"
                           class="button button--outline"
-                          data-js-toggle-address="{{ form.id }}"
-                          aria-controls="EditAddress_{{ form.id }}"
+                          onclick="Shopify.CustomerAddress.toggleForm({{ form.id }}); return false;"
                         >
                           <span class="button-scroll-in">{{ 'customers.addresses_page.form.cancel_button' | t }}</span>
                         </button>
@@ -217,7 +215,7 @@
           </div>
 
           <div class="simple-block">
-            <button type="button" class="button button--solid" data-js-toggle-new-address aria-controls="AddAddress">
+            <button class="button button--solid" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">
               <span class="button-scroll-in">{{ 'customers.addresses_page.add_address_link' | t }}</span>
             </button>
 
@@ -366,10 +364,8 @@
                         <span class="button-scroll-in">{{ 'customers.addresses_page.form.add_button' | t }}</span>
                       </button>
                       <button
-                        type="button"
                         class="button button--outline"
-                        data-js-toggle-new-address
-                        aria-controls="AddAddress"
+                        onclick="Shopify.CustomerAddress.toggleNewForm(); return false;"
                       >
                         <span class="button-scroll-in">{{ 'customers.addresses_page.form.cancel_button' | t }}</span>
                       </button>
@@ -416,14 +412,6 @@
           }
         }
       }
-
-      // Toggle buttons use data attributes instead of inline onclick so they
-      // work identically for mouse, keyboard and assistive tech.
-      document.addEventListener('click', function(e){
-        var edit = e.target.closest('[data-js-toggle-address]');
-        if (edit) { Shopify.CustomerAddress.toggleForm(edit.getAttribute('data-js-toggle-address')); return; }
-        if (e.target.closest('[data-js-toggle-new-address]')) { Shopify.CustomerAddress.toggleNewForm(); }
-      });
     }
   </script>
 {%- endpaginate -%}
