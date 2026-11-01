@@ -1,0 +1,96 @@
+{%- comment -%}
+  SEO DEV-06: one meta description, max 160 characters, cut at a word boundary.
+  Products:
+    1. SEO description (Search engine listing) if set
+    2. else "<Name> by <Brand>. <product description>" (SKU and " - " fragments removed)
+    3. else "<Name> by <Brand>. Shop the latest <Brand> at Social Status."
+  Other pages: Shopify page_description, shortened the same way.
+  Output is plain text; escape it where it is used.
+  Usage: {%- capture meta_description -%}{% render 'seo-meta-description' %}{%- endcapture -%}
+{%- endcomment -%}
+{%- liquid
+  assign max_length = 160
+  assign desc = page_description
+
+  if request.page_type == 'product'
+    assign seo_desc = product.metafields.global.description_tag
+    if seo_desc != blank
+      assign desc = seo_desc
+    else
+      capture name
+        render 'seo-titlecase', text: product.title
+      endcapture
+      capture brand
+        render 'seo-titlecase', text: product.vendor
+      endcapture
+      assign name_down = name | downcase
+      assign brand_down = brand | downcase
+
+      if brand != blank and name_down contains brand_down
+        assign lead = name | append: '.'
+      elsif brand != blank
+        assign lead = name | append: ' by ' | append: brand | append: '.'
+      else
+        assign lead = name | append: '.'
+      endif
+
+      assign body = product.description | strip_html | strip_newlines | split: 'SKU:' | first | replace: ' - ', ' ' | replace: '  ', ' ' | strip
+      if body == blank
+        assign body = 'Shop the latest ' | append: brand | append: ' at Social Status.'
+      endif
+      assign desc = lead | append: ' ' | append: body
+    endif
+  endif
+
+  assign desc = desc | strip_html | strip_newlines | replace: '  ', ' ' | strip
+  comment
+    Decode entities so the layout can escape exactly once (avoids &amp;#39; in Google).
+  endcomment
+  assign desc = desc | replace: '&amp;', '&' | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&quot;', '"' | replace: '&nbsp;', ' '
+
+  if desc.size > max_length
+    comment
+      First try to end on a full sentence (reads better in Google).
+      If that leaves too little text, cut at the last whole word instead.
+    endcomment
+    assign sentences = desc | split: '. '
+    assign by_sentence = ''
+    for s in sentences
+      if by_sentence == ''
+        assign next = s
+      else
+        assign next = by_sentence | append: '. ' | append: s
+      endif
+      assign next_with_dot = next | append: '.'
+      if next_with_dot.size > max_length
+        break
+      endif
+      assign by_sentence = next
+    endfor
+
+    if by_sentence.size >= 100
+      assign last_char = by_sentence | slice: -1
+      if last_char != '.' and last_char != '!' and last_char != '?'
+        assign by_sentence = by_sentence | append: '.'
+      endif
+      assign desc = by_sentence
+    else
+      assign words = desc | split: ' '
+      assign short = ''
+      for w in words
+        assign next = short | append: ' ' | append: w | strip
+        if next.size > max_length
+          break
+        endif
+        assign short = next
+      endfor
+      assign last_char = short | slice: -1
+      if last_char == ',' or last_char == ';' or last_char == ':' or last_char == '-'
+        assign short = short | remove_last: last_char
+      endif
+      assign desc = short
+    endif
+  endif
+
+  echo desc
+-%}

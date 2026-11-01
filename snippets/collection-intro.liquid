@@ -1,0 +1,55 @@
+{%- comment -%}
+  SEO DEV-13: collection intro paragraph above the products.
+  Source: collection metafield custom.collection_intro (multi-line text).
+  Renders nothing when the field is empty, so other collections are unchanged.
+  On small screens the text is clamped to 3 lines with a "Read more" button.
+{%- endcomment -%}
+{%- assign intro = collection.metafields.custom.collection_intro.value -%}
+{%- if intro != blank -%}
+  <div class="collection-intro" data-collection-intro>
+    <p class="collection-intro__text" id="CollectionIntro-{{ collection.id }}">{{ intro | escape | newline_to_br }}</p>
+    <button
+      type="button"
+      class="collection-intro__toggle"
+      aria-expanded="false"
+      aria-controls="CollectionIntro-{{ collection.id }}"
+      hidden
+    >
+      Read more
+    </button>
+  </div>
+  {%- style -%}
+    .collection-intro { max-width: 760px; margin: 12px auto 0; }
+    .collection-intro__text { margin: 0; font-size: 0.95em; line-height: 1.6; }
+    .collection-intro__toggle {
+      margin-top: 6px; padding: 0; background: none; border: 0;
+      color: inherit; font: inherit; font-size: 0.9em; text-decoration: underline; cursor: pointer;
+    }
+    @media (max-width: 767px) {
+      .collection-intro:not(.is-open) .collection-intro__text {
+        display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+      }
+    }
+  {%- endstyle -%}
+  <script>
+    (function () {
+      var box = document.currentScript.previousElementSibling;
+      while (box && !box.hasAttribute('data-collection-intro')) box = box.previousElementSibling;
+      if (!box) return;
+      var text = box.querySelector('.collection-intro__text');
+      var btn = box.querySelector('.collection-intro__toggle');
+      function check() {
+        if (box.classList.contains('is-open')) return;
+        btn.hidden = !(text.scrollHeight > text.clientHeight + 2);
+      }
+      btn.addEventListener('click', function () {
+        var open = box.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Read less' : 'Read more';
+        btn.hidden = false;
+      });
+      check();
+      window.addEventListener('resize', check);
+    })();
+  </script>
+{%- endif -%}

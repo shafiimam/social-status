@@ -15,7 +15,7 @@
               {% capture slide_text %}
                 <img
                 src="{{ block.settings.image | image_url: width: 480 }}"
-                alt="{{ block.settings.alt }}"
+                alt="{{ block.settings.alt | default: block.settings.image.alt | escape }}"
                 height="100%"
                 width="100%"
               >

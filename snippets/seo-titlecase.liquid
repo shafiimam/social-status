@@ -1,0 +1,30 @@
+{%- comment -%}
+  SEO DEV-06 helper: turns an ALL-CAPS product/brand name into Title Case for meta text.
+  - Words with a digit stay as they are (990, V6, '07, 1/4)
+  - Known short codes stay uppercase (BAPE, USA, OG, NY ...)
+  - Double quotes are removed
+  Usage: {% render 'seo-titlecase', text: product.title %}
+{%- endcomment -%}
+{%- liquid
+  assign keep_upper = ',BAPE,USA,OG,NY,NYC,FOG,TD,II,III,IV,KAWS,UNC,DSM,HTG,MCM,LA,ATL,HTX,DND,TWG,USA,UK,SP,FW,SS,AW,'
+  assign words = text | replace: '"', '' | replace: '“', '' | replace: '”', '' | split: ' '
+  assign out = ''
+  for w in words
+    assign up = w | upcase
+    assign token = ',' | append: up | append: ','
+    assign no_digits = w | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9'
+    if keep_upper contains token or no_digits.size != w.size
+      assign word = up
+    elsif up == 'X'
+      assign word = 'x'
+    else
+      assign word = w | downcase | capitalize
+    endif
+    if out == ''
+      assign out = word
+    else
+      assign out = out | append: ' ' | append: word
+    endif
+  endfor
+  echo out
+-%}

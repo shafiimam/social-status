@@ -32,8 +32,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <title>{{ seo_title }}</title>
 
-    {%- if page_description -%}
-      <meta name="description" content="{{ page_description | escape }}">
+    {%- comment -%} SEO DEV-06: max-160 meta description with product fallback {%- endcomment -%}
+    {%- capture meta_description -%}{%- render 'seo-meta-description' -%}{%- endcapture -%}
+    {%- if meta_description != blank -%}
+      <meta name="description" content="{{ meta_description | escape }}">
     {%- endif -%}
 
     {%- liquid
