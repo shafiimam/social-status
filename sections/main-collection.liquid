@@ -21,24 +21,24 @@
     {%- capture collection_mobile_filter_button -%}
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <div class="site-filter-handle-holder site-filter-handle-holder-mobile">
+          {%- liquid
+            if section.settings.enable_filtering and section.settings.enable_sorting
+              assign filter_label = 'collections.filter_and_sort' | t
+            elsif section.settings.enable_filtering
+              assign filter_label = 'collections.filter_button' | t
+            elsif section.settings.enable_sorting
+              assign filter_label = 'collections.sort_button' | t
+            endif
+          -%}
           <site-filter-handle 
             class="site-menu-handle site-filter-handle site-filter-handle-mobile" 
+            role="button" tabindex="0" aria-label="{{ filter_label | escape }}"
             aria-expanded="false" aria-controls="site-filters"
           >
             <span class="filter-menu" aria-hidden="true">
               {%- render 'theme-symbols', icon: 'filter' -%}
             </span>
-            <span class="filter-text">
-              {%- liquid
-                if section.settings.enable_filtering and section.settings.enable_sorting
-                  echo 'collections.filter_and_sort' | t
-                elsif section.settings.enable_filtering
-                  echo 'collections.filter_button' | t
-                elsif section.settings.enable_sorting
-                  echo 'collections.sort_button' | t
-                endif
-              -%}
-            </span>
+            <span class="filter-text" aria-hidden="true">{{ filter_label }}</span>
           </site-filter-handle>
         </div>
       {%- endif -%}
@@ -51,16 +51,14 @@
           <div class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow box__collection" data-order="{{ forloop.index }}">
             <div class="site-box-content product-holder">
               {%- liquid
-                # First row of cards is above the fold on every layout. Always
-                # eager-load it: on mobile the first card (not the collection
-                # banner) is the LCP element even when show_collection_image is on.
-                # Only the very first card gets fetchpriority=high.
-                assign preload = true
-                assign fetchpriority = nil
-                if forloop.first
-                  assign fetchpriority = 'high'
-                endif
-                render 'product-item', product: product, product_collection: collection, index: forloop.index0, preload: preload, fetchpriority: fetchpriority
+                # First row of cards, above the fold on every desktop layout.
+                # Skip only when the collection image is shown -- that image is
+                # then the LCP element and already carries preload itself.
+                assign preload = false
+                unless section.settings.show_collection_image and collection.image
+                  assign preload = true
+                endunless
+                render 'product-item', product: product, product_collection: collection, index: forloop.index0, preload: preload
               -%}
             </div>
           </div>

@@ -2,6 +2,28 @@
 This snippet structures the micro-data using JSON-LD specification. For product and article pages, the data is 100% outputted by Shopify. The theme only offers schema for the organization and breadcrumb.
 {%- endcomment -%}
 
+{%- liquid
+  # SEO DEV-05: richer Organization data (logo + official social profiles).
+  # Logo: Shopify admin > Settings > Brand logo if set, else the header logo file.
+  assign org_logo = shop.brand.logo
+  if org_logo == blank
+    assign org_logo = images['LOOP_LOGO_2.png']
+  endif
+
+  # sameAs: social URLs from Theme settings > Social media, query strings removed.
+  assign same_as = ''
+  assign social_urls = settings.social_facebook | append: '|' | append: settings.social_instagram | append: '|' | append: settings.social_twitter | append: '|' | append: settings.social_tiktok | append: '|' | append: settings.social_youtube | append: '|' | append: settings.social_pinterest | split: '|'
+  for social_url in social_urls
+    assign clean_url = social_url | split: '?' | first | strip
+    if clean_url contains 'http'
+      if same_as != ''
+        assign same_as = same_as | append: ','
+      endif
+      assign same_as = same_as | append: clean_url
+    endif
+  endfor
+  assign same_as = same_as | split: ','
+-%}
 <script type="application/ld+json">
   [
     {
@@ -13,8 +35,15 @@ This snippet structures the micro-data using JSON-LD specification. For product 
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": {{ shop.url | append: '/#organization' | json }},
       "name": {{ shop.name | json }},
       "url": {{ shop.url | json }}
+      {%- if org_logo != blank -%},
+      "logo": {{ org_logo | image_url: width: 600 | prepend: 'https:' | json }}
+      {%- endif -%}
+      {%- if same_as.size > 0 -%},
+      "sameAs": {{ same_as | json }}
+      {%- endif -%}
     }
   ]
 </script>
@@ -70,7 +99,7 @@ This snippet structures the micro-data using JSON-LD specification. For product 
       }, {
         "@type": "ListItem",
         "position": 3,
-        "name": {{ blog.title | json }},
+        "name": {{ article.title | json }},
         "item": "{{ shop.url }}{{ article.url }}"
       }
     {%- elsif request.page_type == 'page' -%}

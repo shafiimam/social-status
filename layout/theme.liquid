@@ -43,6 +43,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       endunless
     -%}
 
+    {%- comment -%} SEO DEV-01: keep search results and tag-filtered listings out of the index; links still followed {%- endcomment -%}
+    {%- if request.page_type == 'search' or current_tags -%}
+      <meta name="robots" content="noindex, follow">
+    {%- endif -%}
+
     <link rel="canonical" href="{{ canonical_url }}">
 
     <link rel="preconnect" href="https://cdn.shopify.com">
@@ -122,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="{{ 'flickity.min.js' | asset_url }}" defer></script>
 
     {% render 'conditional-imports' %}
-
+    <meta name="clarity-site-verification" content="1d451962-b2e6-4a19-883c-cb7ece740f8d"/>
   </head>
 
   <body
@@ -137,6 +142,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "
   >
     <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility_labels.skip_to_content' | t }}</a>
+    {%- render 'icon-sprite' -%}
+
+    {%- if template.name == 'index' -%}
+      <h1 class="visually-hidden">{{ page_title | default: shop.name }}</h1>
+    {%- endif -%}
     <div id="screen-reader-info" aria-live="polite" class="visually-hidden"></div>
 
     <script>

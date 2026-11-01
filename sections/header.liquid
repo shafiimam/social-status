@@ -103,11 +103,11 @@ data-sticky="{{ section.settings.menu_sticky }}">
       </noscript>
     {%- endif -%}
 
-    {% if shop.customer_accounts_enabled %}
+    {%- if shop.customer_accounts_enabled -%}
       <span class="site-menu-handle site-account-handle portable--hide">
         <shopify-account menu="{{ section.settings.customer_account_menu | escape }}"></shopify-account>
       </span>
-    {% endif %}
+    {%- endif -%}
     <span 
       class="site-search-handle site-menu-handle" 
       title="{{ 'general.accessibility_labels.open_search' | t }}"
@@ -116,13 +116,13 @@ data-sticky="{{ section.settings.menu_sticky }}">
       <a 
         href="{{ routes.search_url }}" 
         title="{{ 'general.accessibility_labels.open_search' | t }}"
-        {% if template != 'search' %} 
+        {%- if template != 'search' -%}
           id="site-search-handle" 
           role="button"
           aria-expanded="false" 
           aria-controls="site-search" 
           data-js-sidebar-handle
-        {% endif %}
+        {%- endif -%}
       >
         <span class="search-menu" aria-hidden="true" style="display:block;margin-top:1px;">
           {%- render 'theme-symbols', icon: 'search' -%}
@@ -138,13 +138,13 @@ data-sticky="{{ section.settings.menu_sticky }}">
       <a 
         href="{{ routes.cart_url }}" 
         title="{{ 'general.accessibility_labels.open_cart' | t }}"
-        {% if settings.cart_action == 'overlay' %} 
+        {%- if settings.cart_action == 'overlay' -%}
           id="site-cart-handle" 
           role="button"
           aria-expanded="false" 
           aria-controls="site-cart" 
           data-js-sidebar-handle
-        {% endif %}
+        {%- endif -%}
       >
         <span class="cart-menu" aria-hidden="true">
           {%- render 'theme-symbols', icon: 'cart' -%}
@@ -180,11 +180,11 @@ data-sticky="{{ section.settings.menu_sticky }}">
 
         <nav class="primary-menu">{%- render 'site-nav', linklist: section.settings.main_linklist, collection_linklist: section.settings.collection_linklist, show_collection_images: false, type: 'sidebar', show_locale_selector: section.settings.show_locale_selector, show_country_selector: section.settings.show_country_selector -%}</nav>
 
-        {% if shop.customer_accounts_enabled %}
+        {%- if shop.customer_accounts_enabled -%}
           <div class="site-account-drawer">
             <shopify-account menu="{{ section.settings.customer_account_menu | escape }}"></shopify-account>
           </div>
-        {% endif %}
+        {%- endif -%}
 
       </div>
 

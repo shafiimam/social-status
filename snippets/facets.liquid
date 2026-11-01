@@ -218,24 +218,24 @@
 <script>document.body.append(document.getElementById('site-filters'));</script>
 <script src="{{ 'component-facets.js' | asset_url }}" defer></script>
 
+{%- liquid
+  if enable_filtering and enable_sorting
+    assign filter_label = 'collections.filter_and_sort' | t
+  elsif enable_filtering
+    assign filter_label = 'collections.filter_button' | t
+  elsif enable_sorting
+    assign filter_label = 'collections.sort_button' | t
+  endif
+-%}
 <div class="site-filter-handle-holder">
   <site-filter-handle 
     id="site-filter-handle" 
     class="site-filter-handle site-menu-handle" 
+    role="button" tabindex="0" aria-label="{{ filter_label | escape }}"
     aria-expanded="false" aria-controls="site-filters">
     <span class="filter-menu" aria-hidden="true">
       {%- render 'theme-symbols', icon: 'filter' -%}
     </span>
-    <span class="filter-text">
-      {%- liquid
-        if enable_filtering and enable_sorting
-          echo 'collections.filter_and_sort' | t
-        elsif enable_filtering
-          echo 'collections.filter_button' | t
-        elsif enable_sorting
-          echo 'collections.sort_button' | t
-        endif
-      -%}
-    </span>
+    <span class="filter-text" aria-hidden="true">{{ filter_label }}</span>
   </site-filter-handle>
 </div>

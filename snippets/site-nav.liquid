@@ -1,8 +1,8 @@
 <ul class="link-list">
 
-	{% assign collections_menu = linklists[collection_linklist] %}
+	{%- assign collections_menu = linklists[collection_linklist] -%}
 
-	{% if collections_menu != empty %}
+	{%- if collections_menu != empty -%}
 
 		<li class="has-submenu" id="menu-item-collections" aria-controls="SiteNavLabel-{{ collections_menu.title | handle }}-{{ type }}" aria-expanded="false">
 		
@@ -23,9 +23,9 @@
 
 								<a class="menu-link no-focus-link" href="{{ link.url }}">
 									<span><span class="underline-animation">{{ link.title | escape }}</span></span>
-									{% if link.links != blank %}
+									{%- if link.links != blank -%}
 										<span class="icon">{%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}</span>
-									{% endif %}
+									{%- endif -%}
 								</a>
 								
 								{%- if show_collection_images -%}
@@ -51,13 +51,13 @@
 									{%- endif -%}
 								{%- endif -%}
 
-								{% if link.links != blank %}
+								{%- if link.links != blank -%}
 
 									<div class="babymenu">
 										<ul>
-											{% for childlink in link.links %}
+											{%- for childlink in link.links -%}
 												<li><a class="menu-link no-focus-link" href="{{ childlink.url }}"><span class="underline-animation">{{ childlink.title | escape }}</span></a></li>
-											{% endfor %}
+											{%- endfor -%}
 										</ul>
 									</div>
 
@@ -96,9 +96,9 @@
 
 		</li>
 
-	{% endif %}
+	{%- endif -%}
 
-	{% for link in linklists[linklist].links %}
+	{%- for link in linklists[linklist].links -%}
 
 		<li {% if link.links != blank %} class="has-submenu" aria-controls="SiteNavLabel-{{ link.handle }}-{{ type }}" aria-expanded="false" {% endif %} id="menu-item-{{ link.handle }}-secondary-{{ type }}">
 
@@ -106,19 +106,19 @@
 
 				<span><span class="underline-animation">{{ link.title | escape }}</span></span>
 
-				{% if link.links != blank %}
+				{%- if link.links != blank -%}
 					<span class="icon">{%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}</span>
-				{% endif %}
+				{%- endif -%}
 
 			</a>
 
-			{% if link.links != blank %}
+			{%- if link.links != blank -%}
 
 				<ul class="submenu normal-menu" id="SiteNavLabel-{{ link.handle }}-{{ type }}">
 
 					<div class="submenu-holder">
 
-						{% for childlink in link.links %}
+						{%- for childlink in link.links -%}
 
 							<li {% if childlink.links != blank %} 
 								class="has-babymenu" 
@@ -128,36 +128,36 @@
 
 								<a class="menu-link {% if childlink.active or childlink.child_active %} active {% endif %}" href="{{ childlink.url }}">
 									<span class="underline-animation"><span>{{ childlink.title | escape }}</span></span>
-									{% if childlink.links != blank %}
+									{%- if childlink.links != blank -%}
 										<span class="icon">{%- render 'theme-symbols', icon: 'arrow_icon_down_slim' -%}</span>
-									{% endif %}
+									{%- endif -%}
 								</a>
 
-								{% if childlink.links != blank %}
+								{%- if childlink.links != blank -%}
 
 									<div class="babymenu">
 										<ul id="SiteNavLabel-{{ childlink.handle }}-{{ type }}">
-											{% for babylink in childlink.links %}
+											{%- for babylink in childlink.links -%}
 												<li><a class="menu-link {% if babylink.active %} active {% endif %}" href="{{ babylink.url }}"><span class="underline-animation">{{ babylink.title | escape }}</span></a></li>
-											{% endfor %}
+											{%- endfor -%}
 										</ul>
 									</div>
 
-								{% endif %}
+								{%- endif -%}
 
 							</li>
 
-						{% endfor %}
+						{%- endfor -%}
 
 					</div>
 
 				</ul>
 
-			{% endif %}
+			{%- endif -%}
 
 		</li>
 
-	{% endfor %}
+	{%- endfor -%}
 
 	{%- if show_locale_selector or show_country_selector -%}
 		<li class="menu-link">{%- render 'localization-form', show_locale_selector: show_locale_selector, show_country_selector: show_country_selector, location: 'header', id_suffix: type %}</li>

@@ -14,9 +14,18 @@
         {%- for block in section.blocks -%}
 
           <div class="footer-item" data-type="{{ block.type }}" {{ block.shopify_attributes }}>
+            {%- liquid
+              # A footer column title is never the page's main heading. The stored
+              # setting is h1, which put four extra H1s on every page of the site.
+              # Clamp it here so the saved value can't reintroduce them.
+              assign footer_tag = section.settings.seo_h_tag | default: 'h2'
+              if footer_tag == 'h1'
+                assign footer_tag = 'h2'
+              endif
+            -%}
             {% capture footer_title %}
               {%- if block.settings.title -%}
-                <{{ section.settings.seo_h_tag }} class="title h6 footer-title">{{ block.settings.title | escape }}</{{ section.settings.seo_h_tag }}>
+                <{{ footer_tag }} class="title h6 footer-title">{{ block.settings.title | escape }}</{{ footer_tag }}>
               {%- endif -%}
             {% endcapture %}
             
@@ -318,10 +327,6 @@
         "label": "t:sections.refactor_words.seo.label",
         "info": "t:sections.refactor_words.seo.info",
         "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
           {
             "value": "h2",
             "label": "H2"

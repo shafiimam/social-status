@@ -158,11 +158,14 @@ if ( typeof SiteFilterHandle !== 'function' ) {
 					sidebar.show();
 				}
 			})
-			this.addEventListener('keyup', e=>{
-				if ( e.keyCode == window.KEYCODES.RETURN ) {
-					this.setAttribute('aria-expanded', 'true');
-					sidebar.show();
-					sidebar.querySelector('.site-close-handle').focus();
+			// Behave like a native <button>: Enter and Space both activate.
+			// Routed through click() so the disable-sidebar check above applies,
+			// and SidebarDrawer.show() handles focus-in and focus-return.
+			// keydown (not keyup) so Space can be stopped from scrolling the page.
+			this.addEventListener('keydown', e=>{
+				if ( e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar' ) {
+					e.preventDefault();
+					this.click();
 				}
 			})
 		}
