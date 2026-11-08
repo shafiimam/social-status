@@ -458,6 +458,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <script src="{{ 'section-split-screen-slider.js' | asset_url }}" defer></script>
       <script src="{{ 'theme-editor.js' | asset_url }}" defer data-c="{{ shop.email }}" data-i="{{ shop.id }}"></script>
     {%- endif -%}
+
+    <!-- Route Code Edited 11/02/2026 -->
+    <script src="{{ 'route-element-text-handler.js' | asset_url }}" defer></script>
+    <script src="{{ 'route-checkbox-handler.js' | asset_url }}" defer></script>
+    <!-- End Route Code -->
+
   </body>
   {% comment %} {% if template.name == 'index' %}
     <style>
