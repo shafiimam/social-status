@@ -107,6 +107,12 @@
         "share": {
           "type": "share",
           "settings": {}
+        },
+        "route_protection_tracking_route_pdp_asset_C748Ki": {
+          "type": "shopify://apps/route-protection-tracking/blocks/route-pdp-asset/fb8ca446-3fcd-450e-b3b6-e8e3615553e2",
+          "settings": {
+            "custom_css": ""
+          }
         }
       },
       "block_order": [
@@ -120,7 +126,8 @@
         "ineligibile_products_YCEBdF",
         "collapsible_tab_4zwfq4",
         "collapsible_tab_FFCzxN",
-        "share"
+        "share",
+        "route_protection_tracking_route_pdp_asset_C748Ki"
       ],
       "settings": {
         "gallery_style": "scroll",

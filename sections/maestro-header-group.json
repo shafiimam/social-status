@@ -1,0 +1,122 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.refactor_words.labels.header_group",
+  "order": [
+    "announcement",
+    "header",
+    "announcement_bar_UF6TYB",
+    "breadcrumb"
+  ],
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "visibility": "all",
+        "bar_txtcolor": "#ffffff",
+        "bar_bgcolor": "#111111",
+        "bar_bordercolor": "rgba(0,0,0,0)",
+        "display_style": "marquee",
+        "desktop_font_size": 12,
+        "mobile_font_size": 11,
+        "marquee_speed": 0.3,
+        "marquee_direction": "left",
+        "marquee_pause_on_hover": true,
+        "marquee_separator": "•",
+        "marquee_gap_mobile": 20,
+        "marquee_gap_desktop": 40
+      },
+      "blocks": {
+        "content": {
+          "type": "content",
+          "settings": {
+            "text": "FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $250+",
+            "link": "",
+            "target": false
+          }
+        },
+        "content_8wLtby": {
+          "type": "content",
+          "settings": {
+            "text": "VISIT OUR STORES",
+            "link": "shopify://pages/our-stores",
+            "target": false
+          }
+        }
+      },
+      "block_order": [
+        "content",
+        "content_8wLtby"
+      ]
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_src": "shopify://shop_images/LOOP_LOGO_2.png",
+        "logo_inverted_src": "shopify://shop_images/SS-logo-white_8d1e4185-4ed3-4f10-9abb-3baac11067ec.png",
+        "logo_height": 50,
+        "main_linklist": "new-menu-2025",
+        "customer_account_menu": "customer-account-main-menu",
+        "menu_style": "classic",
+        "menu_sticky": "sticky",
+        "menu_hide_border": true,
+        "collection_linklist": "",
+        "show_collection_image": false,
+        "show_promotion_block": false,
+        "promotion_header": "",
+        "promotion_content": "",
+        "promotion_button_label": "SHOP",
+        "promotion_button_link": "https://www.off--season.com/",
+        "promotion_color_txt": "#ffffff",
+        "promotion_color_bg": "rgba(0,0,0,0)",
+        "promotion_image": "shopify://shop_images/OFFSZN-PromoSale_FEED.jpg",
+        "show_locale_selector": false,
+        "show_country_selector": true
+      }
+    },
+    "announcement_bar_UF6TYB": {
+      "type": "announcement-bar",
+      "disabled": true,
+      "settings": {
+        "visibility": "all",
+        "bar_txtcolor": "#ffffff",
+        "bar_bgcolor": "#111111",
+        "bar_bordercolor": "rgba(0,0,0,0)",
+        "display_style": "marquee",
+        "desktop_font_size": 12,
+        "mobile_font_size": 11,
+        "marquee_speed": 0.3,
+        "marquee_direction": "left",
+        "marquee_pause_on_hover": true,
+        "marquee_separator": "•",
+        "marquee_gap_mobile": 20,
+        "marquee_gap_desktop": 40
+      },
+      "blocks": {
+        "content_pWVWtV": {
+          "type": "content",
+          "settings": {
+            "text": "PITTSBURGH FLAGSHIP STORE OPENING - CLICK HERE TO RSVP",
+            "link": "https://www.socialstatuspgh.com/pages/about-us?view=rsvp",
+            "target": false
+          }
+        }
+      },
+      "block_order": [
+        "content_pWVWtV"
+      ]
+    },
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {}
+    }
+  }
+}

@@ -175,6 +175,16 @@
         "type": "shopify://apps/genlook-virtual-try-on/blocks/genlook-global/01997bc6-1dc6-7c96-853a-98a7952a6ec3",
         "disabled": false,
         "settings": {}
+      },
+      "9305562503569750861": {
+        "type": "shopify://apps/route-protection-tracking/blocks/settings/fb8ca446-3fcd-450e-b3b6-e8e3615553e2",
+        "disabled": false,
+        "settings": {
+          "variant": "preferred-checkout",
+          "container_placement": "",
+          "entrypoints": "button[name=checkout]",
+          "custom_css": "[data-route-cloned-button] {\n  width: 100%;\n}\n\n[data-route-cloned-button] * {\n  text-transform: uppercase;\n}\n\n[data-route-widget] [data-checkout-without-coverage-link] {\n    width: 100% !important;\n}\n\n/* CART PAGE STYLES */\n#section-cart [data-route-widget] {\n  max-width: 20rem;\n}\n/* END CART PAGE STYLES */\n\n#AjaxCartForm, #cart-recommendations{\n  z-index: 0 !important;\n}"
+        }
       }
     }
   },

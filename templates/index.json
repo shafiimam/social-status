@@ -15,13 +15,12 @@
         "slide_tmCntp": {
           "type": "slide",
           "name": "NB WILLFUL BIAS",
-          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "NEW BALANCE WILLFUL BIAS “FOR IDENTITY” 2010",
             "subtitle": "",
-            "button_label": "ENTER DRAW",
-            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/new-balance",
             "button_label_2": "",
             "button_link_2": "",
             "image": "shopify://shop_images/willful_bias.png",

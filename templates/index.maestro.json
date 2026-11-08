@@ -1,0 +1,704 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.maestroPreview",
+  "order": [
+    "split_screen_slider_6tb98K",
+    "featured_collection_Ec3k3R",
+    "1778790749de47905e",
+    "1788279469afffb629",
+    "blocks_ViwBHN",
+    "product_masonry_EEcRh7",
+    "rotating_slider_7yhr3n",
+    "heading_KjpKfp",
+    "shop_the_look_CQnRNW",
+    "in_store_features_events_PYU3XM",
+    "image_text_column_rhg67G",
+    "floating_testimonials_KCBbUg",
+    "custom_liquid_WyGgiH",
+    "1756838107933102fa"
+  ],
+  "sections": {
+    "split_screen_slider_6tb98K": {
+      "type": "split-screen-slider",
+      "blocks": {
+        "slide_tmCntp": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "NEW BALANCE WILLFUL BIAS “FOR IDENTITY” 2010",
+            "subtitle": "",
+            "button_label": "ENTER DRAW",
+            "button_link": "https://socialstatuspgh.runfair.com/en-US/us",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/willful_bias.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_7z3WT4": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "ADIDAS DND HALLOWEEN CANDY PACK",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/IMG_8943.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_yc6QmM": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "APB X AIR JORDAN 11 LOW",
+            "subtitle": "\"MADE FOR LOCALS\"",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/products/apb-x-air-jordan-11-low-binary-blue-x-rust-pink",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/apb11.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_tN6FiN": {
+          "type": "slide",
+          "settings": {
+            "tagline": "ADIDAS DO NOT DUPLICATE",
+            "title": "CHICAGO PACK",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "shopify://collections/adidas",
+            "image": "shopify://shop_images/IMG_7571.jpg",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_zdQw8a": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "ADIDAS DND ATL FASHION WEEK PACK",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/adidas",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/DND3.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_pVXwXG": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "THE WHITAKER GROUP X NEW BALANCE 2010 \"OSTRICH\"",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/products/twg-new-balance-2010",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/nb3.png",
+            "seo_h_tag": "h1",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_F3KQd9": {
+          "type": "slide",
+          "settings": {
+            "tagline": "Introducing",
+            "title": "38a Fleece Collection",
+            "subtitle": "Made for the in-between. Relaxed fits, essential tones, and everyday comfort define the latest from 38a.",
+            "button_label": "shop now",
+            "button_link": "shopify://collections/38a-1",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/38afleece.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_Ah7qQ6": {
+          "type": "slide",
+          "settings": {
+            "tagline": "",
+            "title": "PACE",
+            "subtitle": "Built from heritage and shaped by culture, PACE brings Brazilian and Okinawan influences into a distinctly modern design language.",
+            "button_label": "Shop the collection",
+            "button_link": "shopify://collections/pace",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/PACE_10a6bdb0-5cb5-4c94-83bf-871ee2652826.mp4",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_tmCntp",
+        "slide_7z3WT4",
+        "slide_yc6QmM",
+        "slide_tN6FiN",
+        "slide_zdQw8a",
+        "slide_pVXwXG",
+        "slide_F3KQd9",
+        "slide_Ah7qQ6"
+      ],
+      "settings": {
+        "desktop_layout": "split",
+        "desktop_image_positioning": "image-on-left",
+        "desktop_text": "#ffffff",
+        "mobile_text": "#ffffff",
+        "desktop_background": "#0c0c0c",
+        "desktop_overlay": "#e7e7e7",
+        "mobile_height": "75vh",
+        "mobile_background": "rgba(0,0,0,0)",
+        "heading_size": "h2"
+      }
+    },
+    "featured_collection_Ec3k3R": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "FOOTWEAR",
+        "subtitle": "",
+        "collection": "footwear",
+        "collection_rows": 2,
+        "show_view_all": true,
+        "seo_h_tag": "h2",
+        "hide_product_price": true
+      }
+    },
+    "1778790749de47905e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d16b1c4_b7wJzU": {
+          "type": "ai_gen_block_d16b1c4",
+          "settings": {
+            "image_desktop": "shopify://shop_images/IMG_5806.jpg",
+            "image_mobile": "shopify://shop_images/38a_fd884b9b-fabc-4dbb-84c0-8786dc7cec6f.jpg",
+            "image_fit": "cover",
+            "image_link": "shopify://collections/38a-1",
+            "image_link_new_tab": true,
+            "section_height_desktop": 1000,
+            "section_height_mobile": 600,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "text_position": "overlay",
+            "text_alignment": "center",
+            "text_position_vertical": "center",
+            "text_position_horizontal": "center",
+            "text_max_width": 600,
+            "heading_above": "",
+            "subheading_above": "",
+            "button_text_above": "",
+            "button_link_above": "",
+            "heading_overlay": "38a Collection",
+            "subheading_overlay": "Everyday Uniforms, Reworked.\nBuilt around utility and ease, 38a reimagines everyday staples through relaxed proportions, workwear-inspired details, & effortless layering.",
+            "button_text_overlay": "SHOP NOW",
+            "button_link_overlay": "shopify://collections/38a-1",
+            "text_color": "#ffffff",
+            "heading_below": "",
+            "subheading_below": "",
+            "button_text_below": "",
+            "button_link_below": "",
+            "text_color_outside": "#000000",
+            "heading_size": 48,
+            "subheading_size": 18,
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_background_outside": "#000000",
+            "button_text_color_outside": "#ffffff",
+            "button_hover_background_outside": "#333333",
+            "button_hover_text_color_outside": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d16b1c4_b7wJzU"
+      ],
+      "settings": {}
+    },
+    "1788279469afffb629": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1f752c2_ddGtUV": {
+          "type": "ai_gen_block_1f752c2",
+          "settings": {
+            "spacing_height": 25,
+            "mobile_spacing_height": 5,
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_796f0b7_LamTXL": {
+          "type": "ai_gen_block_796f0b7",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8851.jpg",
+            "image_aspect_ratio": "1.77",
+            "image_border_radius": 0,
+            "desktop_width_percent": 100,
+            "enable_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "heading": "HONOR THE GIFT",
+            "heading_size": 54,
+            "subheading": "<p>Inspired by purpose. Driven by creativity. Built to honor the journey.</p>",
+            "subheading_size": 18,
+            "text_color": "#ffffff",
+            "spacing_between_elements": 16,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "flex-end",
+            "text_alignment": "center",
+            "text_max_width": 80,
+            "content_padding": 40,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/honor-the-gift",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 30,
+            "button_border_width": 0,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#000000",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#333333"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_1f752c2_TtPbtP": {
+          "type": "ai_gen_block_1f752c2",
+          "settings": {
+            "spacing_height": 25,
+            "mobile_spacing_height": 5,
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_1f752c2_ddGtUV",
+        "ai_gen_block_796f0b7_LamTXL",
+        "ai_gen_block_1f752c2_TtPbtP"
+      ],
+      "settings": {}
+    },
+    "blocks_ViwBHN": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d16b1c4_XL69YK": {
+          "type": "ai_gen_block_d16b1c4",
+          "settings": {
+            "image_desktop": "shopify://shop_images/IMG_8464_3ce55212-fdf9-4f8b-853f-bb2ee6eccbe8.jpg",
+            "image_mobile": "shopify://shop_images/IMG_8466.jpg",
+            "image_fit": "cover",
+            "image_link": "shopify://collections/carhartt-w-i-p",
+            "image_link_new_tab": true,
+            "section_height_desktop": 1000,
+            "section_height_mobile": 600,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "text_position": "overlay",
+            "text_alignment": "center",
+            "text_position_vertical": "center",
+            "text_position_horizontal": "center",
+            "text_max_width": 600,
+            "heading_above": "",
+            "subheading_above": "",
+            "button_text_above": "",
+            "button_link_above": "",
+            "heading_overlay": "CARHARTT",
+            "subheading_overlay": "Rooted in workwear heritage, redefined for everyday wear. Carhartt W.I.P blends timeless utility with contemporary streetwear through durable fabrics, relaxed silhouettes, and effortless versatility.",
+            "button_text_overlay": "SHOP NOW",
+            "button_link_overlay": "shopify://collections/carhartt-w-i-p",
+            "text_color": "#ffffff",
+            "heading_below": "",
+            "subheading_below": "",
+            "button_text_below": "",
+            "button_link_below": "",
+            "text_color_outside": "#000000",
+            "heading_size": 48,
+            "subheading_size": 18,
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_background_outside": "#000000",
+            "button_text_color_outside": "#ffffff",
+            "button_hover_background_outside": "#333333",
+            "button_hover_text_color_outside": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d16b1c4_XL69YK"
+      ],
+      "settings": {}
+    },
+    "product_masonry_EEcRh7": {
+      "type": "product-masonry",
+      "settings": {
+        "title": "AWAKE NY",
+        "description": "<p>New York energy meets bold graphics, unexpected details, and a distinct approach to modern streetwear. </p><p></p><p></p>",
+        "image": "shopify://shop_images/awake_11d1ccf5-6332-4d97-abeb-a3ddf2f93cc3.jpg",
+        "image_caption": "",
+        "button_label": "shop",
+        "button_link": "shopify://collections/awake-ny",
+        "product_list": [
+          "awake-ny-mundial-crown-jersey-white",
+          "awake-ny-headcrack-champs-jersey-zip-hoodie-green",
+          "awake-ny-campus-shorts-heather-grey",
+          "awake-ny-collegiate-open-hem-sweatpant-navy"
+        ]
+      }
+    },
+    "rotating_slider_7yhr3n": {
+      "type": "rotating-slider",
+      "blocks": {
+        "slide_azUp4a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DSC04943_BM.jpg",
+            "slide_text": "OUTERWEAR",
+            "link": "shopify://collections/outerwear-3"
+          }
+        },
+        "slide_38DjfE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1897SQUIDLIK.jpg",
+            "slide_text": "WOMEN",
+            "link": "shopify://collections/womens-1"
+          }
+        },
+        "slide_FnQCft": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sweatpants.png",
+            "slide_text": "SWEATPANTS",
+            "link": "shopify://collections/sweatpants"
+          }
+        },
+        "slide_VtQDKD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/3CL.jpg",
+            "slide_text": "ACCESSORIES",
+            "link": "shopify://collections/accessories-1"
+          }
+        },
+        "slide_3bbgCr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/GODSPEEDSHOPTLOOK.png",
+            "slide_text": "T-SHIRTS",
+            "link": "shopify://collections/t-shirts-2"
+          }
+        },
+        "slide_VfcA8p": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/hoofies.png",
+            "slide_text": "HOODIES",
+            "link": "shopify://collections/hoodies-and-sweatshirts"
+          }
+        }
+      },
+      "block_order": [
+        "slide_azUp4a",
+        "slide_38DjfE",
+        "slide_FnQCft",
+        "slide_VtQDKD",
+        "slide_3bbgCr",
+        "slide_VfcA8p"
+      ],
+      "settings": {
+        "heading": "Collections",
+        "subheading": "Discover Our Curated Collections",
+        "backdrop_text": "Culture",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "heading_KjpKfp": {
+      "type": "heading",
+      "blocks": {
+        "heading_kcE6L4": {
+          "type": "heading",
+          "settings": {
+            "heading": "TEAM PICKS @ SOCIAL STATUS  BALTIMORE",
+            "heading_size": "h2",
+            "seo_h_tag": "h2"
+          }
+        },
+        "button_xgG68q": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP LOCATION",
+            "button_link": "https://www.socialstatuspgh.com/pages/social-status-baltimore"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kcE6L4",
+        "button_xgG68q"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "custom_background": "rgba(0,0,0,0)",
+        "custom_text": "rgba(0,0,0,0)"
+      }
+    },
+    "shop_the_look_CQnRNW": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_gXK3nd": {
+          "type": "product",
+          "settings": {
+            "product": "bape-art-camo-hooded-jacket-white-multi"
+          }
+        },
+        "product_LjTrLY": {
+          "type": "product",
+          "settings": {
+            "product": "carhartt-mirror-t-shirt-off-white"
+          }
+        },
+        "product_WQwEPw": {
+          "type": "product",
+          "settings": {
+            "product": "38a-canvas-double-knee-pant-brown"
+          }
+        },
+        "product_A7LXrC": {
+          "type": "product",
+          "settings": {
+            "product": "nike-shox-tl"
+          }
+        }
+      },
+      "block_order": [
+        "product_gXK3nd",
+        "product_LjTrLY",
+        "product_WQwEPw",
+        "product_A7LXrC"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/SET0418.jpg",
+        "desktop_image_positioning": "image-on-left",
+        "hide_product_price": true
+      }
+    },
+    "in_store_features_events_PYU3XM": {
+      "type": "in-store-features-events",
+      "blocks": {
+        "blog_block_Qztdqd": {
+          "type": "blog_block",
+          "settings": {
+            "tab_group_name": "Features",
+            "blog": "social-status"
+          }
+        },
+        "events_block_WQY3df": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "HOUSTON",
+            "city_tag": "HOUSTON",
+            "blog": "blog-events"
+          }
+        },
+        "events_block_DB3ERc": {
+          "type": "events_block",
+          "settings": {
+            "tab_group_name": "Events",
+            "city_name": "DETROIT",
+            "city_tag": "DETROIT",
+            "blog": "blog-events"
+          }
+        }
+      },
+      "block_order": [
+        "blog_block_Qztdqd",
+        "events_block_WQY3df",
+        "events_block_DB3ERc"
+      ],
+      "settings": {
+        "main_title": "LATEST FEATURES",
+        "main_title_width": "732",
+        "main_title_align": "left",
+        "sub_title": "& events",
+        "sub_title_align": "right",
+        "section_aside_image": "shopify://shop_images/culture-logo.png",
+        "show_tab_list": true,
+        "max_articles": 5,
+        "view_more_label": "View More",
+        "blog_cta_label": "Read Article",
+        "event_cta_label": "Register Now",
+        "no_event_title": "No Event Found",
+        "no_event_info": "This location does not have an event at this time."
+      }
+    },
+    "image_text_column_rhg67G": {
+      "type": "image-text-column",
+      "blocks": {
+        "image_item_xytTyh": {
+          "type": "image_item",
+          "settings": {
+            "image": "shopify://shop_images/besocial-logo_1.png",
+            "image_width": 50,
+            "image_height": 100,
+            "image_full_width": true
+          }
+        },
+        "text_item_9xrGED": {
+          "type": "text_item",
+          "settings": {
+            "title": "<p>A creative hub and<br/>community space designed to spark authentic connections between Social Status<br/>and its communities. <br/><br/><br/><br/></p>"
+          }
+        },
+        "button_kK4jpN": {
+          "type": "button",
+          "settings": {
+            "button_label": "View More Events",
+            "button_link": "shopify://pages/attend-an-event"
+          }
+        }
+      },
+      "block_order": [
+        "image_item_xytTyh",
+        "text_item_9xrGED",
+        "button_kK4jpN"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/BESOCIAL1.png",
+        "image_position": "left",
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "show_border_below": false,
+        "show_border_top": false
+      }
+    },
+    "floating_testimonials_KCBbUg": {
+      "type": "floating-testimonials",
+      "blocks": {
+        "testimonial_bMcE8X": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Evelyn L. (Verified Google Review)",
+            "quote": "“The Ultimate Hype Beast Haven… From limited edition sneakers to exclusive streetwear, Social Status curates a collection that speaks to the heart of contemporary fashion.”"
+          }
+        },
+        "testimonial_HT3x7E": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Adam S. (Verified Google Review)",
+            "quote": "“Al the general manager was amazing as well as his whole staff. Very helpful with picking shoes and shirts while I was on a business trip… Great selection of clothes and shoes and a great team.”"
+          }
+        },
+        "testimonial_BUDmLh": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Amy A. (Verified Yelp Review)",
+            "quote": "“Staff is amazing. The vibe is great. And they've managed to carry an incredible range of brands without making the space feel crowded.”"
+          }
+        },
+        "testimonial_JeRbJh": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Marcus H. (Verified Google Review)",
+            "quote": "“…This store being in Baltimore is very significant to the local community and sneaker heads in Baltimore 💯 highly recommend.”"
+          }
+        },
+        "testimonial_Gc34Nw": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Katie L. (Verified Google Review)",
+            "quote": "“I had a wonderful experience at the Charlotte Social Status. Marquis was so helpful! He went above and beyond to find the shirt I was interested in purchasing.”"
+          }
+        },
+        "testimonial_axGpDT": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Allie G. (Verified Yelp Review)",
+            "quote": "“Love the vibe, the selection, and prices. Discovered when we were visiting and wish we were local.”"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_bMcE8X",
+        "testimonial_HT3x7E",
+        "testimonial_BUDmLh",
+        "testimonial_JeRbJh",
+        "testimonial_Gc34Nw",
+        "testimonial_axGpDT"
+      ],
+      "settings": {
+        "cycle_seconds": 70,
+        "seam_fade": true,
+        "section_title": "From The Community"
+      }
+    },
+    "custom_liquid_WyGgiH": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "span {color: var(--heading-color); font-weight: 900;}",
+        "strong {color: var(--brand-primary);}"
+      ],
+      "settings": {
+        "custom_liquid": "<h2 class=\"h1 heading text-center heading\"><strong>@<strong><span>thesocialstatus</span><h2>",
+        "no_padding": true
+      }
+    },
+    "1756838107933102fa": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_Lm4dJE": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 50,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "center",
+            "link_color": "#ed8933",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_Lm4dJE"
+      ],
+      "settings": {}
+    }
+  }
+}
