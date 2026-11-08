@@ -1,0 +1,73 @@
+{%- comment -%}
+  SEO DEV-08: store address, hours and phone from a Store location metaobject.
+  Same markup as the old hand-typed banner text, so styling is unchanged.
+  Days with the same hours are grouped ("Mon - Sat").
+  Usage: {% render 'store-info', store: page.metafields.custom.store_location.value %}
+{%- endcomment -%}
+{%- liquid
+  assign keys = 'hours_monday,hours_tuesday,hours_wednesday,hours_thursday,hours_friday,hours_saturday,hours_sunday' | split: ','
+  assign labels = 'Mon,Tue,Wed,Thu,Fri,Sat,Sun' | split: ','
+  assign address_line = store.street_address.value | append: ', ' | append: store.city.value | append: ', ' | append: store.state.value | append: ' ' | append: store.postal_code.value
+  assign tel = store.phone.value | remove: '(' | remove: ')' | remove: ' ' | remove: '-' | remove: '.'
+-%}
+<p>
+  {%- if store.map_url != blank -%}
+    <a href="{{ store.map_url.value }}" target="_blank" rel="noopener">{{ address_line | escape }}</a>
+  {%- else -%}
+    {{ address_line | escape }}
+  {%- endif -%}
+</p>
+<h2 class="h4">Hours of Operation</h2>
+{%- liquid
+  assign group_start = 0
+  for i in (0..6)
+    assign key = keys[i]
+    assign value = store[key].value | default: 'closed' | strip | downcase
+    assign next_i = i | plus: 1
+    if next_i <= 6
+      assign next_key = keys[next_i]
+      assign next_value = store[next_key].value | default: 'closed' | strip | downcase
+    else
+      assign next_value = '__end__'
+    endif
+    if value != next_value
+      if group_start == i
+        assign day_label = labels[i]
+      else
+        assign day_label = labels[group_start] | append: ' - ' | append: labels[i]
+      endif
+      if value == 'closed' or value == ''
+        assign hours_text = 'Closed'
+      else
+        assign parts = value | split: '-'
+        assign hours_text = ''
+        for t in parts
+          assign hm = t | strip | split: ':'
+          assign h = hm[0] | plus: 0
+          assign m = hm[1] | default: '00'
+          if h == 0
+            assign label = '12:' | append: m | append: 'AM'
+          elsif h < 12
+            assign label = h | append: ':' | append: m | append: 'AM'
+          elsif h == 12
+            assign label = '12:' | append: m | append: 'PM'
+          else
+            assign h12 = h | minus: 12
+            assign label = h12 | append: ':' | append: m | append: 'PM'
+          endif
+          if hours_text == ''
+            assign hours_text = label
+          else
+            assign hours_text = hours_text | append: ' - ' | append: label
+          endif
+        endfor
+      endif
+      echo '<p>' | append: day_label | append: ':&nbsp;<strong>' | append: hours_text | append: '</strong></p>'
+      assign group_start = next_i
+    endif
+  endfor
+-%}
+{%- if store.phone != blank -%}
+  <h2 class="h4">Contact</h2>
+  <p><a href="tel:+1{{ tel }}">{{ store.phone.value | escape }}</a></p>
+{%- endif -%}

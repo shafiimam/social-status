@@ -58,7 +58,8 @@
       "block_order": [
         "powerful_form_builder_app_block_iQzQVk"
       ],
-      "settings": {}
+      "settings": {},
+      "disabled": true
     },
     "store_banner_flagship": {
       "type": "store-header-banner",
@@ -109,7 +110,7 @@
         "text_JtR7Ya": {
           "type": "text",
           "settings": {
-            "text": "<p>Located at 2623 Penn Avenue, the 7,000 square-foot flagship spans two levels and brings together fashion, hospitality, conversation, and cultural programming in one shared experience. The first floor houses a curated retail environment alongside a bar and lounge, while the second floor opens into an additional lounge designed for gathering, exchange, and time spent beyond the traditional retail floor.</p>"
+            "text": "<p>Located at 2623 Penn Avenue, the 7,000-square-foot Social Status Pittsburgh Flagship spans two levels and brings together fashion, hospitality, conversation, and cultural programming in one shared experience. The first floor houses a curated retail environment alongside a bar and lounge, while the second floor opens into an additional lounge designed for gathering, exchange, and time spent beyond the traditional retail floor. Visit us Monday to Saturday 12pm to 7pm and Sunday 12pm to 5pm, or call 412-586-4771.</p>"
           }
         }
       },

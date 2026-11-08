@@ -1,0 +1,82 @@
+{%- comment -%}
+  SEO DEV-08: ClothingStore structured data (JSON-LD) for store pages.
+  Source: page metafield custom.store_location -> Store location metaobject.
+  Rendered in layout/theme.liquid <head> only when the page has a linked store.
+  Days with identical hours are grouped into one OpeningHoursSpecification.
+{%- endcomment -%}
+{%- liquid
+  assign store = page.metafields.custom.store_location.value
+  assign keys = 'hours_monday,hours_tuesday,hours_wednesday,hours_thursday,hours_friday,hours_saturday,hours_sunday' | split: ','
+  assign days = 'Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday' | split: ','
+  assign tel = store.phone.value | remove: '(' | remove: ')' | remove: ' ' | remove: '-' | remove: '.'
+  assign seen = ','
+-%}
+{%- if store != blank -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "@id": {{ canonical_url | append: '#store' | json }},
+  "name": {{ store.name.value | json }},
+  "url": {{ canonical_url | json }},
+  {%- if page_image %}
+  "image": {{ page_image | image_url: width: 1200 | prepend: 'https:' | json }},
+  {%- elsif settings.logo %}
+  "image": {{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }},
+  {%- endif %}
+  {%- if store.phone != blank %}
+  "telephone": {{ '+1' | append: tel | json }},
+  {%- endif %}
+  {%- if store.map_url != blank %}
+  "hasMap": {{ store.map_url.value | json }},
+  {%- endif %}
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ store.street_address.value | json }},
+    "addressLocality": {{ store.city.value | json }},
+    "addressRegion": {{ store.state.value | json }},
+    "postalCode": {{ store.postal_code.value | json }},
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {%- liquid
+      assign first_spec = true
+      for i in (0..6)
+        assign key = keys[i]
+        assign value = store[key].value | default: 'closed' | strip | downcase
+        assign token = ',' | append: value | append: ','
+        if value == 'closed' or seen contains token
+          continue
+        endif
+        assign seen = seen | append: value | append: ','
+        assign group_days = ''
+        for j in (0..6)
+          assign k2 = keys[j]
+          assign v2 = store[k2].value | default: 'closed' | strip | downcase
+          if v2 == value
+            assign group_days = group_days | append: days[j] | append: ','
+          endif
+        endfor
+        assign group_days = group_days | split: ','
+        assign parts = value | split: '-'
+        assign opens = parts[0] | strip
+        assign closes = parts[1] | strip
+        unless first_spec
+          echo ','
+        endunless
+        assign first_spec = false
+        assign days_json = group_days | json
+        assign opens_json = opens | json
+        assign closes_json = closes | json
+        echo '{"@type":"OpeningHoursSpecification","dayOfWeek":' | append: days_json | append: ',"opens":' | append: opens_json | append: ',"closes":' | append: closes_json | append: '}'
+      endfor
+    -%}
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }}
+  }
+}
+</script>
+{%- endif -%}

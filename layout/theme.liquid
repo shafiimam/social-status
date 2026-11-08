@@ -43,6 +43,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       unless settings.disable_microdata
         render 'microdata-schema'
       endunless
+      if request.page_type == 'page' and page.metafields.custom.store_location != blank
+        render 'store-schema'
+      endif
     -%}
 
     {%- comment -%} SEO DEV-01: keep search results and tag-filtered listings out of the index; links still followed {%- endcomment -%}
