@@ -12,6 +12,38 @@
     "split_screen_slider_6tb98K": {
       "type": "split-screen-slider",
       "blocks": {
+        "slide_Ah7qQ6": {
+          "type": "slide",
+          "name": "PACE",
+          "settings": {
+            "tagline": "",
+            "title": "ADIDAS DND PATCHWORK DENIM",
+            "subtitle": "A fresh take on two iconic silhouettes. The Adidas DND Patchwork Denim collection reimagines the Samoa and Campus 00s through distinctive denim textures, patchwork detailing, and a contemporary approach to classic footwear.",
+            "button_label": "Shop the collection",
+            "button_link": "shopify://collections/adidas-dnd",
+            "button_label_2": "",
+            "button_link_2": "",
+            "video_object": "shopify://files/videos/DND PATCHWORK.mov",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
+        "slide_zdQw8a": {
+          "type": "slide",
+          "name": "DND ATL FASHION WEEK",
+          "settings": {
+            "tagline": "",
+            "title": "NEW BALANCE X TWG SMU 950",
+            "subtitle": "",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.socialstatuspgh.com/collections/footwear/products/new-balance-x-twg-smu-950",
+            "button_label_2": "",
+            "button_link_2": "",
+            "image": "shopify://shop_images/nb_smu.png",
+            "seo_h_tag": "h2",
+            "hide_text_mobile": false
+          }
+        },
         "slide_tmCntp": {
           "type": "slide",
           "name": "NB WILLFUL BIAS",
@@ -76,22 +108,6 @@
             "hide_text_mobile": false
           }
         },
-        "slide_zdQw8a": {
-          "type": "slide",
-          "name": "DND ATL FASHION WEEK",
-          "settings": {
-            "tagline": "",
-            "title": "ADIDAS DND ATL FASHION WEEK PACK",
-            "subtitle": "",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/adidas",
-            "button_label_2": "",
-            "button_link_2": "",
-            "image": "shopify://shop_images/DND3.png",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
-        },
         "slide_pVXwXG": {
           "type": "slide",
           "name": "TWG X NEWBALANCE 2010",
@@ -123,33 +139,17 @@
             "seo_h_tag": "h2",
             "hide_text_mobile": false
           }
-        },
-        "slide_Ah7qQ6": {
-          "type": "slide",
-          "name": "PACE",
-          "settings": {
-            "tagline": "",
-            "title": "PACE",
-            "subtitle": "Built from heritage and shaped by culture, PACE brings Brazilian and Okinawan influences into a distinctly modern design language.",
-            "button_label": "Shop the collection",
-            "button_link": "shopify://collections/pace",
-            "button_label_2": "",
-            "button_link_2": "",
-            "video_object": "shopify://files/videos/PACE_10a6bdb0-5cb5-4c94-83bf-871ee2652826.mp4",
-            "seo_h_tag": "h2",
-            "hide_text_mobile": false
-          }
         }
       },
       "block_order": [
+        "slide_Ah7qQ6",
+        "slide_zdQw8a",
         "slide_tmCntp",
         "slide_7z3WT4",
         "slide_yc6QmM",
         "slide_tN6FiN",
-        "slide_zdQw8a",
         "slide_pVXwXG",
-        "slide_F3KQd9",
-        "slide_Ah7qQ6"
+        "slide_F3KQd9"
       ],
       "name": "t:sections.split-extra-words.sections.split-screen-slider.name",
       "settings": {

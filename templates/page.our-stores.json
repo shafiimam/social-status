@@ -37,7 +37,7 @@
           "settings": {
             "location_title": "Social Status Atlanta",
             "image": "shopify://shop_images/ATL_c1cc9f14-1b42-44f5-ad5a-9820d63c6b69.jpg",
-            "location_info": "<p><a href=\"https://goo.gl/maps/8mYaGoAaSnAGJYpa8\" target=\"_blank\">280 Elizabeth St. Suite E. Atlanta, GA 30307</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p>(<a href=\"tel:470-305-7545\">470) 305-7545</a></p>",
+            "location_info": "<p><a href=\"https://goo.gl/maps/8mYaGoAaSnAGJYpa8\" target=\"_blank\">280 Elizabeth St. Suite E. Atlanta, GA 30307</a></p><h4>Hours of Operation</h4><p>Mon - Sat:&nbsp;<strong>12:00PM - 7:00PM</strong></p><p>Sun:&nbsp;<strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p>(<a href=\"tel:470-305-7545\">470) 305-7545</a></p>",
             "location_content": "<p>Social Status Atlanta opened in 2017 to fill a gap in a local fashion scene in constant flux. Located in the Inman Park area, a neighborhood that features a blend of modern living and retail, the store's layout and curation was set to prioritize styling, brand and product knowledge as top of mind for our consumers.</p>",
             "button_label": "Visit Store Page",
             "store_link": "shopify://pages/social-status-atlanta"
@@ -70,7 +70,7 @@
           "settings": {
             "location_title": "Social Status Detroit",
             "image": "shopify://shop_images/cover_copy.jpg",
-            "location_info": "<p><a href=\"https://www.socialstatuspgh.com/\" target=\"_blank\">9101 E Jefferson Ave, Unit A, Detroit, MI 48214</a></p><h4></h4><h4>Hours of Operation</h4><p>Mon to Sat: <strong>12:00PM - 7:00PM</strong></p><p>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(313)499-8299\">(313) 499-8299</a></p>",
+            "location_info": "<p><a href=\"https://www.socialstatuspgh.com/\" target=\"_blank\">9101 E Jefferson Ave, Unit A, Detroit, MI 48214</a></p><h4></h4><h4>Hours of Operation</h4><p>Mon to Sat:&nbsp;<strong>12:00PM - 7:00PM</strong></p><p>Sun:&nbsp;<strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(313)499-8299\">(313) 499-8299</a></p>",
             "location_content": "<p>Social Status Detroit is located on the city’s East Side, this flagship store represents more than retail; it’s a symbol of reinvestment and renewal. As part of our ongoing commitment to historically Black neighborhoods, Social Status Detroit blends elevated streetwear, exclusive footwear, and immersive storytelling in a space built for community, culture, and connection. This isn’t just a store—it’s a movement rooted in purpose and powered by the people.</p>",
             "button_label": "Visit Store Page",
             "store_link": "shopify://pages/social-status-detroit"
@@ -101,10 +101,10 @@
         "store_slide_BEBYaM": {
           "type": "store_slide",
           "settings": {
-            "location_title": "Social Status Downtown Pittsburgh",
+            "location_title": "Social Status Flagship Pittsburgh",
             "image": "shopify://shop_images/Pitt2_085331fa-da2d-4887-b44f-983dfa122311.jpg",
-            "location_info": "<p><a href=\"https://goo.gl/maps/Tagtv9sw15saoSeQA\" target=\"_blank\">717 Liberty Ave, Pittsburgh, PA 15222</a></p><h4>Hours of Operation</h4><p>Mon - Sat: <strong>12:00PM - 7:00PM<br/></strong>Sun: <strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(412) 456-2355\">(412) 456-2355</a></p>",
-            "location_content": "<p>Located in Cultural District of Downtown Pittsburgh, Social Status Downtown holds a special place in our store network due to the familiarity of the marketplace and the hometown ties to our curator. The store aesthetic was inspired by minimalist European boutiques, embracing its cultural surroundings by celebrating local artists, displaying their artwork throughout the boutique and hosting monthly art-focused events alongside our community programming.</p>",
+            "location_info": "<p><a href=\"https://www.socialstatuspgh.com/\" target=\"_blank\">2623 Penn Ave, Pittsburgh, PA 15222</a></p><h4>Hours of Operation</h4><p>Mon - Sat:&nbsp;<strong>12:00PM - 7:00PM<br/></strong>Sun:&nbsp;<strong>12:00PM - 5:00PM</strong></p><h4>Contact</h4><p><a href=\"tel:(412) 456-2355\">(412) 586-4771</a></p>",
+            "location_content": "<p>Rooted in Pittsburgh’s rich culture and community, Social Status’ new 7,000-square-foot flagship reimagines the retail experience. Spanning two levels, the space brings together elevated fashion, hospitality, and thoughtfully designed lounges, creating a destination where culture, creativity, and community come together beyond the traditional shopping experience.</p>",
             "button_label": "Visit Store Page",
             "store_link": "shopify://pages/social-status-downtown-pittsburgh"
           }
