@@ -46,10 +46,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       if request.page_type == 'page' and page.metafields.custom.store_location != blank
         render 'store-schema'
       endif
+      if request.page_type == 'article' and blog.handle == 'blog-events'
+        render 'event-schema'
+      endif
     -%}
 
-    {%- comment -%} SEO DEV-01: keep search results and tag-filtered listings out of the index; links still followed {%- endcomment -%}
-    {%- if request.page_type == 'search' or current_tags -%}
+    {%- comment -%} SEO DEV-01: keep search results and tag-filtered listings out of the index; links still followed.
+      SA-05: also pages/collections marked hidden (metafield seo.hidden = 1). {%- endcomment -%}
+    {%- liquid
+      assign seo_hidden = false
+      if request.page_type == 'page' and page.metafields.seo.hidden == 1
+        assign seo_hidden = true
+      elsif request.page_type == 'collection' and collection.metafields.seo.hidden == 1
+        assign seo_hidden = true
+      endif
+    -%}
+    {%- if request.page_type == 'search' or current_tags or seo_hidden -%}
       <meta name="robots" content="noindex, follow">
     {%- endif -%}
 

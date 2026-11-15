@@ -1,0 +1,109 @@
+{%- comment -%}
+  SEO DEV-10: Event structured data (JSON-LD) for articles in the blog-events blog.
+  - Start date: from the article tag "event-date::YYYY-M-DTHH:MM:SS-05:00" (same tag the page shows).
+    Events whose date can't be read are skipped, so no invalid data is output.
+  - Location: city tag (#charlotte, #houston, tampa ...) mapped to the Store location metaobject.
+    Pittsburgh without a store-specific tag gets the city only.
+  Rendered in layout/theme.liquid <head>.
+{%- endcomment -%}
+{%- liquid
+  assign raw_date = ''
+  assign store_handle = ''
+  assign city_only = ''
+  for tag in article.tags
+    assign t = tag | downcase | remove: '#' | strip
+    if tag contains 'event-date::'
+      assign raw_date = tag | remove: 'event-date::' | strip
+    elsif t == 'atlanta' or t == 'atl'
+      assign store_handle = 'atlanta'
+    elsif t == 'baltimore' or t == 'bal'
+      assign store_handle = 'baltimore'
+    elsif t == 'charlotte' or t == 'clt'
+      assign store_handle = 'charlotte'
+    elsif t == 'detroit' or t == 'dtw'
+      assign store_handle = 'detroit'
+    elsif t == 'greensboro'
+      assign store_handle = 'greensboro'
+    elsif t == 'houston' or t == 'htx'
+      assign store_handle = 'houston'
+    elsif t == 'raleigh'
+      assign store_handle = 'raleigh'
+    elsif t == 'tampa' or t == 'tampa bay' or t == 'tampabay'
+      assign store_handle = 'tampa-bay'
+    elsif t == 'flagship' or t == 'pittsburgh flagship'
+      assign store_handle = 'pittsburgh-flagship'
+    elsif t == 'eastliberty' or t == 'east liberty'
+      assign store_handle = 'east-liberty-pittsburgh'
+    elsif t == 'pittsburgh' or t == 'pgh'
+      assign city_only = 'pittsburgh'
+    endif
+  endfor
+
+  assign start_date = ''
+  if raw_date != blank
+    assign start_date = raw_date | date: '%Y-%m-%dT%H:%M:%S%:z'
+  endif
+  comment
+    The date filter returns the input unchanged when it can't parse it; a real result is 25 characters.
+  endcomment
+  assign start_ok = false
+  if start_date.size == 25 and start_date != raw_date
+    assign start_ok = true
+  endif
+
+  assign store = nil
+  if store_handle != ''
+    assign store = shop.metaobjects.store_location[store_handle]
+  endif
+  if store == blank and city_only == '' and store_handle == ''
+    assign start_ok = false
+  endif
+
+  assign description = article.excerpt_or_content | strip_html | strip_newlines | replace: '  ', ' ' | strip | truncate: 300
+-%}
+{%- if start_ok -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ article.title | strip | json }},
+  "startDate": {{ start_date | json }},
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "url": {{ canonical_url | json }},
+  {%- if description != blank %}
+  "description": {{ description | json }},
+  {%- endif %}
+  {%- if article.image %}
+  "image": [{{ article.image | image_url: width: 1200 | prepend: 'https:' | json }}],
+  {%- endif %}
+  "location": {
+    "@type": "Place",
+    {%- if store != blank %}
+    "name": {{ store.name.value | json }},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{ store.street_address.value | json }},
+      "addressLocality": {{ store.city.value | json }},
+      "addressRegion": {{ store.state.value | json }},
+      "postalCode": {{ store.postal_code.value | json }},
+      "addressCountry": "US"
+    }
+    {%- else %}
+    "name": "Social Status Pittsburgh",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pittsburgh",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    }
+    {%- endif %}
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }}
+  }
+}
+</script>
+{%- endif -%}
