@@ -1,0 +1,161 @@
+{%- comment -%}
+  SEO DEV-09: Product JSON-LD (replaces Shopify's `product | structured_data`).
+  Adds what Shopify's output lacks:
+  - hasMerchantReturnPolicy + shippingDetails on every offer (Google merchant listings)
+  - itemCondition, variesBy, size/color per variant
+  - gtin ONLY when the barcode is a real GTIN: 8/12/13/14 digits, valid check digit,
+    and not a store-internal code (UPC starting 2 or 4, EAN 20-29 / 02 / 04).
+    BAPE etc. barcodes like 400002026730 are store codes and must not be sent as GTIN.
+  Facts below come from the live store policies (16 Nov 2026). Update here if they change.
+{%- endcomment -%}
+{%- liquid
+  # Return policy (Refund policy): 7 days from delivery, prepaid FedEx label, store credit only.
+  assign return_days = 7
+  # Shipping (Shipping policy + US delivery profile): flat $16, handling 3-5 business days, transit 2-3 days.
+  assign ship_rate = '16.00'
+  assign handling_min = 3
+  assign handling_max = 5
+  assign transit_min = 2
+  assign transit_max = 3
+
+  assign is_final_sale = false
+  for tag in product.tags
+    assign tag_down = tag | downcase | replace: '-', ' '
+    if tag_down == 'final sale' or tag_down == 'finalsale'
+      assign is_final_sale = true
+      break
+    endif
+  endfor
+
+  assign size_index = -1
+  assign color_index = -1
+  assign varies_by = ''
+  for option in product.options_with_values
+    assign option_name = option.name | downcase
+    if option_name contains 'size'
+      assign size_index = forloop.index0
+      assign varies_by = varies_by | append: '"https://schema.org/size",'
+    elsif option_name contains 'color' or option_name contains 'colour'
+      assign color_index = forloop.index0
+      assign varies_by = varies_by | append: '"https://schema.org/color",'
+    endif
+  endfor
+  assign varies_by = varies_by | remove_last: ','
+
+  assign product_url = shop.url | append: product.url
+  assign product_description = product.description | strip_html | split: ' ' | join: ' ' | truncate: 4900
+  assign brand_name = product.vendor | default: shop.name
+  assign is_group = true
+  if product.has_only_default_variant
+    assign is_group = false
+  endif
+-%}
+{%- capture return_policy_json -%}
+  {"@type":"MerchantReturnPolicy","applicableCountry":"US","returnPolicyCountry":"US",
+  {%- if is_final_sale -%}
+    "returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"
+  {%- else -%}
+    "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":{{ return_days }},"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/StoreCreditRefund"
+  {%- endif -%}}
+{%- endcapture -%}
+{%- capture shipping_json -%}
+  {"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":{{ ship_rate }},"currency":"USD"},"shippingDestination":{"@type":"DefinedRegion","addressCountry":"US"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":{{ handling_min }},"maxValue":{{ handling_max }},"unitCode":"DAY"},"transitTime":{"@type":"QuantitativeValue","minValue":{{ transit_min }},"maxValue":{{ transit_max }},"unitCode":"DAY"}}}
+{%- endcapture -%}
+{%- capture variants_json -%}
+  {%- for variant in product.variants -%}
+    {%- liquid
+      # GTIN check
+      assign gtin = ''
+      assign code = variant.barcode | strip
+      assign code_len = code.size
+      if code_len == 8 or code_len == 12 or code_len == 13 or code_len == 14
+        assign non_digits = code | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9'
+        if non_digits == ''
+          assign chars = code | split: ''
+          assign last_i = code_len | minus: 1
+          assign check_sum = 0
+          for k in (1..last_i)
+            assign idx = last_i | minus: k
+            assign digit = chars[idx] | plus: 0
+            assign odd = k | modulo: 2
+            if odd == 1
+              assign digit = digit | times: 3
+            endif
+            assign check_sum = check_sum | plus: digit
+          endfor
+          assign expected = check_sum | modulo: 10
+          assign expected = 10 | minus: expected | modulo: 10
+          assign actual = chars[last_i] | plus: 0
+          # internal / in-store number ranges
+          assign first1 = code | slice: 0, 1
+          assign first2 = code | slice: 0, 2
+          assign internal = false
+          if code_len == 12
+            if first1 == '2' or first1 == '4'
+              assign internal = true
+            endif
+          elsif code_len == 13
+            if first1 == '2' or first2 == '02' or first2 == '04'
+              assign internal = true
+            endif
+          endif
+          if expected == actual and internal == false
+            assign gtin = code
+          endif
+        endif
+      endif
+
+      assign v_image = variant.image | default: product.featured_image
+      assign v_price = variant.price | money_without_currency | remove: ','
+      assign v_url = product_url | append: '?variant=' | append: variant.id
+      assign v_name = product.title
+      if is_group
+        assign v_name = product.title | append: ' - ' | append: variant.title
+      endif
+    -%}
+    {%- unless forloop.first -%},{%- endunless -%}
+    {
+      "@type": "Product",
+      "@id": {{ v_url | append: '#variant' | json }},
+      "name": {{ v_name | json }},
+      "url": {{ v_url | json }},
+      {%- if variant.sku != blank %}"sku": {{ variant.sku | json }},{% endif -%}
+      {%- if gtin != '' %}"gtin": {{ gtin | json }},{% endif -%}
+      {%- if v_image %}"image": {{ v_image | image_url: width: 1920 | prepend: 'https:' | json }},{% endif -%}
+      {%- if size_index >= 0 %}"size": {{ variant.options[size_index] | json }},{% endif -%}
+      {%- if color_index >= 0 %}"color": {{ variant.options[color_index] | json }},{% endif -%}
+      "brand": {"@type": "Brand", "name": {{ brand_name | json }}},
+      "offers": {
+        "@type": "Offer",
+        "url": {{ v_url | json }},
+        "price": {{ v_price | json }},
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "availability": "https://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {{ return_policy_json }},
+        "shippingDetails": {{ shipping_json }}
+      }
+    }
+  {%- endfor -%}
+{%- endcapture -%}
+<script type="application/ld+json">
+{%- if is_group %}
+{
+  "@context": "https://schema.org",
+  "@type": "ProductGroup",
+  "@id": {{ product_url | append: '#product' | json }},
+  "name": {{ product.title | json }},
+  "url": {{ product_url | json }},
+  "description": {{ product_description | json }},
+  "productGroupID": {{ product.id | json }},
+  {%- if product.featured_image %}"image": {{ product.featured_image | image_url: width: 1920 | prepend: 'https:' | json }},{% endif -%}
+  {%- if product.category %}"category": {{ product.category.name | json }},{% endif -%}
+  {%- if varies_by != '' %}"variesBy": [{{ varies_by }}],{% endif -%}
+  "brand": {"@type": "Brand", "name": {{ brand_name | json }}},
+  "hasVariant": [{{ variants_json }}]
+}
+{%- else -%}
+  {%- capture single_head -%}"@context": "https://schema.org", "@type": "Product", "description": {{ product_description | json }},{%- if product.category %} "category": {{ product.category.name | json }},{% endif -%}{%- endcapture -%}
+  {{ variants_json | replace_first: '"@type": "Product",', single_head }}
+{%- endif %}
+</script>

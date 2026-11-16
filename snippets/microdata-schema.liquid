@@ -115,7 +115,8 @@ This snippet structures the micro-data using JSON-LD specification. For product 
 </script>
 
 {%- if request.page_type == 'product' -%}
-  <script type="application/ld+json">{{ product | structured_data }}</script>
+  {%- comment -%} SEO DEV-09: own Product schema (return policy, shipping, valid GTIN only). Old: product | structured_data {%- endcomment -%}
+  {%- render 'product-schema', product: product -%}
 {%- elsif request.page_type == 'article' -%}
   <script type="application/ld+json">{{ article | structured_data }}</script>
 {%- endif -%}
