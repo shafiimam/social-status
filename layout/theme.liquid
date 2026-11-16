@@ -59,6 +59,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         assign seo_hidden = true
       elsif request.page_type == 'collection' and collection.metafields.seo.hidden == 1
         assign seo_hidden = true
+      elsif request.page_type == 'article' and blog.handle == 'blog-events'
+        # SA-10: past events (event-date tag more than 2 days ago) get noindex automatically.
+        # Page stays live for visitors. Keep list = past events that still get search clicks.
+        assign keep_event_handles = 'social-status-detroit-grand-opening' | split: ','
+        # article.handle here is "blog-events/<handle>", so compare the last part
+        assign event_handle = article.handle | split: '/' | last
+        unless keep_event_handles contains event_handle
+          for tag in article.tags
+            if tag contains 'event-date::'
+              assign event_ts = tag | remove: 'event-date::' | strip | date: '%s' | plus: 0
+              assign cutoff_ts = 'now' | date: '%s' | minus: 172800
+              # unparseable date -> small number (e.g. 2025) -> ignored, page stays indexed
+              if event_ts > 1000000000 and event_ts < cutoff_ts
+                assign seo_hidden = true
+              endif
+              break
+            endif
+          endfor
+        endunless
       endif
     -%}
     {%- if request.page_type == 'search' or current_tags or seo_hidden -%}
