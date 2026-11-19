@@ -11,10 +11,13 @@
 {%- liquid
   # Return policy (Refund policy): 7 days from delivery, prepaid FedEx label, store credit only.
   assign return_days = 7
-  # Shipping (Shipping policy + US delivery profile): flat $16, handling 3-5 business days, transit 2-3 days.
+  # Returns page + Help Center FAQ (20 Nov): prepaid return label (no return shipping cost),
+  # 20% restocking fee on non-exempt returns (waived with Route Protection / our error).
+  assign restocking_fee_pct = 20
+  # Shipping (US delivery profile + Help Center FAQ 20 Nov): flat $16, processing 2-4 business days, transit 2-3 days.
   assign ship_rate = '16.00'
-  assign handling_min = 3
-  assign handling_max = 5
+  assign handling_min = 2
+  assign handling_max = 4
   assign transit_min = 2
   assign transit_max = 3
 
@@ -55,7 +58,7 @@
   {%- if is_final_sale -%}
     "returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"
   {%- else -%}
-    "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":{{ return_days }},"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/StoreCreditRefund"
+    "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":{{ return_days }},"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees","returnShippingFeesAmount":{"@type":"MonetaryAmount","value":0,"currency":"USD"},"restockingFee":{{ restocking_fee_pct }},"refundType":"https://schema.org/StoreCreditRefund"
   {%- endif -%}}
 {%- endcapture -%}
 {%- capture shipping_json -%}
