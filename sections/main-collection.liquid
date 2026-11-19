@@ -78,22 +78,23 @@
         {%- assign rest_products_size = 0 -%}
         {%- capture rest_products -%}
           {%- for product in collection.products offset: 4 -%}
-            {%- assign rest_products_size = rest_products_size | plus: 1 -%}
-            {% for block in section.blocks %}
-              {% assign block_position = block.settings.position %}
-              {% assign block_span = block.settings.block_span %}
-              {% case block.type %}
-                {% when 'featured_product' %}
-                  {% if forloop.parentloop.index == block_position %}
-                    {% render 'featured-product-block', product: block.settings.product, block: block, block_span: block_span, block_position: block_position, section: section %}
-                  {% endif %}
-                {% when 'image_hotspot' %}
-                  {% if forloop.parentloop.index == block_position %}
-                    {% render 'image-hotspot', product: block.settings.product, block: block, block_span: block_span, block_position: block_position, section: section %}
-                  {% endif %}
-              {% endcase %}
-              
-            {% endfor %}
+            {%- liquid
+              assign rest_products_size = rest_products_size | plus: 1
+              # SEO DEV-12: whitespace-controlled. The plain {% %} version printed the
+              # blank lines of this inner loop for every product x every block.
+              for block in section.blocks
+                if forloop.parentloop.index == block.settings.position
+                  assign block_position = block.settings.position
+                  assign block_span = block.settings.block_span
+                  case block.type
+                    when 'featured_product'
+                      render 'featured-product-block', product: block.settings.product, block: block, block_span: block_span, block_position: block_position, section: section
+                    when 'image_hotspot'
+                      render 'image-hotspot', product: block.settings.product, block: block, block_span: block_span, block_position: block_position, section: section
+                  endcase
+                endif
+              endfor
+            -%}
             <div class="site-box box--small box--typo-small lap--box--small-lg box--center-align box--no-padding box--column-flow box__collection" data-order="{{ forloop.index }}">
               <div class="site-box-content product-holder">
                 {%- render 'product-item', product_collection: collection, product: product, index: forloop.index0 -%}
