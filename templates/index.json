@@ -30,7 +30,7 @@
         },
         "slide_zdQw8a": {
           "type": "slide",
-          "name": "DND ATL FASHION WEEK",
+          "name": "NB 950 SMU",
           "settings": {
             "tagline": "",
             "title": "NEW BALANCE X TWG SMU 950",
@@ -47,6 +47,7 @@
         "slide_tmCntp": {
           "type": "slide",
           "name": "NB WILLFUL BIAS",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "NEW BALANCE WILLFUL BIAS “FOR IDENTITY” 2010",
@@ -79,6 +80,7 @@
         "slide_yc6QmM": {
           "type": "slide",
           "name": "APB 11",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "APB X AIR JORDAN 11 LOW",
@@ -95,6 +97,7 @@
         "slide_tN6FiN": {
           "type": "slide",
           "name": "DND CHICAGO MARATHON",
+          "disabled": true,
           "settings": {
             "tagline": "ADIDAS DO NOT DUPLICATE",
             "title": "CHICAGO PACK",
@@ -111,6 +114,7 @@
         "slide_pVXwXG": {
           "type": "slide",
           "name": "TWG X NEWBALANCE 2010",
+          "disabled": true,
           "settings": {
             "tagline": "",
             "title": "THE WHITAKER GROUP X NEW BALANCE 2010 \"OSTRICH\"",
@@ -318,6 +322,24 @@
         "hide_product_price": true
       }
     },
+    "product_masonry_R9XW8N": {
+      "type": "product-masonry",
+      "name": "CARHARTT",
+      "settings": {
+        "title": "CARHARTT W.I.P X NIKE",
+        "description": "<p>Nike and Carhartt WIP reunite, blending performance innovation with workwear heritage to deliver purpose-driven designs for everyday life.</p><p></p><p></p>",
+        "image": "shopify://shop_images/FW26_Carhartt_WIP_x_NIKE_Editorial_Images_2.jpg",
+        "image_caption": "",
+        "button_label": "shop",
+        "button_link": "shopify://collections/carhartt-w-i-p",
+        "product_list": [
+          "carhartt-wip-x-nike-windrunner-jacket-brown",
+          "carhartt-wip-x-nike-beanie-black",
+          "carhartt-wip-x-nike-windrunner-pants-brown",
+          "nike-air-max-goadome-low-sp"
+        ]
+      }
+    },
     "1778790749de47905e": {
       "type": "_blocks",
       "blocks": {
@@ -446,6 +468,8 @@
       "blocks": {
         "ai_gen_block_d16b1c4_XL69YK": {
           "type": "ai_gen_block_d16b1c4",
+          "name": "CARHARTT1",
+          "disabled": true,
           "settings": {
             "image_desktop": "shopify://shop_images/IMG_8464_3ce55212-fdf9-4f8b-853f-bb2ee6eccbe8.jpg",
             "image_mobile": "shopify://shop_images/IMG_8466.jpg",
@@ -569,10 +593,11 @@
     },
     "product_masonry_EEcRh7": {
       "type": "product-masonry",
+      "disabled": true,
       "name": "AWAKE NY",
       "settings": {
         "title": "AWAKE NY",
-        "description": "<p>New York energy meets bold graphics, unexpected details, and a distinct approach to modern streetwear. </p><p></p><p></p>",
+        "description": "<p>New York energy meets bold graphics, unexpected details, and a distinct approach to modern streetwear.&nbsp;</p><p></p><p></p>",
         "image": "shopify://shop_images/awake_11d1ccf5-6332-4d97-abeb-a3ddf2f93cc3.jpg",
         "image_caption": "",
         "button_label": "shop",
@@ -796,43 +821,6 @@
         "event_cta_label": "Register Now",
         "no_event_title": "No Event Found",
         "no_event_info": "This location does not have an event at this time."
-      }
-    },
-    "virtual_try_on_nBhXAa": {
-      "type": "virtual-try-on",
-      "blocks": {
-        "product_Bkmn8g": {
-          "type": "product",
-          "settings": {
-            "product_image": "shopify://shop_images/DSC07530.png",
-            "product_qr_image": "shopify://shop_images/scan-qr.png"
-          }
-        },
-        "product_TmKYFJ": {
-          "type": "product",
-          "settings": {
-            "product_image": "shopify://shop_images/AM95WHITHYPERJADE-4.jpg",
-            "product_qr_image": "shopify://shop_images/WOMEN_SS.png"
-          }
-        },
-        "product_pcCr9i": {
-          "type": "product",
-          "settings": {
-            "product_image": "shopify://shop_images/MADEINUK991V2_BEECHNUT_-1.jpg",
-            "product_qr_image": "shopify://shop_images/HOODSSS.png"
-          }
-        }
-      },
-      "block_order": [
-        "product_Bkmn8g",
-        "product_TmKYFJ",
-        "product_pcCr9i"
-      ],
-      "disabled": true,
-      "name": "Virtual Try-On",
-      "settings": {
-        "heading": "Step In The Culture",
-        "subheading": "<p>VIRTUAL TRY ON AVAILABLE. TRY IT ON IN <strong>AR  </strong></p>"
       }
     },
     "latest_features_f6y9et": {
@@ -1146,6 +1134,7 @@
     "featured_collection_YCzWJf",
     "featured_collection_Ec3k3R",
     "featured_collection_Jd3xjK",
+    "product_masonry_R9XW8N",
     "1778790749de47905e",
     "1788279469afffb629",
     "blocks_ViwBHN",
@@ -1158,7 +1147,6 @@
     "heading_KjpKfp",
     "shop_the_look_CQnRNW",
     "in_store_features_events_PYU3XM",
-    "virtual_try_on_nBhXAa",
     "latest_features_f6y9et",
     "image_text_column_rhg67G",
     "floating_testimonials_KCBbUg",
