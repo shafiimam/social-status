@@ -80,7 +80,7 @@
           {%- for product in collection.products offset: 4 -%}
             {%- liquid
               assign rest_products_size = rest_products_size | plus: 1
-              # SEO DEV-12: whitespace-controlled. The plain {% %} version printed the
+              # SEO DEV-12: whitespace-controlled. The old version (plain tags) printed the
               # blank lines of this inner loop for every product x every block.
               for block in section.blocks
                 if forloop.parentloop.index == block.settings.position
